@@ -14,7 +14,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("de", {
     "page.vergleich.title": "Vergleich · Peptide Compass",
-    "page.vergleich.metaDescription": "Alle 8 Peptid-Anbieter im direkten Vergleich: Score, Preis pro Milligramm, Lieferzeit und Rabattcodes, sortierbar nach jeder Spalte.",
+    "page.vergleich.metaDescription": "Alle 24 Peptid-Anbieter im direkten Vergleich: Score, Preis pro Milligramm, Lieferzeit und Rabattcodes, sortierbar nach jeder Spalte.",
     "page.vergleich.ogTitle": "Vergleich · Peptide Compass",
     "page.vergleich.ogDescription": "Alle Anbieter im Vergleich: Score, Preis pro mg, Lieferzeit, Rabatt.",
 
@@ -48,6 +48,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.vergleich.coaExtern": "Extern",
     "page.vergleich.coaIntern": "Intern",
+    "page.vergleich.coaNone": "Keine öffentlichen CoAs",
     "page.vergleich.versandRange": "{min}–{max} Tage",
     "page.vergleich.rabattNone": "keiner",
     "page.vergleich.actionVisitVendor": "Zum Anbieter"
@@ -55,7 +56,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("en", {
     "page.vergleich.title": "Compare · Peptide Compass",
-    "page.vergleich.metaDescription": "All 8 peptide vendors compared side by side: score, price per milligram, delivery time, and discount codes, sortable by any column.",
+    "page.vergleich.metaDescription": "All 24 peptide vendors compared side by side: score, price per milligram, delivery time, and discount codes, sortable by any column.",
     "page.vergleich.ogTitle": "Compare · Peptide Compass",
     "page.vergleich.ogDescription": "All vendors compared: score, price per mg, delivery time, discount.",
 
@@ -89,6 +90,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.vergleich.coaExtern": "External",
     "page.vergleich.coaIntern": "In-house",
+    "page.vergleich.coaNone": "No public CoAs",
     "page.vergleich.versandRange": "{min}–{max} days",
     "page.vergleich.rabattNone": "none",
     "page.vergleich.actionVisitVendor": "Visit vendor"

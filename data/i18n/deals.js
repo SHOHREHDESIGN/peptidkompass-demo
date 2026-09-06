@@ -23,7 +23,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.deals.emptyState": "Aktuell sind keine Rabattcodes hinterlegt. Schau später wieder vorbei.",
 
     "page.deals.howTitle": "So funktionieren die Codes",
-    "page.deals.howBody": "Codes können jederzeit vom Anbieter geändert oder beendet werden. Wir aktualisieren die Demo-Daten regelmäßig, eine Garantie für Gültigkeit im Einzelfall geben wir nicht. Beim Anbieter selbst siehst du den aktuellen Stand vor dem Kauf.",
+    "page.deals.howBody": "Codes können jederzeit vom Anbieter geändert oder beendet werden. Wir aktualisieren die Angaben regelmäßig, eine Garantie für Gültigkeit im Einzelfall geben wir nicht. Beim Anbieter selbst siehst du den aktuellen Stand vor dem Kauf.",
     "page.deals.affiliateHint": "Links mit dem Hinweis \"Anzeige\" sind Affiliate-Links. Kaufst du darüber, erhalten wir unter Umständen eine Provision, für dich bleibt der Preis gleich.",
 
     "page.deals.copyButton": "Code kopieren",
@@ -44,7 +44,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.deals.emptyState": "No discount codes right now. Check back later.",
 
     "page.deals.howTitle": "How the codes work",
-    "page.deals.howBody": "Vendors can change or end a code at any time. We update the demo data regularly, but we cannot guarantee validity in any single case. Check the current status at the vendor before you buy.",
+    "page.deals.howBody": "Vendors can change or end a code at any time. We update the listings regularly, but we cannot guarantee validity in any single case. Check the current status at the vendor before you buy.",
     "page.deals.affiliateHint": "Links marked \"Ad\" are affiliate links. If you buy through one, we may earn a commission at no extra cost to you.",
 
     "page.deals.copyButton": "Copy code",

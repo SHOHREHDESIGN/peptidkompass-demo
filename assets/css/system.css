@@ -800,6 +800,11 @@ a.card:hover, .card.is-interactive:hover{
   background:var(--surface); color:var(--text-secondary);
   border:1px solid var(--line); white-space:nowrap;
 }
+/* .pill{display:inline-flex} (author, normal) schlägt sonst die UA-Regel
+   [hidden]{display:none} (gleiche Spezifität, Author-Origin gewinnt) - ohne
+   diese Zeile bleibt ein .pill-Element mit [hidden] sichtbar (gefunden bei
+   #vendor-demo-pill, anbieter/detail.html, v2 "echte Anbieter" 06.09.). */
+.pill[hidden]{ display:none; }
 .pill-ok{ background:var(--ok-bg); color:var(--pill-ok-text); border-color:transparent; }
 .pill-warn{ background:var(--warn-bg); color:var(--warn); border-color:transparent; }
 .pill-info{ background:var(--info-bg); color:var(--pill-info-text); border-color:transparent; }
@@ -1167,6 +1172,7 @@ a.card:hover, .card.is-interactive:hover{
 .score-band-good{ color:var(--ok); }
 .score-band-mid{ color:var(--info); }
 .score-band-low{ color:var(--score-low, #a8453a); } /* eigene Farbe, nicht der Deal-Akzent */
+.score-band-na{ color:var(--text-secondary); } /* kein Score (data/SCHEMA.md v2, null != schlecht) */
 
 /* Vendor-Brand: 3px Farbrand oben, gesetzt über --brand (inline auf dem
    Karten-Wrapper). Fehlt vendor.brand, bleibt --brand undefiniert : Fallback
@@ -1533,5 +1539,5 @@ a.card:hover, .card.is-interactive:hover{
 }
 .sticky-code-bar-close:hover{ background:var(--surface); }
 
-@media (max-width:640px){ .sticky-code-bar{ display:flex; } }
+@media (max-width:640px){ .sticky-code-bar{ display:flex; } .sticky-code-bar[hidden]{ display:none; } }
 @media (prefers-reduced-motion: reduce){ .sticky-code-bar{ transition:none; } }

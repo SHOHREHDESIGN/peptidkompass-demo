@@ -83,7 +83,8 @@
         <div>
           <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:var(--sp-2);">
             <span class="pill" id="vendor-land-pill">DE</span>
-            <span class="pill pill-info" data-i18n="page.anbieter-detail.demoPill">Demo-Daten</span>
+            <span class="pill pill-info" id="vendor-demo-pill" data-i18n="page.anbieter-detail.demoPill" hidden>Demo-Daten</span>
+            <span class="pill pill-info" id="vendor-datenbasis-pill"></span>
           </div>
           <!-- Logo (40px, brand-logo--detail) trägt jetzt den Markennamen visuell;
                H1 bleibt <h1> für SEO, aber optisch auf .h2-Größe reduziert statt
@@ -188,6 +189,15 @@
           <ul id="schwaechen-list" style="margin:var(--sp-1) 0 0; padding-left:1.1em; color:var(--text-secondary); font-size:var(--fs-small);"></ul>
         </div>
       </div>
+    </section>
+
+    <!-- AUFFÄLLIGKEITEN (roteFlaggen, data/SCHEMA.md v2): Faktensätze mit
+         Stand-Datum, nie als Meinung/Unterstellung formuliert. -->
+    <section class="section container reveal" id="flags-section">
+      <p class="eyebrow" data-i18n="page.anbieter-detail.flagsEyebrow">Sorgfaltspflicht</p>
+      <h2 class="section-title" id="flags-title">Auffälligkeiten</h2>
+      <ul id="flags-list" style="margin:var(--sp-1) 0 0; padding-left:1.1em; color:var(--text-secondary); font-size:var(--fs-small);"></ul>
+      <p class="text-small muted" id="flags-empty" hidden data-i18n="page.anbieter-detail.flagsEmpty">Keine Auffälligkeiten in unserer Recherche vom 06.09.2026 festgestellt.</p>
     </section>
 
     <!-- PROOF: Zitat-Karten dieses Anbieters (versteckt sich selbst ohne
@@ -311,7 +321,7 @@
       var ogTitleEl = document.getElementById("og-title");
       if (ogTitleEl) ogTitleEl.setAttribute("content", vendor.name + " · Peptide Compass");
       var descEl = document.getElementById("page-description");
-      if (descEl) descEl.setAttribute("content", PK.tx(vendor, "kurz") + " Score " + gesamt + "/100.");
+      if (descEl) descEl.setAttribute("content", PK.tx(vendor, "kurz") + (typeof gesamt === "number" ? " Score " + gesamt + "/100." : ""));
 
       // Banner-Bild: mol_<slug> des ersten Produkts des Anbieters statt des
       // generischen sec_vendors.jpg-Grids (Fix-Runde 2, Befund 4/Punkt 2).
@@ -343,13 +353,30 @@
 
       document.getElementById("vendor-land-pill").textContent = PK.tEnum("land", vendor.land) || "";
       document.getElementById("vendor-name").textContent = vendor.name || "";
-      document.getElementById("vendor-subhead").textContent = PK.t("page.anbieter-detail.subheadTemplate", { land: PK.tEnum("land", vendor.land), score: PK.byNum(gesamt) });
+      document.getElementById("vendor-subhead").textContent = PK.t("page.anbieter-detail.subheadTemplate", { land: PK.tEnum("land", vendor.land), score: typeof gesamt === "number" ? PK.byNum(gesamt) : PK.t("global.na") });
+
+      // Demo-Pill nur zeigen, wenn dieser einzelne Vendor tatsächlich demo:true
+      // ist (data/SCHEMA.md v2: die 24 echten Anbieter sind demo:false; ein
+      // pauschales "Demo-Daten" auf einem echten Anbieter wäre falsch).
+      var demoPillEl = document.getElementById("vendor-demo-pill");
+      if (demoPillEl) demoPillEl.hidden = vendor.demo !== true;
+
+      // Datenbasis-Pill: "Score aus n von 5 Kriterien"
+      var datenbasisPillEl = document.getElementById("vendor-datenbasis-pill");
+      if (datenbasisPillEl) {
+        if (typeof vendor.datenbasis === "number") {
+          datenbasisPillEl.hidden = false;
+          datenbasisPillEl.textContent = PK.t("global.vendorCard.datenbasis", { n: vendor.datenbasis });
+        } else {
+          datenbasisPillEl.hidden = true;
+        }
+      }
 
       var ring = document.getElementById("vendor-score-ring");
-      ring.style.setProperty("--pct", String(gesamt));
+      ring.style.setProperty("--pct", String(typeof gesamt === "number" ? gesamt : 0));
       var scoreValEl = document.getElementById("vendor-score-value");
       scoreValEl.className = "score-ring-value score-band-" + PK.scoreBand(gesamt);
-      scoreValEl.textContent = PK.byNum(gesamt);
+      scoreValEl.textContent = typeof gesamt === "number" ? PK.byNum(gesamt) : PK.t("global.na");
 
       var cta = document.getElementById("vendor-cta");
       cta.href = PK.safeUrl(vendor.affiliateUrl);
@@ -366,50 +393,69 @@
       breakdown.appendChild(PK.renderScoreBar(PK.t("page.anbieter-detail.scoreLabelSortiment"), s.sortiment));
       breakdown.appendChild(PK.renderScoreBar(PK.t("page.anbieter-detail.scoreLabelPreis"), s.preis));
 
-      // Rechtsrahmen-Checkliste
+      // Rechtsrahmen-Checkliste. Ein Feld ist entweder true (ok), false
+      // (warn) ODER null (data/SCHEMA.md v2, nicht ermittelt) -> neutrale
+      // Pill "nicht geprüft" statt fälschlich als "warn" gewertet zu werden.
       var rr = vendor.rechtsrahmen || {};
       var pillsEl = document.getElementById("rechtsrahmen-pills");
       pillsEl.textContent = "";
-      function addPill(text, ok) {
+      function addPill(yesText, noText, value) {
         var span = document.createElement("span");
-        span.className = "pill " + (ok ? "pill-ok" : "pill-warn");
-        span.textContent = text;
+        if (value === true) { span.className = "pill pill-ok"; span.textContent = yesText; }
+        else if (value === false) { span.className = "pill pill-warn"; span.textContent = noText; }
+        else { span.className = "pill pill-info"; span.textContent = PK.t("global.legal.notChecked"); }
         pillsEl.appendChild(span);
       }
-      addPill(rr.altersgate ? PK.t("page.anbieter-detail.pillAltersgateYes") : PK.t("page.anbieter-detail.pillAltersgateNo"), !!rr.altersgate);
-      addPill(rr.ruo ? PK.t("page.anbieter-detail.pillRuoYes") : PK.t("page.anbieter-detail.pillRuoNo"), !!rr.ruo);
-      addPill(rr.impressum ? PK.t("page.anbieter-detail.pillImpressumYes") : PK.t("page.anbieter-detail.pillImpressumNo"), !!rr.impressum);
-      if (rr.heilversprechen === true) {
-        addPill(PK.t("page.anbieter-detail.pillHeilversprechenYes"), false);
-      } else {
-        addPill(PK.t("page.anbieter-detail.pillHeilversprechenNo"), true);
-      }
+      addPill(PK.t("page.anbieter-detail.pillAltersgateYes"), PK.t("page.anbieter-detail.pillAltersgateNo"), rr.altersgate);
+      addPill(PK.t("page.anbieter-detail.pillRuoYes"), PK.t("page.anbieter-detail.pillRuoNo"), rr.ruo);
+      addPill(PK.t("page.anbieter-detail.pillImpressumYes"), PK.t("page.anbieter-detail.pillImpressumNo"), rr.impressum);
+      // heilversprechen ist in v2 immer null (keine Datenbasis, siehe
+      // data/SCHEMA.md) -> immer "nicht geprüft", nie stillschweigend "ok".
+      addPill(PK.t("page.anbieter-detail.pillHeilversprechenNo"), PK.t("page.anbieter-detail.pillHeilversprechenYes"), rr.heilversprechen === true ? false : (rr.heilversprechen === false ? true : null));
 
-      // CoA-Block
+      // CoA-Block. coa.anzahl ist in v2 durchgehend null (keine belegte
+      // Gesamtzahl) -> Headline nennt stattdessen den öffentlich/extern-
+      // Status, nie eine erfundene Zahl.
       var coa = vendor.coa || {};
-      document.getElementById("coa-headline").textContent = PK.t("page.anbieter-detail.coaHeadlineTemplate", { n: PK.byNum(coa.anzahl || 0), datum: coa.letztesDatum || "–" });
+      var coaStatusKey = coa.oeffentlich === true
+        ? (coa.extern === true ? "page.anbieter-detail.coaHeadlinePublicExtern" : "page.anbieter-detail.coaHeadlinePublic")
+        : (coa.oeffentlich === false ? "page.anbieter-detail.coaHeadlineNone" : "page.anbieter-detail.coaHeadlineUnknown");
+      document.getElementById("coa-headline").textContent = PK.t(coaStatusKey);
       document.getElementById("coa-body").textContent = PK.t("page.anbieter-detail.coaBodyTemplate", {
-        status: coa.extern ? PK.t("page.anbieter-detail.yes") : PK.t("page.anbieter-detail.no"),
-        labor: coa.labor || "–"
+        status: coa.extern === true ? PK.t("page.anbieter-detail.yes") : (coa.extern === false ? PK.t("page.anbieter-detail.no") : PK.t("global.na")),
+        labor: coa.labor || PK.t("global.na")
       });
 
-      // Versand + Zahlung
+      // Versand + Zahlung. Fehlende Werte -> "nicht ermittelbar" statt "–".
       var vs = vendor.versand || {};
-      var minStr = typeof vs.tageMin === "number" ? PK.byNum(vs.tageMin) : "–";
-      var maxStr = typeof vs.tageMax === "number" ? PK.byNum(vs.tageMax) : "–";
-      var laenderStr = (vs.laender || []).map(function (l) { return PK.tEnum("land", l); }).join(", ") || "–";
-      var versandText = PK.t("page.anbieter-detail.versandTemplate", { min: minStr, max: maxStr, laender: laenderStr });
+      var minStr = typeof vs.tageMin === "number" ? PK.byNum(vs.tageMin) : null;
+      var maxStr = typeof vs.tageMax === "number" ? PK.byNum(vs.tageMax) : null;
+      var laenderStr = (vs.laender || []).map(function (l) { return PK.tEnum("land", l); }).join(", ");
+      var versandText;
+      if (minStr !== null && maxStr !== null) {
+        versandText = PK.t("page.anbieter-detail.versandTemplate", { min: minStr, max: maxStr, laender: laenderStr || PK.t("global.na") });
+      } else {
+        versandText = PK.t("page.anbieter-detail.versandUnknownTemplate", { laender: laenderStr || PK.t("global.na") });
+      }
       if (typeof vs.kostenlosAb === "number") versandText += PK.t("page.anbieter-detail.versandKostenlosAb", { betrag: PK.byNum(vs.kostenlosAb) });
       document.getElementById("versand-body").textContent = versandText;
 
       var zahlungEl = document.getElementById("zahlung-pills");
       zahlungEl.textContent = "";
-      (vendor.zahlung || []).forEach(function (z) {
-        var span = document.createElement("span");
-        span.className = "pill";
-        span.textContent = PK.tEnum("zahlung", z);
-        zahlungEl.appendChild(span);
-      });
+      var zahlungListe = Array.isArray(vendor.zahlung) ? vendor.zahlung : [];
+      if (!zahlungListe.length) {
+        var naSpan = document.createElement("span");
+        naSpan.className = "pill";
+        naSpan.textContent = PK.t("global.na");
+        zahlungEl.appendChild(naSpan);
+      } else {
+        zahlungListe.forEach(function (z) {
+          var span = document.createElement("span");
+          span.className = "pill";
+          span.textContent = PK.tEnum("zahlung", z);
+          zahlungEl.appendChild(span);
+        });
+      }
 
       // Rabatt-Code-Box
       if (vendor.rabatt) {
@@ -421,9 +467,19 @@
         document.getElementById("rabatt-cta-badge").textContent = badgeText;
       }
 
-      // Produktliste
+      // Produktliste. Keine Produktdaten (data/SCHEMA.md v2, produkte:[])
+      // -> ein Hinweis statt einer leeren, unerklärten Tabelle.
       var tbody = document.getElementById("produkt-tbody");
       tbody.textContent = "";
+      if (!(vendor.produkte || []).length) {
+        var emptyRow = document.createElement("tr");
+        var emptyTd = document.createElement("td");
+        emptyTd.colSpan = 5;
+        emptyTd.className = "text-small muted";
+        emptyTd.textContent = PK.t("page.anbieter-detail.produkteEmpty");
+        emptyRow.appendChild(emptyTd);
+        tbody.appendChild(emptyRow);
+      }
       (vendor.produkte || []).forEach(function (p) {
         var peptide = PK.peptideBySlug(p.peptideSlug);
         var name = peptide ? peptide.name : p.peptideSlug;
@@ -487,6 +543,26 @@
         li.textContent = t;
         schwaechenEl.appendChild(li);
       });
+
+      // Auffälligkeiten (roteFlaggen, data/SCHEMA.md v2): reine Faktensätze
+      // mit Stand-Datum aus der Recherche, unverändert/wortgetreu übersetzt.
+      document.getElementById("flags-title").textContent = PK.t("global.flags.title");
+      var flagsListEl = document.getElementById("flags-list");
+      var flagsEmptyEl = document.getElementById("flags-empty");
+      flagsListEl.textContent = "";
+      var flags = PK.tx(vendor, "roteFlaggen") || [];
+      if (!flags.length) {
+        flagsListEl.hidden = true;
+        flagsEmptyEl.hidden = false;
+      } else {
+        flagsListEl.hidden = false;
+        flagsEmptyEl.hidden = true;
+        flags.forEach(function (t) {
+          var li = document.createElement("li");
+          li.textContent = t;
+          flagsListEl.appendChild(li);
+        });
+      }
 
       // Zugehörige Chargen
       var batches = Array.isArray(window.PK.batches) ? window.PK.batches : [];

@@ -348,10 +348,34 @@
     var input = document.getElementById("batch-input");
     var resultEl = document.getElementById("batch-result");
 
+    /**
+     * buildNoBatchesNotice()
+     * data/SCHEMA.md v2: window.PK.batches ist leer (echte Anbieter, noch
+     * keine Chargen-CoAs recherchiert). Zeigt das VOR jeder Suche proaktiv
+     * an, statt die Nutzerin stumm ins Leere suchen zu lassen.
+     */
+    function buildNoBatchesNotice() {
+      var card = document.createElement("div");
+      card.className = "card";
+      var title = document.createElement("p");
+      title.className = "card-title";
+      title.textContent = PK.t("page.charge-pruefen.noBatchesYetTitle");
+      var body = document.createElement("p");
+      body.className = "card-body";
+      body.textContent = PK.t("page.charge-pruefen.noBatchesYetBody");
+      card.appendChild(title);
+      card.appendChild(body);
+      return card;
+    }
+
     function runSearch() {
       var query = input.value.trim();
       resultEl.textContent = "";
-      if (!query) return;
+      var batches = Array.isArray(window.PK.batches) ? window.PK.batches : [];
+      if (!query) {
+        if (!batches.length) resultEl.appendChild(buildNoBatchesNotice());
+        return;
+      }
       var batch = findBatch(query);
       resultEl.appendChild(batch ? renderHit(batch) : renderMiss());
     }
@@ -364,6 +388,10 @@
     // Sprachwechsel: Treffer-/Kein-Treffer-Card neu rendern, Eingabewert
     // (Chargennummer im Suchfeld) bleibt erhalten (Pflicht-Muster, siehe README).
     document.addEventListener("pk:langchange", runSearch);
+
+    // Initial: proaktiver Hinweis, falls die Chargen-Datenbank leer ist
+    // (data/SCHEMA.md v2), statt erst nach der ersten Suche zu reagieren.
+    runSearch();
   })();
 </script>
 </body>

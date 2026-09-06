@@ -57,16 +57,28 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     /* Sprachumschalter */
     "global.langToggle.ariaLabel": "Sprache wählen",
 
-    /* Demo-Banner (PK.initDemoBanner) */
-    "global.demoBanner.label": "Demo",
-    "global.demoBanner.text": "Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.",
+    /* Demo-Banner (PK.initDemoBanner) : v2 "echte Anbieter" (06.09.) -
+       site.demo bleibt true bis Vic freigibt, Text macht klar, dass die
+       ANBIETER real sind (keine Demo-Daten), aber Stand/Vollständigkeit
+       vorläufig ist. */
+    "global.demoBanner.label": "Vorabversion",
+    "global.demoBanner.text": "Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.",
 
     /* Anbieter-Karte (PK.renderVendorCard) */
     "global.vendorCard.details": "Details",
     "global.vendorCard.shopLink": "Zum Anbieter",
     "global.vendorCard.ruo": "RUO",
     "global.vendorCard.coaChecked": "{n} CoAs geprüft",
+    "global.vendorCard.coaPublic": "CoA öffentlich",
+    "global.vendorCard.datenbasis": "Score aus {n} von 5 Kriterien",
     "global.badge.ad": "Anzeige",
+
+    /* Nicht ermittelbare Werte (data/SCHEMA.md v2): NIE als 0, NIE als
+       schlechter Score, immer dieser neutrale Platzhalter. */
+    "global.na": "nicht ermittelbar",
+    "global.legal.notChecked": "nicht geprüft",
+    "global.produkte.pending": "Produktdaten folgen",
+    "global.flags.title": "Auffälligkeiten (Stand 06.09.2026)",
 
     /* Vendor-Brand-Logo (PK.renderLogo, Runde "Leben und Conversion" 06.09.):
        hier zusätzlich zu data/i18n/conversion.js definiert (Vertrag,
@@ -111,11 +123,30 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.enum.coaStatus.shop-eigen": "shop-eigen",
     "global.enum.coaStatus.fehlt": "fehlt",
 
-    /* Enum: vendor.zahlung (data/SCHEMA.md, 4 Werte) */
+    /* Enum: vendor.zahlung (data/SCHEMA.md v1, 4 Werte + v2-Ergänzungen aus
+       der echten Faktenbasis, 06.09.) */
     "global.enum.zahlung.Karte": "Karte",
     "global.enum.zahlung.SEPA": "SEPA",
     "global.enum.zahlung.PayPal": "PayPal",
-    "global.enum.zahlung.Krypto": "Krypto"
+    "global.enum.zahlung.Krypto": "Krypto",
+    "global.enum.zahlung.Überweisung": "Überweisung",
+    "global.enum.zahlung.SEPA-Vorkasse": "SEPA-Vorkasse",
+    "global.enum.zahlung.Vorkasse": "Vorkasse",
+    "global.enum.zahlung.Zelle": "Zelle",
+    "global.enum.zahlung.ACH": "ACH",
+    "global.enum.zahlung.Apple Pay": "Apple Pay",
+    "global.enum.zahlung.Cash App": "Cash App",
+    "global.enum.zahlung.Venmo": "Venmo",
+
+    /* Enum: vendor.versand.laender v2 - zusätzliche Versand-Regionen aus der
+       echten Faktenbasis (eigene Werteliste, siehe data/SCHEMA.md v2), über
+       denselben "land"-Enum-Namespace gelesen (PK.tEnum("land", x)) */
+    "global.enum.land.US": "US",
+    "global.enum.land.UK": "UK",
+    "global.enum.land.CA": "CA",
+    "global.enum.land.AU": "AU",
+    "global.enum.land.NZ": "NZ",
+    "global.enum.land.ASIA": "Asien"
   });
 
   i18n.merge("en", {
@@ -137,14 +168,21 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "global.langToggle.ariaLabel": "Choose language",
 
-    "global.demoBanner.label": "Demo",
-    "global.demoBanner.text": "Demo data. All vendors, prices, and codes on this page are placeholders.",
+    "global.demoBanner.label": "Preview",
+    "global.demoBanner.text": "Preview version: data as of Sep 6, 2026, provided without guarantee.",
 
     "global.vendorCard.details": "Details",
     "global.vendorCard.shopLink": "Visit vendor",
     "global.vendorCard.ruo": "RUO",
     "global.vendorCard.coaChecked": "{n} CoAs verified",
+    "global.vendorCard.coaPublic": "Public CoA",
+    "global.vendorCard.datenbasis": "Score from {n} of 5 criteria",
     "global.badge.ad": "Ad",
+
+    "global.na": "not available",
+    "global.legal.notChecked": "not checked",
+    "global.produkte.pending": "Product data coming soon",
+    "global.flags.title": "Notable items (as of Sep 6, 2026)",
 
     "global.brand.logoAlt": "{name} logo",
 
@@ -179,7 +217,22 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.enum.zahlung.Karte": "Card",
     "global.enum.zahlung.SEPA": "SEPA",
     "global.enum.zahlung.PayPal": "PayPal",
-    "global.enum.zahlung.Krypto": "Crypto"
+    "global.enum.zahlung.Krypto": "Crypto",
+    "global.enum.zahlung.Überweisung": "Bank transfer",
+    "global.enum.zahlung.SEPA-Vorkasse": "SEPA prepayment",
+    "global.enum.zahlung.Vorkasse": "Prepayment",
+    "global.enum.zahlung.Zelle": "Zelle",
+    "global.enum.zahlung.ACH": "ACH",
+    "global.enum.zahlung.Apple Pay": "Apple Pay",
+    "global.enum.zahlung.Cash App": "Cash App",
+    "global.enum.zahlung.Venmo": "Venmo",
+
+    "global.enum.land.US": "US",
+    "global.enum.land.UK": "UK",
+    "global.enum.land.CA": "CA",
+    "global.enum.land.AU": "AU",
+    "global.enum.land.NZ": "NZ",
+    "global.enum.land.ASIA": "Asia"
   });
 
 })(window.PK.i18n);

@@ -51,6 +51,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.anbieter-detail.coaEyebrow": "Labor-Nachweise",
     "page.anbieter-detail.coaHeadlineTemplate": "{n} CoAs, zuletzt geprüft am {datum}",
+    "page.anbieter-detail.coaHeadlinePublicExtern": "CoAs öffentlich einsehbar, extern geprüft",
+    "page.anbieter-detail.coaHeadlinePublic": "CoAs öffentlich einsehbar",
+    "page.anbieter-detail.coaHeadlineNone": "Keine öffentlich einsehbaren CoAs gefunden",
+    "page.anbieter-detail.coaHeadlineUnknown": "CoA-Status nicht ermittelbar",
     "page.anbieter-detail.coaBodyTemplate": "Extern verifiziert: {status}. Prüflabor: {labor}.",
     "page.anbieter-detail.yes": "Ja",
     "page.anbieter-detail.no": "Nein",
@@ -58,6 +62,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.versandEyebrow": "Versand",
     "page.anbieter-detail.versandCardLabel": "Versand",
     "page.anbieter-detail.versandTemplate": "{min}–{max} Tage, Lieferung nach {laender}.",
+    "page.anbieter-detail.versandUnknownTemplate": "Versandzeit nicht ermittelbar. Regionen laut Website: {laender}.",
     "page.anbieter-detail.versandKostenlosAb": " Kostenlos ab {betrag} €.",
     "page.anbieter-detail.zahlungLabel": "Zahlung",
 
@@ -71,9 +76,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.tableHeadPreis": "Preis",
     "page.anbieter-detail.tableHeadPreisProMg": "Preis/mg",
     "page.anbieter-detail.tableHeadAktion": "Aktion",
+    "page.anbieter-detail.produkteEmpty": "Produktdaten folgen. Wir haben für diesen Anbieter noch kein Sortiment mit Preisen erfasst.",
 
     "page.anbieter-detail.staerkenTitle": "Stärken",
     "page.anbieter-detail.schwaechenTitle": "Schwächen",
+
+    "page.anbieter-detail.flagsEyebrow": "Sorgfaltspflicht",
+    "page.anbieter-detail.flagsEmpty": "Keine Auffälligkeiten in unserer Recherche vom 06.09.2026 festgestellt.",
 
     "page.anbieter-detail.chargenEyebrow": "Prüfhistorie",
     "page.anbieter-detail.chargenTitle": "Zugehörige Chargen",
@@ -83,7 +92,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.chargenHeadReinheit": "Reinheit",
     "page.anbieter-detail.chargenHeadLabor": "Labor",
     "page.anbieter-detail.chargenHeadStatus": "Status",
-    "page.anbieter-detail.chargenEmpty": "Für diesen Anbieter liegen noch keine Chargen in unserer Demo-Datenbank vor.",
+    "page.anbieter-detail.chargenEmpty": "Für diesen Anbieter liegen noch keine Chargen in unserer Datenbank vor.",
 
     /* Runde "Leben und Conversion" (06.09.) */
     "page.anbieter-detail.proofEyebrow": "Erfahrungen",
@@ -132,6 +141,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.anbieter-detail.coaEyebrow": "Lab evidence",
     "page.anbieter-detail.coaHeadlineTemplate": "{n} CoAs, last checked on {datum}",
+    "page.anbieter-detail.coaHeadlinePublicExtern": "CoAs publicly available, third-party tested",
+    "page.anbieter-detail.coaHeadlinePublic": "CoAs publicly available",
+    "page.anbieter-detail.coaHeadlineNone": "No publicly available CoAs found",
+    "page.anbieter-detail.coaHeadlineUnknown": "CoA status not ascertainable",
     "page.anbieter-detail.coaBodyTemplate": "Third-party verified: {status}. Testing lab: {labor}.",
     "page.anbieter-detail.yes": "Yes",
     "page.anbieter-detail.no": "No",
@@ -139,6 +152,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.versandEyebrow": "Shipping",
     "page.anbieter-detail.versandCardLabel": "Shipping",
     "page.anbieter-detail.versandTemplate": "{min}–{max} days, delivery to {laender}.",
+    "page.anbieter-detail.versandUnknownTemplate": "Delivery time not ascertainable. Regions per the website: {laender}.",
     "page.anbieter-detail.versandKostenlosAb": " Free from €{betrag}.",
     "page.anbieter-detail.zahlungLabel": "Payment",
 
@@ -152,9 +166,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.tableHeadPreis": "Price",
     "page.anbieter-detail.tableHeadPreisProMg": "Price/mg",
     "page.anbieter-detail.tableHeadAktion": "Action",
+    "page.anbieter-detail.produkteEmpty": "Product data coming soon. We haven't recorded a priced product range for this vendor yet.",
 
     "page.anbieter-detail.staerkenTitle": "Strengths",
     "page.anbieter-detail.schwaechenTitle": "Weaknesses",
+
+    "page.anbieter-detail.flagsEyebrow": "Due diligence",
+    "page.anbieter-detail.flagsEmpty": "No notable items found in our review as of Sep 6, 2026.",
 
     "page.anbieter-detail.chargenEyebrow": "Test history",
     "page.anbieter-detail.chargenTitle": "Related batches",
@@ -164,7 +182,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.chargenHeadReinheit": "Purity",
     "page.anbieter-detail.chargenHeadLabor": "Lab",
     "page.anbieter-detail.chargenHeadStatus": "Status",
-    "page.anbieter-detail.chargenEmpty": "No batches for this vendor yet in our demo database.",
+    "page.anbieter-detail.chargenEmpty": "No batches for this vendor yet in our database.",
 
     "page.anbieter-detail.proofEyebrow": "Experiences",
     "page.anbieter-detail.proofTitle": "What customers say about {name}",

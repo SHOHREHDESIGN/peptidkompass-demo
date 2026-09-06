@@ -28,7 +28,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.searchButton": "Suchen",
 
     "page.index.statVendorsLabel": "Anbieter geprüft",
-    "page.index.statCoasLabel": "CoAs geprüft",
+    "page.index.statCoasLabel": "Anbieter mit öffentlichen CoAs",
     "page.index.statScoreLabel": "Score-Durchschnitt",
 
     "page.index.featuredEyebrow": "Empfehlung",
@@ -76,7 +76,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.faq1Q": "Was ist Peptide Compass?",
     "page.index.faq1A": "Peptide Compass vergleicht Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Du siehst auf einen Blick, welcher Anbieter zu deinen Kriterien passt. Alle Bewertungen sind transparent nach unserer Methodik berechnet.",
     "page.index.faq2Q": "Sind das echte Anbieter?",
-    "page.index.faq2A": "Nein, aktuell zeigt Peptide Compass acht fiktive Demo-Anbieter. Namen, Scores, Rabattcodes und Chargen sind Platzhalter. Echte Anbieter-Daten trägt Vic vor dem Live-Gang ein, klar als DEMO markiert bis dahin.",
+    "page.index.faq2A": "Ja, seit dem 06.09.2026 zeigt Peptide Compass 24 recherchierte, reale Anbieter. Die Scores beruhen nur auf öffentlich belegten Angaben (Impressum, CoAs, Versandbedingungen); wo etwas nicht ermittelbar war, steht \"nicht ermittelbar\" statt einer erfundenen Zahl. Produktdaten und Rabattcodes sind noch nicht erfasst.",
     "page.index.faq3Q": "Was bedeutet das Label Anzeige?",
     "page.index.faq3A": "Jeder Link mit dem Hinweis \"Anzeige\" ist ein Affiliate-Link. Klickst du drauf und kaufst, erhalten wir unter Umständen eine Provision, ohne Mehrkosten für dich. Details dazu stehen auf der Affiliate-Hinweis-Seite.",
     "page.index.faq4Q": "Sind die Substanzen für Menschen zugelassen?",
@@ -99,7 +99,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.searchButton": "Search",
 
     "page.index.statVendorsLabel": "vendors checked",
-    "page.index.statCoasLabel": "CoAs verified",
+    "page.index.statCoasLabel": "vendors with public CoAs",
     "page.index.statScoreLabel": "average score",
 
     "page.index.featuredEyebrow": "Featured",
@@ -144,7 +144,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.faq1Q": "What is Peptide Compass?",
     "page.index.faq1A": "Peptide Compass compares peptide vendors by lab quality, legal framework, shipping, range, and price. You see at a glance which vendor matches your criteria. Every rating is calculated transparently per our methodology.",
     "page.index.faq2Q": "Are these real vendors?",
-    "page.index.faq2A": "No, Peptide Compass currently shows eight fictional demo vendors. Names, scores, discount codes, and batches are placeholders. Vic will enter real vendor data before launch, clearly marked as DEMO until then.",
+    "page.index.faq2A": "Yes, as of Sep 6, 2026 Peptide Compass shows 24 researched, real vendors. Scores are based only on publicly verifiable facts (legal notice, CoAs, shipping terms); wherever something couldn't be ascertained, it says \"not available\" instead of a made-up number. Product data and discount codes haven't been collected yet.",
     "page.index.faq3Q": "What does the Ad label mean?",
     "page.index.faq3A": "Any link marked \"Ad\" is an affiliate link. If you click it and buy, we may earn a commission at no extra cost to you. Details are on the affiliate disclosure page.",
     "page.index.faq4Q": "Are these substances approved for human use?",

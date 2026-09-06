@@ -283,18 +283,47 @@
   /**
    * PK.computeScoreTotal(score)
    * Berechnet den gewichteten Gesamt-Score (0-100, gerundet) aus einem
-   * score-Objekt { labor, recht, lieferung, sortiment, preis }.
+   * score-Objekt { labor, recht, lieferung, sortiment, preis }. Kriterien mit
+   * Wert null/undefined gelten als NICHT belegt und fließen nicht ein; die
+   * PK.SCORE_WEIGHTS der belegten Kriterien werden auf Summe 1 renormiert
+   * (data/SCHEMA.md, Erweiterung v2 "Score-Regel"). Sind ALLE Kriterien
+   * unbelegt, liefert die Funktion null (kein Score, nicht 0) statt einer
+   * erfundenen Zahl. Bei vollständig belegtem score-Objekt (alle 5 Kriterien
+   * Zahlen) ist das Ergebnis identisch zur reinen v1-Gewichtungsformel.
    * Nutzt PK.SCORE_WEIGHTS, Gewichte NIE hier oder anderswo duplizieren.
    */
   PK.computeScoreTotal = function (score) {
-    if (!score || typeof score !== "object") return 0;
+    if (!score || typeof score !== "object") return null;
     var w = PK.SCORE_WEIGHTS;
     var total = 0;
+    var usedWeight = 0;
     Object.keys(w).forEach(function (key) {
-      var v = Number(score[key]);
-      if (isFinite(v)) total += v * w[key];
+      var v = score[key];
+      if (typeof v === "number" && isFinite(v)) {
+        total += v * w[key];
+        usedWeight += w[key];
+      }
     });
-    return Math.round(total);
+    if (usedWeight <= 0) return null;
+    return Math.round(total / usedWeight);
+  };
+
+  /**
+   * PK.computeDatenbasis(score)
+   * Zählt die belegten (nicht-null) Kriterien in einem score-Objekt (0-5).
+   * Rein informativ/für Validierung; die UI liest vendor.datenbasis primär
+   * direkt aus den Daten (data/SCHEMA.md v2), diese Funktion dient als
+   * Gegenprobe (data/validate.html, tests/selftest.html).
+   */
+  PK.computeDatenbasis = function (score) {
+    if (!score || typeof score !== "object") return 0;
+    var w = PK.SCORE_WEIGHTS;
+    var n = 0;
+    Object.keys(w).forEach(function (key) {
+      var v = score[key];
+      if (typeof v === "number" && isFinite(v)) n++;
+    });
+    return n;
   };
 
   /**
@@ -383,7 +412,7 @@
     var score = document.createElement("div");
     var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
     score.className = "vendor-card-score score-band-" + PK.scoreBand(gesamt);
-    score.textContent = PK.byNum(gesamt);
+    score.textContent = typeof gesamt === "number" ? PK.byNum(gesamt) : PK.t("global.na");
 
     head.appendChild(nameWrap);
     head.appendChild(score);
@@ -395,9 +424,17 @@
     }
     if (vendor.coa && vendor.coa.anzahl) {
       badges.appendChild(makePill(PK.t("global.vendorCard.coaChecked", { n: vendor.coa.anzahl }), "pill-info"));
+    } else if (vendor.coa && vendor.coa.oeffentlich === true) {
+      badges.appendChild(makePill(PK.t("global.vendorCard.coaPublic"), "pill-info"));
     }
     if (vendor.rabatt && vendor.rabatt.prozent) {
       badges.appendChild(makePill("-" + PK.byNum(vendor.rabatt.prozent) + "%", "pill-warn"));
+    }
+    // Datenbasis-Pill (data/SCHEMA.md v2): "Score aus n von 5 Kriterien",
+    // zeigt sichtbar, worauf der Gesamt-Score beruht (nie verschweigen,
+    // dass Sortiment/Preis mangels Produktdaten unbewertet sind).
+    if (typeof vendor.datenbasis === "number") {
+      badges.appendChild(makePill(PK.t("global.vendorCard.datenbasis", { n: vendor.datenbasis }), "pill-info"));
     }
 
     var actions = document.createElement("div");
@@ -440,15 +477,18 @@
   /**
    * PK.renderScoreBar(label, value, max)
    * Baut eine .score-bar-row als DOM-Node: Label · Track+Fill · Wert.
-   * max ist optional (Default 100).
+   * max ist optional (Default 100). value===null/undefined (Kriterium nicht
+   * belegt, data/SCHEMA.md v2): Fill bleibt bei 0%, Wert zeigt PK.t("global.na")
+   * statt "0" - eine fehlende Datenbasis ist kein schlechter Score.
    */
   PK.renderScoreBar = function (label, value, max) {
     var m = typeof max === "number" ? max : 100;
-    var v = Number(value) || 0;
-    var pct = m > 0 ? Math.max(0, Math.min(100, (v / m) * 100)) : 0;
+    var belegt = typeof value === "number" && isFinite(value);
+    var v = belegt ? value : 0;
+    var pct = belegt && m > 0 ? Math.max(0, Math.min(100, (v / m) * 100)) : 0;
 
     var row = document.createElement("div");
-    row.className = "score-bar-row";
+    row.className = "score-bar-row" + (belegt ? "" : " score-bar-row--na");
 
     var lbl = document.createElement("span");
     lbl.className = "score-bar-label";
@@ -466,8 +506,8 @@
     });
 
     var val = document.createElement("span");
-    val.className = "score-bar-value";
-    val.textContent = PK.byNum(v);
+    val.className = "score-bar-value" + (belegt ? "" : " score-band-na");
+    val.textContent = belegt ? PK.byNum(v) : PK.t("global.na");
 
     row.appendChild(lbl);
     row.appendChild(track);
@@ -1214,12 +1254,14 @@
   /**
    * PK.scoreBand(score)
    * Bandfarbe für eine Score-Zahl: >=80 "good" (grün), 60-79 "mid" (blau),
-   * <60 "low" (warm). Liefert nur das Suffix, Aufrufer setzt "score-band-"+x.
+   * <60 "low" (warm). null/undefined/NaN (kein Score, data/SCHEMA.md v2)
+   * liefert "na" (neutral, NIE "low" - fehlende Daten sind kein schlechter
+   * Score). Liefert nur das Suffix, Aufrufer setzt "score-band-"+x.
    */
   PK.scoreBand = function (score) {
-    var v = Number(score) || 0;
-    if (v >= 80) return "good";
-    if (v >= 60) return "mid";
+    if (typeof score !== "number" || !isFinite(score)) return "na";
+    if (score >= 80) return "good";
+    if (score >= 60) return "mid";
     return "low";
   };
 
@@ -1519,17 +1561,32 @@
       var w = currentWeights();
       var sum = Object.keys(w).reduce(function (s, k) { return s + w[k]; }, 0);
       var norm = sum > 0 ? w : PK.WEIGHTS_DEFAULT;
-      var normSum = sum > 0 ? sum : Object.keys(PK.WEIGHTS_DEFAULT).reduce(function (s, k) { return s + PK.WEIGHTS_DEFAULT[k]; }, 0);
 
       var vendors = Array.isArray(global.PK.vendors) ? global.PK.vendors : [];
+      // Pro Vendor NUR über dessen belegte Kriterien renormieren (data/
+      // SCHEMA.md v2, "Regler: nur bewertete Kriterien gewichten") - ein
+      // Vendor ohne Sortiment/Preis-Daten wird nicht mit s[crit]||0 auf 0
+      // abgestraft, sondern aus den Reglern seiner belegten Kriterien
+      // gerankt. Kein einziges belegtes Kriterium -> weighted=null.
       var ranked = vendors.map(function (v) {
         var s = v.score || {};
-        var weighted = 0;
+        var total = 0, usedWeight = 0;
         Object.keys(norm).forEach(function (crit) {
-          weighted += (Number(s[crit]) || 0) * (norm[crit] / normSum);
+          var val = s[crit];
+          if (typeof val === "number" && isFinite(val)) {
+            total += val * norm[crit];
+            usedWeight += norm[crit];
+          }
         });
-        return { vendor: v, weighted: weighted };
-      }).sort(function (a, b) { return b.weighted - a.weighted; });
+        return { vendor: v, weighted: usedWeight > 0 ? (total / usedWeight) : null };
+      }).sort(function (a, b) {
+        // null (kein bewertetes Kriterium) immer zuletzt, unabhängig von der
+        // sonstigen Sortierrichtung (data/SCHEMA.md v2).
+        if (a.weighted === null && b.weighted === null) return 0;
+        if (a.weighted === null) return 1;
+        if (b.weighted === null) return -1;
+        return b.weighted - a.weighted;
+      });
 
       // FLIP: alte Positionen der bestehenden Zeilen (Key = vendor.slug) messen.
       var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1556,7 +1613,7 @@
 
         var score = document.createElement("span");
         score.className = "weights-ranking-score score-band-" + PK.scoreBand(entry.weighted);
-        score.textContent = PK.byNum(Math.round(entry.weighted));
+        score.textContent = entry.weighted !== null ? PK.byNum(Math.round(entry.weighted)) : PK.t("global.na");
 
         row.appendChild(num);
         row.appendChild(name);
@@ -1732,8 +1789,11 @@
       container.appendChild(tile1);
     }
 
-    // Signal 2: CoAs der letzten 7 Tage vor updated
-    if (updated) {
+    // Signal 2: CoAs der letzten 7 Tage vor updated. Nur zeigen, wenn
+    // überhaupt Chargen-Daten vorliegen (data/SCHEMA.md v2: leeres
+    // window.PK.batches -> "0 CoAs geprüft" wäre eine falsche Aussage,
+    // richtig ist: Kachel ganz weglassen statt eine erfundene Null zeigen).
+    if (updated && batches.length) {
       var weekAgo = new Date(updated.getTime() - 7 * 86400000);
       var coasWeek = batches.filter(function (b) {
         if (!b.pruefdatum) return false;
@@ -1746,12 +1806,19 @@
     // Signal 3: Anbieter-Anzahl
     container.appendChild(buildTile(null, PK.t("page.index.freshVendorsChecked", { n: "{n}" }), vendors.length));
 
-    // Signal 4: Score-Durchschnitt
-    if (vendors.length) {
-      var scoreSum = vendors.reduce(function (sum, v) {
-        return sum + (typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score));
+    // Signal 4: Score-Durchschnitt NUR über bewertete Vendoren (gesamt
+    // !== null, data/SCHEMA.md v2). Keine bewerteten Vendoren -> Kachel
+    // weglassen statt einer erfundenen 0.
+    var scoredVendors = vendors.filter(function (v) {
+      var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+      return typeof g === "number";
+    });
+    if (scoredVendors.length) {
+      var scoreSum = scoredVendors.reduce(function (sum, v) {
+        var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+        return sum + g;
       }, 0);
-      var avg = Math.round(scoreSum / vendors.length);
+      var avg = Math.round(scoreSum / scoredVendors.length);
       container.appendChild(buildTile(null, PK.t("page.index.freshAvg", { n: "{n}" }), avg));
     }
 

@@ -2,362 +2,2017 @@ window.PK = window.PK || {};
 
 window.PK.vendors = [
   {
-    slug: "nordlicht-research",
-    name: "Nordlicht Research",
-    brand: { farbe: "#1B4F8C", logo: "assets/img/logos/nordlicht-research.svg" },
+    slug: "peptidwerk",
+    name: "Peptidwerk",
+    website: "https://www.pepwerk.com/",
+    rechtstraeger: null,
+    sitz: "Deutschland (laut Shop)",
     land: "DE",
-    gegruendet: 2019,
-    score: { labor: 95, recht: 92, lieferung: 88, sortiment: 85, preis: 78 },
-    gesamt: 88,
-    coa: { anzahl: 42, extern: true, letztesDatum: "2026-08-15", labor: "LabCheck Nord GmbH (DEMO)" },
-    reinheit: 99.4,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: false },
-    versand: { tageMin: 2, tageMax: 4, laender: ["DE", "AT", "CH", "EU"], kostenlosAb: 100 },
-    zahlung: ["Karte", "SEPA", "PayPal"],
-    rabatt: { code: "NORD10", prozent: 10 },
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 5, preisEur: 34.90 },
-      { peptideSlug: "tb-500", mg: 5, preisEur: 38.90 },
-      { peptideSlug: "cjc-1295", mg: 5, preisEur: 44.90 },
-      { peptideSlug: "ghk-cu", mg: 50, preisEur: 29.90 },
-      { peptideSlug: "epitalon", mg: 10, preisEur: 32.90 }
+    gegruendet: null,
+    brand: {
+      farbe: "#6C3FA6",
+      logo: "assets/img/logos/peptidwerk.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 100,
+      lieferung: 98,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 100,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "Janoshik Analytical (HPLC/LCMS)",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: null,
+      ruo: true,
+      impressum: null,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 1,
+      tageMax: 2,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "Überweisung"
     ],
-    preisProMg: 5.53,
-    affiliateUrl: "#DEMO",
-    kurz: "Norddeutscher Anbieter mit eigenem Prüflabor und schnellem Versand.",
-    kurz_en: "A northern German vendor with its own testing lab and fast shipping.",
-    staerken: [
-      "Externe Laborprüfung für fast alle Chargen",
-      "Schneller Versand innerhalb Europas",
-      "Breites Sortiment an Forschungspeptiden"
-    ],
-    staerken_en: [
-      "Third-party lab testing for nearly every batch",
-      "Fast shipping within Europe",
-      "Wide range of research peptides"
-    ],
-    schwaechen: [
-      "Kein Versand außerhalb Europas",
-      "Höherer Preis pro mg als der Durchschnitt"
-    ],
-    schwaechen_en: [
-      "No shipping outside Europe",
-      "Higher price per mg than average"
-    ],
-    demo: true
-  },
-  {
-    slug: "helix-labs-demo",
-    name: "Helix Labs Demo",
-    brand: { farbe: "#0E6B64", logo: "assets/img/logos/helix-labs-demo.svg" },
-    land: "DE",
-    gegruendet: 2021,
-    score: { labor: 90, recht: 85, lieferung: 80, sortiment: 90, preis: 70 },
-    gesamt: 83,
-    coa: { anzahl: 35, extern: true, letztesDatum: "2026-07-28", labor: "Helix Analytik Labor (DEMO)" },
-    reinheit: 99.1,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: false },
-    versand: { tageMin: 3, tageMax: 5, laender: ["DE", "AT", "CH", "EU", "INT"], kostenlosAb: 80 },
-    zahlung: ["Karte", "SEPA", "PayPal", "Krypto"],
-    rabatt: { code: "HELIX15", prozent: 15 },
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 10, preisEur: 39.90 },
-      { peptideSlug: "tb-500", mg: 10, preisEur: 42.90 },
-      { peptideSlug: "semaglutid", mg: 5, preisEur: 89.90 },
-      { peptideSlug: "cjc-1295", mg: 10, preisEur: 54.90 },
-      { peptideSlug: "ghk-cu", mg: 100, preisEur: 44.90 },
-      { peptideSlug: "epitalon", mg: 20, preisEur: 49.90 }
-    ],
-    preisProMg: 5.78,
-    affiliateUrl: "#DEMO",
-    kurz: "Breitestes Sortiment im Vergleich, inklusive Semaglutid-Linie.",
-    kurz_en: "The widest product range in this comparison, including a semaglutide line.",
-    staerken: [
-      "Größtes Sortiment aller geprüften Anbieter",
-      "Kryptozahlung möglich",
-      "Internationaler Versand"
-    ],
-    staerken_en: [
-      "Largest range among all vendors reviewed",
-      "Crypto payment accepted",
-      "International shipping"
-    ],
-    schwaechen: [
-      "Etwas längere Lieferzeit",
-      "Sortiment wächst schneller als die Laborkapazität"
-    ],
-    schwaechen_en: [
-      "Slightly longer delivery time",
-      "Catalog growing faster than lab testing capacity"
-    ],
-    demo: true
-  },
-  {
-    slug: "aurora-peptide-supply",
-    name: "Aurora Peptide Supply",
-    brand: { farbe: "#A8690F", logo: "assets/img/logos/aurora-peptide-supply.svg" },
-    land: "AT",
-    gegruendet: 2020,
-    score: { labor: 80, recht: 75, lieferung: 70, sortiment: 65, preis: 60 },
-    gesamt: 71,
-    coa: { anzahl: 20, extern: true, letztesDatum: "2026-06-10", labor: "Aurora QC Labor (DEMO)" },
-    reinheit: 98.6,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: false },
-    versand: { tageMin: 4, tageMax: 7, laender: ["AT", "DE", "CH"], kostenlosAb: 120 },
-    zahlung: ["Karte", "SEPA"],
+    affiliate: false,
+    affiliateProgrammUrl: null,
+    provision: null,
     rabatt: null,
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 5, preisEur: 36.90 },
-      { peptideSlug: "tb-500", mg: 5, preisEur: 39.90 },
-      { peptideSlug: "ghk-cu", mg: 50, preisEur: 31.90 },
-      { peptideSlug: "epitalon", mg: 10, preisEur: 34.90 }
-    ],
-    preisProMg: 4.87,
-    affiliateUrl: "#DEMO",
-    kurz: "Kleiner österreichischer Anbieter mit Fokus auf Regenerationspeptide.",
-    kurz_en: "A small Austrian vendor focused on regeneration peptides.",
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://www.pepwerk.com/",
+    kurz: "Sitz in Deutschland (laut Shop). Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Deutschland (laut Shop). Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
     staerken: [
-      "Übersichtliches, fokussiertes Sortiment",
-      "Verifizierte CoAs für alle Chargen",
-      "Klare Rechtstexte auf der Seite"
+      "Externe Labortests (Janoshik Analytical)",
+      "RUO-Kennzeichnung vorhanden",
+      "Schneller Versand nach DACH laut Website"
     ],
     staerken_en: [
-      "Clear, focused product range",
-      "Verified CoAs for every batch",
-      "Clear legal disclosures on the site"
+      "Third-party lab testing (Janoshik Analytical)",
+      "RUO labeling in place",
+      "Fast shipping to Germany/Austria/Switzerland according to the website"
     ],
     schwaechen: [
-      "Längere Lieferzeit als der Durchschnitt",
-      "Kein Rabattcode aktuell verfügbar"
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
     ],
     schwaechen_en: [
-      "Longer delivery time than average",
-      "No discount code currently available"
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
     ],
-    demo: true
+    roteFlaggen: [
+      "nur B2B laut Shop",
+      "nur Überweisung"
+    ],
+    roteFlaggen_en: [
+      "B2B only according to the shop",
+      "bank transfer only"
+    ],
+    quelle: "pepwerk.com, chemverify Katalog, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
   },
+
   {
-    slug: "quantum-bio-labs",
-    name: "Quantum Bio Labs",
-    brand: { farbe: "#453E90", logo: "assets/img/logos/quantum-bio-labs.svg" },
-    land: "CH",
-    gegruendet: 2022,
-    score: { labor: 70, recht: 68, lieferung: 60, sortiment: 72, preis: 55 },
-    gesamt: 65,
-    coa: { anzahl: 15, extern: false, letztesDatum: "2026-05-22", labor: "DEMO-Labor" },
-    reinheit: 97.9,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: true },
-    versand: { tageMin: 5, tageMax: 9, laender: ["CH", "DE", "AT", "EU"], kostenlosAb: null },
-    zahlung: ["Karte", "PayPal", "Krypto"],
-    rabatt: { code: "QUANTUM20", prozent: 20 },
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 5, preisEur: 29.90 },
-      { peptideSlug: "tb-500", mg: 5, preisEur: 32.90 },
-      { peptideSlug: "semaglutid", mg: 5, preisEur: 74.90 },
-      { peptideSlug: "cjc-1295", mg: 5, preisEur: 37.90 },
-      { peptideSlug: "ghk-cu", mg: 50, preisEur: 24.90 }
-    ],
-    preisProMg: 7.12,
-    affiliateUrl: "#DEMO",
-    kurz: "Schweizer Anbieter mit auffällig werblicher Produktbeschreibung.",
-    kurz_en: "A Swiss vendor with noticeably promotional product descriptions.",
-    staerken: [
-      "Günstige Einstiegspreise",
-      "Breites Zahlungsangebot inklusive Krypto",
-      "Schnelle Reaktionszeit im Support"
-    ],
-    staerken_en: [
-      "Low entry prices",
-      "Wide range of payment options, including crypto",
-      "Fast support response time"
-    ],
-    schwaechen: [
-      "Werbeaussagen im Shop grenzwertig formuliert",
-      "CoAs stammen ausschließlich aus shop-eigener Prüfung"
-    ],
-    schwaechen_en: [
-      "Some marketing claims on the site push close to the line",
-      "CoAs come only from in-house testing"
-    ],
-    demo: true
-  },
-  {
-    slug: "vertex-research-chemicals",
-    name: "Vertex Research Chemicals",
-    brand: { farbe: "#3F5D4E", logo: "assets/img/logos/vertex-research-chemicals.svg" },
+    slug: "smart-peptides",
+    name: "Smart Peptides",
+    website: "https://smartpeptides.de/",
+    rechtstraeger: "Aktru Sp. z o.o.",
+    sitz: "Wieliczka, Polen (Lager DE)",
     land: "EU",
-    gegruendet: 2023,
-    score: { labor: 60, recht: 58, lieferung: 55, sortiment: 60, preis: 62 },
-    gesamt: 59,
-    coa: { anzahl: 10, extern: false, letztesDatum: "2026-04-30", labor: "DEMO-Labor" },
-    reinheit: 97.2,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: true },
-    versand: { tageMin: 5, tageMax: 10, laender: ["EU"], kostenlosAb: null },
-    zahlung: ["Karte", "PayPal"],
+    gegruendet: null,
+    brand: {
+      farbe: "#A8690F",
+      logo: "assets/img/logos/smart-peptides.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 100,
+      lieferung: 98,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 100,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "Janoshik Analytical (verify.janoshik.com)",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: null,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 1,
+      tageMax: 2,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "Karte",
+      "Krypto",
+      "Vorkasse"
+    ],
+    affiliate: false,
+    affiliateProgrammUrl: null,
+    provision: null,
     rabatt: null,
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 5, preisEur: 27.90 },
-      { peptideSlug: "tb-500", mg: 5, preisEur: 30.90 },
-      { peptideSlug: "cjc-1295", mg: 5, preisEur: 35.90 },
-      { peptideSlug: "epitalon", mg: 10, preisEur: 28.90 }
-    ],
-    preisProMg: 5.45,
-    affiliateUrl: "#DEMO",
-    kurz: "Junger EU-Anbieter mit noch dünner Prüfhistorie.",
-    kurz_en: "A young EU vendor with a still-thin testing history.",
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://smartpeptides.de/",
+    kurz: "Sitz in Wieliczka, Polen (Lager DE). Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Wieliczka, Polen (Lager DE). Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
     staerken: [
-      "Niedrige Einstiegspreise",
-      "Einfacher Bestellprozess",
-      "Übersichtlicher Shop-Aufbau"
+      "Externe Labortests (Janoshik Analytical)",
+      "Rechtsträger benannt und belegt",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden",
+      "Schneller Versand nach DACH laut Website"
     ],
     staerken_en: [
-      "Low entry prices",
-      "Simple ordering process",
-      "Clean, easy-to-navigate site"
+      "Third-party lab testing (Janoshik Analytical)",
+      "Named, verifiable legal entity",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present",
+      "Fast shipping to Germany/Austria/Switzerland according to the website"
     ],
-    schwaechen: [
-      "Kein externes Labor bislang eingebunden",
-      "Werbeaussagen teils grenzwertig formuliert"
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [
+      "bewirbt Injektionspen trotz RUO",
+      "kein Register/USt-IdNr im Impressum"
     ],
-    schwaechen_en: [
-      "No third-party lab involved so far",
-      "Some marketing claims push close to the line"
+    roteFlaggen_en: [
+      "advertises an injection pen despite RUO status",
+      "no register number/VAT ID in the legal notice"
     ],
-    demo: true
+    quelle: "smartpeptides.de/impressum, peptidcheck24, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
   },
+
   {
-    slug: "blauwal-peptides",
-    name: "Blauwal Peptides",
-    brand: { farbe: "#1584A0", logo: "assets/img/logos/blauwal-peptides.svg" },
-    land: "DE",
-    gegruendet: 2018,
-    score: { labor: 85, recht: 80, lieferung: 75, sortiment: 70, preis: 65 },
-    gesamt: 76,
-    coa: { anzahl: 28, extern: true, letztesDatum: "2026-08-02", labor: "Blauwal Prüfinstitut (DEMO)" },
-    reinheit: 98.9,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: false },
-    versand: { tageMin: 3, tageMax: 6, laender: ["DE", "AT", "CH", "EU"], kostenlosAb: 90 },
-    zahlung: ["Karte", "SEPA", "PayPal"],
-    rabatt: { code: "BLAU12", prozent: 12 },
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 5, preisEur: 33.90 },
-      { peptideSlug: "tb-500", mg: 5, preisEur: 36.90 },
-      { peptideSlug: "semaglutid", mg: 5, preisEur: 82.90 },
-      { peptideSlug: "ghk-cu", mg: 50, preisEur: 27.90 },
-      { peptideSlug: "epitalon", mg: 10, preisEur: 30.90 }
+    slug: "avellon-peptides",
+    name: "Avellon Peptides",
+    website: "https://avellon-peptides.com/",
+    rechtstraeger: "Avellon Peptides Sp. z o.o. (KRS 0001218785)",
+    sitz: "Polen",
+    land: "EU",
+    gegruendet: null,
+    brand: {
+      farbe: "#1B4F8C",
+      logo: "assets/img/logos/avellon-peptides.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 100,
+      lieferung: 82,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 96,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "eigene Chargen-PDFs; Janoshik-Blindtests Dritter",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 2,
+      tageMax: 5,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "SEPA-Vorkasse",
+      "Krypto"
     ],
-    preisProMg: 6.88,
-    affiliateUrl: "#DEMO",
-    kurz: "Etablierter deutscher Anbieter mit langer Marktpräsenz.",
-    kurz_en: "An established German vendor with a long track record.",
+    affiliate: true,
+    affiliateProgrammUrl: "https://avellon-peptides.com/affiliate-bereich/",
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://avellon-peptides.com/",
+    kurz: "Sitz in Polen. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Polen. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
     staerken: [
-      "Seit über 7 Jahren am Markt",
-      "Regelmäßige externe Laborprüfung",
-      "Solide Rechtstexte und Altersgate"
+      "Externe Labortests (eigene Chargen-PDFs; Janoshik-Blindtests Dritter)",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
     ],
     staerken_en: [
-      "On the market for more than 7 years",
-      "Regular third-party lab testing",
-      "Solid legal disclosures and age verification"
+      "Third-party lab testing (eigene Chargen-PDFs; Janoshik-Blindtests Dritter)",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
     ],
-    schwaechen: [
-      "Sortiment kleiner als bei jüngeren Anbietern",
-      "Keine Kryptozahlung möglich"
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [
+      "keine Sofort-Kartenzahlung"
     ],
-    schwaechen_en: [
-      "Smaller range than newer vendors",
-      "No crypto payment option"
+    roteFlaggen_en: [
+      "no instant card payment"
     ],
-    demo: true
+    quelle: "peptidcheck24 (29.05./31.07.2026), chemverify Katalog",
+    stand: "2026-09-06",
+    demo: false
   },
+
   {
-    slug: "terra-nova-labs",
-    name: "Terra Nova Labs",
-    brand: { farbe: "#C1543A", logo: "assets/img/logos/terra-nova-labs.svg" },
+    slug: "particle-peptides",
+    name: "Particle Peptides",
+    website: "https://particlepeptides.com/",
+    rechtstraeger: "PARTICLE s.r.o.",
+    sitz: "Lučenec, Slowakei",
+    land: "EU",
+    gegruendet: null,
+    brand: {
+      farbe: "#0E6B64",
+      logo: "assets/img/logos/particle-peptides.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 100,
+      lieferung: 74,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 94,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "Janoshik Analytical, MZ Biolabs (Blindtests)",
+      anzahl: null
+    },
+    reinheit: 98.79,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 2,
+      tageMax: 7,
+      laender: [
+        "EU",
+        "US",
+        "UK",
+        "ASIA"
+      ]
+    },
+    zahlung: [
+      "Karte",
+      "Überweisung"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: "https://particlepeptides.com/en/content/41-affiliate-program-terms",
+    provision: "10 %",
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://particlepeptides.com/",
+    kurz: "Sitz in Lučenec, Slowakei. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Lučenec, Slowakei. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    staerken: [
+      "Externe Labortests (Janoshik Analytical)",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
+    ],
+    staerken_en: [
+      "Third-party lab testing (Janoshik Analytical)",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
+    ],
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [],
+    roteFlaggen_en: [],
+    quelle: "chemverify Katalog, particlepeptides.com, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "europa-peptide",
+    name: "Europa-Peptide",
+    website: "https://europa-peptide.de/",
+    rechtstraeger: "EP-Company Ltd. (UK 16920593)",
+    sitz: "London, UK",
     land: "INT",
-    gegruendet: 2017,
-    score: { labor: 92, recht: 95, lieferung: 90, sortiment: 80, preis: 85 },
-    gesamt: 89,
-    coa: { anzahl: 50, extern: true, letztesDatum: "2026-08-30", labor: "Terra Nova Analytics (DEMO)" },
-    reinheit: 99.6,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: false },
-    versand: { tageMin: 2, tageMax: 5, laender: ["DE", "AT", "CH", "EU", "INT"], kostenlosAb: 60 },
-    zahlung: ["Karte", "SEPA", "PayPal", "Krypto"],
-    rabatt: { code: "TERRA25", prozent: 25 },
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 5, preisEur: 31.90 },
-      { peptideSlug: "tb-500", mg: 5, preisEur: 34.90 },
-      { peptideSlug: "semaglutid", mg: 5, preisEur: 79.90 },
-      { peptideSlug: "cjc-1295", mg: 5, preisEur: 39.90 },
-      { peptideSlug: "ghk-cu", mg: 50, preisEur: 26.90 },
-      { peptideSlug: "epitalon", mg: 10, preisEur: 29.90 }
+    gegruendet: null,
+    brand: {
+      farbe: "#8C4F1B",
+      logo: "assets/img/logos/europa-peptide.svg"
+    },
+    score: {
+      labor: null,
+      recht: 100,
+      lieferung: 82,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 93,
+    datenbasis: 2,
+    coa: {
+      oeffentlich: null,
+      extern: null,
+      labor: "Zertifikate-Menü vorhanden, Chargen nicht gegengeprüft",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 2,
+      tageMax: 5,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "SEPA"
     ],
-    preisProMg: 6.81,
-    affiliateUrl: "#DEMO",
-    kurz: "International aufgestellter Anbieter mit dem größten CoA-Bestand.",
-    kurz_en: "An internationally active vendor with the largest CoA archive.",
-    staerken: [
-      "Meiste extern geprüfte Chargen im Vergleich",
-      "Weltweiter Versand",
-      "Höchster Score aller 8 Anbieter"
-    ],
-    staerken_en: [
-      "Most third-party tested batches in this comparison",
-      "Worldwide shipping",
-      "Highest score among all 8 vendors"
-    ],
-    schwaechen: [
-      "Kein separates Bulk-Rabatt-Programm",
-      "Versand außerhalb Europas dauert spürbar länger"
-    ],
-    schwaechen_en: [
-      "No separate bulk discount program",
-      "Shipping outside Europe takes noticeably longer"
-    ],
-    demo: true
-  },
-  {
-    slug: "kristall-biolab",
-    name: "Kristall Biolab",
-    brand: { farbe: "#6C3FA6", logo: "assets/img/logos/kristall-biolab.svg" },
-    land: "CH",
-    gegruendet: 2020,
-    score: { labor: 75, recht: 70, lieferung: 65, sortiment: 68, preis: 58 },
-    gesamt: 68,
-    coa: { anzahl: 18, extern: true, letztesDatum: "2026-05-15", labor: "Kristall Diagnostik (DEMO)" },
-    reinheit: 98.3,
-    rechtsrahmen: { altersgate: true, ruo: true, impressum: true, heilversprechen: false },
-    versand: { tageMin: 4, tageMax: 8, laender: ["CH", "DE", "AT"], kostenlosAb: 100 },
-    zahlung: ["Karte", "SEPA"],
+    affiliate: null,
+    affiliateProgrammUrl: null,
+    provision: null,
     rabatt: null,
-    produkte: [
-      { peptideSlug: "bpc-157", mg: 5, preisEur: 35.90 },
-      { peptideSlug: "tb-500", mg: 5, preisEur: 38.90 },
-      { peptideSlug: "cjc-1295", mg: 5, preisEur: 42.90 },
-      { peptideSlug: "epitalon", mg: 10, preisEur: 33.90 }
-    ],
-    preisProMg: 6.73,
-    affiliateUrl: "#DEMO",
-    kurz: "Schweizer Nischenanbieter mit solider, aber kleiner Auswahl.",
-    kurz_en: "A Swiss niche vendor with a solid but small selection.",
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://europa-peptide.de/",
+    kurz: "Sitz in London, UK. Versand laut Website nach DACH. CoA-Status nicht ermittelbar.",
+    kurz_en: "Registered in London, UK. Ships to Germany/Austria/Switzerland according to the website. CoA status not ascertainable.",
     staerken: [
-      "Vollständige Rechtstexte und Altersgate",
-      "Externe Prüfung für alle Chargen",
-      "Klare, schnörkellose Shop-Struktur"
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
     ],
     staerken_en: [
-      "Complete legal disclosures and age verification",
-      "Third-party testing for every batch",
-      "Clean, no-frills site structure"
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
+    ],
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [
+      "Widerspruch zu peptidcheck24-Befund 08/2026 (dort keine CoAs)"
+    ],
+    roteFlaggen_en: [
+      "contradicts a peptidcheck24 finding from 08/2026 (no CoAs found there)"
+    ],
+    quelle: "europa-peptide.de, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "biocollex",
+    name: "BioCollex",
+    website: "https://biocollexresearch.com/",
+    rechtstraeger: "Bio Collex Research, LLC",
+    sitz: "Oakland, MD, USA",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#1B8C7A",
+      logo: "assets/img/logos/biocollex.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 100,
+      lieferung: 65,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 92,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "ISO/IEC-17025-Labore, HPLC+MS",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "US",
+        "EU",
+        "UK",
+        "CA"
+      ]
+    },
+    zahlung: [
+      "Karte",
+      "Apple Pay",
+      "Cash App",
+      "Zelle",
+      "Venmo"
+    ],
+    affiliate: false,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://biocollexresearch.com/",
+    kurz: "Sitz in Oakland, MD, USA. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Oakland, MD, USA. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    staerken: [
+      "Externe Labortests (ISO/IEC-17025-Labore)",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
+    ],
+    staerken_en: [
+      "Third-party lab testing (ISO/IEC-17025-Labore)",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
+    ],
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [
+      "Domain erst 12/2025 registriert"
+    ],
+    roteFlaggen_en: [
+      "domain registered only in 12/2025"
+    ],
+    quelle: "biocollexresearch.com, chemverify Katalog, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "licensed-peptides",
+    name: "Licensed Peptides",
+    website: "https://licensedpeptides.com/",
+    rechtstraeger: "Licensed Peptides INC",
+    sitz: "Boca Raton, FL, USA",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#3F5D4E",
+      logo: "assets/img/logos/licensed-peptides.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 100,
+      lieferung: 65,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 92,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "ISO/IEC-17025-akkreditierte Drittlabore",
+      anzahl: null
+    },
+    reinheit: 99.48,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "US",
+        "EU",
+        "UK",
+        "AU",
+        "NZ"
+      ]
+    },
+    zahlung: [
+      "Karte",
+      "Zelle",
+      "ACH",
+      "Überweisung"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: "https://licensedpeptides.com/affiliates",
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://licensedpeptides.com/",
+    kurz: "Sitz in Boca Raton, FL, USA. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Boca Raton, FL, USA. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    staerken: [
+      "Externe Labortests (ISO/IEC-17025-akkreditierte Drittlabore)",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden",
+      "Katalog-Reinheit 99,48 %"
+    ],
+    staerken_en: [
+      "Third-party lab testing (ISO/IEC-17025-akkreditierte Drittlabore)",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present",
+      "Catalog purity 99.48 %"
+    ],
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [
+      "Versand aus USA, Zollrisiko"
+    ],
+    roteFlaggen_en: [
+      "ships from the USA, customs risk"
+    ],
+    quelle: "licensedpeptides.com, chemverify Katalog, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "elyvera",
+    name: "ELYVERA (Europeptides)",
+    website: "https://europeptides.de/",
+    rechtstraeger: "Elyvera Biotech GmbH (UID ATU83240039)",
+    sitz: "Wien, Österreich",
+    land: "AT",
+    gegruendet: null,
+    brand: {
+      farbe: "#3F5D4E",
+      logo: "assets/img/logos/elyvera.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 67,
+      lieferung: 82,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 83,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "Janoshik Analytical (HPLC, Schwermetalle, LCMS)",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 2,
+      tageMax: 5,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "Überweisung",
+      "Krypto"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://europeptides.de/",
+    kurz: "Sitz in Wien, Österreich. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Wien, Österreich. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    staerken: [
+      "Externe Labortests (Janoshik Analytical)",
+      "Rechtsträger benannt und belegt",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
+    ],
+    staerken_en: [
+      "Third-party lab testing (Janoshik Analytical)",
+      "Named, verifiable legal entity",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
     ],
     schwaechen: [
-      "Kleinstes Sortiment im Vergleich",
-      "Kein Rabattcode aktuell"
+      "Kein Altersgate (Stand 06.09.2026)"
     ],
     schwaechen_en: [
-      "Smallest product range in this comparison",
-      "No discount code currently"
+      "No age verification gate (as of Sep 6, 2026)"
     ],
-    demo: true
+    roteFlaggen: [
+      "kein Altersgate",
+      "Trustpilot 3,1 vs. eigene Bewertungen 4,7"
+    ],
+    roteFlaggen_en: [
+      "no age verification gate",
+      "Trustpilot rating 3.1 vs. 4.7 on the vendor's own site"
+    ],
+    quelle: "peptidcheck24 (31.07.2026), chemverify Katalog (ref-Parameter belegt Programm)",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "peak-peptide",
+    name: "Peak Peptide",
+    website: "https://peakpeptide.com/",
+    rechtstraeger: null,
+    sitz: null,
+    land: "EU",
+    gegruendet: null,
+    brand: {
+      farbe: "#6C3FA6",
+      logo: "assets/img/logos/peak-peptide.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 50,
+      lieferung: 98,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 80,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "Liquilabs s.r.o. (CZ), HPLC/LC-MS",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: null,
+      ruo: true,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 1,
+      tageMax: 2,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "SEPA",
+      "Krypto"
+    ],
+    affiliate: false,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://peakpeptide.com/",
+    kurz: "Sitz nicht ermittelbar. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered address not ascertainable. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    staerken: [
+      "Externe Labortests (Liquilabs s.r.o.)",
+      "RUO-Kennzeichnung vorhanden",
+      "Schneller Versand nach DACH laut Website"
+    ],
+    staerken_en: [
+      "Third-party lab testing (Liquilabs s.r.o.)",
+      "RUO labeling in place",
+      "Fast shipping to Germany/Austria/Switzerland according to the website"
+    ],
+    schwaechen: [
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No findable legal notice (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "Sitz nicht belegt"
+    ],
+    roteFlaggen_en: [
+      "registered address not verifiable"
+    ],
+    quelle: "chemverify Katalog, WebSearch, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "bio-boostx",
+    name: "Bio BoostX",
+    website: "https://bioboostx.com/",
+    rechtstraeger: "BioBoostX e.K. (LEI 3912005WE06FVF6FEN38)",
+    sitz: "Pfeffenhausen, Deutschland",
+    land: "DE",
+    gegruendet: null,
+    brand: {
+      farbe: "#8C4F1B",
+      logo: "assets/img/logos/bio-boostx.svg"
+    },
+    score: {
+      labor: 60,
+      recht: 100,
+      lieferung: 65,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 77,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: null,
+      labor: "HPLC, chargengekoppelt (bioboostx.com/coa/)",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "EU",
+        "US",
+        "UK",
+        "CA",
+        "ASIA"
+      ]
+    },
+    zahlung: [
+      "Karte",
+      "PayPal",
+      "Apple Pay",
+      "Überweisung",
+      "Krypto"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://bioboostx.com/",
+    kurz: "Sitz in Pfeffenhausen, Deutschland. Versand laut Website nach DACH. CoAs öffentlich einsehbar, externe Prüfung nicht bestätigt.",
+    kurz_en: "Registered in Pfeffenhausen, Deutschland. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
+    staerken: [
+      "Öffentlich einsehbare CoAs",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
+    ],
+    staerken_en: [
+      "Publicly available CoAs",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
+    ],
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [
+      "Domain ca. 10 Monate alt, Scam-Warnseiten schlagen an"
+    ],
+    roteFlaggen_en: [
+      "domain about 10 months old, scam-warning sites flag it"
+    ],
+    quelle: "bioboostx.com, Bloomberg LEI, chemverify Katalog, 06.09.2026; von Vic selbst getestet",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "chameleon-peptides",
+    name: "Chameleon Peptides",
+    website: "https://chameleonpeptides.com/",
+    rechtstraeger: "Origin Sourcing Group LLC dba Chameleon Peptides",
+    sitz: "Sacramento, CA, USA",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#1B8C7A",
+      logo: "assets/img/logos/chameleon-peptides.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 100,
+      lieferung: 0,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 77,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "Janoshik Analytical (87 Berichte)",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "US"
+      ]
+    },
+    zahlung: [],
+    affiliate: false,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://chameleonpeptides.com/",
+    kurz: "Sitz in Sacramento, CA, USA. Kein Versand nach DACH laut Website. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Sacramento, CA, USA. Does not ship to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    staerken: [
+      "Externe Labortests (Janoshik Analytical)",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
+    ],
+    staerken_en: [
+      "Third-party lab testing (Janoshik Analytical)",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
+    ],
+    schwaechen: [
+      "Kein Versand nach DACH laut Website (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No shipping to Germany/Austria/Switzerland according to the website (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "nur US-Versand"
+    ],
+    roteFlaggen_en: [
+      "US shipping only"
+    ],
+    quelle: "chameleonpeptides.com, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "helus-lab",
+    name: "Helus Lab",
+    website: "https://heluslab.com/",
+    rechtstraeger: "HELUS RESEARCH Laurynas Orlovičius (Einzelunternehmen, NIP 8982324888)",
+    sitz: "Wrocław, Polen",
+    land: "EU",
+    gegruendet: null,
+    brand: {
+      farbe: "#0E6B64",
+      logo: "assets/img/logos/helus-lab.svg"
+    },
+    score: {
+      labor: 60,
+      recht: 100,
+      lieferung: 65,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 77,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: null,
+      labor: "EU-Labor, Name nicht genannt (heluslab.com/coa/)",
+      anzahl: null
+    },
+    reinheit: 99.51,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: null,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "Karte",
+      "PayPal",
+      "Krypto",
+      "Überweisung"
+    ],
+    affiliate: false,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://heluslab.com/",
+    kurz: "Sitz in Wrocław, Polen. Versand laut Website nach DACH. CoAs öffentlich einsehbar, externe Prüfung nicht bestätigt.",
+    kurz_en: "Registered in Wrocław, Polen. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
+    staerken: [
+      "Öffentlich einsehbare CoAs",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Katalog-Reinheit 99,51 %"
+    ],
+    staerken_en: [
+      "Publicly available CoAs",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Catalog purity 99.51 %"
+    ],
+    schwaechen: [],
+    schwaechen_en: [],
+    roteFlaggen: [
+      "Einzelunternehmen"
+    ],
+    roteFlaggen_en: [
+      "sole proprietorship"
+    ],
+    quelle: "chemverify Katalog, GoWork.pl, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "protide-health",
+    name: "Protide Health",
+    website: "https://protidehealth.com/",
+    rechtstraeger: "Protide Health Corporation (Delaware)",
+    sitz: "USA",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#8C4F1B",
+      logo: "assets/img/logos/protide-health.svg"
+    },
+    score: {
+      labor: 60,
+      recht: 100,
+      lieferung: 0,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 62,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: null,
+      labor: "US-Labor, nicht genannt",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "US"
+      ]
+    },
+    zahlung: [],
+    affiliate: false,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://protidehealth.com/",
+    kurz: "Sitz in USA. Kein Versand nach DACH laut Website. CoAs öffentlich einsehbar, externe Prüfung nicht bestätigt.",
+    kurz_en: "Registered in USA. Does not ship to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
+    staerken: [
+      "Öffentlich einsehbare CoAs",
+      "Rechtsträger benannt und belegt",
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
+    ],
+    staerken_en: [
+      "Publicly available CoAs",
+      "Named, verifiable legal entity",
+      "Age verification gate in place",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
+    ],
+    schwaechen: [
+      "Kein Versand nach DACH laut Website (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No shipping to Germany/Austria/Switzerland according to the website (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "Re-Export ausdrücklich verboten"
+    ],
+    roteFlaggen_en: [
+      "re-export explicitly prohibited"
+    ],
+    quelle: "protidehealth.com/terms-of-service, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "beyond-peptides",
+    name: "Beyond Peptides",
+    website: "https://beyond-peptides.com/",
+    rechtstraeger: "FORGETRADE LIMITED (HK Reg. 80355843)",
+    sitz: "Hongkong",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#8C1B4F",
+      logo: "assets/img/logos/beyond-peptides.svg"
+    },
+    score: {
+      labor: 60,
+      recht: 67,
+      lieferung: 14,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 52,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: false,
+      labor: "eigene HPLC-PDFs je Charge, Labor nicht genannt",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: true,
+      impressum: true,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 7,
+      tageMax: 17,
+      laender: [
+        "EU",
+        "US",
+        "UK",
+        "CA",
+        "ASIA"
+      ]
+    },
+    zahlung: [
+      "Überweisung",
+      "Krypto",
+      "Karte"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://beyond-peptides.com/",
+    kurz: "Sitz in Hongkong. Versand laut Website nach DACH. CoAs öffentlich einsehbar, externe Prüfung nicht bestätigt.",
+    kurz_en: "Registered in Hongkong. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
+    staerken: [
+      "Öffentlich einsehbare CoAs",
+      "Rechtsträger benannt und belegt",
+      "RUO-Kennzeichnung vorhanden",
+      "Impressum vorhanden"
+    ],
+    staerken_en: [
+      "Publicly available CoAs",
+      "Named, verifiable legal entity",
+      "RUO labeling in place",
+      "Legal notice (Impressum) present"
+    ],
+    schwaechen: [
+      "Kein Altersgate (Stand 06.09.2026)",
+      "Lange Lieferzeit nach DACH laut Website"
+    ],
+    schwaechen_en: [
+      "No age verification gate (as of Sep 6, 2026)",
+      "Long delivery time to Germany/Austria/Switzerland according to the website"
+    ],
+    roteFlaggen: [
+      "kein Altersgate",
+      "Firma erst 05/2026 gegründet",
+      "lange Lieferzeit"
+    ],
+    roteFlaggen_en: [
+      "no age verification gate",
+      "company founded only in 05/2026",
+      "long delivery time"
+    ],
+    quelle: "beyond-peptides.com/imprint, cookie-policy (GoAffPro), peptidcheck24",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "hydro-research",
+    name: "Hydro Research Peptides",
+    website: "https://hydroresearchpeptides.com/",
+    rechtstraeger: null,
+    sitz: "Milwaukee, WI, USA",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#3F5D4E",
+      logo: "assets/img/logos/hydro-research.svg"
+    },
+    score: {
+      labor: 100,
+      recht: 33,
+      lieferung: 0,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 51,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: true,
+      labor: "Janoshik, Chromate Labs (291 Dokumente)",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: true,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "US"
+      ]
+    },
+    zahlung: [
+      "Karte",
+      "Venmo"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: "https://hydroresearchpeptides.com/affiliate-register/",
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://hydroresearchpeptides.com/",
+    kurz: "Sitz in Milwaukee, WI, USA. Kein Versand nach DACH laut Website. CoAs öffentlich einsehbar, extern geprüft.",
+    kurz_en: "Registered in Milwaukee, WI, USA. Does not ship to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    staerken: [
+      "Externe Labortests (Janoshik)",
+      "RUO-Kennzeichnung vorhanden"
+    ],
+    staerken_en: [
+      "Third-party lab testing (Janoshik)",
+      "RUO labeling in place"
+    ],
+    schwaechen: [
+      "Kein Altersgate (Stand 06.09.2026)",
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Kein Versand nach DACH laut Website (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No age verification gate (as of Sep 6, 2026)",
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No shipping to Germany/Austria/Switzerland according to the website (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "kein Rechtsträger/Impressum",
+      "Venmo-Empfänger heißt anders als Shop",
+      "nur US-Versand"
+    ],
+    roteFlaggen_en: [
+      "no legal entity/imprint",
+      "Venmo recipient name differs from the shop name",
+      "US shipping only"
+    ],
+    quelle: "hydroresearchpeptides.com, peptidcheck24, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "american-peptides",
+    name: "American Peptides",
+    website: "https://americanpeptides.us/",
+    rechtstraeger: null,
+    sitz: "Shreveport, LA, USA (laut Snippet)",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#453E90",
+      logo: "assets/img/logos/american-peptides.svg"
+    },
+    score: {
+      labor: 60,
+      recht: 50,
+      lieferung: 0,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 42,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: true,
+      extern: null,
+      labor: "Labor nicht genannt",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: null,
+      ruo: true,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "US"
+      ]
+    },
+    zahlung: [],
+    affiliate: true,
+    affiliateProgrammUrl: "https://americanpeptides.us/pages/affiliate-program",
+    provision: "10 bis 35 % (Snippet, ungeprüft)",
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://americanpeptides.us/",
+    kurz: "Sitz in Shreveport, LA, USA (laut Snippet). Kein Versand nach DACH laut Website. CoAs öffentlich einsehbar, externe Prüfung nicht bestätigt.",
+    kurz_en: "Registered in Shreveport, LA, USA (laut Snippet). Does not ship to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
+    staerken: [
+      "Öffentlich einsehbare CoAs",
+      "RUO-Kennzeichnung vorhanden"
+    ],
+    staerken_en: [
+      "Publicly available CoAs",
+      "RUO labeling in place"
+    ],
+    schwaechen: [
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Kein Versand nach DACH laut Website (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No shipping to Germany/Austria/Switzerland according to the website (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "Impressum unvollständig",
+      "nur US-Versand",
+      "Seite blockt Zugriff"
+    ],
+    roteFlaggen_en: [
+      "incomplete legal notice",
+      "US shipping only",
+      "site blocks access"
+    ],
+    quelle: "peptidcheck24, WebSearch-Snippets, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "dn-lab-research",
+    name: "DN Lab Research",
+    website: "https://dnlabresearch.com/",
+    rechtstraeger: null,
+    sitz: "Farnborough, UK (Footer); Dubai laut peptidcheck24",
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#A8690F",
+      logo: "assets/img/logos/dn-lab-research.svg"
+    },
+    score: {
+      labor: 0,
+      recht: 67,
+      lieferung: 70,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 42,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: false,
+      extern: false,
+      labor: null,
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: true,
+      ruo: true,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 3,
+      tageMax: 7,
+      laender: [
+        "UK",
+        "EU"
+      ]
+    },
+    zahlung: [
+      "Krypto",
+      "Vorkasse"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: "https://dnlabresearch.com/affiliate-area/",
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://dnlabresearch.com/",
+    kurz: "Sitz in Farnborough, UK (Footer); Dubai laut peptidcheck24. Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
+    kurz_en: "Registered in Farnborough, UK (Footer); Dubai laut peptidcheck24. Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    staerken: [
+      "Altersgate vorhanden",
+      "RUO-Kennzeichnung vorhanden"
+    ],
+    staerken_en: [
+      "Age verification gate in place",
+      "RUO labeling in place"
+    ],
+    schwaechen: [
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Keine öffentlich einsehbaren CoAs (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No publicly available CoAs (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "keine Chargen-CoAs",
+      "widersprüchliche Adressen",
+      "Gesundheits-Testimonials trotz RUO",
+      "WhatsApp als Hauptkontakt"
+    ],
+    roteFlaggen_en: [
+      "no batch-level CoAs",
+      "conflicting addresses",
+      "health-related testimonials despite RUO status",
+      "WhatsApp as the main contact channel"
+    ],
+    quelle: "dnlabresearch.com, peptidcheck24, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "ppx-at",
+    name: "PPX.at",
+    website: "https://www.ppx.at/",
+    rechtstraeger: null,
+    sitz: "Wien, Österreich (laut Shop)",
+    land: "AT",
+    gegruendet: null,
+    brand: {
+      farbe: "#8C1B4F",
+      logo: "assets/img/logos/ppx-at.svg"
+    },
+    score: {
+      labor: 0,
+      recht: 33,
+      lieferung: 74,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 30,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: false,
+      extern: false,
+      labor: "eine Sample-CoA, Rest 'Coming Soon'",
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: true,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 3,
+      tageMax: 6,
+      laender: [
+        "EU"
+      ]
+    },
+    zahlung: [
+      "Krypto"
+    ],
+    affiliate: null,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://www.ppx.at/",
+    kurz: "Sitz in Wien, Österreich (laut Shop). Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
+    kurz_en: "Registered in Wien, Österreich (laut Shop). Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    staerken: [
+      "RUO-Kennzeichnung vorhanden"
+    ],
+    staerken_en: [
+      "RUO labeling in place"
+    ],
+    schwaechen: [
+      "Kein Altersgate (Stand 06.09.2026)",
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Keine öffentlich einsehbaren CoAs (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No age verification gate (as of Sep 6, 2026)",
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No publicly available CoAs (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "Impressum/AGB 404",
+      "nur Krypto",
+      "Werbung mit Gewichtsverlust",
+      "Seite nicht erreichbar"
+    ],
+    roteFlaggen_en: [
+      "legal notice/terms page returns 404",
+      "crypto payment only",
+      "advertises weight loss",
+      "site unreachable"
+    ],
+    quelle: "peptidcheck24 (29.05.2026), Seite 06.09. nicht erreichbar",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "peptide-labz",
+    name: "Peptide Labz",
+    website: "https://peptidelabz.de/",
+    rechtstraeger: null,
+    sitz: "Berlin (laut Shop)",
+    land: "DE",
+    gegruendet: null,
+    brand: {
+      farbe: "#4F8C1B",
+      logo: "assets/img/logos/peptide-labz.svg"
+    },
+    score: {
+      labor: 0,
+      recht: 33,
+      lieferung: 65,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 28,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: false,
+      extern: false,
+      labor: null,
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: true,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: [
+        "DE"
+      ]
+    },
+    zahlung: [],
+    affiliate: null,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://peptidelabz.de/",
+    kurz: "Sitz in Berlin (laut Shop). Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
+    kurz_en: "Registered in Berlin (laut Shop). Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    staerken: [
+      "RUO-Kennzeichnung vorhanden"
+    ],
+    staerken_en: [
+      "RUO labeling in place"
+    ],
+    schwaechen: [
+      "Kein Altersgate (Stand 06.09.2026)",
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Keine öffentlich einsehbaren CoAs (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No age verification gate (as of Sep 6, 2026)",
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No publicly available CoAs (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "kein Impressum (404)",
+      "WhatsApp-Checkout",
+      "Wirkversprechen in Testimonials"
+    ],
+    roteFlaggen_en: [
+      "no legal notice (404)",
+      "checkout via WhatsApp",
+      "effect claims in testimonials"
+    ],
+    quelle: "peptidelabz.de, peptidcheck24, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "europeptideshop",
+    name: "EuroPeptideShop",
+    website: "https://europeptideshop.com/",
+    rechtstraeger: null,
+    sitz: null,
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#A8690F",
+      logo: "assets/img/logos/europeptideshop.svg"
+    },
+    score: {
+      labor: 0,
+      recht: 0,
+      lieferung: 62,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 14,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: false,
+      extern: false,
+      labor: null,
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: false,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 4,
+      tageMax: 8,
+      laender: [
+        "INT"
+      ]
+    },
+    zahlung: [
+      "Krypto",
+      "Vorkasse"
+    ],
+    affiliate: null,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://europeptideshop.com/",
+    kurz: "Sitz nicht ermittelbar. Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
+    kurz_en: "Registered address not ascertainable. Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    staerken: [],
+    staerken_en: [],
+    schwaechen: [
+      "Kein Altersgate (Stand 06.09.2026)",
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Keine RUO-Kennzeichnung (Stand 06.09.2026)",
+      "Keine öffentlich einsehbaren CoAs (Stand 06.09.2026)",
+      "Lange Lieferzeit nach DACH laut Website",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No age verification gate (as of Sep 6, 2026)",
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No RUO labeling (as of Sep 6, 2026)",
+      "No publicly available CoAs (as of Sep 6, 2026)",
+      "Long delivery time to Germany/Austria/Switzerland according to the website",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "kein Impressum",
+      "keine CoAs",
+      "WhatsApp/Krypto"
+    ],
+    roteFlaggen_en: [
+      "no legal notice",
+      "no CoAs",
+      "WhatsApp/crypto only"
+    ],
+    quelle: "peptidcheck24 (29.05.2026), Seite 06.09. nicht erreichbar",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "peptide-culture",
+    name: "Peptide Culture",
+    website: "https://peptide-culture.com/",
+    rechtstraeger: null,
+    sitz: null,
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#8C4F1B",
+      logo: "assets/img/logos/peptide-culture.svg"
+    },
+    score: {
+      labor: 0,
+      recht: 0,
+      lieferung: 50,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 12,
+    datenbasis: 3,
+    coa: {
+      oeffentlich: false,
+      extern: false,
+      labor: null,
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: null,
+      ruo: null,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: 5,
+      tageMax: 10,
+      laender: [
+        "INT"
+      ]
+    },
+    zahlung: [],
+    affiliate: null,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://peptide-culture.com/",
+    kurz: "Sitz nicht ermittelbar. Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
+    kurz_en: "Registered address not ascertainable. Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    staerken: [],
+    staerken_en: [],
+    schwaechen: [
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Keine öffentlich einsehbaren CoAs (Stand 06.09.2026)",
+      "Lange Lieferzeit nach DACH laut Website",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No publicly available CoAs (as of Sep 6, 2026)",
+      "Long delivery time to Germany/Austria/Switzerland according to the website",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "Impressum ohne Adresse",
+      "Referral-Link auf Particle Peptides"
+    ],
+    roteFlaggen_en: [
+      "legal notice without an address",
+      "referral link to Particle Peptides"
+    ],
+    quelle: "peptide-culture.com/policies/legal-notice, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "driada",
+    name: "Driada",
+    website: "https://driadashop.to/",
+    rechtstraeger: null,
+    sitz: null,
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#6C3FA6",
+      logo: "assets/img/logos/driada.svg"
+    },
+    score: {
+      labor: 0,
+      recht: 0,
+      lieferung: null,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 0,
+    datenbasis: 2,
+    coa: {
+      oeffentlich: false,
+      extern: false,
+      labor: null,
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: false,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: []
+    },
+    zahlung: [
+      "Krypto"
+    ],
+    affiliate: true,
+    affiliateProgrammUrl: "https://driadashop.to/promotions",
+    provision: "10 % (Code-System)",
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://driadashop.to/",
+    kurz: "Sitz nicht ermittelbar. Versand nach DACH nicht ermittelbar. Keine öffentlich einsehbaren CoAs gefunden.",
+    kurz_en: "Registered address not ascertainable. Shipping to Germany/Austria/Switzerland not ascertainable. No publicly available CoAs found.",
+    staerken: [],
+    staerken_en: [],
+    schwaechen: [
+      "Kein Altersgate (Stand 06.09.2026)",
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Keine RUO-Kennzeichnung (Stand 06.09.2026)",
+      "Keine öffentlich einsehbaren CoAs (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No age verification gate (as of Sep 6, 2026)",
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No RUO labeling (as of Sep 6, 2026)",
+      "No publicly available CoAs (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "kein Impressum",
+      ".to-Domain",
+      "überwiegend Anabolika",
+      "kein RUO-Hinweis"
+    ],
+    roteFlaggen_en: [
+      "no legal notice",
+      "uses a .to domain",
+      "mostly anabolic steroids",
+      "no RUO notice"
+    ],
+    quelle: "driadashop.to, peptidcheck24, 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "peptide-shop-deutschland",
+    name: "Peptide Shop Deutschland",
+    website: "https://peptideshopdeutschland.com/",
+    rechtstraeger: null,
+    sitz: null,
+    land: "DE",
+    gegruendet: null,
+    brand: {
+      farbe: "#8C1B4F",
+      logo: "assets/img/logos/peptide-shop-deutschland.svg"
+    },
+    score: {
+      labor: 0,
+      recht: 0,
+      lieferung: null,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: 0,
+    datenbasis: 2,
+    coa: {
+      oeffentlich: false,
+      extern: false,
+      labor: null,
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: false,
+      ruo: false,
+      impressum: false,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: []
+    },
+    zahlung: [
+      "Krypto",
+      "Vorkasse"
+    ],
+    affiliate: null,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://peptideshopdeutschland.com/",
+    kurz: "Sitz nicht ermittelbar. Versand nach DACH nicht ermittelbar. Keine öffentlich einsehbaren CoAs gefunden.",
+    kurz_en: "Registered address not ascertainable. Shipping to Germany/Austria/Switzerland not ascertainable. No publicly available CoAs found.",
+    staerken: [],
+    staerken_en: [],
+    schwaechen: [
+      "Kein Altersgate (Stand 06.09.2026)",
+      "Kein auffindbares Impressum (Stand 06.09.2026)",
+      "Keine RUO-Kennzeichnung (Stand 06.09.2026)",
+      "Keine öffentlich einsehbaren CoAs (Stand 06.09.2026)",
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "No age verification gate (as of Sep 6, 2026)",
+      "No findable legal notice (as of Sep 6, 2026)",
+      "No RUO labeling (as of Sep 6, 2026)",
+      "No publicly available CoAs (as of Sep 6, 2026)",
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "kein Impressum",
+      "keine AGB",
+      "Linkfarm ca. 70 Fremdshops",
+      "15 % nur bei Krypto"
+    ],
+    roteFlaggen_en: [
+      "no legal notice",
+      "no terms and conditions",
+      "link farm to roughly 70 third-party shops",
+      "15% discount only with crypto payment"
+    ],
+    quelle: "peptidcheck24, Domain 06.09. nicht erreichbar",
+    stand: "2026-09-06",
+    demo: false
+  },
+
+  {
+    slug: "sera-lab",
+    name: "SERA Lab",
+    website: "https://serapeplab.com/",
+    rechtstraeger: null,
+    sitz: null,
+    land: "INT",
+    gegruendet: null,
+    brand: {
+      farbe: "#1584A0",
+      logo: "assets/img/logos/sera-lab.svg"
+    },
+    score: {
+      labor: null,
+      recht: null,
+      lieferung: null,
+      sortiment: null,
+      preis: null
+    },
+    gesamt: null,
+    datenbasis: 0,
+    coa: {
+      oeffentlich: null,
+      extern: null,
+      labor: null,
+      anzahl: null
+    },
+    reinheit: null,
+    rechtsrahmen: {
+      altersgate: null,
+      ruo: null,
+      impressum: null,
+      heilversprechen: null
+    },
+    versand: {
+      tageMin: null,
+      tageMax: null,
+      laender: []
+    },
+    zahlung: [],
+    affiliate: null,
+    affiliateProgrammUrl: null,
+    provision: null,
+    rabatt: null,
+    produkte: [],
+    preisProMg: null,
+    affiliateUrl: "https://serapeplab.com/",
+    kurz: "Sitz nicht ermittelbar. Versand nach DACH nicht ermittelbar. CoA-Status nicht ermittelbar.",
+    kurz_en: "Registered address not ascertainable. Shipping to Germany/Austria/Switzerland not ascertainable. CoA status not ascertainable.",
+    staerken: [],
+    staerken_en: [],
+    schwaechen: [
+      "Rechtsträger nicht ermittelbar (Stand 06.09.2026)"
+    ],
+    schwaechen_en: [
+      "Legal entity not ascertainable (as of Sep 6, 2026)"
+    ],
+    roteFlaggen: [
+      "Domain leitet auf wechselnde Fremdshops um"
+    ],
+    roteFlaggen_en: [
+      "domain redirects to changing third-party shops"
+    ],
+    quelle: "eigene Prüfung 06.09.2026",
+    stand: "2026-09-06",
+    demo: false
   }
 ];

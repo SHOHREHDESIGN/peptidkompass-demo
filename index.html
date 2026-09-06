@@ -18,10 +18,11 @@
      (PK.initLogoStrip baut die Leiste erst nach data/vendors.js + site.js,
      die Maskenbilder selbst kommen sonst erst mit der ersten Layout-Runde
      an die Reihe). Reihenfolge = die ersten 4 Einträge in data/vendors.js. -->
-<link rel="preload" as="image" href="assets/img/logos/nordlicht-research.svg">
-<link rel="preload" as="image" href="assets/img/logos/helix-labs-demo.svg">
-<link rel="preload" as="image" href="assets/img/logos/aurora-peptide-supply.svg">
-<link rel="preload" as="image" href="assets/img/logos/quantum-bio-labs.svg">
+<!-- Preload der Top-3-Podium-Logos (v2 "echte Anbieter", 06.09.): nach
+     Gesamtscore + datenbasis>=3, siehe data/vendors.js -->
+<link rel="preload" as="image" href="assets/img/logos/peptidwerk.svg">
+<link rel="preload" as="image" href="assets/img/logos/smart-peptides.svg">
+<link rel="preload" as="image" href="assets/img/logos/avellon-peptides.svg">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
@@ -410,12 +411,21 @@
     var peptides = Array.isArray(window.PK.peptides) ? window.PK.peptides : [];
 
     // Nach Gesamt-Score sortierte Anbieter (höchster zuerst) : sprachunabhängig,
-    // einmal berechnet.
+    // einmal berechnet. gesamt===null (data/SCHEMA.md v2, kein belegtes
+    // Kriterium) landet IMMER zuletzt, unabhängig von der Sortierrichtung.
     var ranked = vendors.slice().sort(function (a, b) {
       var sa = typeof a.gesamt === "number" ? a.gesamt : PK.computeScoreTotal(a.score);
       var sb = typeof b.gesamt === "number" ? b.gesamt : PK.computeScoreTotal(b.score);
+      if (sa === null && sb === null) return 0;
+      if (sa === null) return 1;
+      if (sb === null) return -1;
       return sb - sa;
     });
+
+    // Podium (Top 3): nur Vendoren mit datenbasis >= 3 (data/SCHEMA.md v2) -
+    // ein Vendor mit nur 1-2 belegten Kriterien landet nicht auf dem Podium,
+    // selbst wenn sein renormierter Gesamt-Score rechnerisch hoch ausfällt.
+    var podiumCandidates = ranked.filter(function (v) { return typeof v.datenbasis === "number" && v.datenbasis >= 3; });
 
     var statVendorsEl = document.getElementById("stat-vendors");
     var statCoasEl = document.getElementById("stat-coas");
@@ -440,18 +450,29 @@
       // formatiert bei erneutem Aufruf/Sprachwechsel nur neu, siehe site.js).
       if (vendors.length && statVendorsEl) {
         statVendorsEl.setAttribute("data-count-target", String(vendors.length));
-        var coaSum = vendors.reduce(function (sum, v) { return sum + ((v.coa && v.coa.anzahl) || 0); }, 0);
-        statCoasEl.setAttribute("data-count-target", String(coaSum));
-        var scoreSum = vendors.reduce(function (sum, v) {
-          return sum + (typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score));
+        // coa.anzahl ist in v2 durchgehend null (keine belegte Gesamtzahl an
+        // CoAs) - die Kachel zählt stattdessen Anbieter mit öffentlich
+        // einsehbaren CoAs (coa.oeffentlich===true), eine tatsächlich
+        // belegte Zahl statt einer erfundenen 0.
+        var coaPublicCount = vendors.filter(function (v) { return v.coa && v.coa.oeffentlich === true; }).length;
+        statCoasEl.setAttribute("data-count-target", String(coaPublicCount));
+        // Score-Durchschnitt NUR über Vendoren mit belegtem Gesamt-Score
+        // (gesamt !== null, data/SCHEMA.md v2).
+        var scoredVendors = vendors.filter(function (v) {
+          var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+          return typeof g === "number";
+        });
+        var scoreSum = scoredVendors.reduce(function (sum, v) {
+          var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+          return sum + g;
         }, 0);
-        statScoreEl.setAttribute("data-count-target", String(Math.round(scoreSum / vendors.length)));
+        statScoreEl.setAttribute("data-count-target", String(scoredVendors.length ? Math.round(scoreSum / scoredVendors.length) : 0));
         PK.initCountUp(document.querySelector(".stat-grid"));
       }
 
-      // Podium: 3 stärkste Anbieter (ia.md, offene Frage 2: kein eigenes
-      // featured-Flag, gleiche Rangfolge wie bisher "Anbieter des Monats").
-      if (podiumEl) PK.renderPodium(podiumEl, ranked.slice(0, 3));
+      // Podium: 3 stärkste Anbieter MIT ausreichender Datenbasis (datenbasis
+      // >= 3, data/SCHEMA.md v2) - ersetzt die reine "Top 3 nach gesamt".
+      if (podiumEl) PK.renderPodium(podiumEl, podiumCandidates.slice(0, 3));
 
       // Logo-Leiste
       PK.initLogoStrip("#logo-strip");

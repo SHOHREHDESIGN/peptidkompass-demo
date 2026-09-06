@@ -172,10 +172,14 @@
     var table = document.getElementById("vergleich-table");
     if (!tbody || !table) return;
 
-    // Standard-Sortierung: Gesamtscore absteigend (ia.md 4.4)
+    // Standard-Sortierung: Gesamtscore absteigend (ia.md 4.4). gesamt===null
+    // (data/SCHEMA.md v2, kein belegtes Kriterium) landet IMMER zuletzt.
     var ranked = vendors.slice().sort(function (a, b) {
       var sa = typeof a.gesamt === "number" ? a.gesamt : PK.computeScoreTotal(a.score);
       var sb = typeof b.gesamt === "number" ? b.gesamt : PK.computeScoreTotal(b.score);
+      if (sa === null && sb === null) return 0;
+      if (sa === null) return 1;
+      if (sb === null) return -1;
       return sb - sa;
     });
 
@@ -212,15 +216,18 @@
       // Land (Enum, IMMER über PK.tEnum) : Zusatzspalte, Standard ausgeblendet
       row.appendChild(makeTextCell(PK.tEnum("land", v.land), true));
 
-      // Gesamtscore: score-bar klein (Track + Wert, ohne Label) : Standard sichtbar
+      // Gesamtscore: score-bar klein (Track + Wert, ohne Label) : Standard sichtbar.
+      // gesamt===null (data/SCHEMA.md v2) sortiert unter data-sort="-1" ans
+      // Ende der Standard-Sortierung (Gesamtscore absteigend).
       var gesamt = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
       var tdScore = document.createElement("td");
-      tdScore.setAttribute("data-sort", String(gesamt));
+      tdScore.setAttribute("data-sort", gesamt === null ? "-1" : String(gesamt));
       tdScore.appendChild(buildScoreBarSmall(gesamt));
       row.appendChild(tdScore);
 
-      // 5 Einzelkriterien (score.labor/recht/lieferung/sortiment/preis, 0-100)
-      // : alle 5 Zusatzspalten, Standard ausgeblendet (Toggle "Alle Kriterien")
+      // 5 Einzelkriterien (score.labor/recht/lieferung/sortiment/preis, 0-100
+      // ODER null = unbewertet) : alle 5 Zusatzspalten, Standard ausgeblendet
+      // (Toggle "Alle Kriterien")
       var s = v.score || {};
       row.appendChild(makeNumCell(s.labor, true));
       row.appendChild(makeNumCell(s.recht, true));
@@ -228,37 +235,49 @@
       row.appendChild(makeNumCell(s.sortiment, true));
       row.appendChild(makeNumCell(s.preis, true));
 
-      // Preis/mg (EUR) : Standard sichtbar, Kernkriterium der Preisjägerin-Persona
+      // Preis/mg (EUR) : Standard sichtbar, Kernkriterium der Preisjägerin-Persona.
+      // preisProMg===null (v2: keine Produktdaten) -> "nicht ermittelbar" statt "0,00 €".
       var tdMg = document.createElement("td");
-      var mg = typeof v.preisProMg === "number" ? v.preisProMg : 0;
-      tdMg.setAttribute("data-sort", String(mg));
-      tdMg.textContent = PK.byNum(mg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+      var mg = typeof v.preisProMg === "number" ? v.preisProMg : null;
+      tdMg.setAttribute("data-sort", mg === null ? "-1" : String(mg));
+      tdMg.textContent = mg !== null ? (PK.byNum(mg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €") : PK.t("global.na");
       row.appendChild(tdMg);
 
       // Zahlung (NEU, Zusatzspalte, Toggle "Alle Kriterien")
       var tdZahlung = document.createElement("td");
       tdZahlung.setAttribute("data-extra", "");
       tdZahlung.textContent = (Array.isArray(v.zahlung) ? v.zahlung : [])
-        .map(function (z) { return PK.tEnum("zahlung", z); }).join(", ") || "–";
+        .map(function (z) { return PK.tEnum("zahlung", z); }).join(", ") || PK.t("global.na");
       row.appendChild(tdZahlung);
 
-      // CoAs: Anzahl + Extern-Pill : Standard sichtbar
+      // CoAs: öffentlich/extern-Pill : Standard sichtbar. coa.anzahl ist in
+      // v2 durchgehend null (keine belegte Gesamtzahl), daher zeigt die
+      // Spalte den belegten Status (öffentlich/extern/nicht ermittelbar)
+      // statt einer erfundenen Zahl.
       var tdCoa = document.createElement("td");
       var coa = v.coa || {};
-      tdCoa.setAttribute("data-sort", String(coa.anzahl || 0));
-      tdCoa.appendChild(document.createTextNode(PK.byNum(coa.anzahl || 0) + " "));
+      var coaSortVal = coa.oeffentlich === true ? (coa.extern === true ? 2 : 1) : (coa.oeffentlich === false ? 0 : -1);
+      tdCoa.setAttribute("data-sort", String(coaSortVal));
       var coaPill = document.createElement("span");
-      coaPill.className = coa.extern ? "pill pill-ok" : "pill";
-      coaPill.textContent = coa.extern ? PK.t("page.vergleich.coaExtern") : PK.t("page.vergleich.coaIntern");
+      if (coa.oeffentlich === true) {
+        coaPill.className = coa.extern === true ? "pill pill-ok" : "pill pill-info";
+        coaPill.textContent = coa.extern === true ? PK.t("page.vergleich.coaExtern") : PK.t("page.vergleich.coaIntern");
+      } else if (coa.oeffentlich === false) {
+        coaPill.className = "pill pill-warn";
+        coaPill.textContent = PK.t("page.vergleich.coaNone");
+      } else {
+        coaPill.className = "pill";
+        coaPill.textContent = PK.t("global.na");
+      }
       tdCoa.appendChild(coaPill);
       row.appendChild(tdCoa);
 
-      // Versand: tageMin–tageMax
+      // Versand: tageMin–tageMax, oder "nicht ermittelbar" (data/SCHEMA.md v2)
       var tdVersand = document.createElement("td");
       var versand = v.versand || {};
-      tdVersand.setAttribute("data-sort", String(versand.tageMin || 0));
+      tdVersand.setAttribute("data-sort", typeof versand.tageMin === "number" ? String(versand.tageMin) : "999");
       tdVersand.textContent = (versand.tageMin != null && versand.tageMax != null)
-        ? PK.t("page.vergleich.versandRange", { min: versand.tageMin, max: versand.tageMax }) : "–";
+        ? PK.t("page.vergleich.versandRange", { min: versand.tageMin, max: versand.tageMax }) : PK.t("global.na");
       row.appendChild(tdVersand);
 
       // Rabatt: Prozent oder „–" (Screenreader: „keiner"/"none")
@@ -407,19 +426,19 @@
         head.appendChild(idWrap);
         var scoreEl = document.createElement("span");
         scoreEl.className = "compare-card-score score-band-" + PK.scoreBand(gesamt);
-        scoreEl.setAttribute("aria-label", PK.t("page.vergleich.colGesamtscore") + " " + PK.byNum(gesamt));
-        scoreEl.textContent = PK.byNum(gesamt);
+        scoreEl.setAttribute("aria-label", PK.t("page.vergleich.colGesamtscore") + " " + (gesamt !== null ? PK.byNum(gesamt) : PK.t("global.na")));
+        scoreEl.textContent = gesamt !== null ? PK.byNum(gesamt) : PK.t("global.na");
         head.appendChild(scoreEl);
         card.appendChild(head);
 
         var rowMg = document.createElement("div");
         rowMg.className = "compare-card-row";
-        var mg = typeof v.preisProMg === "number" ? v.preisProMg : 0;
+        var mg = typeof v.preisProMg === "number" ? v.preisProMg : null;
         rowMg.innerHTML = "";
         var mgLabel = document.createElement("span");
         mgLabel.textContent = PK.t("page.vergleich.colPreisMg");
         var mgVal = document.createElement("strong");
-        mgVal.textContent = PK.byNum(mg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+        mgVal.textContent = mg !== null ? (PK.byNum(mg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €") : PK.t("global.na");
         rowMg.appendChild(mgLabel);
         rowMg.appendChild(mgVal);
         card.appendChild(rowMg);
@@ -495,12 +514,14 @@
     function makeNumCell(value, extra) {
       var td = document.createElement("td");
       if (extra) td.setAttribute("data-extra", "");
-      var v = Number(value) || 0;
-      td.setAttribute("data-sort", String(v));
-      td.textContent = PK.byNum(v);
+      var belegt = typeof value === "number" && isFinite(value);
+      td.setAttribute("data-sort", belegt ? String(value) : "-1");
+      td.textContent = belegt ? PK.byNum(value) : PK.t("global.na");
+      if (!belegt) td.classList.add("score-band-na");
       return td;
     }
     function buildScoreBarSmall(value) {
+      var belegt = typeof value === "number" && isFinite(value);
       var wrap = document.createElement("div");
       wrap.className = "score-bar";
       var rowEl = document.createElement("div");
@@ -512,11 +533,11 @@
       fill.style.width = "0%";
       track.appendChild(fill);
       requestAnimationFrame(function () {
-        requestAnimationFrame(function () { fill.style.width = Math.max(0, Math.min(100, value)) + "%"; });
+        requestAnimationFrame(function () { fill.style.width = Math.max(0, Math.min(100, belegt ? value : 0)) + "%"; });
       });
       var val = document.createElement("span");
       val.className = "score-bar-value score-band-" + PK.scoreBand(value);
-      val.textContent = PK.byNum(value);
+      val.textContent = belegt ? PK.byNum(value) : PK.t("global.na");
       rowEl.appendChild(track);
       rowEl.appendChild(val);
       wrap.appendChild(rowEl);

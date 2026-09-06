@@ -217,8 +217,8 @@
     function sortValue(v, key) {
       if (key === "score") return typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
       if (key === "name") return (v.name || "").toLowerCase();
-      if (key === "preisProMg") return typeof v.preisProMg === "number" ? v.preisProMg : Infinity;
-      if (key === "versand") return (v.versand && typeof v.versand.tageMin === "number") ? v.versand.tageMin : Infinity;
+      if (key === "preisProMg") return typeof v.preisProMg === "number" ? v.preisProMg : null;
+      if (key === "versand") return (v.versand && typeof v.versand.tageMin === "number") ? v.versand.tageMin : null;
       return 0;
     }
 
@@ -232,6 +232,12 @@
 
       filtered.sort(function (a, b) {
         var va = sortValue(a, state.sort), vb = sortValue(b, state.sort);
+        // null (nicht ermittelbar/nicht belegt, data/SCHEMA.md v2) landet
+        // IMMER zuletzt, unabhängig von der Sortierrichtung - eine fehlende
+        // Datenbasis ist kein "kleinster Wert" und kein "größter Wert".
+        if (va === null && vb === null) return 0;
+        if (va === null) return 1;
+        if (vb === null) return -1;
         var cmp;
         if (typeof va === "string" || typeof vb === "string") {
           cmp = String(va).localeCompare(String(vb), "de");
