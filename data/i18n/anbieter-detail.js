@@ -13,9 +13,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.anbieter-detail.title": "Anbieter-Detail · PeptidKompass",
+    "page.anbieter-detail.title": "Anbieter-Detail · Peptide Compass",
     "page.anbieter-detail.metaDescription": "Volle Entscheidungsgrundlage zu einem Peptid-Anbieter: Score-Breakdown, Labor-Nachweise, Rechtsrahmen, Versand und Produkte.",
-    "page.anbieter-detail.ogTitle": "Anbieter-Detail · PeptidKompass",
+    "page.anbieter-detail.ogTitle": "Anbieter-Detail · Peptide Compass",
 
     "page.anbieter-detail.notFoundEyebrow": "Anbieter nicht gefunden",
     "page.anbieter-detail.notFoundH1": "Diesen Anbieter kennen wir nicht",
@@ -36,6 +36,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.scoreLabelLieferung": "Lieferung",
     "page.anbieter-detail.scoreLabelSortiment": "Sortiment",
     "page.anbieter-detail.scoreLabelPreis": "Preis",
+    "page.anbieter-detail.methodikLink": "Ganze Methodik lesen",
 
     "page.anbieter-detail.trustEyebrow": "Vertrauens-Check",
     "page.anbieter-detail.trustTitle": "Rechtsrahmen",
@@ -82,13 +83,20 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.chargenHeadReinheit": "Reinheit",
     "page.anbieter-detail.chargenHeadLabor": "Labor",
     "page.anbieter-detail.chargenHeadStatus": "Status",
-    "page.anbieter-detail.chargenEmpty": "Für diesen Anbieter liegen noch keine Chargen in unserer Demo-Datenbank vor."
+    "page.anbieter-detail.chargenEmpty": "Für diesen Anbieter liegen noch keine Chargen in unserer Demo-Datenbank vor.",
+
+    /* Runde "Leben und Conversion" (06.09.) */
+    "page.anbieter-detail.proofEyebrow": "Erfahrungen",
+    "page.anbieter-detail.proofTitle": "Was Kunden über {name} sagen",
+    "page.anbieter-detail.proofDemoNote": "Diese Zitate sind Platzhalter für die Demo, echte Bewertungen trägt Vic vor dem Live-Gang ein.",
+    "page.anbieter-detail.stickyClose": "Leiste schließen",
+    "page.anbieter-detail.stickyCopyButton": "Kopieren"
   });
 
   i18n.merge("en", {
-    "page.anbieter-detail.title": "Vendor detail · PeptidKompass",
+    "page.anbieter-detail.title": "Vendor detail · Peptide Compass",
     "page.anbieter-detail.metaDescription": "Everything you need to evaluate a peptide vendor: score breakdown, lab evidence, legal framework, shipping, and products.",
-    "page.anbieter-detail.ogTitle": "Vendor detail · PeptidKompass",
+    "page.anbieter-detail.ogTitle": "Vendor detail · Peptide Compass",
 
     "page.anbieter-detail.notFoundEyebrow": "Vendor not found",
     "page.anbieter-detail.notFoundH1": "We don't know this vendor",
@@ -109,6 +117,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.scoreLabelLieferung": "Shipping",
     "page.anbieter-detail.scoreLabelSortiment": "Range",
     "page.anbieter-detail.scoreLabelPreis": "Price",
+    "page.anbieter-detail.methodikLink": "Read the full methodology",
 
     "page.anbieter-detail.trustEyebrow": "Trust check",
     "page.anbieter-detail.trustTitle": "Legal framework",
@@ -155,7 +164,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.chargenHeadReinheit": "Purity",
     "page.anbieter-detail.chargenHeadLabor": "Lab",
     "page.anbieter-detail.chargenHeadStatus": "Status",
-    "page.anbieter-detail.chargenEmpty": "No batches for this vendor yet in our demo database."
+    "page.anbieter-detail.chargenEmpty": "No batches for this vendor yet in our demo database.",
+
+    "page.anbieter-detail.proofEyebrow": "Experiences",
+    "page.anbieter-detail.proofTitle": "What customers say about {name}",
+    "page.anbieter-detail.proofDemoNote": "These quotes are placeholders for the demo, Vic adds real reviews before launch.",
+    "page.anbieter-detail.stickyClose": "Close bar",
+    "page.anbieter-detail.stickyCopyButton": "Copy"
   });
 
 })(window.PK.i18n);

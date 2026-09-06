@@ -13,15 +13,15 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.affiliate-hinweis.title": "PeptidKompass · Affiliate-Hinweis",
-    "page.affiliate-hinweis.metaDescription": "Wie PeptidKompass sich finanziert: was das Label Anzeige bedeutet und warum die Bewertung unabhängig von Provisionen bleibt.",
-    "page.affiliate-hinweis.ogTitle": "PeptidKompass · Affiliate-Hinweis",
-    "page.affiliate-hinweis.ogDescription": "Wie PeptidKompass sich finanziert: was das Label Anzeige bedeutet und warum die Bewertung unabhängig von Provisionen bleibt.",
+    "page.affiliate-hinweis.title": "Peptide Compass · Affiliate-Hinweis",
+    "page.affiliate-hinweis.metaDescription": "Wie Peptide Compass sich finanziert: was das Label Anzeige bedeutet und warum die Bewertung unabhängig von Provisionen bleibt.",
+    "page.affiliate-hinweis.ogTitle": "Peptide Compass · Affiliate-Hinweis",
+    "page.affiliate-hinweis.ogDescription": "Wie Peptide Compass sich finanziert: was das Label Anzeige bedeutet und warum die Bewertung unabhängig von Provisionen bleibt.",
 
     "page.affiliate-hinweis.heroEyebrow": "Transparenz",
     "page.affiliate-hinweis.h1": "Affiliate-Hinweis",
 
-    "page.affiliate-hinweis.intro": "PeptidKompass finanziert sich über Affiliate-Links. Klickst du auf einen Link, der mit \"Anzeige\" gekennzeichnet ist, und kaufst beim jeweiligen Anbieter, erhalten wir unter Umständen eine Provision. Für dich ändert sich am Preis nichts.",
+    "page.affiliate-hinweis.intro": "Peptide Compass finanziert sich über Affiliate-Links. Klickst du auf einen Link, der mit \"Anzeige\" gekennzeichnet ist, und kaufst beim jeweiligen Anbieter, erhalten wir unter Umständen eine Provision. Für dich ändert sich am Preis nichts.",
 
     "page.affiliate-hinweis.labelH2": "Wie das Label \"Anzeige\" funktioniert",
     "page.affiliate-hinweis.labelLeadPre": "Die Kennzeichnung \"Anzeige\" steht direkt am Link, nicht nur einmal am Seitenanfang. So erkennst du auf jeder Seite sofort, welcher Klick zu einem externen Shop führt. Technisch tragen diese Links außerdem ",
@@ -36,15 +36,15 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.affiliate-hinweis.title": "PeptidKompass · Affiliate disclosure",
-    "page.affiliate-hinweis.metaDescription": "How PeptidKompass is funded: what the Ad label means and why ratings stay independent of commission.",
-    "page.affiliate-hinweis.ogTitle": "PeptidKompass · Affiliate disclosure",
-    "page.affiliate-hinweis.ogDescription": "How PeptidKompass is funded: what the Ad label means and why ratings stay independent of commission.",
+    "page.affiliate-hinweis.title": "Peptide Compass · Affiliate disclosure",
+    "page.affiliate-hinweis.metaDescription": "How Peptide Compass is funded: what the Ad label means and why ratings stay independent of commission.",
+    "page.affiliate-hinweis.ogTitle": "Peptide Compass · Affiliate disclosure",
+    "page.affiliate-hinweis.ogDescription": "How Peptide Compass is funded: what the Ad label means and why ratings stay independent of commission.",
 
     "page.affiliate-hinweis.heroEyebrow": "Transparency",
     "page.affiliate-hinweis.h1": "Affiliate disclosure",
 
-    "page.affiliate-hinweis.intro": "PeptidKompass is funded through affiliate links. If you click a link marked \"Ad\" and buy from that vendor, we may earn a commission. The price stays the same for you.",
+    "page.affiliate-hinweis.intro": "Peptide Compass is funded through affiliate links. If you click a link marked \"Ad\" and buy from that vendor, we may earn a commission. The price stays the same for you.",
 
     "page.affiliate-hinweis.labelH2": "How the \"Ad\" label works",
     "page.affiliate-hinweis.labelLeadPre": "The \"Ad\" label sits directly on the link, not just once at the top of the page. That way you can tell on every page which click leads to an external vendor. Technically, these links also carry ",

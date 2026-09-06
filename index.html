@@ -3,16 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="page.index.title">PeptidKompass · Peptid-Anbieter transparent vergleichen</title>
-<meta name="description" data-i18n="page.index.metaDescription" content="Peptid-Anbieter transparent vergleichen: PeptidKompass prüft Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Demo-Projekt, keine medizinische Beratung.">
-<link rel="canonical" href="https://peptidkompass.example/">
+<title data-i18n="page.index.title">Peptide Compass · Peptid-Anbieter transparent vergleichen</title>
+<meta name="description" data-i18n="page.index.metaDescription" content="Peptid-Anbieter transparent vergleichen: Peptide Compass prüft Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Demo-Projekt, keine medizinische Beratung.">
+<link rel="canonical" href="https://peptidecompass.example/">
 <meta property="og:type" content="website">
-<meta property="og:title" data-i18n="page.index.ogTitle" content="PeptidKompass · Peptid-Anbieter transparent vergleichen">
+<meta property="og:title" data-i18n="page.index.ogTitle" content="Peptide Compass · Peptid-Anbieter transparent vergleichen">
 <meta property="og:description" data-i18n="page.index.ogDescription" content="Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg: ein Score, fünf Kriterien, volle Transparenz.">
-<meta property="og:url" content="https://peptidkompass.example/">
+<meta property="og:url" content="https://peptidecompass.example/">
 <meta property="og:image" content="assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/system.css">
+<!-- Fix-Runde 3, Befund 11: erste 4 Logo-Leisten-Bilder vorab laden, damit
+     der Streifen beim First Paint nicht mit einem leeren Ausschnitt startet
+     (PK.initLogoStrip baut die Leiste erst nach data/vendors.js + site.js,
+     die Maskenbilder selbst kommen sonst erst mit der ersten Layout-Runde
+     an die Reihe). Reihenfolge = die ersten 4 Einträge in data/vendors.js. -->
+<link rel="preload" as="image" href="assets/img/logos/nordlicht-research.svg">
+<link rel="preload" as="image" href="assets/img/logos/helix-labs-demo.svg">
+<link rel="preload" as="image" href="assets/img/logos/aurora-peptide-supply.svg">
+<link rel="preload" as="image" href="assets/img/logos/quantum-bio-labs.svg">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
@@ -23,7 +32,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="index.html">PeptidKompass</a>
+    <a class="nav-logo" href="index.html"><span class="nav-logo-strong">Peptide</span> <span class="nav-logo-light">Compass</span></a>
     <nav aria-label="Hauptnavigation">
       <ul class="nav-links">
         <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
@@ -67,13 +76,62 @@
 
   <!-- HERO -->
   <section class="hero container">
-    <div class="hero-eyebrow"><span class="eyebrow" data-i18n="page.index.heroEyebrow">Peptid-Anbieter transparent vergleichen</span></div>
-    <h1 class="display" data-i18n="page.index.heroH1">Peptid-Anbieter, klar verglichen</h1>
-    <p data-i18n="page.index.heroLead">PeptidKompass prüft Labor, Rechtsrahmen, Lieferung, Sortiment und Preis, damit du in Ruhe entscheidest.</p>
-    <form class="search-bar" role="search" onsubmit="return false;">
-      <input type="search" placeholder="Anbieter oder Wirkstoff suchen" aria-label="Suche" data-i18n-attr="placeholder:page.index.searchPlaceholder,aria-label:page.index.searchAriaLabel">
-      <button class="btn btn-primary" type="submit" data-i18n="page.index.searchButton">Suchen</button>
-    </form>
+    <div class="hero-3d-stage">
+      <!-- .hero-3d-back : 3 verwaschene Moleküle, tief hinten, Faktor .3 -->
+      <div class="hero-3d hero-3d-back" aria-hidden="true">
+        <span class="hero-3d-sprite" data-depth="back" data-sprite="mol_a" style="--x:14%;--y:22%;--z:-170px;--size:110px;--dur:12.5s;--delay:-2s;--fx:15px;--fy:-16px;--rx:5deg;--ry:-4deg;--spin-dur:58s;--spin-delay:-6s;--rz:6deg">
+          <span class="hero-3d-spin">
+            <img src="assets/img/hero3d/mol_a_512.png" srcset="assets/img/hero3d/mol_a_320.png 320w, assets/img/hero3d/mol_a_512.png 512w, assets/img/hero3d/mol_a.png 1024w" sizes="(max-width:640px) 1px, (max-width:1023px) 85px, 110px" alt="" loading="eager" decoding="async">
+          </span>
+        </span>
+        <span class="hero-3d-sprite" data-depth="back" data-sprite="mol_b" style="--x:84%;--y:74%;--z:-140px;--size:140px;--dur:13.8s;--delay:-5s;--fx:-14px;--fy:15px;--rx:-4deg;--ry:5deg;--spin-dur:63s;--spin-delay:-20s;--rz:5deg">
+          <span class="hero-3d-spin">
+            <img src="assets/img/hero3d/mol_b_512.png" srcset="assets/img/hero3d/mol_b_320.png 320w, assets/img/hero3d/mol_b_512.png 512w, assets/img/hero3d/mol_b.png 1024w" sizes="(max-width:640px) 1px, (max-width:1023px) 105px, 140px" alt="" loading="eager" decoding="async">
+          </span>
+        </span>
+        <span class="hero-3d-sprite" data-depth="back" data-sprite="drop" style="--x:66%;--y:12%;--z:-155px;--size:80px;--dur:11.6s;--delay:-4s;--fx:16px;--fy:-14px;--rx:4deg;--ry:-5deg;--spin-dur:52s;--spin-delay:-16s;--rz:6deg">
+          <span class="hero-3d-spin">
+            <img src="assets/img/hero3d/drop_512.png" srcset="assets/img/hero3d/drop_320.png 320w, assets/img/hero3d/drop_512.png 512w, assets/img/hero3d/drop.png 1024w" sizes="(max-width:640px) 1px, (max-width:1023px) 60px, 80px" alt="" loading="eager" decoding="async">
+          </span>
+        </span>
+      </div>
+
+      <!-- .hero-3d-mid : Vial scharf, hinter dem Text, eigener Faktor .6 -->
+      <div class="hero-3d hero-3d-mid" aria-hidden="true">
+        <span class="hero-3d-sprite" data-depth="mid" data-sprite="vial_a" style="--x:4%;--y:38%;--z:-20px;--size:200px;--tilt:-8deg;--dur:14.5s;--delay:-1s;--fx:-17px;--fy:14px;--rx:-5deg;--ry:4deg;--spin-dur:50s;--spin-delay:-10s;--rz:5deg">
+          <span class="hero-3d-spin">
+            <img src="assets/img/hero3d/vial_a_512.png" srcset="assets/img/hero3d/vial_a_320.png 320w, assets/img/hero3d/vial_a_512.png 512w, assets/img/hero3d/vial_a.png 1024w" sizes="(max-width:640px) 1px, (max-width:1023px) 150px, 200px" alt="" loading="eager" decoding="async">
+          </span>
+        </span>
+      </div>
+
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><span class="eyebrow" data-i18n="page.index.heroEyebrow">Peptid-Anbieter transparent vergleichen</span></div>
+        <h1 class="display hero-h1"><span data-i18n="page.index.heroH1a">Peptid-Anbieter,</span> <span class="hero-h1-line" data-i18n="page.index.heroH1b">klar verglichen</span></h1>
+        <p data-i18n="page.index.heroLead">Peptide Compass prüft Labor, Rechtsrahmen, Lieferung, Sortiment und Preis, damit du in Ruhe entscheidest.</p>
+        <form class="search-bar" role="search" onsubmit="return false;">
+          <input type="search" placeholder="Anbieter oder Wirkstoff suchen" aria-label="Suche" data-i18n-attr="placeholder:page.index.searchPlaceholder,aria-label:page.index.searchAriaLabel">
+          <button class="btn btn-primary" type="submit" data-i18n="page.index.searchButton">Suchen</button>
+        </form>
+      </div>
+
+      <!-- .hero-3d-front : Vial + Helix groß, vor dem Text, Faktor 1, leichter H1-Overlap -->
+      <div class="hero-3d hero-3d-front" aria-hidden="true">
+        <span class="hero-3d-sprite hero-glass" data-depth="front" data-sprite="vial_b" style="--x:20%;--y:78%;--z:60px;--size:230px;--dur:9.4s;--delay:-0.6s;--fx:18px;--fy:-15px;--rx:5deg;--ry:-5deg;--spin-dur:44s;--spin-delay:-3s;--rz:8deg;--gmask:url(assets/img/hero3d/vial_b.png)">
+          <span class="hero-3d-spin">
+            <span class="hero-glass-body" aria-hidden="true" style="-webkit-mask-image:url(assets/img/hero3d/vial_b.png);mask-image:url(assets/img/hero3d/vial_b.png)"></span>
+            <img class="hero-glass-rim" src="assets/img/hero3d/vial_b_512.png" srcset="assets/img/hero3d/vial_b_320.png 320w, assets/img/hero3d/vial_b_512.png 512w, assets/img/hero3d/vial_b.png 1024w" sizes="(max-width:640px) 110px, (max-width:1023px) 160px, 230px" alt="" loading="eager" decoding="async">
+          </span>
+        </span>
+        <span class="hero-3d-sprite hero-glass" data-depth="front" data-sprite="mol_c" style="--x:70%;--y:35%;--z:80px;--size:330px;--dur:13.9s;--delay:-3.4s;--fx:-16px;--fy:17px;--rx:-5deg;--ry:5deg;--spin-dur:68s;--spin-delay:-30s;--rz:8deg;--gmask:url(assets/img/hero3d/mol_c.png)">
+          <span class="hero-3d-spin">
+            <span class="hero-glass-body" aria-hidden="true" style="-webkit-mask-image:url(assets/img/hero3d/mol_c.png);mask-image:url(assets/img/hero3d/mol_c.png)"></span>
+            <img class="hero-glass-rim" src="assets/img/hero3d/mol_c_512.png" srcset="assets/img/hero3d/mol_c_320.png 320w, assets/img/hero3d/mol_c_512.png 512w, assets/img/hero3d/mol_c.png 1024w" sizes="(max-width:640px) 150px, (max-width:1023px) 220px, 320px" alt="" loading="eager" decoding="async">
+          </span>
+        </span>
+      </div>
+    </div>
+
     <div class="hero-media">
       <video class="hero-media-video" data-hero-video autoplay muted loop playsinline
              preload="metadata" poster="assets/video/hero_poster.jpg" data-fallback="assets/img/hero.jpg">
@@ -82,24 +140,35 @@
     </div>
   </section>
 
-  <!-- 3 KENNZAHLEN -->
+  <!-- 3 KENNZAHLEN (Count-up via PK.initCountUp) -->
   <section class="section-tight container reveal" aria-label="Kennzahlen">
     <div class="stat-grid">
-      <div class="stat"><div class="stat-value" id="stat-vendors">–</div><div class="stat-label" data-i18n="page.index.statVendorsLabel">Anbieter geprüft</div></div>
-      <div class="stat"><div class="stat-value" id="stat-coas">–</div><div class="stat-label" data-i18n="page.index.statCoasLabel">CoAs geprüft</div></div>
-      <div class="stat"><div class="stat-value" id="stat-score">–</div><div class="stat-label" data-i18n="page.index.statScoreLabel">Score-Durchschnitt</div></div>
+      <div class="stat"><div class="stat-value" id="stat-vendors" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statVendorsLabel">Anbieter geprüft</div></div>
+      <div class="stat"><div class="stat-value" id="stat-coas" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statCoasLabel">CoAs geprüft</div></div>
+      <div class="stat"><div class="stat-value" id="stat-score" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statScoreLabel">Score-Durchschnitt</div></div>
     </div>
   </section>
 
-  <!-- ANBIETER DES MONATS -->
+  <!-- PODIUM: 3 stärkste Anbieter (ersetzt "Anbieter des Monats") -->
   <section class="section container reveal">
-    <p class="eyebrow" data-i18n="page.index.featuredEyebrow">Anbieter des Monats</p>
-    <h2 class="section-title" data-i18n="page.index.featuredTitle">Anbieter des Monats</h2>
-    <div id="featured-vendor" aria-live="polite"></div>
+    <p class="eyebrow" data-i18n="page.index.podiumEyebrow">Rangliste</p>
+    <h2 class="section-title" data-i18n="page.index.podiumTitle">Die drei stärksten Anbieter, heute</h2>
+    <p class="section-lead" data-i18n="page.index.podiumLead">Die drei Anbieter mit dem höchsten Gesamtscore aus Labor, Recht, Lieferung, Sortiment und Preis.</p>
+    <div class="podium" id="podium" aria-live="polite"></div>
   </section>
 
-  <!-- SCORE-ERKLÄRUNG -->
-  <section class="section section-tinted container reveal">
+  <!-- LOGO-LEISTE -->
+  <section class="section-tight container reveal">
+    <p class="eyebrow" data-i18n="page.index.logosEyebrow">Anbieter</p>
+    <h2 class="section-title" data-i18n="page.index.logosTitle">Die Marken, die wir laufend prüfen</h2>
+    <div class="logo-strip" id="logo-strip" data-logo-strip data-i18n-attr="aria-label:page.index.logosAriaLabel" aria-label="Anbieter, die wir laufend prüfen"></div>
+  </section>
+
+  <!-- SCORE-ERKLÄRUNG : einzige dunkle Produkt-Tile der Startseite
+       (DESIGN.md-Angleichung 06.09.: mind. eine .section-dark Pflicht,
+       .section-tinted -> .section-dark hier ersetzt). Karten/Links darin
+       erben automatisch die Dark-Tokens (system.css .section-dark). -->
+  <section class="section section-dark container reveal">
     <div class="split">
       <div class="split-text">
         <p class="eyebrow" data-i18n="page.index.scoreEyebrow">So bewerten wir</p>
@@ -107,7 +176,10 @@
         <p class="section-lead" data-i18n="page.index.scoreLead">Fünf Kriterien, transparent gewichtet.</p>
       </div>
       <div class="split-visual visual visual-kenburns">
-        <img src="assets/img/sec_score.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+        <!-- sec_batch.jpg (Pipette) statt sec_score.jpg (5 Vials): Fix-Runde
+             3, Befund 3 (Vial-Wiederholung, REVIEW_design_r3.md). sec_score.jpg
+             zieht stattdessen in die Charge-prüfen-Sektion unten. -->
+        <img src="assets/img/sec_batch.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
       </div>
     </div>
     <div class="grid-3" style="margin-top:var(--sp-4);">
@@ -118,6 +190,73 @@
       <div class="card tilt"><p class="card-eyebrow">20 %</p><p class="card-title" data-i18n="page.index.criteriaPreisTitle">Preis/mg</p><p class="card-body" data-i18n="page.index.criteriaPreisBody">Durchschnittspreis über alle Produkte</p></div>
     </div>
     <p class="text-small muted" style="margin-top:var(--sp-2);"><a class="btn-link" href="methodik.html" data-i18n="page.index.methodikLink">Ganze Methodik lesen</a></p>
+  </section>
+
+  <!-- FRESH: Frische-Leiste (Signale aus data/batches.js). Fix-Runde 3,
+       Befund 9 (REVIEW_design_r3.md): stand vorher direkt zwischen Podium
+       und Logo-Leiste, drei Trust-Sektionen ohne inhaltlichen Wechsel
+       hintereinander. Jetzt hinter "Wie wir bewerten" gezogen, das bricht
+       den Trust-Trust-Trust-Rhythmus mit einem Inhalts-Block und die
+       Aktualität folgt direkt auf die Methodik-Erklärung (passt inhaltlich:
+       "so bewerten wir" -> "und das ist aktuell"). -->
+  <section class="section-tight container reveal">
+    <p class="eyebrow" data-i18n="page.index.freshEyebrow">Aktualität</p>
+    <h2 class="section-title" data-i18n="page.index.freshTitle">Immer frisch geprüft</h2>
+    <div class="fresh" id="fresh" aria-live="polite"></div>
+  </section>
+
+  <!-- REGLER-MODUL "WAS IST DIR WICHTIG" -->
+  <section class="section section-tinted container reveal">
+    <p class="eyebrow" data-i18n="page.index.weightsEyebrow">Deine Gewichtung</p>
+    <h2 class="section-title" data-i18n="page.index.weightsTitle">Stell dein eigenes Ranking zusammen</h2>
+    <p class="section-lead" data-i18n="page.index.weightsLead">Verschieb die Regler, das Ranking passt sich sofort an deine Prioritäten an.</p>
+    <div class="weights" id="weights">
+      <div class="weights-sliders">
+        <div class="weights-row">
+          <div class="weights-row-head">
+            <label for="w-labor" data-i18n="page.index.weightsLabor">Labor</label>
+            <span class="weights-pct" data-weight-pct="labor">25%</span>
+          </div>
+          <input class="weights-slider" type="range" id="w-labor" min="0" max="3" step="0.1" value="2.5" data-crit="labor">
+        </div>
+        <div class="weights-row">
+          <div class="weights-row-head">
+            <label for="w-recht" data-i18n="page.index.weightsRecht">Rechtsrahmen</label>
+            <span class="weights-pct" data-weight-pct="recht">25%</span>
+          </div>
+          <input class="weights-slider" type="range" id="w-recht" min="0" max="3" step="0.1" value="2.5" data-crit="recht">
+        </div>
+        <div class="weights-row">
+          <div class="weights-row-head">
+            <label for="w-lieferung" data-i18n="page.index.weightsLieferung">Lieferung</label>
+            <span class="weights-pct" data-weight-pct="lieferung">15%</span>
+          </div>
+          <input class="weights-slider" type="range" id="w-lieferung" min="0" max="3" step="0.1" value="1.5" data-crit="lieferung">
+        </div>
+        <div class="weights-row">
+          <div class="weights-row-head">
+            <label for="w-sortiment" data-i18n="page.index.weightsSortiment">Sortiment</label>
+            <span class="weights-pct" data-weight-pct="sortiment">15%</span>
+          </div>
+          <input class="weights-slider" type="range" id="w-sortiment" min="0" max="3" step="0.1" value="1.5" data-crit="sortiment">
+        </div>
+        <div class="weights-row">
+          <div class="weights-row-head">
+            <label for="w-preis" data-i18n="page.index.weightsPreis">Preis</label>
+            <span class="weights-pct" data-weight-pct="preis">20%</span>
+          </div>
+          <input class="weights-slider" type="range" id="w-preis" min="0" max="3" step="0.1" value="2.0" data-crit="preis">
+        </div>
+        <div class="weights-actions">
+          <button type="button" class="btn btn-secondary weights-reset-btn" data-i18n="page.index.weightsReset">Zurücksetzen</button>
+        </div>
+        <p class="weights-hint text-caption muted" data-i18n="page.index.weightsHint">Die Regler ergeben zusammen immer 100 Prozent</p>
+      </div>
+      <div class="weights-result">
+        <p class="weights-result-title" data-i18n="page.index.weightsResultTitle">Dein Ranking</p>
+        <ol class="weights-ranking"></ol>
+      </div>
+    </div>
   </section>
 
   <!-- ANBIETER-GRID TOP 4 -->
@@ -180,9 +319,23 @@
         <a class="btn btn-primary" href="charge-pruefen.html" data-i18n="page.index.chargeCta">Charge prüfen</a>
       </div>
       <div class="split-visual visual visual-parallax">
-        <img src="assets/img/sec_batch.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+        <!-- sec_score.jpg (5 Vials) statt sec_batch.jpg: Fix-Runde 3, Befund 3
+             (Motiv-Tausch mit "Wie wir bewerten" oben). Nachbarn hier sind
+             sec_calc.jpg (Tropfen) und die vial-freie Proof-Sektion, also
+             kein Vial-neben-Vial. -->
+        <img src="assets/img/sec_score.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
       </div>
     </div>
+  </section>
+
+  <!-- PROOF: Zitat-Karten (Social Proof, versteckt sich selbst ohne data/reviews.js) -->
+  <section class="section container reveal" id="proof-section">
+    <p class="eyebrow" data-i18n="page.index.proofEyebrow">Erfahrungen</p>
+    <h2 class="section-title" data-i18n="page.index.proofTitle">Was andere über die Anbieter sagen</h2>
+    <p class="section-lead" data-i18n="page.index.proofLead">Kurze Einschätzungen zu Service, Lieferung und CoA-Verfügbarkeit, direkt von Kunden.</p>
+    <div class="proof-grid"></div>
+    <p class="proof-note text-caption muted" data-i18n="page.index.proofDemoNote">Diese Zitate sind Platzhalter für die Demo, echte Bewertungen trägt Vic vor dem Live-Gang ein.</p>
+    <p style="margin-top:var(--sp-2);"><a class="btn-link" href="anbieter/index.html" data-i18n="page.index.proofAllLink">Alle Erfahrungen ansehen</a></p>
   </section>
 
   <!-- FAQ -->
@@ -190,12 +343,12 @@
     <h2 class="section-title" data-i18n="page.index.faqTitle">Häufige Fragen</h2>
     <div class="faq">
       <details>
-        <summary data-i18n="page.index.faq1Q">Was ist PeptidKompass?</summary>
-        <p data-i18n="page.index.faq1A">PeptidKompass vergleicht Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Du siehst auf einen Blick, welcher Anbieter zu deinen Kriterien passt. Alle Bewertungen sind transparent nach unserer Methodik berechnet.</p>
+        <summary data-i18n="page.index.faq1Q">Was ist Peptide Compass?</summary>
+        <p data-i18n="page.index.faq1A">Peptide Compass vergleicht Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Du siehst auf einen Blick, welcher Anbieter zu deinen Kriterien passt. Alle Bewertungen sind transparent nach unserer Methodik berechnet.</p>
       </details>
       <details>
         <summary data-i18n="page.index.faq2Q">Sind das echte Anbieter?</summary>
-        <p data-i18n="page.index.faq2A">Nein, aktuell zeigt PeptidKompass acht fiktive Demo-Anbieter. Namen, Scores, Rabattcodes und Chargen sind Platzhalter. Echte Anbieter-Daten trägt Vic vor dem Live-Gang ein, klar als DEMO markiert bis dahin.</p>
+        <p data-i18n="page.index.faq2A">Nein, aktuell zeigt Peptide Compass acht fiktive Demo-Anbieter. Namen, Scores, Rabattcodes und Chargen sind Platzhalter. Echte Anbieter-Daten trägt Vic vor dem Live-Gang ein, klar als DEMO markiert bis dahin.</p>
       </details>
       <details>
         <summary data-i18n="page.index.faq3Q">Was bedeutet das Label Anzeige?</summary>
@@ -203,7 +356,7 @@
       </details>
       <details>
         <summary data-i18n="page.index.faq4Q">Sind die Substanzen für Menschen zugelassen?</summary>
-        <p data-i18n="page.index.faq4A">Nein. Alle auf PeptidKompass genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Es gibt keine Empfehlung zur Anwendung am Menschen und keine medizinische Beratung auf dieser Seite. Nur für Personen ab 18 Jahren.</p>
+        <p data-i18n="page.index.faq4A">Nein. Alle auf Peptide Compass genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Es gibt keine Empfehlung zur Anwendung am Menschen und keine medizinische Beratung auf dieser Seite. Nur für Personen ab 18 Jahren.</p>
       </details>
     </div>
   </section>
@@ -219,7 +372,7 @@
       <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
     </ul>
     <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
-    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© Peptide Compass · Demo-Projekt</p>
   </div>
 </footer>
 
@@ -228,9 +381,11 @@
 <script src="data/vendors.js"></script>
 <script src="data/peptides.js"></script>
 <script src="data/batches.js"></script>
+<script src="data/reviews.js"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
 <script src="data/i18n/global.js"></script>
 <script src="data/i18n/index.js"></script>
+<script src="data/i18n/conversion.js"></script>
 <script src="assets/js/site.js"></script>
 <script>
   // Seiten-Logik Start: nutzt nur PK-Helfer aus assets/js/site.js.
@@ -249,6 +404,7 @@
     PK.initHeroVideo();
     PK.initParallax();
     PK.initTilt();
+    PK.initHero3D();
 
     var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
     var peptides = Array.isArray(window.PK.peptides) ? window.PK.peptides : [];
@@ -264,34 +420,55 @@
     var statVendorsEl = document.getElementById("stat-vendors");
     var statCoasEl = document.getElementById("stat-coas");
     var statScoreEl = document.getElementById("stat-score");
-    var featuredEl = document.getElementById("featured-vendor");
+    var podiumEl = document.getElementById("podium");
     var gridEl = document.getElementById("vendor-grid");
     var peptideGrid = document.getElementById("peptide-grid");
+    var freshEl = document.getElementById("fresh");
+    var proofSection = document.getElementById("proof-section");
+    var weightsEl = document.getElementById("weights");
 
     /**
      * render() baut alle sprachabhängigen dynamischen Inhalte neu:
-     * Kennzahlen (PK.byNum je nach Locale), Anbieter des Monats,
-     * Anbieter-Grid Top 4, Wirkstoff-Vorschau (PK.tx für Kurztexte,
-     * PK.tEnum für die Kategorie). Läuft initial UND bei "pk:langchange"
-     * (Pflicht-Muster für jede Seite mit dynamischem Inhalt, siehe README).
+     * Kennzahlen (Count-up-Ziele, PK.byNum-Formatierung je Locale via
+     * PK.initCountUp), Podium (3 stärkste Anbieter, ersetzt "Anbieter des
+     * Monats"), Anbieter-Grid Top 4, Wirkstoff-Vorschau (PK.tx für
+     * Kurztexte, PK.tEnum für die Kategorie), Fresh-Leiste, Proof. Läuft
+     * initial UND bei "pk:langchange" (Pflicht-Muster, siehe README).
      */
     function render() {
-      // Kennzahlen
+      // Kennzahlen: Ziel-Werte setzen, PK.initCountUp zählt hoch (oder
+      // formatiert bei erneutem Aufruf/Sprachwechsel nur neu, siehe site.js).
       if (vendors.length && statVendorsEl) {
-        statVendorsEl.textContent = PK.byNum(vendors.length);
+        statVendorsEl.setAttribute("data-count-target", String(vendors.length));
         var coaSum = vendors.reduce(function (sum, v) { return sum + ((v.coa && v.coa.anzahl) || 0); }, 0);
-        statCoasEl.textContent = PK.byNum(coaSum);
+        statCoasEl.setAttribute("data-count-target", String(coaSum));
         var scoreSum = vendors.reduce(function (sum, v) {
           return sum + (typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score));
         }, 0);
-        statScoreEl.textContent = PK.byNum(Math.round(scoreSum / vendors.length));
+        statScoreEl.setAttribute("data-count-target", String(Math.round(scoreSum / vendors.length)));
+        PK.initCountUp(document.querySelector(".stat-grid"));
       }
 
-      // Anbieter des Monats = höchster Score (ia.md, offene Frage 2: kein eigenes featured-Flag)
-      if (featuredEl) {
-        featuredEl.textContent = "";
-        if (ranked.length) featuredEl.appendChild(PK.renderVendorCard(ranked[0], ""));
-      }
+      // Podium: 3 stärkste Anbieter (ia.md, offene Frage 2: kein eigenes
+      // featured-Flag, gleiche Rangfolge wie bisher "Anbieter des Monats").
+      if (podiumEl) PK.renderPodium(podiumEl, ranked.slice(0, 3));
+
+      // Logo-Leiste
+      PK.initLogoStrip("#logo-strip");
+
+      // Fresh-Leiste
+      if (freshEl) PK.renderFresh(freshEl);
+
+      // Proof (Zitat-Karten), versteckt sich selbst ohne window.PK.reviews.
+      // limit:6 (Fix-Runde 3, Befund 5): Startseite zeigt nur die 6 neuesten
+      // Zitate statt aller 16, "Alle Erfahrungen ansehen" verlinkt auf die
+      // Anbieter-Liste. Detailseite (anbieter/detail.html) bleibt ohne
+      // limit bei ihren 2 Zitaten je Vendor.
+      if (proofSection) PK.renderProof(proofSection, { basePath: "", limit: 6 });
+
+      // Regler-Modul (einmalig binden, danach idempotent über
+      // container.dataset.weightsBound in site.js)
+      if (weightsEl) PK.initWeights(weightsEl);
 
       // Anbieter-Grid Top 4 (Karten bekommen zusätzlich .tilt fürs Apple-
       // Produktseiten-Gefühl auf der Startseite; PK.renderVendorCard bleibt

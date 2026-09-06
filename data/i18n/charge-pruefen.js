@@ -13,9 +13,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.charge-pruefen.title": "Charge prüfen · PeptidKompass",
+    "page.charge-pruefen.title": "Charge prüfen · Peptide Compass",
     "page.charge-pruefen.metaDescription": "Chargennummer eingeben und gegen unsere Demo-Datenbank prüfen: Anbieter, Prüfdatum, Reinheit, CoA-Status. Plus Anleitung zur echten externen Prüfung.",
-    "page.charge-pruefen.ogTitle": "Charge prüfen · PeptidKompass",
+    "page.charge-pruefen.ogTitle": "Charge prüfen · Peptide Compass",
     "page.charge-pruefen.ogDescription": "Chargennummer eingeben, Ergebnis in Sekunden sehen, gegen unsere Demo-Datenbank geprüft.",
 
     "page.charge-pruefen.eyebrow": "Vertrauen prüfen",
@@ -62,9 +62,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.charge-pruefen.title": "Check batch · PeptidKompass",
+    "page.charge-pruefen.title": "Check batch · Peptide Compass",
     "page.charge-pruefen.metaDescription": "Enter a batch number and check it against our demo database: vendor, check date, purity, CoA status. Plus a guide to real external verification.",
-    "page.charge-pruefen.ogTitle": "Check batch · PeptidKompass",
+    "page.charge-pruefen.ogTitle": "Check batch · Peptide Compass",
     "page.charge-pruefen.ogDescription": "Enter a batch number, see the result in seconds, checked against our demo database.",
 
     "page.charge-pruefen.eyebrow": "Check trust",

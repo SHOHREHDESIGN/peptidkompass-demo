@@ -13,12 +13,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.wirkstoffe-detail.title": "Wirkstoff · PeptidKompass",
+    "page.wirkstoffe-detail.title": "Wirkstoff · Peptide Compass",
     "page.wirkstoffe-detail.metaDescription": "Einzelinfo zu einem Peptid: Kategorie, Studienlage, Hinweise und Anbieter, die dieses Peptid im Sortiment führen. Nur für Forschungszwecke.",
-    "page.wirkstoffe-detail.ogTitle": "Wirkstoff · PeptidKompass",
+    "page.wirkstoffe-detail.ogTitle": "Wirkstoff · Peptide Compass",
     "page.wirkstoffe-detail.ogDescription": "Kategorie, Studienlage, Hinweise und Anbieter im Überblick.",
     "page.wirkstoffe-detail.titleFallback": "Wirkstoff",
-    "page.wirkstoffe-detail.titleSuffix": " · PeptidKompass",
+    "page.wirkstoffe-detail.titleSuffix": " · Peptide Compass",
 
     "page.wirkstoffe-detail.backLink": "← Zurück zu Wirkstoffe",
 
@@ -38,6 +38,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.thPreis": "Preis",
     "page.wirkstoffe-detail.thPreisProMg": "Preis/mg",
     "page.wirkstoffe-detail.thGesamtscore": "Gesamtscore",
+    "page.wirkstoffe-detail.thAktion": "Aktion",
+    "page.wirkstoffe-detail.ctaZumAnbieter": "Zum Anbieter",
+    "page.wirkstoffe-detail.cheapestBadge": "Günstigster Preis/mg",
     "page.wirkstoffe-detail.vendorEmpty": "Aktuell führt kein geprüfter Anbieter dieses Peptid.",
 
     "page.wirkstoffe-detail.batchTableTitle": "Geprüfte Chargen",
@@ -51,12 +54,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.wirkstoffe-detail.title": "Peptide · PeptidKompass",
+    "page.wirkstoffe-detail.title": "Peptide · Peptide Compass",
     "page.wirkstoffe-detail.metaDescription": "A single peptide, explained: category, research stage, notes, and the vendors that carry it. Research use only.",
-    "page.wirkstoffe-detail.ogTitle": "Peptide · PeptidKompass",
+    "page.wirkstoffe-detail.ogTitle": "Peptide · Peptide Compass",
     "page.wirkstoffe-detail.ogDescription": "Category, research stage, notes, and vendors at a glance.",
     "page.wirkstoffe-detail.titleFallback": "Peptide",
-    "page.wirkstoffe-detail.titleSuffix": " · PeptidKompass",
+    "page.wirkstoffe-detail.titleSuffix": " · Peptide Compass",
 
     "page.wirkstoffe-detail.backLink": "← Back to Peptides",
 
@@ -76,6 +79,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.thPreis": "Price",
     "page.wirkstoffe-detail.thPreisProMg": "Price/mg",
     "page.wirkstoffe-detail.thGesamtscore": "Total score",
+    "page.wirkstoffe-detail.thAktion": "Action",
+    "page.wirkstoffe-detail.ctaZumAnbieter": "Visit vendor",
+    "page.wirkstoffe-detail.cheapestBadge": "Lowest price/mg",
     "page.wirkstoffe-detail.vendorEmpty": "No verified vendor currently carries this peptide.",
 
     "page.wirkstoffe-detail.batchTableTitle": "Verified batches",

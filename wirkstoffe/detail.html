@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="page.wirkstoffe-detail.title">Wirkstoff · PeptidKompass</title>
+<title data-i18n="page.wirkstoffe-detail.title">Wirkstoff · Peptide Compass</title>
 <meta name="description" data-i18n="page.wirkstoffe-detail.metaDescription" content="Einzelinfo zu einem Peptid: Kategorie, Studienlage, Hinweise und Anbieter, die dieses Peptid im Sortiment führen. Nur für Forschungszwecke.">
-<link rel="canonical" href="https://peptidkompass.example/wirkstoffe/detail.html">
+<link rel="canonical" href="https://peptidecompass.example/wirkstoffe/detail.html">
 <meta property="og:type" content="website">
-<meta property="og:title" data-i18n="page.wirkstoffe-detail.ogTitle" content="Wirkstoff · PeptidKompass">
+<meta property="og:title" data-i18n="page.wirkstoffe-detail.ogTitle" content="Wirkstoff · Peptide Compass">
 <meta property="og:description" data-i18n="page.wirkstoffe-detail.ogDescription" content="Kategorie, Studienlage, Hinweise und Anbieter im Überblick.">
-<meta property="og:url" content="https://peptidkompass.example/wirkstoffe/detail.html">
+<meta property="og:url" content="https://peptidecompass.example/wirkstoffe/detail.html">
 <meta property="og:image" content="../assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/css/system.css">
@@ -23,7 +23,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="../index.html">PeptidKompass</a>
+    <a class="nav-logo" href="../index.html"><span class="nav-logo-strong">Peptide</span> <span class="nav-logo-light">Compass</span></a>
     <nav aria-label="Hauptnavigation">
       <ul class="nav-links">
         <li><a href="../anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
@@ -121,8 +121,12 @@
               <th data-sortable onclick="PK.sortTable(this.closest('table'),0)" data-i18n="global.nav.anbieter">Anbieter</th>
               <th data-sortable onclick="PK.sortTable(this.closest('table'),1)" data-i18n="page.wirkstoffe-detail.thMg">mg</th>
               <th data-sortable onclick="PK.sortTable(this.closest('table'),2)" data-i18n="page.wirkstoffe-detail.thPreis">Preis</th>
-              <th data-sortable onclick="PK.sortTable(this.closest('table'),3)" data-i18n="page.wirkstoffe-detail.thPreisProMg">Preis/mg</th>
-              <th data-sortable onclick="PK.sortTable(this.closest('table'),4)" aria-sort="descending" data-i18n="page.wirkstoffe-detail.thGesamtscore">Gesamtscore</th>
+              <!-- Default-Sortierung jetzt hier (Befund "Journey-Lücke Wirkstoff
+                   → günstigster Anbieter"): Preisjägerin-Persona will den
+                   günstigsten Preis/mg sehen, ohne erst umzusortieren. -->
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),3)" aria-sort="ascending" data-i18n="page.wirkstoffe-detail.thPreisProMg">Preis/mg</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),4)" data-i18n="page.wirkstoffe-detail.thGesamtscore">Gesamtscore</th>
+              <th><span class="visually-hidden" data-i18n="page.wirkstoffe-detail.thAktion">Aktion</span></th>
             </tr>
           </thead>
           <tbody id="vendor-tbody"></tbody>
@@ -174,7 +178,7 @@
       <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
     </ul>
     <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
-    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© Peptide Compass · Demo-Projekt</p>
   </div>
 </footer>
 
@@ -286,9 +290,19 @@
           }
         });
       });
-      rows.sort(function (a, b) { return b.gesamt - a.gesamt; });
+      // Default-Sortierung: Preis/mg aufsteigend (günstigster zuerst), nicht
+      // mehr Gesamtscore absteigend (Befund "Journey-Lücke Wirkstoff →
+      // günstigster Anbieter", UX_audit_r1.html). Fehlender Preis/mg (null)
+      // rutscht ans Ende statt fälschlich als "0 = günstigster" zu gelten.
+      rows.sort(function (a, b) {
+        var pa = a.pricePerMg === null ? Infinity : a.pricePerMg;
+        var pb = b.pricePerMg === null ? Infinity : b.pricePerMg;
+        return pa - pb;
+      });
+      var cheapestPpm = rows.length && rows[0].pricePerMg !== null ? rows[0].pricePerMg : null;
 
       vendorTbody.textContent = "";
+      var badgeText = PK.tx(window.PK.site, "affiliateNote") || PK.t("global.badge.ad");
       rows.forEach(function (r) {
         var tr = document.createElement("tr");
 
@@ -308,10 +322,19 @@
         tdPreis.setAttribute("data-sort", String(r.preis || 0));
 
         var tdPpm = document.createElement("td");
-        tdPpm.textContent = r.pricePerMg !== null
-          ? (PK.byNum(r.pricePerMg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €/mg")
-          : "–";
         tdPpm.setAttribute("data-sort", String(r.pricePerMg || 0));
+        tdPpm.appendChild(document.createTextNode(r.pricePerMg !== null
+          ? (PK.byNum(r.pricePerMg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €/mg")
+          : "–"));
+        // Pill "Günstigster Preis/mg" auf der ersten Zeile nach Sortierung
+        // (nur wenn ein echter Preis/mg vorliegt, kein "-1 gewinnt trotzdem").
+        if (cheapestPpm !== null && r.pricePerMg === cheapestPpm) {
+          var cheapestPill = document.createElement("span");
+          cheapestPill.className = "pill pill-ok";
+          cheapestPill.style.marginLeft = "8px";
+          cheapestPill.textContent = PK.t("page.wirkstoffe-detail.cheapestBadge");
+          tdPpm.appendChild(cheapestPill);
+        }
 
         var tdScore = document.createElement("td");
         tdScore.setAttribute("data-sort", String(r.gesamt || 0));
@@ -321,11 +344,28 @@
         scorePill.textContent = PK.byNum(r.gesamt);
         tdScore.appendChild(scorePill);
 
+        // Aktion: CTA direkt in der Zeile (Befund "Journey-Lücke"), gleiches
+        // Pflicht-Kennzeichnungs-Muster wie vergleich.html/anbieter-detail.
+        var tdAction = document.createElement("td");
+        var shopLink = document.createElement("a");
+        shopLink.className = "btn btn-secondary ext-link";
+        shopLink.href = PK.safeUrl(r.vendor.affiliateUrl);
+        shopLink.target = "_blank";
+        shopLink.rel = "sponsored nofollow";
+        shopLink.setAttribute("data-affiliate", "true");
+        shopLink.appendChild(document.createTextNode(PK.t("page.wirkstoffe-detail.ctaZumAnbieter")));
+        var badge = document.createElement("span");
+        badge.className = "badge-ad";
+        badge.textContent = badgeText;
+        shopLink.appendChild(badge);
+        tdAction.appendChild(shopLink);
+
         tr.appendChild(tdName);
         tr.appendChild(tdMg);
         tr.appendChild(tdPreis);
         tr.appendChild(tdPpm);
         tr.appendChild(tdScore);
+        tr.appendChild(tdAction);
         vendorTbody.appendChild(tr);
       });
       if (vendorEmpty) vendorEmpty.hidden = rows.length > 0;

@@ -12,9 +12,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.deals.title": "Deals · PeptidKompass",
+    "page.deals.title": "Deals · Peptide Compass",
     "page.deals.metaDescription": "Alle Rabattcodes der geprüften Peptid-Anbieter im Überblick. Code kopieren, beim Anbieter einlösen.",
-    "page.deals.ogTitle": "Deals · PeptidKompass",
+    "page.deals.ogTitle": "Deals · Peptide Compass",
     "page.deals.ogDescription": "Alle Rabattcodes im Überblick. Code kopieren, beim Anbieter einlösen.",
 
     "page.deals.eyebrow": "Rabattcodes",
@@ -33,9 +33,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.deals.title": "Deals · PeptidKompass",
+    "page.deals.title": "Deals · Peptide Compass",
     "page.deals.metaDescription": "All discount codes from vetted peptide vendors in one place. Copy a code, redeem it at the vendor.",
-    "page.deals.ogTitle": "Deals · PeptidKompass",
+    "page.deals.ogTitle": "Deals · Peptide Compass",
     "page.deals.ogDescription": "All discount codes in one place. Copy a code, redeem it at the vendor.",
 
     "page.deals.eyebrow": "Discount codes",

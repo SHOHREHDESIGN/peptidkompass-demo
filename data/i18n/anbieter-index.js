@@ -13,9 +13,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.anbieter-index.title": "Alle Anbieter im Überblick · PeptidKompass",
+    "page.anbieter-index.title": "Alle Anbieter im Überblick · Peptide Compass",
     "page.anbieter-index.metaDescription": "Acht geprüfte Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg vergleichen. Nach Land und Prüf-Status filtern, nach Score, Name, Preis/mg oder Versandzeit sortieren.",
-    "page.anbieter-index.ogTitle": "Alle Anbieter im Überblick · PeptidKompass",
+    "page.anbieter-index.ogTitle": "Alle Anbieter im Überblick · Peptide Compass",
     "page.anbieter-index.ogDescription": "Acht geprüfte Anbieter, ein Blick genügt.",
 
     "page.anbieter-index.h1": "Alle Anbieter im Überblick",
@@ -43,9 +43,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.anbieter-index.title": "All vendors overview · PeptidKompass",
+    "page.anbieter-index.title": "All vendors overview · Peptide Compass",
     "page.anbieter-index.metaDescription": "Compare eight vetted peptide vendors by lab quality, legal framework, shipping, range, and price per mg. Filter by country and verification status, sort by score, name, price per mg, or shipping time.",
-    "page.anbieter-index.ogTitle": "All vendors overview · PeptidKompass",
+    "page.anbieter-index.ogTitle": "All vendors overview · Peptide Compass",
     "page.anbieter-index.ogDescription": "Eight vetted vendors, one clear view.",
 
     "page.anbieter-index.h1": "All vendors overview",

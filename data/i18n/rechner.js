@@ -13,9 +13,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.rechner.title": "Anmisch-Rechner · PeptidKompass",
+    "page.rechner.title": "Anmisch-Rechner · Peptide Compass",
     "page.rechner.metaDescription": "Anmisch-Rechner für Peptide: mg Wirkstoff und ml bakteriostatisches Wasser eingeben, Konzentration in mg/ml und je 0,1 ml berechnen. Keine Dosierungsempfehlung.",
-    "page.rechner.ogTitle": "Anmisch-Rechner · PeptidKompass",
+    "page.rechner.ogTitle": "Anmisch-Rechner · Peptide Compass",
     "page.rechner.ogDescription": "mg Wirkstoff und ml bakteriostatisches Wasser eingeben, Konzentration in mg/ml und je 0,1 ml berechnen.",
 
     "page.rechner.eyebrow": "Rechner",
@@ -48,9 +48,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.rechner.title": "Mixing calculator · PeptidKompass",
+    "page.rechner.title": "Mixing calculator · Peptide Compass",
     "page.rechner.metaDescription": "Peptide mixing calculator: enter mg of peptide and ml of bacteriostatic water to calculate concentration in mg/ml and per 0.1 ml. No dosing recommendation.",
-    "page.rechner.ogTitle": "Mixing calculator · PeptidKompass",
+    "page.rechner.ogTitle": "Mixing calculator · Peptide Compass",
     "page.rechner.ogDescription": "Enter mg of peptide and ml of bacteriostatic water to calculate concentration in mg/ml and per 0.1 ml.",
 
     "page.rechner.eyebrow": "Calculator",

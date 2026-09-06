@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title id="page-title" data-i18n="page.anbieter-detail.title">Anbieter-Detail · PeptidKompass</title>
+<title id="page-title" data-i18n="page.anbieter-detail.title">Anbieter-Detail · Peptide Compass</title>
 <meta name="description" id="page-description" data-i18n="page.anbieter-detail.metaDescription" content="Volle Entscheidungsgrundlage zu einem Peptid-Anbieter: Score-Breakdown, Labor-Nachweise, Rechtsrahmen, Versand und Produkte.">
-<link rel="canonical" id="page-canonical" href="https://peptidkompass.example/anbieter/detail.html">
+<link rel="canonical" id="page-canonical" href="https://peptidecompass.example/anbieter/detail.html">
 <meta property="og:type" content="website">
-<meta property="og:title" id="og-title" data-i18n="page.anbieter-detail.ogTitle" content="Anbieter-Detail · PeptidKompass">
+<meta property="og:title" id="og-title" data-i18n="page.anbieter-detail.ogTitle" content="Anbieter-Detail · Peptide Compass">
 <meta property="og:image" content="../assets/img/og.jpg">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/css/system.css">
@@ -21,7 +21,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="../index.html">PeptidKompass</a>
+    <a class="nav-logo" href="../index.html"><span class="nav-logo-strong">Peptide</span> <span class="nav-logo-light">Compass</span></a>
     <nav aria-label="Hauptnavigation">
       <ul class="nav-links">
         <li><a href="index.html" aria-current="page" data-i18n="global.nav.anbieter">Anbieter</a></li>
@@ -79,13 +79,21 @@
       <div class="visual visual-banner visual-parallax" style="margin-bottom:var(--sp-4);">
         <img id="vendor-banner-img" src="../assets/img/sec_vendors.jpg" alt="" loading="eager" fetchpriority="high" onerror="this.style.display='none'">
       </div>
-      <div class="row-between" style="align-items:flex-start;">
+      <div class="row-between" id="vendor-head" style="align-items:flex-start; border-top:3px solid var(--brand, var(--line-strong)); padding-top:var(--sp-3);">
         <div>
           <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:var(--sp-2);">
             <span class="pill" id="vendor-land-pill">DE</span>
             <span class="pill pill-info" data-i18n="page.anbieter-detail.demoPill">Demo-Daten</span>
           </div>
-          <h1 class="display" id="vendor-name" style="margin-bottom:6px;">Anbieter</h1>
+          <!-- Logo (40px, brand-logo--detail) trägt jetzt den Markennamen visuell;
+               H1 bleibt <h1> für SEO, aber optisch auf .h2-Größe reduziert statt
+               .display (56px) - keine Dopplung von Logo+Bold-H1 mehr (Fix-Runde
+               3, Befund 6). Entscheidung: Logo behalten (Orientierung + Marke),
+               H1 verkleinern statt Logo zu entfernen, weil vendor.brand nicht bei
+               jedem Anbieter garantiert vorhanden ist (Fallback zeigt sonst nur
+               Text ohne jede visuelle Hierarchie über der Subhead). -->
+          <div id="vendor-logo" style="margin-bottom:var(--sp-2);"></div>
+          <h1 class="h2" id="vendor-name" style="margin-bottom:6px;">Anbieter</h1>
           <p class="muted" id="vendor-subhead">Land · Score –/100</p>
         </div>
         <div class="score-ring" id="vendor-score-ring" style="--pct:0; margin-top:28px;" aria-hidden="true"><span class="score-ring-value" id="vendor-score-value">–</span></div>
@@ -101,6 +109,10 @@
       <h2 class="section-title" data-i18n="page.anbieter-detail.scoreTitle">Score im Detail</h2>
       <p class="section-lead" data-i18n="page.anbieter-detail.scoreLead">Fünf Kriterien, einzeln gewichtet.</p>
       <div class="score-bar" id="score-breakdown"></div>
+      <!-- Score-Erklär-Link (UX-Audit r1, Quick-Win: "Score-Breakdown ohne
+           Vor-Ort-Erklärung") : gleiches Muster wie vergleich.html/index.html,
+           direkt unter der Score-Sektion statt nur global in der Nav. -->
+      <p style="margin-top:var(--sp-3);"><a class="btn-link" href="../methodik.html" data-i18n="page.anbieter-detail.methodikLink">Ganze Methodik lesen</a></p>
     </section>
 
     <!-- TRUST-ICONS / RECHTSRAHMEN-CHECKLISTE -->
@@ -178,6 +190,15 @@
       </div>
     </section>
 
+    <!-- PROOF: Zitat-Karten dieses Anbieters (versteckt sich selbst ohne
+         Reviews für diesen Anbieter) -->
+    <section class="section section-tinted container reveal" id="proof-section">
+      <p class="eyebrow" data-i18n="page.anbieter-detail.proofEyebrow">Erfahrungen</p>
+      <h2 class="section-title" id="proof-title">Was Kunden sagen</h2>
+      <div class="proof-grid"></div>
+      <p class="proof-note text-caption muted" data-i18n="page.anbieter-detail.proofDemoNote">Diese Zitate sind Platzhalter für die Demo, echte Bewertungen trägt Vic vor dem Live-Gang ein.</p>
+    </section>
+
     <!-- CHARGEN -->
     <section class="section container reveal">
       <p class="eyebrow" data-i18n="page.anbieter-detail.chargenEyebrow">Prüfhistorie</p>
@@ -204,6 +225,24 @@
 
 </main>
 
+<!-- STICKY CODE BAR (Mobile): erscheint nach 30% Scroll, schließbar. Nur mit
+     Rabatt-Code befüllt, siehe render()/initStickyCodeBar() im Bootstrap-Script. -->
+<div class="sticky-code-bar" id="sticky-code-bar" hidden>
+  <code class="sticky-code-bar-code" id="sticky-code-bar-code" data-code>CODE</code>
+  <!-- Copy-Button (Fix-Runde 3, Befund 7): nutzt PK.copyCode() wieder, wie
+       .code-box (Podium, Rabatt-Sektion) - PK.copyCode() sucht [data-code]
+       erst in .closest(".code-box"), sonst im gemeinsamen Elternelement
+       (hier direkt .sticky-code-bar, siehe site.js), daher kein eigener
+       .code-box-Wrapper nötig, der das Bar-Styling überschreiben würde. -->
+  <button type="button" class="btn btn-secondary sticky-code-bar-copy" onclick="PK.copyCode(this)" data-i18n="page.anbieter-detail.stickyCopyButton">Kopieren</button>
+  <a class="btn btn-primary ext-link sticky-code-bar-cta" id="sticky-code-bar-cta" target="_blank" rel="sponsored nofollow" data-affiliate="true" href="#">
+    <span class="sticky-code-bar-cta-label" id="sticky-code-bar-cta-label">Zum Anbieter</span><span class="badge-ad" id="sticky-code-bar-cta-badge">Anzeige</span>
+  </a>
+  <button type="button" class="sticky-code-bar-close" id="sticky-code-bar-close" data-i18n-attr="aria-label:page.anbieter-detail.stickyClose" aria-label="Leiste schließen">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+  </button>
+</div>
+
 <footer class="footer">
   <div class="footer-inner">
     <ul class="footer-links">
@@ -213,7 +252,7 @@
       <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
     </ul>
     <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
-    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© Peptide Compass · Demo-Projekt</p>
   </div>
 </footer>
 
@@ -222,6 +261,7 @@
 <script src="../data/vendors.js"></script>
 <script src="../data/peptides.js"></script>
 <script src="../data/batches.js"></script>
+<script src="../data/reviews.js"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
 <script src="../data/i18n/global.js"></script>
 <script src="../data/i18n/anbieter-detail.js"></script>
@@ -253,7 +293,7 @@
 
     var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
     var canEl = document.getElementById("page-canonical");
-    if (canEl) canEl.setAttribute("href", "https://peptidkompass.example/anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug));
+    if (canEl) canEl.setAttribute("href", "https://peptidecompass.example/anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug));
 
     /**
      * render() baut alle sprachabhängigen dynamischen Inhalte des Anbieter-
@@ -267,9 +307,9 @@
       var badgeText = PK.tx(window.PK.site, "affiliateNote") || PK.t("global.badge.ad");
 
       // Titel + Meta (sprachabhängig: Kurztext via PK.tx)
-      document.getElementById("page-title").textContent = vendor.name + " · PeptidKompass";
+      document.getElementById("page-title").textContent = vendor.name + " · Peptide Compass";
       var ogTitleEl = document.getElementById("og-title");
-      if (ogTitleEl) ogTitleEl.setAttribute("content", vendor.name + " · PeptidKompass");
+      if (ogTitleEl) ogTitleEl.setAttribute("content", vendor.name + " · Peptide Compass");
       var descEl = document.getElementById("page-description");
       if (descEl) descEl.setAttribute("content", PK.tx(vendor, "kurz") + " Score " + gesamt + "/100.");
 
@@ -292,14 +332,24 @@
       var bannerPositions = ["40%", "50%", "60%"];
       bannerImg.style.objectPosition = bannerPositions[((vendorIdx % bannerPositions.length) + bannerPositions.length) % bannerPositions.length];
 
-      // Kopfbereich
+      // Kopfbereich: 3px Brand-Rand + Logo (Runde "Leben und Conversion").
+      // Fehlt vendor.brand: --brand bleibt undefiniert, CSS fällt auf
+      // --line-strong zurück (neutraler Rand statt kaputtem Look).
+      var headEl = document.getElementById("vendor-head");
+      if (vendor.brand && vendor.brand.farbe) headEl.style.setProperty("--brand", vendor.brand.farbe);
+      var logoSlot = document.getElementById("vendor-logo");
+      logoSlot.textContent = "";
+      logoSlot.appendChild(PK.renderLogo(vendor, { basePath: "../", eager: true, detail: true }));
+
       document.getElementById("vendor-land-pill").textContent = PK.tEnum("land", vendor.land) || "";
       document.getElementById("vendor-name").textContent = vendor.name || "";
       document.getElementById("vendor-subhead").textContent = PK.t("page.anbieter-detail.subheadTemplate", { land: PK.tEnum("land", vendor.land), score: PK.byNum(gesamt) });
 
       var ring = document.getElementById("vendor-score-ring");
       ring.style.setProperty("--pct", String(gesamt));
-      document.getElementById("vendor-score-value").textContent = PK.byNum(gesamt);
+      var scoreValEl = document.getElementById("vendor-score-value");
+      scoreValEl.className = "score-ring-value score-band-" + PK.scoreBand(gesamt);
+      scoreValEl.textContent = PK.byNum(gesamt);
 
       var cta = document.getElementById("vendor-cta");
       cta.href = PK.safeUrl(vendor.affiliateUrl);
@@ -483,11 +533,91 @@
           chargenTbody.appendChild(tr);
         });
       }
+
+      // Proof: nur die Bewertungen dieses Anbieters (versteckt die Sektion
+      // selbst, wenn keine vorliegen, siehe PK.renderProof-Fallback).
+      var proofSection = document.getElementById("proof-section");
+      if (proofSection) {
+        document.getElementById("proof-title").textContent = PK.t("page.anbieter-detail.proofTitle", { name: vendor.name || "" });
+        PK.renderProof(proofSection, { basePath: "../", vendorSlug: vendor.slug, demoNoteKey: "page.anbieter-detail.proofDemoNote" });
+      }
+
+      // Sticky Code Bar (Mobile): nur befüllen, wenn ein Rabattcode existiert.
+      var stickyBar = document.getElementById("sticky-code-bar");
+      if (stickyBar) {
+        if (vendor.rabatt && vendor.rabatt.code) {
+          stickyBar.hidden = false;
+          document.getElementById("sticky-code-bar-code").textContent = vendor.rabatt.code;
+          var stickyCta = document.getElementById("sticky-code-bar-cta");
+          stickyCta.href = PK.safeUrl(vendor.affiliateUrl);
+          document.getElementById("sticky-code-bar-cta-label").textContent = PK.t("page.anbieter-detail.ctaZumAnbieter");
+          document.getElementById("sticky-code-bar-cta-badge").textContent = badgeText;
+        } else {
+          stickyBar.hidden = true;
+          stickyBar.classList.remove("is-visible");
+        }
+      }
     }
 
     render();
     document.addEventListener("pk:langchange", render);
+    initStickyCodeBar(vendor);
   })();
+
+  /**
+   * initStickyCodeBar(vendor)
+   * Mobile Sticky-Leiste (Code + CTA): erscheint, sobald 30% der Seite
+   * gescrollt wurden, bleibt bis zum Schließen sichtbar (nicht erneut
+   * zeigen nach dem Schließen, respektiert die Entscheidung der Nutzerin
+   * für den Rest des Seitenbesuchs). No-Op ohne Rabattcode (Bar bleibt
+   * hidden, siehe render() oben) oder wenn document schon durchgescrollt
+   * geladen wurde (Sofort-Check statt nur auf das nächste Scroll-Event
+   * zu warten, gleiches Muster wie PK.initReveal/PK.initCountUp).
+   */
+  function initStickyCodeBar(vendor) {
+    var bar = document.getElementById("sticky-code-bar");
+    var closeBtn = document.getElementById("sticky-code-bar-close");
+    if (!bar || !vendor || !vendor.rabatt || !vendor.rabatt.code) return;
+
+    var dismissed = false;
+
+    function scrollFraction() {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return 1;
+      return Math.max(0, Math.min(1, window.scrollY / scrollable));
+    }
+
+    // body padding-bottom, solange die Bar sichtbar ist (Fix-Runde 3, Befund
+    // 7): reserviert genau die Bar-Höhe am Seitenende, damit der letzte
+    // Content (Footer-Disclaimer) nie unter der fixed Bar verschwindet,
+    // egal wie lang Code/Übersetzung die Bar macht. Zurückgesetzt beim
+    // Schließen.
+    function syncBodyPadding() {
+      if (bar.classList.contains("is-visible")) {
+        document.body.style.paddingBottom = bar.offsetHeight + "px";
+      } else {
+        document.body.style.paddingBottom = "";
+      }
+    }
+
+    function check() {
+      if (dismissed || bar.hidden) return;
+      if (scrollFraction() >= 0.3) { bar.classList.add("is-visible"); syncBodyPadding(); }
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        dismissed = true;
+        bar.classList.remove("is-visible");
+        syncBodyPadding();
+      });
+    }
+
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+  }
 </script>
 </body>
 </html>

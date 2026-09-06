@@ -34,62 +34,108 @@
    1. TOKENS
    ----------------------------------------------------------------------- */
 :root{
-  /* Farbe : Light (Default) */
+  /* Farbe : Light (Default)
+     DESIGN.md-Mapping (Apple-Analyse, VoltAgent/MIT): --accent = Action Blue
+     {colors.primary} #0066cc (war #0071e3, das war eigentlich Apples
+     primary-focus). --focus-ring bleibt #0071e3 : deckt sich 1:1 mit
+     {colors.primary-focus}, unverändert richtig. --surface/#f5f5f7 und
+     --text/#1d1d1f trafen {colors.canvas-parchment} bzw. {colors.ink} schon
+     exakt, keine Änderung nötig. --text-secondary bewusst NICHT auf
+     {colors.ink-muted-48} (#7a7a7a) umgestellt : fällt auf --surface
+     (Parchment) rechnerisch auf 3.94:1 (AA-Fail bei 12-14px). #5c5c61 bleibt
+     (6.1-6.65:1 auf Weiß/Parchment, AA-sicher) : siehe assets/css/README.md
+     Abschnitt "DESIGN.md-Mapping". --line = {colors.hairline} #e0e0e0,
+     --line-strong = {colors.surface-chip-translucent}-Basis #d2d2d7 (war
+     d2d2d7/b8b8bd) : jetzt exakt Apples zwei dokumentierte Grau-Stufen. */
   --bg:            #ffffff;
   --surface:       #f5f5f7;
   --surface-2:     #ffffff;
   --text:          #1d1d1f;
   --text-secondary:#5c5c61;
-  --accent:        #0071e3;
-  --accent-strong: #0059b3;
-  --line:          #d2d2d7;
-  --line-strong:   #b8b8bd;
+  --accent:        #0066cc;
+  --accent-strong: color-mix(in srgb, var(--accent) 80%, black);
+  --line:          #e0e0e0;
+  --line-strong:   #d2d2d7;
   --focus-ring:    #0071e3;
 
   --ok:            #1d8a4c;
   --ok-bg:         #e6f6ec;
-  --warn:          #b3660a;
+  --warn:          #8a5108; /* war #b3660a (3.81:1 auf --warn-bg, AA-Fail bei 12px/700
+                                fürs Pflicht-Badge .badge-ad), jetzt 5.63:1 (UX-Audit r1,
+                                Befund "Anzeige-Pflichtlabel zu kontrastarm") */
   --warn-bg:       #fbeedd;
   --info:          #0071e3;
   --info-bg:       #e8f1fd;
   --danger:        #d70015;
 
+  /* Schatten nur noch für Fokus-Ring-Ersatztricks (0-Blur-Ring, siehe
+     .weights-slider-thumb/.visual) : ECHTE Elevation-Schatten auf Karten/
+     Buttons/Text sind laut DESIGN.md("Elevation & Depth") entfernt, siehe
+     Abschnitt 7 (.card) und 19 (.podium-card). Produktbild-Schatten-
+     Ausnahme geprüft (Apple: rgba(0,0,0,.22) 3px 5px 30px NUR auf
+     freistehenden Produkt-Renders) : Peptide Compass hat keine
+     freistehenden Renders, nur Full-Bleed-Fotografie (.visual/.hero-media) :
+     Ausnahme bleibt ungenutzt, hier dokumentiert statt stillschweigend
+     ausgelassen. */
   --shadow-1: 0 1px 2px rgba(0,0,0,.04), 0 2px 6px rgba(0,0,0,.04);
   --shadow-2: 0 4px 16px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.05);
   --shadow-3: 0 16px 40px rgba(0,0,0,.14), 0 3px 8px rgba(0,0,0,.06);
+  --shadow-product: 0 3px 30px rgba(0,0,0,.22); /* reserviert, ungenutzt */
   --card-border: rgba(0,0,0,.06);
 
   /* Font-Stack (Annahme 5/6 : System-Stack, Inter nur Fallback) */
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Type-Scale (Desktop-Basis, siehe Abschnitt Mobile-Override) */
-  --fs-display: 3.5rem;   --lh-display: 1.1429; --ls-display: -0.022em; /* 56/64 */
-  --fs-h1:      3rem;     --lh-h1: 1.0833;      --ls-h1: -0.019em;      /* 48    */
-  --fs-h2:      2.5rem;   --lh-h2: 1.1;         --ls-h2: -0.015em;      /* 40    */
-  --fs-h3:      1.75rem;  --lh-h3: 1.25;        --ls-h3: -0.008em;      /* 28    */
-  --fs-body:    1.0625rem;--lh-body: 1.5;                               /* 17    */
-  --fs-small:   0.875rem; --lh-small: 1.45;                             /* 14    */
-  --fs-caption: 0.75rem;  --lh-caption: 1.4;                            /* 12    */
+  /* Type-Scale (Desktop-Basis, siehe Abschnitt Mobile-Override).
+     Letter-Spacing/Line-Height jetzt aus DESIGN.md übernommen : Apple trackt
+     BODY-Text proportional enger als Display (-0.374px/17px = -0.022em ist
+     GRÖSSER in em als -0.28px/56px = -0.005em) : vorher lief unser System
+     genau umgekehrt (Display am engsten). h2/40px trifft {display-lg} exakt
+     (ls 0, lh 1.1). body jetzt 17/1.47/-0.374 wie im Auftrag gefordert. */
+  --fs-display: 3.5rem;   --lh-display: 1.07;   --ls-display: -0.005em; /* 56/60 : hero-display */
+  --fs-h1:      3rem;     --lh-h1: 1.0833;      --ls-h1: -0.006em;      /* 48    */
+  --fs-h2:      2.5rem;   --lh-h2: 1.1;         --ls-h2: 0em;           /* 40 : display-lg exakt */
+  --fs-h3:      1.75rem;  --lh-h3: 1.25;        --ls-h3: -0.010em;      /* 28    */
+  --fs-body:    1.0625rem;--lh-body: 1.47;      --ls-body: -0.022em;   /* 17 : body exakt */
+  --fs-small:   0.875rem; --lh-small: 1.43;     --ls-small: -0.016em;  /* 14 : caption exakt */
+  --fs-caption: 0.75rem;  --lh-caption: 1.4;                            /* 12 : lh bewusst nicht auf
+     Apples nav-link/1.0 (einzeiliges UI-Label) : unsere Caption umbricht
+     mehrzeilig in Karten (card-eyebrow etc.), 1.0 würde Zeilen verkleben. */
 
   /* Spacing-Scale (8er-Raster) */
   --sp-1: 8px;  --sp-2: 16px; --sp-3: 24px; --sp-4: 32px;
   --sp-5: 40px; --sp-6: 48px; --sp-8: 64px; --sp-10: 80px;
   --sp-12: 96px;--sp-16: 128px;
 
-  /* Container */
+  /* Container : DESIGN.md nennt ~1440px für Store-Grids, wir nutzen 1280px mit 48px Seitenabstand (Content klebt nie am Rand), ~980px für
+     textlastige Sektionen (war 1280/1024). */
+  --score-low: #a8453a;
+  /* Fix-Runde 4, Pflicht-Punkt 4: --ok (3.91:1 auf --ok-bg) und --info
+     (4.12:1 auf --info-bg) reichen für .pill-ok/.pill-info im Light Mode
+     NICHT für AA-Text (12px/600, unter der Large-Text-Schwelle). Eigene,
+     dunklere Textfarben NUR für diese zwei Pill-Varianten (--ok/--info
+     selbst bleiben unverändert, weil sie auch für Score-Bänder/Sticky-Code-
+     Prozent genutzt werden, siehe Abschnitt Score-Bandfarben). Dark bleibt
+     unverändert (dort schon AA/AAA-sicher, siehe REVIEW_design_r4 Befund
+     10 : 7.79:1), deshalb im Dark-Media-Query unten auf var(--ok)/var(--info)
+     zurückgesetzt. */
+  --pill-ok-text: #176b3a;   /* 5.86:1 auf --ok-bg (#e6f6ec), rechnerisch (WCAG-Formel) */
+  --pill-info-text: #0063c9; /* 5.08:1 auf --info-bg (#e8f1fd), rechnerisch (WCAG-Formel) */
   --container-max: 1280px;
-  --container-narrow: 1024px;
+  --container-narrow: 980px;
   --container-pad: var(--sp-3);
 
-  /* Radius */
-  --radius-card: 20px;
-  --radius-sm: 10px;
-  --radius-pill: 999px;
-  --radius-input: 12px;
+  /* Radius : sm/lg/pill wie DESIGN.md, --radius-input bewusst auf Apples
+     seltene rounded.md-Ausnahme (Pearl-Button, 11px) statt eines dritten
+     Zwischenwerts (war 20/10/999/12 : traf NICHTS aus Apples Skala). */
+  --radius-card: 18px;  /* lg */
+  --radius-sm: 8px;     /* sm */
+  --radius-pill: 9999px;
+  --radius-input: 11px; /* Apples seltene rounded.md-Ausnahme (Pearl-Button) */
 
-  /* Nav */
-  --nav-h: 48px;
+  /* Nav : Höhe 44px wie {component.global-nav} (war 48px) */
+  --nav-h: 44px;
   /* Gesamthöhe Demo-Banner+Nav; wird von site.js (PK.initNav) aus der
      tatsächlichen Header-Bounding-Box überschrieben, sobald das Mobile-Menü
      öffnet. Fallback = --nav-h, falls JS nicht läuft (Menü lässt sich dann
@@ -112,18 +158,20 @@
     --text:          #f5f5f7;
     --text-secondary:#86868b;
     --accent:        #2997ff;
-    --accent-strong: #6bb6ff;
+    --accent-strong: color-mix(in srgb, var(--accent) 80%, white);
     --line:          #38383c;
     --line-strong:   #48484c;
     --focus-ring:    #2997ff;
 
     --ok:            #30d158;
-    --ok-bg:         #123321;
+    --ok-bg:         #0d2818;
     --warn:          #ff9f0a;
-    --warn-bg:       #3a2a10;
+    --warn-bg:       #2e2009;
     --info:          #2997ff;
-    --info-bg:       #10233d;
+    --info-bg:       #0c1c33;
     --danger:        #ff6961;
+    --pill-ok-text:  var(--ok);   /* Dark unverändert (Fix-Runde 4, Pflicht-Punkt 4) */
+    --pill-info-text:var(--info); /* Dark unverändert (Fix-Runde 4, Pflicht-Punkt 4) */
 
     --shadow-1: 0 0 0 1px rgba(255,255,255,.06);
     --shadow-2: 0 0 0 1px rgba(255,255,255,.08), 0 8px 24px rgba(0,0,0,.5);
@@ -144,6 +192,7 @@ body{
   font-family:var(--font);
   font-size:var(--fs-body);
   line-height:var(--lh-body);
+  letter-spacing:var(--ls-body);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
@@ -178,6 +227,7 @@ ul.unstyled, .unstyled{ list-style:none; margin:0; padding:0; }
 /* -----------------------------------------------------------------------
    3. LAYOUT-HELFER
    ----------------------------------------------------------------------- */
+@media (min-width:1024px){ :root{ --container-pad: 48px; } }
 .container{
   max-width:var(--container-max);
   margin-inline:auto;
@@ -189,10 +239,44 @@ ul.unstyled, .unstyled{ list-style:none; margin:0; padding:0; }
   padding-inline:var(--container-pad);
 }
 
-.section{ padding-block:var(--sp-12); }
+.section{ padding-block:var(--sp-10); } /* Apple spacing.section = 80px, war sp-12/96px */
 .section + .section{ border-top:1px solid var(--line); }
 .section-tight{ padding-block:var(--sp-6); }
-.section-tinted{ background:var(--surface); border-radius:var(--radius-card); }
+/* .section-tinted / .section-dark : volle, eckige Farbflächen statt
+   abgerundeter getönter Container (DESIGN.md "Elevation & Depth" : die
+   Farbfläche selbst ist der Trenner, kein Radius, kein Schatten). Technik:
+   box-shadow mit 100vmax-Spread + clip-path bricht die Fläche auf volle
+   Viewport-Breite aus, OHNE die Container-Padding-Struktur der Seiten
+   anzufassen (HTML bleibt unverändert : .section-tinted sitzt bereits auf
+   demselben Element wie .container). */
+.section-tinted, .section-dark{
+  position:relative;
+  border-radius:0;
+  box-shadow:0 0 0 100vmax var(--tile-bg);
+  clip-path:inset(0 -100vmax);
+}
+.section-tinted{ --tile-bg:var(--surface); background:var(--tile-bg); }
+.section-tinted + .section, .section + .section-tinted,
+.section-dark + .section, .section + .section-dark{ border-top:0; }
+/* .section-dark : dunkle Produkt-Tile (Apple product-tile-dark), lokal
+   re-scoped statt globaler Dark-Mode-Umschaltung : Karten/Links/Text darin
+   erben automatisch die Dark-Werte über dieselben Tokens. Sky-Link-Blue
+   (--accent:#2997ff) ersetzt Action Blue für Links auf der dunklen Fläche
+   (DESIGN.md: Action Blue verschwindet auf dunklem Grund). Mindestens eine
+   Instanz Pflicht (index.html, "Wie wir bewerten"). */
+.section-dark{
+  --tile-bg:      #272729; /* surface-tile-1 */
+  --surface:      #2a2a2c; /* surface-tile-2 : Karten auf Tile-1 */
+  --surface-2:    #2a2a2c;
+  --text:         #ffffff;
+  --text-secondary:#cccccc; /* body-muted */
+  --line:         #48484c;
+  --line-strong:  #5a5a5e;
+  --card-border:  rgba(255,255,255,.09);
+  --accent:       #2997ff; /* Sky Link Blue statt Action Blue auf Dunkel */
+  --accent-strong: color-mix(in srgb, var(--accent) 80%, white);
+  background:var(--tile-bg); color:var(--text);
+}
 .row-between{
   display:flex; align-items:center; justify-content:space-between;
   gap:var(--sp-3); flex-wrap:wrap;
@@ -206,16 +290,16 @@ ul.unstyled, .unstyled{ list-style:none; margin:0; padding:0; }
   max-width:44ch; margin:0 0 var(--sp-6);
 }
 
-.grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp-3); }
-.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-3); }
-.grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--sp-3); }
+.grid-2{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--sp-3); }
+.grid-3{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--sp-3); }
+.grid-4{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:var(--sp-3); }
 
 @media (max-width:1023px){
-  .grid-4{ grid-template-columns:repeat(2,1fr); }
-  .grid-3{ grid-template-columns:repeat(2,1fr); }
+  .grid-4{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .grid-3{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (max-width:640px){
-  .grid-2, .grid-3, .grid-4{ grid-template-columns:1fr; }
+  .grid-2, .grid-3, .grid-4{ grid-template-columns:minmax(0,1fr); }
 }
 
 /* -----------------------------------------------------------------------
@@ -226,7 +310,7 @@ h1,h2,h3,h4{ margin:0 0 var(--sp-2); font-weight:600; }
 .h1{ font-size:var(--fs-h1); line-height:var(--lh-h1); letter-spacing:var(--ls-h1); }
 .h2{ font-size:var(--fs-h2); line-height:var(--lh-h2); letter-spacing:var(--ls-h2); }
 .h3{ font-size:var(--fs-h3); line-height:var(--lh-h3); letter-spacing:var(--ls-h3); }
-.text-small{ font-size:var(--fs-small); line-height:var(--lh-small); }
+.text-small{ font-size:var(--fs-small); line-height:var(--lh-small); letter-spacing:var(--ls-small); }
 .text-caption{ font-size:var(--fs-caption); line-height:var(--lh-caption); }
 .muted{ color:var(--text-secondary); }
 .eyebrow{
@@ -242,6 +326,26 @@ h1,h2,h3,h4{ margin:0 0 var(--sp-2); font-weight:600; }
     --fs-h3: 1.375rem;    --lh-h3:1.28;
   }
   .section{ padding-block:var(--sp-8); }
+}
+/* Fix-Runde 3, Pflicht-Punkt 1: bei sehr schmalen Viewports (<=480px, z. B.
+   390px) reicht --fs-display:2.5rem/40px bei manchen Sprachvarianten nicht
+   mehr aus (echte System-Fonts sind breiter als Web-Font-Messungen) : eigene,
+   kleinere Stufe statt die 640px-Werte einfach weiterlaufen zu lassen.
+   .hero h1 bekommt zusätzlich ein engeres ch-Max. Der feste Umbruch nach dem
+   Komma (siehe .hero-h1-line oben, sonst erst ab 600px aktiv) gilt hier
+   ZUSÄTZLICH schon ab 480px: bei natürlichem Fließ-Umbruch lag der zweite
+   Wortteil ("klar"/"clearly") knapp auf der Kante zum Zeilenumbruch – in
+   echtem Headless-Chrome (Scrollbar reserviert dort ca. 15-17px Layout-
+   breite, die ein normaler Touch-Viewport nie verliert) reichte das nicht
+   mehr und erzwang einen hässlichen Mitten-Wort-Umbruch. Der feste Umbruch
+   macht die Zeilenaufteilung deterministisch statt kantenabhängig; kein
+   overflow-wrap:break-word mehr nötig, weil beide Teile (je ~17 Zeichen)
+   auch in einem künstlich verengten Viewport bequem auf eine eigene Zeile
+   passen. Screenshot-Beleg: jarvis/reviews/intern/peptidkompass/shots/. */
+@media (max-width:480px){
+  :root{ --fs-display: 2.125rem; --lh-display:1.16; }
+  .hero h1{ max-width:13ch; }
+  .hero-h1 .hero-h1-line{ display:block; }
 }
 
 /* -----------------------------------------------------------------------
@@ -265,6 +369,11 @@ h1,h2,h3,h4{ margin:0 0 var(--sp-2); font-weight:600; }
   font-size:var(--fs-small); font-weight:600; letter-spacing:-.01em;
   text-decoration:none; color:var(--text); white-space:nowrap;
 }
+/* Zwei Gewichte wie assets/brand/wordmark.svg ("Peptide" 600 / "Compass"
+   400, siehe assets/brand/README.md: keine Bildmarke, nur Wortmarke) : die
+   Nav zeigt reinen Text statt der SVG, aber mit demselben Gewichts-Kontrast
+   (Fix-Runde 3, Befund 12). */
+.nav-logo-light{ font-weight:400; }
 .nav-links{ display:flex; align-items:center; gap:var(--sp-3); list-style:none; margin:0; padding:0; }
 .nav-links a{
   font-size:13px; color:var(--text-secondary); text-decoration:none;
@@ -276,8 +385,10 @@ h1,h2,h3,h4{ margin:0 0 var(--sp-2); font-weight:600; }
 .nav-cta{
   display:inline-flex; align-items:center; white-space:nowrap;
 }
+/* Nav-CTA: kompakt (30px), damit oben und unten Luft zur 44px-Leiste bleibt (Apple-Nav-Pille) */
+.nav-inner > .nav-cta .btn{ padding:5px 14px; font-size:13px; line-height:18px; min-height:28px; box-sizing:border-box; height:30px; }
 .nav-hamburger{
-  display:none; width:36px; height:36px; border:0; background:none; cursor:pointer;
+  display:none; width:44px; height:44px; border:0; background:none; cursor:pointer;
   align-items:center; justify-content:center; border-radius:var(--radius-sm);
   color:var(--text);
 }
@@ -325,14 +436,27 @@ body.nav-open{ overflow:hidden; }
   border-radius:var(--radius-pill); padding:3px; flex:0 0 auto;
 }
 .lang-toggle button{
+  position:relative; /* Anker für ::after-Hit-Area, siehe unten */
   appearance:none; border:0; background:none; cursor:pointer;
   font:inherit; font-size:12px; font-weight:600; letter-spacing:.02em;
   color:var(--text-secondary); padding:5px 12px; border-radius:var(--radius-pill);
   transition:background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
+/* Fix-Runde 4, Pflicht-Punkt 2: sichtbar bleibt der 41×28px-Button (Optik
+   unverändert), die klickbare Fläche wächst über ein unsichtbares ::after
+   auf 44×44px (WCAG 2.5.8), zentriert über dem Button statt per echter
+   Boxgröße : DE/EN sitzen in der Pille nur 2px auseinander, zwei größere
+   sichtbare Boxen hätten sich sichtbar berührt. Die beiden 44px-Zonen
+   überlappen sich dadurch minimal (~1px) an der gemeinsamen Kante : über
+   pointer-events unkritisch, das spätere DOM-Element (EN) gewinnt dort. */
+.lang-toggle button::after{
+  content:""; position:absolute; top:50%; left:50%;
+  width:44px; height:44px; min-width:44px; min-height:44px;
+  transform:translate(-50%,-50%);
+}
 .lang-toggle button:hover{ color:var(--text); }
 .lang-toggle button[aria-pressed="true"]{
-  background:var(--surface-2); color:var(--text); box-shadow:var(--shadow-1);
+  background:var(--surface-2); color:var(--text);
 }
 .lang-toggle--menu{ margin:0 0 var(--sp-3); align-self:flex-start; }
 @media (max-width:1023px){
@@ -358,6 +482,8 @@ body.nav-open{ overflow:hidden; }
 }
 .hero-eyebrow{ display:flex; justify-content:center; margin-bottom:var(--sp-2); }
 .hero h1{ max-width:16ch; margin:0 auto var(--sp-3); }
+/* Hero-Headline: fester Zeilenumbruch nach dem Komma ab Tablet-Breite */
+@media (min-width:600px){ .hero-h1 .hero-h1-line{ display:block; } }
 .hero p{ font-size:1.25rem; line-height:1.5; color:var(--text-secondary); max-width:48ch; margin:0 auto var(--sp-5); }
 
 .search-bar{
@@ -374,6 +500,242 @@ body.nav-open{ overflow:hidden; }
 
 @media (max-width:640px){
   .hero{ padding-block:var(--sp-10) var(--sp-6); }
+}
+
+/* -----------------------------------------------------------------------
+   6b. .hero-3d : schwebende Molekül-/Vial-Sprites vor/hinter der Headline
+   -----------------------------------------------------------------------
+   v2 (06.09., Vic-Feedback "alles mutiger"): DREI Ebenen-Layer statt zwei,
+   damit Vial + Helix im Vordergrund einen EIGENEN, stärkeren Parallax-Faktor
+   bekommen als der Molekül-Rest im Hintergrund.
+   Bühne = .hero-3d-stage (position:relative, Größe = .hero-copy, also nur
+   der Textbereich Eyebrow/H1/P/Suchleiste : die Sprites reichen NIE ins
+   .hero-media (Video) darunter, weil die Bühne dessen Box gar nicht
+   umfasst). Drei Layer sitzen als Geschwister links/rechts von .hero-copy,
+   deterministische Stapelreihenfolge über explizite z-index-Werte, nicht
+   über DOM-Reihenfolge (position:absolute-Elemente würden sonst trotz
+   früherer DOM-Position vor statischem Text liegen):
+     .hero-3d-back  (z-index 0, unter Text) : mol_a/mol_b/drop, Faktor .3,
+                     data-depth="back" (verwaschen, klein, tritt zurück)
+     .hero-3d-mid   (z-index 0, unter Text) : vial_a, Faktor .6, scharf
+                     (data-depth="mid"), eigener Layer NUR wegen des
+                     abweichenden Parallax-Faktors : visuell bleibt sie
+                     hinter dem Text wie .hero-3d-back.
+     .hero-3d-front (z-index 2, über Text)  : vial_b + mol_c (Helix),
+                     Faktor 1, data-depth="front", groß + Text-Overlap.
+   Jedes Sprite: 3 verschachtelte Ebenen, damit zwei unabhängige
+   Transform-Animationen sich nicht gegenseitig überschreiben:
+     .hero-3d-sprite  -> statische Position/Tiefe/Kipp-Winkel
+                          (left/top/translateZ/rotateZ(--tilt))
+       .hero-3d-spin   -> sehr langsame Z-Rotation (pk-spin-z)
+         img            -> Schweben: Translate + RotateX/Y (pk-float)
+   data-sprite="mol_a|mol_b|mol_c|vial_a|vial_b|drop" auf .hero-3d-sprite
+   ist NUR fürs responsive Retargeting (Tablet/Mobile-Media-Queries unten,
+   dort per !important nötig weil --x/--y/--size inline am Element sitzen).
+   ----------------------------------------------------------------------- */
+.hero{ overflow:hidden; } /* verhindert horizontales Scrollen durch
+                              Front-Sprites nahe am Rand (schmale Viewports) */
+.hero-3d-stage{ position:relative; }
+.hero-copy{ position:relative; z-index:1; }
+.hero-3d{
+  position:absolute; inset:0;
+  perspective:1200px;
+  pointer-events:none;
+}
+.hero-3d-back{ z-index:0; }
+.hero-3d-mid{ z-index:0; }
+.hero-3d-front{ z-index:2; }
+
+.hero-3d-sprite{
+  position:absolute; left:var(--x); top:var(--y);
+  width:var(--size); height:var(--size);
+  transform:translate(-50%,-50%) translateZ(var(--z)) rotateZ(var(--tilt,0deg));
+  transform-style:preserve-3d;
+}
+.hero-3d-sprite[data-depth="back"]{ filter:blur(2.5px); opacity:.5; }
+.hero-3d-sprite[data-depth="mid"]{ opacity:1; }
+.hero-3d-sprite[data-depth="front"]{ filter:blur(.4px); opacity:.95; }
+
+.hero-3d-spin{
+  display:block; width:100%; height:100%;
+  transform-style:preserve-3d;
+  animation:pk-spin-z var(--spin-dur,55s) var(--spin-delay,0s) ease-in-out infinite alternate;
+}
+.hero-3d-sprite img{
+  display:block; width:100%; height:100%; object-fit:contain;
+  animation:pk-float var(--dur,11s) var(--delay,0s) ease-in-out infinite alternate;
+  will-change:transform;
+}
+
+@keyframes pk-float{
+  from{ transform:translate3d(0,0,0) rotateX(0deg) rotateY(0deg); }
+  to{ transform:translate3d(var(--fx,14px), var(--fy,-14px), 0) rotateX(var(--rx,5deg)) rotateY(var(--ry,-5deg)); }
+}
+@keyframes pk-spin-z{
+  from{ transform:rotateZ(calc(var(--rz,6deg) * -1)); }
+  to{ transform:rotateZ(var(--rz,6deg)); }
+}
+
+/* Maus-Parallax (PK.initHero3D): verschiebt die drei Layer entgegen der
+   Zeigerposition, hinten am schwächsten, Vial-Mitte mittel, vorne am
+   stärksten (Faktoren .3 / .6 / 1, max ±26px). Wird per rAF direkt auf
+   die Layer-Transforms addiert (site.js), hier nur will-change-Gate. */
+.hero-3d.is-parallax-active{ will-change:transform; }
+.hero-3d.is-releasing{ transition:transform 600ms var(--ease); }
+
+/* Tablet (641–1023px): Front-Sprites (Helix/Vial) bleiben vorne und groß,
+   aber kleiner als Desktop; Hintergrund-Moleküle + Mitte-Vial schrumpfen
+   mit, damit die Bühne auf schmaleren Viewports nicht überläuft. */
+@media (min-width:641px) and (max-width:1023px){
+  /* --x/--y NICHT einfach von Desktop übernehmen : die Hero-Headline behält
+     ihre feste Type-Scale-Breite (kein fluid type unterhalb 1024px), aber
+     die Bühne selbst wird schmaler → gleiche %-Werte würden die Sprites
+     viel zu weit über den Text schieben (gemessen: bis zu 78% H1-Overlap
+     bei unveränderten %-Werten). Eigene, am 900px-Screenshot geeichte
+     Positionen, gleiche Überlapp-Logik wie Desktop (Helix knapp am rechten
+     H1-Zeile-1-Rand, Vial knapp am linken Subline-Rand). */
+  .hero-3d-front [data-sprite="mol_c"]{ --size:220px !important; --x:83% !important; --y:36% !important; }
+  .hero-3d-front [data-sprite="vial_b"]{ --size:160px !important; --x:9% !important; }
+  .hero-3d-mid [data-sprite="vial_a"]{ --size:150px !important; --x:2% !important; --y:38% !important; }
+  .hero-3d-back [data-sprite="mol_a"]{ --size:85px !important; }
+  .hero-3d-back [data-sprite="mol_b"]{ --size:105px !important; }
+  .hero-3d-back [data-sprite="drop"]{ --size:60px !important; }
+}
+
+/* Mobile (≤640px): nur noch 2 Sprites : Helix (mol_c) oben rechts + Vial
+   (vial_b) unten links, beide auf Mini-Größe UND hinter den Text verlegt
+   (.hero-3d-front bekommt hier z-index:0 statt 2 : "nie ein Sprite vor
+   der Headline auf Touch-Breiten" gilt weiter, nur jetzt am Front-Layer
+   selbst statt am kompletten display:none). Alle Hintergrund-Moleküle
+   (mol_a/mol_b/drop) + die Vial-Mitte (vial_a) sind komplett aus. Bleiben
+   trotzdem loading="eager" (Auftragsvorgabe), ihr sizes-Attribut löst am
+   640px-Breakpoint aber auf den kleinsten srcset-Kandidaten (320w) auf,
+   auch wenn sie unsichtbar sind : begrenzt ungenutzt geladene Bytes. */
+@media (max-width:640px){
+  .hero-3d-back, .hero-3d-mid{ display:none; }
+  .hero-3d-front{ z-index:0; }
+  /* Fix-Runde 4, Pflicht-Punkt 1 (erneute Kollision, echte 390px-Messung):
+     R3s --y:1% reichte bei echten System-Fonts wieder nicht (mol_c-Rect
+     bottom:240 > H1-Rect top:218 gemessen per getBoundingClientRect) und
+     vial_b (--y:86%) schnitt zusätzlich sowohl die Subline (vial top:404 <
+     Subline bottom:411) als auch die obere linke Ecke des Suchfelds (vial
+     bottom:514 > Suchfeld top:451). Statt weiter an denselben zwei Zonen zu
+     justieren: beide Sprites in nachweislich freie Zonen verschoben, die
+     mit KEINEM der drei Pflicht-Elemente (H1, Subline, Suchfeld) vertikal
+     überlappen, unabhängig von der X-Position (Subline/Suchfeld sind auf
+     390px fast bühnenbreit, echte Kollisionsfreiheit geht hier nur über
+     Y-Trennung). mol_c rückt in den Padding-Bereich ÜBER dem Eyebrow (Stage
+     --y negativ, noch innerhalb der .hero-Section-Box, also nicht vom
+     section-overflow:hidden abgeschnitten) und wird kleiner, damit er dort
+     komplett Platz hat. vial_b rückt UNTER die Suchleiste, in die Lücke vor
+     dem Video (.hero-media beginnt erst deutlich darunter). Beide Werte
+     gegen alle drei Elemente per getBoundingClientRect verifiziert (0
+     Kollisionen, siehe QA-Beleg Fix-Runde 4). */
+  .hero-3d-front [data-sprite="mol_c"]{ --x:97% !important; --y:-9% !important; --size:90px !important; --z:0px !important; }
+  .hero-3d-front [data-sprite="vial_b"]{ --x:16% !important; --y:107% !important; --size:40px !important; --z:0px !important; }
+
+  /* Glas-Effekt gilt Punkt 3 zufolge auf Mobile NUR für den Helix (mol_c):
+     Vial (vial_b) bleibt auf ≤640px ein normales Sprite (Body+Klon aus,
+     Rim zurück auf volle Deckkraft/Normal-Blend = wie vor dem Glas-Umbau). */
+  .hero-3d-front [data-sprite="vial_b"] .hero-glass-body{ display:none; }
+  .hero-3d-front [data-sprite="vial_b"] .hero-glass-rim{ opacity:1; mix-blend-mode:normal; }
+  .hero-glass-refract[data-sprite="vial_b"]{ display:none; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-3d-sprite img, .hero-3d-spin{ animation:none; }
+  .hero-3d{ transform:none !important; }
+}
+
+/* Dark Mode: Sprites sind bereits ohne weißen Halo geprüft (Alpha-PNG);
+   nur Opacity leicht nachjustieren, sonst wirken helle Renderflächen auf
+   reinem Schwarz (--bg:#000) etwas zu präsent im Hintergrund/Vordergrund. */
+@media (prefers-color-scheme:dark){
+  .hero-3d-sprite[data-depth="back"]{ opacity:.4; }
+  .hero-3d-sprite[data-depth="mid"]{ opacity:.9; }
+  .hero-3d-sprite[data-depth="front"]{ opacity:.85; }
+}
+[data-theme="dark"] .hero-3d-sprite[data-depth="back"]{ opacity:.4; }
+[data-theme="dark"] .hero-3d-sprite[data-depth="mid"]{ opacity:.9; }
+[data-theme="dark"] .hero-3d-sprite[data-depth="front"]{ opacity:.85; }
+
+/* -----------------------------------------------------------------------
+   6b-glass. Glas-Refraktion für die Front-Sprites (vial_b, mol_c)
+   -----------------------------------------------------------------------
+   Vic-Wunsch: "man sieht die Schrift durch den Helix hindurch, wenn er
+   über dem Text liegt." Drei Ebenen pro betroffenem .hero-3d-sprite
+   (jetzt zusätzlich .hero-glass), von unten nach oben:
+     a) .hero-glass-body  : füllt die Sprite-Form (CSS-Maske aus dem PNG),
+                             backdrop-filter zeigt den ECHTEN Inhalt
+                             dahinter (Text/Video), leicht geweißt/getönt.
+     b) .hero-glass-refract (Geschwister-Element, kein Kind, siehe unten):
+                             ein Klon von .hero-copy, mit derselben Maske
+                             auf die aktuelle Sprite-Position zugeschnitten,
+                             leicht vergrößert+verschoben = "gebrochene"
+                             Schrift im Glas. Site.js hält Position/Maske
+                             jeden Frame synchron (initHero3D).
+     c) .hero-glass-rim    : das Original-PNG obenauf, abgedunkelt +
+                             Screen-Blend, damit Kanten/Highlights des
+                             Sprites erhalten bleiben (a+b allein wirken
+                             sonst zu flach).
+   .hero-glass-refract liegt NICHT im Sprite-Wrapper (der wandert per
+   Float/Spin/Parallax), sondern als eigene, in der Fläche unbewegte
+   Ebene direkt über .hero-copy (z-index 1, wie .hero-copy selbst, aber
+   später im DOM -> painted oben). Nur ihre Maske (mask-position/-size,
+   per JS aus getBoundingClientRect) folgt der Sprite-Bewegung; der
+   äußere Klon-Container bleibt deckungsgleich mit .hero-copy (das macht
+   ihn direkt per Rect-Vergleich prüfbar). Die eigentliche "Brechung"
+   (scale/translate/blur/Farbe) sitzt auf einem inneren Wrapper
+   (.hero-glass-refract-inner), damit der äußere Hitbox-Container von der
+   optischen Verzerrung unberührt bleibt.
+   ----------------------------------------------------------------------- */
+/* mask-image selbst kommt NICHT aus var(--gmask): ein relatives url() in
+   einer Custom Property löst sich beim Substituieren gegen das Stylesheet
+   auf, in dem var() steht (hier assets/css/system.css), nicht gegen
+   index.html - assets/img/... würde also assets/css/assets/img/... suchen.
+   Deshalb setzen index.html (Body, statisch) bzw. site.js (Refract-Klon,
+   per JS) mask-image inline direkt am Element (löst sich wie src= gegen
+   das Dokument auf). --gmask bleibt nur als Transportwert für JS/HTML. */
+.hero-glass-body{
+  position:absolute; inset:0;
+  -webkit-mask-size:contain; mask-size:contain;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:center; mask-position:center;
+  backdrop-filter:blur(1.6px) saturate(1.25) brightness(1.06);
+  -webkit-backdrop-filter:blur(1.6px) saturate(1.25) brightness(1.06);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,0) 42%),
+    linear-gradient(0deg, rgba(120,170,255,.08), rgba(120,170,255,0) 55%);
+  pointer-events:none;
+}
+.hero-glass-rim{ opacity:.62; mix-blend-mode:screen; }
+[data-theme="dark"] .hero-glass-rim{ opacity:.5; mix-blend-mode:plus-lighter; }
+@media (prefers-color-scheme:dark){
+  .hero-glass-rim{ opacity:.5; mix-blend-mode:plus-lighter; }
+}
+
+/* Klon-Ebene: eigenständiger Layer in .hero-3d-stage, per JS erzeugt
+   (site.js initHeroGlass), Grundposition deckt exakt .hero-copy ab. */
+.hero-glass-refract{
+  position:absolute; z-index:1; overflow:hidden;
+  pointer-events:none; user-select:none;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-size:var(--gsize,0 0); mask-size:var(--gsize,0 0);
+  -webkit-mask-position:var(--gmx,0) var(--gmy,0); mask-position:var(--gmx,0) var(--gmy,0);
+}
+.hero-glass-refract-inner{
+  position:absolute; inset:0;
+  transform-origin:var(--gx,50%) var(--gy,50%);
+  transform:scale(1.045) translate(3px,-2px);
+  color:color-mix(in srgb, var(--text) 78%, var(--accent));
+  opacity:.92;
+  filter:blur(.35px);
+}
+.hero-glass-refract-inner *{ margin:0; }
+
+/* Fallback ohne backdrop-filter-Support: nur Klon + Rim, kein Glaskörper */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .hero-glass-body{ display:none; }
 }
 
 /* Stat-Kennzahlen (Start-Sektion) */
@@ -394,12 +756,14 @@ body.nav-open{ overflow:hidden; }
   border:1px solid var(--card-border);
   border-radius:var(--radius-card);
   padding:var(--sp-3);
-  box-shadow:var(--shadow-1);
-  transition:box-shadow var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+  /* Kein Schatten (DESIGN.md: Elevation kommt aus Flächenwechsel + Hairline,
+     nie aus Karten-Schatten). Hover-Feedback jetzt über Randkontrast statt
+     Shadow-Stufe, Lift-Transform bleibt (Bewegung motiviert: Hierarchie). */
+  transition:border-color var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
 }
 a.card{ display:block; text-decoration:none; color:inherit; }
 a.card:hover, .card.is-interactive:hover{
-  box-shadow:var(--shadow-2);
+  border-color:var(--line-strong);
   transform:translateY(-2px);
 }
 .card-eyebrow{ font-size:var(--fs-caption); color:var(--text-secondary); margin-bottom:2px; }
@@ -424,7 +788,7 @@ a.card:hover, .card.is-interactive:hover{
 .vendor-card-land{ font-size:var(--fs-caption); color:var(--text-secondary); }
 .vendor-card-score{ font-size:var(--fs-h3); font-weight:600; letter-spacing:var(--ls-h3); }
 .vendor-card-badges{ display:flex; flex-wrap:wrap; gap:6px; }
-.vendor-card-actions{ margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:var(--sp-2); }
+.vendor-card-actions{ margin-top:auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:var(--sp-2); }
 
 /* -----------------------------------------------------------------------
    8. .pill (+ Varianten)
@@ -436,9 +800,9 @@ a.card:hover, .card.is-interactive:hover{
   background:var(--surface); color:var(--text-secondary);
   border:1px solid var(--line); white-space:nowrap;
 }
-.pill-ok{ background:var(--ok-bg); color:var(--ok); border-color:transparent; }
+.pill-ok{ background:var(--ok-bg); color:var(--pill-ok-text); border-color:transparent; }
 .pill-warn{ background:var(--warn-bg); color:var(--warn); border-color:transparent; }
-.pill-info{ background:var(--info-bg); color:var(--info); border-color:transparent; }
+.pill-info{ background:var(--info-bg); color:var(--pill-info-text); border-color:transparent; }
 
 /* -----------------------------------------------------------------------
    9. .score-bar / .score-ring
@@ -535,6 +899,11 @@ a.card:hover, .card.is-interactive:hover{
 .table tbody td{ padding:14px 16px; border-bottom:1px solid var(--line); vertical-align:middle; }
 .table tbody tr:last-child td{ border-bottom:0; }
 .table tbody tr:hover{ background:var(--surface); }
+/* Markenrand pro Zeile (Fix-Runde 3): box-shadow statt border-left, damit
+   border-collapse:collapse die Zelle nicht verschiebt/das Padding nicht
+   frisst. --brand wird pro <tr> inline gesetzt (vergleich.html); fehlt es,
+   fällt der Wert auf transparent zurück (kein Rand, kein kaputter Look). */
+.table tbody td:first-child{ box-shadow:inset 3px 0 0 0 var(--brand, transparent); }
 
 /* -----------------------------------------------------------------------
    12. .btn (+ Varianten) / .badge-ad
@@ -547,14 +916,14 @@ a.card:hover, .card.is-interactive:hover{
   text-decoration:none; white-space:nowrap;
   transition:background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
 }
-.btn:active{ transform:scale(.97); }
+.btn:active{ transform:scale(.95); }
 .btn-primary{ background:var(--accent); color:#fff; }
 .btn-primary:hover{ background:var(--accent-strong); }
 .btn-secondary{ background:var(--surface); color:var(--text); border-color:var(--line); }
 .btn-secondary:hover{ border-color:var(--line-strong); background:color-mix(in srgb, var(--surface) 70%, var(--line) 30%); }
 .btn-link{
   background:none; color:var(--accent); padding:4px 0; border-radius:0;
-  font-weight:500;
+  font-weight:600; /* Gewichts-Leiter 300/400/600/700, 500 entfällt (DESIGN.md) */
 }
 .btn-link::after{ content:"›"; margin-left:2px; }
 .btn-link:hover{ text-decoration:underline; }
@@ -562,7 +931,12 @@ a.card:hover, .card.is-interactive:hover{
 .badge-ad{
   display:inline-flex; align-items:center;
   font-size:var(--fs-caption); font-weight:700; letter-spacing:.04em; text-transform:uppercase;
-  padding:2px 6px; border-radius:4px;
+  padding:2px 6px;
+  /* war 4px (harter Wert, kein Treffer in sm/md/lg/pill) : Fix-Runde 4,
+     Pflicht-Punkt 5. --radius-sm statt Pille, weil .badge-ad ein kompaktes
+     Uppercase-Tag ist (wie .table-Zellen/Buttons mit sm), keine eigenständige
+     Pille wie .pill/.btn. */
+  border-radius:var(--radius-sm);
   background:var(--warn-bg); color:var(--warn);
   margin-left:8px;
 }
@@ -586,7 +960,7 @@ a.card:hover, .card.is-interactive:hover{
 .faq details{ border-bottom:1px solid var(--line); padding:var(--sp-2) 0; }
 .faq summary{
   display:flex; align-items:center; justify-content:space-between; gap:var(--sp-2);
-  cursor:pointer; list-style:none; font-size:1.0625rem; font-weight:500;
+  cursor:pointer; list-style:none; font-size:1.0625rem; font-weight:600;
   padding-right:var(--sp-4); position:relative;
 }
 .faq summary::-webkit-details-marker{ display:none; }
@@ -607,7 +981,7 @@ a.card:hover, .card.is-interactive:hover{
    ----------------------------------------------------------------------- */
 .footer{
   border-top:1px solid var(--line);
-  padding-block:var(--sp-6);
+  padding-block:var(--sp-8); /* Apple footer padding = 64px, war sp-6/48px */
   background:var(--surface);
 }
 .footer-inner{ max-width:var(--container-max); margin-inline:auto; padding-inline:var(--container-pad); }
@@ -744,3 +1118,420 @@ a.card:hover, .card.is-interactive:hover{
   .tilt{ transition:none; }
   .tilt:hover{ transform:none !important; }
 }
+
+/* -----------------------------------------------------------------------
+   19. RUNDE „LEBEN UND CONVERSION" (06.09.): Tokens, Vendor-Brand,
+   .logo-strip, .podium, .weights, .proof, .fresh, .count-up,
+   .sticky-code-bar. Grundlage: data/SCHEMA.md Abschnitt "Erweiterung v1.2".
+   ----------------------------------------------------------------------- */
+
+/* Warmer Akzent : Deals/Rabatt/Podium-CTA, NIE für normale Links/Buttons
+   (die bleiben --accent-blau). Warm signalisiert "hier sparst du". */
+:root{
+  --accent-warm:        #c75300; /* war #ff7a1a : 2.6:1 auf Weiß/Schwarz, AA-Fail als Text
+     UND als Button-Fläche mit weißer Schrift. #c75300 liegt im schmalen
+     Luminanz-Fenster, das BEIDE Richtungen gleichzeitig auf ≥4.5:1 hebt
+     (Text auf Weiß/Schwarz UND weiße Schrift auf der Fläche selbst : gleiche
+     Farbpaar-Formel, symmetrisch). Rechnerisch geprüft, siehe Report. */
+  --accent-warm-strong: #a34400; /* Hover/Pressed, nur als Fläche mit weißer
+     Schrift genutzt : 6.2:1, deutlich AA-sicher. */
+  --accent-warm-bg:     #fff1e6;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --accent-warm:        #c75300; /* selbes AA-sichere Orange wie Light : Fenster
+       gilt für Schwarz UND Weiß gleichermaßen, siehe Light-Block oben. */
+    --accent-warm-strong: #a34400;
+    --accent-warm-bg:     #3a2210;
+  }
+}
+[data-theme="dark"]{
+  --accent-warm:        #ff9448;
+  --accent-warm-strong: #ffb37a;
+  --accent-warm-bg:     #3a2210;
+}
+[data-theme="light"]{
+  --accent-warm:        #c75300; /* war #ff7a1a : 2.6:1 auf Weiß/Schwarz, AA-Fail als Text
+     UND als Button-Fläche mit weißer Schrift. #c75300 liegt im schmalen
+     Luminanz-Fenster, das BEIDE Richtungen gleichzeitig auf ≥4.5:1 hebt
+     (Text auf Weiß/Schwarz UND weiße Schrift auf der Fläche selbst : gleiche
+     Farbpaar-Formel, symmetrisch). Rechnerisch geprüft, siehe Report. */
+  --accent-warm-strong: #a34400; /* Hover/Pressed, nur als Fläche mit weißer
+     Schrift genutzt : 6.2:1, deutlich AA-sicher. */
+  --accent-warm-bg:     #fff1e6;
+}
+
+/* Score-Bandfarben: >=80 grün, 60-79 blau, <60 warm. EIN Helfer
+   (PK.scoreBand()) liefert die Klasse, überall gleich (Vendor-Card, Podium,
+   Detail-Kopf, Tabelle). */
+.score-band-good{ color:var(--ok); }
+.score-band-mid{ color:var(--info); }
+.score-band-low{ color:var(--score-low, #a8453a); } /* eigene Farbe, nicht der Deal-Akzent */
+
+/* Vendor-Brand: 3px Farbrand oben, gesetzt über --brand (inline auf dem
+   Karten-Wrapper). Fehlt vendor.brand, bleibt --brand undefiniert : Fallback
+   auf --line-strong (neutraler Rand statt kaputtem Look, Annahme Auftrag). */
+.vendor-card{ border-top:3px solid var(--brand, var(--line-strong)); }
+.vendor-card-logo{ display:flex; align-items:center; height:22px; }
+.vendor-card-logo img{ height:100%; width:auto; max-width:120px; object-fit:contain; }
+
+/* Logo-Baustein für Detail-Kopf und Vergleichstabelle (klein, vor dem
+   Namen). Fehlt vendor.brand/Logo-Datei: Fallback zeigt den Namen als Text
+   (kein kaputtes Bild-Icon). */
+.brand-logo{ display:inline-flex; align-items:center; }
+.brand-logo img{ display:block; height:28px; width:auto; max-width:140px; object-fit:contain; }
+.brand-logo-fallback{ font-weight:600; color:var(--text-secondary); }
+.brand-logo--sm img{ height:18px; max-width:88px; }
+.brand-logo--sm .brand-logo-fallback{ font-size:var(--fs-small); }
+/* Detail-Kopf (Fix-Runde 3, Befund 6): 28px->40px, damit das Logo selbst
+   Orientierung liefert statt nur ein dünner Strich über der H1 zu sein. */
+.brand-logo--detail img{ height:40px; max-width:200px; }
+.brand-logo--detail .brand-logo-fallback{ font-size:var(--fs-h3); font-weight:600; }
+.table-logo-cell{ display:flex; align-items:center; gap:8px; }
+
+/* -----------------------------------------------------------------------
+   .logo-strip : horizontale, langsam laufende Logo-Leiste, monochrom.
+   Monochrom-Technik: CSS mask-image (liest nur den Alpha-Kanal des SVG,
+   ignoriert dessen eigene fill-Farbe) + background-color:currentColor-
+   Token (--text-secondary) : robuster als <img>+filter, funktioniert
+   unter file:// (kein fetch/CORS nötig, anders als inline-SVG-Injection).
+   ----------------------------------------------------------------------- */
+.logo-strip{
+  overflow:hidden; position:relative;
+  -webkit-mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.logo-strip-track{
+  display:flex; align-items:center; gap:var(--sp-8);
+  width:max-content;
+  animation:pk-logostrip-scroll 36s linear infinite;
+}
+.logo-strip:hover .logo-strip-track{ animation-play-state:paused; }
+@keyframes pk-logostrip-scroll{
+  from{ transform:translate3d(0,0,0); }
+  to{ transform:translate3d(-50%,0,0); }
+}
+.logo-strip-item{
+  flex:0 0 auto; display:flex; align-items:center; justify-content:center; height:44px;
+}
+.logo-strip-mask{
+  width:156px; height:40px;
+  background-color:var(--text);
+  opacity:.72;
+  /* mask-image selbst kommt inline von PK.initLogoStrip() (site.js), NICHT
+     von hier : ein url() in einer hier definierten Regel würde relativ zu
+     diesem Stylesheet (assets/css/) statt zur Seite aufgelöst. */
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:center; mask-position:center;
+  -webkit-mask-size:contain; mask-size:contain;
+  transition:opacity var(--dur-fast) var(--ease);
+}
+.logo-strip-item:hover .logo-strip-mask{ opacity:1; }
+.logo-strip-fallback-text{
+  display:none; font-size:var(--fs-small); font-weight:600;
+  color:var(--text-secondary); white-space:nowrap;
+}
+.logo-strip-item.is-fallback .logo-strip-mask{ display:none; }
+.logo-strip-item.is-fallback .logo-strip-fallback-text{ display:inline-block; }
+
+@media (prefers-reduced-motion: reduce){
+  .logo-strip-track{ animation:none; }
+  .logo-strip{ overflow-x:auto; -webkit-mask-image:none; mask-image:none; }
+  .logo-strip-item[aria-hidden="true"]{ display:none; }
+}
+
+/* -----------------------------------------------------------------------
+   .podium : Top-3-Anbieter, Platz 1 mittig größer. Score-Ring füllt sich
+   beim Einblenden über die CSS-Variable --pct (siehe @property unten).
+   ----------------------------------------------------------------------- */
+@property --pct{
+  syntax:'<number>'; inherits:true; initial-value:0;
+}
+.score-ring{ transition:--pct 900ms var(--ease); }
+@media (prefers-reduced-motion: reduce){ .score-ring{ transition:none; } }
+
+.podium{
+  display:grid; grid-template-columns:1fr 1.12fr 1fr; gap:var(--sp-3);
+  align-items:end;
+}
+.podium-card{
+  background:var(--surface-2); border:1px solid var(--card-border);
+  border-top:3px solid var(--brand, var(--line-strong));
+  border-radius:var(--radius-card); padding:var(--sp-3);
+  display:flex; flex-direction:column; align-items:center; gap:var(--sp-1);
+  text-align:center;
+}
+/* Platz 1 hebt sich über Fläche/Innenabstand ab statt über Schatten
+   (DESIGN.md: keine Karten-Schatten). */
+.podium-rank1{ padding:var(--sp-4) var(--sp-3); background:var(--surface); order:2; }
+.podium-rank2{ order:1; }
+.podium-rank3{ order:3; }
+.podium-rank{
+  font-size:var(--fs-caption); font-weight:700; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--text-secondary);
+}
+.podium-rank1 .podium-rank{ color:var(--accent-warm); }
+.podium-name{ font-size:1.0625rem; font-weight:600; margin:0; }
+.podium-rank1 .podium-name{ font-size:1.25rem; }
+.podium-rank1 .score-ring{ width:112px; height:112px; margin:4px 0; }
+.podium-rank2 .score-ring, .podium-rank3 .score-ring{ width:84px; height:84px; margin:4px 0; }
+.podium-rank2 .score-ring-value, .podium-rank3 .score-ring-value{ font-size:1.125rem; }
+.podium-save{ font-size:var(--fs-small); font-weight:700; color:var(--accent-warm); }
+.podium-code{ width:100%; }
+.podium-code.code-box{ padding:8px 8px 8px 14px; }
+.podium-code code{ font-size:.875rem; }
+.podium-cta{ width:100%; justify-content:center; }
+.podium-rank1 .podium-cta{ background:var(--accent-warm); }
+.podium-rank1 .podium-cta:hover{ background:var(--accent-warm-strong); }
+
+@media (max-width:900px){
+  .podium{ grid-template-columns:1fr; }
+  .podium-rank1{ order:1; } .podium-rank2{ order:2; } .podium-rank3{ order:3; }
+}
+
+/* -----------------------------------------------------------------------
+   .weights : Regler-Modul "Was ist dir wichtig" + Live-Ranking (FLIP)
+   ----------------------------------------------------------------------- */
+.weights{ display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-6); align-items:start; }
+.weights-row{ margin-bottom:var(--sp-3); }
+.weights-row-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:6px; }
+.weights-row-head label{ font-size:var(--fs-small); font-weight:600; }
+.weights-pct{ font-size:var(--fs-small); font-weight:700; color:var(--accent); font-variant-numeric:tabular-nums; }
+.weights-slider{
+  -webkit-appearance:none; appearance:none; width:100%; height:6px;
+  border-radius:var(--radius-pill); outline:none; cursor:pointer;
+  /* Füllstand: --fill (0-100, per JS im input-Event gesetzt, Default 50 falls
+     JS aus irgendeinem Grund nicht läuft) färbt den Track links vom Daumen
+     in --accent, rechts bleibt --line : Gewicht auf einen Blick sichtbar,
+     nicht nur über das Prozent-Label (Fix-Runde 3, Befund 4). */
+  background:linear-gradient(to right, var(--accent) 0 var(--fill, 50%), var(--line) var(--fill, 50%) 100%);
+}
+/* Fix-Runde 4, Pflicht-Punkt 3: sichtbarer Daumen 22px (radial-gradient-Stops, optisch wie zuvor)
+   (Desktop), Hit-Fläche wächst auf 44px. Bei einem nativen Range-Thumb ist
+   Breite/Höhe der Pseudo-Element-Box selbst die Klickfläche (kein
+   ::before/::after auf UA-Pseudoelementen möglich) : also Box auf 44px
+   gesetzt und die alte Optik (Accent-Fläche + 3px --bg-Rand + 1px
+   --line-strong-Outline) 1:1 als konzentrische radial-gradient-Ringe
+   nachgebaut, außerhalb davon komplett transparent. border/box-shadow
+   entfallen, weil beide relativ zur (jetzt 44px großen) Border-Box
+   gerechnet würden und den Ring dadurch nach außen verschoben hätten. */
+.weights-slider::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:44px; height:44px; border-radius:50%; border:0; cursor:pointer;
+  background:radial-gradient(circle, var(--accent) 0 7px, var(--bg) 7px 10px, var(--line-strong) 10px 11px, transparent 11px 22px);
+}
+.weights-slider::-moz-range-thumb{
+  width:44px; height:44px; border-radius:50%; border:0; cursor:pointer;
+  background:radial-gradient(circle, var(--accent) 0 7px, var(--bg) 7px 10px, var(--line-strong) 10px 11px, transparent 11px 22px);
+}
+.weights-slider:focus-visible{
+  outline:2px solid var(--focus-ring); outline-offset:3px; border-radius:var(--radius-pill);
+}
+/* outline-offset negativ: zieht den Fokusring von der (jetzt 44px großen)
+   Border-Box zurück auf den sichtbaren 20px-Kreis (-11 = 22 Boxradius minus
+   11 sichtbarer Ringradius), sonst schwebt der Ring 12px frei um den
+   Daumen herum. */
+.weights-slider::-webkit-slider-thumb:focus-visible,
+.weights-slider::-moz-range-thumb:focus-visible{ outline:2px solid var(--focus-ring); outline-offset:-11px; }
+/* Mobile: Optik bleibt 28px (Touch-Empfehlung), Hit-Fläche bleibt bei den
+   44px aus der Basisregel : nur die Gradient-Ringe skalieren auf die
+   größere sichtbare Fläche (11/14/15 statt 7/10/11 Radius), Fokusring
+   entsprechend weiter nach innen gezogen (-15 = 22 minus sichtbarer
+   Ringradius 15um 15). */
+@media (max-width:640px){
+  .weights-slider{ height:8px; }
+  .weights-slider::-webkit-slider-thumb,
+  .weights-slider::-moz-range-thumb{
+    background:radial-gradient(circle, var(--accent) 0 11px, var(--bg) 11px 14px, var(--line-strong) 14px 15px, transparent 15px 22px);
+  }
+  .weights-slider::-webkit-slider-thumb:focus-visible,
+  .weights-slider::-moz-range-thumb:focus-visible{ outline-offset:-15px; }
+}
+.weights-actions{ margin-top:var(--sp-3); }
+.weights-hint{ margin-top:var(--sp-2); }
+.weights-result{ background:var(--surface); border-radius:var(--radius-card); padding:var(--sp-3); }
+.weights-result-title{ font-size:1.0625rem; font-weight:600; margin:0 0 var(--sp-2); }
+.weights-ranking{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+.weights-ranking-row{
+  display:flex; align-items:center; gap:10px;
+  background:var(--surface-2); border:1px solid var(--card-border);
+  border-radius:var(--radius-sm); padding:8px 12px;
+  transition:transform var(--dur-base) var(--ease);
+}
+.weights-ranking-num{ flex:0 0 20px; font-size:var(--fs-small); font-weight:700; color:var(--text-secondary); }
+.weights-ranking-name{
+  flex:1; font-size:var(--fs-small); font-weight:600; min-width:0;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.weights-ranking-score{ flex:0 0 auto; font-size:var(--fs-small); font-weight:700; }
+
+@media (max-width:900px){ .weights{ grid-template-columns:1fr; } }
+@media (prefers-reduced-motion: reduce){ .weights-ranking-row{ transition:none; } }
+
+/* -----------------------------------------------------------------------
+   .proof : Zitat-Karten (Social Proof aus data/reviews.js)
+   ----------------------------------------------------------------------- */
+.proof-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-3); }
+.proof-card{ display:flex; flex-direction:column; gap:var(--sp-2); }
+.proof-head{ display:flex; align-items:center; gap:10px; }
+.proof-avatar{
+  flex:0 0 auto; width:36px; height:36px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:var(--fs-caption); font-weight:700;
+  background:var(--brand, var(--accent));
+}
+.proof-stars{ color:var(--accent-warm); font-size:.8125rem; letter-spacing:1px; }
+.proof-text{ color:var(--text); font-size:var(--fs-small); margin:0; }
+.proof-meta{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:auto; padding-top:var(--sp-1); }
+.proof-vendor{ font-size:var(--fs-caption); font-weight:600; }
+.proof-date{ font-size:var(--fs-caption); color:var(--text-secondary); }
+.proof-note{ margin-top:var(--sp-3); }
+
+@media (max-width:1023px){ .proof-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .proof-grid{ grid-template-columns:1fr; } }
+
+/* -----------------------------------------------------------------------
+   .fresh : Frische-Leiste (Signale aus data/batches.js berechnet)
+   ----------------------------------------------------------------------- */
+.fresh{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--sp-3); }
+.fresh-tile{ background:var(--surface); border-radius:var(--radius-card); padding:var(--sp-3); text-align:center; }
+.fresh-value{
+  font-size:var(--fs-h3); font-weight:700; letter-spacing:var(--ls-h3);
+  color:var(--ok); font-variant-numeric:tabular-nums;
+}
+.fresh-label{ font-size:var(--fs-small); color:var(--text-secondary); margin-top:4px; }
+
+@media (max-width:1023px){ .fresh{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .fresh{ grid-template-columns:1fr; } }
+
+/* .count-up : generischer Zähl-Helfer (Hero-Kennzahlen + Fresh-Leiste) */
+[data-count-up]{ font-variant-numeric:tabular-nums; }
+
+/* -----------------------------------------------------------------------
+   .sticky-code-bar : mobile Sticky-Leiste (Anbieter-Detail, Code + CTA),
+   erscheint nach 30% Scroll, schließbar.
+   ----------------------------------------------------------------------- */
+.sticky-code-bar{
+  position:fixed; left:0; right:0; bottom:0; z-index:90;
+  display:none; align-items:center; gap:8px;
+  max-height:64px; /* Pflicht-Deckel Fix-Runde 3, Befund 7 */
+  padding:10px var(--container-pad);
+  padding-bottom:calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  backdrop-filter:saturate(180%) blur(20px);
+  border-top:1px solid var(--line);
+  transform:translateY(100%);
+  transition:transform var(--dur-base) var(--ease);
+}
+.sticky-code-bar.is-visible{ transform:translateY(0); }
+.sticky-code-bar-code{ font-family:var(--font-mono); font-weight:700; font-size:.875rem; flex:0 0 auto; }
+/* min-height:44px (UX-Audit r1, "alle Tap-Targets ≥44px"): Bar-Innenhöhe ist
+   exakt 44px (max-height:64px − padding-block 10px), passt ohne die Bar
+   selbst zu vergrößern. */
+.sticky-code-bar-copy{ flex:0 0 auto; min-height:44px; padding:8px 12px; font-size:var(--fs-caption); }
+/* min-width:0 (statt implizitem min-width:auto): auf 375px reicht der
+   natürliche Inhalt (Code + Copy-Button + CTA-Text + Badge + der jetzt
+   44px breite Schließen-Button) sonst nicht mehr nebeneinander (gemessen
+   403px Content- vs. 375px Bar-Breite, bereits VOR dem Tap-Target-Fix
+   vorhanden, durch die zusätzlichen 16px Close-Button-Breite verschärft).
+   Der CTA schrumpft jetzt über die Flex-Basis, nicht der Rest der Bar. */
+.sticky-code-bar-cta{ flex:1 1 0%; min-width:0; min-height:44px; justify-content:center; gap:4px; padding:8px 14px; }
+/* Nur der Label-Text kürzt sich per Ellipsis, das Pflicht-Badge (.badge-ad)
+   bleibt immer vollständig sichtbar. */
+.sticky-code-bar-cta-label{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
+.sticky-code-bar-close{
+  /* 44×44 Tap-Target (UX-Audit r1, Punkt "alle Tap-Targets ≥44px"): war
+     28×28px, einziges Bedienelement zum Schließen der Bar. Icon bleibt
+     16px, Klickfläche wächst über Padding statt sichtbarer Icon-Größe. */
+  flex:0 0 auto; width:44px; height:44px; border:0; background:none;
+  color:var(--text-secondary); cursor:pointer; display:flex;
+  align-items:center; justify-content:center; border-radius:50%;
+}
+
+/* -----------------------------------------------------------------------
+   20. UX-FIX-RUNDE (06.09., UX_audit_r1.html): Vergleichstabelle
+   Kern-Spalten + sticky Anbieter/Aktion, Kriterien-Toggle, Mobile-Karten
+   ----------------------------------------------------------------------- */
+
+/* Kern-Spalten-Reduktion (Befund 1, BLOCKER): 7 Standard-Spalten
+   (Anbieter/Gesamtscore/Preis-mg/CoAs/Versand/Rabatt/Aktion) bleiben immer
+   sichtbar, 7 weitere (Land + 5 Teilscores + Zahlung) tragen [data-extra]
+   und sind per Default ausgeblendet, bis .table--show-extra auf der
+   Tabelle sitzt (Toggle „Alle Kriterien anzeigen", Zustand in der
+   URL-Hash). Bleiben im DOM (nur display:none), PK.sortTable() kann sie
+   also weiter sortieren, sobald sie sichtbar sind. */
+.table:not(.table--show-extra) [data-extra]{ display:none; }
+
+/* Sticky erste (Anbieter) + letzte (Aktion) Spalte: bleiben beim
+   horizontalen Scrollen der erweiterten Ansicht sichtbar. Eigene
+   Flächenfarbe + Hairline (kein Elevation-Schatten, DESIGN.md-Linie),
+   da .table tbody tr:hover sonst durchscheint. Kopfzeile bekommt einen
+   höheren z-index, weil thead th selbst schon position:sticky (top:0)
+   trägt und an der Ecke beide Achsen gewinnen müssen. */
+.table [data-sticky]{ position:sticky; z-index:2; background:var(--bg); }
+.table [data-sticky="left"]{ left:0; }
+.table [data-sticky="right"]{ right:0; }
+.table thead [data-sticky]{ z-index:3; background:var(--surface); }
+/* Fix-Runde 4, Pflicht-Punkt 6: bisher trugen NUR die Body-Zellen die
+   Trennkante beim horizontalen Scroll, die Kopfzeile wirkte dadurch nahtlos
+   (REVIEW_design_r4, Befund 6). Jetzt Hairline (scharfe 1px-Linie, wie
+   vorher) UND ein weicher Verlauf (geblurrter zweiter Schatten, aus
+   --line-strong per color-mix abgeleitet statt hartem rgba-Schwarz : bleibt
+   dadurch in Light UND Dark sichtbar) auf BEIDEN Zellenarten, th
+   eingeschlossen. Die Brand-Randkante (inset 3px) bleibt exklusiv auf
+   tbody-Zeilen, weil --brand pro Vendor-Zeile gesetzt wird, nicht pro
+   Spalte/Header. */
+.table tbody td[data-sticky="left"]{
+  box-shadow:
+    inset 3px 0 0 0 var(--brand, transparent),
+    1px 0 0 0 var(--line),
+    4px 0 6px -3px color-mix(in srgb, var(--line-strong) 65%, transparent);
+}
+.table tbody td[data-sticky="right"]{
+  box-shadow:
+    -1px 0 0 0 var(--line),
+    -4px 0 6px -3px color-mix(in srgb, var(--line-strong) 65%, transparent);
+}
+.table thead th[data-sticky="left"]{
+  box-shadow:
+    1px 0 0 0 var(--line),
+    4px 0 6px -3px color-mix(in srgb, var(--line-strong) 65%, transparent);
+}
+.table thead th[data-sticky="right"]{
+  box-shadow:
+    -1px 0 0 0 var(--line),
+    -4px 0 6px -3px color-mix(in srgb, var(--line-strong) 65%, transparent);
+}
+
+/* Kriterien-Toggle-Button: gleiches .btn.btn-secondary, nur Randfarbe im
+   gedrückten Zustand (aria-pressed), kein neuer Button-Stil. */
+.criteria-toggle[aria-pressed="true"]{ border-color:var(--accent); color:var(--accent); }
+
+/* Mobile-Kartenansicht (Befund 1): ersetzt die Tabelle unter 900px komplett
+   statt sie nur horizontal scrollbar zu machen. Eigene Klasse
+   .compare-card (NICHT .vendor-card): das Karten-Grid auf Start/
+   Anbieter-Liste gehört einer parallelen Session, hier bewusst keine
+   gemeinsame Klasse angefasst. */
+.compare-cards{ display:none; }
+.compare-card{
+  background:var(--surface-2); border:1px solid var(--card-border);
+  border-top:3px solid var(--brand, var(--line-strong));
+  border-radius:var(--radius-card); padding:var(--sp-3);
+  display:flex; flex-direction:column; gap:var(--sp-2);
+}
+.compare-card-head{ display:flex; align-items:center; justify-content:space-between; gap:var(--sp-2); }
+.compare-card-id{ display:flex; align-items:center; gap:8px; min-width:0; }
+.compare-card-id .brand-logo-fallback{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.compare-card-score{ font-size:var(--fs-h3); font-weight:600; flex:0 0 auto; }
+.compare-card-row{ display:flex; align-items:center; justify-content:space-between; gap:var(--sp-2); font-size:var(--fs-small); color:var(--text-secondary); }
+.compare-card-row strong{ color:var(--text); font-weight:600; }
+.compare-card-cta{ margin-top:var(--sp-1); width:100%; }
+
+@media (max-width:899px){
+  #vergleich-table-section .table-wrap{ display:none; }
+  .compare-cards{ display:flex; flex-direction:column; gap:var(--sp-3); }
+}
+.sticky-code-bar-close:hover{ background:var(--surface); }
+
+@media (max-width:640px){ .sticky-code-bar{ display:flex; } }
+@media (prefers-reduced-motion: reduce){ .sticky-code-bar{ transition:none; } }

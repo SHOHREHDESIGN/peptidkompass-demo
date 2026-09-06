@@ -13,9 +13,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.wirkstoffe-index.title": "Wirkstoffe · PeptidKompass",
+    "page.wirkstoffe-index.title": "Wirkstoffe · Peptide Compass",
     "page.wirkstoffe-index.metaDescription": "Sechs Peptide im Überblick: Kategorie, Studienlage und Kurzbeschreibung, neutral erklärt. Nur für Forschungszwecke, keine medizinische Beratung.",
-    "page.wirkstoffe-index.ogTitle": "Wirkstoffe · PeptidKompass",
+    "page.wirkstoffe-index.ogTitle": "Wirkstoffe · Peptide Compass",
     "page.wirkstoffe-index.ogDescription": "Sechs Substanzen, kurz und sachlich erklärt.",
 
     "page.wirkstoffe-index.eyebrow": "Wirkstoff-Wissen",
@@ -33,9 +33,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.wirkstoffe-index.title": "Peptides · PeptidKompass",
+    "page.wirkstoffe-index.title": "Peptides · Peptide Compass",
     "page.wirkstoffe-index.metaDescription": "Six peptides at a glance: category, research stage, and a short description, explained neutrally. Research use only, not medical advice.",
-    "page.wirkstoffe-index.ogTitle": "Peptides · PeptidKompass",
+    "page.wirkstoffe-index.ogTitle": "Peptides · Peptide Compass",
     "page.wirkstoffe-index.ogDescription": "Six substances, explained briefly and factually.",
 
     "page.wirkstoffe-index.eyebrow": "Peptide knowledge",

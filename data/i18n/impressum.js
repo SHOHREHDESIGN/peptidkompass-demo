@@ -17,9 +17,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.impressum.title": "PeptidKompass · Impressum",
+    "page.impressum.title": "Peptide Compass · Impressum",
     "page.impressum.metaDescription": "Angaben gemäß § 5 TMG. Struktur-Platzhalter, vor Veröffentlichung juristisch prüfen lassen.",
-    "page.impressum.ogTitle": "PeptidKompass · Impressum",
+    "page.impressum.ogTitle": "Peptide Compass · Impressum",
     "page.impressum.ogDescription": "Angaben gemäß § 5 TMG. Struktur-Platzhalter, vor Veröffentlichung juristisch prüfen lassen.",
 
     "page.impressum.heroEyebrow": "Pflichtangaben",
@@ -39,9 +39,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.impressum.title": "PeptidKompass · Legal notice",
+    "page.impressum.title": "Peptide Compass · Legal notice",
     "page.impressum.metaDescription": "Information per § 5 TMG (German Telemedia Act). Structural placeholder, have this reviewed by a lawyer before publishing.",
-    "page.impressum.ogTitle": "PeptidKompass · Legal notice",
+    "page.impressum.ogTitle": "Peptide Compass · Legal notice",
     "page.impressum.ogDescription": "Information per § 5 TMG (German Telemedia Act). Structural placeholder, have this reviewed by a lawyer before publishing.",
 
     "page.impressum.heroEyebrow": "Mandatory information",

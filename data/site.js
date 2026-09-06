@@ -1,7 +1,7 @@
 window.PK = window.PK || {};
 
 window.PK.site = {
-  name: "PeptidKompass",
+  name: "Peptide Compass",
   claim: "",
   claim_en: "",
   demo: true,

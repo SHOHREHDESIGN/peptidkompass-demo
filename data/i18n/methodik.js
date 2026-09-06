@@ -13,10 +13,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.methodik.title": "PeptidKompass · Wie wir bewerten",
-    "page.methodik.metaDescription": "Fünf Kriterien, offen gelegt: wie PeptidKompass Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg zu einem Score verrechnet.",
-    "page.methodik.ogTitle": "PeptidKompass · Wie wir bewerten",
-    "page.methodik.ogDescription": "Fünf Kriterien, offen gelegt: wie PeptidKompass Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg zu einem Score verrechnet.",
+    "page.methodik.title": "Peptide Compass · Wie wir bewerten",
+    "page.methodik.metaDescription": "Fünf Kriterien, offen gelegt: wie Peptide Compass Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg zu einem Score verrechnet.",
+    "page.methodik.ogTitle": "Peptide Compass · Wie wir bewerten",
+    "page.methodik.ogDescription": "Fünf Kriterien, offen gelegt: wie Peptide Compass Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg zu einem Score verrechnet.",
 
     "page.methodik.heroEyebrow": "So bewerten wir",
     "page.methodik.h1": "Wie wir bewerten",
@@ -55,19 +55,19 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.methodik.monetLeadPost": ".",
 
     "page.methodik.faqTitle": "Häufige Fragen",
-    "page.methodik.faq1Q": "Was ist PeptidKompass?",
-    "page.methodik.faq1A": "PeptidKompass vergleicht Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Du siehst auf einen Blick, welcher Anbieter zu deinen Kriterien passt. Alle Bewertungen sind transparent nach unserer Methodik berechnet.",
+    "page.methodik.faq1Q": "Was ist Peptide Compass?",
+    "page.methodik.faq1A": "Peptide Compass vergleicht Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Du siehst auf einen Blick, welcher Anbieter zu deinen Kriterien passt. Alle Bewertungen sind transparent nach unserer Methodik berechnet.",
     "page.methodik.faq2Q": "Woher kommen die Bewertungen?",
     "page.methodik.faq2A": "Wir werten öffentlich zugängliche Angaben aus: Impressum, veröffentlichte CoAs, Versandbedingungen und Shop-Seite. Die genaue Gewichtung der fünf Kriterien steht auf der Methodik-Seite. Aktuell sind alle Werte Demo-Daten, echte Erhebung folgt vor dem Go-live.",
     "page.methodik.faq3Q": "Sind das echte Anbieter?",
-    "page.methodik.faq3A": "Nein, aktuell zeigt PeptidKompass acht fiktive Demo-Anbieter. Namen, Scores, Rabattcodes und Chargen sind Platzhalter. Echte Anbieter-Daten trägt Vic vor dem Live-Gang ein, klar als DEMO markiert bis dahin."
+    "page.methodik.faq3A": "Nein, aktuell zeigt Peptide Compass acht fiktive Demo-Anbieter. Namen, Scores, Rabattcodes und Chargen sind Platzhalter. Echte Anbieter-Daten trägt Vic vor dem Live-Gang ein, klar als DEMO markiert bis dahin."
   });
 
   i18n.merge("en", {
-    "page.methodik.title": "PeptidKompass · How we score",
-    "page.methodik.metaDescription": "Five criteria, fully disclosed: how PeptidKompass combines lab quality, legal framework, shipping, range, and price per mg into one score.",
-    "page.methodik.ogTitle": "PeptidKompass · How we score",
-    "page.methodik.ogDescription": "Five criteria, fully disclosed: how PeptidKompass combines lab quality, legal framework, shipping, range, and price per mg into one score.",
+    "page.methodik.title": "Peptide Compass · How we score",
+    "page.methodik.metaDescription": "Five criteria, fully disclosed: how Peptide Compass combines lab quality, legal framework, shipping, range, and price per mg into one score.",
+    "page.methodik.ogTitle": "Peptide Compass · How we score",
+    "page.methodik.ogDescription": "Five criteria, fully disclosed: how Peptide Compass combines lab quality, legal framework, shipping, range, and price per mg into one score.",
 
     "page.methodik.heroEyebrow": "How we score",
     "page.methodik.h1": "How we score",
@@ -106,12 +106,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.methodik.monetLeadPost": ".",
 
     "page.methodik.faqTitle": "Frequently asked questions",
-    "page.methodik.faq1Q": "What is PeptidKompass?",
-    "page.methodik.faq1A": "PeptidKompass compares peptide vendors by lab quality, legal framework, shipping, range, and price. You see at a glance which vendor matches your criteria. Every rating is calculated transparently per our methodology.",
+    "page.methodik.faq1Q": "What is Peptide Compass?",
+    "page.methodik.faq1A": "Peptide Compass compares peptide vendors by lab quality, legal framework, shipping, range, and price. You see at a glance which vendor matches your criteria. Every rating is calculated transparently per our methodology.",
     "page.methodik.faq2Q": "Where do the ratings come from?",
     "page.methodik.faq2A": "We evaluate publicly available information: the legal notice, published CoAs, shipping terms, and the vendor's site. The exact weighting of the five criteria is on this page. Every value is currently demo data; real data collection follows before launch.",
     "page.methodik.faq3Q": "Are these real vendors?",
-    "page.methodik.faq3A": "No, PeptidKompass currently shows eight fictional demo vendors. Names, scores, discount codes, and batches are placeholders. Vic will enter real vendor data before launch, clearly marked as DEMO until then."
+    "page.methodik.faq3A": "No, Peptide Compass currently shows eight fictional demo vendors. Names, scores, discount codes, and batches are placeholders. Vic will enter real vendor data before launch, clearly marked as DEMO until then."
   });
 
 })(window.PK.i18n);

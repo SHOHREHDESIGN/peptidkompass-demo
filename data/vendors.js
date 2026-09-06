@@ -4,6 +4,7 @@ window.PK.vendors = [
   {
     slug: "nordlicht-research",
     name: "Nordlicht Research",
+    brand: { farbe: "#1B4F8C", logo: "assets/img/logos/nordlicht-research.svg" },
     land: "DE",
     gegruendet: 2019,
     score: { labor: 95, recht: 92, lieferung: 88, sortiment: 85, preis: 78 },
@@ -48,6 +49,7 @@ window.PK.vendors = [
   {
     slug: "helix-labs-demo",
     name: "Helix Labs Demo",
+    brand: { farbe: "#0E6B64", logo: "assets/img/logos/helix-labs-demo.svg" },
     land: "DE",
     gegruendet: 2021,
     score: { labor: 90, recht: 85, lieferung: 80, sortiment: 90, preis: 70 },
@@ -93,6 +95,7 @@ window.PK.vendors = [
   {
     slug: "aurora-peptide-supply",
     name: "Aurora Peptide Supply",
+    brand: { farbe: "#A8690F", logo: "assets/img/logos/aurora-peptide-supply.svg" },
     land: "AT",
     gegruendet: 2020,
     score: { labor: 80, recht: 75, lieferung: 70, sortiment: 65, preis: 60 },
@@ -136,6 +139,7 @@ window.PK.vendors = [
   {
     slug: "quantum-bio-labs",
     name: "Quantum Bio Labs",
+    brand: { farbe: "#453E90", logo: "assets/img/logos/quantum-bio-labs.svg" },
     land: "CH",
     gegruendet: 2022,
     score: { labor: 70, recht: 68, lieferung: 60, sortiment: 72, preis: 55 },
@@ -180,6 +184,7 @@ window.PK.vendors = [
   {
     slug: "vertex-research-chemicals",
     name: "Vertex Research Chemicals",
+    brand: { farbe: "#3F5D4E", logo: "assets/img/logos/vertex-research-chemicals.svg" },
     land: "EU",
     gegruendet: 2023,
     score: { labor: 60, recht: 58, lieferung: 55, sortiment: 60, preis: 62 },
@@ -223,6 +228,7 @@ window.PK.vendors = [
   {
     slug: "blauwal-peptides",
     name: "Blauwal Peptides",
+    brand: { farbe: "#1584A0", logo: "assets/img/logos/blauwal-peptides.svg" },
     land: "DE",
     gegruendet: 2018,
     score: { labor: 85, recht: 80, lieferung: 75, sortiment: 70, preis: 65 },
@@ -267,6 +273,7 @@ window.PK.vendors = [
   {
     slug: "terra-nova-labs",
     name: "Terra Nova Labs",
+    brand: { farbe: "#C1543A", logo: "assets/img/logos/terra-nova-labs.svg" },
     land: "INT",
     gegruendet: 2017,
     score: { labor: 92, recht: 95, lieferung: 90, sortiment: 80, preis: 85 },
@@ -312,6 +319,7 @@ window.PK.vendors = [
   {
     slug: "kristall-biolab",
     name: "Kristall Biolab",
+    brand: { farbe: "#6C3FA6", logo: "assets/img/logos/kristall-biolab.svg" },
     land: "CH",
     gegruendet: 2020,
     score: { labor: 75, recht: 70, lieferung: 65, sortiment: 68, preis: 58 },

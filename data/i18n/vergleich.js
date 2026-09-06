@@ -13,9 +13,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.vergleich.title": "Vergleich · PeptidKompass",
+    "page.vergleich.title": "Vergleich · Peptide Compass",
     "page.vergleich.metaDescription": "Alle 8 Peptid-Anbieter im direkten Vergleich: Score, Preis pro Milligramm, Lieferzeit und Rabattcodes, sortierbar nach jeder Spalte.",
-    "page.vergleich.ogTitle": "Vergleich · PeptidKompass",
+    "page.vergleich.ogTitle": "Vergleich · Peptide Compass",
     "page.vergleich.ogDescription": "Alle Anbieter im Vergleich: Score, Preis pro mg, Lieferzeit, Rabatt.",
 
     "page.vergleich.eyebrow": "Alle Anbieter im Vergleich",
@@ -36,6 +36,11 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.vergleich.colVersand": "Versand",
     "page.vergleich.colRabatt": "Rabatt",
     "page.vergleich.colAktion": "Aktion",
+    "page.vergleich.colZahlung": "Zahlung",
+
+    "page.vergleich.tableIntro": "Standardansicht zeigt die Kernkriterien, alle Details per Klick.",
+    "page.vergleich.showAllCriteria": "Alle Kriterien anzeigen",
+    "page.vergleich.showCoreCriteria": "Nur Kernkriterien",
 
     "page.vergleich.legendTitle": "So setzt sich der Gesamtscore zusammen",
     "page.vergleich.methodikLink": "Ganze Methodik lesen",
@@ -49,9 +54,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.vergleich.title": "Compare · PeptidKompass",
+    "page.vergleich.title": "Compare · Peptide Compass",
     "page.vergleich.metaDescription": "All 8 peptide vendors compared side by side: score, price per milligram, delivery time, and discount codes, sortable by any column.",
-    "page.vergleich.ogTitle": "Compare · PeptidKompass",
+    "page.vergleich.ogTitle": "Compare · Peptide Compass",
     "page.vergleich.ogDescription": "All vendors compared: score, price per mg, delivery time, discount.",
 
     "page.vergleich.eyebrow": "All vendors compared",
@@ -72,6 +77,11 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.vergleich.colVersand": "Delivery",
     "page.vergleich.colRabatt": "Discount",
     "page.vergleich.colAktion": "Action",
+    "page.vergleich.colZahlung": "Payment",
+
+    "page.vergleich.tableIntro": "The default view shows the core criteria, every detail is one click away.",
+    "page.vergleich.showAllCriteria": "Show all criteria",
+    "page.vergleich.showCoreCriteria": "Core criteria only",
 
     "page.vergleich.legendTitle": "How the overall score is built",
     "page.vergleich.methodikLink": "Read the full methodology",

@@ -13,9 +13,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
-    "page.datenschutz.title": "PeptidKompass · Datenschutz",
+    "page.datenschutz.title": "Peptide Compass · Datenschutz",
     "page.datenschutz.metaDescription": "Datenschutzerklärung. Struktur-Platzhalter, vor Veröffentlichung juristisch prüfen lassen.",
-    "page.datenschutz.ogTitle": "PeptidKompass · Datenschutz",
+    "page.datenschutz.ogTitle": "Peptide Compass · Datenschutz",
     "page.datenschutz.ogDescription": "Datenschutzerklärung. Struktur-Platzhalter, vor Veröffentlichung juristisch prüfen lassen.",
 
     "page.datenschutz.heroEyebrow": "Pflichtangaben",
@@ -34,9 +34,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
-    "page.datenschutz.title": "PeptidKompass · Privacy",
+    "page.datenschutz.title": "Peptide Compass · Privacy",
     "page.datenschutz.metaDescription": "Privacy policy. Structural placeholder, have this reviewed by a lawyer before publishing.",
-    "page.datenschutz.ogTitle": "PeptidKompass · Privacy",
+    "page.datenschutz.ogTitle": "Peptide Compass · Privacy",
     "page.datenschutz.ogDescription": "Privacy policy. Structural placeholder, have this reviewed by a lawyer before publishing.",
 
     "page.datenschutz.heroEyebrow": "Mandatory information",

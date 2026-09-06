@@ -68,6 +68,14 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.vendorCard.coaChecked": "{n} CoAs geprüft",
     "global.badge.ad": "Anzeige",
 
+    /* Vendor-Brand-Logo (PK.renderLogo, Runde "Leben und Conversion" 06.09.):
+       hier zusätzlich zu data/i18n/conversion.js definiert (Vertrag,
+       data/SCHEMA.md), weil global.js auf JEDER Seite geladen wird -
+       PK.renderLogo läuft aber auch auf Seiten ohne conversion.js
+       (vergleich.html, anbieter/index.html, deals.html). Gleicher Wert,
+       kein Konflikt beim Merge. */
+    "global.brand.logoAlt": "Logo {name}",
+
     /* Tabellen (Scroll-Hinweis, PK.sortTable-Umgebung) */
     "global.table.scrollHint": "Wischen für mehr →",
 
@@ -76,7 +84,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.codeBox.error": "Fehler",
 
     /* Footer */
-    "global.footer.metaDemo": "© PeptidKompass · Demo-Projekt",
+    "global.footer.metaDemo": "© Peptide Compass · Demo-Projekt",
 
     /* Enum: vendor.land (data/SCHEMA.md) */
     "global.enum.land.DE": "DE",
@@ -138,12 +146,14 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.vendorCard.coaChecked": "{n} CoAs verified",
     "global.badge.ad": "Ad",
 
+    "global.brand.logoAlt": "{name} logo",
+
     "global.table.scrollHint": "Swipe for more →",
 
     "global.codeBox.copied": "Copied",
     "global.codeBox.error": "Error",
 
-    "global.footer.metaDemo": "© PeptidKompass · Demo project",
+    "global.footer.metaDemo": "© Peptide Compass · Demo project",
 
     "global.enum.land.DE": "DE",
     "global.enum.land.AT": "AT",

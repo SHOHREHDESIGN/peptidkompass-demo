@@ -38,6 +38,12 @@
    PK.initParallax()        : Scroll-Parallax für .visual-parallax img (±40px)
    PK.initTilt()             : Hover-Kipp-Effekt für .tilt (nur hover:hover+pointer:fine)
    PK.initHeroVideo()       : Video-Loop im Hero : Fallback/Pause/Reduced-Motion
+   PK.initHero3D()          : Maus-Parallax für die schwebenden Hero-Sprites
+                              (.hero-3d-stage, assets/css/system.css 6b);
+                              startet zusätzlich initHeroGlass() (privat)
+   initHeroGlass()          : Glas-Refraktion für vial_b/mol_c (6b-glass,
+                              privat, kein PK.*-Export außer dem Test-Hook
+                              PK.hero3dSyncGlass für die Browser-Verifikation)
    (auto) Scroll-Hinweis „Wischen für mehr" für .table-wrap auf Mobile/Tablet
           : läuft selbstständig bei DOMContentLoaded, keine Seite ruft das auf.
 
@@ -45,9 +51,10 @@
    aus assets/css/README.md): PK.initReveal() zuerst (die drei neuen Helfer
    setzen auf .reveal.is-visible bzw. sind davon unabhängig, aber initReveal
    ist ohnehin Teil des Pflicht-Bootstraps jeder Seite). Danach beliebige
-   Reihenfolge: PK.initParallax(), PK.initTilt(), PK.initHeroVideo() : alle
-   drei sind No-Ops, wenn ihre Zielklasse/ihr Zielelement auf der Seite
-   nicht vorkommt, also unbedenklich auf jeder Seite aufzurufen.
+   Reihenfolge: PK.initParallax(), PK.initTilt(), PK.initHeroVideo(),
+   PK.initHero3D() : alle vier sind No-Ops, wenn ihre Zielklasse/ihr
+   Zielelement auf der Seite nicht vorkommt, also unbedenklich auf jeder
+   Seite aufzurufen.
    ============================================================================ */
 (function (global) {
   "use strict";
@@ -356,6 +363,9 @@
     var bp = basePath || "";
     var card = document.createElement("div");
     card.className = "vendor-card";
+    if (vendor.brand && vendor.brand.farbe) card.style.setProperty("--brand", vendor.brand.farbe);
+
+    card.appendChild(PK.renderLogo(vendor, { basePath: bp }));
 
     var head = document.createElement("div");
     head.className = "vendor-card-head";
@@ -371,8 +381,8 @@
     nameWrap.appendChild(land);
 
     var score = document.createElement("div");
-    score.className = "vendor-card-score";
     var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
+    score.className = "vendor-card-score score-band-" + PK.scoreBand(gesamt);
     score.textContent = PK.byNum(gesamt);
 
     head.appendChild(nameWrap);
@@ -476,14 +486,23 @@
     if (!btn) return;
     var box = btn.closest(".code-box");
     var codeEl = box ? box.querySelector("[data-code]") : null;
+    // Fallback ohne .code-box-Vorfahr (sticky-code-bar, Fix-Runde 3, Befund 7):
+    // [data-code] im selben Elternelement, damit die Bar nicht künstlich in
+    // eine .code-box gewrappt werden muss (deren Border/Background-Styling
+    // würde die Sticky-Bar-Optik überschreiben).
+    if (!codeEl && btn.parentElement) codeEl = btn.parentElement.querySelector("[data-code]");
     var text = codeEl ? codeEl.textContent.trim() : "";
     if (!text) return;
 
     var done = function (ok) {
       var original = btn.getAttribute("data-original-label") || btn.textContent;
       btn.setAttribute("data-original-label", original);
-      btn.textContent = ok ? PK.t("global.codeBox.copied") : PK.t("global.codeBox.error");
+      // aria-live VOR der Textänderung setzen (UX-Audit r1, Punkt "Copy-Buttons
+      // mit aria-live-Rückmeldung"): ein Live-Region-Attribut, das im selben
+      // Tick wie der Textwechsel gesetzt wird, kommt bei manchen Screenreadern
+      // zu spät, weil der Knoten erst danach als Live-Region registriert wird.
       btn.setAttribute("aria-live", "polite");
+      btn.textContent = ok ? PK.t("global.codeBox.copied") : PK.t("global.codeBox.error");
       setTimeout(function () { btn.textContent = original; }, 1600);
     };
 
@@ -926,6 +945,912 @@
         tryPlay();
       }
     });
+  };
+
+  /**
+   * PK.initHero3D()
+   * Maus-Parallax für die schwebenden Molekül-/Vial-Sprites im Hero
+   * (assets/css/system.css Abschnitt 6b, .hero-3d-stage): pointermove über
+   * der Bühne verschiebt drei Layer (.hero-3d-back/-mid/-front) entgegen-
+   * gesetzt zur Zeigerposition, hinten am schwächsten (30%), Vial-Mitte
+   * mittel (60%), vorne am stärksten (100%), max ±26px, rAF-gedrosselt.
+   * pointerleave gleitet weich auf 0 zurück (.is-releasing schaltet kurz
+   * eine CSS-Transition frei, pointermove nimmt sie sofort wieder raus für
+   * 1:1-Tracking ohne Lag). will-change nur während echter Bewegung
+   * (.is-parallax-active, wie PK.initParallax).
+   * No-Op bei prefers-reduced-motion (Sprites bleiben komplett statisch,
+   * auch das CSS-Float ist dann per Media Query aus) und auf Touch/ohne
+   * echten Zeiger ((hover:hover) and (pointer:fine) schlägt fehl) : dort
+   * bleibt nur das CSS-Schweben aktiv, keine Parallax-Bindung nötig.
+   */
+  /**
+   * initHeroGlass(stage, reduced)
+   * Glas-Refraktion für die zwei Front-Sprites mit Klasse .hero-glass
+   * (vial_b, mol_c; system.css 6b-glass). Baut je Sprite einen
+   * aria-hidden Klon von .hero-copy (Eyebrow/H1/Subline), maskiert ihn
+   * mit demselben Sprite-PNG und hält die Maske jeden Frame auf der
+   * aktuellen Sprite-Position synchron.
+   *
+   * Sync-Variante (Auftrag erlaubt Matrix-Inversion ODER mask-position-
+   * Tracking, "nimm was in Chrome+Safari sauber läuft"): gewählt wurde
+   * mask-position/-size per getBoundingClientRect, NICHT die Inverse der
+   * Wrapper-Transform-Matrix. Begründung: der Sprite-Wrapper trägt
+   * gleichzeitig zwei CSS-Keyframe-Animationen (Float auf dem <img>, Spin
+   * auf .hero-3d-spin) PLUS eine JS-getriebene translate3d-Parallax auf
+   * dem Eltern-Layer (.hero-3d-front) - drei Transform-Quellen, die sich
+   * erst im Compositor zur finalen Matrix summieren. getComputedStyle
+   * müsste diese kombinierte Matrix pro Frame lesen und per DOMMatrix
+   * invertieren; Safari berichtet den Wert bei mehreren gleichzeitig
+   * laufenden Animationen nachweislich nicht immer synchron zum selben
+   * Frame wie Chrome (Rundungs-/Timing-Drift, besonders bei matrix3d aus
+   * 3D-Transforms wie translateZ/rotateZ hier). getBoundingClientRect
+   * dagegen liest das bereits vom Browser aufgelöste Endergebnis (Layout-
+   * Pixel), ist in beiden Engines synchron zum aktuellen Frame und lässt
+   * sich 1:1 mit derselben Methode verifizieren, die auch die QA-Abnahme
+   * nutzt (Rect-Vergleich). Alle Reads laufen VOR den Writes (kein
+   * Layout-Thrashing): erst stageRect/copyRect/alle sprite-Rects lesen,
+   * dann erst Styles setzen.
+   */
+  function initHeroGlass(stage, reduced) {
+    var copy = stage.querySelector(".hero-copy");
+    var sprites = Array.prototype.slice.call(stage.querySelectorAll(".hero-3d-front .hero-glass"));
+    if (!copy || !sprites.length) return;
+
+    var supportsMask = global.CSS && global.CSS.supports &&
+      (global.CSS.supports("mask-image", "url(x.png)") || global.CSS.supports("-webkit-mask-image", "url(x.png)"));
+    if (!supportsMask) return; // ohne Masking kein Klon möglich; Body/Rim (CSS) bleiben regulär
+
+    var entries = []; // {sprite, refract}
+
+    function buildClones() {
+      entries.forEach(function (e) {
+        if (e.refract && e.refract.parentNode) e.refract.parentNode.removeChild(e.refract);
+      });
+      entries = [];
+      sprites.forEach(function (sprite) {
+        var refract = document.createElement("div");
+        refract.className = "hero-glass-refract";
+        refract.setAttribute("aria-hidden", "true");
+        refract.setAttribute("data-sprite", sprite.getAttribute("data-sprite") || "");
+        // mask-image bewusst NICHT über var(--gmask) im Stylesheet (löst
+        // relative url()s gegen system.css statt gegen index.html auf,
+        // siehe Kommentar dort) - hier direkt inline gesetzt, wie src= auf
+        // den <img>-Sprites, damit derselbe Dokument-Pfad greift.
+        var maskUrl = sprite.style.getPropertyValue("--gmask").trim();
+        refract.style.webkitMaskImage = maskUrl;
+        refract.style.maskImage = maskUrl;
+
+        // Nur Eyebrow/H1/Subline klonen (Auftrag), NICHT die Suchleiste:
+        // ein Formular-Klon wäre unnötiges DOM-Gewicht und optisch nie
+        // sichtbar (die Maske deckt ohnehin nur die kleine Sprite-Fläche).
+        var inner = document.createElement("div");
+        inner.className = "hero-glass-refract-inner";
+        Array.prototype.forEach.call(copy.children, function (node) {
+          if (node.classList && node.classList.contains("search-bar")) return;
+          var clone = node.cloneNode(true);
+          clone.removeAttribute("id");
+          inner.appendChild(clone);
+        });
+        refract.appendChild(inner);
+
+        // Direkt nach .hero-copy einfügen: painted über dem echten Text,
+        // unter .hero-3d-front (dessen z-index:2 sticht per Stacking-
+        // Context, unabhängig von der DOM-Reihenfolge, weiterhin).
+        stage.insertBefore(refract, copy.nextSibling);
+        entries.push({ sprite: sprite, refract: refract });
+      });
+    }
+
+    // Grundausrichtung: Klon-Box deckungsgleich mit .hero-copy (Resize/
+    // Sprachwechsel). Layout-Writes (left/top/width/height) bewusst hier
+    // isoliert, NICHT im rAF-Tracking unten (das schreibt nur Maskeigen-
+    // schaften, keine Geometrie -> kein Reflow pro Frame).
+    function alignBase() {
+      var stageRect = stage.getBoundingClientRect();
+      var copyRect = copy.getBoundingClientRect();
+      entries.forEach(function (e) {
+        var r = e.refract;
+        r.style.left = (copyRect.left - stageRect.left) + "px";
+        r.style.top = (copyRect.top - stageRect.top) + "px";
+        r.style.width = copyRect.width + "px";
+        r.style.height = copyRect.height + "px";
+      });
+    }
+
+    // Pro Frame: nur Maskeigenschaften (Paint/Compositing, kein Reflow).
+    // Alle Rect-Reads zuerst, dann alle Style-Writes gebündelt.
+    function trackMask() {
+      var copyRect = copy.getBoundingClientRect();
+      var reads = entries.map(function (e) {
+        if (e.refract.offsetParent === null) return null; // Mobile: vial_b ausgeblendet, Rect sparen
+        return e.sprite.getBoundingClientRect();
+      });
+      entries.forEach(function (e, i) {
+        var sRect = reads[i];
+        if (!sRect) return;
+        var r = e.refract;
+        var mx = sRect.left - copyRect.left;
+        var my = sRect.top - copyRect.top;
+        r.style.setProperty("--gsize", sRect.width + "px " + sRect.height + "px");
+        r.style.setProperty("--gmx", mx + "px");
+        r.style.setProperty("--gmy", my + "px");
+        r.style.setProperty("--gx", (mx + sRect.width / 2) + "px");
+        r.style.setProperty("--gy", (my + sRect.height / 2) + "px");
+      });
+    }
+
+    function syncNow() {
+      alignBase();
+      trackMask();
+    }
+
+    buildClones();
+    syncNow();
+
+    document.addEventListener("pk:langchange", function () {
+      buildClones();
+      syncNow();
+    });
+    global.addEventListener("resize", function () {
+      alignBase();
+      trackMask();
+    });
+
+    // Test-Hook: rAF feuert in der statischen Vorschau-Pane nicht, die
+    // Verifikation ruft diese Funktion deshalb direkt auf.
+    PK.hero3dSyncGlass = syncNow;
+
+    if (reduced) return; // statisch, kein Dauer-Loop nötig (Sprites bewegen sich nicht)
+
+    var visible = true;
+    if ("IntersectionObserver" in global) {
+      var io = new IntersectionObserver(function (ents) { visible = ents[0].isIntersecting; });
+      io.observe(stage);
+    }
+
+    var raf = null;
+    function loop() {
+      if (visible && document.visibilityState === "visible") trackMask();
+      raf = global.requestAnimationFrame(loop);
+    }
+    raf = global.requestAnimationFrame(loop);
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState !== "visible") {
+        if (raf) { global.cancelAnimationFrame(raf); raf = null; }
+      } else if (!raf) {
+        raf = global.requestAnimationFrame(loop);
+      }
+    });
+  }
+
+  PK.initHero3D = function () {
+    var stage = document.querySelector(".hero-3d-stage");
+    if (!stage) return;
+    var back = stage.querySelector(".hero-3d-back");
+    var mid = stage.querySelector(".hero-3d-mid");
+    var front = stage.querySelector(".hero-3d-front");
+    if (!back && !mid && !front) return;
+
+    var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Glas-Refraktion unabhängig von Hover-Fähigkeit initialisieren: Float/
+    // Spin laufen per CSS-Keyframe auch auf Touch-Geräten ohne Maus weiter,
+    // nur die Maus-Parallax unten braucht (hover:hover)+(pointer:fine).
+    initHeroGlass(stage, reduced);
+
+    if (reduced) return;
+
+    var canHover = global.matchMedia && global.matchMedia("(hover:hover) and (pointer:fine)").matches;
+    if (!canHover) return;
+
+    var MAX_PX = 26;
+    var BACK_FACTOR = 0.3;
+    var MID_FACTOR = 0.6;
+    var FRONT_FACTOR = 1;
+    var layers = [back, mid, front].filter(Boolean);
+
+    var targetX = 0, targetY = 0; // -1..1, Zeigerposition relativ zur Bühnenmitte
+    var ticking = false;
+    var active = false;
+    var releaseTimer = null;
+
+    function setActive(on) {
+      if (active === on) return;
+      active = on;
+      layers.forEach(function (layer) { layer.classList.toggle("is-parallax-active", on); });
+    }
+
+    function apply() {
+      var bx = (-targetX * MAX_PX * BACK_FACTOR).toFixed(1);
+      var by = (-targetY * MAX_PX * BACK_FACTOR).toFixed(1);
+      var mx = (-targetX * MAX_PX * MID_FACTOR).toFixed(1);
+      var my = (-targetY * MAX_PX * MID_FACTOR).toFixed(1);
+      var fx = (targetX * MAX_PX * FRONT_FACTOR).toFixed(1);
+      var fy = (targetY * MAX_PX * FRONT_FACTOR).toFixed(1);
+      if (back) back.style.transform = "translate3d(" + bx + "px," + by + "px,0)";
+      if (mid) mid.style.transform = "translate3d(" + mx + "px," + my + "px,0)";
+      if (front) front.style.transform = "translate3d(" + fx + "px," + fy + "px,0)";
+      ticking = false;
+    }
+
+    function queue() {
+      if (ticking) return;
+      ticking = true;
+      global.requestAnimationFrame(apply);
+    }
+
+    function clearRelease() {
+      layers.forEach(function (layer) { layer.classList.remove("is-releasing"); });
+      if (releaseTimer) { global.clearTimeout(releaseTimer); releaseTimer = null; }
+    }
+
+    stage.addEventListener("pointermove", function (e) {
+      clearRelease();
+      var rect = stage.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      targetX = Math.max(-1, Math.min(1, ((e.clientX - rect.left) / rect.width - 0.5) * 2));
+      targetY = Math.max(-1, Math.min(1, ((e.clientY - rect.top) / rect.height - 0.5) * 2));
+      setActive(true);
+      queue();
+    });
+
+    stage.addEventListener("pointerleave", function () {
+      targetX = 0; targetY = 0;
+      layers.forEach(function (layer) { layer.classList.add("is-releasing"); });
+      queue();
+      setActive(false);
+      releaseTimer = global.setTimeout(clearRelease, 650);
+    });
+  };
+
+  /* =========================================================================
+     RUNDE „LEBEN UND CONVERSION" (06.09.): Logo, Logo-Leiste, Podium,
+     Gewichtungs-Regler, Social Proof, Frische-Leiste, Count-up.
+     Grundlage: data/SCHEMA.md Abschnitt "Erweiterung v1.2".
+     Sicherheitsregeln gelten unverändert: nie innerHTML mit Daten, nur
+     PK.safeUrl() für affiliateUrl, nur textContent für Datenfelder.
+     ========================================================================= */
+
+  /**
+   * PK.scoreBand(score)
+   * Bandfarbe für eine Score-Zahl: >=80 "good" (grün), 60-79 "mid" (blau),
+   * <60 "low" (warm). Liefert nur das Suffix, Aufrufer setzt "score-band-"+x.
+   */
+  PK.scoreBand = function (score) {
+    var v = Number(score) || 0;
+    if (v >= 80) return "good";
+    if (v >= 60) return "mid";
+    return "low";
+  };
+
+  /**
+   * PK.renderLogo(vendor, opts)
+   * Baut einen farbigen Logo-Slot (Vendor-Card, Detail-Kopf, Vergleichs-
+   * tabelle): <img> aus vendor.brand.logo, alt über global.brand.logoAlt.
+   * Fehlt vendor.brand ODER schlägt das Bild fehl (404, Datei noch nicht
+   * geliefert): Fallback auf den Anbieternamen als Text (kein kaputtes
+   * Icon). opts: { basePath (Default ""), eager (bool, Default false),
+   * small (bool, Default false) für .brand-logo--sm }.
+   */
+  PK.renderLogo = function (vendor, opts) {
+    var o = opts || {};
+    var bp = o.basePath || "";
+    var wrap = document.createElement("span");
+    wrap.className = "brand-logo" + (o.small ? " brand-logo--sm" : "") + (o.detail ? " brand-logo--detail" : "");
+
+    var hasLogo = !!(vendor && vendor.brand && vendor.brand.logo);
+    if (!hasLogo) {
+      var textOnly = document.createElement("span");
+      textOnly.className = "brand-logo-fallback";
+      textOnly.textContent = (vendor && vendor.name) || "";
+      wrap.appendChild(textOnly);
+      return wrap;
+    }
+
+    var img = document.createElement("img");
+    img.src = bp + vendor.brand.logo;
+    img.alt = PK.t("global.brand.logoAlt", { name: vendor.name || "" });
+    img.loading = o.eager ? "eager" : "lazy";
+    img.addEventListener("error", function () {
+      wrap.textContent = "";
+      var fb = document.createElement("span");
+      fb.className = "brand-logo-fallback";
+      fb.textContent = vendor.name || "";
+      wrap.appendChild(fb);
+    });
+    wrap.appendChild(img);
+    return wrap;
+  };
+
+  /**
+   * PK.initLogoStrip(selector, opts)
+   * Baut die horizontale Logo-Leiste in [data-logo-strip] (oder dem
+   * übergebenen selector). Monochrom über CSS mask-image (system.css
+   * Abschnitt 19): funktioniert unabhängig davon, wie die SVG-Datei intern
+   * gefüllt ist, und bleibt file://-tauglich (kein fetch nötig). Fehlt
+   * vendor.brand: Fallback zeigt den Namen als Text. Dupliziert die Liste
+   * einmal (aria-hidden auf der Kopie) für einen nahtlosen CSS-Loop.
+   * Idempotent, baut bei jedem Aufruf (auch bei "pk:langchange", wegen der
+   * übersetzten aria-label-Texte) neu.
+   */
+  PK.initLogoStrip = function (selector, opts) {
+    var el = document.querySelector(selector || "[data-logo-strip]");
+    if (!el) return;
+    var o = opts || {};
+    var bp = o.basePath || "";
+    var vendors = Array.isArray(global.PK.vendors) ? global.PK.vendors : [];
+    if (!vendors.length) return;
+
+    el.textContent = "";
+    var track = document.createElement("div");
+    track.className = "logo-strip-track";
+
+    function buildItem(vendor, hidden) {
+      var item = document.createElement("div");
+      item.className = "logo-strip-item";
+      if (hidden) item.setAttribute("aria-hidden", "true");
+
+      var hasLogo = !!(vendor.brand && vendor.brand.logo);
+      if (hasLogo) {
+        var url = bp + vendor.brand.logo;
+        var mask = document.createElement("div");
+        mask.className = "logo-strip-mask";
+        // mask-image direkt inline setzen (nicht über die --logo-url-Variable
+        // in system.css) : ein url() innerhalb einer CSS-Custom-Property wird
+        // relativ zu dem Stylesheet aufgelöst, in dem der var()-Verweis steht
+        // (hier assets/css/system.css), NICHT relativ zum Dokument, das die
+        // Variable setzt. Inline gesetzte url()-Werte lösen dagegen korrekt
+        // relativ zur aktuellen Seite auf (Fix-Runde 1, Verifikation 06.09.:
+        // 404 auf assets/css/assets/img/logos/… ohne diesen Fix).
+        mask.style.maskImage = "url('" + url + "')";
+        mask.style.webkitMaskImage = "url('" + url + "')";
+        if (!hidden) {
+          mask.setAttribute("role", "img");
+          mask.setAttribute("aria-label", PK.t("global.brand.logoAlt", { name: vendor.name || "" }));
+        }
+        item.appendChild(mask);
+        var probe = new Image();
+        probe.onerror = function () { item.classList.add("is-fallback"); };
+        probe.src = url;
+      } else {
+        item.classList.add("is-fallback");
+      }
+      var text = document.createElement("span");
+      text.className = "logo-strip-fallback-text";
+      text.textContent = vendor.name || "";
+      item.appendChild(text);
+      return item;
+    }
+
+    vendors.forEach(function (v) { track.appendChild(buildItem(v, false)); });
+    vendors.forEach(function (v) { track.appendChild(buildItem(v, true)); }); // Duplikat für nahtlosen Loop
+
+    el.appendChild(track);
+  };
+
+  /**
+   * PK.renderPodium(container, top3)
+   * Baut die 3 Podium-Karten (Platz 1 mittig, größer über CSS-order).
+   * top3 = [Platz1-Vendor, Platz2-Vendor, Platz3-Vendor]. Score-Ring füllt
+   * sich beim Einblenden (--pct 0 -> Gesamt-Score, CSS-Transition über
+   * @property --pct, system.css Abschnitt 19); nutzt dasselbe IO+Fallback-
+   * Muster wie PK.initReveal (Sofort-Check für Elemente im Viewport), damit
+   * die Füllung auch ohne feuernden IntersectionObserver zuverlässig den
+   * Endwert erreicht. Rabatt-Code nur, wenn vendor.rabatt gesetzt ist.
+   */
+  PK.renderPodium = function (container, top3) {
+    if (!container || !Array.isArray(top3)) return;
+    container.textContent = "";
+
+    var rankClass = ["podium-rank1", "podium-rank2", "podium-rank3"];
+    var rankLabelKey = ["page.index.podiumRank1", "page.index.podiumRank2", "page.index.podiumRank3"];
+    var badgeText = PK.tx(global.PK.site, "affiliateNote") || PK.t("global.badge.ad");
+    var ringEls = [];
+
+    // DOM-Reihenfolge Platz 2, Platz 1, Platz 3 : CSS-order (system.css)
+    // stellt Platz 1 optisch in die Mitte, unabhängig von der DOM-Reihenfolge.
+    [1, 0, 2].forEach(function (idx) {
+      var vendor = top3[idx];
+      if (!vendor) return;
+
+      var card = document.createElement("div");
+      card.className = "podium-card " + rankClass[idx];
+      if (vendor.brand && vendor.brand.farbe) card.style.setProperty("--brand", vendor.brand.farbe);
+
+      var rankEl = document.createElement("p");
+      rankEl.className = "podium-rank";
+      rankEl.textContent = PK.t(rankLabelKey[idx]);
+      card.appendChild(rankEl);
+
+      card.appendChild(PK.renderLogo(vendor, { eager: idx === 0 }));
+
+      var name = document.createElement("p");
+      name.className = "podium-name";
+      name.textContent = vendor.name || "";
+      card.appendChild(name);
+
+      var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
+      var ring = document.createElement("div");
+      ring.className = "score-ring";
+      ring.style.setProperty("--pct", "0");
+      ring.setAttribute("aria-hidden", "true");
+      var ringVal = document.createElement("span");
+      ringVal.className = "score-ring-value score-band-" + PK.scoreBand(gesamt);
+      ringVal.textContent = PK.byNum(gesamt);
+      ring.appendChild(ringVal);
+      card.appendChild(ring);
+      ringEls.push({ el: ring, pct: gesamt });
+
+      if (vendor.rabatt && vendor.rabatt.prozent) {
+        var save = document.createElement("p");
+        save.className = "podium-save";
+        save.textContent = PK.t("page.index.podiumSaves", { p: PK.byNum(vendor.rabatt.prozent) });
+        card.appendChild(save);
+
+        var codeWrap = document.createElement("div");
+        codeWrap.className = "podium-code code-box";
+        var codeEl = document.createElement("code");
+        codeEl.setAttribute("data-code", "");
+        codeEl.textContent = vendor.rabatt.code || "";
+        var copyBtn = document.createElement("button");
+        copyBtn.type = "button";
+        copyBtn.className = "btn btn-secondary";
+        copyBtn.textContent = PK.t("page.index.podiumCopyButton");
+        copyBtn.addEventListener("click", function () { PK.copyCode(copyBtn); });
+        codeWrap.appendChild(codeEl);
+        codeWrap.appendChild(copyBtn);
+        card.appendChild(codeWrap);
+      }
+
+      var cta = document.createElement("a");
+      cta.className = "btn btn-primary ext-link podium-cta";
+      cta.href = PK.safeUrl(vendor.affiliateUrl);
+      cta.target = "_blank";
+      cta.rel = "sponsored nofollow";
+      cta.setAttribute("data-affiliate", "true");
+      cta.appendChild(document.createTextNode(PK.t("page.index.podiumCta")));
+      var badge = document.createElement("span");
+      badge.className = "badge-ad";
+      badge.textContent = badgeText;
+      cta.appendChild(badge);
+      card.appendChild(cta);
+
+      container.appendChild(card);
+    });
+
+    var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in global) || !ringEls.length) {
+      ringEls.forEach(function (r) { r.el.style.setProperty("--pct", String(r.pct)); });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var match = null;
+        for (var i = 0; i < ringEls.length; i++) { if (ringEls[i].el === entry.target) { match = ringEls[i]; break; } }
+        if (match && entry.isIntersecting) {
+          io.unobserve(entry.target);
+          entry.target.style.setProperty("--pct", String(match.pct));
+        }
+      });
+    }, { threshold: 0.3 });
+    ringEls.forEach(function (r) { io.observe(r.el); });
+
+    var fallbackCheck = function () {
+      var vh = global.innerHeight || 800;
+      ringEls.forEach(function (r) {
+        if (r.el.style.getPropertyValue("--pct") !== "0") return;
+        var top = r.el.getBoundingClientRect().top;
+        if (top < vh * 1.05) { io.unobserve(r.el); r.el.style.setProperty("--pct", String(r.pct)); }
+      });
+    };
+    fallbackCheck();
+    global.addEventListener("scroll", fallbackCheck, { passive: true });
+    global.addEventListener("resize", fallbackCheck);
+  };
+
+  /**
+   * PK.initWeights(container)
+   * Regler-Modul "Was ist dir wichtig": 5 Range-Slider (0-3, Default =
+   * SCHEMA-Gewichtung linear skaliert *10, siehe PK.WEIGHTS_DEFAULT) +
+   * Live-Ranking aller window.PK.vendors. Gewichte werden relativ
+   * normalisiert (Summe der Regler = 100%), Anzeige-Prozent live pro
+   * Regler. Ranking sortiert absteigend nach gewichtetem Score (höher =
+   * besser, konsistent mit dem Rest der Seite: Regler nur auf "Preis" =>
+   * Ranking entspricht der Sortierung nach vendor.score.preis). Umsortierung
+   * per FLIP-Transition (Positionen vor/nach dem Reflow gemessen, respektiert
+   * prefers-reduced-motion). Reset-Button stellt die Default-Regler wieder
+   * her. Idempotent über container.dataset.weightsBound.
+   */
+  PK.WEIGHTS_DEFAULT = { labor: 2.5, recht: 2.5, lieferung: 1.5, sortiment: 1.5, preis: 2.0 };
+
+  PK.initWeights = function (container) {
+    if (!container) return;
+    if (container.dataset.weightsBound === "1") {
+      // Bereits gebunden (z. B. erneuter Aufruf bei "pk:langchange"): die
+      // renderRanking()-Closure der ERSTEN Bindung liegt auf dem Element
+      // (container._pkWeightsRender), NICHT hier neu aufrufbar : sliders/
+      // rankingList dieser Funktionsinstanz wären noch undefined.
+      if (typeof container._pkWeightsRender === "function") container._pkWeightsRender();
+      return;
+    }
+    container.dataset.weightsBound = "1";
+
+    var sliders = Array.prototype.slice.call(container.querySelectorAll(".weights-slider"));
+    var rankingList = container.querySelector(".weights-ranking");
+    var resetBtn = container.querySelector(".weights-reset-btn");
+    if (!sliders.length || !rankingList) return;
+
+    function currentWeights() {
+      var w = {};
+      sliders.forEach(function (s) { w[s.getAttribute("data-crit")] = parseFloat(s.value) || 0; });
+      return w;
+    }
+
+    // Track-Füllstand (system.css .weights-slider, --fill in %) : Regler
+    // min=0/max=3 sind fix im Markup, hier trotzdem aus dem Element gelesen
+    // statt hartkodiert, falls ein Regler künftig andere Grenzen bekommt.
+    function updateFill(slider) {
+      var min = parseFloat(slider.min) || 0;
+      var max = parseFloat(slider.max) || 1;
+      var val = parseFloat(slider.value) || 0;
+      var pct = max > min ? ((val - min) / (max - min)) * 100 : 0;
+      slider.style.setProperty("--fill", Math.max(0, Math.min(100, pct)) + "%");
+    }
+
+    function updatePercentLabels(w) {
+      var sum = Object.keys(w).reduce(function (s, k) { return s + w[k]; }, 0);
+      sliders.forEach(function (s) {
+        var crit = s.getAttribute("data-crit");
+        var pct = sum > 0 ? (w[crit] / sum) * 100 : 0;
+        var pctText = PK.byNum(Math.round(pct)) + "%";
+        var pctEl = container.querySelector('[data-weight-pct="' + crit + '"]');
+        if (pctEl) pctEl.textContent = pctText;
+        // aria-valuetext (UX-Audit r1, "Weights-Slider: Live-Prozentwert nicht
+        // für Screenreader"): native Range-Inputs lesen nur den Rohwert 0-3
+        // vor, nicht den auf 100% normalisierten Prozentwert im separaten
+        // <span data-weight-pct>. aria-valuetext überschreibt die Ansage mit
+        // dem für die Entscheidung relevanten Prozentwert.
+        s.setAttribute("aria-valuetext", pctText);
+      });
+    }
+
+    function renderRanking() {
+      var w = currentWeights();
+      var sum = Object.keys(w).reduce(function (s, k) { return s + w[k]; }, 0);
+      var norm = sum > 0 ? w : PK.WEIGHTS_DEFAULT;
+      var normSum = sum > 0 ? sum : Object.keys(PK.WEIGHTS_DEFAULT).reduce(function (s, k) { return s + PK.WEIGHTS_DEFAULT[k]; }, 0);
+
+      var vendors = Array.isArray(global.PK.vendors) ? global.PK.vendors : [];
+      var ranked = vendors.map(function (v) {
+        var s = v.score || {};
+        var weighted = 0;
+        Object.keys(norm).forEach(function (crit) {
+          weighted += (Number(s[crit]) || 0) * (norm[crit] / normSum);
+        });
+        return { vendor: v, weighted: weighted };
+      }).sort(function (a, b) { return b.weighted - a.weighted; });
+
+      // FLIP: alte Positionen der bestehenden Zeilen (Key = vendor.slug) messen.
+      var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var oldRects = {};
+      if (!reduced) {
+        rankingList.querySelectorAll("[data-vendor-slug]").forEach(function (row) {
+          oldRects[row.getAttribute("data-vendor-slug")] = row.getBoundingClientRect();
+        });
+      }
+
+      rankingList.textContent = "";
+      ranked.forEach(function (entry, i) {
+        var row = document.createElement("li");
+        row.className = "weights-ranking-row";
+        row.setAttribute("data-vendor-slug", entry.vendor.slug || "");
+
+        var num = document.createElement("span");
+        num.className = "weights-ranking-num";
+        num.textContent = PK.byNum(i + 1) + ".";
+
+        var name = document.createElement("span");
+        name.className = "weights-ranking-name";
+        name.textContent = entry.vendor.name || "";
+
+        var score = document.createElement("span");
+        score.className = "weights-ranking-score score-band-" + PK.scoreBand(entry.weighted);
+        score.textContent = PK.byNum(Math.round(entry.weighted));
+
+        row.appendChild(num);
+        row.appendChild(name);
+        row.appendChild(score);
+        rankingList.appendChild(row);
+      });
+
+      if (!reduced) {
+        rankingList.querySelectorAll("[data-vendor-slug]").forEach(function (row) {
+          var slug = row.getAttribute("data-vendor-slug");
+          var oldRect = oldRects[slug];
+          if (!oldRect) return;
+          var newRect = row.getBoundingClientRect();
+          var dy = oldRect.top - newRect.top;
+          if (!dy) return;
+          row.style.transition = "none";
+          row.style.transform = "translateY(" + dy + "px)";
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              row.style.transition = "";
+              row.style.transform = "";
+            });
+          });
+        });
+      }
+
+      updatePercentLabels(w);
+    }
+
+    sliders.forEach(function (s) {
+      updateFill(s);
+      s.addEventListener("input", function () { updateFill(s); renderRanking(); });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        sliders.forEach(function (s) {
+          var crit = s.getAttribute("data-crit");
+          s.value = String(PK.WEIGHTS_DEFAULT[crit]);
+          updateFill(s);
+        });
+        renderRanking();
+      });
+    }
+
+    container._pkWeightsRender = renderRanking;
+    renderRanking();
+  };
+
+  /**
+   * PK.renderProof(sectionEl, opts)
+   * Baut die Zitat-Karten aus window.PK.reviews in sectionEl (erwartet ein
+   * Kind-Element mit Klasse .proof-grid; wird angelegt, falls es fehlt).
+   * Fehlen die Reviews (Datei noch nicht geliefert oder Array leer) oder
+   * gibt opts.vendorSlug gefiltert keine Treffer: sectionEl wird komplett
+   * versteckt (Fallback laut Auftrag). opts: { basePath, vendorSlug (nur
+   * Reviews dieses Anbieters, für die Detailseite), limit }.
+   */
+  PK.renderProof = function (sectionEl, opts) {
+    if (!sectionEl) return;
+    var o = opts || {};
+    var bp = o.basePath || "";
+    var all = Array.isArray(global.PK.reviews) ? global.PK.reviews : [];
+    var reviews = o.vendorSlug ? all.filter(function (r) { return r.vendorSlug === o.vendorSlug; }) : all;
+    // Neueste zuerst (ISO-Datumsstrings sortieren lexikalisch korrekt) : nötig
+    // seit opts.limit existiert, sonst würde ein "nur 6"-Aufruf (Startseite,
+    // Fix-Runde 3) die ersten 6 Array-Einträge zeigen statt der 6 jüngsten.
+    reviews = reviews.slice().sort(function (a, b) { return (b.datum || "") < (a.datum || "") ? -1 : (b.datum || "") > (a.datum || "") ? 1 : 0; });
+    if (o.limit) reviews = reviews.slice(0, o.limit);
+
+    if (!reviews.length) {
+      sectionEl.hidden = true;
+      return;
+    }
+    sectionEl.hidden = false;
+
+    var grid = sectionEl.querySelector(".proof-grid");
+    if (!grid) {
+      grid = document.createElement("div");
+      grid.className = "proof-grid";
+      sectionEl.appendChild(grid);
+    }
+    grid.textContent = "";
+
+    reviews.forEach(function (r) {
+      var vendor = PK.vendorBySlug(r.vendorSlug);
+      var card = document.createElement("div");
+      card.className = "card proof-card";
+      if (vendor && vendor.brand && vendor.brand.farbe) card.style.setProperty("--brand", vendor.brand.farbe);
+
+      var head = document.createElement("div");
+      head.className = "proof-head";
+
+      var avatar = document.createElement("div");
+      avatar.className = "proof-avatar";
+      avatar.setAttribute("aria-hidden", "true");
+      avatar.textContent = r.initialen || "";
+      head.appendChild(avatar);
+
+      var starsWrap = document.createElement("div");
+      var stars = document.createElement("p");
+      stars.className = "proof-stars";
+      var n = Number(r.sterne) || 0;
+      stars.textContent = "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n);
+      stars.setAttribute("aria-label", n + "/5");
+      starsWrap.appendChild(stars);
+      head.appendChild(starsWrap);
+      card.appendChild(head);
+
+      var text = document.createElement("p");
+      text.className = "proof-text";
+      text.textContent = PK.tx(r, "text");
+      card.appendChild(text);
+
+      var meta = document.createElement("div");
+      meta.className = "proof-meta";
+
+      var vendorLink = document.createElement("a");
+      vendorLink.className = "proof-vendor btn-link";
+      if (vendor) {
+        vendorLink.href = bp + "anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug || "");
+        vendorLink.textContent = vendor.name || "";
+      } else {
+        vendorLink.href = "#";
+        vendorLink.textContent = r.vendorSlug || "";
+      }
+      meta.appendChild(vendorLink);
+
+      var date = document.createElement("span");
+      date.className = "proof-date";
+      date.textContent = r.datum || "";
+      meta.appendChild(date);
+
+      card.appendChild(meta);
+      grid.appendChild(card);
+    });
+
+    var note = sectionEl.querySelector(".proof-note");
+    if (note) note.textContent = PK.t(o.demoNoteKey || "page.index.proofDemoNote");
+  };
+
+  /**
+   * PK.renderFresh(container, opts)
+   * Baut die Frische-Leiste (3-4 Kacheln) aus window.PK.batches, relativ
+   * zu window.PK.site.updated (nicht zum echten "heute", Demo-Projekt mit
+   * fixem Stand-Datum). Signale: jüngste verifizierte Charge ("vor n Tagen"),
+   * CoAs der letzten 7 Tage vor updated, Anbieter-Anzahl, Score-Durchschnitt.
+   * Zahlen bekommen [data-count-up]/[data-count-target] und werden über
+   * PK.initCountUp() hochgezählt (hier direkt mit aufgerufen, scope=container).
+   */
+  PK.renderFresh = function (container, opts) {
+    if (!container) return;
+    var o = opts || {};
+    var batches = Array.isArray(global.PK.batches) ? global.PK.batches : [];
+    var vendors = Array.isArray(global.PK.vendors) ? global.PK.vendors : [];
+    var updatedStr = (global.PK.site && global.PK.site.updated) || "";
+    var updated = updatedStr ? new Date(updatedStr + "T00:00:00Z") : null;
+
+    container.textContent = "";
+
+    // Signal 1: jüngste verifizierte Charge
+    var verified = batches.filter(function (b) { return b.coaStatus === "verifiziert" && b.pruefdatum; });
+    verified.sort(function (a, b) { return a.pruefdatum < b.pruefdatum ? 1 : -1; });
+    var latest = verified[0];
+    if (latest && updated) {
+      var latestDate = new Date(latest.pruefdatum + "T00:00:00Z");
+      var days = Math.max(0, Math.round((updated - latestDate) / 86400000));
+      var tile1 = buildTile(
+        days === 0 ? PK.t("page.index.freshToday") : PK.t("page.index.freshDaysAgo", { n: PK.byNum(days) }),
+        PK.t("page.index.freshVerified", { nr: latest.chargenNummer || "" }),
+        null
+      );
+      container.appendChild(tile1);
+    }
+
+    // Signal 2: CoAs der letzten 7 Tage vor updated
+    if (updated) {
+      var weekAgo = new Date(updated.getTime() - 7 * 86400000);
+      var coasWeek = batches.filter(function (b) {
+        if (!b.pruefdatum) return false;
+        var d = new Date(b.pruefdatum + "T00:00:00Z");
+        return d >= weekAgo && d <= updated;
+      }).length;
+      container.appendChild(buildTile(null, PK.t("page.index.freshCoasWeek", { n: "{n}" }), coasWeek));
+    }
+
+    // Signal 3: Anbieter-Anzahl
+    container.appendChild(buildTile(null, PK.t("page.index.freshVendorsChecked", { n: "{n}" }), vendors.length));
+
+    // Signal 4: Score-Durchschnitt
+    if (vendors.length) {
+      var scoreSum = vendors.reduce(function (sum, v) {
+        return sum + (typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score));
+      }, 0);
+      var avg = Math.round(scoreSum / vendors.length);
+      container.appendChild(buildTile(null, PK.t("page.index.freshAvg", { n: "{n}" }), avg));
+    }
+
+    PK.initCountUp(container);
+
+    function buildTile(topText, label, countTarget) {
+      var tile = document.createElement("div");
+      tile.className = "fresh-tile";
+      var value = document.createElement("div");
+      value.className = "fresh-value";
+      if (countTarget !== null) {
+        value.setAttribute("data-count-up", "");
+        value.setAttribute("data-count-target", String(countTarget));
+        value.textContent = PK.byNum(countTarget);
+      } else {
+        value.textContent = topText || "";
+      }
+      var lbl = document.createElement("div");
+      lbl.className = "fresh-label";
+      // Platzhalter "{n}" durch den bereits gerenderten Zähl-Wert ersetzen,
+      // sobald der Text keinen eigenen data-count-up-Wert trägt (Label bleibt
+      // Text, nur die Kachel-Value zählt hoch).
+      lbl.textContent = countTarget !== null ? label.replace("{n}", PK.byNum(countTarget)) : label;
+      tile.appendChild(value);
+      tile.appendChild(lbl);
+      return tile;
+    }
+  };
+
+  /**
+   * PK.initCountUp(scope)
+   * Generischer Zähl-Helfer für [data-count-up][data-count-target]
+   * innerhalb scope (Default: ganzes Dokument). Zählt easing-basiert von 0
+   * zum Zielwert beim Einblenden (IntersectionObserver + Sofort-Check-
+   * Fallback wie PK.initReveal, damit Elemente im/oberhalb des Viewports
+   * auch ohne feuernden Observer zuverlässig zählen). prefers-reduced-motion:
+   * springt sofort auf den Endwert. Erneuter Aufruf (z. B. "pk:langchange")
+   * zählt bereits gezählte Elemente NICHT erneut hoch, formatiert den
+   * Endwert nur neu (PK.byNum je Locale).
+   */
+  PK.initCountUp = function (scope) {
+    var root = scope || document;
+    var els = Array.prototype.slice.call(root.querySelectorAll("[data-count-up]"));
+    if (!els.length) return;
+    var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function finalize(el, target) {
+      el.textContent = PK.byNum(Math.round(target));
+      el.dataset.counted = "done";
+    }
+    function animate(el, target) {
+      var start = null;
+      var DUR = 900;
+      function frame(ts) {
+        if (start === null) start = ts;
+        var p = Math.min(1, (ts - start) / DUR);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = PK.byNum(Math.round(target * eased));
+        if (p < 1) { global.requestAnimationFrame(frame); } else { finalize(el, target); }
+      }
+      global.requestAnimationFrame(frame);
+    }
+
+    var pending = [];
+    els.forEach(function (el) {
+      var target = parseFloat(el.getAttribute("data-count-target"));
+      if (!isFinite(target)) return;
+      if (el.dataset.counted === "done") { el.textContent = PK.byNum(Math.round(target)); return; }
+      if (reduced || !("IntersectionObserver" in global)) { finalize(el, target); return; }
+      if (el.dataset.countBound !== "1") { el.dataset.countBound = "1"; el.textContent = "0"; }
+      pending.push(el);
+    });
+
+    if (reduced || !("IntersectionObserver" in global) || !pending.length) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var target = parseFloat(entry.target.getAttribute("data-count-target"));
+        io.unobserve(entry.target);
+        if (isFinite(target)) animate(entry.target, target);
+      });
+    }, { threshold: 0.4 });
+    pending.forEach(function (el) { io.observe(el); });
+
+    var fallbackCheck = function () {
+      var vh = global.innerHeight || 800;
+      pending.forEach(function (el) {
+        if (el.dataset.counted === "done") return;
+        var target = parseFloat(el.getAttribute("data-count-target"));
+        if (!isFinite(target)) return;
+        var top = el.getBoundingClientRect().top;
+        if (top < vh * 1.05) { io.unobserve(el); animate(el, target); }
+      });
+    };
+    fallbackCheck();
+    global.addEventListener("scroll", fallbackCheck, { passive: true });
+    global.addEventListener("resize", fallbackCheck);
+    document.addEventListener("visibilitychange", fallbackCheck);
   };
 
   /**
