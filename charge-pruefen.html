@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="page.charge-pruefen.title">Charge prüfen · PeptidKompass</title>
+<meta name="description" data-i18n="page.charge-pruefen.metaDescription" content="Chargennummer eingeben und gegen unsere Demo-Datenbank prüfen: Anbieter, Prüfdatum, Reinheit, CoA-Status. Plus Anleitung zur echten externen Prüfung.">
+<link rel="canonical" href="https://peptidkompass.example/charge-pruefen.html">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n="page.charge-pruefen.ogTitle" content="Charge prüfen · PeptidKompass">
+<meta property="og:description" data-i18n="page.charge-pruefen.ogDescription" content="Chargennummer eingeben, Ergebnis in Sekunden sehen, gegen unsere Demo-Datenbank geprüft.">
+<meta property="og:url" content="https://peptidkompass.example/charge-pruefen.html">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/system.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PeptidKompass</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="charge-pruefen.html" aria-current="page" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="deals.html" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="charge-pruefen.html" aria-current="page" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="deals.html" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- SEITENTITEL + KURZINTRO -->
+  <section class="section container reveal">
+    <p class="eyebrow" data-i18n="page.charge-pruefen.eyebrow">Vertrauen prüfen</p>
+    <h1 class="h1" data-i18n="page.charge-pruefen.h1">Charge prüfen</h1>
+    <p class="section-lead" data-i18n="page.charge-pruefen.lead">Chargennummer eingeben, Ergebnis in Sekunden sehen.</p>
+  </section>
+
+  <!-- SUCHFELD + PRÜFEN-BUTTON -->
+  <section class="section-tight container reveal">
+    <form class="search-bar" id="batch-form" role="search">
+      <input type="search" id="batch-input" placeholder="Chargennummer eingeben" aria-label="Chargennummer" data-i18n-attr="placeholder:page.charge-pruefen.searchPlaceholder,aria-label:page.charge-pruefen.searchAriaLabel">
+      <button class="btn btn-primary" type="submit" data-i18n="page.charge-pruefen.searchButton">Prüfen</button>
+    </form>
+  </section>
+
+  <!-- ERGEBNISBEREICH (dynamisch) -->
+  <section class="section container-narrow reveal" aria-live="polite">
+    <div id="batch-result"></div>
+  </section>
+
+  <!-- 5-SCHRITTE-ANLEITUNG -->
+  <section class="section section-tinted container reveal">
+    <p class="eyebrow" data-i18n="page.charge-pruefen.stepsEyebrow">Anleitung</p>
+    <h2 class="section-title" data-i18n="page.charge-pruefen.stepsTitle">So prüfst du eine Charge extern</h2>
+    <p class="section-lead" data-i18n="page.charge-pruefen.stepsLead">Unabhängig von unserer Demo-Datenbank, in fünf Schritten.</p>
+    <ol class="grid-3 unstyled" id="steps-list"></ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="data/site.js"></script>
+<script src="data/vendors.js"></script>
+<script src="data/peptides.js"></script>
+<script src="data/batches.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="data/i18n/global.js"></script>
+<script src="data/i18n/charge-pruefen.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+  // Seiten-Logik Charge prüfen: Batch-Suche gegen window.PK.batches,
+  // case-insensitiv, Leerzeichen/Bindestriche ignoriert (Auftrag Wave-2 W4).
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    // Pflicht-Reihenfolge: applyI18n()/initLangToggle() VOR den Seiten-Renderern
+    // (siehe assets/css/README.md "i18n: So tagst du eine Seite").
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    var STEP_KEYS = [
+      "page.charge-pruefen.step1",
+      "page.charge-pruefen.step2",
+      "page.charge-pruefen.step3",
+      "page.charge-pruefen.step4",
+      "page.charge-pruefen.step5"
+    ];
+    var EXAMPLE_COUNT = 3;
+
+    var stepsList = document.getElementById("steps-list");
+
+    function renderSteps() {
+      stepsList.textContent = "";
+      STEP_KEYS.forEach(function (key, i) {
+        var li = document.createElement("li");
+        var card = document.createElement("div");
+        card.className = "card";
+        var eyebrow = document.createElement("p");
+        eyebrow.className = "card-eyebrow";
+        eyebrow.textContent = PK.t("page.charge-pruefen.stepLabel", { n: i + 1 });
+        var body = document.createElement("p");
+        body.className = "card-body";
+        body.textContent = PK.t(key);
+        card.appendChild(eyebrow);
+        card.appendChild(body);
+        li.appendChild(card);
+        stepsList.appendChild(li);
+      });
+    }
+    renderSteps();
+    document.addEventListener("pk:langchange", renderSteps);
+
+    function normalize(s) {
+      return String(s || "").toLowerCase().replace(/[\s-]+/g, "");
+    }
+
+    function findBatch(query) {
+      var list = Array.isArray(window.PK.batches) ? window.PK.batches : [];
+      var norm = normalize(query);
+      if (!norm) return null;
+      for (var i = 0; i < list.length; i++) {
+        if (normalize(list[i].chargenNummer) === norm) return list[i];
+      }
+      return null;
+    }
+
+    function coaStatusPill(status) {
+      var span = document.createElement("span");
+      if (status === "verifiziert") { span.className = "pill pill-ok"; span.textContent = PK.t("page.charge-pruefen.coaVerified"); }
+      else if (status === "shop-eigen") { span.className = "pill pill-info"; span.textContent = PK.t("page.charge-pruefen.coaShopOwned"); }
+      else { span.className = "pill pill-warn"; span.textContent = PK.t("page.charge-pruefen.coaMissing"); }
+      return span;
+    }
+
+    function externPill(extern) {
+      var span = document.createElement("span");
+      if (extern) { span.className = "pill pill-ok"; span.textContent = PK.t("page.charge-pruefen.externChecked"); }
+      else { span.className = "pill"; span.textContent = PK.t("page.charge-pruefen.internChecked"); }
+      return span;
+    }
+
+    function renderHit(batch) {
+      var vendor = PK.vendorBySlug(batch.vendorSlug);
+      var peptide = PK.peptideBySlug(batch.peptideSlug);
+
+      var card = document.createElement("div");
+      card.className = "card";
+
+      var eyebrow = document.createElement("p");
+      eyebrow.className = "card-eyebrow";
+      eyebrow.textContent = PK.t("page.charge-pruefen.hitEyebrow");
+      card.appendChild(eyebrow);
+
+      var title = document.createElement("p");
+      title.className = "card-title";
+      title.textContent = batch.chargenNummer || "";
+      card.appendChild(title);
+
+      var badges = document.createElement("div");
+      badges.className = "vendor-card-badges";
+      badges.style.margin = "6px 0 var(--sp-2)";
+      badges.appendChild(externPill(batch.extern));
+      badges.appendChild(coaStatusPill(batch.coaStatus));
+      card.appendChild(badges);
+
+      var body = document.createElement("p");
+      body.className = "card-body";
+
+      function addLine(labelText, valueNode) {
+        var strong = document.createElement("strong");
+        strong.textContent = labelText + ": ";
+        body.appendChild(strong);
+        body.appendChild(valueNode);
+        body.appendChild(document.createElement("br"));
+      }
+
+      var vendorNode;
+      if (vendor) {
+        vendorNode = document.createElement("a");
+        vendorNode.className = "btn-link";
+        vendorNode.href = "anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug || "");
+        vendorNode.textContent = vendor.name || vendor.slug || "";
+      } else {
+        vendorNode = document.createTextNode(batch.vendorSlug || PK.t("page.charge-pruefen.unknown"));
+      }
+      addLine(PK.t("page.charge-pruefen.labelVendor"), vendorNode);
+
+      var peptideNode;
+      if (peptide) {
+        peptideNode = document.createElement("a");
+        peptideNode.className = "btn-link";
+        peptideNode.href = "wirkstoffe/detail.html?slug=" + encodeURIComponent(peptide.slug || "");
+        peptideNode.textContent = peptide.name || peptide.slug || "";
+      } else {
+        peptideNode = document.createTextNode(batch.peptideSlug || PK.t("page.charge-pruefen.unknown"));
+      }
+      addLine(PK.t("page.charge-pruefen.labelPeptide"), peptideNode);
+
+      addLine(PK.t("page.charge-pruefen.labelCheckedOn"), document.createTextNode(batch.pruefdatum || ""));
+      addLine(PK.t("page.charge-pruefen.labelPurity"), document.createTextNode(typeof batch.reinheit === "number" ? PK.byNum(batch.reinheit) + " %" : ""));
+
+      var laborLine = document.createElement("span");
+      laborLine.textContent = PK.t("page.charge-pruefen.labelLab") + ": " + (batch.labor || "");
+      body.appendChild(laborLine);
+
+      card.appendChild(body);
+
+      if (batch.coaStatus !== "fehlt" && batch.coaUrl) {
+        var coaLink = document.createElement("a");
+        coaLink.className = "btn btn-secondary ext-link";
+        coaLink.href = PK.safeUrl(batch.coaUrl);
+        coaLink.target = "_blank";
+        coaLink.rel = "sponsored nofollow";
+        coaLink.setAttribute("data-affiliate", "true");
+        coaLink.style.marginTop = "var(--sp-2)";
+        coaLink.appendChild(document.createTextNode(PK.t("page.charge-pruefen.coaButton")));
+        var badgeAd = document.createElement("span");
+        badgeAd.className = "badge-ad";
+        badgeAd.textContent = (window.PK.site && PK.tx(window.PK.site, "affiliateNote")) || PK.t("global.badge.ad");
+        coaLink.appendChild(badgeAd);
+        card.appendChild(coaLink);
+      } else {
+        var noCoa = document.createElement("p");
+        noCoa.className = "text-small muted";
+        noCoa.style.marginTop = "var(--sp-2)";
+        noCoa.textContent = PK.t("page.charge-pruefen.noCoa");
+        card.appendChild(noCoa);
+      }
+
+      var disclaimer = document.createElement("p");
+      disclaimer.className = "text-small muted";
+      disclaimer.style.marginTop = "var(--sp-2)";
+      disclaimer.textContent = PK.t("page.charge-pruefen.hitDisclaimer");
+      card.appendChild(disclaimer);
+
+      return card;
+    }
+
+    function renderMiss() {
+      var card = document.createElement("div");
+      card.className = "card";
+
+      var eyebrow = document.createElement("p");
+      eyebrow.className = "card-eyebrow";
+      eyebrow.textContent = PK.t("page.charge-pruefen.missEyebrow");
+      card.appendChild(eyebrow);
+
+      var body1 = document.createElement("p");
+      body1.className = "card-body";
+      body1.textContent = PK.t("page.charge-pruefen.missBody1");
+      card.appendChild(body1);
+
+      var body2 = document.createElement("p");
+      body2.className = "card-body";
+      body2.textContent = PK.t("page.charge-pruefen.missBody2");
+      card.appendChild(body2);
+
+      var link = document.createElement("a");
+      link.className = "btn-link";
+      link.href = "methodik.html";
+      link.textContent = PK.t("page.charge-pruefen.missLink");
+      card.appendChild(link);
+
+      var list = Array.isArray(window.PK.batches) ? window.PK.batches : [];
+      if (list.length) {
+        var examplesLabel = document.createElement("p");
+        examplesLabel.className = "text-small muted";
+        examplesLabel.style.marginTop = "var(--sp-2)";
+        examplesLabel.textContent = PK.t("page.charge-pruefen.examplesLabel") + ":";
+        card.appendChild(examplesLabel);
+
+        var examplesWrap = document.createElement("div");
+        examplesWrap.className = "vendor-card-badges";
+        examplesWrap.style.marginTop = "6px";
+        list.slice(0, EXAMPLE_COUNT).forEach(function (b) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "pill";
+          btn.textContent = b.chargenNummer;
+          btn.addEventListener("click", function () {
+            input.value = b.chargenNummer;
+            runSearch();
+          });
+          examplesWrap.appendChild(btn);
+        });
+        card.appendChild(examplesWrap);
+      }
+
+      return card;
+    }
+
+    var form = document.getElementById("batch-form");
+    var input = document.getElementById("batch-input");
+    var resultEl = document.getElementById("batch-result");
+
+    function runSearch() {
+      var query = input.value.trim();
+      resultEl.textContent = "";
+      if (!query) return;
+      var batch = findBatch(query);
+      resultEl.appendChild(batch ? renderHit(batch) : renderMiss());
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      runSearch();
+    });
+
+    // Sprachwechsel: Treffer-/Kein-Treffer-Card neu rendern, Eingabewert
+    // (Chargennummer im Suchfeld) bleibt erhalten (Pflicht-Muster, siehe README).
+    document.addEventListener("pk:langchange", runSearch);
+  })();
+</script>
+</body>
+</html>

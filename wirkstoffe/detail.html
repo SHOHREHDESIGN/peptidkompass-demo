@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="page.wirkstoffe-detail.title">Wirkstoff · PeptidKompass</title>
+<meta name="description" data-i18n="page.wirkstoffe-detail.metaDescription" content="Einzelinfo zu einem Peptid: Kategorie, Studienlage, Hinweise und Anbieter, die dieses Peptid im Sortiment führen. Nur für Forschungszwecke.">
+<link rel="canonical" href="https://peptidkompass.example/wirkstoffe/detail.html">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n="page.wirkstoffe-detail.ogTitle" content="Wirkstoff · PeptidKompass">
+<meta property="og:description" data-i18n="page.wirkstoffe-detail.ogDescription" content="Kategorie, Studienlage, Hinweise und Anbieter im Überblick.">
+<meta property="og:url" content="https://peptidkompass.example/wirkstoffe/detail.html">
+<meta property="og:image" content="../assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/css/system.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">PeptidKompass</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="../anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="index.html" aria-current="page" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="../anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="../anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="../anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="index.html" aria-current="page" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <section class="section-tight container reveal">
+    <p class="text-small muted"><a href="index.html" data-i18n="page.wirkstoffe-detail.backLink">← Zurück zu Wirkstoffe</a></p>
+  </section>
+
+  <div id="pk-error" class="container section" hidden>
+    <div class="card">
+      <p class="card-title" data-i18n="page.wirkstoffe-detail.errorTitle">Wirkstoff nicht gefunden</p>
+      <p class="card-body" data-i18n="page.wirkstoffe-detail.errorBody">Für diesen Link liegt kein Wirkstoff in unserer Demo-Datenbank vor.</p>
+      <p style="margin-top:var(--sp-2);"><a class="btn-link" href="index.html" data-i18n="page.wirkstoffe-detail.errorLink">Zur Wirkstoffe-Übersicht</a></p>
+    </div>
+  </div>
+
+  <div id="pk-content" hidden>
+
+    <!-- KOPFBEREICH + KURZBESCHREIBUNG: eine Einheit (Befund 3,
+         REVIEW_design_typo.md : vorher zwei Sections mit ~144px totem
+         Abstand zwischen Pills und Lead). Abstand steuert der Absatz selbst
+         via margin-top, nicht ein zweiter Section-Wrapper. -->
+    <section class="section container reveal">
+      <h1 class="display" id="peptide-name"></h1>
+      <p><span class="pill" id="peptide-kategorie"></span> <span class="pill" id="peptide-studienlage-pill"></span></p>
+      <p class="section-lead" id="peptide-kurz" style="margin-top:var(--sp-3);"></p>
+      <p id="peptide-beschreibung"></p>
+    </section>
+
+    <!-- STUDIENLAGE -->
+    <section class="section section-tinted container reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.studienlageTitle">Studienlage</h2>
+      <p id="peptide-studienlage-text"></p>
+      <p class="pill pill-warn" style="margin-top:var(--sp-2);" data-i18n="page.wirkstoffe-detail.studienlagePlaceholder">Platzhalter, Quelle folgt</p>
+    </section>
+
+    <!-- HINWEISE -->
+    <section class="section container-narrow reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.hinweiseTitle">Hinweise</h2>
+      <ul id="peptide-hinweise-list"></ul>
+      <p id="peptide-lagerung-text"></p>
+    </section>
+
+    <!-- ANBIETER MIT DIESEM WIRKSTOFF -->
+    <section class="section container reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.vendorTableTitle">Anbieter mit diesem Wirkstoff</h2>
+      <div class="table-wrap">
+        <table class="table" id="vendor-table">
+          <thead>
+            <tr>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),0)" data-i18n="global.nav.anbieter">Anbieter</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),1)" data-i18n="page.wirkstoffe-detail.thMg">mg</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),2)" data-i18n="page.wirkstoffe-detail.thPreis">Preis</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),3)" data-i18n="page.wirkstoffe-detail.thPreisProMg">Preis/mg</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),4)" aria-sort="descending" data-i18n="page.wirkstoffe-detail.thGesamtscore">Gesamtscore</th>
+            </tr>
+          </thead>
+          <tbody id="vendor-tbody"></tbody>
+        </table>
+      </div>
+      <p class="text-small muted" id="vendor-empty" hidden style="margin-top:var(--sp-2);" data-i18n="page.wirkstoffe-detail.vendorEmpty">Aktuell führt kein geprüfter Anbieter dieses Peptid.</p>
+    </section>
+
+    <!-- GEPRÜFTE CHARGEN -->
+    <section class="section section-tinted container reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.batchTableTitle">Geprüfte Chargen</h2>
+      <div class="table-wrap">
+        <table class="table" id="batch-table">
+          <thead>
+            <tr>
+              <th data-i18n="page.wirkstoffe-detail.thChargennummer">Chargennummer</th>
+              <th data-i18n="global.nav.anbieter">Anbieter</th>
+              <th data-i18n="page.wirkstoffe-detail.thReinheit">Reinheit</th>
+              <th data-i18n="page.wirkstoffe-detail.thCoaStatus">CoA-Status</th>
+            </tr>
+          </thead>
+          <tbody id="batch-tbody"></tbody>
+        </table>
+      </div>
+      <p class="text-small muted" id="batch-empty" hidden style="margin-top:var(--sp-2);" data-i18n="page.wirkstoffe-detail.batchEmpty">Für diesen Wirkstoff liegen aktuell keine geprüften Chargen vor.</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="section container reveal">
+      <div class="card row-between">
+        <div>
+          <p class="card-eyebrow" data-i18n="page.wirkstoffe-detail.ctaEyebrow">Nächster Schritt</p>
+          <p class="card-title" data-i18n="page.wirkstoffe-detail.ctaTitle">Anbieter mit diesem Wirkstoff anzeigen</p>
+        </div>
+        <a class="btn btn-primary" id="cta-anbieter" href="../anbieter/index.html" data-i18n="page.wirkstoffe-detail.ctaTitle">Anbieter mit diesem Wirkstoff anzeigen</a>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="../data/site.js"></script>
+<script src="../data/vendors.js"></script>
+<script src="../data/peptides.js"></script>
+<script src="../data/batches.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="../data/i18n/global.js"></script>
+<script src="../data/i18n/wirkstoffe-detail.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+  // Seiten-Logik Wirkstoff-Detail: nutzt nur PK-Helfer aus assets/js/site.js.
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    // Pflicht-Reihenfolge: applyI18n()/initLangToggle() VOR den Seiten-Renderern
+    // (siehe assets/css/README.md "i18n: So tagst du eine Seite").
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get("slug") || "";
+    var peptide = PK.peptideBySlug(slug);
+
+    var errorEl = document.getElementById("pk-error");
+    var contentEl = document.getElementById("pk-content");
+
+    if (!peptide) {
+      // Fehlermeldung selbst ist statisches HTML (data-i18n), PK.applyI18n()
+      // hat sie oben bereits übersetzt. Kein dynamischer Content, kein render().
+      if (errorEl) errorEl.hidden = false;
+      if (contentEl) contentEl.hidden = true;
+      return;
+    }
+    if (errorEl) errorEl.hidden = true;
+    if (contentEl) contentEl.hidden = false;
+
+    var vendors = Array.isArray(PK.vendors) ? PK.vendors : [];
+    var batches = Array.isArray(PK.batches) ? PK.batches : [];
+
+    var vendorTbody = document.getElementById("vendor-tbody");
+    var vendorEmpty = document.getElementById("vendor-empty");
+    var batchTbody = document.getElementById("batch-tbody");
+    var batchEmpty = document.getElementById("batch-empty");
+    var ctaEl = document.getElementById("cta-anbieter");
+
+    /**
+     * render() baut alle sprachabhängigen Inhalte neu: Titel, Kopfbereich
+     * (PK.tEnum für Kategorie/Studienlage, PK.tx für Kurztext/Beschreibung),
+     * Studienlage-Satz, Hinweise-Liste (hinweise_en), Lagerungstext,
+     * Anbieter-/Chargen-Tabelle (PK.byNum, PK.tEnum coaStatus), CTA-Link.
+     * Läuft initial UND bei "pk:langchange" (Pflicht-Muster, siehe README).
+     */
+    function render() {
+      document.title = (peptide.name || PK.t("page.wirkstoffe-detail.titleFallback")) +
+        PK.t("page.wirkstoffe-detail.titleSuffix");
+
+      document.getElementById("peptide-name").textContent = peptide.name || "";
+      document.getElementById("peptide-kategorie").textContent = PK.tEnum("kategorie", peptide.kategorie);
+      document.getElementById("peptide-studienlage-pill").textContent = PK.tEnum("studienlage", peptide.studienlage);
+      document.getElementById("peptide-kurz").textContent = PK.tx(peptide, "kurz");
+      document.getElementById("peptide-beschreibung").textContent = PK.tx(peptide, "beschreibung");
+
+      var studienlageText = PK.t("page.wirkstoffe-detail.studienlageText", {
+        name: peptide.name || "",
+        kategorie: PK.tEnum("kategorie", peptide.kategorie),
+        studienlage: PK.tEnum("studienlage", peptide.studienlage)
+      });
+      document.getElementById("peptide-studienlage-text").textContent = studienlageText;
+
+      var hinweiseList = document.getElementById("peptide-hinweise-list");
+      hinweiseList.textContent = "";
+      var hinweise = PK.tx(peptide, "hinweise");
+      (Array.isArray(hinweise) ? hinweise : []).forEach(function (h) {
+        var li = document.createElement("li");
+        li.textContent = h;
+        hinweiseList.appendChild(li);
+      });
+
+      // Trailing Satzpunkt aus dem Datenfeld entfernen (einzelne _en-Werte
+      // enden bereits mit ".", das Template haengt seinen eigenen Punkt an -
+      // sonst entsteht "..").
+      var lagerungWert = (PK.tx(peptide, "lagerung") || "").replace(/\.\s*$/, "");
+      document.getElementById("peptide-lagerung-text").textContent =
+        PK.t("page.wirkstoffe-detail.lagerungText", { lagerung: lagerungWert });
+
+      // Anbieter-Tabelle: vendors.produkte gefiltert nach peptideSlug, sortiert nach Gesamtscore
+      var rows = [];
+      vendors.forEach(function (v) {
+        (Array.isArray(v.produkte) ? v.produkte : []).forEach(function (p) {
+          if (p.peptideSlug === peptide.slug) {
+            var gesamt = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+            var pricePerMg = (typeof p.preisEur === "number" && typeof p.mg === "number" && p.mg > 0)
+              ? (p.preisEur / p.mg) : null;
+            rows.push({ vendor: v, mg: p.mg, preis: p.preisEur, pricePerMg: pricePerMg, gesamt: gesamt });
+          }
+        });
+      });
+      rows.sort(function (a, b) { return b.gesamt - a.gesamt; });
+
+      vendorTbody.textContent = "";
+      rows.forEach(function (r) {
+        var tr = document.createElement("tr");
+
+        var tdName = document.createElement("td");
+        var link = document.createElement("a");
+        link.className = "btn-link";
+        link.href = "../anbieter/detail.html?slug=" + encodeURIComponent(r.vendor.slug || "");
+        link.textContent = r.vendor.name || "";
+        tdName.appendChild(link);
+
+        var tdMg = document.createElement("td");
+        tdMg.textContent = PK.byNum(r.mg) + " mg";
+        tdMg.setAttribute("data-sort", String(r.mg || 0));
+
+        var tdPreis = document.createElement("td");
+        tdPreis.textContent = PK.byNum(r.preis, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+        tdPreis.setAttribute("data-sort", String(r.preis || 0));
+
+        var tdPpm = document.createElement("td");
+        tdPpm.textContent = r.pricePerMg !== null
+          ? (PK.byNum(r.pricePerMg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €/mg")
+          : "–";
+        tdPpm.setAttribute("data-sort", String(r.pricePerMg || 0));
+
+        var tdScore = document.createElement("td");
+        tdScore.setAttribute("data-sort", String(r.gesamt || 0));
+        var scorePill = document.createElement("span");
+        var variant = r.gesamt >= 80 ? "pill-ok" : (r.gesamt >= 60 ? "pill-info" : "pill-warn");
+        scorePill.className = "pill " + variant;
+        scorePill.textContent = PK.byNum(r.gesamt);
+        tdScore.appendChild(scorePill);
+
+        tr.appendChild(tdName);
+        tr.appendChild(tdMg);
+        tr.appendChild(tdPreis);
+        tr.appendChild(tdPpm);
+        tr.appendChild(tdScore);
+        vendorTbody.appendChild(tr);
+      });
+      if (vendorEmpty) vendorEmpty.hidden = rows.length > 0;
+
+      // Chargen-Block: batches gefiltert nach peptideSlug
+      var matchingBatches = batches.filter(function (b) { return b.peptideSlug === peptide.slug; });
+      batchTbody.textContent = "";
+      matchingBatches.forEach(function (b) {
+        var tr = document.createElement("tr");
+
+        var tdNr = document.createElement("td");
+        tdNr.textContent = b.chargenNummer || "";
+
+        var tdVendor = document.createElement("td");
+        var v = PK.vendorBySlug(b.vendorSlug);
+        if (v) {
+          var vLink = document.createElement("a");
+          vLink.className = "btn-link";
+          vLink.href = "../anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
+          vLink.textContent = v.name || "";
+          tdVendor.appendChild(vLink);
+        } else {
+          tdVendor.textContent = b.vendorSlug || "";
+        }
+
+        var tdReinheit = document.createElement("td");
+        tdReinheit.textContent = PK.byNum(b.reinheit) + " %";
+        tdReinheit.setAttribute("data-sort", String(b.reinheit || 0));
+
+        var tdStatus = document.createElement("td");
+        var statusPill = document.createElement("span");
+        var statusVariant = b.coaStatus === "verifiziert" ? "pill-ok" : (b.coaStatus === "shop-eigen" ? "pill-info" : "pill-warn");
+        statusPill.className = "pill " + statusVariant;
+        statusPill.textContent = PK.tEnum("coaStatus", b.coaStatus);
+        tdStatus.appendChild(statusPill);
+
+        tr.appendChild(tdNr);
+        tr.appendChild(tdVendor);
+        tr.appendChild(tdReinheit);
+        tr.appendChild(tdStatus);
+        batchTbody.appendChild(tr);
+      });
+      if (batchEmpty) batchEmpty.hidden = matchingBatches.length > 0;
+
+      // CTA: intern zur Anbieter-Liste, vorgefiltert nach Wirkstoff
+      if (ctaEl) ctaEl.href = "../anbieter/index.html?wirkstoff=" + encodeURIComponent(peptide.slug || "");
+    }
+
+    render();
+    document.addEventListener("pk:langchange", render);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="page.vergleich.title">Vergleich · PeptidKompass</title>
+<meta name="description" data-i18n="page.vergleich.metaDescription" content="Alle 8 Peptid-Anbieter im direkten Vergleich: Score, Preis pro Milligramm, Lieferzeit und Rabattcodes, sortierbar nach jeder Spalte.">
+<link rel="canonical" href="https://peptidkompass.example/vergleich.html">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n="page.vergleich.ogTitle" content="Vergleich · PeptidKompass">
+<meta property="og:description" data-i18n="page.vergleich.ogDescription" content="Alle Anbieter im Vergleich: Score, Preis pro mg, Lieferzeit, Rabatt.">
+<meta property="og:url" content="https://peptidkompass.example/vergleich.html">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/system.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PeptidKompass</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="vergleich.html" aria-current="page" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="deals.html" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="vergleich.html" aria-current="page" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="deals.html" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- SEITENTITEL + KURZINTRO -->
+  <section class="section container reveal">
+    <p class="eyebrow" data-i18n="page.vergleich.eyebrow">Alle Anbieter im Vergleich</p>
+    <h1 class="h1" data-i18n="page.vergleich.h1">Alle Anbieter im Vergleich</h1>
+    <p class="section-lead" data-i18n="page.vergleich.lead">Preis pro Milligramm, sortierbar nach jeder Spalte.</p>
+    <p data-i18n="page.vergleich.intro">Preis pro Milligramm zeigt, was ein Milligramm Wirkstoff bei jedem Anbieter tatsächlich kostet, unabhängig von Packungsgröße. So vergleichst du Anbieter unabhängig von der Verpackungsgröße.</p>
+  </section>
+
+  <!-- SORTIERBARE TABELLE -->
+  <section class="section container reveal">
+    <div class="table-wrap">
+      <table class="table" id="vergleich-table">
+        <thead>
+          <tr>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),0)" data-i18n="page.vergleich.colAnbieter">Anbieter</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),1)" data-i18n="page.vergleich.colLand">Land</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),2)" aria-sort="descending" data-i18n="page.vergleich.colGesamtscore">Gesamtscore</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),3)" data-i18n="page.vergleich.colLabor">Labor</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),4)" data-i18n="page.vergleich.colRecht">Rechtsrahmen</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),5)" data-i18n="page.vergleich.colLieferung">Lieferung</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),6)" data-i18n="page.vergleich.colSortiment">Sortiment</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),7)" data-i18n="page.vergleich.colPreis">Preis</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),8)" data-i18n="page.vergleich.colPreisMg">Preis/mg</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),9)" data-i18n="page.vergleich.colCoas">CoAs</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),10)" data-i18n="page.vergleich.colVersand">Versand</th>
+            <th data-sortable onclick="PK.sortTable(this.closest('table'),11)" data-i18n="page.vergleich.colRabatt">Rabatt</th>
+            <th data-i18n="page.vergleich.colAktion">Aktion</th>
+          </tr>
+        </thead>
+        <tbody id="vergleich-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- LEGENDE DER GEWICHTUNG + METHODIK-LINK -->
+  <section class="section container-narrow reveal">
+    <h2 class="section-title" data-i18n="page.vergleich.legendTitle">So setzt sich der Gesamtscore zusammen</h2>
+    <div class="grid-3">
+      <div class="card"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.vergleich.colLabor">Labor</p></div>
+      <div class="card"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.vergleich.colRecht">Rechtsrahmen</p></div>
+      <div class="card"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.vergleich.colLieferung">Lieferung</p></div>
+      <div class="card"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.vergleich.colSortiment">Sortiment</p></div>
+      <div class="card"><p class="card-eyebrow">20 %</p><p class="card-title" data-i18n="page.vergleich.colPreisMg">Preis/mg</p></div>
+    </div>
+    <p class="text-small muted" id="vergleich-footnote" style="margin-top:var(--sp-2);"></p>
+    <p style="margin-top:var(--sp-2);"><a class="btn-link" href="methodik.html" data-i18n="page.vergleich.methodikLink">Ganze Methodik lesen</a></p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="data/site.js"></script>
+<script src="data/vendors.js"></script>
+<script src="data/peptides.js"></script>
+<script src="data/batches.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="data/i18n/global.js"></script>
+<script src="data/i18n/vergleich.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+  // Seiten-Logik Vergleich: nutzt nur PK-Helfer aus assets/js/site.js.
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    // Pflicht-Reihenfolge: applyI18n()/initLangToggle() VOR den Seiten-Renderern
+    // (siehe assets/css/README.md "i18n: So tagst du eine Seite").
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
+    var tbody = document.getElementById("vergleich-tbody");
+    var table = document.getElementById("vergleich-table");
+    if (!tbody || !table) return;
+
+    // Standard-Sortierung: Gesamtscore absteigend (ia.md 4.4)
+    var ranked = vendors.slice().sort(function (a, b) {
+      var sa = typeof a.gesamt === "number" ? a.gesamt : PK.computeScoreTotal(a.score);
+      var sb = typeof b.gesamt === "number" ? b.gesamt : PK.computeScoreTotal(b.score);
+      return sb - sa;
+    });
+
+    function buildRow(v) {
+      var row = document.createElement("tr");
+
+      // Anbieter: interner Link auf das Detail-Template
+      var tdName = document.createElement("td");
+      var nameLink = document.createElement("a");
+      nameLink.className = "btn-link";
+      nameLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
+      nameLink.textContent = v.name || "";
+      tdName.appendChild(nameLink);
+      row.appendChild(tdName);
+
+      // Land (Enum, IMMER über PK.tEnum)
+      row.appendChild(makeTextCell(PK.tEnum("land", v.land)));
+
+      // Gesamtscore: score-bar klein (Track + Wert, ohne Label)
+      var gesamt = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+      var tdScore = document.createElement("td");
+      tdScore.setAttribute("data-sort", String(gesamt));
+      tdScore.appendChild(buildScoreBarSmall(gesamt));
+      row.appendChild(tdScore);
+
+      // 5 Einzelkriterien (score.labor/recht/lieferung/sortiment/preis, 0-100)
+      var s = v.score || {};
+      row.appendChild(makeNumCell(s.labor));
+      row.appendChild(makeNumCell(s.recht));
+      row.appendChild(makeNumCell(s.lieferung));
+      row.appendChild(makeNumCell(s.sortiment));
+      row.appendChild(makeNumCell(s.preis));
+
+      // Preis/mg (EUR)
+      var tdMg = document.createElement("td");
+      var mg = typeof v.preisProMg === "number" ? v.preisProMg : 0;
+      tdMg.setAttribute("data-sort", String(mg));
+      tdMg.textContent = PK.byNum(mg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+      row.appendChild(tdMg);
+
+      // CoAs: Anzahl + Extern-Pill
+      var tdCoa = document.createElement("td");
+      var coa = v.coa || {};
+      tdCoa.setAttribute("data-sort", String(coa.anzahl || 0));
+      tdCoa.appendChild(document.createTextNode(PK.byNum(coa.anzahl || 0) + " "));
+      var coaPill = document.createElement("span");
+      coaPill.className = coa.extern ? "pill pill-ok" : "pill";
+      coaPill.textContent = coa.extern ? PK.t("page.vergleich.coaExtern") : PK.t("page.vergleich.coaIntern");
+      tdCoa.appendChild(coaPill);
+      row.appendChild(tdCoa);
+
+      // Versand: tageMin–tageMax
+      var tdVersand = document.createElement("td");
+      var versand = v.versand || {};
+      tdVersand.setAttribute("data-sort", String(versand.tageMin || 0));
+      tdVersand.textContent = (versand.tageMin != null && versand.tageMax != null)
+        ? PK.t("page.vergleich.versandRange", { min: versand.tageMin, max: versand.tageMax }) : "–";
+      row.appendChild(tdVersand);
+
+      // Rabatt: Prozent oder „–" (Screenreader: „keiner"/"none")
+      var tdRabatt = document.createElement("td");
+      if (v.rabatt && v.rabatt.prozent) {
+        tdRabatt.setAttribute("data-sort", String(v.rabatt.prozent));
+        tdRabatt.textContent = "-" + PK.byNum(v.rabatt.prozent) + "%";
+      } else {
+        tdRabatt.setAttribute("data-sort", "-1");
+        var none = document.createElement("span");
+        none.setAttribute("aria-label", PK.t("page.vergleich.rabattNone"));
+        none.textContent = "–";
+        tdRabatt.appendChild(none);
+      }
+      row.appendChild(tdRabatt);
+
+      // Aktion: Zum Anbieter (Anzeige-Pflicht)
+      var tdAction = document.createElement("td");
+      var shopLink = document.createElement("a");
+      shopLink.className = "btn btn-secondary ext-link";
+      shopLink.href = PK.safeUrl(v.affiliateUrl);
+      shopLink.target = "_blank";
+      shopLink.rel = "sponsored nofollow";
+      shopLink.setAttribute("data-affiliate", "true");
+      shopLink.appendChild(document.createTextNode(PK.t("page.vergleich.actionVisitVendor")));
+      var badgeAd = document.createElement("span");
+      badgeAd.className = "badge-ad";
+      badgeAd.textContent = PK.tx(window.PK.site, "affiliateNote") || PK.t("global.badge.ad");
+      shopLink.appendChild(badgeAd);
+      tdAction.appendChild(shopLink);
+      row.appendChild(tdAction);
+
+      return row;
+    }
+
+    /**
+     * reapplySort(table)
+     * Sortiert die bestehenden <tbody>-Zeilen anhand des zuletzt gesetzten
+     * data-sort-col/data-sort-dir NEU (ohne zu toggeln, anders als
+     * PK.sortTable). Nötig, damit render() den Sortierzustand beim
+     * Sprachwechsel erhält statt ihn auf die Default-Sortierung
+     * zurückzusetzen (Logik bewusst dupliziert aus PK.sortTable, da diese
+     * Seite site.js nicht verändern darf).
+     */
+    function reapplySort(t) {
+      var col = parseInt(t.getAttribute("data-sort-col"), 10);
+      var dir = t.getAttribute("data-sort-dir") || "desc";
+      if (isNaN(col)) return;
+      var tb = t.tBodies[0];
+      if (!tb) return;
+      var rows = Array.prototype.slice.call(tb.rows);
+      function cellValue(r) {
+        var cell = r.cells[col];
+        if (!cell) return "";
+        if (cell.hasAttribute("data-sort")) return cell.getAttribute("data-sort");
+        return cell.textContent.trim();
+      }
+      rows.sort(function (a, b) {
+        var va = cellValue(a), vb = cellValue(b);
+        var na = parseFloat(String(va).replace(/\./g, "").replace(",", "."));
+        var nb = parseFloat(String(vb).replace(/\./g, "").replace(",", "."));
+        var cmp;
+        if (!isNaN(na) && !isNaN(nb) && va !== "" && vb !== "") { cmp = na - nb; }
+        else { cmp = String(va).localeCompare(String(vb), "de"); }
+        return dir === "asc" ? cmp : -cmp;
+      });
+      rows.forEach(function (r) { tb.appendChild(r); });
+      var headers = t.querySelectorAll("thead th");
+      headers.forEach(function (th, i) {
+        if (i === col) th.setAttribute("aria-sort", dir === "asc" ? "ascending" : "descending");
+        else th.removeAttribute("aria-sort");
+      });
+    }
+
+    /**
+     * render() baut die komplette Tabelle neu (übersetzte Enum-/UI-Strings,
+     * PK.byNum je Locale) und erhält dabei den Sortierzustand: beim ersten
+     * Aufruf Default (Spalte 2 = Gesamtscore, absteigend), bei jedem
+     * weiteren Aufruf (inkl. "pk:langchange") den zuletzt über PK.sortTable
+     * gesetzten Zustand. Pflicht-Muster für Seiten mit dynamischem Inhalt,
+     * siehe assets/css/README.md.
+     */
+    function render() {
+      tbody.textContent = "";
+      ranked.forEach(function (v) { tbody.appendChild(buildRow(v)); });
+
+      if (!table.hasAttribute("data-sort-col")) {
+        table.setAttribute("data-sort-col", "2");
+        table.setAttribute("data-sort-dir", "desc");
+      }
+      reapplySort(table);
+
+      // Fußnote mit Stand-Datum aus site.js
+      var footnote = document.getElementById("vergleich-footnote");
+      if (footnote) {
+        var updated = (window.PK.site && window.PK.site.updated) || "";
+        footnote.textContent = PK.t("page.vergleich.footnote", { updated: updated });
+      }
+    }
+
+    function makeTextCell(text) {
+      var td = document.createElement("td");
+      td.textContent = text;
+      return td;
+    }
+    function makeNumCell(value) {
+      var td = document.createElement("td");
+      var v = Number(value) || 0;
+      td.setAttribute("data-sort", String(v));
+      td.textContent = PK.byNum(v);
+      return td;
+    }
+    function buildScoreBarSmall(value) {
+      var wrap = document.createElement("div");
+      wrap.className = "score-bar";
+      var rowEl = document.createElement("div");
+      rowEl.className = "score-bar-row";
+      var track = document.createElement("div");
+      track.className = "score-bar-track";
+      var fill = document.createElement("div");
+      fill.className = "score-bar-fill";
+      fill.style.width = "0%";
+      track.appendChild(fill);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { fill.style.width = Math.max(0, Math.min(100, value)) + "%"; });
+      });
+      var val = document.createElement("span");
+      val.className = "score-bar-value";
+      val.textContent = PK.byNum(value);
+      rowEl.appendChild(track);
+      rowEl.appendChild(val);
+      wrap.appendChild(rowEl);
+      return wrap;
+    }
+
+    render();
+    document.addEventListener("pk:langchange", render);
+  })();
+</script>
+</body>
+</html>

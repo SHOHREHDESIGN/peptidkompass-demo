@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="page.anbieter-index.title">Alle Anbieter im Überblick · PeptidKompass</title>
+<meta name="description" data-i18n="page.anbieter-index.metaDescription" content="Acht geprüfte Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg vergleichen. Nach Land und Prüf-Status filtern, nach Score, Name, Preis/mg oder Versandzeit sortieren.">
+<link rel="canonical" href="https://peptidkompass.example/anbieter/">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n="page.anbieter-index.ogTitle" content="Alle Anbieter im Überblick · PeptidKompass">
+<meta property="og:description" data-i18n="page.anbieter-index.ogDescription" content="Acht geprüfte Anbieter, ein Blick genügt.">
+<meta property="og:url" content="https://peptidkompass.example/anbieter/">
+<meta property="og:image" content="../assets/img/og.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/css/system.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">PeptidKompass</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="../wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="index.html" aria-current="page" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="../wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- SEITENTITEL + KURZINTRO -->
+  <section class="section-tight container reveal">
+    <h1 class="h1" data-i18n="page.anbieter-index.h1">Alle Anbieter im Überblick</h1>
+    <p class="section-lead" style="margin-bottom:0;" data-i18n="page.anbieter-index.lead">Acht geprüfte Anbieter, ein Blick genügt.</p>
+  </section>
+
+  <!-- FILTERLEISTE -->
+  <section class="container reveal" aria-label="Filter und Sortierung">
+    <div style="display:flex; flex-direction:column; gap:var(--sp-2);">
+
+      <div>
+        <p class="text-caption muted" style="margin:0 0 6px;" data-i18n="page.anbieter-index.filterLandLabel">Land</p>
+        <div id="filter-land" style="display:flex; flex-wrap:wrap; gap:8px;">
+          <button type="button" class="btn btn-primary" data-land="alle" aria-pressed="true" data-i18n="page.anbieter-index.landAlle">Alle</button>
+          <button type="button" class="btn btn-secondary" data-land="DE" aria-pressed="false" data-i18n="global.enum.land.DE">DE</button>
+          <button type="button" class="btn btn-secondary" data-land="AT" aria-pressed="false" data-i18n="global.enum.land.AT">AT</button>
+          <button type="button" class="btn btn-secondary" data-land="CH" aria-pressed="false" data-i18n="global.enum.land.CH">CH</button>
+          <button type="button" class="btn btn-secondary" data-land="EU" aria-pressed="false" data-i18n="global.enum.land.EU">EU</button>
+          <button type="button" class="btn btn-secondary" data-land="INT" aria-pressed="false" data-i18n="global.enum.land.INT">INT</button>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-caption muted" style="margin:0 0 6px;" data-i18n="page.anbieter-index.filterLabStatusLabel">Lab-Status</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <button type="button" class="btn btn-secondary" id="filter-lab-extern" aria-pressed="false" data-i18n="page.anbieter-index.filterLabExtern">Extern geprüft</button>
+          <button type="button" class="btn btn-secondary" id="filter-rabatt" aria-pressed="false" data-i18n="page.anbieter-index.filterRabatt">Rabatt vorhanden</button>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-caption muted" style="margin:0 0 6px;" data-i18n="page.anbieter-index.sortLabel">Sortierung</p>
+        <div id="filter-sort" style="display:flex; flex-wrap:wrap; gap:8px;">
+          <button type="button" class="btn btn-primary" data-sort="score" data-label="Score" aria-pressed="true" data-i18n-attr="data-label:page.anbieter-index.sortScore">Score ↓</button>
+          <button type="button" class="btn btn-secondary" data-sort="name" data-label="Name" aria-pressed="false" data-i18n-attr="data-label:page.anbieter-index.sortName">Name</button>
+          <button type="button" class="btn btn-secondary" data-sort="preisProMg" data-label="Preis/mg" aria-pressed="false" data-i18n-attr="data-label:page.anbieter-index.sortPreisProMg">Preis/mg</button>
+          <button type="button" class="btn btn-secondary" data-sort="versand" data-label="Versandzeit" aria-pressed="false" data-i18n-attr="data-label:page.anbieter-index.sortVersand">Versandzeit</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ERGEBNISZÄHLER -->
+  <section class="container reveal" style="padding-top:var(--sp-3);">
+    <p class="text-small muted" id="result-count" aria-live="polite">8 Anbieter gefunden</p>
+  </section>
+
+  <!-- ANBIETER-GRID -->
+  <section class="section-tight container reveal">
+    <div class="grid-4" id="vendor-grid" aria-live="polite"></div>
+    <div id="empty-state" class="card" style="text-align:center; padding:var(--sp-6) var(--sp-3);" hidden>
+      <p class="card-title" data-i18n="page.anbieter-index.emptyTitle">Kein Anbieter passt</p>
+      <p class="card-body" data-i18n="page.anbieter-index.emptyBody">Versuch es mit weniger Filtern oder setze sie zurück.</p>
+      <p style="margin-top:var(--sp-2);"><button type="button" class="btn btn-secondary" id="reset-filters" data-i18n="page.anbieter-index.resetButton">Filter zurücksetzen</button></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="../data/site.js"></script>
+<script src="../data/vendors.js"></script>
+<script src="../data/peptides.js"></script>
+<script src="../data/batches.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="../data/i18n/global.js"></script>
+<script src="../data/i18n/anbieter-index.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    // Pflicht-Reihenfolge: applyI18n()/initLangToggle() VOR den Seiten-Renderern
+    // (siehe assets/css/README.md "i18n: So tagst du eine Seite").
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
+
+    var gridEl = document.getElementById("vendor-grid");
+    var emptyEl = document.getElementById("empty-state");
+    var countEl = document.getElementById("result-count");
+    var landButtons = Array.prototype.slice.call(document.querySelectorAll("#filter-land [data-land]"));
+    var sortButtons = Array.prototype.slice.call(document.querySelectorAll("#filter-sort [data-sort]"));
+    var labBtn = document.getElementById("filter-lab-extern");
+    var rabattBtn = document.getElementById("filter-rabatt");
+    var resetBtn = document.getElementById("reset-filters");
+
+    var DEFAULT_DIR = { score: "desc", name: "asc", preisProMg: "asc", versand: "asc" };
+
+    var state = { land: "alle", labExtern: false, rabatt: false, sort: "score", dir: "desc" };
+
+    function readHash() {
+      if (!location.hash) return;
+      var params = new URLSearchParams(location.hash.slice(1));
+      var land = params.get("land");
+      var sort = params.get("sort");
+      if (land && ["alle", "DE", "AT", "CH", "EU", "INT"].indexOf(land) !== -1) state.land = land;
+      if (sort && DEFAULT_DIR.hasOwnProperty(sort)) state.sort = sort;
+      state.labExtern = params.get("lab") === "1";
+      state.rabatt = params.get("rabatt") === "1";
+      var dir = params.get("dir");
+      if (dir === "asc" || dir === "desc") state.dir = dir;
+    }
+
+    function writeHash() {
+      var params = new URLSearchParams();
+      params.set("land", state.land);
+      params.set("sort", state.sort);
+      params.set("dir", state.dir);
+      if (state.labExtern) params.set("lab", "1");
+      if (state.rabatt) params.set("rabatt", "1");
+      history.replaceState(null, "", "#" + params.toString());
+    }
+
+    function setPressed(buttons, activeEl) {
+      buttons.forEach(function (b) {
+        var active = b === activeEl;
+        b.setAttribute("aria-pressed", active ? "true" : "false");
+        b.classList.toggle("btn-primary", active);
+        b.classList.toggle("btn-secondary", !active);
+      });
+    }
+
+    function setToggle(btn, active) {
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+      btn.classList.toggle("btn-primary", active);
+      btn.classList.toggle("btn-secondary", !active);
+    }
+
+    function sortValue(v, key) {
+      if (key === "score") return typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+      if (key === "name") return (v.name || "").toLowerCase();
+      if (key === "preisProMg") return typeof v.preisProMg === "number" ? v.preisProMg : Infinity;
+      if (key === "versand") return (v.versand && typeof v.versand.tageMin === "number") ? v.versand.tageMin : Infinity;
+      return 0;
+    }
+
+    function render() {
+      var filtered = vendors.filter(function (v) {
+        if (state.land !== "alle" && v.land !== state.land) return false;
+        if (state.labExtern && !(v.coa && v.coa.extern)) return false;
+        if (state.rabatt && !v.rabatt) return false;
+        return true;
+      });
+
+      filtered.sort(function (a, b) {
+        var va = sortValue(a, state.sort), vb = sortValue(b, state.sort);
+        var cmp;
+        if (typeof va === "string" || typeof vb === "string") {
+          cmp = String(va).localeCompare(String(vb), "de");
+        } else {
+          cmp = va - vb;
+        }
+        return state.dir === "asc" ? cmp : -cmp;
+      });
+
+      gridEl.textContent = "";
+      filtered.forEach(function (v) { gridEl.appendChild(PK.renderVendorCard(v, "../")); });
+
+      countEl.textContent = PK.t(filtered.length === 1 ? "page.anbieter-index.resultCountSingular" : "page.anbieter-index.resultCountPlural", { n: PK.byNum(filtered.length) });
+      gridEl.hidden = filtered.length === 0;
+      emptyEl.hidden = filtered.length !== 0;
+
+      landButtons.forEach(function (b) { setPressed(landButtons, landButtons.filter(function (x) { return x.getAttribute("data-land") === state.land; })[0]); });
+      setToggle(labBtn, state.labExtern);
+      setToggle(rabattBtn, state.rabatt);
+      sortButtons.forEach(function (b) {
+        var isActive = b.getAttribute("data-sort") === state.sort;
+        setToggle(b, isActive);
+        var label = b.getAttribute("data-label");
+        b.textContent = isActive ? (label + (state.dir === "asc" ? " ↑" : " ↓")) : label;
+      });
+
+      writeHash();
+    }
+
+    landButtons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        state.land = b.getAttribute("data-land");
+        render();
+      });
+    });
+
+    labBtn.addEventListener("click", function () { state.labExtern = !state.labExtern; render(); });
+    rabattBtn.addEventListener("click", function () { state.rabatt = !state.rabatt; render(); });
+
+    sortButtons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-sort");
+        if (state.sort === key) {
+          state.dir = state.dir === "asc" ? "desc" : "asc";
+        } else {
+          state.sort = key;
+          state.dir = DEFAULT_DIR[key];
+        }
+        render();
+      });
+    });
+
+    resetBtn.addEventListener("click", function () {
+      state = { land: "alle", labExtern: false, rabatt: false, sort: "score", dir: "desc" };
+      render();
+    });
+
+    readHash();
+    render();
+    document.addEventListener("pk:langchange", render); // Pflicht bei dynamischem Inhalt (Filter-/Sortierzustand bleibt erhalten)
+  })();
+</script>
+</body>
+</html>

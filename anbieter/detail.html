@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="page-title" data-i18n="page.anbieter-detail.title">Anbieter-Detail · PeptidKompass</title>
+<meta name="description" id="page-description" data-i18n="page.anbieter-detail.metaDescription" content="Volle Entscheidungsgrundlage zu einem Peptid-Anbieter: Score-Breakdown, Labor-Nachweise, Rechtsrahmen, Versand und Produkte.">
+<link rel="canonical" id="page-canonical" href="https://peptidkompass.example/anbieter/detail.html">
+<meta property="og:type" content="website">
+<meta property="og:title" id="og-title" data-i18n="page.anbieter-detail.ogTitle" content="Anbieter-Detail · PeptidKompass">
+<meta property="og:image" content="../assets/img/og.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/css/system.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">PeptidKompass</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="../wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="index.html" aria-current="page" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="../wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- NICHT GEFUNDEN -->
+  <section class="section container-narrow reveal" id="not-found" hidden>
+    <p class="eyebrow" data-i18n="page.anbieter-detail.notFoundEyebrow">Anbieter nicht gefunden</p>
+    <h1 class="h1" data-i18n="page.anbieter-detail.notFoundH1">Diesen Anbieter kennen wir nicht</h1>
+    <p class="section-lead" data-i18n="page.anbieter-detail.notFoundLead">Der Link scheint falsch oder veraltet zu sein. Vielleicht wurde der Anbieter entfernt oder die Adresse falsch eingegeben.</p>
+    <p><a class="btn btn-primary" href="index.html" data-i18n="page.anbieter-detail.notFoundCta">Zur Anbieterliste</a></p>
+  </section>
+
+  <div id="detail-content" hidden>
+
+    <!-- BREADCRUMB + KOPFBEREICH -->
+    <section class="section-tight container reveal">
+      <p class="text-small" style="margin:0 0 var(--sp-3);"><a class="text-small muted" href="index.html" data-i18n="page.anbieter-detail.breadcrumb">← Zurück zu Anbieter</a></p>
+      <div class="row-between" style="align-items:flex-start;">
+        <div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:var(--sp-2);">
+            <span class="pill" id="vendor-land-pill">DE</span>
+            <span class="pill pill-info" data-i18n="page.anbieter-detail.demoPill">Demo-Daten</span>
+          </div>
+          <h1 class="display" id="vendor-name" style="margin-bottom:6px;">Anbieter</h1>
+          <p class="muted" id="vendor-subhead">Land · Score –/100</p>
+        </div>
+        <div class="score-ring" id="vendor-score-ring" style="--pct:0; margin-top:28px;" aria-hidden="true"><span class="score-ring-value" id="vendor-score-value">–</span></div>
+      </div>
+      <p style="margin-top:var(--sp-4);">
+        <a class="btn btn-secondary ext-link" id="vendor-cta" target="_blank" rel="sponsored nofollow" data-affiliate="true" href="#"><span id="vendor-cta-label">Zum Anbieter</span><span class="badge-ad" id="vendor-cta-badge">Anzeige</span></a>
+      </p>
+    </section>
+
+    <!-- SCORE-BREAKDOWN -->
+    <section class="section section-tinted container reveal">
+      <p class="eyebrow" data-i18n="page.anbieter-detail.scoreEyebrow">So bewerten wir</p>
+      <h2 class="section-title" data-i18n="page.anbieter-detail.scoreTitle">Score im Detail</h2>
+      <p class="section-lead" data-i18n="page.anbieter-detail.scoreLead">Fünf Kriterien, einzeln gewichtet.</p>
+      <div class="score-bar" id="score-breakdown"></div>
+    </section>
+
+    <!-- TRUST-ICONS / RECHTSRAHMEN-CHECKLISTE -->
+    <section class="section container reveal">
+      <p class="eyebrow" data-i18n="page.anbieter-detail.trustEyebrow">Vertrauens-Check</p>
+      <h2 class="section-title" data-i18n="page.anbieter-detail.trustTitle">Rechtsrahmen</h2>
+      <div id="rechtsrahmen-pills" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+    </section>
+
+    <!-- COA-BLOCK -->
+    <section class="section section-tinted container reveal">
+      <p class="eyebrow" data-i18n="page.anbieter-detail.coaEyebrow">Labor-Nachweise</p>
+      <h2 class="section-title" id="coa-headline">– CoAs, zuletzt geprüft am –</h2>
+      <p class="card-body" id="coa-body">Extern verifiziert: –. Prüflabor: –.</p>
+    </section>
+
+    <!-- VERSAND + ZAHLUNG -->
+    <section class="section container reveal">
+      <div class="grid-2">
+        <div class="card">
+          <p class="card-eyebrow" data-i18n="page.anbieter-detail.versandCardLabel">Versand</p>
+          <p class="card-body" id="versand-body">–</p>
+        </div>
+        <div class="card">
+          <p class="card-eyebrow" data-i18n="page.anbieter-detail.zahlungLabel">Zahlung</p>
+          <div id="zahlung-pills" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RABATT-CODE-BOX -->
+    <section class="section section-tinted container reveal" id="rabatt-section" hidden>
+      <p class="eyebrow" data-i18n="page.anbieter-detail.rabattEyebrow">Rabattcode</p>
+      <div class="code-box">
+        <code data-code id="rabatt-code">CODE</code>
+        <button class="btn btn-secondary" onclick="PK.copyCode(this)" data-i18n="page.anbieter-detail.copyCodeButton">Code kopieren</button>
+        <span class="code-box-percent" id="rabatt-percent">-0%</span>
+      </div>
+      <p style="margin-top:var(--sp-3);">
+        <a class="btn btn-primary ext-link" id="rabatt-cta" target="_blank" rel="sponsored nofollow" data-affiliate="true" href="#"><span id="rabatt-cta-label">Zum Anbieter</span><span class="badge-ad" id="rabatt-cta-badge">Anzeige</span></a>
+      </p>
+    </section>
+
+    <!-- PRODUKTLISTE -->
+    <section class="section container reveal">
+      <p class="eyebrow" data-i18n="page.anbieter-detail.sortimentEyebrow">Sortiment</p>
+      <h2 class="section-title" data-i18n="page.anbieter-detail.sortimentTitle">Produkte</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th data-i18n="page.anbieter-detail.tableHeadPeptid">Peptid</th>
+              <th data-i18n="page.anbieter-detail.tableHeadMg">mg</th>
+              <th data-i18n="page.anbieter-detail.tableHeadPreis">Preis</th>
+              <th data-i18n="page.anbieter-detail.tableHeadPreisProMg">Preis/mg</th>
+              <th><span class="visually-hidden" data-i18n="page.anbieter-detail.tableHeadAktion">Aktion</span></th>
+            </tr>
+          </thead>
+          <tbody id="produkt-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- STÄRKEN / SCHWÄCHEN -->
+    <section class="section section-tinted container reveal">
+      <div class="grid-2">
+        <div class="card">
+          <p class="card-eyebrow" data-i18n="page.anbieter-detail.staerkenTitle">Stärken</p>
+          <ul id="staerken-list" style="margin:var(--sp-1) 0 0; padding-left:1.1em; color:var(--text-secondary); font-size:var(--fs-small);"></ul>
+        </div>
+        <div class="card">
+          <p class="card-eyebrow" data-i18n="page.anbieter-detail.schwaechenTitle">Schwächen</p>
+          <ul id="schwaechen-list" style="margin:var(--sp-1) 0 0; padding-left:1.1em; color:var(--text-secondary); font-size:var(--fs-small);"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARGEN -->
+    <section class="section container reveal">
+      <p class="eyebrow" data-i18n="page.anbieter-detail.chargenEyebrow">Prüfhistorie</p>
+      <h2 class="section-title" data-i18n="page.anbieter-detail.chargenTitle">Zugehörige Chargen</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th data-i18n="page.anbieter-detail.chargenHeadCharge">Charge</th>
+              <th data-i18n="page.anbieter-detail.chargenHeadPeptid">Peptid</th>
+              <th data-i18n="page.anbieter-detail.chargenHeadPruefdatum">Prüfdatum</th>
+              <th data-i18n="page.anbieter-detail.chargenHeadReinheit">Reinheit</th>
+              <th data-i18n="page.anbieter-detail.chargenHeadLabor">Labor</th>
+              <th data-i18n="page.anbieter-detail.chargenHeadStatus">Status</th>
+            </tr>
+          </thead>
+          <tbody id="chargen-tbody"></tbody>
+        </table>
+      </div>
+      <p class="text-small muted" id="chargen-empty" hidden style="margin-top:var(--sp-2);" data-i18n="page.anbieter-detail.chargenEmpty">Für diesen Anbieter liegen noch keine Chargen in unserer Demo-Datenbank vor.</p>
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="../data/site.js"></script>
+<script src="../data/vendors.js"></script>
+<script src="../data/peptides.js"></script>
+<script src="../data/batches.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="../data/i18n/global.js"></script>
+<script src="../data/i18n/anbieter-detail.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    // Pflicht-Reihenfolge: applyI18n()/initLangToggle() VOR den Seiten-Renderern
+    // (siehe assets/css/README.md "i18n: So tagst du eine Seite").
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    var slug = new URLSearchParams(location.search).get("slug");
+    var vendor = slug ? PK.vendorBySlug(slug) : null;
+
+    if (!vendor) {
+      document.getElementById("not-found").hidden = false;
+      return;
+    }
+
+    document.getElementById("detail-content").hidden = false;
+
+    var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
+    var canEl = document.getElementById("page-canonical");
+    if (canEl) canEl.setAttribute("href", "https://peptidkompass.example/anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug));
+
+    /**
+     * render() baut alle sprachabhängigen dynamischen Inhalte des Anbieter-
+     * Details neu (Titel/Meta, Kopfbereich, Score-Breakdown, Rechtsrahmen-
+     * Pills, CoA-Block, Versand/Zahlung, Rabatt-Box, Produktliste, Stärken/
+     * Schwächen, Chargen). Läuft initial UND bei "pk:langchange" (Pflicht-
+     * Muster, siehe README). Leert vorher alle appendChild-Container, sonst
+     * verdoppeln sich Zeilen bei jedem Sprachwechsel.
+     */
+    function render() {
+      var badgeText = PK.tx(window.PK.site, "affiliateNote") || PK.t("global.badge.ad");
+
+      // Titel + Meta (sprachabhängig: Kurztext via PK.tx)
+      document.getElementById("page-title").textContent = vendor.name + " · PeptidKompass";
+      var ogTitleEl = document.getElementById("og-title");
+      if (ogTitleEl) ogTitleEl.setAttribute("content", vendor.name + " · PeptidKompass");
+      var descEl = document.getElementById("page-description");
+      if (descEl) descEl.setAttribute("content", PK.tx(vendor, "kurz") + " Score " + gesamt + "/100.");
+
+      // Kopfbereich
+      document.getElementById("vendor-land-pill").textContent = PK.tEnum("land", vendor.land) || "";
+      document.getElementById("vendor-name").textContent = vendor.name || "";
+      document.getElementById("vendor-subhead").textContent = PK.t("page.anbieter-detail.subheadTemplate", { land: PK.tEnum("land", vendor.land), score: PK.byNum(gesamt) });
+
+      var ring = document.getElementById("vendor-score-ring");
+      ring.style.setProperty("--pct", String(gesamt));
+      document.getElementById("vendor-score-value").textContent = PK.byNum(gesamt);
+
+      var cta = document.getElementById("vendor-cta");
+      cta.href = PK.safeUrl(vendor.affiliateUrl);
+      document.getElementById("vendor-cta-label").textContent = PK.t("page.anbieter-detail.ctaZumAnbieter");
+      document.getElementById("vendor-cta-badge").textContent = badgeText;
+
+      // Score-Breakdown
+      var breakdown = document.getElementById("score-breakdown");
+      breakdown.textContent = "";
+      var s = vendor.score || {};
+      breakdown.appendChild(PK.renderScoreBar(PK.t("page.anbieter-detail.scoreLabelLabor"), s.labor));
+      breakdown.appendChild(PK.renderScoreBar(PK.t("page.anbieter-detail.scoreLabelRecht"), s.recht));
+      breakdown.appendChild(PK.renderScoreBar(PK.t("page.anbieter-detail.scoreLabelLieferung"), s.lieferung));
+      breakdown.appendChild(PK.renderScoreBar(PK.t("page.anbieter-detail.scoreLabelSortiment"), s.sortiment));
+      breakdown.appendChild(PK.renderScoreBar(PK.t("page.anbieter-detail.scoreLabelPreis"), s.preis));
+
+      // Rechtsrahmen-Checkliste
+      var rr = vendor.rechtsrahmen || {};
+      var pillsEl = document.getElementById("rechtsrahmen-pills");
+      pillsEl.textContent = "";
+      function addPill(text, ok) {
+        var span = document.createElement("span");
+        span.className = "pill " + (ok ? "pill-ok" : "pill-warn");
+        span.textContent = text;
+        pillsEl.appendChild(span);
+      }
+      addPill(rr.altersgate ? PK.t("page.anbieter-detail.pillAltersgateYes") : PK.t("page.anbieter-detail.pillAltersgateNo"), !!rr.altersgate);
+      addPill(rr.ruo ? PK.t("page.anbieter-detail.pillRuoYes") : PK.t("page.anbieter-detail.pillRuoNo"), !!rr.ruo);
+      addPill(rr.impressum ? PK.t("page.anbieter-detail.pillImpressumYes") : PK.t("page.anbieter-detail.pillImpressumNo"), !!rr.impressum);
+      if (rr.heilversprechen === true) {
+        addPill(PK.t("page.anbieter-detail.pillHeilversprechenYes"), false);
+      } else {
+        addPill(PK.t("page.anbieter-detail.pillHeilversprechenNo"), true);
+      }
+
+      // CoA-Block
+      var coa = vendor.coa || {};
+      document.getElementById("coa-headline").textContent = PK.t("page.anbieter-detail.coaHeadlineTemplate", { n: PK.byNum(coa.anzahl || 0), datum: coa.letztesDatum || "–" });
+      document.getElementById("coa-body").textContent = PK.t("page.anbieter-detail.coaBodyTemplate", {
+        status: coa.extern ? PK.t("page.anbieter-detail.yes") : PK.t("page.anbieter-detail.no"),
+        labor: coa.labor || "–"
+      });
+
+      // Versand + Zahlung
+      var vs = vendor.versand || {};
+      var minStr = typeof vs.tageMin === "number" ? PK.byNum(vs.tageMin) : "–";
+      var maxStr = typeof vs.tageMax === "number" ? PK.byNum(vs.tageMax) : "–";
+      var laenderStr = (vs.laender || []).map(function (l) { return PK.tEnum("land", l); }).join(", ") || "–";
+      var versandText = PK.t("page.anbieter-detail.versandTemplate", { min: minStr, max: maxStr, laender: laenderStr });
+      if (typeof vs.kostenlosAb === "number") versandText += PK.t("page.anbieter-detail.versandKostenlosAb", { betrag: PK.byNum(vs.kostenlosAb) });
+      document.getElementById("versand-body").textContent = versandText;
+
+      var zahlungEl = document.getElementById("zahlung-pills");
+      zahlungEl.textContent = "";
+      (vendor.zahlung || []).forEach(function (z) {
+        var span = document.createElement("span");
+        span.className = "pill";
+        span.textContent = PK.tEnum("zahlung", z);
+        zahlungEl.appendChild(span);
+      });
+
+      // Rabatt-Code-Box
+      if (vendor.rabatt) {
+        document.getElementById("rabatt-section").hidden = false;
+        document.getElementById("rabatt-code").textContent = vendor.rabatt.code || "";
+        document.getElementById("rabatt-percent").textContent = "-" + PK.byNum(vendor.rabatt.prozent) + "%";
+        document.getElementById("rabatt-cta").href = PK.safeUrl(vendor.affiliateUrl);
+        document.getElementById("rabatt-cta-label").textContent = PK.t("page.anbieter-detail.ctaZumAnbieter");
+        document.getElementById("rabatt-cta-badge").textContent = badgeText;
+      }
+
+      // Produktliste
+      var tbody = document.getElementById("produkt-tbody");
+      tbody.textContent = "";
+      (vendor.produkte || []).forEach(function (p) {
+        var peptide = PK.peptideBySlug(p.peptideSlug);
+        var name = peptide ? peptide.name : p.peptideSlug;
+        var preisProMg = (typeof p.preisEur === "number" && typeof p.mg === "number" && p.mg > 0) ? (p.preisEur / p.mg) : null;
+
+        var tr = document.createElement("tr");
+
+        var tdName = document.createElement("td");
+        var a = document.createElement("a");
+        a.className = "btn-link";
+        a.href = "../wirkstoffe/detail.html?slug=" + encodeURIComponent(p.peptideSlug || "");
+        a.textContent = name || "";
+        tdName.appendChild(a);
+
+        var tdMg = document.createElement("td");
+        tdMg.textContent = PK.byNum(p.mg) + " mg";
+        tdMg.setAttribute("data-sort", String(p.mg));
+
+        var tdPreis = document.createElement("td");
+        tdPreis.textContent = PK.byNum(p.preisEur, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+        tdPreis.setAttribute("data-sort", String(p.preisEur));
+
+        var tdPreisMg = document.createElement("td");
+        tdPreisMg.textContent = preisProMg !== null ? (PK.byNum(preisProMg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €") : "–";
+        if (preisProMg !== null) tdPreisMg.setAttribute("data-sort", String(preisProMg));
+
+        var tdAction = document.createElement("td");
+        var shopLink = document.createElement("a");
+        shopLink.className = "btn btn-secondary ext-link";
+        shopLink.href = PK.safeUrl(vendor.affiliateUrl);
+        shopLink.target = "_blank";
+        shopLink.rel = "sponsored nofollow";
+        shopLink.setAttribute("data-affiliate", "true");
+        shopLink.appendChild(document.createTextNode(PK.t("page.anbieter-detail.ctaZumAnbieter")));
+        var badge = document.createElement("span");
+        badge.className = "badge-ad";
+        badge.textContent = badgeText;
+        shopLink.appendChild(badge);
+        tdAction.appendChild(shopLink);
+
+        tr.appendChild(tdName);
+        tr.appendChild(tdMg);
+        tr.appendChild(tdPreis);
+        tr.appendChild(tdPreisMg);
+        tr.appendChild(tdAction);
+        tbody.appendChild(tr);
+      });
+
+      // Stärken / Schwächen
+      var staerkenEl = document.getElementById("staerken-list");
+      staerkenEl.textContent = "";
+      (PK.tx(vendor, "staerken") || []).forEach(function (t) {
+        var li = document.createElement("li");
+        li.textContent = t;
+        staerkenEl.appendChild(li);
+      });
+      var schwaechenEl = document.getElementById("schwaechen-list");
+      schwaechenEl.textContent = "";
+      (PK.tx(vendor, "schwaechen") || []).forEach(function (t) {
+        var li = document.createElement("li");
+        li.textContent = t;
+        schwaechenEl.appendChild(li);
+      });
+
+      // Zugehörige Chargen
+      var batches = Array.isArray(window.PK.batches) ? window.PK.batches : [];
+      var vendorBatches = batches.filter(function (b) { return b.vendorSlug === vendor.slug; });
+      var chargenTbody = document.getElementById("chargen-tbody");
+      chargenTbody.textContent = "";
+      var chargenEmptyEl = document.getElementById("chargen-empty");
+      if (!vendorBatches.length) {
+        chargenEmptyEl.hidden = false;
+      } else {
+        chargenEmptyEl.hidden = true;
+        vendorBatches.forEach(function (b) {
+          var peptide = PK.peptideBySlug(b.peptideSlug);
+          var tr = document.createElement("tr");
+
+          var tdCharge = document.createElement("td");
+          tdCharge.textContent = b.chargenNummer || "";
+
+          var tdPeptid = document.createElement("td");
+          tdPeptid.textContent = peptide ? peptide.name : (b.peptideSlug || "");
+
+          var tdDatum = document.createElement("td");
+          tdDatum.textContent = b.pruefdatum || "–";
+
+          var tdReinheit = document.createElement("td");
+          tdReinheit.textContent = typeof b.reinheit === "number" ? (PK.byNum(b.reinheit) + " %") : "–";
+
+          var tdLabor = document.createElement("td");
+          tdLabor.textContent = b.labor || "–";
+
+          var tdStatus = document.createElement("td");
+          var statusPill = document.createElement("span");
+          var statusOk = b.coaStatus === "verifiziert";
+          statusPill.className = "pill " + (statusOk ? "pill-ok" : (b.coaStatus === "fehlt" ? "pill-warn" : "pill-info"));
+          statusPill.textContent = PK.tEnum("coaStatus", b.coaStatus);
+          tdStatus.appendChild(statusPill);
+
+          tr.appendChild(tdCharge);
+          tr.appendChild(tdPeptid);
+          tr.appendChild(tdDatum);
+          tr.appendChild(tdReinheit);
+          tr.appendChild(tdLabor);
+          tr.appendChild(tdStatus);
+          chargenTbody.appendChild(tr);
+        });
+      }
+    }
+
+    render();
+    document.addEventListener("pk:langchange", render);
+  })();
+</script>
+</body>
+</html>

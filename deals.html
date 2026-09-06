@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="page.deals.title">Deals · PeptidKompass</title>
+<meta name="description" data-i18n="page.deals.metaDescription" content="Alle Rabattcodes der geprüften Peptid-Anbieter im Überblick. Code kopieren, beim Anbieter einlösen.">
+<link rel="canonical" href="https://peptidkompass.example/deals.html">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n="page.deals.ogTitle" content="Deals · PeptidKompass">
+<meta property="og:description" data-i18n="page.deals.ogDescription" content="Alle Rabattcodes im Überblick. Code kopieren, beim Anbieter einlösen.">
+<meta property="og:url" content="https://peptidkompass.example/deals.html">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/system.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PeptidKompass</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="deals.html" aria-current="page" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="deals.html" aria-current="page" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- SEITENTITEL + KURZINTRO -->
+  <section class="section container reveal">
+    <p class="eyebrow" data-i18n="page.deals.eyebrow">Rabattcodes</p>
+    <h1 class="h1" data-i18n="page.deals.h1">Alle Rabattcodes im Überblick</h1>
+    <p class="section-lead" data-i18n="page.deals.lead">Code kopieren, beim Anbieter einlösen.</p>
+  </section>
+
+  <!-- CODE-BOXEN-GRID -->
+  <section class="section container reveal">
+    <div class="grid-3" id="deals-grid" aria-live="polite"></div>
+    <p id="deals-empty" class="muted" hidden data-i18n="page.deals.emptyState">Aktuell sind keine Rabattcodes hinterlegt. Schau später wieder vorbei.</p>
+  </section>
+
+  <!-- HINWEIS-BLOCK: SO FUNKTIONIEREN DIE CODES -->
+  <section class="section-tight container-narrow reveal">
+    <div class="card section-tinted">
+      <p class="card-title" data-i18n="page.deals.howTitle">So funktionieren die Codes</p>
+      <p class="card-body" data-i18n="page.deals.howBody">Codes können jederzeit vom Anbieter geändert oder beendet werden. Wir aktualisieren die Demo-Daten regelmäßig, eine Garantie für Gültigkeit im Einzelfall geben wir nicht. Beim Anbieter selbst siehst du den aktuellen Stand vor dem Kauf.</p>
+    </div>
+    <p class="text-small muted" style="margin-top:var(--sp-2);" data-i18n="page.deals.affiliateHint">Links mit dem Hinweis "Anzeige" sind Affiliate-Links. Kaufst du darüber, erhalten wir unter Umständen eine Provision, für dich bleibt der Preis gleich.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="data/site.js"></script>
+<script src="data/vendors.js"></script>
+<script src="data/peptides.js"></script>
+<script src="data/batches.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="data/i18n/global.js"></script>
+<script src="data/i18n/deals.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+  // Seiten-Logik Deals: nutzt nur PK-Helfer aus assets/js/site.js.
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    // Pflicht-Reihenfolge: applyI18n()/initLangToggle() VOR den Seiten-Renderern
+    // (siehe assets/css/README.md "i18n: So tagst du eine Seite").
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
+    var deals = vendors.filter(function (v) { return v.rabatt && v.rabatt.prozent; });
+
+    var grid = document.getElementById("deals-grid");
+    var empty = document.getElementById("deals-empty");
+    if (!grid) return;
+
+    if (!deals.length) {
+      if (empty) empty.hidden = false;
+      return;
+    }
+
+    function render() {
+      grid.textContent = "";
+      deals.forEach(function (v) { grid.appendChild(buildCard(v)); });
+    }
+
+    function buildCard(v) {
+      var card = document.createElement("div");
+      card.className = "card";
+
+      var name = document.createElement("p");
+      name.className = "card-title";
+      name.textContent = v.name || "";
+      card.appendChild(name);
+
+      var percent = document.createElement("p");
+      percent.className = "h2";
+      percent.textContent = "-" + PK.byNum(v.rabatt.prozent) + "%";
+      card.appendChild(percent);
+
+      var box = document.createElement("div");
+      box.className = "code-box";
+      var code = document.createElement("code");
+      code.setAttribute("data-code", "");
+      code.textContent = v.rabatt.code || "";
+      var copyBtn = document.createElement("button");
+      copyBtn.className = "btn btn-secondary";
+      copyBtn.type = "button";
+      copyBtn.textContent = PK.t("page.deals.copyButton");
+      copyBtn.setAttribute("onclick", "PK.copyCode(this)");
+      box.appendChild(code);
+      box.appendChild(copyBtn);
+      card.appendChild(box);
+
+      var hint = document.createElement("p");
+      hint.className = "text-small muted";
+      hint.textContent = PK.t("page.deals.cardHint");
+      card.appendChild(hint);
+
+      var actions = document.createElement("div");
+      actions.className = "row-between";
+      actions.style.marginTop = "var(--sp-2)";
+
+      var profileLink = document.createElement("a");
+      profileLink.className = "btn-link";
+      profileLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
+      profileLink.textContent = PK.t("page.deals.profileLink");
+      actions.appendChild(profileLink);
+
+      var shopLink = document.createElement("a");
+      shopLink.className = "btn btn-secondary ext-link";
+      shopLink.href = PK.safeUrl(v.affiliateUrl);
+      shopLink.target = "_blank";
+      shopLink.rel = "sponsored nofollow";
+      shopLink.setAttribute("data-affiliate", "true");
+      shopLink.appendChild(document.createTextNode(PK.t("page.deals.actionVisitVendor")));
+      var badgeAd = document.createElement("span");
+      badgeAd.className = "badge-ad";
+      badgeAd.textContent = PK.tx(window.PK.site, "affiliateNote") || PK.t("global.badge.ad");
+      shopLink.appendChild(badgeAd);
+      actions.appendChild(shopLink);
+
+      card.appendChild(actions);
+      return card;
+    }
+
+    render();
+    document.addEventListener("pk:langchange", render);
+  })();
+</script>
+</body>
+</html>

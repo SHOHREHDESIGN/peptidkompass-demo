@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="page.rechner.title">Anmisch-Rechner · PeptidKompass</title>
+<meta name="description" data-i18n="page.rechner.metaDescription" content="Anmisch-Rechner für Peptide: mg Wirkstoff und ml bakteriostatisches Wasser eingeben, Konzentration in mg/ml und je 0,1 ml berechnen. Keine Dosierungsempfehlung.">
+<link rel="canonical" href="https://peptidkompass.example/rechner.html">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n="page.rechner.ogTitle" content="Anmisch-Rechner · PeptidKompass">
+<meta property="og:description" data-i18n="page.rechner.ogDescription" content="mg Wirkstoff und ml bakteriostatisches Wasser eingeben, Konzentration in mg/ml und je 0,1 ml berechnen.">
+<meta property="og:url" content="https://peptidkompass.example/rechner.html">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/system.css">
+<style>
+  /* rechner.html: Zusatz-CSS (max 10 Zeilen, siehe Report): Ergebnis-Kacheln
+     brauchen sichtbaren Rahmen und eine feste Mindesthöhe, damit "–" und ein
+     berechneter Wert nicht springen; keine Klasse dafür in system.css. */
+  #calc-result-mgml, #calc-result-01{ min-height:1.2em; }
+  .calc-field-label{ display:block; margin-bottom:6px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">PeptidKompass</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="rechner.html" aria-current="page" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="deals.html" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="rechner.html" aria-current="page" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="deals.html" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- SEITENTITEL + KURZINTRO -->
+  <section class="section container reveal">
+    <p class="eyebrow" data-i18n="page.rechner.eyebrow">Rechner</p>
+    <h1 class="h1" data-i18n="page.rechner.h1">Anmisch-Rechner</h1>
+    <p class="section-lead" data-i18n="page.rechner.lead">Rechnet mg und ml sauber um, mehr nicht.</p>
+    <p data-i18n="page.rechner.intro">Dieser Rechner berechnet ausschließlich eine rechnerische Konzentration aus deiner eigenen Eingabe. Er ist keine Dosierungsempfehlung und ersetzt keine fachliche Beratung.</p>
+  </section>
+
+  <!-- ANMISCH-RECHNER (AKTIV) -->
+  <section class="section section-tinted container reveal">
+    <div class="grid-2">
+      <div>
+        <label class="text-small muted calc-field-label" for="calc-mg" data-i18n="page.rechner.mgLabel">Menge Wirkstoff (mg)</label>
+        <div class="search-bar">
+          <input type="number" inputmode="decimal" step="any" id="calc-mg" placeholder="z. B. 5" aria-describedby="calc-hint" data-i18n-attr="placeholder:page.rechner.mgPlaceholder">
+        </div>
+      </div>
+      <div>
+        <label class="text-small muted calc-field-label" for="calc-ml" data-i18n="page.rechner.mlLabel">Bakteriostatisches Wasser (ml)</label>
+        <div class="search-bar">
+          <input type="number" inputmode="decimal" step="any" id="calc-ml" placeholder="z. B. 2" aria-describedby="calc-hint" data-i18n-attr="placeholder:page.rechner.mlPlaceholder">
+        </div>
+      </div>
+    </div>
+
+    <div class="row-between" style="margin-top:var(--sp-3);">
+      <button class="btn btn-primary" type="button" id="calc-btn" data-i18n="page.rechner.calcButton">Berechnen</button>
+      <button class="btn btn-secondary" type="button" id="calc-example" data-i18n="page.rechner.exampleButton">Beispiel 5 mg / 2 ml</button>
+    </div>
+
+    <p class="text-small muted" id="calc-hint" role="status" aria-live="polite" hidden></p>
+
+    <div class="stat-grid" style="margin-top:var(--sp-3);" aria-live="polite">
+      <div class="stat">
+        <div class="stat-value" id="calc-result-mgml">–</div>
+        <div class="stat-label" data-i18n="page.rechner.resultMgMlLabel">Konzentration (mg/ml)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="calc-result-01">–</div>
+        <div class="stat-label" data-i18n="page.rechner.result01Label">mg je 0,1 ml</div>
+      </div>
+    </div>
+
+    <p class="text-small muted" style="margin-top:var(--sp-3);" data-i18n="page.rechner.explainText">Der Anmisch-Rechner teilt die eingegebene Wirkstoffmenge in Milligramm durch das zugegebene Volumen an bakteriostatischem Wasser in Millilitern. Das Ergebnis zeigt, wie viel Wirkstoff rein rechnerisch in 0,1 ml der fertigen Lösung steckt, allein aus deinen beiden Eingaben. Beispiel: 5 mg Wirkstoff in 2 ml Wasser ergeben 0,25 mg je 0,1 ml.</p>
+  </section>
+
+  <!-- DOSIERUNGSRECHNER (PLATZHALTER, INAKTIV, Plan v2 Annahme 9 / Änderung G1) -->
+  <section class="section container reveal">
+    <div class="card">
+      <div class="row-between">
+        <p class="card-title" style="margin:0;" data-i18n="page.rechner.dosingTitle">Dosierungsrechner</p>
+        <span class="pill" data-i18n="page.rechner.dosingPill">In Vorbereitung</span>
+      </div>
+      <p class="card-body" style="margin-top:var(--sp-2);" data-i18n="page.rechner.dosingBody">Dieser Bereich ist noch nicht aktiv. Keine Dosierungsempfehlung, auch nach dem Start zeigt er nur Information, keine Anleitung.</p>
+    </div>
+  </section>
+
+  <!-- SICHERHEITSHINWEIS -->
+  <section class="section section-tinted container reveal">
+    <h2 class="section-title" data-i18n="page.rechner.safetyTitle">Wichtiger Hinweis</h2>
+    <p data-i18n="page.rechner.safetyBody">Alle Berechnungen auf dieser Seite sind rein rechnerisch. Sie sind keine medizinische Beratung und keine Empfehlung zur Anwendung am Menschen.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© PeptidKompass · Demo-Projekt</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="data/site.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="data/i18n/global.js"></script>
+<script src="data/i18n/rechner.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+  // Seiten-Logik Rechner: PK.mixCalc lebt hier (nicht in site.js), damit
+  // tests/selftest.html sie unabhängig prüfen kann (Auftrag Wave-2 W4).
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    // Pflicht-Reihenfolge: applyI18n()/initLangToggle() VOR den Seiten-Renderern
+    // (siehe assets/css/README.md "i18n: So tagst du eine Seite").
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    /**
+     * PK.mixCalc(mg, ml)
+     * Reine Rechenlogik: mg/ml = mg ÷ ml; je 0,1 ml = mg/ml × 0,1.
+     * Liefert bei ungültiger Eingabe (nicht endliche Zahl, <= 0) null.
+     */
+    PK.mixCalc = function (mg, ml) {
+      var m = Number(mg), v = Number(ml);
+      if (!isFinite(m) || !isFinite(v) || m <= 0 || v <= 0) return null;
+      var mgPerMl = m / v;
+      return { mgPerMl: mgPerMl, mgPer01Ml: mgPerMl * 0.1 };
+    };
+
+    var mgInput = document.getElementById("calc-mg");
+    var mlInput = document.getElementById("calc-ml");
+    var hintEl = document.getElementById("calc-hint");
+    var outMgMl = document.getElementById("calc-result-mgml");
+    var out01 = document.getElementById("calc-result-01");
+
+    function parseLocal(str) {
+      if (str === "" || str == null) return NaN;
+      return parseFloat(String(str).replace(",", "."));
+    }
+
+    function render() {
+      var mgRaw = mgInput.value, mlRaw = mlInput.value;
+
+      if (mgRaw === "" && mlRaw === "") {
+        hintEl.hidden = true;
+        outMgMl.textContent = "–";
+        out01.textContent = "–";
+        return;
+      }
+
+      var result = PK.mixCalc(parseLocal(mgRaw), parseLocal(mlRaw));
+      if (!result) {
+        hintEl.hidden = false;
+        hintEl.textContent = PK.t("page.rechner.hintInvalid");
+        outMgMl.textContent = "–";
+        out01.textContent = "–";
+        return;
+      }
+
+      hintEl.hidden = true;
+      outMgMl.textContent = PK.byNum(result.mgPerMl) + " " + PK.t("page.rechner.unitMgMl");
+      out01.textContent = PK.byNum(result.mgPer01Ml) + " " + PK.t("page.rechner.unitMg");
+    }
+
+    mgInput.addEventListener("input", render);
+    mlInput.addEventListener("input", render);
+    document.getElementById("calc-btn").addEventListener("click", render);
+    document.getElementById("calc-example").addEventListener("click", function () {
+      mgInput.value = "5";
+      mlInput.value = "2";
+      render();
+    });
+
+    render();
+    // Sprachwechsel: Ergebnis-Anzeige neu rendern (Zahlenformat + Einheiten),
+    // Eingabewerte bleiben erhalten (Pflicht-Muster, siehe README).
+    document.addEventListener("pk:langchange", render);
+  })();
+</script>
+</body>
+</html>
