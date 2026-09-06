@@ -26,6 +26,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.demoPill": "Demo-Daten",
     "page.anbieter-detail.ctaZumAnbieter": "Zum Anbieter",
     "page.anbieter-detail.subheadTemplate": "{land} · Score {score}/100",
+    "page.anbieter-detail.bannerAlt": "Wirkstoff-Visual: {name}",
 
     "page.anbieter-detail.scoreEyebrow": "So bewerten wir",
     "page.anbieter-detail.scoreTitle": "Score im Detail",
@@ -98,6 +99,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.demoPill": "Demo data",
     "page.anbieter-detail.ctaZumAnbieter": "Visit vendor",
     "page.anbieter-detail.subheadTemplate": "{land} · Score {score}/100",
+    "page.anbieter-detail.bannerAlt": "Peptide visual: {name}",
 
     "page.anbieter-detail.scoreEyebrow": "How we score",
     "page.anbieter-detail.scoreTitle": "Score breakdown",

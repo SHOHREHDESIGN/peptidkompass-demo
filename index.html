@@ -74,9 +74,12 @@
       <input type="search" placeholder="Anbieter oder Wirkstoff suchen" aria-label="Suche" data-i18n-attr="placeholder:page.index.searchPlaceholder,aria-label:page.index.searchAriaLabel">
       <button class="btn btn-primary" type="submit" data-i18n="page.index.searchButton">Suchen</button>
     </form>
-    <picture class="hero-media">
-      <img src="assets/img/hero.jpg" alt="" loading="eager" onerror="this.style.display='none'">
-    </picture>
+    <div class="hero-media">
+      <video class="hero-media-video" data-hero-video autoplay muted loop playsinline
+             preload="metadata" poster="assets/video/hero_poster.jpg" data-fallback="assets/img/hero.jpg">
+        <source src="assets/video/hero_loop.mp4" type="video/mp4">
+      </video>
+    </div>
   </section>
 
   <!-- 3 KENNZAHLEN -->
@@ -97,59 +100,88 @@
 
   <!-- SCORE-ERKLÄRUNG -->
   <section class="section section-tinted container reveal">
-    <p class="eyebrow" data-i18n="page.index.scoreEyebrow">So bewerten wir</p>
-    <h2 class="section-title" data-i18n="page.index.scoreTitle">Wie wir bewerten</h2>
-    <p class="section-lead" data-i18n="page.index.scoreLead">Fünf Kriterien, transparent gewichtet.</p>
-    <div class="grid-3">
-      <div class="card"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaLaborTitle">Labor</p><p class="card-body" data-i18n="page.index.criteriaLaborBody">Unabhängige Prüfung, CoA-Qualität</p></div>
-      <div class="card"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaRechtTitle">Rechtsrahmen</p><p class="card-body" data-i18n="page.index.criteriaRechtBody">Altersgate, Impressum, RUO-Kennzeichnung</p></div>
-      <div class="card"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaLieferungTitle">Lieferung</p><p class="card-body" data-i18n="page.index.criteriaLieferungBody">Lieferzeit, Länder, Zuverlässigkeit</p></div>
-      <div class="card"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaSortimentTitle">Sortiment</p><p class="card-body" data-i18n="page.index.criteriaSortimentBody">Breite und Tiefe des Angebots</p></div>
-      <div class="card"><p class="card-eyebrow">20 %</p><p class="card-title" data-i18n="page.index.criteriaPreisTitle">Preis/mg</p><p class="card-body" data-i18n="page.index.criteriaPreisBody">Durchschnittspreis über alle Produkte</p></div>
+    <div class="split">
+      <div class="split-text">
+        <p class="eyebrow" data-i18n="page.index.scoreEyebrow">So bewerten wir</p>
+        <h2 class="section-title" data-i18n="page.index.scoreTitle">Wie wir bewerten</h2>
+        <p class="section-lead" data-i18n="page.index.scoreLead">Fünf Kriterien, transparent gewichtet.</p>
+      </div>
+      <div class="split-visual visual visual-kenburns">
+        <img src="assets/img/sec_score.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:var(--sp-4);">
+      <div class="card tilt"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaLaborTitle">Labor</p><p class="card-body" data-i18n="page.index.criteriaLaborBody">Unabhängige Prüfung, CoA-Qualität</p></div>
+      <div class="card tilt"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaRechtTitle">Rechtsrahmen</p><p class="card-body" data-i18n="page.index.criteriaRechtBody">Altersgate, Impressum, RUO-Kennzeichnung</p></div>
+      <div class="card tilt"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaLieferungTitle">Lieferung</p><p class="card-body" data-i18n="page.index.criteriaLieferungBody">Lieferzeit, Länder, Zuverlässigkeit</p></div>
+      <div class="card tilt"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaSortimentTitle">Sortiment</p><p class="card-body" data-i18n="page.index.criteriaSortimentBody">Breite und Tiefe des Angebots</p></div>
+      <div class="card tilt"><p class="card-eyebrow">20 %</p><p class="card-title" data-i18n="page.index.criteriaPreisTitle">Preis/mg</p><p class="card-body" data-i18n="page.index.criteriaPreisBody">Durchschnittspreis über alle Produkte</p></div>
     </div>
     <p class="text-small muted" style="margin-top:var(--sp-2);"><a class="btn-link" href="methodik.html" data-i18n="page.index.methodikLink">Ganze Methodik lesen</a></p>
   </section>
 
   <!-- ANBIETER-GRID TOP 4 -->
   <section class="section container reveal">
-    <div class="row-between">
-      <div>
-        <p class="eyebrow" data-i18n="page.index.topEyebrow">Top bewertet</p>
-        <h2 class="section-title" data-i18n="page.index.topTitle">Top-Anbieter im Vergleich</h2>
+    <div class="split split-reverse">
+      <div class="split-visual visual visual-parallax">
+        <img src="assets/img/sec_vendors.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <a class="btn-link" href="anbieter/index.html" data-i18n="page.index.allVendorsLink">Alle Anbieter ansehen</a>
+      <div class="split-text row-between">
+        <div>
+          <p class="eyebrow" data-i18n="page.index.topEyebrow">Top bewertet</p>
+          <h2 class="section-title" data-i18n="page.index.topTitle">Top-Anbieter im Vergleich</h2>
+        </div>
+        <a class="btn-link" href="anbieter/index.html" data-i18n="page.index.allVendorsLink">Alle Anbieter ansehen</a>
+      </div>
     </div>
-    <div class="grid-4" id="vendor-grid" aria-live="polite"></div>
+    <div class="grid-4" id="vendor-grid" aria-live="polite" style="margin-top:var(--sp-4);"></div>
   </section>
 
   <!-- WIRKSTOFF-VORSCHAU -->
   <section class="section section-tinted container reveal">
-    <p class="eyebrow" data-i18n="page.index.peptideEyebrow">Wirkstoff-Wissen</p>
-    <h2 class="section-title" data-i18n="page.index.peptideTitle">Wirkstoffe verstehen</h2>
-    <div class="grid-4" id="peptide-grid"></div>
+    <div class="split">
+      <div class="split-text">
+        <p class="eyebrow" data-i18n="page.index.peptideEyebrow">Wirkstoff-Wissen</p>
+        <h2 class="section-title" data-i18n="page.index.peptideTitle">Wirkstoffe verstehen</h2>
+      </div>
+      <div class="split-visual visual visual-parallax">
+        <img src="assets/img/sec_peptides.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <div class="grid-4" id="peptide-grid" style="margin-top:var(--sp-4);"></div>
     <p style="margin-top:var(--sp-3);"><a class="btn-link" href="wirkstoffe/index.html" data-i18n="page.index.allPeptidesLink">Alle Wirkstoffe ansehen</a></p>
   </section>
 
   <!-- RECHNER-TEASER -->
   <section class="section container reveal">
-    <div class="card row-between">
-      <div>
-        <p class="card-eyebrow" data-i18n="page.index.calcEyebrow">Anmisch-Rechner</p>
-        <p class="card-title" data-i18n="page.index.calcTitle">Rechnet mg und ml sauber um, ganz ohne Dosierungsempfehlung.</p>
-        <p class="card-body" data-i18n="page.index.calcBody">Reine Rechenhilfe, keine Dosierungsempfehlung.</p>
+    <div class="split split-reverse">
+      <div class="split-visual visual visual-kenburns">
+        <img src="assets/img/sec_calc.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
       </div>
-      <a class="btn btn-secondary" href="rechner.html" data-i18n="page.index.calcCta">Zum Rechner</a>
+      <div class="split-text row-between">
+        <div>
+          <p class="eyebrow" data-i18n="page.index.calcEyebrow">Anmisch-Rechner</p>
+          <h2 class="section-title" data-i18n="page.index.calcTitle">Rechnet mg und ml sauber um, ganz ohne Dosierungsempfehlung.</h2>
+          <p class="text-small muted" data-i18n="page.index.calcBody">Reine Rechenhilfe, keine Dosierungsempfehlung.</p>
+        </div>
+        <a class="btn btn-secondary" href="rechner.html" data-i18n="page.index.calcCta">Zum Rechner</a>
+      </div>
     </div>
   </section>
 
   <!-- CHARGE-PRÜFEN-BLOCK -->
   <section class="section container reveal">
-    <div class="card section-tinted row-between">
-      <div>
-        <p class="card-eyebrow" data-i18n="page.index.chargeEyebrow">Vertrauen prüfen</p>
-        <p class="card-title" data-i18n="page.index.chargeTitle">Ist deine Charge geprüft</p>
+    <div class="split">
+      <div class="split-text row-between">
+        <div>
+          <p class="eyebrow" data-i18n="page.index.chargeEyebrow">Vertrauen prüfen</p>
+          <h2 class="section-title" data-i18n="page.index.chargeTitle">Ist deine Charge geprüft</h2>
+        </div>
+        <a class="btn btn-primary" href="charge-pruefen.html" data-i18n="page.index.chargeCta">Charge prüfen</a>
       </div>
-      <a class="btn btn-primary" href="charge-pruefen.html" data-i18n="page.index.chargeCta">Charge prüfen</a>
+      <div class="split-visual visual visual-parallax">
+        <img src="assets/img/sec_batch.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+      </div>
     </div>
   </section>
 
@@ -214,6 +246,9 @@
     PK.initReveal();
     PK.initDemoBanner();
     PK.footerDisclaimer();
+    PK.initHeroVideo();
+    PK.initParallax();
+    PK.initTilt();
 
     var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
     var peptides = Array.isArray(window.PK.peptides) ? window.PK.peptides : [];
@@ -258,10 +293,16 @@
         if (ranked.length) featuredEl.appendChild(PK.renderVendorCard(ranked[0], ""));
       }
 
-      // Anbieter-Grid Top 4
+      // Anbieter-Grid Top 4 (Karten bekommen zusätzlich .tilt fürs Apple-
+      // Produktseiten-Gefühl auf der Startseite; PK.renderVendorCard bleibt
+      // dafür unangetastet, andere Seiten nutzen es ohne Tilt-Effekt weiter)
       if (gridEl) {
         gridEl.textContent = "";
-        ranked.slice(0, 4).forEach(function (v) { gridEl.appendChild(PK.renderVendorCard(v, "")); });
+        ranked.slice(0, 4).forEach(function (v) {
+          var vCard = PK.renderVendorCard(v, "");
+          vCard.classList.add("tilt");
+          gridEl.appendChild(vCard);
+        });
       }
 
       // Wirkstoff-Vorschau (erste 4 Einträge)
@@ -269,7 +310,7 @@
         peptideGrid.textContent = "";
         peptides.slice(0, 4).forEach(function (p) {
           var a = document.createElement("a");
-          a.className = "card";
+          a.className = "card tilt";
           a.href = "wirkstoffe/detail.html?slug=" + encodeURIComponent(p.slug || "");
           var eyebrow = document.createElement("p");
           eyebrow.className = "card-eyebrow";
@@ -286,6 +327,10 @@
           peptideGrid.appendChild(a);
         });
       }
+
+      // Grid-Karten oben sind gerade neu gebaut (leeren + appendChild) -
+      // Tilt erneut binden, PK.initTilt() ist idempotent (data-tilt-bound).
+      PK.initTilt();
     }
 
     render();

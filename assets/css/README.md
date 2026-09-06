@@ -1,9 +1,9 @@
 # PeptidKompass · Komponenten-Katalog
 
-Ein System für alle 11 Seitentypen. **Keine neuen CSS-Regeln erfinden** — jede
+Ein System für alle 11 Seitentypen. **Keine neuen CSS-Regeln erfinden** : jede
 Anforderung, die hier nicht passt, geht zurück an den web-designer statt sie
 lokal zu lösen. Klassen kombinieren, nicht duplizieren. Tokens (Farbe/Type/
-Spacing) stehen in `assets/css/system.css` Abschnitt 1 — dort ändern, nie
+Spacing) stehen in `assets/css/system.css` Abschnitt 1 : dort ändern, nie
 Werte hart in einer Seite eintippen.
 
 Format je Komponente: Klasse(n) → Zweck → Markup-Snippet.
@@ -19,7 +19,7 @@ Format je Komponente: Klasse(n) → Zweck → Markup-Snippet.
 | `.section` | Vertikaler Sektionsabstand (96px, mobil 64px), Trennlinie zur vorherigen Sektion |
 | `.section-tight` | Kompakter Sektionsabstand (48px), z. B. Kennzahlen direkt unter Hero |
 | `.section-tinted` | Sektion mit `--surface`-Hintergrund + Card-Radius (alternierende Sektionen) |
-| `.row-between` | Flex-Zeile, space-between, wrap — Titel+Link, Card mit Text+Button |
+| `.row-between` | Flex-Zeile, space-between, wrap : Titel+Link, Card mit Text+Button |
 | `.grid-2` / `.grid-3` / `.grid-4` | Grid mit 2/3/4 Spalten, bricht automatisch auf Tablet/Mobile (siehe Media Queries) |
 
 ```html
@@ -35,10 +35,10 @@ Format je Komponente: Klasse(n) → Zweck → Markup-Snippet.
 ## Typografie
 
 `.display` `.h1` `.h2` `.h3` `.text-small` `.text-caption` `.muted` `.eyebrow`
-— siehe Type-Scale in system.css. Überschriften (`h1`-`h4`) haben Basis-Styles,
+: siehe Type-Scale in system.css. Überschriften (`h1`-`h4`) haben Basis-Styles,
 Utility-Klassen für abweichende Größen an anderen Elementen (z. B. `<p class="h2">`).
 
-## .nav — Glas-Header + Mobile-Menü
+## .nav : Glas-Header + Mobile-Menü
 
 ```html
 <header class="nav">
@@ -84,7 +84,7 @@ Auf Unterseiten (`anbieter/`, `wirkstoffe/`) Hrefs mit `../` präfixen, CSS/JS-P
 </div>
 <a class="card" href="…">…gleiche Struktur, ganze Karte klickbar…</a>
 ```
-Für Anbieter-Karten **nicht** manuell bauen — `PK.renderVendorCard(vendor, basePath)` nutzen
+Für Anbieter-Karten **nicht** manuell bauen : `PK.renderVendorCard(vendor, basePath)` nutzen
 (baut `.vendor-card` inkl. Score, Pills, internem Detail-Link und optionalem externem
 Shop-Link mit `.badge-ad` + `rel="sponsored nofollow"` + `target="_blank"`).
 
@@ -148,13 +148,13 @@ Jeder externe/affiliate Link bekommt **zwingend** `.badge-ad` + `rel="sponsored 
   Zum Shop<span class="badge-ad">Anzeige</span>
 </a>
 ```
-Href-Werte niemals hart eintippen aus Vendor-Daten — immer durch `PK.safeUrl(vendor.affiliateUrl)` schicken.
+Href-Werte niemals hart eintippen aus Vendor-Daten : immer durch `PK.safeUrl(vendor.affiliateUrl)` schicken.
 
 ## .demo-banner
 
 ```html
 <div class="demo-banner" data-demo-banner hidden>
-  <span data-demo-banner-text>Demo-Daten — …</span>
+  <span data-demo-banner-text>Demo-Daten : …</span>
 </div>
 ```
 `PK.initDemoBanner()` zeigt/versteckt und befüllt den Text aus `window.PK.site.demo`.
@@ -182,7 +182,113 @@ Reines HTML (`details`/`summary`), kein JS nötig. `+`-Icon dreht sich per CSS b
 `PK.footerDisclaimer()` überschreibt den Fallback-Text mit `window.PK.site.disclaimer`.
 Auf **jeder** Seite pflichtig (Annahme 10, ia.md Abschnitt 2).
 
-## .reveal — Scroll-Reveal
+## .visual / .split / .tilt / .hero-media (Video) : Bildflächen & Motion
+
+Apple-Produktseiten-Gefühl: je Sektion ein großes ruhiges Visual, Bewegung
+reagiert auf Scroll, nichts blinkt oder pulsiert. Bilder/Video liefert der
+Grafikdesigner unter den in `01_ux/`/Auftrag genannten Pfaden
+(`assets/img/sec_*.jpg`, `assets/img/mol_<slug>.jpg`,
+`assets/video/hero_loop.mp4` + `hero_poster.jpg`, alle 3:2 außer Banner);
+solange sie fehlen, zeigt jede Fläche ihren CSS-Gradient-Fallback : kein
+Layout-Sprung, weil die Größe über `aspect-ratio` am Container steht.
+
+```html
+<div class="visual">
+  <img src="assets/img/sec_score.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+</div>
+```
+Modifier: `.visual-parallax` (Bild bewegt sich beim Scrollen, ±40px, via
+`PK.initParallax()`) · `.visual-kenburns` (Zoom 1.0→1.08/12s, startet mit
+der umgebenden `.reveal`-Sektion, kein eigener JS-Beobachter nötig) ·
+`.visual-banner` (schmales Breitformat, Anbieter-Detail-Kopf) ·
+`.visual-thumb` (kleines Karten-Thumbnail, Wirkstoffe-Übersicht).
+
+`will-change:transform` auf `.visual-parallax img` steht NICHT dauerhaft im
+CSS : `PK.initParallax()` toggelt `.is-parallax-active` auf den Container,
+solange er per IntersectionObserver als sichtbar geführt wird (system.css
+Abschnitt 18); außerhalb des Viewports bleibt kein Compositing-Layer aktiv.
+
+Dark Mode: `.visual` bekommt unter `prefers-color-scheme:dark` (und
+`[data-theme="dark"]`, falls eine Seite das Attribut später setzt) einen
+dezenten Innen-Ring (`box-shadow:0 0 0 1px rgba(255,255,255,.08) inset`) :
+sonst schneiden helle Fotos hart auf reinem Schwarz (`body{background:#000}`)
+ohne jede weiche Kante. Radius/Layout bleiben unverändert, Light Mode ist
+davon nicht betroffen.
+
+`.hero-media` nutzt `border-radius:24px` (nicht `--radius-card`/20px) :
+folgt damit dem `.visual`-Bildsystem statt dem Card-Radius.
+
+Above-the-fold-Banner (z. B. `.visual-banner` im ersten Viewport einer
+Detailseite) bekommen `loading="eager" fetchpriority="high"` statt
+`loading="lazy"` : LCP-Bild, kein Grund zum verzögerten Laden. Ein
+anbieterspezifisches Banner-Bild (statt eines generischen Sektionsbilds)
+wird aus dem Datensatz abgeleitet (z. B. `mol_<slug>.jpg` des ersten
+Produkts) und braucht dafür einen datengetriebenen `alt`-Text über die
+bestehende i18n-Konvention (`{name}`-Platzhalter, DE+EN) : kein
+hartkodiertes generisches Bild mehr auf einer Template-Seite.
+
+```html
+<section class="section container reveal">
+  <div class="split split-reverse">
+    <div class="split-visual visual visual-parallax">
+      <img src="assets/img/sec_calc.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+    </div>
+    <div class="split-text row-between">
+      <div>…Eyebrow + Titel…</div>
+      <a class="btn btn-secondary" href="…">…CTA…</a>
+    </div>
+  </div>
+</section>
+```
+`.split` = Text + Visual nebeneinander, mobil gestapelt (≤900px).
+`.split-reverse` tauscht die Spaltenreihenfolge (Visual zuerst) : Sektionen
+abwechselnd normal/reverse anlegen, das ist der Apple-Rhythmus.
+
+Die Textseite ist IMMER `.split-text` : kein `.card`, keine eigene Fläche/
+kein eigenes Padding, nur der Layout-Slot. Führt die Textseite eine CTA
+(Link/Button danaben), kommt zusätzlich `.row-between` dazu (`.split-text
+row-between`), sonst bleibt `.split-text` allein. So sieht das Bild/Text-
+Rahmen-Pairing über alle `.split`-Sektionen einer Seite gleich aus : eine
+Sektion, die versehentlich `.card` bekommt, bricht diese Konsistenz sofort
+sichtbar aus dem Rhythmus.
+
+Mobil (≤900px): `.split-reverse .split-visual{ order:1; }` : Text steht
+IMMER vor dem Bild, unabhängig von der DOM-Reihenfolge (bei `.split-reverse`
+steht das Bild im Markup zuerst). Nie `order:0` setzen, das kehrt die reine
+DOM-Reihenfolge nur zurück und reproduziert den Bild-vor-Text-Bug.
+
+`.tilt` auf eine `.card`/`.vendor-card` setzen für einen dezenten
+Hover-Kipp-Effekt (max. 4°, 6px Lift). `PK.initTilt()` einmal pro Seite
+aufrufen : aktiviert sich nur bei `(hover:hover) and (pointer:fine)`, macht
+also auf Touch nichts.
+
+`.hero-media` trägt jetzt wahlweise ein `<video>` statt `<img>`:
+```html
+<div class="hero-media">
+  <video class="hero-media-video" data-hero-video autoplay muted loop playsinline
+         preload="metadata" poster="assets/video/hero_poster.jpg"
+         data-fallback="assets/img/hero.jpg">
+    <source src="assets/video/hero_loop.mp4" type="video/mp4">
+  </video>
+</div>
+```
+`PK.initHeroVideo()` aufrufen: ersetzt das Video bei
+`prefers-reduced-motion` oder fehlendem `hero_loop.mp4` durch ein
+statisches `<img>` (`data-fallback`), prüft das Poster einzeln nach,
+pausiert das Video, sobald es aus dem Viewport scrollt, und spielt es bei
+JEDEM Wiedereintritt erneut ab (`.play()`-Promise-Fehler abgefangen, kein
+Fehlerzustand). Zusätzlich ein `visibilitychange`-Listener: kommt der Tab
+aus dem Hintergrund zurück, während das Video noch im Viewport steht, wird
+erneut `.play()` versucht (Browser pausieren Video oft beim Tab-Wechsel,
+unabhängig vom Scroll-Zustand).
+
+Init-Reihenfolge (ergänzt die Pflicht-Reihenfolge weiter unten):
+`PK.initReveal()` **vor** `PK.initParallax()`/`PK.initTilt()`/
+`PK.initHeroVideo()` : Reihenfolge unter den dreien selbst egal, sie sind
+unabhängig. Alle drei sind No-Ops, wenn ihre Zielklasse auf der Seite
+nicht vorkommt.
+
+## .reveal : Scroll-Reveal
 
 Klasse `.reveal` auf jede Sektion, die beim Scrollen einblenden soll, plus
 `PK.initReveal()` einmal pro Seite aufrufen. Respektiert `prefers-reduced-motion`
@@ -242,7 +348,7 @@ keine Ausrufezeichen, "Research use only" statt Heilversprechen.
 (function () {
   if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
 
-  // ZUERST: applyI18n()/initLangToggle() — vor allen Seiten-Renderern.
+  // ZUERST: applyI18n()/initLangToggle() : vor allen Seiten-Renderern.
   PK.applyI18n();
   PK.initLangToggle();
 
@@ -252,7 +358,7 @@ keine Ausrufezeichen, "Research use only" statt Heilversprechen.
   PK.footerDisclaimer();
 
   function render() {
-    // hier: dynamische Inhalte bauen — PK.tx() für Freitext-Datenfelder,
+    // hier: dynamische Inhalte bauen : PK.tx() für Freitext-Datenfelder,
     // PK.tEnum() für Enum-Werte, PK.t() für UI-Strings, PK.byNum() für Zahlen.
   }
 
@@ -262,7 +368,7 @@ keine Ausrufezeichen, "Research use only" statt Heilversprechen.
 ```
 Jede Seite mit dynamischem Inhalt (Anbieter-/Wirkstoff-Listen, Tabellen,
 Rechner-Ausgabe) MUSS ihre Render-Logik in eine benannte Funktion packen und
-auf `pk:langchange` erneut aufrufen — sonst bleibt der Inhalt beim
+auf `pk:langchange` erneut aufrufen : sonst bleibt der Inhalt beim
 Sprachwechsel in der alten Sprache stehen.
 
 ### 5. Datenfelder übersetzen: `PK.tx(obj, feld)`
@@ -292,27 +398,27 @@ Enum-Rohwerte aus `data/SCHEMA.md` werden NIE direkt angezeigt, sondern immer
 
 ### 7. Sprachumschalter
 
-Kein Markup nötig — `PK.initLangToggle()` (Teil von Schritt 4) injiziert die
+Kein Markup nötig : `PK.initLangToggle()` (Teil von Schritt 4) injiziert die
 `.lang-toggle`-Pille automatisch in jede `.nav` (Desktop, ab 1024px) und jede
 `.nav-menu` (Mobile-Vollbild). CSS-Klassen `.lang-toggle` /
 `.lang-toggle button[aria-pressed="true"]` liegen in `system.css` (Abschnitt
-"Sprachumschalter", direkt nach `.nav`) — nichts davon lokal duplizieren.
+"Sprachumschalter", direkt nach `.nav`) : nichts davon lokal duplizieren.
 
 ### 8. Zahlenformat
 
 `PK.byNum()` schaltet automatisch zwischen `de-DE` und `en-US` (Tausender-/
-Dezimaltrennzeichen) je nach `PK.lang` — nie `Intl.NumberFormat` selbst
+Dezimaltrennzeichen) je nach `PK.lang` : nie `Intl.NumberFormat` selbst
 aufrufen, immer `PK.byNum()`.
 
 ## Barrierefreiheit / Qualitäts-Checkliste je Seite
 
-1. `:focus-visible` kommt automatisch — keine eigenen `outline:none` setzen.
+1. `:focus-visible` kommt automatisch : keine eigenen `outline:none` setzen.
 2. Jeder externe Link: `.badge-ad` + `rel="sponsored nofollow"` + `target="_blank"` + `data-affiliate="true"`.
 3. `data-footer-disclaimer` im Footer nicht vergessen.
 4. Bilder/Icons ohne Bedeutung: `alt=""`.
 5. Datentexte (Vendor-/Peptide-Felder) immer über `textContent`/DOM-API einsetzen, nie `innerHTML`.
 6. Neue Seite? Erst hier + `data/SCHEMA.md` + `01_ux/ia.md` (Sektionsreihenfolge) prüfen, bevor etwas Neues gebaut wird.
-7. Jede sichtbare Zeichenkette braucht `data-i18n`/`data-i18n-attr` + einen Eintrag in `data/i18n/<seite>.js` (DE UND EN) — siehe Abschnitt "i18n: So tagst du eine Seite" oben.
+7. Jede sichtbare Zeichenkette braucht `data-i18n`/`data-i18n-attr` + einen Eintrag in `data/i18n/<seite>.js` (DE UND EN) : siehe Abschnitt "i18n: So tagst du eine Seite" oben.
 
 ### Sprache per URL
 `?lang=de` oder `?lang=en` an jede Seite anhängen: setzt die Sprache, speichert sie in localStorage und gewinnt über gespeicherte Wahl und Browsersprache. Für teilbare Links, Screenshots und Tests.

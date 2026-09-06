@@ -76,6 +76,9 @@
     <!-- BREADCRUMB + KOPFBEREICH -->
     <section class="section-tight container reveal">
       <p class="text-small" style="margin:0 0 var(--sp-3);"><a class="text-small muted" href="index.html" data-i18n="page.anbieter-detail.breadcrumb">← Zurück zu Anbieter</a></p>
+      <div class="visual visual-banner visual-parallax" style="margin-bottom:var(--sp-4);">
+        <img id="vendor-banner-img" src="../assets/img/sec_vendors.jpg" alt="" loading="eager" fetchpriority="high" onerror="this.style.display='none'">
+      </div>
       <div class="row-between" style="align-items:flex-start;">
         <div>
           <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:var(--sp-2);">
@@ -236,6 +239,7 @@
     PK.initReveal();
     PK.initDemoBanner();
     PK.footerDisclaimer();
+    PK.initParallax();
 
     var slug = new URLSearchParams(location.search).get("slug");
     var vendor = slug ? PK.vendorBySlug(slug) : null;
@@ -268,6 +272,25 @@
       if (ogTitleEl) ogTitleEl.setAttribute("content", vendor.name + " · PeptidKompass");
       var descEl = document.getElementById("page-description");
       if (descEl) descEl.setAttribute("content", PK.tx(vendor, "kurz") + " Score " + gesamt + "/100.");
+
+      // Banner-Bild: mol_<slug> des ersten Produkts des Anbieters statt des
+      // generischen sec_vendors.jpg-Grids (Fix-Runde 2, Befund 4/Punkt 2).
+      // Fallback bleibt sec_vendors.jpg, wenn der Anbieter kein Produkt führt.
+      var bannerImg = document.getElementById("vendor-banner-img");
+      var ersteProdukt = (vendor.produkte || [])[0];
+      var bannerPeptide = ersteProdukt ? PK.peptideBySlug(ersteProdukt.peptideSlug) : null;
+      if (bannerPeptide) {
+        bannerImg.src = "../assets/img/mol_" + bannerPeptide.slug + ".jpg";
+        bannerImg.alt = PK.t("page.anbieter-detail.bannerAlt", { name: bannerPeptide.name });
+      } else {
+        bannerImg.src = "../assets/img/sec_vendors.jpg";
+        bannerImg.alt = "";
+      }
+      // object-position dezent je Anbieter variieren (40/50/60%), nach Index
+      // im vendors-Array : reine Bildausschnitt-Varianz, kein Layout-Einfluss.
+      var vendorIdx = (window.PK.vendors || []).indexOf(vendor);
+      var bannerPositions = ["40%", "50%", "60%"];
+      bannerImg.style.objectPosition = bannerPositions[((vendorIdx % bannerPositions.length) + bannerPositions.length) % bannerPositions.length];
 
       // Kopfbereich
       document.getElementById("vendor-land-pill").textContent = PK.tEnum("land", vendor.land) || "";

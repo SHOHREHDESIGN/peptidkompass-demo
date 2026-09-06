@@ -155,8 +155,18 @@
 
     function renderCard(p) {
       var a = document.createElement("a");
-      a.className = "card";
+      a.className = "card tilt";
       a.href = "detail.html?slug=" + encodeURIComponent(p.slug || "");
+
+      var thumb = document.createElement("div");
+      thumb.className = "visual visual-thumb";
+      var thumbImg = document.createElement("img");
+      thumbImg.src = "../assets/img/mol_" + encodeURIComponent(p.slug || "") + ".jpg";
+      thumbImg.alt = "";
+      thumbImg.loading = "lazy";
+      thumbImg.onerror = function () { this.style.display = "none"; };
+      thumb.appendChild(thumbImg);
+      a.appendChild(thumb);
 
       var pillWrap = document.createElement("div");
       var catPill = document.createElement("span");
@@ -217,6 +227,10 @@
         list.forEach(function (p) { gridEl.appendChild(renderCard(p)); });
         if (emptyEl) emptyEl.hidden = list.length > 0;
       }
+
+      // Karten sind gerade neu gebaut (Sprachwechsel oder Kategorie-Filter) -
+      // Tilt erneut binden, PK.initTilt() ist idempotent (data-tilt-bound).
+      PK.initTilt();
     }
 
     chipButtons.forEach(function (btn) {

@@ -3,7 +3,7 @@
    ============================================================================
    Grundlage: _gate/PLAN_v2.md (Annahmen 5-8, 17-19) · 01_ux/ia.md · data/SCHEMA.md
    Ziel: EIN System für Startseite + 10 Unterseiten. Kein Worker erfindet neue
-   CSS-Regeln — jede Erweiterung läuft über die hier definierten Komponenten.
+   CSS-Regeln : jede Erweiterung läuft über die hier definierten Komponenten.
    Siehe assets/css/README.md für Markup-Snippets je Komponente.
 
    INHALTSVERZEICHNIS
@@ -12,26 +12,29 @@
    2.  Reset & Grundlagen (Fokus-Stile, Barrierefreiheit, Container)
    3.  Layout-Helfer (.section, .grid-2/3/4, .container/.container-narrow)
    4.  Typografie-Klassen (.eyebrow, .lead, .muted, Headline-Utilities)
-   5.  .nav          — Glas-Sticky-Header + Mobile-Vollbild-Menü (.nav-menu)
-   6.  .hero         — Startseiten-/Seiten-Hero
-   7.  .card / .vendor-card — Karten-System
+   5.  .nav          : Glas-Sticky-Header + Mobile-Vollbild-Menü (.nav-menu)
+   6.  .hero         : Startseiten-/Seiten-Hero
+   7.  .card / .vendor-card : Karten-System
    8.  .pill (+ Varianten)
-   9.  .score-bar / .score-ring — Score-Visualisierung
-   10. .code-box     — Rabattcode mit Copy-Button
-   11. .table        — sortierbare Tabelle, sticky Head, Mobile-Scroll
-   12. .btn (+ Varianten) / .badge-ad — Buttons + Pflicht-Werbekennzeichnung
-   13. .demo-banner  — Hinweisleiste „Demo-Daten"
-   14. .faq          — details/summary-Akkordeon
-   15. .footer        — Trust-Gruppe + Disclaimer
-   16. .reveal        — Scroll-Reveal (respektiert prefers-reduced-motion)
-   17. Stat-Kennzahlen (.stat-grid/.stat) — für Start-Sektion „3 Kennzahlen"
+   9.  .score-bar / .score-ring : Score-Visualisierung
+   10. .code-box     : Rabattcode mit Copy-Button
+   11. .table        : sortierbare Tabelle, sticky Head, Mobile-Scroll
+   12. .btn (+ Varianten) / .badge-ad : Buttons + Pflicht-Werbekennzeichnung
+   13. .demo-banner  : Hinweisleiste „Demo-Daten"
+   14. .faq          : details/summary-Akkordeon
+   15. .footer        : Trust-Gruppe + Disclaimer
+   16. .reveal        : Scroll-Reveal (respektiert prefers-reduced-motion)
+   17. Stat-Kennzahlen (.stat-grid/.stat) : für Start-Sektion „3 Kennzahlen"
+   18. .visual/.split/.tilt/.hero-media-video : Bildflächen & Motion
+       (Apple-Produktseiten-Gefühl: großes ruhiges Visual je Sektion,
+       Bewegung reagiert auf Scroll, respektiert prefers-reduced-motion)
    ============================================================================ */
 
 /* -----------------------------------------------------------------------
    1. TOKENS
    ----------------------------------------------------------------------- */
 :root{
-  /* Farbe — Light (Default) */
+  /* Farbe : Light (Default) */
   --bg:            #ffffff;
   --surface:       #f5f5f7;
   --surface-2:     #ffffff;
@@ -56,7 +59,7 @@
   --shadow-3: 0 16px 40px rgba(0,0,0,.14), 0 3px 8px rgba(0,0,0,.06);
   --card-border: rgba(0,0,0,.06);
 
-  /* Font-Stack (Annahme 5/6 — System-Stack, Inter nur Fallback) */
+  /* Font-Stack (Annahme 5/6 : System-Stack, Inter nur Fallback) */
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
@@ -100,7 +103,7 @@
   --dur-slow: 600ms;
 }
 
-/* Farbe — Dark (system-gesteuert, Annahme 5: kein manueller Toggle, siehe Plan G5) */
+/* Farbe : Dark (system-gesteuert, Annahme 5: kein manueller Toggle, siehe Plan G5) */
 @media (prefers-color-scheme: dark){
   :root{
     --bg:            #000000;
@@ -242,7 +245,7 @@ h1,h2,h3,h4{ margin:0 0 var(--sp-2); font-weight:600; }
 }
 
 /* -----------------------------------------------------------------------
-   5. .nav — Glas-Sticky-Header + Mobile-Vollbild-Menü
+   5. .nav : Glas-Sticky-Header + Mobile-Vollbild-Menü
    ----------------------------------------------------------------------- */
 .nav{
   position:sticky; top:0; z-index:100;
@@ -314,7 +317,7 @@ h1,h2,h3,h4{ margin:0 0 var(--sp-2); font-weight:600; }
 body.nav-open{ overflow:hidden; }
 
 /* Sprachumschalter (i18n, PK.initLangToggle injiziert das automatisch in
-   jede .nav und .nav-menu — kein Worker baut das per Hand). Apple-dezent:
+   jede .nav und .nav-menu : kein Worker baut das per Hand). Apple-dezent:
    Pille mit zwei Buttons, aktiver bekommt --surface-2 + Schatten. */
 .lang-toggle{
   display:inline-flex; align-items:center; gap:2px;
@@ -348,7 +351,9 @@ body.nav-open{ overflow:hidden; }
 }
 .hero-media{
   margin:var(--sp-6) auto 0; max-width:960px;
-  aspect-ratio:16/8; border-radius:var(--radius-card); overflow:hidden;
+  /* 24px statt --radius-card(20px): folgt dem .visual-Bildsystem (Abschnitt 18),
+     nicht dem Card-Radius : Fix-Runde 2, Befund 5. */
+  aspect-ratio:16/8; border-radius:24px; overflow:hidden;
   background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, var(--surface)), var(--surface) 60%, color-mix(in srgb, var(--accent) 10%, var(--surface)));
 }
 .hero-eyebrow{ display:flex; justify-content:center; margin-bottom:var(--sp-2); }
@@ -475,7 +480,7 @@ a.card:hover, .card.is-interactive:hover{
 }
 
 /* -----------------------------------------------------------------------
-   10. .code-box — Rabattcode mit Copy-Button
+   10. .code-box : Rabattcode mit Copy-Button
    ----------------------------------------------------------------------- */
 .code-box{
   display:flex; align-items:center; gap:var(--sp-2);
@@ -490,7 +495,7 @@ a.card:hover, .card.is-interactive:hover{
 .code-box-percent{ margin-left:auto; font-size:var(--fs-small); color:var(--text-secondary); flex:0 0 auto; }
 
 /* -----------------------------------------------------------------------
-   11. .table — sortierbar, sticky Head, Mobile-Scroll
+   11. .table : sortierbar, sticky Head, Mobile-Scroll
    ----------------------------------------------------------------------- */
 .table-wrap{
   position:relative;
@@ -575,7 +580,7 @@ a.card:hover, .card.is-interactive:hover{
 .demo-banner strong{ color:var(--text); font-weight:600; }
 
 /* -----------------------------------------------------------------------
-   14. .faq — details/summary
+   14. .faq : details/summary
    ----------------------------------------------------------------------- */
 .faq{ display:flex; flex-direction:column; }
 .faq details{ border-bottom:1px solid var(--line); padding:var(--sp-2) 0; }
@@ -619,7 +624,7 @@ a.card:hover, .card.is-interactive:hover{
 .footer-meta{ font-size:var(--fs-caption); color:var(--text-secondary); }
 
 /* -----------------------------------------------------------------------
-   16. .reveal — Scroll-Reveal
+   16. .reveal : Scroll-Reveal
    ----------------------------------------------------------------------- */
 .reveal{
   opacity:0; transform:translateY(24px);
@@ -629,4 +634,113 @@ a.card:hover, .card.is-interactive:hover{
 
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+/* -----------------------------------------------------------------------
+   18. .visual / .split / .tilt / .hero-media-video
+   ----------------------------------------------------------------------- */
+
+/* .visual: feste Bildfläche 3:2, Radius 24, Fallback-Gradient darunter.
+   Das <img> bekommt in jeder Seite ein inline onerror, das sich selbst
+   ausblendet : der Gradient bleibt sichtbar, kein Layout-Sprung (die
+   aspect-ratio steht am Container, nicht am Bild). */
+.visual{
+  position:relative;
+  aspect-ratio:3/2;
+  border-radius:24px;
+  overflow:hidden;
+  background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 20%, var(--surface)), var(--surface) 55%, color-mix(in srgb, var(--accent) 8%, var(--surface)));
+}
+.visual img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block;
+}
+/* Dark Mode: helle Fotos schneiden sonst hart auf Schwarz (Body-BG #000) ohne
+   jede weiche Kante : dezenter Innen-Ring analog zur .card-Logik, Radius/
+   Layout bleiben unverändert. Fix-Runde 2, Befund 3. Light Mode: unverändert. */
+@media (prefers-color-scheme: dark){
+  .visual{ box-shadow:0 0 0 1px rgba(255,255,255,.08) inset; }
+}
+[data-theme="dark"] .visual{ box-shadow:0 0 0 1px rgba(255,255,255,.08) inset; }
+[data-theme="light"] .visual{ box-shadow:none; }
+/* .visual-banner: schmaler Breitformat-Ausschnitt (Anbieter-Detail-Kopf). */
+.visual-banner{ aspect-ratio:3/1; }
+/* .visual-thumb: kleines Karten-Thumbnail (Wirkstoffe-Übersicht). Bleedet
+   bis an den Kartenrand (negatives Margin gegen das .card-Padding), damit
+   es wie ein Produktbild wirkt statt wie ein eingerahmtes Icon. */
+.visual-thumb{
+  border-radius:16px 16px 0 0;
+  margin:calc(var(--sp-3) * -1) calc(var(--sp-3) * -1) var(--sp-2);
+}
+
+/* .visual-parallax: inneres Bild 1.15x vorskaliert (Bewegungsspielraum).
+   PK.initParallax() schreibt translate3d(...) + scale(1.15) inline dazu;
+   ohne JS/bei reduced-motion bleibt es bei der reinen CSS-Vorskalierung.
+   will-change nur, solange PK.initParallax() den Container als sichtbar
+   führt (Klasse .is-parallax-active, IO-getoggelt) : kein dauerhafter
+   Compositing-Layer außerhalb des Viewports. Fix-Runde 2, Befund 6. */
+.visual-parallax img{
+  transform:scale(1.15);
+}
+.visual-parallax.is-parallax-active img{
+  will-change:transform;
+}
+
+/* .visual-kenburns: langsamer Zoom 1.0→1.08 über 12s. Startet erst, wenn
+   die umgebende .reveal-Sektion sichtbar wird : nutzt bewusst den schon
+   vorhandenen Reveal-IntersectionObserver statt einen zweiten JS-Beobachter
+   für denselben Zweck zu bauen. */
+@keyframes pk-kenburns{ from{ transform:scale(1); } to{ transform:scale(1.08); } }
+.reveal.is-visible .visual-kenburns img{
+  animation:pk-kenburns 12s cubic-bezier(.25,.1,.25,1) forwards;
+}
+
+/* .split: Text + Bildfläche nebeneinander (Apple-Produktseiten-Rhythmus),
+   mobil gestapelt. .split-reverse tauscht die Spaltenreihenfolge, damit
+   aufeinanderfolgende Sektionen zwischen Text-links/Text-rechts wechseln. */
+.split{
+  display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-6);
+  align-items:center;
+}
+.split-reverse .split-visual{ order:-1; }
+/* .split-text: einheitliche Textseite von .split : kein .card, keine eigene
+   Fläche/Padding, nur der Layout-Slot selbst (Abstand kommt von den
+   Typografie-Klassen innen: .eyebrow/.section-title/.section-lead/.row-between).
+   Ersetzt uneinheitliche .card- bzw. klassenlose <div>-Varianten. Fix-Runde 2,
+   Befund 2/4 : alle 5 .split-Sektionen auf index.html gleich. */
+.split-text{ padding:0; background:none; border:0; box-shadow:none; }
+@media (max-width:900px){
+  .split{ grid-template-columns:1fr; gap:var(--sp-4); }
+  /* order:1 statt order:0: Text bleibt bei .split-reverse mobil trotzdem VOR
+     dem Bild (DOM-Reihenfolge legt bei reversed Sektionen das Bild zuerst an).
+     Fix-Runde 2, BLOCKER Befund 1 (r2-Review + QA r4 #7). */
+  .split-reverse .split-visual{ order:1; }
+}
+
+/* .tilt: dezenter Karten-Hover (max 4° Rotation + 6px Lift), von
+   PK.initTilt() nur auf Geräten mit echtem Hover+Zeiger aktiviert.
+   Die Transition steht hier zentral, damit jede Bewegung weich landet. */
+.tilt{
+  transition:transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+@media (hover:hover) and (pointer:fine){
+  .tilt:hover{ box-shadow:var(--shadow-2); }
+}
+
+/* .hero-media wird jetzt auch als Video-Container genutzt (PK.initHeroVideo).
+   Video/Fallback-Bild füllen die Fläche absolut, der bestehende Gradient
+   aus Abschnitt 6 bleibt darunter als Ladezustand/Fallback sichtbar. */
+.hero-media{ position:relative; }
+.hero-media-video{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .visual-parallax img{ transform:none !important; }
+  .reveal.is-visible .visual-kenburns img{ animation:none; transform:none; }
+  .tilt{ transition:none; }
+  .tilt:hover{ transform:none !important; }
 }

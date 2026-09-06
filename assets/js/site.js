@@ -35,8 +35,19 @@
    PK.sortTable()           : Klick-Sortierung für .table
    PK.initDemoBanner()      : befüllt/zeigt .demo-banner
    PK.footerDisclaimer()    : befüllt [data-footer-disclaimer] aus PK.site
+   PK.initParallax()        : Scroll-Parallax für .visual-parallax img (±40px)
+   PK.initTilt()             : Hover-Kipp-Effekt für .tilt (nur hover:hover+pointer:fine)
+   PK.initHeroVideo()       : Video-Loop im Hero : Fallback/Pause/Reduced-Motion
    (auto) Scroll-Hinweis „Wischen für mehr" für .table-wrap auf Mobile/Tablet
           : läuft selbstständig bei DOMContentLoaded, keine Seite ruft das auf.
+
+   Init-Reihenfolge (Bildflächen/Motion, ergänzt die i18n-Pflichtreihenfolge
+   aus assets/css/README.md): PK.initReveal() zuerst (die drei neuen Helfer
+   setzen auf .reveal.is-visible bzw. sind davon unabhängig, aber initReveal
+   ist ohnehin Teil des Pflicht-Bootstraps jeder Seite). Danach beliebige
+   Reihenfolge: PK.initParallax(), PK.initTilt(), PK.initHeroVideo() : alle
+   drei sind No-Ops, wenn ihre Zielklasse/ihr Zielelement auf der Seite
+   nicht vorkommt, also unbedenklich auf jeder Seite aufzurufen.
    ============================================================================ */
 (function (global) {
   "use strict";
@@ -727,6 +738,194 @@
       document.addEventListener("pk:langchange", render);
       PK._footerDisclaimerBound = true;
     }
+  };
+
+  /**
+   * PK.initParallax()
+   * Scroll-Parallax für jedes .visual-parallax: verschiebt das innere
+   * <img>/<video> per translate3d (max ±40px) je nach Position relativ zur
+   * Viewport-Mitte. rAF-gedrosselt, ein einziger scroll-Listener (passive)
+   * treibt alle Elemente; ein IntersectionObserver hält nur die aktuell
+   * sichtbaren Elemente in der Update-Liste, damit auf langen Seiten nicht
+   * nutzlos für Elemente weit außerhalb des Viewports gerechnet wird.
+   * No-Op ohne .visual-parallax-Elemente, ohne IntersectionObserver-Support
+   * oder bei prefers-reduced-motion (keine Bewegung, CSS-Vorskalierung
+   * reicht als ruhiger Zustand).
+   */
+  PK.initParallax = function () {
+    var els = document.querySelectorAll(".visual-parallax");
+    if (!els.length) return;
+    var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || !("IntersectionObserver" in global)) return;
+
+    var MAX_PX = 40;
+    var active = [];
+
+    function mediaEl(container) { return container.querySelector("img, video"); }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var idx = active.indexOf(entry.target);
+        if (entry.isIntersecting) {
+          if (idx === -1) active.push(entry.target);
+          /* is-parallax-active gated Motion-Frames UND will-change (system.css
+             Abschnitt 18) : nur solange der Container wirklich sichtbar ist,
+             kein dauerhafter Compositing-Layer. Fix-Runde 2, Befund 6. */
+          entry.target.classList.add("is-parallax-active");
+        } else if (idx > -1) {
+          active.splice(idx, 1);
+          var img = mediaEl(entry.target);
+          if (img) img.style.transform = "";
+          entry.target.classList.remove("is-parallax-active");
+        }
+      });
+    }, { rootMargin: "15% 0px" });
+    els.forEach(function (el) { io.observe(el); });
+
+    var ticking = false;
+    function update() {
+      var vh = global.innerHeight || 800;
+      active.forEach(function (el) {
+        var img = mediaEl(el);
+        if (!img) return;
+        var rect = el.getBoundingClientRect();
+        var center = rect.top + rect.height / 2;
+        var progress = Math.max(-1, Math.min(1, (center - vh / 2) / (vh / 2)));
+        var y = (-progress * MAX_PX).toFixed(1);
+        img.style.transform = "translate3d(0," + y + "px,0) scale(1.15)";
+      });
+      ticking = false;
+    }
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      global.requestAnimationFrame(update);
+    }
+    global.addEventListener("scroll", onScroll, { passive: true });
+    global.addEventListener("resize", onScroll);
+    onScroll();
+  };
+
+  /**
+   * PK.initTilt()
+   * Dezenter Karten-Hover für jedes .tilt: max. 4° Rotation (X/Y je nach
+   * Zeigerposition in der Karte) + 6px Lift. Nur aktiv bei
+   * "(hover:hover) and (pointer:fine)" (echte Maus, kein Touch/Trackpad-
+   * Ersatzgeste) und nie bei prefers-reduced-motion. pointerleave setzt
+   * die Karte weich zurück auf die Ruhelage. Idempotent (data-tilt-bound):
+   * Seiten mit dynamisch nachgebauten Karten (z. B. bei "pk:langchange")
+   * dürfen PK.initTilt() beliebig oft erneut aufrufen, ohne doppelte
+   * Listener auf bereits gebundenen Karten zu erzeugen.
+   */
+  PK.initTilt = function () {
+    var els = document.querySelectorAll(".tilt");
+    if (!els.length) return;
+    var canHover = global.matchMedia && global.matchMedia("(hover:hover) and (pointer:fine)").matches;
+    var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!canHover || reduced) return;
+
+    var MAX_DEG = 4;
+    var LIFT_PX = 6;
+
+    els.forEach(function (el) {
+      if (el.dataset.tiltBound) return;
+      el.dataset.tiltBound = "1";
+      el.addEventListener("pointermove", function (e) {
+        var rect = el.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width - 0.5;
+        var py = (e.clientY - rect.top) / rect.height - 0.5;
+        var rotY = (px * MAX_DEG * 2).toFixed(2);
+        var rotX = (-py * MAX_DEG * 2).toFixed(2);
+        el.style.transform = "translateY(-" + LIFT_PX + "px) rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)";
+      });
+      el.addEventListener("pointerleave", function () {
+        el.style.transform = "";
+      });
+    });
+  };
+
+  /**
+   * PK.initHeroVideo()
+   * Aktiviert das Hero-Video ([data-hero-video]): pausiert außerhalb des
+   * Viewports (IntersectionObserver), prüft das poster-Bild separat nach
+   * (Image-Preload) und fällt auf data-fallback zurück, falls es fehlt,
+   * und ersetzt das <video> komplett durch ein statisches <img
+   * data-fallback> bei prefers-reduced-motion oder wenn keine Quelle lädt
+   * (video "error"-Event). No-Op ohne [data-hero-video] auf der Seite.
+   */
+  PK.initHeroVideo = function () {
+    var video = document.querySelector("[data-hero-video]");
+    if (!video) return;
+    var fallback = video.getAttribute("data-fallback") || video.getAttribute("poster") || "";
+    var reduced = global.matchMedia && global.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function replaceWithFallbackImage() {
+      if (!video || !video.parentNode) return;
+      var img = document.createElement("img");
+      img.className = video.className;
+      img.src = fallback;
+      img.alt = "";
+      img.loading = "eager";
+      video.parentNode.replaceChild(img, video);
+      video = null;
+    }
+
+    if (reduced) { replaceWithFallbackImage(); return; }
+
+    video.addEventListener("error", replaceWithFallbackImage);
+    /* Sicherheitsnetz: ein 404 auf ein verschachteltes <source> feuert nicht
+       zuverlässig ein "error"-Event auf <video> selbst (browserabhängig) -
+       stattdessen bleibt networkState auf NETWORK_NO_SOURCE (3) hängen.
+       Kurz nachschauen, ob überhaupt Daten angekommen sind (readyState 0
+       nach dem Ladeversuch = keine brauchbare Quelle gefunden). */
+    global.setTimeout(function () {
+      if (video && video.networkState === 3 && video.readyState === 0) {
+        replaceWithFallbackImage();
+      }
+    }, 1500);
+
+    var posterSrc = video.getAttribute("poster");
+    if (posterSrc && fallback && posterSrc !== fallback) {
+      var probe = new Image();
+      probe.onerror = function () { if (video) video.setAttribute("poster", fallback); };
+      probe.src = posterSrc;
+    }
+
+    /* inViewport hält den zuletzt vom IO gemeldeten Sichtbarkeitsstatus fest,
+       damit visibilitychange (Tab-Wechsel) weiß, ob ein Wieder-Play überhaupt
+       gerechtfertigt ist : ohne eigenen zweiten Viewport-Check. */
+    var inViewport = false;
+
+    function tryPlay() {
+      if (!video) return;
+      var p = video.play();
+      if (p && p.catch) p.catch(function () { /* Autoplay verweigert, kein Fehlerzustand */ });
+    }
+
+    if ("IntersectionObserver" in global) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!video) return;
+          inViewport = entry.isIntersecting;
+          if (inViewport) {
+            /* Bei JEDEM Wiedereintritt erneut play() : Fix-Runde 2, Befund/
+               Punkt 3 (QA r4: Resume-nach-Scroll inkonsistent). */
+            tryPlay();
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.1 });
+      io.observe(video);
+    }
+
+    /* Tab-Wechsel/Minimieren pausiert das Video im Hintergrund browserseitig;
+       zurück im Tab UND noch im Viewport: erneut play() versuchen. */
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible" && inViewport) {
+        tryPlay();
+      }
+    });
   };
 
   /**

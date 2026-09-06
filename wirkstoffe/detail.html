@@ -84,10 +84,17 @@
          Abstand zwischen Pills und Lead). Abstand steuert der Absatz selbst
          via margin-top, nicht ein zweiter Section-Wrapper. -->
     <section class="section container reveal">
-      <h1 class="display" id="peptide-name"></h1>
-      <p><span class="pill" id="peptide-kategorie"></span> <span class="pill" id="peptide-studienlage-pill"></span></p>
-      <p class="section-lead" id="peptide-kurz" style="margin-top:var(--sp-3);"></p>
-      <p id="peptide-beschreibung"></p>
+      <div class="split">
+        <div>
+          <h1 class="display" id="peptide-name"></h1>
+          <p><span class="pill" id="peptide-kategorie"></span> <span class="pill" id="peptide-studienlage-pill"></span></p>
+          <p class="section-lead" id="peptide-kurz" style="margin-top:var(--sp-3);"></p>
+          <p id="peptide-beschreibung"></p>
+        </div>
+        <div class="split-visual visual visual-kenburns">
+          <img id="peptide-visual-img" src="" alt="" loading="lazy" onerror="this.style.display='none'">
+        </div>
+      </div>
     </section>
 
     <!-- STUDIENLAGE -->
@@ -198,6 +205,12 @@
     var params = new URLSearchParams(window.location.search);
     var slug = params.get("slug") || "";
     var peptide = PK.peptideBySlug(slug);
+
+    // Kopf-Visual: mol_<slug>.jpg, per JS gesetzt (Slug erst zur Laufzeit
+    // bekannt). Fehlt die Datei, blendet das inline onerror das <img> aus,
+    // der .visual-Gradient bleibt sichtbar.
+    var visualImg = document.getElementById("peptide-visual-img");
+    if (visualImg && slug) visualImg.src = "../assets/img/mol_" + encodeURIComponent(slug) + ".jpg";
 
     var errorEl = document.getElementById("pk-error");
     var contentEl = document.getElementById("pk-content");
