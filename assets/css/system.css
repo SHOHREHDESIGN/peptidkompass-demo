@@ -1241,7 +1241,9 @@ a.card:hover, .card.is-interactive:hover{
 }
 .vlogo--detail{ width:200px; height:44px; }
 
-.table-logo-cell{ display:flex; align-items:center; gap:8px; }
+.table-logo-cell{ display:flex; align-items:center; gap:12px; }
+.table-logo-cell .vlogo{ flex:0 0 120px; width:120px !important; }
+.table-logo-cell .vlogo-fallback{ flex:0 0 120px; width:120px; }
 
 /* Detail-Kopf: optionales kleines FARBIGES Original, NUR hier, mit
    eigenem Chip (Auftrag: "Farbige Originale nur noch als optionales
