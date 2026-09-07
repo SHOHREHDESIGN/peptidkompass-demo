@@ -1196,7 +1196,12 @@ a.card:hover, .card.is-interactive:hover{
    Feste Breite×Höhe je Kontext statt width:auto (ein <span> hat anders
    als <img> kein intrinsisches Seitenverhältnis) - mask-size:contain
    fügt das Logo proportional in diese Box ein, überschüssiger Raum bleibt
-   transparent (kein Stretch, keine Verzerrung). */
+   transparent (kein Stretch, keine Verzerrung).
+   Breite hier ist nur der FALLBACK: kennt PK.renderLogo() vendor.brand.
+   logoRatio (echtes Breite/Höhe-Verhältnis der zugeschnittenen Mono-
+   Silhouette), überschreibt es die Breite inline (Höhe×Ratio, geklemmt
+   auf [28px, Kontext-Max] - site.js VLOGO_MAXWIDTH), Höhe bleibt IMMER
+   aus dieser Klasse (Fix "Logo-Seitenverhältnis", 07.09.2026). */
 .vlogo{
   display:inline-block;
   background-color:var(--vlogo-color, var(--text));

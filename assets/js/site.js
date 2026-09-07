@@ -1291,12 +1291,41 @@
    *   size ("xs"|"card"|"sm"|"podium"|"detail", Default "card"): Kontext-
    *     größe, siehe .vlogo--* in system.css Abschnitt 7.
    * }
+   *
+   * Breiten-Fix "Logo-Seitenverhältnis" (07.09.2026): .vlogo hatte bisher
+   * eine FESTE Breite je Kontext (CSS .vlogo--*), in die mask-size:contain
+   * das Logo einpasste - bei schmalen/quadratischen Marken (particle-
+   * peptides, europa-peptide, biocollex, hydro-research u.a.) blieb der
+   * Großteil dieser Box leer, das Logo wirkte winzig. vendor.brand.logoRatio
+   * (Breite/Höhe der ECHTEN, eng zugeschnittenen Mono-Silhouette, siehe
+   * tools/build_vendor_logos.py) erlaubt jetzt, die Breite passend zur
+   * festen CSS-Höhe zu berechnen (Höhe×Ratio), geklemmt auf [28px,
+   * Kontext-Max] - VLOGO_MAXWIDTH unten. Fehlt logoRatio (Fallback-Vendors
+   * ohne eigenes Mono-Logo): keine Inline-Breite gesetzt, CSS-Breite bleibt
+   * wie bisher (bisheriges Verhalten, kein Regressionsrisiko für Vendors
+   * ohne echte Bilddaten).
    */
+  var VLOGO_HEIGHT = { card: 26, sm: 28, xs: 24, podium: 32, detail: 44, logoStrip: 40 };
+  var VLOGO_MAXWIDTH = { card: 110, sm: 120, xs: 120, podium: 140, detail: 200, logoStrip: 160 };
+  var VLOGO_MINWIDTH = 28;
+
+  function vlogoWidthFromRatio(sizeKey, ratio) {
+    if (typeof ratio !== "number" || !isFinite(ratio) || ratio <= 0) return null;
+    var height = VLOGO_HEIGHT[sizeKey];
+    var maxWidth = VLOGO_MAXWIDTH[sizeKey];
+    if (!height || !maxWidth) return null;
+    var w = Math.round(height * ratio);
+    if (w < VLOGO_MINWIDTH) w = VLOGO_MINWIDTH;
+    if (w > maxWidth) w = maxWidth;
+    return w;
+  }
+
   PK.renderLogo = function (vendor, opts) {
     var o = opts || {};
     var bp = o.basePath || "";
     var tone = o.tone || "text";
-    var sizeClass = "vlogo--" + (o.size || "card");
+    var sizeKey = o.size || "card";
+    var sizeClass = "vlogo--" + sizeKey;
 
     var hasBrand = !!(vendor && vendor.brand);
     var maskPath = hasBrand ? (vendor.brand.logoMono || vendor.brand.logoFallback) : null;
@@ -1311,6 +1340,9 @@
     el.className = "vlogo " + sizeClass + " vlogo--tone-" + tone;
     el.setAttribute("role", "img");
     el.setAttribute("aria-label", PK.t("global.brand.logoAlt", { name: vendor.name || "" }));
+
+    var ratioWidth = vlogoWidthFromRatio(sizeKey, vendor.brand.logoRatio);
+    if (ratioWidth) el.style.width = ratioWidth + "px";
 
     var fallbackPath = vendor.brand.logoFallback;
     var triedFallback = !fallbackPath || fallbackPath === maskPath;
@@ -1388,6 +1420,11 @@
         var url = bp + (vendor.brand.logoMono || vendor.brand.logo);
         var mask = document.createElement("div");
         mask.className = "logo-strip-mask";
+        // Gleicher Breiten-Fix wie PK.renderLogo (siehe Kommentar dort,
+        // "Logo-Seitenverhältnis" 07.09.2026): Leiste-Höhe fix 40px (CSS
+        // .logo-strip-mask), Breite aus logoRatio, geklemmt [28, 160]px.
+        var stripWidth = vlogoWidthFromRatio("logoStrip", vendor.brand.logoRatio);
+        if (stripWidth) mask.style.width = stripWidth + "px";
         // mask-image direkt inline setzen (nicht über die --logo-url-Variable
         // in system.css) : ein url() innerhalb einer CSS-Custom-Property wird
         // relativ zu dem Stylesheet aufgelöst, in dem der var()-Verweis steht

@@ -13,6 +13,7 @@ window.PK.vendors = [
       farbe: "#6C3FA6",
       logo: "assets/img/logos/peptidwerk.png",
       logoMono: "assets/img/logos/peptidwerk_mono.png",
+      logoRatio: 5.03,
       logoFallback: "assets/img/logos/_wordmarks/peptidwerk.svg",
       logoQuelle: "https://pepwerk.com/wp-content/uploads/2026/09/peptidwerk-logo-01-balanced-transparent-1.png"
     },
@@ -98,6 +99,7 @@ window.PK.vendors = [
       farbe: "#A8690F",
       logo: "assets/img/logos/smart-peptides.png",
       logoMono: "assets/img/logos/smart-peptides_mono.png",
+      logoRatio: 4.48,
       logoFallback: "assets/img/logos/_wordmarks/smart-peptides.svg",
       logoQuelle: "https://smartpeptides.de/wp-content/uploads/2026/03/Ipamoreln-logo-1.1-1.svg"
     },
@@ -268,6 +270,7 @@ window.PK.vendors = [
       farbe: "#0E6B64",
       logo: "assets/img/logos/particle-peptides.png",
       logoMono: "assets/img/logos/particle-peptides_mono.png",
+      logoRatio: 0.86,
       logoFallback: "assets/img/logos/_wordmarks/particle-peptides.svg",
       logoQuelle: "https://particlepeptides.com/themes/particlepeptides/assets/img/logo.png"
     },
@@ -351,6 +354,7 @@ window.PK.vendors = [
       farbe: "#8C4F1B",
       logo: "assets/img/logos/europa-peptide.png",
       logoMono: "assets/img/logos/europa-peptide_mono.png",
+      logoRatio: 1.17,
       logoFallback: "assets/img/logos/_wordmarks/europa-peptide.svg",
       logoQuelle: "https://europa-peptide.de/wp-content/themes/europa-tailwind/assets/images/logo-color.png"
     },
@@ -432,6 +436,7 @@ window.PK.vendors = [
       farbe: "#1B8C7A",
       logo: "assets/img/logos/biocollex.png",
       logoMono: "assets/img/logos/biocollex_mono.png",
+      logoRatio: 1.00,
       logoFallback: "assets/img/logos/_wordmarks/biocollex.svg",
       logoQuelle: "https://biocollexresearch.com/wp-content/uploads/2026/02/BioCollex_LogoPNG.png"
     },
@@ -522,6 +527,7 @@ window.PK.vendors = [
       farbe: "#3F5D4E",
       logo: "assets/img/logos/licensed-peptides.png",
       logoMono: "assets/img/logos/licensed-peptides_mono.png",
+      logoRatio: 3.86,
       logoFallback: "assets/img/logos/_wordmarks/licensed-peptides.svg",
       logoQuelle: "https://licensedpeptides.com/wp-content/themes/Avada-Child-Theme/assets-new/images/logo.svg"
     },
@@ -614,6 +620,7 @@ window.PK.vendors = [
       farbe: "#3F5D4E",
       logo: "assets/img/logos/elyvera.png",
       logoMono: "assets/img/logos/elyvera_mono.png",
+      logoRatio: 3.53,
       logoFallback: "assets/img/logos/_wordmarks/elyvera.svg",
       logoQuelle: "https://europeptides.de/assets/logo-slwquZtF.svg"
     },
@@ -702,6 +709,7 @@ window.PK.vendors = [
       farbe: "#6C3FA6",
       logo: "assets/img/logos/peak-peptide.png",
       logoMono: "assets/img/logos/peak-peptide_mono.png",
+      logoRatio: 2.81,
       logoFallback: "assets/img/logos/_wordmarks/peak-peptide.svg",
       logoQuelle: "https://peakpeptide.com/favicon-128.png"
     },
@@ -788,6 +796,7 @@ window.PK.vendors = [
       farbe: "#8C4F1B",
       logo: "assets/img/logos/bio-boostx.png",
       logoMono: "assets/img/logos/bio-boostx_mono.png",
+      logoRatio: 3.34,
       logoFallback: "assets/img/logos/_wordmarks/bio-boostx.svg",
       logoQuelle: "https://bioboostx.com/wp-content/uploads/2026/03/logo-bioboostx-700-2.png"
     },
@@ -879,6 +888,7 @@ window.PK.vendors = [
       farbe: "#1B8C7A",
       logo: "assets/img/logos/chameleon-peptides.png",
       logoMono: "assets/img/logos/chameleon-peptides_mono.png",
+      logoRatio: 3.39,
       logoFallback: "assets/img/logos/_wordmarks/chameleon-peptides.svg",
       logoQuelle: "https://chameleonpeptides.com/wp-content/uploads/2026/02/logo-horizontal-transparent.png"
     },
@@ -964,6 +974,7 @@ window.PK.vendors = [
       farbe: "#0E6B64",
       logo: "assets/img/logos/helus-lab.png",
       logoMono: "assets/img/logos/helus-lab_mono.png",
+      logoRatio: 4.15,
       logoFallback: "assets/img/logos/_wordmarks/helus-lab.svg",
       logoQuelle: "https://heluslab.com/wp-content/uploads/2026/08/Login_page_Logo_Black_blue_v3.svg"
     },
@@ -1050,6 +1061,7 @@ window.PK.vendors = [
       farbe: "#8C4F1B",
       logo: "assets/img/logos/protide-health.png",
       logoMono: "assets/img/logos/protide-health_mono.png",
+      logoRatio: 4.62,
       logoFallback: "assets/img/logos/_wordmarks/protide-health.svg",
       logoQuelle: "https://protidehealth.com/wp-content/uploads/2026/02/protide-health-logo.png"
     },
@@ -1135,6 +1147,7 @@ window.PK.vendors = [
       farbe: "#8C1B4F",
       logo: "assets/img/logos/beyond-peptides.png",
       logoMono: "assets/img/logos/beyond-peptides_mono.png",
+      logoRatio: 3.93,
       logoFallback: "assets/img/logos/_wordmarks/beyond-peptides.svg",
       logoQuelle: "https://beyond-peptides.com/wp-content/uploads/2024/09/color-logo-1.svg"
     },
@@ -1232,6 +1245,7 @@ window.PK.vendors = [
       farbe: "#3F5D4E",
       logo: "assets/img/logos/hydro-research.png",
       logoMono: "assets/img/logos/hydro-research_mono.png",
+      logoRatio: 1.72,
       logoFallback: "assets/img/logos/_wordmarks/hydro-research.svg",
       logoQuelle: "https://hydroresearchpeptides.com/wp-content/uploads/2023/11/hydro-full-logo.png"
     },
@@ -1324,6 +1338,7 @@ window.PK.vendors = [
       farbe: "#453E90",
       logo: "assets/img/logos/american-peptides.png",
       logoMono: "assets/img/logos/american-peptides_mono.png",
+      logoRatio: 3.77,
       logoFallback: "assets/img/logos/_wordmarks/american-peptides.svg",
       logoQuelle: "https://americanpeptides.us/american-peptides-logo.png"
     },
@@ -1510,6 +1525,7 @@ window.PK.vendors = [
       // sera-lab (Vendors ohne beschaffbares Farblogo).
       logo: "assets/img/logos/_wordmarks/ppx-at.svg",
       logoMono: "assets/img/logos/ppx-at_mono.png",
+      logoRatio: 4.31,
       logoFallback: "assets/img/logos/_wordmarks/ppx-at.svg",
       logoQuelle: "https://ppx.at/assets/Logo.png"
     },
@@ -1601,6 +1617,7 @@ window.PK.vendors = [
       farbe: "#4F8C1B",
       logo: "assets/img/logos/peptide-labz.png",
       logoMono: "assets/img/logos/peptide-labz_mono.png",
+      logoRatio: 0.98,
       logoFallback: "assets/img/logos/_wordmarks/peptide-labz.svg",
       logoQuelle: "https://peptidelabz.de/wp-content/uploads/2026/03/31fd0d62-0f51-4887-ab16-b990276b9da1.jpg"
     },
@@ -1688,6 +1705,7 @@ window.PK.vendors = [
       farbe: "#A8690F",
       logo: "assets/img/logos/europeptideshop.png",
       logoMono: "assets/img/logos/europeptideshop_mono.png",
+      logoRatio: 2.30,
       logoFallback: "assets/img/logos/_wordmarks/europeptideshop.svg",
       logoQuelle: "https://europeptideshop.com/wp-content/uploads/2026/04/6fd820bd-a45c-418a-aecd-343ac737f7b2.png"
     },
@@ -1778,6 +1796,7 @@ window.PK.vendors = [
       farbe: "#8C4F1B",
       logo: "assets/img/logos/peptide-culture.png",
       logoMono: "assets/img/logos/peptide-culture_mono.png",
+      logoRatio: 2.35,
       logoFallback: "assets/img/logos/_wordmarks/peptide-culture.svg",
       logoQuelle: "https://peptide-culture.com/cdn/shop/files/Peptide-Logo.png?v=1774435793"
     },
@@ -1859,6 +1878,7 @@ window.PK.vendors = [
       farbe: "#6C3FA6",
       logo: "assets/img/logos/driada.png",
       logoMono: "assets/img/logos/driada_mono.png",
+      logoRatio: 8.62,
       logoFallback: "assets/img/logos/_wordmarks/driada.svg",
       logoQuelle: "https://driadashop.to/image/catalog/logosite.png"
     },
@@ -1946,6 +1966,7 @@ window.PK.vendors = [
       farbe: "#8C1B4F",
       logo: "assets/img/logos/peptide-shop-deutschland.png",
       logoMono: "assets/img/logos/peptide-shop-deutschland_mono.png",
+      logoRatio: 3.38,
       logoFallback: "assets/img/logos/_wordmarks/peptide-shop-deutschland.svg",
       logoQuelle: "https://peptideshopdeutschland.com/wp-content/uploads/2026/03/original-e9816ecb60d88f3be9ec23ec5d56527d-e1774364643355.webp"
     },
