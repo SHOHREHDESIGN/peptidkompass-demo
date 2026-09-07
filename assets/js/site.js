@@ -1337,7 +1337,7 @@
     }
 
     var el = document.createElement("span");
-    el.className = "vlogo " + sizeClass + " vlogo--tone-" + tone;
+    el.className = "vlogo " + sizeClass + " vlogo--tone-" + tone + ((vendor.brand.logoRatio && vendor.brand.logoRatio < 1.3) ? " vlogo--square" : "");
     el.setAttribute("role", "img");
     el.setAttribute("aria-label", PK.t("global.brand.logoAlt", { name: vendor.name || "" }));
 
