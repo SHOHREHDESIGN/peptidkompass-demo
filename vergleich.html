@@ -204,7 +204,7 @@
       tdName.setAttribute("data-sticky", "left");
       var nameCell = document.createElement("div");
       nameCell.className = "table-logo-cell";
-      nameCell.appendChild(PK.renderLogo(v, { small: true }));
+      nameCell.appendChild(PK.renderLogo(v, { tone: "text", size: "sm" }));
       var nameLink = document.createElement("a");
       nameLink.className = "btn-link";
       nameLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
@@ -417,7 +417,7 @@
         head.className = "compare-card-head";
         var idWrap = document.createElement("div");
         idWrap.className = "compare-card-id";
-        idWrap.appendChild(PK.renderLogo(v, { small: true }));
+        idWrap.appendChild(PK.renderLogo(v, { tone: "text", size: "sm" }));
         var nameLink = document.createElement("a");
         nameLink.className = "btn-link";
         nameLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");

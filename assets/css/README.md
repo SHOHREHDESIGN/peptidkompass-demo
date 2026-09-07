@@ -545,23 +545,58 @@ Tokens in system.css Abschnitt 1: `--accent-warm`/`--accent-warm-strong`/
 bleibt die Variable undefiniert und jede Komponente fällt auf einen
 neutralen Rand zurück (`var(--brand, var(--line-strong))`).
 
-### Vendor-Brand: Logo + 3px-Rand
+### Vendor-Brand: eingefärbte Mono-Maske + 3px-Rand
 
-`PK.renderLogo(vendor, opts)` baut den Logo-Slot für Vendor-Card,
-Anbieter-Detail-Kopf und Vergleichstabelle. `opts.basePath` (Default `""`),
-`opts.eager` (Default `false`, lazy), `opts.small` (`.brand-logo--sm` für
-die Tabelle). Fehlt `vendor.brand` ODER schlägt das Bild fehl (404): Fallback
-zeigt den Anbieternamen als Text (`.brand-logo-fallback`), kein kaputtes
-Icon. `PK.renderVendorCard()` ruft das automatisch auf und setzt den 3px-
-Farbrand oben (`.vendor-card{ border-top:3px solid var(--brand, var(--line-strong)); }`)
-sowie die Score-Bandfarbe (`.vendor-card-score.score-band-*`, siehe unten).
+Runde "eingefärbte Mono-Maske" (07.09.2026, Vic: "Wir färben die Logos
+selbst ein, sodass es immer passt"): ÜBERALL, wo ein Anbieter erscheint,
+wird die Mono-Silhouette (`vendor.brand.logoMono`, Alphakanal-Silhouette
+aus `tools/build_vendor_logos.py`) per CSS `mask-image` in der jeweils
+passenden Farbe gerendert - kein farbiges `<img>` mehr, kein Dark-Mode-Chip
+mehr. Einzige Ausnahme: ein optionales kleines farbiges Original im
+Detail-Kopf (`.vendor-logo-color`, siehe unten).
+
+`PK.renderLogo(vendor, opts)` baut den Logo-Slot für Vendor-Card, Podium,
+Anbieter-Detail-Kopf und Vergleichstabelle: `<span class="vlogo" role="img"
+aria-label="…">` mit inline `mask-image` auf `vendor.brand.logoMono`,
+eingefärbt über `background-color` (CSS-Variable `--vlogo-color`, gesetzt
+durch die Tone-Klasse). `opts`:
+- `basePath` (Default `""`)
+- `tone` (`"text"|"secondary"|"brand"|"white"`, Default `"text"`): `text`
+  = `var(--text)` (Tabelle/Karte - kippt in Dark Mode automatisch auf Weiß,
+  weil `--text` selbst umschaltet), `secondary` = `var(--text-secondary)`
+  (Logo-Leiste), `brand` = `var(--brand)` (Podium/Detail-Kopf, bleibt in
+  Dark Mode dieselbe Markenfarbe), `white` = fest `#fff`.
+- `size` (`"xs"|"card"|"sm"|"podium"|"detail"`, Default `"card"`):
+  Kontextgröße über `.vlogo--*` (system.css Abschnitt 7) - `xs` 24px
+  (wirkstoffe/detail.html Anbieter-Tabelle), `card` 26px (Vendor-Card),
+  `sm` 28px/max 120px breit (Vergleichstabelle + Mobile-Kartenansicht),
+  `podium` 32px (zentriert), `detail` 44px (Anbieter-Detail-Kopf).
+
+Fallback-Kette: `logoMono` fehlt/404 -> `vendor.brand.logoFallback`
+(archivierte Wortmarke, `assets/img/logos/_wordmarks/<slug>.svg`, ebenfalls
+als Maske) -> schlägt AUCH das fehl (oder fehlt `logoFallback`): Anbieter-
+name als Text (`.brand-logo-fallback`), kein kaputtes Icon. `PK.renderVendorCard()`
+ruft das automatisch auf und setzt den 3px-Farbrand oben (`.vendor-card{
+border-top:3px solid var(--brand, var(--line-strong)); }`) sowie die
+Score-Bandfarbe (`.vendor-card-score.score-band-*`, siehe unten).
 
 ```html
 <div class="vendor-card" style="--brand:#1B4F8C;">
-  <span class="brand-logo"><img src="assets/img/logos/slug.svg" alt="Logo Name"></span>
+  <span class="vlogo vlogo--card vlogo--tone-text" role="img" aria-label="Logo Name"
+        style="mask-image:url('assets/img/logos/slug_mono.png');-webkit-mask-image:url('assets/img/logos/slug_mono.png');"></span>
   …
 </div>
 ```
+
+Farbiges Original (`vendor.brand.logo`) wird NUR noch an einer Stelle
+genutzt: als optionales kleines Bild rechts neben der Mono-Maske im
+Anbieter-Detail-Kopf, Klasse `.vendor-logo-color` (28px, eigener heller
+Chip `rgba(255,255,255,.92)` dahinter - einziger verbliebener Chip im
+ganzen Projekt, weil ein beliebig farbiges Original sonst auf dunklem
+Untergrund verschwinden könnte). Nur gezeigt, wenn `vendor.brand.logo !==
+vendor.brand.logoFallback` (echtes Farblogo vorhanden, keine doppelte
+Wortmarke) und die Datei lädt (404 entfernt das `<img>` wieder, siehe
+anbieter/detail.html).
 
 ### Score-Bandfarben
 
@@ -573,11 +608,14 @@ Element mit der Score-Zahl (`.vendor-card-score`, `.score-ring-value`,
 ### `.logo-strip` : laufende Logo-Leiste
 
 `PK.initLogoStrip(selector, opts)` befüllt `[data-logo-strip]`. Monochrom
-über CSS `mask-image` + `background-color:var(--text-secondary)` (liest nur
-den Alpha-Kanal des SVG, ignoriert dessen eigene `fill`-Farbe): robuster als
-`<img>` + Filter und bleibt `file://`-tauglich (kein `fetch`, anders als
-inline-SVG-Injection). Pausiert bei Hover, Liste einmal dupliziert
-(`aria-hidden="true"` auf der Kopie) für einen nahtlosen `translate3d`-Loop.
+über CSS `mask-image` + `background-color:var(--text-secondary)`, bei
+Hover `var(--text)` (liest nur den Alpha-Kanal von `vendor.brand.logoMono`,
+Fallback `brand.logo` - gleiche Tone-Logik wie `.vlogo--tone-secondary`
+oben, eigene Klasse `.logo-strip-mask` statt `.vlogo` aus historischen
+Gründen, gleiche Token): robuster als `<img>` + Filter und bleibt
+`file://`-tauglich (kein `fetch`, anders als inline-SVG-Injection).
+Pausiert bei Hover, Liste einmal dupliziert (`aria-hidden="true"` auf der
+Kopie) für einen nahtlosen `translate3d`-Loop.
 `prefers-reduced-motion`: Animation aus, Duplikat versteckt, `overflow-x:auto`
 für manuelles Scrollen. Fehlt `vendor.brand`/die Logo-Datei: Fallback-Text
 statt Maskenbox (`.logo-strip-item.is-fallback`).

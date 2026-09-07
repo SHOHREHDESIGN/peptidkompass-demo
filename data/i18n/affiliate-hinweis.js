@@ -32,6 +32,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.affiliate-hinweis.independentLeadLink": "Methodik",
     "page.affiliate-hinweis.independentLeadPost": ", ist von dieser Provision unabhängig.",
 
+    "page.affiliate-hinweis.trademarksH2": "Marken und Logos",
+    "page.affiliate-hinweis.trademarksNote": "Markennamen und Logos gehören den jeweiligen Anbietern und dienen nur der Kennzeichnung.",
+
     "page.affiliate-hinweis.vicNote": "Bei Bedarf um konkrete Partnerprogramm-Namen ergänzen, sobald echte Partnerschaften bestehen. Vor Go-live juristisch prüfen lassen."
   });
 
@@ -54,6 +57,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.affiliate-hinweis.independentLeadPre": "Vendor ratings, see ",
     "page.affiliate-hinweis.independentLeadLink": "Methodology",
     "page.affiliate-hinweis.independentLeadPost": ", are independent of this commission.",
+
+    "page.affiliate-hinweis.trademarksH2": "Trademarks and logos",
+    "page.affiliate-hinweis.trademarksNote": "Brand names and logos belong to their respective vendors and are used for identification purposes only.",
 
     "page.affiliate-hinweis.vicNote": "Add concrete partner program names once real partnerships exist. Have this reviewed by a lawyer before launch."
   });

@@ -394,7 +394,7 @@
     card.className = "vendor-card";
     if (vendor.brand && vendor.brand.farbe) card.style.setProperty("--brand", vendor.brand.farbe);
 
-    card.appendChild(PK.renderLogo(vendor, { basePath: bp }));
+    card.appendChild(PK.renderLogo(vendor, { basePath: bp, tone: "text", size: "card" }));
 
     var head = document.createElement("div");
     head.className = "vendor-card-head";
@@ -1267,41 +1267,86 @@
 
   /**
    * PK.renderLogo(vendor, opts)
-   * Baut einen farbigen Logo-Slot (Vendor-Card, Detail-Kopf, Vergleichs-
-   * tabelle): <img> aus vendor.brand.logo, alt über global.brand.logoAlt.
-   * Fehlt vendor.brand ODER schlägt das Bild fehl (404, Datei noch nicht
-   * geliefert): Fallback auf den Anbieternamen als Text (kein kaputtes
-   * Icon). opts: { basePath (Default ""), eager (bool, Default false),
-   * small (bool, Default false) für .brand-logo--sm }.
+   * Baut den Logo-Slot (Vendor-Card, Podium, Anbieter-Detail-Kopf,
+   * Vergleichstabelle): <span class="vlogo" role="img" aria-label="…">
+   * mit CSS mask-image auf vendor.brand.logoMono (schwarze Silhouette aus
+   * dem Alphakanal, tools/build_vendor_logos.py) - eingefärbt per
+   * background-color über eine Tone-Klasse (Runde "eingefärbte Mono-
+   * Maske", 07.09.2026: "Wir färben die Logos selbst ein, sodass es immer
+   * passt" statt farbiges Original + Dark-Mode-Chip).
+   * Fallback-Kette: logoMono fehlt ODER schlägt fehl (404) -> weicht auf
+   * vendor.brand.logoFallback aus (Wortmarke, assets/img/logos/
+   * _wordmarks/<slug>.svg, ebenfalls als Maske) -> schlägt AUCH das fehl
+   * (oder fehlt logoFallback): Anbietername als Text (kein kaputtes
+   * Icon, ersetzt den <span> komplett). Vendors ohne eigenes logoMono
+   * haben brand.logoMono bereits undefined UND brand.logo==logoFallback
+   * (avellon-peptides/dn-lab-research/sera-lab/ppx-at) - dann startet
+   * direkt bei logoFallback, kein doppelter Versuch derselben URL.
+   * opts: {
+   *   basePath (Default ""),
+   *   tone ("text"|"secondary"|"brand"|"white", Default "text"): Tabelle/
+   *     Karte = text (kippt in Dark Mode automatisch auf Weiß, weil
+   *     --text selbst umschaltet, system.css Abschnitt 1), Podium/
+   *     Detail-Kopf = brand (Markenfarbe, bleibt in Dark Mode gleich).
+   *   size ("xs"|"card"|"sm"|"podium"|"detail", Default "card"): Kontext-
+   *     größe, siehe .vlogo--* in system.css Abschnitt 7.
+   * }
    */
   PK.renderLogo = function (vendor, opts) {
     var o = opts || {};
     var bp = o.basePath || "";
-    var wrap = document.createElement("span");
-    wrap.className = "brand-logo" + (o.small ? " brand-logo--sm" : "") + (o.detail ? " brand-logo--detail" : "");
+    var tone = o.tone || "text";
+    var sizeClass = "vlogo--" + (o.size || "card");
 
-    var hasLogo = !!(vendor && vendor.brand && vendor.brand.logo);
-    if (!hasLogo) {
+    var hasBrand = !!(vendor && vendor.brand);
+    var maskPath = hasBrand ? (vendor.brand.logoMono || vendor.brand.logoFallback) : null;
+    if (!maskPath) {
       var textOnly = document.createElement("span");
       textOnly.className = "brand-logo-fallback";
       textOnly.textContent = (vendor && vendor.name) || "";
-      wrap.appendChild(textOnly);
-      return wrap;
+      return textOnly;
     }
 
-    var img = document.createElement("img");
-    img.src = bp + vendor.brand.logo;
-    img.alt = PK.t("global.brand.logoAlt", { name: vendor.name || "" });
-    img.loading = o.eager ? "eager" : "lazy";
-    img.addEventListener("error", function () {
-      wrap.textContent = "";
+    var el = document.createElement("span");
+    el.className = "vlogo " + sizeClass + " vlogo--tone-" + tone;
+    el.setAttribute("role", "img");
+    el.setAttribute("aria-label", PK.t("global.brand.logoAlt", { name: vendor.name || "" }));
+
+    var fallbackPath = vendor.brand.logoFallback;
+    var triedFallback = !fallbackPath || fallbackPath === maskPath;
+
+    function setMask(path) {
+      var url = bp + path;
+      el.style.maskImage = "url('" + url + "')";
+      el.style.webkitMaskImage = "url('" + url + "')";
+    }
+
+    function textFallback() {
       var fb = document.createElement("span");
       fb.className = "brand-logo-fallback";
       fb.textContent = vendor.name || "";
-      wrap.appendChild(fb);
-    });
-    wrap.appendChild(img);
-    return wrap;
+      if (el.parentNode) el.parentNode.replaceChild(fb, el);
+    }
+
+    setMask(maskPath);
+    // Kein <img error>-Event auf einem maskierten <span> möglich -> Probe
+    // per unsichtbarem Image() (gleiches Muster wie PK.initLogoStrip()
+    // unten) prüft, ob die Datei wirklich lädt (404 o.ä.).
+    var probe = new Image();
+    probe.onerror = function () {
+      if (!triedFallback) {
+        triedFallback = true;
+        setMask(fallbackPath);
+        var probe2 = new Image();
+        probe2.onerror = textFallback;
+        probe2.src = bp + fallbackPath;
+        return;
+      }
+      textFallback();
+    };
+    probe.src = bp + maskPath;
+
+    return el;
   };
 
   /**
@@ -1334,7 +1379,13 @@
 
       var hasLogo = !!(vendor.brand && vendor.brand.logo);
       if (hasLogo) {
-        var url = bp + vendor.brand.logo;
+        // Mono-Variante bevorzugt (brand.logoMono, schwarze Silhouette aus
+        // dem Alphakanal - Runde "echte Anbieter-Logos", 07.09.): garantiert
+        // sauberen Alphakanal fürs mask-image, unabhängig von Format/Güte
+        // des farbigen Originals (PNG/JPG/SVG). Fehlt logoMono (Fallback-
+        // Vendors ohne eigenes Logo): fällt auf brand.logo zurück, dessen
+        // Alphakanal (Wortmark-SVG) genauso maskefähig ist.
+        var url = bp + (vendor.brand.logoMono || vendor.brand.logo);
         var mask = document.createElement("div");
         mask.className = "logo-strip-mask";
         // mask-image direkt inline setzen (nicht über die --logo-url-Variable
@@ -1404,7 +1455,7 @@
       rankEl.textContent = PK.t(rankLabelKey[idx]);
       card.appendChild(rankEl);
 
-      card.appendChild(PK.renderLogo(vendor, { eager: idx === 0 }));
+      card.appendChild(PK.renderLogo(vendor, { tone: "brand", size: "podium" }));
 
       var name = document.createElement("p");
       name.className = "podium-name";

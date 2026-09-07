@@ -11,7 +11,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#6C3FA6",
-      logo: "assets/img/logos/peptidwerk.svg"
+      logo: "assets/img/logos/peptidwerk.png",
+      logoMono: "assets/img/logos/peptidwerk_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/peptidwerk.svg",
+      logoQuelle: "https://pepwerk.com/wp-content/uploads/2026/09/peptidwerk-logo-01-balanced-transparent-1.png"
     },
     score: {
       labor: 100,
@@ -93,7 +96,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#A8690F",
-      logo: "assets/img/logos/smart-peptides.svg"
+      logo: "assets/img/logos/smart-peptides.png",
+      logoMono: "assets/img/logos/smart-peptides_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/smart-peptides.svg",
+      logoQuelle: "https://smartpeptides.de/wp-content/uploads/2026/03/Ipamoreln-logo-1.1-1.svg"
     },
     score: {
       labor: 100,
@@ -177,7 +183,9 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#1B4F8C",
-      logo: "assets/img/logos/avellon-peptides.svg"
+      logo: "assets/img/logos/_wordmarks/avellon-peptides.svg",
+      logoFallback: "assets/img/logos/_wordmarks/avellon-peptides.svg",
+      logoQuelle: null
     },
     score: {
       labor: 100,
@@ -258,7 +266,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#0E6B64",
-      logo: "assets/img/logos/particle-peptides.svg"
+      logo: "assets/img/logos/particle-peptides.png",
+      logoMono: "assets/img/logos/particle-peptides_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/particle-peptides.svg",
+      logoQuelle: "https://particlepeptides.com/themes/particlepeptides/assets/img/logo.png"
     },
     score: {
       labor: 100,
@@ -338,7 +349,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#8C4F1B",
-      logo: "assets/img/logos/europa-peptide.svg"
+      logo: "assets/img/logos/europa-peptide.png",
+      logoMono: "assets/img/logos/europa-peptide_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/europa-peptide.svg",
+      logoQuelle: "https://europa-peptide.de/wp-content/themes/europa-tailwind/assets/images/logo-color.png"
     },
     score: {
       labor: null,
@@ -416,7 +430,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#1B8C7A",
-      logo: "assets/img/logos/biocollex.svg"
+      logo: "assets/img/logos/biocollex.png",
+      logoMono: "assets/img/logos/biocollex_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/biocollex.svg",
+      logoQuelle: "https://biocollexresearch.com/wp-content/uploads/2026/02/BioCollex_LogoPNG.png"
     },
     score: {
       labor: 100,
@@ -503,7 +520,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#3F5D4E",
-      logo: "assets/img/logos/licensed-peptides.svg"
+      logo: "assets/img/logos/licensed-peptides.png",
+      logoMono: "assets/img/logos/licensed-peptides_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/licensed-peptides.svg",
+      logoQuelle: "https://licensedpeptides.com/wp-content/themes/Avada-Child-Theme/assets-new/images/logo.svg"
     },
     score: {
       labor: 100,
@@ -592,7 +612,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#3F5D4E",
-      logo: "assets/img/logos/elyvera.svg"
+      logo: "assets/img/logos/elyvera.png",
+      logoMono: "assets/img/logos/elyvera_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/elyvera.svg",
+      logoQuelle: "https://europeptides.de/assets/logo-slwquZtF.svg"
     },
     score: {
       labor: 100,
@@ -677,7 +700,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#6C3FA6",
-      logo: "assets/img/logos/peak-peptide.svg"
+      logo: "assets/img/logos/peak-peptide.png",
+      logoMono: "assets/img/logos/peak-peptide_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/peak-peptide.svg",
+      logoQuelle: "https://peakpeptide.com/favicon-128.png"
     },
     score: {
       labor: 100,
@@ -760,7 +786,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#8C4F1B",
-      logo: "assets/img/logos/bio-boostx.svg"
+      logo: "assets/img/logos/bio-boostx.png",
+      logoMono: "assets/img/logos/bio-boostx_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/bio-boostx.svg",
+      logoQuelle: "https://bioboostx.com/wp-content/uploads/2026/03/logo-bioboostx-700-2.png"
     },
     score: {
       labor: 60,
@@ -848,7 +877,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#1B8C7A",
-      logo: "assets/img/logos/chameleon-peptides.svg"
+      logo: "assets/img/logos/chameleon-peptides.png",
+      logoMono: "assets/img/logos/chameleon-peptides_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/chameleon-peptides.svg",
+      logoQuelle: "https://chameleonpeptides.com/wp-content/uploads/2026/02/logo-horizontal-transparent.png"
     },
     score: {
       labor: 100,
@@ -930,7 +962,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#0E6B64",
-      logo: "assets/img/logos/helus-lab.svg"
+      logo: "assets/img/logos/helus-lab.png",
+      logoMono: "assets/img/logos/helus-lab_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/helus-lab.svg",
+      logoQuelle: "https://heluslab.com/wp-content/uploads/2026/08/Login_page_Logo_Black_blue_v3.svg"
     },
     score: {
       labor: 60,
@@ -1013,7 +1048,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#8C4F1B",
-      logo: "assets/img/logos/protide-health.svg"
+      logo: "assets/img/logos/protide-health.png",
+      logoMono: "assets/img/logos/protide-health_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/protide-health.svg",
+      logoQuelle: "https://protidehealth.com/wp-content/uploads/2026/02/protide-health-logo.png"
     },
     score: {
       labor: 60,
@@ -1095,7 +1133,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#8C1B4F",
-      logo: "assets/img/logos/beyond-peptides.svg"
+      logo: "assets/img/logos/beyond-peptides.png",
+      logoMono: "assets/img/logos/beyond-peptides_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/beyond-peptides.svg",
+      logoQuelle: "https://beyond-peptides.com/wp-content/uploads/2024/09/color-logo-1.svg"
     },
     score: {
       labor: 60,
@@ -1189,7 +1230,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#3F5D4E",
-      logo: "assets/img/logos/hydro-research.svg"
+      logo: "assets/img/logos/hydro-research.png",
+      logoMono: "assets/img/logos/hydro-research_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/hydro-research.svg",
+      logoQuelle: "https://hydroresearchpeptides.com/wp-content/uploads/2023/11/hydro-full-logo.png"
     },
     score: {
       labor: 100,
@@ -1278,7 +1322,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#453E90",
-      logo: "assets/img/logos/american-peptides.svg"
+      logo: "assets/img/logos/american-peptides.png",
+      logoMono: "assets/img/logos/american-peptides_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/american-peptides.svg",
+      logoQuelle: "https://americanpeptides.us/american-peptides-logo.png"
     },
     score: {
       labor: 60,
@@ -1362,7 +1409,9 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#A8690F",
-      logo: "assets/img/logos/dn-lab-research.svg"
+      logo: "assets/img/logos/_wordmarks/dn-lab-research.svg",
+      logoFallback: "assets/img/logos/_wordmarks/dn-lab-research.svg",
+      logoQuelle: null
     },
     score: {
       labor: 0,
@@ -1452,7 +1501,17 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#8C1B4F",
-      logo: "assets/img/logos/ppx-at.svg"
+      // brand.logo == logoFallback (Wortmarke, kein Farblogo): das einzige
+      // beschaffbare Original war ein Produktfoto (Kapselpackung) und als
+      // Logo/Silhouette ungeeignet (Auftrag "eingefärbte Mono-Maske", Punkt
+      // 1, 07.09.2026). logoMono wird jetzt aus derselben Wortmarke gebaut
+      // (tools/build_vendor_logos.py SOURCE_OVERRIDES), kein Foto mehr im
+      // Pipeline-Pfad. Gleiches Muster wie avellon-peptides/dn-lab-research/
+      // sera-lab (Vendors ohne beschaffbares Farblogo).
+      logo: "assets/img/logos/_wordmarks/ppx-at.svg",
+      logoMono: "assets/img/logos/ppx-at_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/ppx-at.svg",
+      logoQuelle: "https://ppx.at/assets/Logo.png"
     },
     score: {
       labor: 0,
@@ -1540,7 +1599,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#4F8C1B",
-      logo: "assets/img/logos/peptide-labz.svg"
+      logo: "assets/img/logos/peptide-labz.png",
+      logoMono: "assets/img/logos/peptide-labz_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/peptide-labz.svg",
+      logoQuelle: "https://peptidelabz.de/wp-content/uploads/2026/03/31fd0d62-0f51-4887-ab16-b990276b9da1.jpg"
     },
     score: {
       labor: 0,
@@ -1624,7 +1686,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#A8690F",
-      logo: "assets/img/logos/europeptideshop.svg"
+      logo: "assets/img/logos/europeptideshop.png",
+      logoMono: "assets/img/logos/europeptideshop_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/europeptideshop.svg",
+      logoQuelle: "https://europeptideshop.com/wp-content/uploads/2026/04/6fd820bd-a45c-418a-aecd-343ac737f7b2.png"
     },
     score: {
       labor: 0,
@@ -1711,7 +1776,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#8C4F1B",
-      logo: "assets/img/logos/peptide-culture.svg"
+      logo: "assets/img/logos/peptide-culture.png",
+      logoMono: "assets/img/logos/peptide-culture_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/peptide-culture.svg",
+      logoQuelle: "https://peptide-culture.com/cdn/shop/files/Peptide-Logo.png?v=1774435793"
     },
     score: {
       labor: 0,
@@ -1789,7 +1857,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#6C3FA6",
-      logo: "assets/img/logos/driada.svg"
+      logo: "assets/img/logos/driada.png",
+      logoMono: "assets/img/logos/driada_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/driada.svg",
+      logoQuelle: "https://driadashop.to/image/catalog/logosite.png"
     },
     score: {
       labor: 0,
@@ -1873,7 +1944,10 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#8C1B4F",
-      logo: "assets/img/logos/peptide-shop-deutschland.svg"
+      logo: "assets/img/logos/peptide-shop-deutschland.png",
+      logoMono: "assets/img/logos/peptide-shop-deutschland_mono.png",
+      logoFallback: "assets/img/logos/_wordmarks/peptide-shop-deutschland.svg",
+      logoQuelle: "https://peptideshopdeutschland.com/wp-content/uploads/2026/03/original-e9816ecb60d88f3be9ec23ec5d56527d-e1774364643355.webp"
     },
     score: {
       labor: 0,
@@ -1958,7 +2032,9 @@ window.PK.vendors = [
     gegruendet: null,
     brand: {
       farbe: "#1584A0",
-      logo: "assets/img/logos/sera-lab.svg"
+      logo: "assets/img/logos/_wordmarks/sera-lab.svg",
+      logoFallback: "assets/img/logos/_wordmarks/sera-lab.svg",
+      logoQuelle: null
     },
     score: {
       labor: null,

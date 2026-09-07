@@ -307,11 +307,15 @@
         var tr = document.createElement("tr");
 
         var tdName = document.createElement("td");
+        var nameCell = document.createElement("div");
+        nameCell.className = "table-logo-cell";
+        nameCell.appendChild(PK.renderLogo(r.vendor, { basePath: "../", tone: "text", size: "xs" }));
         var link = document.createElement("a");
         link.className = "btn-link";
         link.href = "../anbieter/detail.html?slug=" + encodeURIComponent(r.vendor.slug || "");
         link.textContent = r.vendor.name || "";
-        tdName.appendChild(link);
+        nameCell.appendChild(link);
+        tdName.appendChild(nameCell);
 
         var tdMg = document.createElement("td");
         tdMg.textContent = PK.byNum(r.mg) + " mg";

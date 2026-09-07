@@ -1178,22 +1178,86 @@ a.card:hover, .card.is-interactive:hover{
    Karten-Wrapper). Fehlt vendor.brand, bleibt --brand undefiniert : Fallback
    auf --line-strong (neutraler Rand statt kaputtem Look, Annahme Auftrag). */
 .vendor-card{ border-top:3px solid var(--brand, var(--line-strong)); }
-.vendor-card-logo{ display:flex; align-items:center; height:22px; }
-.vendor-card-logo img{ height:100%; width:auto; max-width:120px; object-fit:contain; }
 
-/* Logo-Baustein für Detail-Kopf und Vergleichstabelle (klein, vor dem
-   Namen). Fehlt vendor.brand/Logo-Datei: Fallback zeigt den Namen als Text
-   (kein kaputtes Bild-Icon). */
-.brand-logo{ display:inline-flex; align-items:center; }
-.brand-logo img{ display:block; height:28px; width:auto; max-width:140px; object-fit:contain; }
+/* -----------------------------------------------------------------------
+   Vendor-Logo: eingefärbte Mono-Maske (Runde "eingefärbte Mono-Maske",
+   07.09.2026 - Vic: "Wir färben die Logos selbst ein, sodass es immer
+   passt"). Ersetzt das alte farbige <img> + hellen Dark-Mode-Chip
+   dahinter (manche Original-Logos waren dunkel/schwarz gezeichnet und
+   verschwanden auf dunklem --bg). PK.renderLogo() (site.js) baut
+   <span class="vlogo vlogo--<size> vlogo--tone-<tone>"> mit CSS
+   mask-image auf vendor.brand.logoMono (schwarze Silhouette aus dem
+   Alphakanal, tools/build_vendor_logos.py) - eingefärbt über
+   background-color, IMMER lesbar in beiden Themes, kein Chip mehr nötig.
+   mask-image kommt inline von PK.renderLogo() (site.js), NICHT von hier:
+   ein url() innerhalb einer hier definierten Regel würde relativ zu
+   diesem Stylesheet (assets/css/) statt zur Seite aufgelöst (gleicher
+   Grund wie bei .logo-strip-mask, siehe unten).
+   Feste Breite×Höhe je Kontext statt width:auto (ein <span> hat anders
+   als <img> kein intrinsisches Seitenverhältnis) - mask-size:contain
+   fügt das Logo proportional in diese Box ein, überschüssiger Raum bleibt
+   transparent (kein Stretch, keine Verzerrung). */
+.vlogo{
+  display:inline-block;
+  background-color:var(--vlogo-color, var(--text));
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+  -webkit-mask-position:left center; mask-position:left center;
+  -webkit-mask-size:contain; mask-size:contain;
+}
 .brand-logo-fallback{ font-weight:600; color:var(--text-secondary); }
-.brand-logo--sm img{ height:18px; max-width:88px; }
-.brand-logo--sm .brand-logo-fallback{ font-size:var(--fs-small); }
-/* Detail-Kopf (Fix-Runde 3, Befund 6): 28px->40px, damit das Logo selbst
-   Orientierung liefert statt nur ein dünner Strich über der H1 zu sein. */
-.brand-logo--detail img{ height:40px; max-width:200px; }
-.brand-logo--detail .brand-logo-fallback{ font-size:var(--fs-h3); font-weight:600; }
+
+/* Tone: welche Farbe die Maske annimmt.
+   - text/secondary lesen die Theme-Tokens (system.css Abschnitt 1) und
+     kippen darüber AUTOMATISCH in Dark Mode (--text/--text-secondary
+     werden dort hell) - keine eigene [data-theme]-Regel nötig.
+   - brand bleibt die Markenfarbe (inline --brand je Karte/Vendor,
+     .vendor-card{border-top} oben) unverändert in beiden Themes.
+   - white ist fest erzwungen, unabhängig vom Theme (reserviert für
+     Kontexte mit garantiert dunklem Untergrund). */
+.vlogo--tone-text{ --vlogo-color:var(--text); }
+.vlogo--tone-secondary{ --vlogo-color:var(--text-secondary); }
+.vlogo--tone-brand{ --vlogo-color:var(--brand, var(--text)); }
+.vlogo--tone-white{ --vlogo-color:#fff; }
+
+/* Größe je Kontext (Vorgabe Auftrag "eingefärbte Mono-Maske"): Karte
+   (Default, kein Size-Modifier) 26px, Vergleichstabelle + Mobile-
+   Kartenansicht 28px/max 120px breit, Podium 32px, Detail-Kopf 44px.
+   Logo-Leiste bleibt eigenständig (.logo-strip-mask unten), gleiche
+   Farb-Token-Logik (var(--text-secondary)/var(--text)). */
+.vlogo--card{ width:140px; height:26px; }
+.vlogo--sm{ width:120px; height:28px; }
+/* 24px: Anbieter-Tabelle auf wirkstoffe/detail.html (kleinster Kontext,
+   Logo steht inline vor dem Anbieternamen in einer bereits dichten
+   Preisvergleichstabelle). */
+.vlogo--xs{ width:100px; height:24px; }
+.vlogo--podium{
+  width:170px; height:32px;
+  -webkit-mask-position:center center; mask-position:center center; /* Podium-Karte ist zentriert */
+}
+.vlogo--detail{ width:200px; height:44px; }
+
 .table-logo-cell{ display:flex; align-items:center; gap:8px; }
+
+/* Detail-Kopf: optionales kleines FARBIGES Original, NUR hier, mit
+   eigenem Chip (Auftrag: "Farbige Originale nur noch als optionales
+   kleines Bild im Detail-Kopf rechts, Klasse .vendor-logo-color, 28px,
+   mit Chip nur dort, sonst nirgends"). Neutraler heller Chip UNABHÄNGIG
+   vom Theme, weil das farbige Original jede beliebige Markenfarbe/
+   Helligkeit haben kann (funktioniert so in Light UND Dark) - einziger
+   verbliebener Chip im ganzen Projekt, ersetzt den alten globalen
+   Dark-Mode-Chip, der mit der Mono-Maske entfällt. */
+.vendor-logo-color{
+  display:inline-flex; align-items:center; height:28px; margin-left:8px;
+  padding:4px 8px; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.08);
+  border-radius:var(--radius-sm); vertical-align:middle;
+  /* dünner Rand, unabhängig vom Original: markiert die Chip-Fläche auch
+     dann, wenn das farbige Original selbst sehr hell/weiß gezeichnet ist
+     (z.B. biocollex - Marke ist weiße Linienzeichnung, für dunkle
+     Hersteller-Header gebaut) und sonst im Chip optisch verschwindet. Die
+     MONO-Maske daneben bleibt in jedem Fall lesbar (Markenfarbe), dieser
+     Chip ist nur ergänzend. */
+}
+.vendor-logo-color img{ display:block; height:100%; width:auto; max-width:120px; object-fit:contain; }
 
 /* -----------------------------------------------------------------------
    .logo-strip : horizontale, langsam laufende Logo-Leiste, monochrom.
@@ -1222,17 +1286,20 @@ a.card:hover, .card.is-interactive:hover{
 }
 .logo-strip-mask{
   width:156px; height:40px;
-  background-color:var(--text);
-  opacity:.72;
+  /* Tone secondary -> text bei Hover (Auftrag "eingefärbte Mono-Maske":
+     "Logo-Leiste 40px in var(--text-secondary), Hover var(--text)") -
+     dieselben Theme-Tokens wie .vlogo--tone-secondary/--tone-text oben,
+     kein Opacity-Trick mehr nötig (vorher: var(--text) + opacity:.72). */
+  background-color:var(--text-secondary);
   /* mask-image selbst kommt inline von PK.initLogoStrip() (site.js), NICHT
      von hier : ein url() in einer hier definierten Regel würde relativ zu
      diesem Stylesheet (assets/css/) statt zur Seite aufgelöst. */
   -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
   -webkit-mask-position:center; mask-position:center;
   -webkit-mask-size:contain; mask-size:contain;
-  transition:opacity var(--dur-fast) var(--ease);
+  transition:background-color var(--dur-fast) var(--ease);
 }
-.logo-strip-item:hover .logo-strip-mask{ opacity:1; }
+.logo-strip-item:hover .logo-strip-mask{ background-color:var(--text); }
 .logo-strip-fallback-text{
   display:none; font-size:var(--fs-small); font-weight:600;
   color:var(--text-secondary); white-space:nowrap;

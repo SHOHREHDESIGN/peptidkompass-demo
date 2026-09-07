@@ -86,7 +86,7 @@
             <span class="pill pill-info" id="vendor-demo-pill" data-i18n="page.anbieter-detail.demoPill" hidden>Demo-Daten</span>
             <span class="pill pill-info" id="vendor-datenbasis-pill"></span>
           </div>
-          <!-- Logo (40px, brand-logo--detail) trägt jetzt den Markennamen visuell;
+          <!-- Logo (44px, vlogo--detail, Markenfarbe) trägt jetzt den Markennamen visuell;
                H1 bleibt <h1> für SEO, aber optisch auf .h2-Größe reduziert statt
                .display (56px) - keine Dopplung von Logo+Bold-H1 mehr (Fix-Runde
                3, Befund 6). Entscheidung: Logo behalten (Orientierung + Marke),
@@ -349,7 +349,24 @@
       if (vendor.brand && vendor.brand.farbe) headEl.style.setProperty("--brand", vendor.brand.farbe);
       var logoSlot = document.getElementById("vendor-logo");
       logoSlot.textContent = "";
-      logoSlot.appendChild(PK.renderLogo(vendor, { basePath: "../", eager: true, detail: true }));
+      logoSlot.appendChild(PK.renderLogo(vendor, { basePath: "../", tone: "brand", size: "detail" }));
+
+      // Optionales kleines FARBIGES Original rechts neben der Mono-Maske,
+      // NUR hier im Detail-Kopf (Auftrag "eingefärbte Mono-Maske", Punkt 4).
+      // Nur zeigen, wenn wirklich ein eigenes Farblogo vorliegt (brand.logo
+      // != brand.logoFallback : Vendors ohne beschaffbares Farblogo zeigen
+      // sonst dieselbe Wortmarke doppelt). 404 (Datei noch nicht geliefert)
+      // entfernt das Bild wieder, kein kaputtes Icon.
+      var hasColorOriginal = !!(vendor.brand && vendor.brand.logo && vendor.brand.logo !== vendor.brand.logoFallback);
+      if (hasColorOriginal) {
+        var colorImg = document.createElement("img");
+        colorImg.className = "vendor-logo-color";
+        colorImg.src = "../" + vendor.brand.logo;
+        colorImg.alt = "";
+        colorImg.loading = "lazy";
+        colorImg.addEventListener("error", function () { colorImg.remove(); });
+        logoSlot.appendChild(colorImg);
+      }
 
       document.getElementById("vendor-land-pill").textContent = PK.tEnum("land", vendor.land) || "";
       document.getElementById("vendor-name").textContent = vendor.name || "";
