@@ -78,6 +78,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.tableHeadAktion": "Aktion",
     "page.anbieter-detail.produkteEmpty": "Produktdaten folgen. Wir haben für diesen Anbieter noch kein Sortiment mit Preisen erfasst.",
 
+    /* Status-Banner + Recherche (Schema v2.3, 15.09.) */
+    "page.anbieter-detail.statusStandTemplate": "(Stand {datum})",
+    "page.anbieter-detail.rechercheEyebrow": "Recherche",
+    "page.anbieter-detail.rechercheTitle": "Stärken und Schwächen",
+    "page.anbieter-detail.aenderungenEyebrow": "Verlauf",
+    "page.anbieter-detail.aenderungenTitle": "Aktuelle Änderungen",
+
     "page.anbieter-detail.staerkenTitle": "Stärken",
     "page.anbieter-detail.schwaechenTitle": "Schwächen",
 
@@ -167,6 +174,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.tableHeadPreisProMg": "Price/mg",
     "page.anbieter-detail.tableHeadAktion": "Action",
     "page.anbieter-detail.produkteEmpty": "Product data coming soon. We haven't recorded a priced product range for this vendor yet.",
+
+    "page.anbieter-detail.statusStandTemplate": "(as of {datum})",
+    "page.anbieter-detail.rechercheEyebrow": "Research",
+    "page.anbieter-detail.rechercheTitle": "Strengths and weaknesses",
+    "page.anbieter-detail.aenderungenEyebrow": "History",
+    "page.anbieter-detail.aenderungenTitle": "Recent changes",
 
     "page.anbieter-detail.staerkenTitle": "Strengths",
     "page.anbieter-detail.schwaechenTitle": "Weaknesses",

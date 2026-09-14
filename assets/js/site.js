@@ -2076,7 +2076,12 @@
       var sum = Object.keys(w).reduce(function (s, k) { return s + w[k]; }, 0);
       var norm = sum > 0 ? w : PK.WEIGHTS_DEFAULT;
 
-      var vendors = Array.isArray(global.PK.vendors) ? global.PK.vendors : [];
+      // Schema v2.3 (15.09., Auftrag "peptidkompass UI v2.3"): nicht-rankbare
+      // Vendoren (rankbar===false) fließen nicht ins Regler-Ranking ein -
+      // fehlendes Feld zählt als rankbar (Vendor vor der v2.3-Migration,
+      // kein Ausschluss). Einzige Stelle, an der site.js für diesen Auftrag
+      // angefasst wird (Podium bleibt seitenlokal in index.html gefiltert).
+      var vendors = (Array.isArray(global.PK.vendors) ? global.PK.vendors : []).filter(function (v) { return v.rankbar !== false; });
       // Pro Vendor NUR über dessen belegte Kriterien renormieren (data/
       // SCHEMA.md v2, "Regler: nur bewertete Kriterien gewichten") - ein
       // Vendor ohne Sortiment/Preis-Daten wird nicht mit s[crit]||0 auf 0

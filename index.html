@@ -451,7 +451,10 @@
     // Podium (Top 3): nur Vendoren mit datenbasis >= 3 (data/SCHEMA.md v2) -
     // ein Vendor mit nur 1-2 belegten Kriterien landet nicht auf dem Podium,
     // selbst wenn sein renormierter Gesamt-Score rechnerisch hoch ausfällt.
-    var podiumCandidates = ranked.filter(function (v) { return typeof v.datenbasis === "number" && v.datenbasis >= 3; });
+    // Schema v2.3: zusätzlich rankbar !== false (fehlendes Feld = rankbar,
+    // kein Ausschluss vor der v2.3-Migration) - ein nicht-rankbarer Anbieter
+    // gehört nicht aufs Podium, siehe vergleich.html-Sortierung "ans Ende".
+    var podiumCandidates = ranked.filter(function (v) { return typeof v.datenbasis === "number" && v.datenbasis >= 3 && v.rankbar !== false; });
 
     var statVendorsEl = document.getElementById("stat-vendors");
     var statCoasEl = document.getElementById("stat-coas");

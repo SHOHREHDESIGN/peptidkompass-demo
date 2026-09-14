@@ -183,9 +183,19 @@
     var table = document.getElementById("vergleich-table");
     if (!tbody || !table) return;
 
+    // Schema v2.3: Mapping vendor.status -> globaler i18n-Key-Suffix, von
+    // buildRow() (Tabelle) UND renderCards() (Mobile-Kartenansicht) genutzt.
+    var STATUS_I18N_KEY = { "zu-pruefen": "zuPruefen", "inaktiv": "inaktiv", "kein-shop": "keinShop" };
+
     // Standard-Sortierung: Gesamtscore absteigend (ia.md 4.4). gesamt===null
     // (data/SCHEMA.md v2, kein belegtes Kriterium) landet IMMER zuletzt.
+    // Schema v2.3: nicht-rankbare Anbieter (rankbar===false) rutschen VOR
+    // der Score-Sortierung ans Ende der Liste (bleiben sichtbar, aber nicht
+    // im Ranking-Wettbewerb) - fehlendes rankbar-Feld zählt als rankbar
+    // (Vendor vor der v2.3-Migration, kein Ausschluss).
     var ranked = vendors.slice().sort(function (a, b) {
+      var ra = a.rankbar !== false, rb = b.rankbar !== false;
+      if (ra !== rb) return ra ? -1 : 1;
       var sa = typeof a.gesamt === "number" ? a.gesamt : PK.computeScoreTotal(a.score);
       var sb = typeof b.gesamt === "number" ? b.gesamt : PK.computeScoreTotal(b.score);
       if (sa === null && sb === null) return 0;
@@ -230,6 +240,14 @@
         partnerPill.className = "pill pill-info";
         partnerPill.textContent = PK.t("global.partner");
         nameTop.appendChild(partnerPill);
+      }
+      // Status-Pill (Schema v2.3): nur bei status ≠ "aktiv" UND tatsächlich
+      // gesetzt (fehlendes Feld vor der v2.3-Migration zeigt keine Pill).
+      if (v.status && STATUS_I18N_KEY[v.status]) {
+        var statusPill = document.createElement("span");
+        statusPill.className = "pill " + (v.status === "zu-pruefen" ? "pill-info" : "pill-warn");
+        statusPill.textContent = PK.t("global.status." + STATUS_I18N_KEY[v.status]);
+        nameTop.appendChild(statusPill);
       }
       nameBlock.appendChild(nameTop);
       // Gesamtscore direkt unter dem Namen (Vic 14.09.), Score-Spalte bleibt
@@ -410,6 +428,23 @@
         table.setAttribute("data-sort-dir", "desc");
       }
       reapplySort(table);
+
+      // Schema v2.3: reapplySort() sortiert rein nach Spalteninhalt und
+      // kennt rankbar nicht - ohne diesen Schritt würde ein nicht-rankbarer
+      // Anbieter mit hohem Gesamtscore wieder mitten in die Liste rutschen.
+      // Bewegt alle rankbar:false-Zeilen ans Tabellenende, OHNE ihre
+      // Reihenfolge untereinander zu verändern (gilt für die Default-Ansicht
+      // und jeden Sprachwechsel-Re-Render; ein manueller Spalten-Klick läuft
+      // über PK.sortTable in site.js und damit außerhalb dieses Schritts,
+      // siehe Report).
+      var tb = table.tBodies[0];
+      if (tb) {
+        Array.prototype.slice.call(tb.rows).filter(function (row) {
+          var v = PK.vendorBySlug(row.getAttribute("data-vendor-slug"));
+          return v && v.rankbar === false;
+        }).forEach(function (row) { tb.appendChild(row); });
+      }
+
       renderCards();
 
       // Toggle-Label neu übersetzen (Sprachwechsel), Zustand selbst unverändert
@@ -467,6 +502,13 @@
           partnerPillCard.className = "pill pill-info";
           partnerPillCard.textContent = PK.t("global.partner");
           idWrap.appendChild(partnerPillCard);
+        }
+        // Status-Pill (Schema v2.3), gleiche Regel wie in buildRow() oben.
+        if (v.status && STATUS_I18N_KEY[v.status]) {
+          var statusPillCard = document.createElement("span");
+          statusPillCard.className = "pill " + (v.status === "zu-pruefen" ? "pill-info" : "pill-warn");
+          statusPillCard.textContent = PK.t("global.status." + STATUS_I18N_KEY[v.status]);
+          idWrap.appendChild(statusPillCard);
         }
         head.appendChild(idWrap);
         var scoreEl = document.createElement("span");

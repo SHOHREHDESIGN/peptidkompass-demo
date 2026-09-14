@@ -81,3 +81,53 @@
 /* Hero-Video v3 (Vic 15.09.): Montage in voller Container-Breite, gleiche
    Kante wie die drei Kennzahlen-Kacheln darunter (.container 1280 - 2x48). */
 .hero .hero-media{ max-width:calc(1280px - 96px); aspect-ratio:16/9; }
+
+/* ============================================================================
+   Schema v2.3 (15.09.): Status/Recherche/Sortiment (Auftrag "peptidkompass
+   UI v2.3"). Nur bestehende Tokens aus system.css (Farbe/Type/Spacing/
+   Radius), keine neuen Custom Properties. Keine Schatten (DESIGN.md).
+   ============================================================================ */
+
+/* .status-banner (anbieter/detail.html, vergleich.html-Status-Pill nutzt nur
+   .pill/.pill-info/.pill-warn aus system.css, keine eigene Klasse nötig) */
+.status-banner{ display:block; }
+.status-banner .card-body{ color:var(--text); font-size:var(--fs-small); }
+
+/* .research-list / .research-item : Stärken/Schwächen mit Häkchen-/Minus-
+   Glyph, Community-Pill und Quellenzeile (anbieter/detail.html). */
+.research-list{ list-style:none; margin:var(--sp-2) 0 0; padding:0; display:flex; flex-direction:column; gap:var(--sp-2); }
+.research-item{ display:flex; align-items:flex-start; gap:10px; }
+.research-glyph{ flex:0 0 auto; width:20px; height:20px; margin-top:2px; display:flex; align-items:center; justify-content:center; }
+.research-glyph svg{ display:block; }
+.research-glyph--ok{ color:var(--ok); }
+.research-glyph--warn{ color:var(--score-low, #a8453a); }
+.research-item-body{ min-width:0; flex:1 1 auto; }
+.research-item-text{ margin:0; font-size:var(--fs-small); color:var(--text); }
+.research-community-pill{ margin-left:6px; vertical-align:middle; }
+.research-item-source{ margin:4px 0 0; }
+.research-item-source a{ word-break:break-word; }
+
+/* .timeline : Aktuelle Änderungen (anbieter/detail.html) */
+.timeline{ list-style:none; margin:var(--sp-2) 0 0; padding:0; border-left:2px solid var(--line); display:flex; flex-direction:column; gap:var(--sp-3); }
+.timeline-item{ position:relative; padding-left:var(--sp-3); }
+.timeline-item::before{ content:""; position:absolute; left:-6px; top:5px; width:10px; height:10px; border-radius:50%; background:var(--accent); border:2px solid var(--bg); }
+.timeline-date{ margin:0; font-size:var(--fs-caption); font-weight:600; color:var(--text-secondary); }
+.timeline-text{ margin:2px 0 0; font-size:var(--fs-small); }
+.timeline-source{ margin:4px 0 0; }
+
+/* .options-grid / .option-tile : "Drei Optionen" (wirkstoffe/detail.html),
+   3 hervorgehobene Produkt-Kacheln über der Sortiment-Tabelle. */
+.option-tile{ display:flex; flex-direction:column; gap:6px; border-top:3px solid var(--brand, var(--line-strong)); }
+.option-tile-img{ width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; border-radius:var(--radius-sm); background:var(--surface); margin-bottom:var(--sp-2); }
+.option-tile-badge{ align-self:flex-start; background:var(--info-bg); color:var(--pill-info-text); border-color:transparent; }
+.option-tile-vendor{ display:flex; align-items:center; gap:8px; margin-top:2px; }
+.option-tile-vendor span{ font-size:var(--fs-small); color:var(--text-secondary); }
+.option-tile-product{ margin:2px 0 0; }
+.option-tile-price{ margin:0; font-size:var(--fs-small); color:var(--text-secondary); }
+.option-tile-price strong{ color:var(--text); font-size:1rem; }
+.option-tile-cta{ margin-top:auto; align-self:flex-start; }
+.option-tile .code-box-compact{ align-self:stretch; }
+
+/* Sortiment-Tabelle (wirkstoffe/detail.html): Logo-Spalte schmal, CoA-Pill-
+   Spalte nicht umbrechen. */
+#vendor-table td:first-child{ width:1%; white-space:nowrap; }

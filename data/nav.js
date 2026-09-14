@@ -176,18 +176,6 @@ window.PK.nav = {
       "partner": true
     },
     {
-      "slug": "smart-peptides",
-      "name": "Smart Peptides",
-      "gesamt": 100,
-      "partner": false
-    },
-    {
-      "slug": "avellon-peptides",
-      "name": "Avellon Peptides",
-      "gesamt": 96,
-      "partner": false
-    },
-    {
       "slug": "particle-peptides",
       "name": "Particle Peptides",
       "gesamt": 94,
@@ -197,6 +185,18 @@ window.PK.nav = {
       "slug": "europa-peptide",
       "name": "Europa-Peptide",
       "gesamt": 93,
+      "partner": false
+    },
+    {
+      "slug": "biocollex",
+      "name": "BioCollex",
+      "gesamt": 92,
+      "partner": false
+    },
+    {
+      "slug": "elyvera",
+      "name": "ELYVERA (Europeptides)",
+      "gesamt": 83,
       "partner": false
     }
   ]

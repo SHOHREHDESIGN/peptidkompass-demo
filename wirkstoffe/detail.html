@@ -93,7 +93,7 @@
         <div>
           <h1 class="display" id="peptide-name"></h1>
           <p class="text-small muted" id="peptide-synonyme" hidden></p>
-          <p><span class="pill" id="peptide-kategorie"></span> <span class="pill" id="peptide-studienlage-pill"></span></p>
+          <p><span class="pill" id="peptide-kategorie"></span> <span class="pill" id="peptide-studienlage-pill"></span> <span class="pill pill-info" id="peptide-vendor-count-pill" hidden></span></p>
           <p class="section-lead" id="peptide-kurz" style="margin-top:var(--sp-3);"></p>
           <p id="peptide-beschreibung"></p>
         </div>
@@ -164,21 +164,35 @@
       <div class="related-grid" id="peptide-verwandt-grid"></div>
     </section>
 
-    <!-- ANBIETER MIT DIESEM WIRKSTOFF (wie bisher) -->
+    <!-- DREI OPTIONEN (Schema v2.3, window.PK.products): günstigstes €/mg,
+         Partner (falls vorhanden), bester Gesamtscore - je eine hervorge-
+         hobene Kachel. Ganz versteckt, solange keine der drei Kacheln einen
+         Treffer hat (kein PK.products/kein Treffer für diesen Wirkstoff). -->
+    <section class="section container reveal" id="options-section" hidden>
+      <p class="eyebrow" data-i18n="page.wirkstoffe-detail.optionsEyebrow">Auswahlhilfe</p>
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.optionsTitle">Drei Optionen im Vergleich</h2>
+      <div class="grid-3 options-grid" id="options-grid"></div>
+    </section>
+
+    <!-- ANBIETER IM SORTIMENT (Schema v2.3, window.PK.products statt der
+         alten vendor.produkte): nur Anbieter mit status "aktiv"/"zu-pruefen",
+         sortiert nach preisProMgEur aufsteigend, Nicht-EUR-Preise danach. -->
     <section class="section container reveal">
-      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.vendorTableTitle">Anbieter mit diesem Wirkstoff</h2>
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.vendorTableTitle">Anbieter im Sortiment</h2>
+      <p class="text-small muted" id="sortiment-hinweis" style="margin:0 0 var(--sp-2);"></p>
       <div class="table-wrap">
         <table class="table" id="vendor-table">
           <thead>
             <tr>
-              <th data-sortable onclick="PK.sortTable(this.closest('table'),0)" data-i18n="global.nav.anbieter">Anbieter</th>
-              <th data-sortable onclick="PK.sortTable(this.closest('table'),1)" data-i18n="page.wirkstoffe-detail.thMg">mg</th>
-              <th data-sortable onclick="PK.sortTable(this.closest('table'),2)" data-i18n="page.wirkstoffe-detail.thPreis">Preis</th>
-              <!-- Default-Sortierung jetzt hier (Befund "Journey-Lücke Wirkstoff
-                   → günstigster Anbieter"): Preisjägerin-Persona will den
+              <th><span class="visually-hidden">Logo</span></th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),1)" data-i18n="global.nav.anbieter">Anbieter</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),2)" data-i18n="page.wirkstoffe-detail.thVial">Vial (mg)</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),3)" data-i18n="page.wirkstoffe-detail.thPreis">Preis</th>
+              <!-- Default-Sortierung (Befund "Journey-Lücke Wirkstoff →
+                   günstigster Anbieter"): Preisjägerin-Persona will den
                    günstigsten Preis/mg sehen, ohne erst umzusortieren. -->
-              <th data-sortable onclick="PK.sortTable(this.closest('table'),3)" aria-sort="ascending" data-i18n="page.wirkstoffe-detail.thPreisProMg">Preis/mg</th>
-              <th data-sortable onclick="PK.sortTable(this.closest('table'),4)" data-i18n="page.wirkstoffe-detail.thGesamtscore">Gesamtscore</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),4)" aria-sort="ascending" data-i18n="page.wirkstoffe-detail.thPreisProMg">Preis/mg</th>
+              <th data-sortable onclick="PK.sortTable(this.closest('table'),5)" data-i18n="page.wirkstoffe-detail.thCoa">CoA</th>
               <th><span class="visually-hidden" data-i18n="page.wirkstoffe-detail.thAktion">Aktion</span></th>
             </tr>
           </thead>
@@ -241,6 +255,8 @@
 <script src="../data/vendors.js"></script>
 <script src="../data/peptides.js"></script>
 <script src="../data/batches.js"></script>
+<!-- Schema v2.3: Preisdatenbank, siehe data/SCHEMA.md "data/products.js" -->
+<script src="../data/products.js"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
 <script src="../data/nav.js"></script>
 <script src="../data/i18n/global.js"></script>
@@ -298,6 +314,10 @@
 
     var vendors = Array.isArray(PK.vendors) ? PK.vendors : [];
     var batches = Array.isArray(PK.batches) ? PK.batches : [];
+    // Schema v2.3: window.PK.products (data/products.js, parallele Daten-
+    // Runde). Fehlt die Datei/das Array noch, bleibt sortimentRows leer -
+    // Tabelle zeigt den Leerzustand, keine Konsolenfehler (Guard).
+    var products = Array.isArray(window.PK.products) ? window.PK.products : [];
 
     var vendorTbody = document.getElementById("vendor-tbody");
     var vendorEmpty = document.getElementById("vendor-empty");
@@ -468,82 +488,141 @@
         faqEl.appendChild(details);
       });
 
-      // Anbieter-Tabelle: vendors.produkte gefiltert nach peptideSlug, sortiert nach Gesamtscore
-      var rows = [];
-      vendors.forEach(function (v) {
-        (Array.isArray(v.produkte) ? v.produkte : []).forEach(function (p) {
-          if (p.peptideSlug === peptide.slug) {
-            var gesamt = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
-            var pricePerMg = (typeof p.preisEur === "number" && typeof p.mg === "number" && p.mg > 0)
-              ? (p.preisEur / p.mg) : null;
-            rows.push({ vendor: v, mg: p.mg, preis: p.preisEur, pricePerMg: pricePerMg, gesamt: gesamt });
-          }
-        });
-      });
-      // Default-Sortierung: Preis/mg aufsteigend (günstigster zuerst), nicht
-      // mehr Gesamtscore absteigend (Befund "Journey-Lücke Wirkstoff →
-      // günstigster Anbieter", UX_audit_r1.html). Fehlender Preis/mg (null)
-      // rutscht ans Ende statt fälschlich als "0 = günstigster" zu gelten.
+      // Anbieter im Sortiment (Schema v2.3): window.PK.products gefiltert
+      // auf diesen Wirkstoff + nur Vendoren mit status "aktiv"/"zu-pruefen"
+      // (fehlendes status-Feld = Vendor vor der v2.3-Migration, zählt NICHT
+      // als ausgeschlossen). Sortiert nach preisProMgEur aufsteigend, Preise
+      // ohne EUR-Umrechnung (Nicht-EUR) rutschen ans Ende.
+      var CURRENCY_SYMBOL = { EUR: "€", USD: "$", GBP: "£", CHF: "CHF" };
+      function formatOrigPrice(preis, waehrung) {
+        var amount = PK.byNum(preis, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        var sym = CURRENCY_SYMBOL[waehrung];
+        return sym && sym.length <= 2 ? (amount + " " + sym) : (amount + " " + (sym || waehrung || ""));
+      }
+      function vendorStatusOk(v) {
+        return !v.status || v.status === "aktiv" || v.status === "zu-pruefen";
+      }
+
+      var rows = products
+        .filter(function (p) { return p.peptid === peptide.slug; })
+        .map(function (p) {
+          var v = PK.vendorBySlug(p.vendor);
+          if (!v || !vendorStatusOk(v)) return null;
+          var ppmEur = typeof p.preisProMgEur === "number" ? p.preisProMgEur : null;
+          var ppmOrig = typeof p.preisProMg === "number" ? p.preisProMg
+            : (typeof p.preis === "number" && typeof p.mg === "number" && p.mg > 0 ? (p.preis / p.mg) : null);
+          return {
+            vendor: v, mg: p.mg, preis: p.preis, waehrung: p.waehrung || "EUR",
+            url: p.url, coa: (p.coa === true || p.coa === false) ? p.coa : null,
+            geschaetzt: p.geschaetzt === true,
+            ppmEur: ppmEur, ppmOrig: ppmOrig,
+            gesamt: typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score)
+          };
+        })
+        .filter(function (r) { return r !== null; });
+
+      // Sortierung: preisProMgEur vorhanden UND kleiner zuerst; Zeilen ohne
+      // preisProMgEur (Nicht-EUR bzw. nicht umgerechnet) bleiben in ihrer
+      // bisherigen Reihenfolge, aber immer NACH allen EUR-Zeilen.
       rows.sort(function (a, b) {
-        var pa = a.pricePerMg === null ? Infinity : a.pricePerMg;
-        var pb = b.pricePerMg === null ? Infinity : b.pricePerMg;
-        return pa - pb;
+        var ea = a.ppmEur !== null, eb = b.ppmEur !== null;
+        if (ea && eb) return a.ppmEur - b.ppmEur;
+        if (ea !== eb) return ea ? -1 : 1;
+        return 0;
       });
-      var cheapestPpm = rows.length && rows[0].pricePerMg !== null ? rows[0].pricePerMg : null;
+      var hasEstimated = rows.some(function (r) { return r.geschaetzt; });
+
+      // Kennzahl "Anbieter im Sortiment" (distinkte Vendoren, nicht Zeilen -
+      // ein Vendor mit 2 Vial-Größen zählt einmal).
+      var vendorCountPill = document.getElementById("peptide-vendor-count-pill");
+      if (vendorCountPill) {
+        var distinctVendorSlugs = {};
+        rows.forEach(function (r) { distinctVendorSlugs[r.vendor.slug] = true; });
+        var vendorCount = Object.keys(distinctVendorSlugs).length;
+        if (vendorCount > 0) {
+          vendorCountPill.hidden = false;
+          vendorCountPill.textContent = PK.t("page.wirkstoffe-detail.vendorCountKennzahl", { n: vendorCount });
+        } else {
+          vendorCountPill.hidden = true;
+        }
+      }
+
+      // Hinweiszeile: Stand-Datum aus window.PK.site.updated (gleiche Quelle
+      // wie die Fußnote in vergleich.html), + Hinweis auf geschätzte Preise
+      // nur wenn mindestens eine Zeile geschaetzt:true trägt.
+      var sortimentHinweisEl = document.getElementById("sortiment-hinweis");
+      if (sortimentHinweisEl) {
+        var updated = (window.PK.site && window.PK.site.updated) || "";
+        // v2.3: Preis-Erhebung hat ein eigenes Datum je Produkt, das neueste zaehlt
+        var prodDates = (window.PK.products || []).filter(function (p) { return p.peptid === peptide.slug && p.datum; }).map(function (p) { return p.datum; }).sort();
+        if (prodDates.length) updated = prodDates[prodDates.length - 1];
+        sortimentHinweisEl.textContent = PK.t("page.wirkstoffe-detail.sortimentHinweis", { updated: updated })
+          + (hasEstimated ? " " + PK.t("page.wirkstoffe-detail.sortimentHinweisGeschaetzt") : "");
+      }
+
+      /**
+       * ppmDisplay(row)
+       * Anzeige-String für die "Preis/mg"-Zelle: EUR-Wert bevorzugt (immer
+       * vergleichbar), sonst Original-Währung. "~" Präfix bei geschaetzt:true.
+       */
+      function ppmDisplay(row) {
+        var prefix = row.geschaetzt ? "~" : "";
+        if (row.ppmEur !== null) return prefix + PK.byNum(row.ppmEur, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €/mg";
+        if (row.ppmOrig !== null) return prefix + formatOrigPrice(row.ppmOrig, row.waehrung) + "/mg";
+        return "–";
+      }
 
       vendorTbody.textContent = "";
       var badgeText = PK.tx(window.PK.site, "affiliateNote") || PK.t("global.badge.ad");
+      var COA_LABEL_KEY = { true: "coaYes", false: "coaNo" };
       rows.forEach(function (r) {
         var tr = document.createElement("tr");
 
+        var tdLogo = document.createElement("td");
+        tdLogo.appendChild(PK.renderLogo(r.vendor, { basePath: "../", tone: "text", size: "xs" }));
+        tr.appendChild(tdLogo);
+
         var tdName = document.createElement("td");
-        var nameCell = document.createElement("div");
-        nameCell.className = "table-logo-cell";
-        nameCell.appendChild(PK.renderLogo(r.vendor, { basePath: "../", tone: "text", size: "xs" }));
         var link = document.createElement("a");
         link.className = "btn-link";
         link.href = "../anbieter/detail.html?slug=" + encodeURIComponent(r.vendor.slug || "");
         link.textContent = r.vendor.name || "";
-        nameCell.appendChild(link);
-        tdName.appendChild(nameCell);
+        tdName.appendChild(link);
+        tr.appendChild(tdName);
 
         var tdMg = document.createElement("td");
         tdMg.textContent = PK.byNum(r.mg) + " mg";
         tdMg.setAttribute("data-sort", String(r.mg || 0));
+        tr.appendChild(tdMg);
 
         var tdPreis = document.createElement("td");
-        tdPreis.textContent = PK.byNum(r.preis, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+        tdPreis.textContent = formatOrigPrice(r.preis, r.waehrung);
         tdPreis.setAttribute("data-sort", String(r.preis || 0));
+        tr.appendChild(tdPreis);
 
         var tdPpm = document.createElement("td");
-        tdPpm.setAttribute("data-sort", String(r.pricePerMg || 0));
-        tdPpm.appendChild(document.createTextNode(r.pricePerMg !== null
-          ? (PK.byNum(r.pricePerMg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €/mg")
-          : "–"));
-        // Pill "Günstigster Preis/mg" auf der ersten Zeile nach Sortierung
-        // (nur wenn ein echter Preis/mg vorliegt, kein "-1 gewinnt trotzdem").
-        if (cheapestPpm !== null && r.pricePerMg === cheapestPpm) {
-          var cheapestPill = document.createElement("span");
-          cheapestPill.className = "pill pill-ok";
-          cheapestPill.style.marginLeft = "8px";
-          cheapestPill.textContent = PK.t("page.wirkstoffe-detail.cheapestBadge");
-          tdPpm.appendChild(cheapestPill);
-        }
+        var ppmSortVal = r.ppmEur !== null ? r.ppmEur : (r.ppmOrig !== null ? r.ppmOrig : -1);
+        tdPpm.setAttribute("data-sort", String(ppmSortVal));
+        tdPpm.textContent = ppmDisplay(r);
+        tr.appendChild(tdPpm);
 
-        var tdScore = document.createElement("td");
-        tdScore.setAttribute("data-sort", String(r.gesamt || 0));
-        var scorePill = document.createElement("span");
-        var variant = r.gesamt >= 80 ? "pill-ok" : (r.gesamt >= 60 ? "pill-info" : "pill-warn");
-        scorePill.className = "pill " + variant;
-        scorePill.textContent = PK.byNum(r.gesamt);
-        tdScore.appendChild(scorePill);
+        var tdCoa = document.createElement("td");
+        var coaPill = document.createElement("span");
+        if (r.coa === true) { coaPill.className = "pill pill-ok"; coaPill.textContent = PK.t("page.wirkstoffe-detail.coaYes"); }
+        else if (r.coa === false) { coaPill.className = "pill pill-warn"; coaPill.textContent = PK.t("page.wirkstoffe-detail.coaNo"); }
+        else { coaPill.className = "pill"; coaPill.textContent = PK.t("global.na"); }
+        tdCoa.appendChild(coaPill);
+        tr.appendChild(tdCoa);
 
-        // Aktion: CTA direkt in der Zeile (Befund "Journey-Lücke"), gleiches
-        // Pflicht-Kennzeichnungs-Muster wie vergleich.html/anbieter-detail.
+        // Aktion: Produkt-Link (PK.safeUrl(p.url)) bevorzugt, sonst Vendor-
+        // Fallback (fehlender Produkt-Link). Partner-Vendor bekommt zusätzlich
+        // PK.renderCodeBox() darunter (README "Runde Leben und Conversion").
         var tdAction = document.createElement("td");
+        var actionStack = document.createElement("div");
+        actionStack.className = "table-action-stack";
         var shopLink = document.createElement("a");
         shopLink.className = "btn btn-secondary ext-link";
-        shopLink.href = PK.safeUrl(r.vendor.affiliateUrl);
+        shopLink.href = PK.safeUrl(r.url || PK.vendorHref(r.vendor));
         shopLink.target = "_blank";
         shopLink.rel = "sponsored nofollow";
         shopLink.setAttribute("data-affiliate", "true");
@@ -552,17 +631,114 @@
         badge.className = "badge-ad";
         badge.textContent = badgeText;
         shopLink.appendChild(badge);
-        tdAction.appendChild(shopLink);
-
-        tr.appendChild(tdName);
-        tr.appendChild(tdMg);
-        tr.appendChild(tdPreis);
-        tr.appendChild(tdPpm);
-        tr.appendChild(tdScore);
+        actionStack.appendChild(shopLink);
+        if (r.vendor.partner === true) {
+          var codeBox = PK.renderCodeBox(r.vendor);
+          if (codeBox) actionStack.appendChild(codeBox);
+        }
+        tdAction.appendChild(actionStack);
         tr.appendChild(tdAction);
+
         vendorTbody.appendChild(tr);
       });
       if (vendorEmpty) vendorEmpty.hidden = rows.length > 0;
+
+      // DREI OPTIONEN: günstigstes €/mg (nur unter den EUR-vergleichbaren
+      // Zeilen), Partner (falls einer im gefilterten Sortiment ist), bester
+      // Gesamtscore. Ganze Sektion bleibt hidden, wenn keine der drei einen
+      // Treffer hat (leeres Sortiment).
+      var optionsSection = document.getElementById("options-section");
+      var optionsGrid = document.getElementById("options-grid");
+      if (optionsGrid) optionsGrid.textContent = "";
+      var eurRows = rows.filter(function (r) { return r.ppmEur !== null; });
+      var cheapestRow = eurRows.length ? eurRows[0] : null; // rows bereits nach ppmEur sortiert
+      var partnerRow = null;
+      rows.forEach(function (r) {
+        if (r.vendor.partner === true && (!partnerRow || (r.ppmEur !== null && (partnerRow.ppmEur === null || r.ppmEur < partnerRow.ppmEur)))) partnerRow = r;
+      });
+      var bestScoreRow = null;
+      rows.forEach(function (r) {
+        if (typeof r.gesamt === "number" && (!bestScoreRow || r.gesamt > bestScoreRow.gesamt)) bestScoreRow = r;
+      });
+
+      function buildOptionTile(row, badgeText2) {
+        var tile = document.createElement("div");
+        tile.className = "card option-tile";
+        if (row.vendor.brand && row.vendor.brand.farbe) tile.style.setProperty("--brand", row.vendor.brand.farbe);
+
+        var img = document.createElement("img");
+        img.className = "option-tile-img";
+        img.src = "../assets/img/mol_" + encodeURIComponent(peptide.slug) + "_800.jpg";
+        img.alt = "";
+        img.loading = "lazy";
+        img.addEventListener("error", function () { img.hidden = true; });
+        tile.appendChild(img);
+
+        var badgeEl = document.createElement("p");
+        badgeEl.className = "pill option-tile-badge";
+        badgeEl.textContent = badgeText2;
+        tile.appendChild(badgeEl);
+
+        var vendorRow = document.createElement("div");
+        vendorRow.className = "option-tile-vendor";
+        vendorRow.appendChild(PK.renderLogo(row.vendor, { basePath: "../", tone: "text", size: "xs" }));
+        var vendorNameEl = document.createElement("span");
+        vendorNameEl.textContent = row.vendor.name || "";
+        vendorRow.appendChild(vendorNameEl);
+        tile.appendChild(vendorRow);
+
+        var productP = document.createElement("p");
+        productP.className = "card-title option-tile-product";
+        productP.textContent = (peptide.name || "") + " · " + PK.byNum(row.mg) + " mg";
+        tile.appendChild(productP);
+
+        var priceP = document.createElement("p");
+        priceP.className = "option-tile-price";
+        var priceStrong = document.createElement("strong");
+        priceStrong.textContent = formatOrigPrice(row.preis, row.waehrung);
+        priceP.appendChild(priceStrong);
+        priceP.appendChild(document.createTextNode(" · " + ppmDisplay(row)));
+        tile.appendChild(priceP);
+
+        if (row.vendor.partner === true) {
+          var tileCodeBox = PK.renderCodeBox(row.vendor);
+          if (tileCodeBox) tile.appendChild(tileCodeBox);
+        }
+
+        var cta = document.createElement("a");
+        cta.className = "btn btn-primary ext-link option-tile-cta";
+        cta.href = PK.safeUrl(row.url || PK.vendorHref(row.vendor));
+        cta.target = "_blank";
+        cta.rel = "sponsored nofollow";
+        cta.setAttribute("data-affiliate", "true");
+        cta.appendChild(document.createTextNode(PK.t("page.wirkstoffe-detail.ctaZumAnbieter")));
+        var ctaBadgeEl = document.createElement("span");
+        ctaBadgeEl.className = "badge-ad";
+        ctaBadgeEl.textContent = badgeText;
+        cta.appendChild(ctaBadgeEl);
+        tile.appendChild(cta);
+
+        return tile;
+      }
+
+      // Drei verschiedene Anbieter: Partner zuerst, dann guenstigstes EUR/mg
+      // (anderer Anbieter), dann bester Gesamtscore unter den restlichen.
+      var usedVendors = {};
+      var optionTiles = [];
+      if (partnerRow) { optionTiles.push(buildOptionTile(partnerRow, PK.t("global.partner"))); usedVendors[partnerRow.vendor.slug] = true; }
+      var cheapestDistinct = eurRows.filter(function (r) { return !usedVendors[r.vendor.slug]; })[0] || null;
+      if (cheapestDistinct) { optionTiles.push(buildOptionTile(cheapestDistinct, PK.t("page.wirkstoffe-detail.optionsCheapestBadge"))); usedVendors[cheapestDistinct.vendor.slug] = true; }
+      var bestDistinct = rows.filter(function (r) { return typeof r.gesamt === "number" && !usedVendors[r.vendor.slug]; })
+        .sort(function (a, b) { return b.gesamt - a.gesamt; })[0] || null;
+      if (bestDistinct) { optionTiles.push(buildOptionTile(bestDistinct, PK.t("page.wirkstoffe-detail.optionsBestScoreBadge"))); usedVendors[bestDistinct.vendor.slug] = true; }
+      if (optionsSection) {
+        if (optionTiles.length) {
+          optionsSection.hidden = false;
+          optionTiles.forEach(function (t) { optionsGrid.appendChild(t); });
+        } else {
+          optionsSection.hidden = true;
+        }
+      }
 
       // Chargen-Block: batches gefiltert nach peptideSlug
       var matchingBatches = batches.filter(function (b) { return b.peptideSlug === peptide.slug; });

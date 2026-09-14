@@ -14,6 +14,7 @@
 <meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/css/system.css">
+<link rel="stylesheet" href="../assets/css/tiles.css">
 <link rel="icon" href="../assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/brand/favicon/favicon-180.png">
@@ -83,6 +84,15 @@
     <!-- BREADCRUMB + KOPFBEREICH -->
     <section class="section-tight container reveal">
       <p class="text-small" style="margin:0 0 var(--sp-3);"><a class="text-small muted" href="index.html" data-i18n="page.anbieter-detail.breadcrumb">← Zurück zu Anbieter</a></p>
+
+      <!-- STATUS-BANNER (Schema v2.3): nur bei vendor.status ≠ "aktiv". Ruhige
+           Info-Card statt Warnfarbe/Icon-Feuerwerk, Pill trägt die Farbe.
+           Ausgeblendet per [hidden], solange status fehlt/aktiv ist. -->
+      <div class="card status-banner" id="vendor-status-banner" hidden style="margin-bottom:var(--sp-3);">
+        <p class="card-eyebrow" style="margin-bottom:6px;"><span class="pill" id="vendor-status-pill"></span></p>
+        <p class="card-body" id="vendor-status-body"></p>
+      </div>
+
       <div class="visual visual-banner visual-parallax" style="margin-bottom:var(--sp-4);">
         <img id="vendor-banner-img" src="../assets/img/sec_vendors.jpg" alt="" loading="eager" fetchpriority="high" onerror="this.style.display='none'">
       </div>
@@ -186,18 +196,33 @@
       </div>
     </section>
 
-    <!-- STÄRKEN / SCHWÄCHEN -->
-    <section class="section section-tinted container reveal">
-      <div class="grid-2">
+    <!-- STÄRKEN / SCHWÄCHEN (Schema v2.3, vendor.recherche): ersetzt die
+         alte vendor.staerken/schwaechen-Liste durch die belegte Recherche
+         mit Quelle+Datum je Zeile. Fehlt vendor.recherche komplett, bleibt
+         die ganze Sektion hidden (kein leerer Rumpf). -->
+    <section class="section section-tinted container reveal" id="recherche-section" hidden>
+      <p class="eyebrow" data-i18n="page.anbieter-detail.rechercheEyebrow">Recherche</p>
+      <h2 class="section-title" data-i18n="page.anbieter-detail.rechercheTitle">Stärken und Schwächen</h2>
+      <p class="text-small muted" id="recherche-stand"></p>
+      <div class="grid-2" style="margin-top:var(--sp-3);">
         <div class="card">
           <p class="card-eyebrow" data-i18n="page.anbieter-detail.staerkenTitle">Stärken</p>
-          <ul id="staerken-list" style="margin:var(--sp-1) 0 0; padding-left:1.1em; color:var(--text-secondary); font-size:var(--fs-small);"></ul>
+          <ul class="research-list" id="staerken-list"></ul>
         </div>
         <div class="card">
           <p class="card-eyebrow" data-i18n="page.anbieter-detail.schwaechenTitle">Schwächen</p>
-          <ul id="schwaechen-list" style="margin:var(--sp-1) 0 0; padding-left:1.1em; color:var(--text-secondary); font-size:var(--fs-small);"></ul>
+          <ul class="research-list" id="schwaechen-list"></ul>
         </div>
       </div>
+    </section>
+
+    <!-- AKTUELLE ÄNDERUNGEN (Schema v2.3, vendor.recherche.aenderungen):
+         Zeitleiste, gleiche Sichtbarkeitsregel wie oben (kein recherche ->
+         keine Sektion). -->
+    <section class="section container reveal" id="aenderungen-section" hidden>
+      <p class="eyebrow" data-i18n="page.anbieter-detail.aenderungenEyebrow">Verlauf</p>
+      <h2 class="section-title" data-i18n="page.anbieter-detail.aenderungenTitle">Aktuelle Änderungen</h2>
+      <ul class="timeline" id="aenderungen-list"></ul>
     </section>
 
     <!-- AUFFÄLLIGKEITEN (roteFlaggen, data/SCHEMA.md v2): Faktensätze mit
@@ -279,6 +304,7 @@
 <!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
 <script src="../data/site.js"></script>
 <script src="../data/vendors.js"></script>
+<script src="../data/products.js"></script>
 <script src="../data/peptides.js"></script>
 <script src="../data/batches.js"></script>
 <script src="../data/reviews.js"></script>
@@ -383,6 +409,29 @@
       document.getElementById("vendor-land-pill").textContent = PK.tEnum("land", vendor.land) || "";
       document.getElementById("vendor-name").textContent = vendor.name || "";
       document.getElementById("vendor-subhead").textContent = PK.t("page.anbieter-detail.subheadTemplate", { land: PK.tEnum("land", vendor.land), score: typeof gesamt === "number" ? PK.byNum(gesamt) : PK.t("global.na") });
+
+      // Status-Banner (Schema v2.3): nur bei status ≠ "aktiv" UND status
+      // tatsächlich gesetzt (fehlendes Feld auf Vendoren vor der v2.3-
+      // Migration zählt NICHT als "nicht aktiv", sonst würde jeder Vendor
+      // ohne das neue Feld fälschlich ein Banner bekommen).
+      var statusBannerEl = document.getElementById("vendor-status-banner");
+      if (statusBannerEl) {
+        var STATUS_I18N_KEY = { "aktiv": "aktiv", "zu-pruefen": "zuPruefen", "inaktiv": "inaktiv", "kein-shop": "keinShop" };
+        var STATUS_PILL_VARIANT = { "zu-pruefen": "pill-info", "inaktiv": "pill-warn", "kein-shop": "pill-warn" };
+        if (vendor.status && vendor.status !== "aktiv" && STATUS_I18N_KEY[vendor.status]) {
+          statusBannerEl.hidden = false;
+          var statusPillEl = document.getElementById("vendor-status-pill");
+          statusPillEl.className = "pill " + (STATUS_PILL_VARIANT[vendor.status] || "pill");
+          statusPillEl.textContent = PK.t("global.status." + STATUS_I18N_KEY[vendor.status]);
+          var statusDatum = (vendor.recherche && vendor.recherche.stand) || vendor.preisStand || vendor.stand || "";
+          var statusGrundText = PK.tx(vendor, "statusGrund");
+          document.getElementById("vendor-status-body").textContent = statusGrundText
+            ? (statusDatum ? (statusGrundText + " " + PK.t("page.anbieter-detail.statusStandTemplate", { datum: statusDatum })) : statusGrundText)
+            : (statusDatum ? PK.t("page.anbieter-detail.statusStandTemplate", { datum: statusDatum }) : "");
+        } else {
+          statusBannerEl.hidden = true;
+        }
+      }
 
       // Demo-Pill nur zeigen, wenn dieser einzelne Vendor tatsächlich demo:true
       // ist (data/SCHEMA.md v2: die 24 echten Anbieter sind demo:false; ein
@@ -521,7 +570,15 @@
       // -> ein Hinweis statt einer leeren, unerklärten Tabelle.
       var tbody = document.getElementById("produkt-tbody");
       tbody.textContent = "";
-      if (!(vendor.produkte || []).length) {
+      // v2.3: Produkte kommen aus data/products.js (Preis-Erhebung 15.09.),
+      // vendor.produkte bleibt als Alt-Quelle erhalten.
+      var produkte = (vendor.produkte || []).slice();
+      if (!produkte.length && window.PK.products) {
+        produkte = window.PK.products.filter(function (p) { return p.vendor === vendor.slug && typeof p.mg === "number" && typeof p.preis === "number"; })
+          .map(function (p) { return { peptideSlug: p.peptid, mg: p.mg, preisEur: p.waehrung === "EUR" ? p.preis : null, preis: p.preis, waehrung: p.waehrung, url: p.url, geschaetzt: p.geschaetzt === true }; })
+          .sort(function (a, b) { return String(a.peptideSlug).localeCompare(String(b.peptideSlug)) || a.mg - b.mg; });
+      }
+      if (!produkte.length) {
         var emptyRow = document.createElement("tr");
         var emptyTd = document.createElement("td");
         emptyTd.colSpan = 5;
@@ -530,7 +587,7 @@
         emptyRow.appendChild(emptyTd);
         tbody.appendChild(emptyRow);
       }
-      (vendor.produkte || []).forEach(function (p) {
+      produkte.forEach(function (p) {
         var peptide = PK.peptideBySlug(p.peptideSlug);
         var name = peptide ? peptide.name : p.peptideSlug;
         var preisProMg = (typeof p.preisEur === "number" && typeof p.mg === "number" && p.mg > 0) ? (p.preisEur / p.mg) : null;
@@ -549,8 +606,10 @@
         tdMg.setAttribute("data-sort", String(p.mg));
 
         var tdPreis = document.createElement("td");
-        tdPreis.textContent = PK.byNum(p.preisEur, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
-        tdPreis.setAttribute("data-sort", String(p.preisEur));
+        var preisWert = (typeof p.preisEur === "number") ? p.preisEur : p.preis;
+        var preisEinheit = (typeof p.preisEur === "number") ? "€" : (p.waehrung || "");
+        tdPreis.textContent = PK.byNum(preisWert, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " " + preisEinheit + (p.geschaetzt ? " *" : "");
+        tdPreis.setAttribute("data-sort", String(preisWert));
 
         var tdPreisMg = document.createElement("td");
         tdPreisMg.textContent = preisProMg !== null ? (PK.byNum(preisProMg, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €") : "–";
@@ -578,21 +637,124 @@
         tbody.appendChild(tr);
       });
 
-      // Stärken / Schwächen
-      var staerkenEl = document.getElementById("staerken-list");
-      staerkenEl.textContent = "";
-      (PK.tx(vendor, "staerken") || []).forEach(function (t) {
+      // Stärken / Schwächen + Aktuelle Änderungen (Schema v2.3,
+      // vendor.recherche): ersetzt die alte flache vendor.staerken/
+      // schwaechen-Liste. sourceDomainLink()/buildResearchItem() sind
+      // Funktionsdeklarationen (hoisted), Definition hier direkt vor der
+      // ersten Nutzung für die Lesbarkeit.
+
+      /**
+       * sourceDomainLink(quelle, datumStr)
+       * Baut die kleine Quellenzeile: quelle ist entweder eine https://-URL
+       * (-> Link, Domain als Linktext, rel="nofollow noopener") oder ein
+       * freier Zitat-String (-> reiner Text, kein Link). null/leer bei
+       * beiden Feldern -> kein Element (kein leeres "· " in der Liste).
+       */
+      function sourceDomainLink(quelle, datumStr) {
+        var url = null;
+        if (typeof quelle === "string" && /^https?:\/\//i.test(quelle)) {
+          try { url = new URL(quelle); } catch (e) { url = null; }
+        }
+        if (!url && !quelle && !datumStr) return null;
+        var p = document.createElement("p");
+        p.className = "research-item-source text-caption muted";
+        if (url) {
+          var a = document.createElement("a");
+          a.className = "btn-link";
+          a.href = quelle;
+          a.target = "_blank";
+          a.rel = "nofollow noopener";
+          a.textContent = url.hostname.replace(/^www\./, "");
+          p.appendChild(a);
+          if (datumStr) p.appendChild(document.createTextNode(" · " + datumStr));
+        } else {
+          p.textContent = [quelle, datumStr].filter(Boolean).join(" · ");
+        }
+        return p;
+      }
+
+      /**
+       * buildResearchItem(entry, kind)
+       * Eine Zeile der Stärken-/Schwächen-Liste: Häkchen- (kind="ok") bzw.
+       * Minus-Glyph (kind="warn", Inline-SVG currentColor) + Text (PK.tx) +
+       * optionale Community-Pill (entry.art==="community") + Quellenzeile.
+       */
+      function buildResearchItem(entry, kind) {
         var li = document.createElement("li");
-        li.textContent = t;
-        staerkenEl.appendChild(li);
-      });
-      var schwaechenEl = document.getElementById("schwaechen-list");
-      schwaechenEl.textContent = "";
-      (PK.tx(vendor, "schwaechen") || []).forEach(function (t) {
-        var li = document.createElement("li");
-        li.textContent = t;
-        schwaechenEl.appendChild(li);
-      });
+        li.className = "research-item";
+        var glyph = document.createElement("span");
+        glyph.className = "research-glyph research-glyph--" + kind;
+        glyph.setAttribute("aria-hidden", "true");
+        glyph.innerHTML = kind === "ok"
+          ? '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"></polyline></svg>'
+          : '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>';
+        var body = document.createElement("div");
+        body.className = "research-item-body";
+        var textP = document.createElement("p");
+        textP.className = "research-item-text";
+        textP.textContent = PK.tx(entry, "text");
+        if (entry.art === "community") {
+          var commPill = document.createElement("span");
+          commPill.className = "pill pill-info research-community-pill";
+          commPill.textContent = PK.t("global.recherche.community");
+          textP.appendChild(document.createTextNode(" "));
+          textP.appendChild(commPill);
+        }
+        body.appendChild(textP);
+        var sourceEl = sourceDomainLink(entry.quelle, entry.datum);
+        if (sourceEl) body.appendChild(sourceEl);
+        li.appendChild(glyph);
+        li.appendChild(body);
+        return li;
+      }
+
+      var rechercheSection = document.getElementById("recherche-section");
+      var aenderungenSection = document.getElementById("aenderungen-section");
+      var recherche = vendor.recherche;
+      if (recherche && typeof recherche === "object") {
+        rechercheSection.hidden = false;
+        document.getElementById("recherche-stand").textContent = recherche.stand
+          ? PK.t("global.recherche.stand", { datum: recherche.stand }) : "";
+
+        var staerkenEl = document.getElementById("staerken-list");
+        staerkenEl.textContent = "";
+        (Array.isArray(recherche.staerken) ? recherche.staerken : []).forEach(function (entry) {
+          staerkenEl.appendChild(buildResearchItem(entry, "ok"));
+        });
+
+        var schwaechenEl = document.getElementById("schwaechen-list");
+        schwaechenEl.textContent = "";
+        (Array.isArray(recherche.schwaechen) ? recherche.schwaechen : []).forEach(function (entry) {
+          schwaechenEl.appendChild(buildResearchItem(entry, "warn"));
+        });
+
+        var aenderungenListe = Array.isArray(recherche.aenderungen) ? recherche.aenderungen : [];
+        if (aenderungenListe.length) {
+          aenderungenSection.hidden = false;
+          var aenderungenListEl = document.getElementById("aenderungen-list");
+          aenderungenListEl.textContent = "";
+          aenderungenListe.forEach(function (entry) {
+            var li = document.createElement("li");
+            li.className = "timeline-item";
+            var dateP = document.createElement("p");
+            dateP.className = "timeline-date";
+            dateP.textContent = entry.datum || "";
+            var textP = document.createElement("p");
+            textP.className = "timeline-text";
+            textP.textContent = PK.tx(entry, "text");
+            li.appendChild(dateP);
+            li.appendChild(textP);
+            var sourceEl = sourceDomainLink(entry.quelle, null);
+            if (sourceEl) { sourceEl.className = "timeline-source text-caption muted"; li.appendChild(sourceEl); }
+            aenderungenListEl.appendChild(li);
+          });
+        } else {
+          aenderungenSection.hidden = true;
+        }
+      } else {
+        rechercheSection.hidden = true;
+        aenderungenSection.hidden = true;
+      }
 
       // Auffälligkeiten (roteFlaggen, data/SCHEMA.md v2): reine Faktensätze
       // mit Stand-Datum aus der Recherche, unverändert/wortgetreu übersetzt.

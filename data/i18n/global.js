@@ -92,6 +92,19 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.produkte.pending": "Produktdaten folgen",
     "global.flags.title": "Auffälligkeiten (Stand 06.09.2026)",
 
+    /* vendor.status (data/SCHEMA.md v2.3, Deep-Research 15.09.2026) */
+    "global.status.aktiv": "Aktiv",
+    "global.status.zuPruefen": "Zu prüfen",
+    "global.status.inaktiv": "Inaktiv",
+    "global.status.keinShop": "Kein eigener Shop",
+
+    /* vendor.recherche (data/SCHEMA.md v2.3) */
+    "global.recherche.staerken": "Stärken",
+    "global.recherche.schwaechen": "Schwächen",
+    "global.recherche.aenderungen": "Änderungen",
+    "global.recherche.community": "Community-Meinung",
+    "global.recherche.stand": "Recherche-Stand {datum}",
+
     /* Vendor-Brand-Logo (PK.renderLogo, Runde "Leben und Conversion" 06.09.):
        hier zusätzlich zu data/i18n/conversion.js definiert (Vertrag,
        data/SCHEMA.md), weil global.js auf JEDER Seite geladen wird -
@@ -213,6 +226,19 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.legal.notChecked": "not checked",
     "global.produkte.pending": "Product data coming soon",
     "global.flags.title": "Notable items (as of Sep 6, 2026)",
+
+    /* vendor.status (data/SCHEMA.md v2.3, deep research Sep 15, 2026) */
+    "global.status.aktiv": "Active",
+    "global.status.zuPruefen": "Under review",
+    "global.status.inaktiv": "Inactive",
+    "global.status.keinShop": "No own shop",
+
+    /* vendor.recherche (data/SCHEMA.md v2.3) */
+    "global.recherche.staerken": "Strengths",
+    "global.recherche.schwaechen": "Weaknesses",
+    "global.recherche.aenderungen": "Changes",
+    "global.recherche.community": "Community feedback",
+    "global.recherche.stand": "Research as of {datum}",
 
     "global.brand.logoAlt": "{name} logo",
 
