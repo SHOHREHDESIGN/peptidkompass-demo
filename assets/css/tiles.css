@@ -77,3 +77,7 @@
 /* Deals: Logo über dem Namen, gleiche Höhe wie auf den Anbieter-Karten */
 .deal-card .vlogo{ margin-bottom:var(--sp-2); }
 .deal-card .brand-logo-fallback{ display:block; margin-bottom:var(--sp-2); }
+
+/* Hero-Video v3 (Vic 15.09.): Montage in voller Container-Breite, gleiche
+   Kante wie die drei Kennzahlen-Kacheln darunter (.container 1280 - 2x48). */
+.hero .hero-media{ max-width:calc(1280px - 96px); aspect-ratio:16/9; }
