@@ -60,7 +60,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.methodik.faq2Q": "Woher kommen die Bewertungen?",
     "page.methodik.faq2A": "Wir werten öffentlich zugängliche Angaben aus: Impressum, veröffentlichte CoAs, Versandbedingungen und Shop-Seite. Die genaue Gewichtung der fünf Kriterien steht auf dieser Seite. Seit dem 06.09.2026 sind alle 24 Anbieter real recherchiert; ein Kriterium ohne belegte Angabe fließt nicht in den Score ein und wird als \"nicht ermittelbar\" angezeigt statt geschätzt.",
     "page.methodik.faq3Q": "Sind das echte Anbieter?",
-    "page.methodik.faq3A": "Nein, aktuell zeigt Peptide Compass acht fiktive Demo-Anbieter. Namen, Scores, Rabattcodes und Chargen sind Platzhalter. Echte Anbieter-Daten trägt Vic vor dem Live-Gang ein, klar als DEMO markiert bis dahin."
+    "page.methodik.faq3A": "Peptide Compass listet 24 echte Anbieter mit öffentlich belegten Angaben, Stand 06.09.2026. Preise, Chargen und Bewertungen ergänzen wir, sobald sie erhoben sind."
   });
 
   i18n.merge("en", {
@@ -111,7 +111,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.methodik.faq2Q": "Where do the ratings come from?",
     "page.methodik.faq2A": "We evaluate publicly available information: the legal notice, published CoAs, shipping terms, and the vendor's site. The exact weighting of the five criteria is on this page. As of Sep 6, 2026 all 24 vendors are researched real vendors; a criterion without a verifiable fact is excluded from the score and shown as \"not available\" instead of being estimated.",
     "page.methodik.faq3Q": "Are these real vendors?",
-    "page.methodik.faq3A": "No, Peptide Compass currently shows eight fictional demo vendors. Names, scores, discount codes, and batches are placeholders. Vic will enter real vendor data before launch, clearly marked as DEMO until then."
+    "page.methodik.faq3A": "Peptide Compass lists 24 real vendors with publicly documented facts as of Sep 6, 2026. Prices, batches and reviews will follow once collected."
   });
 
 })(window.PK.i18n);

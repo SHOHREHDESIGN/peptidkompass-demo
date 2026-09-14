@@ -101,7 +101,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.codeBox.error": "Fehler",
 
     /* Footer */
-    "global.footer.metaDemo": "© Peptide Compass · Demo-Projekt",
+    "global.footer.metaDemo": "© Peptide Compass · Vorabversion",
 
     /* Enum: vendor.land (data/SCHEMA.md) */
     "global.enum.land.DE": "DE",
@@ -206,7 +206,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.codeBox.copied": "Copied",
     "global.codeBox.error": "Error",
 
-    "global.footer.metaDemo": "© Peptide Compass · Demo project",
+    "global.footer.metaDemo": "© Peptide Compass · Preview",
 
     "global.enum.land.DE": "DE",
     "global.enum.land.AT": "AT",

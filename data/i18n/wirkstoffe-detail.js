@@ -28,7 +28,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.backLink": "← Zurück zu Wirkstoffe",
 
     "page.wirkstoffe-detail.errorTitle": "Wirkstoff nicht gefunden",
-    "page.wirkstoffe-detail.errorBody": "Für diesen Link liegt kein Wirkstoff in unserer Demo-Datenbank vor.",
+    "page.wirkstoffe-detail.errorBody": "Für diesen Link liegt kein Wirkstoff in unserer Datenbank vor.",
     "page.wirkstoffe-detail.errorLink": "Zur Wirkstoffe-Übersicht",
 
     "page.wirkstoffe-detail.mechanismusTitle": "Wie es wirkt",
@@ -72,7 +72,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.backLink": "← Back to Peptides",
 
     "page.wirkstoffe-detail.errorTitle": "Peptide not found",
-    "page.wirkstoffe-detail.errorBody": "This link doesn't match a peptide in our demo database.",
+    "page.wirkstoffe-detail.errorBody": "This link doesn't match a peptide in our database.",
     "page.wirkstoffe-detail.errorLink": "View all peptides",
 
     "page.wirkstoffe-detail.mechanismusTitle": "How it works",
