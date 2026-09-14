@@ -358,9 +358,9 @@
           ["factsCas", sb.cas],
           ["factsMw", sb.molekulargewicht],
           ["factsAs", (typeof sb.aminosaeuren === "number") ? String(sb.aminosaeuren) : null],
-          ["factsHwz", sb.halbwertszeit],
-          ["factsReinheit", sb.reinheitsstandard],
-          ["factsLoeslichkeit", sb.loeslichkeit]
+          ["factsHwz", sb.halbwertszeit ? PK.tx(sb, "halbwertszeit") : null],
+          ["factsReinheit", sb.reinheitsstandard ? PK.tx(sb, "reinheitsstandard") : null],
+          ["factsLoeslichkeit", sb.loeslichkeit ? PK.tx(sb, "loeslichkeit") : null]
         ];
         factRows.forEach(function (row) {
           var item = document.createElement("div");

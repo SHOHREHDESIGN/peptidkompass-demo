@@ -106,12 +106,14 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 9941957",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 99 % (HPLC, commercial standard)"
     },
     verwandt: [
       "tb-500",
       "ghk-cu",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "pentadeca-arginate"
     ]
   },
   {
@@ -198,7 +200,24 @@ window.PK.peptides = [
       description: "Pentadeca Arginat im Überblick: Sequenz-Identität mit BPC-157, Studienlage zur Stammsequenz und Sicherheitsprofil, sachlich für den Forschungskontext.",
       description_en: "Pentadeca Arginate overview: sequence identity with BPC-157, evidence on the parent sequence, and safety profile, presented factually for research."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: null,
+      molekulargewicht: null,
+      aminosaeuren: 15,
+      halbwertszeit: null,
+      reinheitsstandard: null,
+      loeslichkeit: null,
+      sequenzLaenge: 15,
+      quellen: [
+        "chemverify Katalog 14.09.2026 (CAS/Molekulargewicht dort nicht geführt, PubChem: kein Eintrag für Pentadeca Arginate)"
+      ]
+    },
+    verwandt: [
+      "bpc-157",
+      "tb-500",
+      "ghk-cu"
+    ]
   },
   {
     slug: "tb-500",
@@ -296,12 +315,14 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 45382195",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 99 % (HPLC, commercial standard)"
     },
     verwandt: [
       "bpc-157",
       "ghk-cu",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "pentadeca-arginate"
     ]
   },
   {
@@ -406,7 +427,27 @@ window.PK.peptides = [
       description: "5-Amino-1MQ im Überblick: Mechanismus, präklinische Studienlage und Rechtsstatus des NNMT-Hemmstoffs, ein kleines Molekül, kein Peptid.",
       description_en: "5-Amino-1MQ at a glance: mechanism, preclinical study status, and legal status of the NNMT inhibitor, a small molecule rather than a peptide."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "685079-15-6",
+      molekulargewicht: "159.21 g/mol",
+      aminosaeuren: null,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: null,
+      quellen: [
+        "PubChem CID 950107",
+        "chemverify Katalog 14.09.2026",
+        "kein Peptid, kleines Molekül ohne Aminosäuresequenz (NNMT-Inhibitor)"
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "aod-9604",
+      "mots-c",
+      "tirzepatid"
+    ]
   },
   {
     slug: "aod-9604",
@@ -510,7 +551,26 @@ window.PK.peptides = [
       description: "AOD-9604 im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des hGH-Fragments 177-191, in klinischen Studien zur Gewichtsregulation untersucht.",
       description_en: "AOD-9604 at a glance: mechanism, study status and safety profile of the hGH fragment 177-191 studied in clinical trials on weight regulation."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "221231-10-3",
+      molekulargewicht: "1815.1 g/mol",
+      aminosaeuren: 16,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 16,
+      quellen: [
+        "PubChem CID 71300630",
+        "chemverify Katalog 14.09.2026"
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "tesamorelin",
+      "mots-c",
+      "5-amino-1mq"
+    ]
   },
   {
     slug: "cagrilintid",
@@ -611,7 +671,27 @@ window.PK.peptides = [
       description: "Cagrilintid im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des Amylin-Analogons, solo und in der Kombination CagriSema untersucht.",
       description_en: "Cagrilintide at a glance: mechanism, study status, and safety profile of the amylin analog, studied alone and in the CagriSema combination."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "1415456-99-3",
+      molekulargewicht: "4409 g/mol",
+      aminosaeuren: 37,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 37,
+      quellen: [
+        "PubChem CID 171397054",
+        "chemverify Katalog 14.09.2026"
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "semaglutid",
+      "tirzepatid",
+      "retatrutid",
+      "survodutid"
+    ]
   },
   {
     slug: "mots-c",
@@ -720,11 +800,14 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 146675088",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
     },
     verwandt: [
       "semaglutid",
-      "retatrutid"
+      "ss-31",
+      "aod-9604",
+      "5-amino-1mq"
     ]
   },
   {
@@ -831,11 +914,15 @@ window.PK.peptides = [
       sequenzLaenge: 39,
       quellen: [
         "chemverify Katalog 14.09.2026 (PubChem: kein Eintrag)"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)",
+      loeslichkeit_en: "soluble in sterile water or bacteriostatic water"
     },
     verwandt: [
       "semaglutid",
-      "mots-c"
+      "tirzepatid",
+      "cagrilintid",
+      "survodutid"
     ]
   },
   {
@@ -933,11 +1020,15 @@ window.PK.peptides = [
         "PubChem CID 56843331",
         "DailyMed SPL OZEMPIC (Semaglutid), Novo Nordisk",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      halbwertszeit_en: "≈ 1 week (elimination, Ozempic prescribing information)",
+      reinheitsstandard_en: "≥ 99 % (HPLC, commercial standard)"
     },
     verwandt: [
+      "tirzepatid",
       "retatrutid",
-      "mots-c"
+      "survodutid",
+      "cagrilintid"
     ]
   },
   {
@@ -1033,7 +1124,26 @@ window.PK.peptides = [
       description: "Survodutid im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des GLP-1/Glucagon-Dual-Agonisten in fortgeschrittener klinischer Prüfung.",
       description_en: "Survodutide at a glance: mechanism, study status and safety profile of the GLP-1/glucagon dual agonist in advanced clinical trials."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "2805997-46-8",
+      molekulargewicht: "4232 g/mol",
+      aminosaeuren: null,
+      halbwertszeit: null,
+      reinheitsstandard: null,
+      loeslichkeit: null,
+      sequenzLaenge: null,
+      quellen: [
+        "PubChem CID 171378821",
+        "chemverify Katalog 14.09.2026 (Aminosäurenzahl/Reinheitsstandard dort nicht geführt)"
+      ]
+    },
+    verwandt: [
+      "semaglutid",
+      "tirzepatid",
+      "retatrutid",
+      "cagrilintid"
+    ]
   },
   {
     slug: "tirzepatid",
@@ -1120,7 +1230,29 @@ window.PK.peptides = [
       description: "Tirzepatid im Überblick: dualer GIP/GLP-1-Mechanismus, Studienlage aus SURMOUNT und SURPASS, Sicherheitsprofil und Rechtsstatus des Wirkstoffs.",
       description_en: "Tirzepatide at a glance: dual GIP/GLP-1 mechanism, SURMOUNT and SURPASS trial evidence, safety profile and legal status of the compound."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "2023788-19-2",
+      molekulargewicht: "4813 g/mol",
+      aminosaeuren: 39,
+      halbwertszeit: "≈ 5 Tage (Elimination, Fachinformation Mounjaro)",
+      reinheitsstandard: "≥ 99 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 39,
+      quellen: [
+        "PubChem CID 166567236",
+        "DailyMed SPL MOUNJARO (Tirzepatid), Eli Lilly and Company",
+        "chemverify Katalog 14.09.2026"
+      ],
+      halbwertszeit_en: "≈ 5 days (elimination, Mounjaro prescribing information)",
+      reinheitsstandard_en: "≥ 99 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "semaglutid",
+      "retatrutid",
+      "cagrilintid",
+      "survodutid"
+    ]
   },
   {
     slug: "cjc-1295",
@@ -1229,7 +1361,8 @@ window.PK.peptides = [
     verwandt: [
       "ipamorelin",
       "sermorelin",
-      "tesamorelin"
+      "tesamorelin",
+      "igf-1-lr3"
     ]
   },
   {
@@ -1330,7 +1463,26 @@ window.PK.peptides = [
       description: "Hexarelin sachlich erklärt: Wirkmechanismus, Studienlage zu Wachstumshormon und ACTH/Cortisol, Sicherheitsprofil und Rechtsstatus des GHRP-Peptids.",
       description_en: "Hexarelin explained factually: mechanism of action, study data on growth hormone and ACTH/cortisol, safety profile, and legal status of this GHRP peptide."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "140703-51-1",
+      molekulargewicht: "887.0 g/mol",
+      aminosaeuren: 6,
+      halbwertszeit: null,
+      reinheitsstandard: null,
+      loeslichkeit: null,
+      sequenzLaenge: 6,
+      quellen: [
+        "PubChem CID 6918297",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "ipamorelin",
+      "cjc-1295",
+      "sermorelin",
+      "igf-1-lr3"
+    ]
   },
   {
     slug: "igf-1-lr3",
@@ -1423,7 +1575,26 @@ window.PK.peptides = [
       description: "IGF-1 LR3 im Überblick: Struktur, präklinische Studienlage, Dopingstatus im Sport (WADA S2) und Sicherheitsprofil, sachlich für den Forschungskontext.",
       description_en: "IGF-1 LR3 overview: structure, preclinical evidence, doping status in sport (WADA S2), and safety profile, presented factually for the research context."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: null,
+      molekulargewicht: "9111.4 g/mol",
+      aminosaeuren: 83,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 83,
+      quellen: [
+        "chemverify Katalog 14.09.2026 (PubChem: kein Eintrag für IGF-1 LR3, CAS dort nicht geführt)"
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "hexarelin",
+      "cjc-1295",
+      "tesamorelin",
+      "sermorelin"
+    ]
   },
   {
     slug: "ipamorelin",
@@ -1531,12 +1702,14 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 9831659",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 99 % (HPLC, commercial standard)"
     },
     verwandt: [
       "cjc-1295",
       "sermorelin",
-      "tesamorelin"
+      "tesamorelin",
+      "hexarelin"
     ]
   },
   {
@@ -1641,12 +1814,15 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 16132413",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)",
+      loeslichkeit_en: "soluble in water and dilute acetic acid"
     },
     verwandt: [
       "cjc-1295",
       "ipamorelin",
-      "tesamorelin"
+      "tesamorelin",
+      "hexarelin"
     ]
   },
   {
@@ -1752,12 +1928,15 @@ window.PK.peptides = [
         "PubChem CID 16137828",
         "DailyMed SPL EGRIFTA SV (Tesamorelin), Theratechnologies",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      halbwertszeit_en: "≈ 8 minutes (elimination, Egrifta SV prescribing information)",
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
     },
     verwandt: [
       "cjc-1295",
       "ipamorelin",
-      "sermorelin"
+      "sermorelin",
+      "igf-1-lr3"
     ]
   },
   {
@@ -1856,11 +2035,13 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 71587328",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard, blue powder)"
     },
     verwandt: [
       "bpc-157",
-      "tb-500"
+      "tb-500",
+      "pentadeca-arginate"
     ]
   },
   {
@@ -1951,7 +2132,25 @@ window.PK.peptides = [
       description: "Dihexa sachlich erklärt: Herkunft, Wirkmechanismus, präklinische Studienlage und offene Sicherheitsfragen dieses Forschungspeptids.",
       description_en: "Dihexa explained factually: origin, mechanism of action, preclinical study status, and open safety questions surrounding this research peptide."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "1401708-83-5",
+      molekulargewicht: "504.7 g/mol",
+      aminosaeuren: 2,
+      halbwertszeit: null,
+      reinheitsstandard: null,
+      loeslichkeit: null,
+      sequenzLaenge: 2,
+      quellen: [
+        "PubChem CID 129010512",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "semax",
+      "selank",
+      "dsip"
+    ]
   },
   {
     slug: "dsip",
@@ -2054,7 +2253,26 @@ window.PK.peptides = [
       description: "DSIP im Überblick: Herkunft, Wirkmechanismus, Studienlage und Sicherheitsprofil eines der am längsten erforschten Schlafpeptide.",
       description_en: "DSIP at a glance: origin, mechanism, study status, and safety profile of one of the longest-studied sleep peptides."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "62568-57-4",
+      molekulargewicht: "848.8 g/mol",
+      aminosaeuren: 9,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 9,
+      quellen: [
+        "PubChem CID 68816",
+        "chemverify Katalog 14.09.2026"
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "selank",
+      "semax",
+      "dihexa"
+    ]
   },
   {
     slug: "selank",
@@ -2150,11 +2368,13 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 11765600",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
     },
     verwandt: [
       "semax",
-      "epitalon"
+      "epitalon",
+      "dihexa"
     ]
   },
   {
@@ -2251,11 +2471,13 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 9811102",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
     },
     verwandt: [
       "selank",
-      "epitalon"
+      "epitalon",
+      "dsip"
     ]
   },
   {
@@ -2348,7 +2570,25 @@ window.PK.peptides = [
       description: "KPV im Überblick: Herkunft aus alpha-MSH, Wirkmechanismus, präklinische Studienlage und Sicherheitsprofil, sachlich aufbereitet für den Forschungskontext.",
       description_en: "KPV overview: origin from alpha-MSH, mechanism, preclinical evidence, and safety profile, presented factually for the research context."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "67727-97-3",
+      molekulargewicht: "342.43 g/mol",
+      aminosaeuren: 3,
+      halbwertszeit: null,
+      reinheitsstandard: null,
+      loeslichkeit: null,
+      sequenzLaenge: 3,
+      quellen: [
+        "PubChem CID 125672",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "ll-37",
+      "thymosin-alpha-1",
+      "bpc-157"
+    ]
   },
   {
     slug: "ll-37",
@@ -2441,7 +2681,27 @@ window.PK.peptides = [
       description: "LL-37 im Überblick: körpereigenes Cathelicidin, Wirkmechanismus, klinische Studienlage zur Wundheilung und Sicherheitsprofil im Forschungskontext.",
       description_en: "LL-37 overview: naturally occurring cathelicidin, mechanism, clinical evidence on wound healing, and safety profile in the research context."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "154947-66-7",
+      molekulargewicht: "4493 g/mol",
+      aminosaeuren: 37,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 95 % (HPLC, handelsüblich)",
+      loeslichkeit: "löslich in Wasser und DMSO",
+      sequenzLaenge: 37,
+      quellen: [
+        "PubChem CID 16198951",
+        "chemverify Katalog 14.09.2026"
+      ],
+      reinheitsstandard_en: "≥ 95 % (HPLC, commercial standard)",
+      loeslichkeit_en: "soluble in water and DMSO"
+    },
+    verwandt: [
+      "kpv",
+      "thymosin-alpha-1",
+      "bpc-157"
+    ]
   },
   {
     slug: "thymosin-alpha-1",
@@ -2539,11 +2799,14 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 16130571",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
     },
     verwandt: [
       "bpc-157",
-      "tb-500"
+      "tb-500",
+      "kpv",
+      "ll-37"
     ]
   },
   {
@@ -2643,12 +2906,14 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 219042",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
     },
     verwandt: [
       "melanotan-2",
       "selank",
-      "semax"
+      "semax",
+      "dsip"
     ]
   },
   {
@@ -2746,7 +3011,26 @@ window.PK.peptides = [
       description: "Kisspeptin-10 sachlich erklärt: Wirkmechanismus am KISS1R-Rezeptor, Studienlage zu GnRH und der Hormonachse sowie Sicherheitsprofil.",
       description_en: "Kisspeptin-10 explained factually: mechanism at the KISS1R receptor, study data on GnRH and the hormone axis, and the safety profile of a research peptide."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "374675-21-5",
+      molekulargewicht: "1302.4 g/mol",
+      aminosaeuren: 10,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: "löslich in Wasser und wässrigen Puffern",
+      sequenzLaenge: 10,
+      quellen: [
+        "PubChem CID 25240297",
+        "chemverify Katalog 14.09.2026"
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)",
+      loeslichkeit_en: "soluble in water and aqueous buffers"
+    },
+    verwandt: [
+      "pt-141",
+      "oxytocin"
+    ]
   },
   {
     slug: "melanotan-2",
@@ -2846,11 +3130,14 @@ window.PK.peptides = [
       quellen: [
         "PubChem CID 92432",
         "chemverify Katalog 14.09.2026"
-      ]
+      ],
+      reinheitsstandard_en: "≥ 99 % (HPLC, commercial standard)"
     },
     verwandt: [
       "ghk-cu",
-      "epitalon"
+      "epitalon",
+      "pt-141",
+      "kpv"
     ]
   },
   {
@@ -2951,7 +3238,28 @@ window.PK.peptides = [
       description: "Oxytocin sachlich erklärt: zugelassene Indikation, Wirkmechanismus, Studienlage zu sozialem Verhalten und Rechtsstatus als Forschungschemikalie.",
       description_en: "Oxytocin explained factually: approved indication, mechanism of action, research on social behavior, and legal status as a research chemical."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "50-56-6",
+      molekulargewicht: "1007.2 g/mol",
+      aminosaeuren: 9,
+      halbwertszeit: "≈ 1 bis 6 Minuten (Plasma-Halbwertszeit, Fachinformation Pitocin)",
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 9,
+      quellen: [
+        "PubChem CID 439302",
+        "DailyMed SPL PITOCIN (Oxytocin), Par Health USA",
+        "chemverify Katalog 14.09.2026"
+      ],
+      halbwertszeit_en: "≈ 1 to 6 minutes (plasma half-life, Pitocin prescribing information)",
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "kisspeptin",
+      "pt-141",
+      "dsip"
+    ]
   },
   {
     slug: "pt-141",
@@ -3048,7 +3356,28 @@ window.PK.peptides = [
       description: "PT-141 (Bremelanotide): Mechanismus, Studienlage, Sicherheitsprofil und Zulassungsstatus des Melanocortin-Rezeptor-Agonisten im Überblick.",
       description_en: "PT-141 (bremelanotide): mechanism, study data, safety profile, and approval status of this melanocortin receptor agonist at a glance."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "189691-06-3",
+      molekulargewicht: "1025.2 g/mol",
+      aminosaeuren: 7,
+      halbwertszeit: "≈ 2,7 Stunden (terminale Halbwertszeit, Fachinformation Vyleesi)",
+      reinheitsstandard: "≥ 99 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 7,
+      quellen: [
+        "PubChem CID 9941379",
+        "DailyMed SPL VYLEESI (Bremelanotid), Cosette Pharmaceuticals",
+        "chemverify Katalog 14.09.2026"
+      ],
+      halbwertszeit_en: "≈ 2.7 hours (terminal half-life, Vyleesi prescribing information)",
+      reinheitsstandard_en: "≥ 99 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "melanotan-2",
+      "kisspeptin",
+      "kpv"
+    ]
   },
   {
     slug: "ss-31",
@@ -3141,6 +3470,25 @@ window.PK.peptides = [
       description: "SS-31/Elamipretid im Überblick: mitochondrialer Wirkmechanismus, klinische Studienlage bei Herzinsuffizienz, mitochondrialer Myopathie, Sicherheitsprofil.",
       description_en: "SS-31/elamipretide overview: mitochondrial mechanism, clinical evidence in heart failure and mitochondrial myopathy, and safety profile."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "736992-21-5",
+      molekulargewicht: "639.8 g/mol",
+      aminosaeuren: 4,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 4,
+      quellen: [
+        "PubChem CID 11764719",
+        "chemverify Katalog 14.09.2026"
+      ],
+      reinheitsstandard_en: "≥ 98 % (HPLC, commercial standard)"
+    },
+    verwandt: [
+      "mots-c",
+      "epitalon",
+      "dihexa"
+    ]
   }
 ];
