@@ -1270,7 +1270,7 @@ a.card:hover, .card.is-interactive:hover{
 .table-logo-cell .vlogo{ flex:0 0 120px; width:120px !important; }
 .table-logo-cell .vlogo--square{ height:40px; }
 .vendor-card .vlogo--square{ height:36px; }
-.table-logo-cell .vlogo-fallback{ flex:0 0 120px; width:120px; }
+.table-logo-cell .brand-logo-fallback{ flex:0 0 120px; width:120px; font-size:var(--fs-small); line-height:1.25; overflow-wrap:anywhere; }
 
 /* Detail-Kopf: optionales kleines FARBIGES Original, NUR hier, mit
    eigenem Chip (Auftrag: "Farbige Originale nur noch als optionales

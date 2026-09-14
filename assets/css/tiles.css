@@ -43,3 +43,10 @@
 .table .code-box-compact code{ font-size:13px; }
 .table .code-box-compact .btn{ padding:4px 10px; font-size:12px; min-height:26px; }
 .table .code-box-hint{ font-size:11px; }
+
+/* Podium mobil: Grid-Items dürfen schrumpfen (min-width:auto sprengte bei
+   375px die Spalte um 23px, Ursache: Code-Box nowrap). Code-Box bricht um,
+   Hinweis rutscht auf eine eigene Zeile. */
+.podium-card{ min-width:0; }
+.podium-code.code-box{ flex-wrap:wrap; }
+.podium-code .code-box-hint{ flex-basis:100%; }

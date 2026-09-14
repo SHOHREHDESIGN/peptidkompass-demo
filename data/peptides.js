@@ -115,6 +115,92 @@ window.PK.peptides = [
     ]
   },
   {
+    slug: "pentadeca-arginate",
+    name: "Pentadeca Arginat (PDA)",
+    synonyme: [
+      "PDA",
+      "BPC-157 Arginat-Salz"
+    ],
+    kategorie: "Regeneration",
+    studienlage: "präklinisch",
+    kurz: "Ein Pentadekapeptid mit derselben Aminosäuresequenz wie BPC-157, angeboten als Arginin-Salz für bessere Löslichkeit und Stabilität.",
+    kurz_en: "A pentadecapeptide sharing the amino-acid sequence of BPC-157, offered as an arginine salt for improved solubility and stability.",
+    beschreibung: "Pentadeca Arginat, oft als PDA abgekürzt, trägt dieselbe 15 Aminosäuren lange Sequenz wie das bekannte Peptid BPC-157. Der Unterschied liegt im Gegenion: Statt als Acetat-Salz wird die Sequenz hier an Arginin gebunden, was laut Anbietern die Löslichkeit und Haltbarkeit verbessert. Unabhängige Studien, die speziell diese Salzform untersuchen, liegen bislang nicht vor.",
+    beschreibung_en: "Pentadeca Arginate, often abbreviated PDA, carries the same 15-amino-acid sequence as the well-known peptide BPC-157. The difference lies in the counter-ion: instead of an acetate salt, the sequence is bound to arginine, which suppliers describe as improving solubility and shelf stability. Independent studies examining this specific salt form are not yet available.",
+    mechanismus: "Da die Aminosäuresequenz mit BPC-157 identisch ist, gehen die in präklinischen Modellen beschriebenen Mechanismen von derselben Grundstruktur aus, darunter eine Beteiligung an der Angiogenese über den VEGFR2-AKT-eNOS-Signalweg sowie eine Modulation entzündlicher Prozesse. Ob die Arginin-Bindung diese Wirkungen verändert, beschleunigt oder verlangsamt, ist bislang nicht eigenständig untersucht. Die genauen Mechanismen beim Menschen sind auch für die Stammsequenz selbst nicht abschließend geklärt.",
+    mechanismus_en: "Since the amino-acid sequence is identical to BPC-157, the mechanisms described in preclinical models are based on the same underlying structure, including involvement in angiogenesis through the VEGFR2-AKT-eNOS pathway and modulation of inflammatory processes. Whether the arginine binding changes, accelerates, or slows these effects has not been independently studied. The exact mechanisms in humans remain unresolved even for the parent sequence itself.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "Da Pentadeca Arginat dieselbe Sequenz wie BPC-157 trägt, stützt sich die verfügbare Evidenz auf Studien zur Stammsequenz. Eine 2025 veröffentlichte systematische Übersichtsarbeit wertete 35 präklinische Tierstudien zu Muskel-, Sehnen-, Band- und Knochenverletzungen aus, die überwiegend positive Heilungsergebnisse beschrieben.",
+        kurz_en: "Because Pentadeca Arginate shares its sequence with BPC-157, the available evidence draws on studies of the parent sequence. A 2025 systematic review evaluated 35 preclinical animal studies on muscle, tendon, ligament, and bone injuries, which mostly described positive healing outcomes.",
+        quelle: "Vasireddi et al. 2025, HSS Journal, PMID 40756949"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Eine Zellstudie beschrieb für dieselbe Sequenz eine Aktivierung und Hochregulation von VEGFR2, einem zentralen Rezeptor der Gefäßneubildung, begleitet von einer verstärkten Röhrenbildung von Endothelzellen im Labormodell.",
+        kurz_en: "A cell study described activation and upregulation of VEGFR2, a key receptor in blood vessel formation, for the same sequence, accompanied by increased endothelial tube formation in the laboratory model.",
+        quelle: "Hsieh et al. 2016, Journal of Molecular Medicine, PMID 27847966"
+      }
+    ],
+    sicherheit: [
+      "Für die Arginin-Salzform selbst liegen keine eigenständigen Sicherheitsdaten vor, eine gezielte Literatursuche dazu ergab keine Treffer.",
+      "Für die zugrunde liegende Sequenz fehlen placebokontrollierte Humandaten weitgehend, die meisten Sicherheitsaussagen stammen aus Tiermodellen.",
+      "Auf mechanistischer Ebene wird diskutiert, dass dieselben Signalwege, die Angiogenese und Zellproliferation bei der Heilung antreiben, theoretisch auch bestehendes Tumorwachstum begünstigen könnten. Ein ursächlicher Zusammenhang beim Menschen ist nicht belegt.",
+      "Präparate aus nicht kontrollierter Herstellung bergen ein Verunreinigungsrisiko, das unabhängig vom Molekül selbst besteht."
+    ],
+    sicherheit_en: [
+      "No independent safety data exist for the arginine salt form itself, a targeted literature search returned no results.",
+      "Placebo-controlled human data remain largely absent for the underlying sequence, most safety statements are drawn from animal models.",
+      "On a mechanistic level, it is discussed that the same pathways driving angiogenesis and cell proliferation during healing could theoretically also support existing tumor growth. A causal link in humans has not been established.",
+      "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Keine Anwendung bei bekannter oder vermuteter Tumorerkrankung ohne ärztliche Rücksprache",
+      "Unabhängige Daten zur Arginin-Salzform fehlen, Aussagen stützen sich auf die BPC-157-Stammsequenz"
+    ],
+    hinweise_en: [
+      "For research use only, not for human use",
+      "Not for use in cases of known or suspected tumor disease without medical consultation",
+      "Independent data on the arginine salt form are lacking, statements rely on the BPC-157 parent sequence"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
+    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
+    lagerung: "Ungelöst lichtgeschützt und gekühlt bis tiefgekühlt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
+    lagerung_en: "Store unreconstituted, protected from light, refrigerated to frozen; after reconstitution, keep refrigerated and use promptly.",
+    rechtsstatus: "Pentadeca Arginat ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "Pentadeca Arginate is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical.",
+    typischeMg: [],
+    faq: [
+      {
+        q: "Ist Pentadeca Arginat dasselbe wie BPC-157?",
+        a: "Die Aminosäuresequenz ist identisch. Der Unterschied liegt im Gegenion: BPC-157 wird meist als Acetat-Salz angeboten, Pentadeca Arginat als Arginin-Salz, was laut Anbietern die Löslichkeit verbessern soll.",
+        q_en: "Is Pentadeca Arginate the same as BPC-157?",
+        a_en: "The amino-acid sequence is identical. The difference lies in the counter-ion: BPC-157 is usually offered as an acetate salt, Pentadeca Arginate as an arginine salt, which suppliers describe as improving solubility."
+      },
+      {
+        q: "Gibt es eigenständige Studien zur Arginin-Salzform?",
+        a: "Nein, eine gezielte Literatursuche ergab keine unabhängigen Studien zur Arginin-Salzform selbst. Die vorliegende Evidenz bezieht sich auf die BPC-157-Stammsequenz.",
+        q_en: "Are there independent studies on the arginine salt form?",
+        a_en: "No, a targeted literature search found no independent studies on the arginine salt form itself. The available evidence relates to the BPC-157 parent sequence."
+      },
+      {
+        q: "Ist Pentadeca Arginat als Arzneimittel zugelassen?",
+        a: "Nein. Es ist weder in der EU noch in den USA zugelassen und wird ausschließlich als Forschungschemikalie für Laborzwecke angeboten.",
+        q_en: "Is Pentadeca Arginate an approved medication?",
+        a_en: "No. It is not approved in the EU or the United States and is sold exclusively as a research chemical for laboratory use."
+      }
+    ],
+    seo: {
+      title: "Pentadeca Arginat (PDA): Wirkstoff-Profil & Studienlage",
+      title_en: "Pentadeca Arginate (PDA): Research Profile & Evidence",
+      description: "Pentadeca Arginat im Überblick: Sequenz-Identität mit BPC-157, Studienlage zur Stammsequenz und Sicherheitsprofil, sachlich für den Forschungskontext.",
+      description_en: "Pentadeca Arginate overview: sequence identity with BPC-157, evidence on the parent sequence, and safety profile, presented factually for research."
+    },
+    demo: false
+  },
+  {
     slug: "tb-500",
     name: "TB-500",
     synonyme: [
@@ -217,6 +303,315 @@ window.PK.peptides = [
       "ghk-cu",
       "thymosin-alpha-1"
     ]
+  },
+  {
+    slug: "5-amino-1mq",
+    name: "5-Amino-1MQ",
+    synonyme: [
+      "5-Amino 1MQ",
+      "5A1MQ",
+      "NNMT-Inhibitor"
+    ],
+    kategorie: "Stoffwechsel",
+    studienlage: "präklinisch",
+    kurz: "Kleines Molekül und selektiver Hemmstoff des Enzyms Nicotinamid-N-Methyltransferase (NNMT), bislang ausschließlich in präklinischen Tiermodellen zum Fettstoffwechsel untersucht.",
+    kurz_en: "A small molecule and selective inhibitor of the enzyme nicotinamide N-methyltransferase (NNMT), studied to date exclusively in preclinical animal models related to fat metabolism.",
+    beschreibung: "5-Amino-1MQ ist kein Peptid, sondern ein kleines Molekül (small molecule) und ein selektiver, oral bioverfügbarer Hemmstoff der Nicotinamid-N-Methyltransferase (NNMT). Es hat ein Molekulargewicht von 173,21 Da, im Handel angebotene Forschungschargen weisen üblicherweise eine Reinheit von mindestens 98 Prozent auf. Es wird in der Kategorie Stoffwechsel geführt, weil NNMT im Fettgewebe und im Muskel am Energiestoffwechsel beteiligt ist. Bislang liegen ausschließlich präklinische Daten aus Nagetiermodellen vor, kontrollierte Studien am Menschen sind nicht bekannt.",
+    beschreibung_en: "5-Amino-1MQ is not a peptide but a small molecule, a selective, orally bioavailable inhibitor of nicotinamide N-methyltransferase (NNMT). It has a molecular weight of 173.21 Da, and research batches sold commercially typically carry a purity of at least 98 percent. It is listed under the metabolism category because NNMT is involved in energy metabolism in adipose tissue and muscle. To date, only preclinical data from rodent models are available, and no controlled human studies are known.",
+    mechanismus: "NNMT überträgt eine Methylgruppe von S-Adenosylmethionin (SAM) auf Nicotinamid, einen Vorläufer von NAD+, und bildet dabei 1-Methylnicotinamid. Diese Reaktion verbraucht sowohl SAM als auch den NAD+-Vorläufer Nicotinamid. 5-Amino-1MQ hemmt dieses Enzym selektiv, wodurch intrazelluläre NAD+- und SAM-Spiegel in Fett- und Muskelzellen im Tiermodell erhalten blieben. In präklinischen Untersuchungen wurde dies mit einem gesteigerten Energieverbrauch, einer reduzierten Fettzellgröße und einer verbesserten Regenerationsfähigkeit von Muskelgewebe in Verbindung gebracht.",
+    mechanismus_en: "NNMT transfers a methyl group from S-adenosylmethionine (SAM) to nicotinamide, a precursor of NAD+, forming 1-methylnicotinamide. This reaction consumes both SAM and the NAD+ precursor nicotinamide. 5-Amino-1MQ selectively inhibits this enzyme, which preserved intracellular NAD+ and SAM levels in fat and muscle cells in animal models. In preclinical research, this has been linked to increased energy expenditure, reduced adipocyte size, and improved regenerative capacity of muscle tissue.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "In einem Mausmodell mit genetischem Knockdown von NNMT im Fettgewebe zeigte sich ein Schutz vor ernährungsbedingter Adipositas gegenüber Kontrolltieren, verbunden mit gesteigertem Energieverbrauch.",
+        kurz_en: "In a mouse model with genetic knockdown of NNMT in adipose tissue, protection against diet-induced obesity was observed compared to control animals, along with increased energy expenditure.",
+        quelle: "Kraus D et al. 2014, Nature 508:258-262, PMID 24717514"
+      },
+      {
+        art: "präklinisch",
+        kurz: "In ernährungsbedingt adipösen Mäusen reduzierte eine elftägige Gabe von 5-Amino-1MQ Körpergewicht, Fettmasse und Adipozytengröße gegenüber Kontrolltieren, ohne die Futteraufnahme zu verändern.",
+        kurz_en: "In diet-induced obese mice, eleven days of 5-Amino-1MQ administration reduced body weight, fat mass, and adipocyte size compared to control animals, without altering food intake.",
+        quelle: "Neelakantan H et al. 2018, Biochemical Pharmacology, PMID 29155147"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Bei alten Mäusen wurde unter einem NNMT-Hemmstoff eine Reaktivierung seneszenter Muskelstammzellen und eine verbesserte Regenerationsfähigkeit des Skelettmuskels nach Verletzung beobachtet.",
+        kurz_en: "In aged mice, an NNMT inhibitor was associated with reactivation of senescent muscle stem cells and improved regenerative capacity of skeletal muscle after injury.",
+        quelle: "Neelakantan H et al. 2019, Biochemical Pharmacology 163:481-492"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Die Kombination aus kalorienreduzierter Diät und 5-Amino-1MQ normalisierte in ernährungsbedingt adipösen Mäusen Körperfettanteil und Gewicht schneller als die Diätumstellung allein und veränderte zugleich die Darmmikrobiom-Zusammensetzung.",
+        kurz_en: "Combining a reduced-calorie diet with 5-Amino-1MQ normalized body fat percentage and weight faster in diet-induced obese mice than diet change alone, while also altering gut microbiome composition.",
+        quelle: "Scientific Reports 2022, PMID 35013352"
+      }
+    ],
+    sicherheit: [
+      "In der Studie von Neelakantan et al. 2018 an adipösen Mäusen veränderte sich die Futteraufnahme unter 5-Amino-1MQ nicht, was im Tiermodell über den Studienzeitraum auf eine gute Verträglichkeit hindeutet.",
+      "Kontrollierte Sicherheitsstudien am Menschen zu 5-Amino-1MQ sind nicht bekannt, es liegen ausschließlich Daten aus Tiermodellen vor.",
+      "Standardisierte präklinische Toxikologiepakete, etwa wiederholte Gaben über mehrere Wochen an weiteren Spezies, sind für 5-Amino-1MQ nicht öffentlich publiziert.",
+      "Wechselwirkungen mit anderen Substanzen oder Nahrungsergänzungsmitteln sind für 5-Amino-1MQ nicht systematisch untersucht."
+    ],
+    sicherheit_en: [
+      "In the 2018 study by Neelakantan et al. in obese mice, food intake did not change under 5-Amino-1MQ, which in the animal model suggests reasonable tolerability over the study period.",
+      "No controlled human safety studies on 5-Amino-1MQ are known, only data from animal models are available.",
+      "Standardized preclinical toxicology packages, such as repeated multi-week administration studies in additional species, have not been published for 5-Amino-1MQ.",
+      "Interactions with other substances or supplements have not been systematically studied for 5-Amino-1MQ."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Kein zugelassenes Arzneimittel, kein Nahrungsergänzungsmittel",
+      "Kein Peptid, sondern ein kleines Molekül, chemisch nicht mit den übrigen hier gelisteten Wirkstoffen vergleichbar",
+      "Alle bisherigen Daten stammen aus Tiermodellen und lassen sich nicht direkt auf den Menschen übertragen"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "Not an approved medication, not a dietary supplement",
+      "Not a peptide but a small molecule, chemically distinct from the other compounds listed here",
+      "All data to date come from animal models and do not translate directly to humans"
+    ],
+    rekonstitution: "5-Amino-1MQ wird überwiegend als fertige Kapsel oder als Rohpulver gehandelt, nicht als injizierbares Lyophilisat wie bei vielen Peptiden. Für Laboranwendungen wird das Pulver in der Literatur meist in Lösungsmitteln wie DMSO gelöst, eine Zubereitung zur Anwendung am Menschen ist nicht Gegenstand dieser Seite.",
+    rekonstitution_en: "5-Amino-1MQ is predominantly sold as finished capsules or as a raw powder, not as an injectable lyophilized product like many peptides. For laboratory use, the powder is typically dissolved in solvents such as DMSO in the literature, and preparation for human use is not covered on this page.",
+    lagerung: "Kapseln und Pulver werden laut Anbieterangaben trocken, lichtgeschützt und je nach Hersteller bei Raumtemperatur oder gekühlt gelagert.",
+    lagerung_en: "According to vendor information, capsules and powder are stored dry, protected from light, and depending on the manufacturer at room temperature or refrigerated.",
+    rechtsstatus: "5-Amino-1MQ ist in der EU und den USA nicht als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie gehandelt. Zulassungsstudien am Menschen sind nicht bekannt.",
+    rechtsstatus_en: "5-Amino-1MQ is not approved as a medication in the EU or the United States and is sold exclusively as a research chemical. No human approval trials are known.",
+    typischeMg: [
+      10,
+      50
+    ],
+    faq: [
+      {
+        q: "Ist 5-Amino-1MQ ein Peptid?",
+        a: "Nein. 5-Amino-1MQ ist ein kleines Molekül und kein Peptid, es besteht nicht aus einer Aminosäurekette. Es wird als selektiver Hemmstoff des Enzyms NNMT untersucht und hier unter Stoffwechsel-Wirkstoffen gelistet, weil es an verwandten Zielsystemen ansetzt.",
+        q_en: "Is 5-Amino-1MQ a peptide?",
+        a_en: "No. 5-Amino-1MQ is a small molecule, not a peptide, and does not consist of an amino acid chain. It is studied as a selective inhibitor of the NNMT enzyme and listed here among metabolism-related compounds because it acts on related target systems."
+      },
+      {
+        q: "Gibt es Studien am Menschen zu 5-Amino-1MQ?",
+        a: "Nein, bislang sind keine kontrollierten klinischen Studien am Menschen bekannt. Alle veröffentlichten Daten stammen aus präklinischen Untersuchungen an Mäusen.",
+        q_en: "Are there human studies on 5-Amino-1MQ?",
+        a_en: "No, no controlled clinical studies in humans are known to date. All published data come from preclinical research in mice."
+      },
+      {
+        q: "Wofür wird NNMT in der Forschung untersucht?",
+        a: "NNMT ist ein Enzym, das im Fettgewebe und im Muskel am Abbau von Nicotinamid, einem NAD+-Vorläufer, beteiligt ist. Ein erhöhter NNMT-Spiegel wird in präklinischen Modellen mit einer reduzierten Stoffwechselaktivität in Verbindung gebracht, weshalb seine Hemmung als Forschungsansatz untersucht wird.",
+        q_en: "Why is NNMT studied in research?",
+        a_en: "NNMT is an enzyme active in adipose tissue and muscle that breaks down nicotinamide, a precursor of NAD+. Elevated NNMT levels have been linked to reduced metabolic activity in preclinical models, which is why its inhibition is being studied as a research approach."
+      }
+    ],
+    seo: {
+      title: "5-Amino-1MQ: NNMT-Hemmstoff in der präklinischen Forschung",
+      title_en: "5-Amino-1MQ: NNMT Inhibitor in Preclinical Research",
+      description: "5-Amino-1MQ im Überblick: Mechanismus, präklinische Studienlage und Rechtsstatus des NNMT-Hemmstoffs, ein kleines Molekül, kein Peptid.",
+      description_en: "5-Amino-1MQ at a glance: mechanism, preclinical study status, and legal status of the NNMT inhibitor, a small molecule rather than a peptide."
+    },
+    demo: false
+  },
+  {
+    slug: "aod-9604",
+    name: "AOD-9604",
+    synonyme: [
+      "Anti-Obesity Drug 9604",
+      "Tyr-hGH Frag 177-191"
+    ],
+    kategorie: "Stoffwechsel",
+    studienlage: "klinisch untersucht",
+    kurz: "Peptidfragment des menschlichen Wachstumshormons (Aminosäuren 177-191), das in Studien auf eine fettabbauende Wirkung ohne die wachstumsfördernden Effekte des vollständigen Hormons untersucht wurde.",
+    kurz_en: "A peptide fragment of human growth hormone (amino acids 177-191) studied for a fat-reducing effect without the growth-promoting effects of the full hormone.",
+    beschreibung: "AOD-9604 ist ein synthetisches 16-Aminosäuren-Fragment des humanen Wachstumshormons (Sequenz Tyr-hGH177-191), das ursprünglich von Metabolic Pharmaceuticals in Zusammenarbeit mit der Monash University zur Gewichtsregulation entwickelt wurde. Es wurde in sechs randomisierten, plazebokontrollierten Humanstudien mit über 900 Teilnehmenden auf seine Stoffwechselwirkung und Sicherheit untersucht. Die klinische Entwicklung als Adipositas-Wirkstoff wurde 2007 eingestellt, nachdem die größte Studie den primären Wirksamkeitsendpunkt verfehlte.",
+    beschreibung_en: "AOD-9604 is a synthetic 16-amino-acid fragment of human growth hormone (sequence Tyr-hGH177-191), originally developed by Metabolic Pharmaceuticals in collaboration with Monash University for weight regulation. It was studied in six randomized, placebo-controlled human trials with more than 900 participants for its metabolic effects and safety. Clinical development as an obesity compound was discontinued in 2007 after the largest trial did not meet its primary efficacy endpoint.",
+    mechanismus: "AOD-9604 umfasst die lipolytische Region (Aminosäuren 177-191) des Wachstumshormon-Moleküls, ohne den rezeptorbindenden Bereich, der für die IGF-1-vermittelten Wachstums- und Stoffwechseleffekte von vollständigem hGH verantwortlich ist. In präklinischen Modellen wird eine Aktivierung der Lipolyse über den Botenstoff Diacylglycerin sowie das Enzym hormonsensitive Lipase beschrieben, vermittelt über den β3-adrenergen Rezeptor. Anders als vollständiges hGH beeinflusste AOD-9604 in Studien weder den IGF-1-Spiegel noch die Insulinsensitivität.",
+    mechanismus_en: "AOD-9604 comprises the lipolytic region (amino acids 177-191) of the growth hormone molecule, without the receptor-binding region responsible for the IGF-1-mediated growth and metabolic effects of full hGH. Preclinical models describe an activation of lipolysis through the messenger diacylglycerol and the enzyme hormone-sensitive lipase, mediated via the beta-3 adrenergic receptor. Unlike full hGH, AOD-9604 did not affect IGF-1 levels or insulin sensitivity in studies.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "In einer präklinischen Studie an adipösen Zucker-Ratten reduzierte eine 19-tägige orale Gabe von AOD-9604 die Gewichtszunahme um mehr als 50 Prozent gegenüber Kontrolltieren.",
+        kurz_en: "In a preclinical study in obese Zucker rats, 19 days of oral AOD-9604 administration reduced body weight gain by more than 50 percent compared to control animals.",
+        quelle: "Ng FM et al. 2000, Hormone Research 53(6):274-278, PMID 11146367"
+      },
+      {
+        art: "präklinisch",
+        kurz: "In adipösen Mäusen erhöhte eine chronische Gabe von AOD-9604 die Fettoxidation und die lipolytische Empfindlichkeit über den β3-adrenergen Rezeptor-Signalweg, vergleichbar mit vollständigem hGH, jedoch ohne Einfluss auf die Insulinsensitivität.",
+        kurz_en: "In obese mice, chronic AOD-9604 administration increased fat oxidation and lipolytic sensitivity via the beta-3 adrenergic receptor pathway, comparable to full hGH but without affecting insulin sensitivity.",
+        quelle: "Heffernan M et al. 2001, Endocrinology 142(12):5182-5189, PMID 11673763"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten, doppelblinden, plazebokontrollierten Multicenter-Studie an 300 Erwachsenen mit Adipositas verlor die Gruppe mit 1 mg täglich oral im Mittel 2,8 kg Körpergewicht über 12 Wochen, gegenüber 0,8 kg unter Placebo.",
+        kurz_en: "In a randomized, double-blind, placebo-controlled multicenter study in 300 adults with obesity, the group receiving 1 mg orally daily lost an average of 2.8 kg over 12 weeks compared to 0.8 kg under placebo.",
+        quelle: "Herd C et al. 2005, randomisierte Multicenter-Studie (Publikationsnachweis: ResearchGate ID 295313034 / University of Melbourne)"
+      },
+      {
+        art: "klinisch",
+        kurz: "Eine Sicherheitsauswertung über sechs randomisierte, plazebokontrollierte Humanstudien zeigte keinen Anstieg des IGF-1-Spiegels, keine schwerwiegenden unerwünschten Ereignisse im Zusammenhang mit AOD-9604 und keine nachweisbaren Antikörper gegen die Substanz.",
+        kurz_en: "A safety review across six randomized, placebo-controlled human trials found no increase in IGF-1 levels, no serious adverse events related to AOD-9604, and no detectable anti-AOD-9604 antibodies.",
+        quelle: "Stier H et al. 2013, Journal of Endocrinology and Metabolism 3(2), jofem.org"
+      }
+    ],
+    sicherheit: [
+      "In sechs randomisierten, plazebokontrollierten Humanstudien traten keine schwerwiegenden unerwünschten Ereignisse im Zusammenhang mit AOD-9604 auf, gemeldete Effekte waren gering und vorübergehend.",
+      "Anders als vollständiges hGH erhöhte AOD-9604 in diesen Studien den IGF-1-Spiegel nicht und beeinträchtigte die Glukosetoleranz nicht.",
+      "In den Studien, die darauf untersucht wurden, wurden keine Antikörper gegen AOD-9604 nachgewiesen.",
+      "Die klinische Entwicklung wurde 2007 eingestellt, nachdem die größere Phase-2b-Studie den primären Wirksamkeitsendpunkt Gewichtsverlust gegenüber Placebo statistisch nicht erreichte, ohne dass dabei Sicherheitsbedenken berichtet wurden.",
+      "Da AOD-9604 nirgends als Arzneimittel zugelassen ist, liegen keine offiziellen Fachinformationen zur Langzeitsicherheit vor."
+    ],
+    sicherheit_en: [
+      "Across six randomized, placebo-controlled human trials, no serious adverse events related to AOD-9604 occurred, and reported effects were minor and transient.",
+      "Unlike full hGH, AOD-9604 did not raise IGF-1 levels or impair glucose tolerance in these trials.",
+      "No antibodies against AOD-9604 were detected in the trials that tested for immunogenicity.",
+      "Clinical development was discontinued in 2007 after the larger phase 2b trial did not statistically reach its primary weight-loss endpoint versus placebo, with no safety concerns reported as the reason.",
+      "Since AOD-9604 is not approved as a medication anywhere, no official prescribing information on long-term safety exists."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Kein zugelassenes Arzneimittel, kein Ersatz für ärztlich verordnete Präparate",
+      "Auf der WADA-Verbotsliste für den Sport gelistet (Kategorie Wachstumshormon-Fragmente)"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "Not an approved medication, not a substitute for prescribed medication",
+      "Listed on the WADA Prohibited List for sport (growth hormone fragment category)"
+    ],
+    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und innerhalb weniger Wochen verbrauchen.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C. After reconstitution, keep refrigerated at 2-8°C and use within a few weeks.",
+    rechtsstatus: "AOD-9604 ist weder in der EU noch in den USA als Arzneimittel zugelassen. Die klinische Entwicklung als Adipositas-Wirkstoff wurde 2007 nach einer Phase-2b-Studie eingestellt. Die Substanz wird ausschließlich als Forschungschemikalie gehandelt und steht auf der WADA-Verbotsliste für den Sport.",
+    rechtsstatus_en: "AOD-9604 is not approved as a medication in the EU or the United States. Clinical development as an obesity compound was discontinued in 2007 after a phase 2b trial. The substance is sold exclusively as a research chemical and is listed on the WADA Prohibited List for sport.",
+    typischeMg: [
+      2,
+      5,
+      10
+    ],
+    faq: [
+      {
+        q: "Ist AOD-9604 als Medikament zugelassen?",
+        a: "Nein. AOD-9604 wurde in sechs klinischen Studien untersucht, die Entwicklung als Adipositas-Wirkstoff wurde 2007 eingestellt. Aktuell ist es kein zugelassenes Arzneimittel und wird nur als Forschungschemikalie gehandelt.",
+        q_en: "Is AOD-9604 approved as a medication?",
+        a_en: "No. AOD-9604 was studied in six clinical trials, and development as an obesity compound was discontinued in 2007. It is currently not an approved medication and is sold only as a research chemical."
+      },
+      {
+        q: "Was unterscheidet AOD-9604 vom vollständigen Wachstumshormon?",
+        a: "AOD-9604 enthält nur die lipolytische Region des hGH-Moleküls (Aminosäuren 177-191), nicht den Bereich, der IGF-1-vermittelte Wachstumseffekte auslöst. Anders als intaktes hGH zeigte es in Studien keinen Einfluss auf IGF-1 oder die Insulinsensitivität.",
+        q_en: "How does AOD-9604 differ from full growth hormone?",
+        a_en: "AOD-9604 contains only the lipolytic region of the hGH molecule (amino acids 177-191), not the region that triggers IGF-1-mediated growth effects. Unlike intact hGH, it showed no effect on IGF-1 or insulin sensitivity in studies."
+      },
+      {
+        q: "Ist AOD-9604 im Sport erlaubt?",
+        a: "Nein. AOD-9604 steht als Wachstumshormon-Fragment auf der WADA-Verbotsliste, eine medizinische Ausnahmegenehmigung ist dafür nicht vorgesehen.",
+        q_en: "Is AOD-9604 allowed in sport?",
+        a_en: "No. AOD-9604 is listed as a growth hormone fragment on the WADA Prohibited List, and no therapeutic use exemption is available for it."
+      }
+    ],
+    seo: {
+      title: "AOD-9604: hGH-Fragment 177-191 im Forschungskontext",
+      title_en: "AOD-9604: hGH Fragment 177-191 in Research",
+      description: "AOD-9604 im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des hGH-Fragments 177-191, in klinischen Studien zur Gewichtsregulation untersucht.",
+      description_en: "AOD-9604 at a glance: mechanism, study status and safety profile of the hGH fragment 177-191 studied in clinical trials on weight regulation."
+    },
+    demo: false
+  },
+  {
+    slug: "cagrilintid",
+    name: "Cagrilintid",
+    synonyme: [
+      "AM833",
+      "NN9838"
+    ],
+    kategorie: "Stoffwechsel",
+    studienlage: "klinisch untersucht",
+    kurz: "Langwirksames Analogon des körpereigenen Hormons Amylin, in klinischen Studien zur Stoffwechsel- und Sättigungsregulation untersucht, solo und in Kombination mit Semaglutid.",
+    kurz_en: "A long-acting analogue of the body's own hormone amylin, studied in clinical trials for metabolic and satiety regulation, alone and in combination with semaglutide.",
+    beschreibung: "Cagrilintid ist ein langwirksames Amylin-Analogon von Novo Nordisk. Es wird sowohl als eigenständige Substanz als auch in fixer Kombination mit dem GLP-1-Wirkstoff Semaglutid unter dem Namen CagriSema in Phase-3-Studien untersucht. Bisher ist Cagrilintid in keinem Land als eigenständiges Arzneimittel zugelassen.",
+    beschreibung_en: "Cagrilintide is a long-acting amylin analogue developed by Novo Nordisk. It is being studied both as a standalone substance and in a fixed combination with the GLP-1 compound semaglutide, marketed under the name CagriSema, in phase 3 trials. To date, cagrilintide is not approved as a standalone medication in any country.",
+    mechanismus: "Cagrilintid bindet an Amylin-Rezeptoren im Gehirn, vor allem an die Subtypen AMY1 und AMY3, die aus dem Calcitonin-Rezeptor und begleitenden RAMP-Proteinen gebildet werden. Darüber werden eine verlangsamte Magenentleerung, eine verminderte Glucagon-Ausschüttung nach der Mahlzeit sowie eine Sättigungssignalisierung in Hirnarealen wie der Area postrema beschrieben. Eine Fettsäure-Lipidierung des Moleküls verlängert die Wirkdauer gegenüber dem natürlichen Hormon Amylin deutlich und ermöglicht eine wöchentliche Gabe im Studienkontext.",
+    mechanismus_en: "Cagrilintide binds to amylin receptors in the brain, primarily the AMY1 and AMY3 subtypes formed by the calcitonin receptor together with accessory RAMP proteins. This has been linked to slowed gastric emptying, reduced postprandial glucagon release, and satiety signaling in brain regions such as the area postrema. Fatty-acid lipidation of the molecule substantially extends its duration of action compared with the natural hormone amylin, allowing once-weekly administration in the trial setting.",
+    evidenz: [
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten Phase-2-Studie mit mehreren geprüften Wirkstoffmengen an 706 Erwachsenen mit Übergewicht oder Adipositas führte Cagrilintid allein über 26 Wochen bei der höchsten geprüften Wirkstoffmenge zu einem mittleren Körpergewichtsverlust von 10,8 Prozent, gegenüber rund 3 Prozent unter Placebo.",
+        kurz_en: "In a randomized phase 2 trial testing several amounts in 706 adults with overweight or obesity, cagrilintide alone over 26 weeks led to a mean body weight loss of 10.8 percent at the highest amount tested, compared with around 3 percent under placebo.",
+        quelle: "Lau DCW et al. 2021, The Lancet 398:2160-2172, PMID 34798060"
+      },
+      {
+        art: "klinisch",
+        kurz: "In der Phase-3-Studie REDEFINE 1 erreichte der Studienarm mit Cagrilintid allein, 2,4 mg wöchentlich, nach 68 Wochen einen Körpergewichtsverlust von rund 11,8 Prozent, gegenüber 2,3 Prozent unter Placebo.",
+        kurz_en: "In the phase 3 REDEFINE 1 trial, the cagrilintide-alone arm at 2.4 mg weekly achieved a body weight loss of around 11.8 percent after 68 weeks, compared with 2.3 percent under placebo.",
+        quelle: "Garvey WT et al. 2025, New England Journal of Medicine 393:625-638, PMID 40544433"
+      },
+      {
+        art: "präklinisch",
+        kurz: "In einem Mausmodell mit ernährungsbedingter Adipositas war die körpergewichtssenkende Wirkung von Cagrilintid von den Amylin-Rezeptoren AMY1 und AMY3 im Gehirn abhängig, bei Rezeptor-Knockout-Tieren blieb der Effekt aus.",
+        kurz_en: "In a diet-induced obesity mouse model, cagrilintide's body-weight-lowering effect depended on the brain amylin receptors AMY1 and AMY3, and the effect was absent in receptor knockout animals.",
+        quelle: "Carvas AO et al. 2025, eBioMedicine, PMID 40609154"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Strukturoptimierungen mit Fettsäure-Lipidierung verliehen Cagrilintid gegenüber dem körpereigenen Hormon Amylin eine deutlich verlängerte Halbwertszeit von etwa 159 bis 195 Stunden, was die wöchentliche Gabe im Studienkontext ermöglicht.",
+        kurz_en: "Structural optimization with fatty-acid lipidation gave cagrilintide a substantially longer half-life of about 159 to 195 hours than the body's own hormone amylin, allowing once-weekly administration in the trial setting.",
+        quelle: "Kruse T et al. 2021, Journal of Medicinal Chemistry 64:11183-11194, PMID 34288673"
+      }
+    ],
+    sicherheit: [
+      "In der randomisierten Phase-2-Studie mit Cagrilintid als alleiniger Substanz traten gastrointestinale Effekte bei 41 bis 63 Prozent der Teilnehmenden auf, gegenüber 32 Prozent unter Placebo, am häufigsten Übelkeit.",
+      "In der Phase-1b-Kombinationsstudie mit ansteigenden Cagrilintid-Wirkstoffmengen zusammen mit Semaglutid wurden gastrointestinale Effekte als häufigste Nebenwirkungskategorie beschrieben, das Sicherheitsprofil wurde insgesamt als handhabbar eingestuft.",
+      "Als Amylin-Rezeptor-Agonist wird eine verlangsamte Magenentleerung beschrieben, ein Mechanismus, der auch bei GLP-1-Wirkstoffen zu gastrointestinalen Effekten beiträgt.",
+      "Da Cagrilintid nirgends als eigenständiges Arzneimittel zugelassen ist, liegen keine offiziellen Fachinformationen zur Langzeitsicherheit vor."
+    ],
+    sicherheit_en: [
+      "In the randomized phase 2 trial with cagrilintide as the only substance, gastrointestinal effects occurred in 41 to 63 percent of participants, compared with 32 percent under placebo, most commonly nausea.",
+      "In the phase 1b combination trial with ascending cagrilintide amounts alongside semaglutide, gastrointestinal effects were described as the most frequent adverse event category, with an overall manageable safety profile.",
+      "As an amylin receptor agonist, slowed gastric emptying has been described, a mechanism that also contributes to gastrointestinal effects with GLP-1 compounds.",
+      "Since cagrilintide is not approved as a standalone medication anywhere, no official prescribing information on long-term safety exists."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Kein zugelassenes Arzneimittel, kein Ersatz für ärztlich verordnete Präparate",
+      "Ergebnisse aus laufenden Phase-3-Studien und aus dem CagriSema-Zulassungsverfahren können sich noch ändern"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "Not an approved medication, not a substitute for prescribed medication",
+      "Results from ongoing phase 3 trials and the CagriSema approval process may still change"
+    ],
+    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und innerhalb weniger Wochen verbrauchen.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C. After reconstitution, keep refrigerated at 2-8°C and use within a few weeks.",
+    rechtsstatus: "Cagrilintid befindet sich als eigenständige Substanz und in fixer Kombination mit Semaglutid unter dem Namen CagriSema in Phase-3-Studien und ist bisher weder in der EU noch in den USA als Arzneimittel zugelassen. Im Dezember 2025 wurde bei der US-amerikanischen FDA ein Zulassungsantrag für die Kombination CagriSema eingereicht, eine Entscheidung wird für 2026 erwartet. Cagrilintid wird ausschließlich als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "Cagrilintide is currently in phase 3 trials both as a standalone substance and in a fixed combination with semaglutide under the name CagriSema, and has not yet been approved as a medication in the EU or the United States. In December 2025, a new drug application for the CagriSema combination was filed with the US FDA, with a decision expected in 2026. Cagrilintide is sold exclusively as a research chemical.",
+    typischeMg: [
+      5,
+      10
+    ],
+    faq: [
+      {
+        q: "Ist Cagrilintid bereits als Medikament erhältlich?",
+        a: "Nein. Cagrilintid wird als eigenständige Substanz und in der Kombination CagriSema in Phase-3-Studien untersucht. Für CagriSema läuft seit Dezember 2025 ein Zulassungsverfahren bei der FDA. Aktuell ist Cagrilintid kein zugelassenes Arzneimittel.",
+        q_en: "Is cagrilintide already available as a medication?",
+        a_en: "No. Cagrilintide is being studied as a standalone substance and in the CagriSema combination in phase 3 trials. An FDA approval process for CagriSema has been underway since December 2025. Cagrilintide is currently not an approved medication."
+      },
+      {
+        q: "Was unterscheidet Cagrilintid von Semaglutid?",
+        a: "Semaglutid wirkt am GLP-1-Rezeptor, Cagrilintid dagegen an Amylin-Rezeptoren im Gehirn. Beide Wirkstoffe werden auch als feste Kombination namens CagriSema untersucht, die in Studien einen größeren Effekt auf das Körpergewicht zeigte als jede Substanz allein.",
+        q_en: "What sets cagrilintide apart from semaglutide?",
+        a_en: "Semaglutide acts on the GLP-1 receptor, while cagrilintide acts on amylin receptors in the brain. Both compounds are also studied as a fixed combination called CagriSema, which showed a greater effect on body weight in trials than either substance alone."
+      },
+      {
+        q: "Woher stammt Cagrilintid?",
+        a: "Cagrilintid wurde vom Pharmaunternehmen Novo Nordisk entwickelt, das auch hinter Semaglutid steht. Es wird unter den Kurzbezeichnungen AM833 und NN9838 in klinischen Studien geführt, unter anderem im REDEFINE-Studienprogramm.",
+        q_en: "Where does cagrilintide come from?",
+        a_en: "Cagrilintide was developed by the pharmaceutical company Novo Nordisk, which also developed semaglutide. It is referenced under the short designations AM833 and NN9838 in clinical trials, including the REDEFINE trial program."
+      }
+    ],
+    seo: {
+      title: "Cagrilintid: Amylin-Analogon in Phase-3-Studien",
+      title_en: "Cagrilintide: Amylin Analog in Phase 3 Trials",
+      description: "Cagrilintid im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des Amylin-Analogons, solo und in der Kombination CagriSema untersucht.",
+      description_en: "Cagrilintide at a glance: mechanism, study status, and safety profile of the amylin analog, studied alone and in the CagriSema combination."
+    },
+    demo: false
   },
   {
     slug: "mots-c",
@@ -546,6 +941,188 @@ window.PK.peptides = [
     ]
   },
   {
+    slug: "survodutid",
+    name: "Survodutid",
+    synonyme: [
+      "BI 456906"
+    ],
+    kategorie: "Stoffwechsel",
+    studienlage: "klinisch untersucht",
+    kurz: "Peptid, das gleichzeitig an GLP-1- und Glucagon-Rezeptoren wirkt und sich in fortgeschrittener klinischer Prüfung zur Stoffwechselregulation befindet.",
+    kurz_en: "A peptide that acts on both GLP-1 and glucagon receptors simultaneously, currently in advanced clinical trials related to metabolic regulation.",
+    beschreibung: "Survodutid ist ein dualer Agonist an GLP-1- und Glucagon-Rezeptoren, entwickelt von Boehringer Ingelheim in Zusammenarbeit mit Zealand Pharma. Es wird in Phase-3-Studien zur Gewichtsregulation bei Adipositas sowie bei der Fettleberhepatitis MASH untersucht und ist bisher in keinem Land als Arzneimittel zugelassen.",
+    beschreibung_en: "Survodutide is a dual agonist at GLP-1 and glucagon receptors, developed by Boehringer Ingelheim in collaboration with Zealand Pharma. It is being studied in phase 3 trials for weight regulation in obesity as well as in metabolic dysfunction-associated steatohepatitis (MASH), and is not approved as a medication in any country to date.",
+    mechanismus: "Über den GLP-1-Rezeptor werden eine verstärkte Sättigung und eine verlangsamte Magenentleerung beschrieben. Die zusätzliche Aktivierung des Glucagon-Rezeptors wird mit einem gesteigerten Energieverbrauch über die Leber sowie einer Reduktion des Leberfettanteils in Verbindung gebracht. Diese duale Wirkung unterscheidet Survodutid von reinen GLP-1-Agonisten.",
+    mechanismus_en: "Through the GLP-1 receptor, increased satiety and slowed gastric emptying have been described. The additional activation of the glucagon receptor has been linked to increased hepatic energy expenditure and a reduction in liver fat content. This dual action distinguishes survodutide from pure GLP-1 agonists.",
+    evidenz: [
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten Phase-3-Studie an 725 Erwachsenen mit Adipositas ohne Diabetes zeigte sich nach 76 Wochen unter Survodutid ein mittlerer Körpergewichtsverlust von 12 bis 13 Prozent gegenüber 5 Prozent unter Placebo.",
+        kurz_en: "In a randomized phase 3 trial with 725 adults with obesity without diabetes, survodutide led to a mean body weight loss of 12 to 13 percent after 76 weeks, compared with 5 percent under placebo.",
+        quelle: "Le Roux CW et al. 2026, New England Journal of Medicine, DOI 10.1056/NEJMoa2600751"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten Phase-2-Studie an 386 Erwachsenen mit Adipositas führte Survodutid nach 46 Wochen mit steigender Wirkstoffmenge zu einem Körpergewichtsverlust von bis zu 14,9 Prozent in der höchsten Wirkstoffgruppe gegenüber 2,8 Prozent unter Placebo.",
+        kurz_en: "In a randomized phase 2 trial with 386 adults with obesity, survodutide led to a body weight loss of up to 14.9 percent in the highest-amount group after 46 weeks, compared with 2.8 percent under placebo.",
+        quelle: "le Roux CW et al. 2024, The Lancet Diabetes & Endocrinology 12:162-173, PMID 38330987"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer Phase-2-Studie an 293 Personen mit MASH und Leberfibrose zeigte sich nach 48 Wochen unter Survodutid in bis zu 62 Prozent der Fälle eine histologische Verbesserung der MASH ohne Verschlechterung der Fibrose, gegenüber 14 Prozent unter Placebo.",
+        kurz_en: "In a phase 2 trial with 293 people with MASH and liver fibrosis, up to 62 percent of participants on survodutide showed histologic improvement of MASH with no worsening of fibrosis after 48 weeks, compared with 14 percent under placebo.",
+        quelle: "Sanyal AJ et al. 2024, New England Journal of Medicine, PMID 38847460"
+      }
+    ],
+    sicherheit: [
+      "Die häufigsten in Studien berichteten Effekte sind gastrointestinal, unter anderem Übelkeit, Durchfall und Erbrechen, und traten unter Survodutid deutlich häufiger auf als unter Placebo.",
+      "In der Phase-3-Studie zur Adipositas wurden gastrointestinale Beschwerden bei bis zu 90 Prozent der Teilnehmenden unter Survodutid gegenüber 48 Prozent unter Placebo berichtet, überwiegend mild bis moderat.",
+      "In der Phase-2-Studie zu MASH wurden schwere Nebenwirkungen bei 8 Prozent der Teilnehmenden unter Survodutid und 7 Prozent unter Placebo verzeichnet.",
+      "Da Survodutid nirgends als Arzneimittel zugelassen ist, liegen keine offiziellen Fachinformationen zur Langzeitsicherheit vor."
+    ],
+    sicherheit_en: [
+      "The most commonly reported effects in trials are gastrointestinal, including nausea, diarrhea, and vomiting, occurring markedly more often under survodutide than under placebo.",
+      "In the phase 3 obesity trial, gastrointestinal symptoms were reported in up to 90 percent of participants on survodutide versus 48 percent under placebo, mostly mild to moderate.",
+      "In the phase 2 MASH trial, serious adverse events were recorded in 8 percent of participants on survodutide and 7 percent under placebo.",
+      "Since survodutide is not approved as a medication anywhere, no official prescribing information on long-term safety exists."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Kein zugelassenes Arzneimittel, kein Ersatz für ärztlich verordnete Präparate",
+      "Ergebnisse aus laufenden Phase-3-Studien können sich noch ändern"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "Not an approved medication, not a substitute for prescribed medication",
+      "Results from ongoing phase 3 trials may still change"
+    ],
+    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und innerhalb weniger Wochen verbrauchen.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C. After reconstitution, keep refrigerated at 2-8°C and use within a few weeks.",
+    rechtsstatus: "Survodutid befindet sich in Phase-3-Studien zu Adipositas und MASH und ist bisher weder in der EU noch in den USA als Arzneimittel zugelassen. Eine FDA-Zulassung wird laut Herstellerangaben frühestens 2027 erwartet, gehandelt wird es ausschließlich als Forschungschemikalie.",
+    rechtsstatus_en: "Survodutide is currently in phase 3 trials for obesity and MASH and has not yet been approved as a medication in the EU or the United States. FDA approval is expected at the earliest in 2027 according to the manufacturer, and it is sold exclusively as a research chemical.",
+    typischeMg: [
+      5,
+      10,
+      20
+    ],
+    faq: [
+      {
+        q: "Ist Survodutid bereits als Medikament erhältlich?",
+        a: "Nein. Survodutid befindet sich in Phase-3-Studien, eine FDA-Zulassung wird laut Herstellerangaben frühestens 2027 erwartet. Aktuell ist es kein zugelassenes Arzneimittel.",
+        q_en: "Is survodutide already available as a medication?",
+        a_en: "No. Survodutide is currently in phase 3 trials, with FDA approval expected at the earliest in 2027 according to the manufacturer. It is currently not an approved medication."
+      },
+      {
+        q: "Was unterscheidet Survodutid von Semaglutid?",
+        a: "Semaglutid wirkt nur am GLP-1-Rezeptor, Survodutid zusätzlich am Glucagon-Rezeptor. In klinischen Studien zeigte sich dadurch neben dem Effekt auf das Körpergewicht auch eine Reduktion des Leberfettanteils.",
+        q_en: "What sets survodutide apart from semaglutide?",
+        a_en: "Semaglutide acts only on the GLP-1 receptor, while survodutide additionally acts on the glucagon receptor. Clinical trials showed this dual action also reduces liver fat content alongside the effect on body weight."
+      },
+      {
+        q: "Woher stammt Survodutid?",
+        a: "Survodutid wurde vom Pharmaunternehmen Boehringer Ingelheim entwickelt und wird in mehreren Phase-3-Studien unter dem Programmnamen SYNCHRONIZE untersucht, teils in Kooperation mit Zealand Pharma.",
+        q_en: "Where does survodutide come from?",
+        a_en: "Survodutide was developed by the pharmaceutical company Boehringer Ingelheim and is being studied in several phase 3 trials under the SYNCHRONIZE program name, partly in collaboration with Zealand Pharma."
+      }
+    ],
+    seo: {
+      title: "Survodutid: Dualer Agonist in Phase-3-Studien",
+      title_en: "Survodutide: Dual Agonist in Phase 3 Trials",
+      description: "Survodutid im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des GLP-1/Glucagon-Dual-Agonisten in fortgeschrittener klinischer Prüfung.",
+      description_en: "Survodutide at a glance: mechanism, study status and safety profile of the GLP-1/glucagon dual agonist in advanced clinical trials."
+    },
+    demo: false
+  },
+  {
+    slug: "tirzepatid",
+    name: "Tirzepatid",
+    synonyme: [
+      "LY3298176"
+    ],
+    kategorie: "Stoffwechsel",
+    studienlage: "zugelassenes Arzneimittel",
+    kurz: "Dualer GIP/GLP-1-Rezeptor-Agonist, als zugelassenes Arzneimittel bekannt und hier als Forschungssubstanz zur Stoffwechselregulation gelistet.",
+    kurz_en: "A dual GIP/GLP-1 receptor agonist, known as an approved medication and listed here as a research substance for metabolic regulation.",
+    beschreibung: "Tirzepatid ist ein dualer GIP/GLP-1-Rezeptor-Agonist und als Arzneimittel unter den Namen Mounjaro und Zepbound zugelassen. Es ist Gegenstand umfangreicher klinischer Forschung zur Stoffwechsel- und Gewichtsregulation bei Typ-2-Diabetes und Adipositas. Die hier gelisteten Forschungschargen sind nicht mit zugelassenen Arzneimitteln gleichzusetzen und ausschließlich für Laborzwecke bestimmt.",
+    beschreibung_en: "Tirzepatide is a dual GIP/GLP-1 receptor agonist approved as a medication under the names Mounjaro and Zepbound. It is the subject of extensive clinical research on metabolic and weight regulation in type 2 diabetes and obesity. The research batches listed here are not equivalent to approved medications and are intended for laboratory use only.",
+    mechanismus: "Tirzepatid aktiviert gleichzeitig den GIP- und den GLP-1-Rezeptor und wird deshalb als dualer Agonist bezeichnet. Über den GLP-1-Rezeptor werden Sättigungsregulation im Hypothalamus, eine verlangsamte Magenentleerung und eine glukoseabhängige Insulinausschüttung beschrieben. Der zusätzliche GIP-Rezeptor-Anteil wird mit einer verstärkten Insulinsekretion sowie Effekten auf den Fettstoffwechsel in Verbindung gebracht.",
+    mechanismus_en: "Tirzepatide activates both the GIP and the GLP-1 receptor simultaneously, which is why it is described as a dual agonist. Through the GLP-1 receptor, effects on satiety regulation in the hypothalamus, slowed gastric emptying, and glucose-dependent insulin release have been described. The additional GIP receptor component has been linked to enhanced insulin secretion and effects on lipid metabolism.",
+    evidenz: [
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten Studie an 2.539 Erwachsenen mit Adipositas oder Übergewicht führte wöchentliches Tirzepatid über 72 Wochen zu einem mittleren Körpergewichtsverlust von bis zu 20,9 Prozent (15 mg) gegenüber 3,1 Prozent unter Placebo.",
+        kurz_en: "In a randomized trial with 2,539 adults with obesity or overweight, weekly tirzepatide over 72 weeks led to a mean body weight loss of up to 20.9 percent (15 mg) versus 3.1 percent under placebo.",
+        quelle: "Jastreboff AM et al. 2022, New England Journal of Medicine, PMID 35658024"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten Vergleichsstudie an 1.879 Personen mit Typ-2-Diabetes senkte Tirzepatid den HbA1c-Wert nach 40 Wochen um 2,09 bis 2,46 Prozentpunkte und das Körpergewicht um 7,8 bis 12,4 kg, jeweils stärker als unter Semaglutid 1 mg.",
+        kurz_en: "In a randomized head-to-head trial with 1,879 people with type 2 diabetes, tirzepatide lowered HbA1c by 2.09 to 2.46 percentage points and body weight by 7.8 to 12.4 kg after 40 weeks, in each case more than semaglutide 1 mg.",
+        quelle: "Frías JP et al. 2021, New England Journal of Medicine, PMID 34170647"
+      }
+    ],
+    sicherheit: [
+      "Die häufigsten berichteten Effekte sind gastrointestinal, insbesondere Übelkeit, Erbrechen und Durchfall, in ausgeprägten Fällen mit dem Risiko einer Dehydratation.",
+      "Laut Fachinformation ist die Anwendung bei persönlicher oder familiärer Vorgeschichte von medullärem Schilddrüsenkarzinom oder multipler endokriner Neoplasie Typ 2 kontraindiziert.",
+      "In Tierstudien an Ratten wurden mengen- und expositionsdauerabhängige Schilddrüsen-C-Zell-Tumoren beobachtet, deren Übertragbarkeit auf den Menschen laut Fachinformation nicht geklärt ist."
+    ],
+    sicherheit_en: [
+      "The most commonly reported effects are gastrointestinal, particularly nausea, vomiting, and diarrhea, with a risk of dehydration in pronounced cases.",
+      "According to the prescribing information, use is contraindicated in people with a personal or family history of medullary thyroid carcinoma or multiple endocrine neoplasia syndrome type 2.",
+      "Animal studies in rats showed amount- and exposure-duration-dependent thyroid C-cell tumors, and whether this finding translates to humans has not been established according to the prescribing information."
+    ],
+    hinweise: [
+      "Kein Ersatz für ärztlich verordnete Präparate",
+      "Nur für dokumentierte Forschungszwecke",
+      "Kühl lagern, Kühlkette beim Versand beachten"
+    ],
+    hinweise_en: [
+      "Not a substitute for prescribed medication",
+      "For documented research purposes only",
+      "Store cool, maintain cold chain during shipping"
+    ],
+    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
+    lagerung: "Gekühlt bei 2-8°C lagern, vor Licht schützen",
+    lagerung_en: "Store refrigerated at 2-8°C, protect from light",
+    rechtsstatus: "Tirzepatid ist als Arzneimittel unter dem Namen Mounjaro in der EU seit September 2022 zur Behandlung von Typ-2-Diabetes zugelassen, seit Ende 2023 auch zur Gewichtsregulation. In den USA ist es unter dem Namen Mounjaro zur Typ-2-Diabetes-Behandlung sowie unter dem Namen Zepbound zur Gewichtsregulation zugelassen und in beiden Regionen verschreibungspflichtig. Die hier beschriebenen Forschungschargen sind nicht mit den zugelassenen Fertigarzneimitteln gleichzusetzen.",
+    rechtsstatus_en: "Tirzepatide is approved as a medication under the name Mounjaro in the EU since September 2022 for the treatment of type 2 diabetes, and since late 2023 also for weight management. In the United States, it is approved under the name Mounjaro for the treatment of type 2 diabetes and under the name Zepbound for weight management, and is available by prescription only in both regions. The research batches described here are not equivalent to the approved finished pharmaceutical products.",
+    typischeMg: [
+      10,
+      30,
+      60
+    ],
+    faq: [
+      {
+        q: "Ist Tirzepatid ein zugelassenes Medikament?",
+        a: "Ja, Tirzepatid ist unter den Namen Mounjaro und Zepbound als verschreibungspflichtiges Arzneimittel zugelassen. Die hier beschriebene Substanz ist eine reine Forschungscharge, kein Fertigarzneimittel.",
+        q_en: "Is tirzepatide an approved medication?",
+        a_en: "Yes, tirzepatide is approved as a prescription medication under the names Mounjaro and Zepbound. The substance described here is a research batch only, not a finished pharmaceutical product."
+      },
+      {
+        q: "Worin unterscheidet sich Tirzepatid von Semaglutid?",
+        a: "Semaglutid wirkt allein am GLP-1-Rezeptor, Tirzepatid zusätzlich am GIP-Rezeptor. In einer direkten Vergleichsstudie zeigte Tirzepatid größere Effekte auf HbA1c und Körpergewicht als Semaglutid.",
+        q_en: "How does tirzepatide differ from semaglutide?",
+        a_en: "Semaglutide acts only on the GLP-1 receptor, while tirzepatide additionally acts on the GIP receptor. In a head-to-head trial, tirzepatide showed larger effects on HbA1c and body weight than semaglutide."
+      },
+      {
+        q: "Wofür wird Tirzepatid als Arzneimittel eingesetzt?",
+        a: "Als zugelassenes Arzneimittel wird Tirzepatid bei Typ-2-Diabetes und zur Gewichtsregulation verschrieben. Diese Seite beschreibt die Substanz ausschließlich als Forschungschemikalie für Laborzwecke.",
+        q_en: "What is tirzepatide used for as a medication?",
+        a_en: "As an approved medication, tirzepatide is prescribed for type 2 diabetes and weight management. This page describes the substance exclusively as a research chemical for laboratory purposes."
+      }
+    ],
+    seo: {
+      title: "Tirzepatid: Dualer GIP/GLP-1-Wirkstoff im Überblick",
+      title_en: "Tirzepatide: Dual GIP/GLP-1 Compound Overview",
+      description: "Tirzepatid im Überblick: dualer GIP/GLP-1-Mechanismus, Studienlage aus SURMOUNT und SURPASS, Sicherheitsprofil und Rechtsstatus des Wirkstoffs.",
+      description_en: "Tirzepatide at a glance: dual GIP/GLP-1 mechanism, SURMOUNT and SURPASS trial evidence, safety profile and legal status of the compound."
+    },
+    demo: false
+  },
+  {
     slug: "cjc-1295",
     name: "CJC-1295",
     synonyme: [
@@ -654,6 +1231,199 @@ window.PK.peptides = [
       "sermorelin",
       "tesamorelin"
     ]
+  },
+  {
+    slug: "hexarelin",
+    name: "Hexarelin",
+    synonyme: [],
+    kategorie: "Wachstumshormon-Achse",
+    studienlage: "frühe klinische Studien",
+    kurz: "Synthetisches Hexapeptid aus der Klasse der Growth-Hormone-Releasing-Peptide, in früher klinischer Forschung zur Wachstumshormon-Sekretion untersucht.",
+    kurz_en: "A synthetic hexapeptide from the growth hormone-releasing peptide class, studied in early clinical research on growth hormone secretion.",
+    beschreibung: "Hexarelin ist ein aus sechs Aminosäuren bestehendes synthetisches Peptid aus der GHRP-Klasse (Growth Hormone Releasing Peptides) und wurde erstmals 1994 pharmakologisch beschrieben. Es wurde in klinischen Studien zur Wachstumshormon-Sekretion bei Kindern, Erwachsenen und älteren Personen sowie separat in präklinischer Forschung zu kardialen Effekten untersucht.",
+    beschreibung_en: "Hexarelin is a synthetic hexapeptide from the GHRP (growth hormone releasing peptide) class, first pharmacologically described in 1994. It has been studied in clinical trials on growth hormone secretion in children, adults, and older adults, and separately in preclinical research on cardiac effects.",
+    mechanismus: "Hexarelin bindet an den Ghrelin-Rezeptor (GHS-R1a) in Hypothalamus und Hypophyse und löst darüber eine pulsatile Ausschüttung von körpereigenem Wachstumshormon aus. Im Unterschied zu selektiveren Peptiden derselben Klasse wie Ipamorelin zeigte Hexarelin in Studien eine relevante zusätzliche Freisetzung von ACTH und Cortisol. In präklinischer Forschung wird zudem eine vom Wachstumshormon unabhängige Bindung an kardiale GHS-R1a-Rezeptoren beschrieben.",
+    mechanismus_en: "Hexarelin binds to the ghrelin receptor (GHS-R1a) in the hypothalamus and pituitary gland, triggering a pulsatile release of the body's own growth hormone. Unlike more selective peptides in the same class such as ipamorelin, hexarelin showed a relevant additional release of ACTH and cortisol in studies. Preclinical research also describes growth hormone-independent binding to cardiac GHS-R1a receptors.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "In Studien an neugeborenen und erwachsenen Ratten löste Hexarelin eine ausgeprägte und lang anhaltende Wachstumshormon-Ausschüttung aus, bei subkutaner Gabe wirksamer als das verwandte Peptid GHRP-6.",
+        kurz_en: "In studies on newborn and adult rats, hexarelin triggered a pronounced and long-lasting growth hormone release, and was more effective than the related peptide GHRP-6 when given subcutaneously.",
+        quelle: "Deghenghi R et al. 1994, Life Sciences, Bd. 54(18), S. 1321-1328, PMID 7910650"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer Studie an 60 Personen zwischen 5 und 81 Jahren wurde die Wachstumshormon-Antwort auf Hexarelin bei präpubertären und pubertären Kindern, jungen Erwachsenen und älteren Personen verglichen, mit deutlich schwächerer Reaktion bei präpubertären Kindern und älteren Teilnehmern.",
+        kurz_en: "In a study of 60 people aged 5 to 81, the growth hormone response to hexarelin was compared across prepubertal and pubertal children, young adults, and older adults, with a markedly weaker response in prepubertal children and older participants.",
+        quelle: "Arvat E et al. 1997, European Journal of Endocrinology, Bd. 137(6), PMID 9437229"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer Studie an 15 gesunden Männern erhöhte Hexarelin ACTH und Cortisol, ein Effekt, der durch Desmopressin (ein Vasopressin-Analogon) verstärkt wurde, was auf eine Beteiligung von Vasopressin an diesem Nebeneffekt hindeutet.",
+        kurz_en: "In a study of 15 healthy men, hexarelin increased ACTH and cortisol, an effect that was enhanced by desmopressin (a vasopressin analog), suggesting vasopressin involvement in this side effect.",
+        quelle: "Korbonits M et al. 1999, Journal of Clinical Endocrinology & Metabolism, Bd. 84(7), S. 2489-2495, PMID 10404825"
+      },
+      {
+        art: "präklinisch",
+        kurz: "In einem Rattenmodell zeigte Hexarelin schützende Effekte auf das Herz nach Ischämie-Reperfusion, die unabhängig von der Wachstumshormon-Wirkung auftraten und auf eine direkte Bindung an kardiale Rezeptoren zurückgeführt wurden.",
+        kurz_en: "In a rat model, hexarelin showed protective effects on the heart after ischemia-reperfusion that occurred independently of growth hormone activity and were attributed to direct binding to cardiac receptors.",
+        quelle: "Locatelli V et al. 1999, Endocrinology, Bd. 140(9), S. 4024-4031, PMID 10465272"
+      }
+    ],
+    sicherheit: [
+      "In klinischen Studien löste Hexarelin neben Wachstumshormon auch eine relevante Ausschüttung von ACTH, Cortisol und Prolaktin aus, ein Effekt, der bei selektiveren GHRPs wie Ipamorelin nicht in diesem Ausmaß beobachtet wurde.",
+      "Die Wachstumshormon-Antwort auf Hexarelin fällt bei präpubertären Kindern und bei älteren Personen deutlich schwächer aus als bei Jugendlichen und jungen Erwachsenen.",
+      "Unabhängige Langzeit-Sicherheitsdaten bei gesunden Erwachsenen außerhalb kontrollierter Kurzzeitstudien liegen nicht vor.",
+      "Wechselwirkungen mit anderen Hormonachsen, insbesondere der Hypothalamus-Hypophysen-Nebennierenrinden-Achse, sind nicht abschließend untersucht."
+    ],
+    sicherheit_en: [
+      "In clinical studies, hexarelin triggered not only growth hormone but also a relevant release of ACTH, cortisol, and prolactin, an effect not observed to this extent with more selective GHRPs such as ipamorelin.",
+      "The growth hormone response to hexarelin is markedly weaker in prepubertal children and older adults than in adolescents and young adults.",
+      "Independent long-term safety data in healthy adults beyond controlled short-term studies are not available.",
+      "Interactions with other hormone axes, particularly the hypothalamic-pituitary-adrenal axis, have not been conclusively studied."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Kühlkette bei Lagerung und Versand einhalten",
+      "Wechselwirkungen mit dem Hormonsystem sind nicht abschließend erforscht",
+      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "Maintain cold chain during storage and shipping",
+      "Interactions with the hormone system are not fully understood",
+      "Legal status varies by country, check local regulations first"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved with bacteriostatic water. After reconstitution, the solution should be stored cold and used within a few weeks.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rechtsstatus: "Hexarelin ist weder in Deutschland noch in der EU oder den USA als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie für Laborzwecke gehandelt.",
+    rechtsstatus_en: "Hexarelin is not approved as a medication in Germany, the EU, or the United States, and is sold exclusively as a research chemical for laboratory purposes.",
+    typischeMg: [
+      2,
+      5
+    ],
+    faq: [
+      {
+        q: "Unterscheidet sich Hexarelin von Ipamorelin",
+        a: "Ja. Beide binden an den gleichen Ghrelin-Rezeptor, doch Hexarelin zeigte in Studien zusätzlich eine relevante Freisetzung von ACTH und Cortisol, während Ipamorelin als selektiver für die reine Wachstumshormon-Achse gilt.",
+        q_en: "Does hexarelin differ from ipamorelin",
+        a_en: "Yes. Both bind to the same ghrelin receptor, but hexarelin additionally showed a relevant release of ACTH and cortisol in studies, while ipamorelin is considered more selective for the growth hormone axis alone."
+      },
+      {
+        q: "Wurde Hexarelin an Kindern untersucht",
+        a: "Hexarelin wurde in klinischen Studien zur Wachstumshormon-Sekretion bei Kindern unterschiedlichen Pubertätsstadiums eingesetzt, im Rahmen kontrollierter Forschungsprotokolle und nicht als zugelassenes Arzneimittel.",
+        q_en: "Was hexarelin studied in children",
+        a_en: "Hexarelin has been used in clinical studies on growth hormone secretion in children at different pubertal stages, within controlled research protocols and not as an approved medication."
+      },
+      {
+        q: "Ist Hexarelin als Arzneimittel zugelassen",
+        a: "Nein. Hexarelin ist weder in der EU noch in den USA als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie angeboten, nicht für die Anwendung am Menschen.",
+        q_en: "Is hexarelin an approved medication",
+        a_en: "No. Hexarelin is not approved as a medication in the EU or the US and is offered exclusively as a research chemical, not for human use."
+      }
+    ],
+    seo: {
+      title: "Hexarelin im Forschungsüberblick",
+      title_en: "Hexarelin Research Overview",
+      description: "Hexarelin sachlich erklärt: Wirkmechanismus, Studienlage zu Wachstumshormon und ACTH/Cortisol, Sicherheitsprofil und Rechtsstatus des GHRP-Peptids.",
+      description_en: "Hexarelin explained factually: mechanism of action, study data on growth hormone and ACTH/cortisol, safety profile, and legal status of this GHRP peptide."
+    },
+    demo: false
+  },
+  {
+    slug: "igf-1-lr3",
+    name: "IGF-1 LR3",
+    synonyme: [
+      "Long R3 IGF-1",
+      "LR3-IGF-1",
+      "IGF-1 Long R3"
+    ],
+    kategorie: "Wachstumshormon-Achse",
+    studienlage: "präklinisch",
+    kurz: "Ein gentechnisch verlängertes Analogon von IGF-1 mit 83 Aminosäuren, in Tiermodellen auf Wachstumseffekte untersucht und im Spitzensport als Dopingsubstanz gelistet.",
+    kurz_en: "A genetically lengthened analogue of IGF-1 with 83 amino acids, studied in animal models for growth effects and listed as a doping substance in competitive sport.",
+    beschreibung: "IGF-1 LR3 ist ein rekombinantes Analogon des körpereigenen Insulin-like Growth Factor 1, das ursprünglich für die Zellkultur-Forschung entwickelt wurde. Es trägt zusätzliche Aminosäuren am N-terminalen Ende sowie eine veränderte Position 3, wodurch es kaum noch von IGF-Bindungsproteinen gebunden wird. Untersucht wird es vor allem in Tiermodellen zu Organ- und Zellwachstum, außerhalb der Forschung wird es jedoch verbreitet und ohne belastbare Humandaten zur Leistungssteigerung eingesetzt.",
+    beschreibung_en: "IGF-1 LR3 is a recombinant analogue of the naturally occurring insulin-like growth factor 1, originally developed for cell-culture research. It carries additional amino acids at the N-terminus and an altered position 3, which makes it largely unable to bind IGF-binding proteins. It is studied mainly in animal models of organ and cell growth, but outside research it is also widely used for purported performance enhancement without solid human data.",
+    mechanismus: "Durch die geringe Bindung an IGF-Bindungsproteine bleibt ein größerer Anteil von IGF-1 LR3 frei verfügbar und aktiviert den IGF-1-Rezeptor stärker und länger als natives IGF-1. In präklinischen Modellen wird darüber eine gesteigerte Zellproliferation über die Signalwege ERK und PI3K/Akt beschrieben. Gleichzeitig wird eine Unterdrückung der körpereigenen IGF-1-Produktion und der IGF-Bindungsprotein-Spiegel berichtet.",
+    mechanismus_en: "Because it binds poorly to IGF-binding proteins, a larger share of IGF-1 LR3 remains freely available and activates the IGF-1 receptor more strongly and for longer than native IGF-1. In preclinical models, this is described as driving increased cell proliferation through the ERK and PI3K/Akt pathways. At the same time, suppression of endogenous IGF-1 production and IGF-binding protein levels is reported.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "Eine Infusionsstudie an Meerschweinchen beschrieb unter Long-R3-IGF-1 ein gesteigertes Organwachstum, gleichzeitig aber einen Rückgang der körpereigenen Plasmaspiegel von IGF-1, IGF-2 und IGF-Bindungsproteinen.",
+        kurz_en: "An infusion study in guinea pigs described increased organ growth under long R3 IGF-1, while at the same time plasma levels of endogenous IGF-1, IGF-2, and IGF-binding proteins declined.",
+        quelle: "Conlon et al. 1995, Journal of Endocrinology, PMID 7561636"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Eine Zellstudie an fetalen Herzmuskelzellen von Schafen nutzte IGF-1 LR3 als stabilen Rezeptorstimulus und beschrieb eine Vermittlung der Zellproliferation über die Signalwege ERK und PI3K.",
+        kurz_en: "A cell study in fetal sheep cardiomyocytes used IGF-1 LR3 as a stable receptor stimulus and described cell proliferation mediated through the ERK and PI3K pathways.",
+        quelle: "Sundgren et al. 2003, American Journal of Physiology, PMID 12947030"
+      },
+      {
+        art: "klinisch",
+        kurz: "Eine 2026 veröffentlichte Übersichtsarbeit beschrieb eine deutliche Lücke zwischen der klinischen Evidenzlage von Wachstumshormon-Achsen-Peptiden wie IGF-1 LR3 und ihrer verbreiteten Selbstanwendung außerhalb ärztlicher Aufsicht.",
+        kurz_en: "A 2026 review described a substantial gap between the clinical evidence base for growth-hormone-axis peptides such as IGF-1 LR3 and their widespread self-administration outside medical supervision.",
+        quelle: "Dominikowski et al. 2026, Frontiers in Endocrinology, PMID 42395176"
+      }
+    ],
+    sicherheit: [
+      "Kontrollierte Humanstudien zur Sicherheit von IGF-1 LR3 fehlen, die verfügbare Evidenz stammt aus Zell- und Tiermodellen.",
+      "In Tiermodellen wird eine Unterdrückung der körpereigenen IGF-1-Achse beschrieben, deren Folgen beim Menschen nicht untersucht sind.",
+      "Eine unkontrollierte Erhöhung der IGF-1-Aktivität wird in der Fachliteratur mit einem theoretischen Risiko für unerwünschtes Zell- und Gewebewachstum diskutiert, ein ursächlicher Zusammenhang beim Menschen ist nicht belegt.",
+      "Präparate aus nicht kontrollierter Herstellung bergen ein Verunreinigungsrisiko, das unabhängig vom Molekül selbst besteht."
+    ],
+    sicherheit_en: [
+      "Controlled human safety studies on IGF-1 LR3 are lacking, the available evidence comes from cell and animal models.",
+      "Animal models describe suppression of the body's own IGF-1 axis, the consequences of which have not been studied in humans.",
+      "Uncontrolled elevation of IGF-1 activity is discussed in the literature as a theoretical risk factor for unwanted cell and tissue growth, a causal link in humans has not been established.",
+      "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Auf der WADA-Dopingliste als verbotener Wachstumsfaktor (Kategorie S2) gelistet, ganzjährig verboten",
+      "Humane Sicherheitsdaten liegen nicht vor"
+    ],
+    hinweise_en: [
+      "For research use only, not for human use",
+      "Listed on the WADA Prohibited List as a banned growth factor (category S2), prohibited at all times",
+      "Human safety data are not available"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
+    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
+    lagerung: "Ungelöst lichtgeschützt und gekühlt bis tiefgekühlt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
+    lagerung_en: "Store unreconstituted, protected from light, refrigerated to frozen; after reconstitution, keep refrigerated and use promptly.",
+    rechtsstatus: "IGF-1 LR3 ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt. Im organisierten Sport ist es als Wachstumsfaktor der Kategorie S2 der WADA-Verbotsliste ganzjährig verboten.",
+    rechtsstatus_en: "IGF-1 LR3 is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical. In organized sport, it is prohibited at all times as a category S2 growth factor under the WADA Prohibited List.",
+    typischeMg: [],
+    faq: [
+      {
+        q: "Was unterscheidet IGF-1 LR3 von natürlichem IGF-1?",
+        a: "IGF-1 LR3 trägt zusätzliche Aminosäuren am N-terminalen Ende und eine veränderte Position 3, wodurch es kaum an IGF-Bindungsproteine bindet und dadurch länger und stärker am Rezeptor wirkt als natives IGF-1.",
+        q_en: "What distinguishes IGF-1 LR3 from natural IGF-1?",
+        a_en: "IGF-1 LR3 carries additional amino acids at the N-terminus and an altered position 3, which means it barely binds IGF-binding proteins and therefore acts on the receptor longer and more strongly than native IGF-1."
+      },
+      {
+        q: "Ist IGF-1 LR3 im Sport erlaubt?",
+        a: "Nein, es steht als Wachstumsfaktor auf der WADA-Verbotsliste (Kategorie S2) und ist im organisierten Sport ganzjährig verboten.",
+        q_en: "Is IGF-1 LR3 allowed in sport?",
+        a_en: "No, it is listed as a growth factor on the WADA Prohibited List (category S2) and is banned at all times in organized sport."
+      },
+      {
+        q: "Gibt es Humanstudien zu IGF-1 LR3?",
+        a: "Kontrollierte Humanstudien liegen nicht vor, die verfügbare Evidenz stammt aus Zell- und Tiermodellen, eine 2026 erschienene Übersichtsarbeit weist auf die entsprechende Evidenzlücke hin.",
+        q_en: "Are there human studies on IGF-1 LR3?",
+        a_en: "Controlled human studies are not available, the existing evidence comes from cell and animal models, a 2026 review points to this evidence gap."
+      }
+    ],
+    seo: {
+      title: "IGF-1 LR3: Wirkstoff-Profil & Studienlage",
+      title_en: "IGF-1 LR3: Research Profile & Evidence",
+      description: "IGF-1 LR3 im Überblick: Struktur, präklinische Studienlage, Dopingstatus im Sport (WADA S2) und Sicherheitsprofil, sachlich für den Forschungskontext.",
+      description_en: "IGF-1 LR3 overview: structure, preclinical evidence, doping status in sport (WADA S2), and safety profile, presented factually for the research context."
+    },
+    demo: false
   },
   {
     slug: "ipamorelin",
@@ -1094,6 +1864,199 @@ window.PK.peptides = [
     ]
   },
   {
+    slug: "dihexa",
+    name: "Dihexa",
+    synonyme: [
+      "PNB-0408",
+      "N-Hexanoyl-Tyr-Ile-(6)aminohexanamid"
+    ],
+    kategorie: "Kognition",
+    studienlage: "präklinisch",
+    kurz: "Synthetisches Angiotensin-IV-Analogon, in präklinischen Rattenmodellen zu Gedächtnisleistung untersucht, bislang ohne veröffentlichte Daten am Menschen.",
+    kurz_en: "A synthetic angiotensin IV analog studied in preclinical rat models of memory function, with no published human data to date.",
+    beschreibung: "Dihexa ist ein synthetisches Peptidomimetikum, abgeleitet vom körpereigenen Angiotensin IV und entwickelt in der Forschungsgruppe um Joseph Harding an der Washington State University. Untersucht wurde es bislang ausschließlich in präklinischen Modellen, vor allem an Ratten, im Zusammenhang mit Lern- und Gedächtnisleistung. Veröffentlichte Studien am Menschen liegen für Dihexa nicht vor, das Sicherheitsprofil beim Menschen ist entsprechend nicht untersucht.",
+    beschreibung_en: "Dihexa is a synthetic peptidomimetic derived from the body's own angiotensin IV, developed in Joseph Harding's research group at Washington State University. To date it has been studied exclusively in preclinical models, mainly rats, in connection with learning and memory performance. No published human studies exist for dihexa, so its safety profile in humans has not been examined.",
+    mechanismus: "Dihexa wird als metabolisch stabilisiertes Analogon von Angiotensin IV beschrieben, das oral verfügbar und liquorgängig sein soll. Anders als das körpereigene Angiotensin IV wird ihm in Zellmodellen eine direkte Bindung an den Hepatocyte-Growth-Factor-Rezeptor c-Met zugeschrieben, über die Dendritenwachstum und Synaptogenese ausgelöst werden sollen. Ein Teil der Arbeiten, die diesen Mechanismus ursprünglich stützten, wurde 2025 wegen nachgewiesener Bildmanipulation zurückgezogen, sodass der genaue Wirkmechanismus wissenschaftlich nicht als gesichert gelten kann.",
+    mechanismus_en: "Dihexa is described as a metabolically stabilized analog of angiotensin IV that is orally available and able to cross the blood-brain barrier. Unlike the body's own angiotensin IV, it is reported in cell models to bind directly to the hepatocyte growth factor receptor c-Met, through which it is proposed to trigger dendritic growth and synaptogenesis. Part of the work that originally supported this mechanism was retracted in 2025 due to confirmed image manipulation, so the precise mechanism of action cannot be considered scientifically established.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "Bei Ratten kehrte oral verabreichtes Dihexa (2 mg/kg) durch Scopolamin ausgelöste Gedächtnisdefizite im Morris-Water-Maze-Test um und verbesserte das Lernvermögen bei 24 Monate alten Tieren.",
+        kurz_en: "In rats, orally administered dihexa (2 mg/kg) reversed scopolamine-induced memory deficits in the Morris water maze test and improved learning in 24-month-old animals.",
+        quelle: "McCoy AT et al. 2013, Journal of Pharmacology and Experimental Therapeutics, PMID 23055539 (Arbeit trägt seit 2021 eine Expression of Concern der Herausgeber wegen möglicher Bildmanipulation, keine Retraktion)"
+      },
+      {
+        art: "präklinisch",
+        kurz: "In einem Rattenmodell für 3-Nitropropionsäure-induzierte, Huntington-typische Symptome zeigte PNB-0408 (Dihexa) keine signifikante Verbesserung der motorischen oder neuropathologischen Endpunkte gegenüber Kontrolltieren.",
+        kurz_en: "In a rat model of 3-nitropropionic acid-induced Huntington's-like symptoms, PNB-0408 (dihexa) showed no significant improvement in motor or neuropathological endpoints compared to control animals.",
+        quelle: "Wells RG et al. 2024, Journal of Huntington's Disease, Bd. 13, Nr. 1, S. 55-66, PMID 38489193"
+      }
+    ],
+    sicherheit: [
+      "Für Dihexa liegen keine veröffentlichten Studien am Menschen vor, das Sicherheitsprofil beim Menschen ist nicht untersucht.",
+      "Sämtliche bislang veröffentlichten Daten stammen aus Tiermodellen, überwiegend Ratten, mit Beobachtungszeiträumen von wenigen Wochen.",
+      "Eine 2013 veröffentlichte Studie zu metabolisch stabilisierten Angiotensin-IV-Analoga trägt seit 2021 eine Expression of Concern der Herausgeber wegen möglicher Bildmanipulation, ohne dass die Arbeit zurückgezogen wurde.",
+      "Eine 2014 veröffentlichte Arbeit zum zugrunde liegenden HGF/c-Met-Mechanismus wurde 2025 offiziell zurückgezogen, nachdem eine Untersuchung gefälschte und manipulierte Abbildungen bestätigte.",
+      "Langzeit-Sicherheitsdaten, auch aus Tierversuchen, liegen bislang nicht vor."
+    ],
+    sicherheit_en: [
+      "No published human studies exist for dihexa, and its safety profile in humans has not been examined.",
+      "All data published to date come from animal models, mostly rats, with observation periods of only a few weeks.",
+      "A 2013 study on metabolically stabilized angiotensin IV analogs has carried an editorial Expression of Concern since 2021 over possible image manipulation, without the paper being retracted.",
+      "A 2014 paper on the underlying HGF/c-Met mechanism was formally retracted in 2025 after an investigation confirmed falsified and manipulated figures.",
+      "Long-term safety data, including from animal studies, are not yet available."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Keine veröffentlichten Sicherheitsdaten für den Einsatz am Menschen vorhanden",
+      "Zentrale mechanistische Fachliteratur zu diesem Wirkstoff wurde 2025 wegen gefälschter Daten zurückgezogen",
+      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "No published safety data for human use available",
+      "Key mechanistic literature on this substance was retracted in 2025 due to falsified data",
+      "Legal status varies by country, check local regulations first"
+    ],
+    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser oder einem anderen geeigneten Lösungsmittel aufgelöst. Nach dem Lösen ist die Lösung kühl zu lagern und innerhalb weniger Wochen aufzubrauchen.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved with bacteriostatic water or another suitable solvent. After reconstitution, the solution should be stored cold and used within a few weeks.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rechtsstatus: "Dihexa hat nie ein klinisches Zulassungsverfahren am Menschen durchlaufen und ist weder in Deutschland noch in der EU oder den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie für den Laborgebrauch gehandelt.",
+    rechtsstatus_en: "Dihexa has never entered a clinical approval process for human use and is not approved as a medication in Germany, the EU, or the United States. It is sold exclusively as a research chemical for laboratory use.",
+    typischeMg: [],
+    faq: [
+      {
+        q: "Gibt es Studien zu Dihexa am Menschen",
+        a: "Nein. Alle bislang veröffentlichten Daten zu Dihexa stammen aus Tiermodellen, vor allem Ratten. Ein Sicherheitsprofil für den menschlichen Gebrauch ist nicht untersucht, entsprechend liegen weder Verträglichkeits- noch Wirksamkeitsdaten am Menschen vor.",
+        q_en: "Are there any human studies on dihexa",
+        a_en: "No. All data published on dihexa to date come from animal models, mainly rats. A safety profile for human use has not been examined, so neither tolerability nor efficacy data in humans exist."
+      },
+      {
+        q: "Wie wird der Wirkmechanismus von Dihexa erklärt",
+        a: "Dihexa wird eine Bindung an den Hepatocyte-Growth-Factor-Rezeptor c-Met zugeschrieben, über die in Zellmodellen Synaptogenese ausgelöst werden soll. Ein Teil der Arbeiten, die diesen Mechanismus ursprünglich stützten, wurde 2025 wegen gefälschter Daten zurückgezogen.",
+        q_en: "How is dihexa's mechanism of action explained",
+        a_en: "Dihexa is reported to bind to the hepatocyte growth factor receptor c-Met, a pathway proposed to trigger synaptogenesis in cell models. Part of the work that originally supported this mechanism was retracted in 2025 due to falsified data."
+      },
+      {
+        q: "Ist Dihexa als Arzneimittel zugelassen",
+        a: "Nein. Dihexa hat nie ein klinisches Zulassungsverfahren am Menschen durchlaufen und ist weder in Deutschland noch in der EU oder den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie gehandelt.",
+        q_en: "Is dihexa an approved medication",
+        a_en: "No. Dihexa has never entered a clinical approval process for human use and is not approved as a medication in Germany, the EU, or the United States. It is sold exclusively as a research chemical."
+      }
+    ],
+    seo: {
+      title: "Dihexa: Forschungsstand zum Angiotensin-IV-Analogon",
+      title_en: "Dihexa: Research Status of the Angiotensin IV Analog",
+      description: "Dihexa sachlich erklärt: Herkunft, Wirkmechanismus, präklinische Studienlage und offene Sicherheitsfragen dieses Forschungspeptids.",
+      description_en: "Dihexa explained factually: origin, mechanism of action, preclinical study status, and open safety questions surrounding this research peptide."
+    },
+    demo: false
+  },
+  {
+    slug: "dsip",
+    name: "DSIP",
+    synonyme: [
+      "Delta Sleep Inducing Peptide",
+      "Delta Sleep Peptide"
+    ],
+    kategorie: "Kognition",
+    studienlage: "klinisch untersucht",
+    kurz: "Eines der am längsten erforschten Neuropeptide, ursprünglich als schlafinduzierender Botenstoff aus dem Gehirn schlafender Kaninchen isoliert, mit bis heute uneinheitlicher Studienlage.",
+    kurz_en: "One of the longest-studied neuropeptides, originally isolated as a sleep-inducing messenger from the brain of sleeping rabbits, with an inconsistent body of research to this day.",
+    beschreibung: "DSIP (Delta Sleep Inducing Peptide) ist ein Nonapeptid, das 1977 von Schoenenberger und Monnier aus dem venösen Hirnblut schlafender Kaninchen isoliert und nach seiner Fähigkeit benannt wurde, im Tiermodell Delta-Wellen im EEG auszulösen. In den folgenden Jahrzehnten wurde es in zahlreichen Humanstudien zu Schlaf, Stressachse und Hormonregulation untersucht. Die ursprünglich beschriebene schlaffördernde Wirkung ließ sich in unabhängigen, methodisch strengeren Studien nicht zuverlässig reproduzieren.",
+    beschreibung_en: "DSIP (delta sleep-inducing peptide) is a nonapeptide first isolated in 1977 by Schoenenberger and Monnier from the venous brain blood of sleeping rabbits and named for its ability to trigger delta-wave EEG activity in that animal model. Over the following decades it was studied in numerous human trials on sleep, the stress axis, and hormone regulation. The originally described sleep-promoting effect has not been reliably reproduced in independent, more rigorous studies.",
+    mechanismus: "Der genaue Wirkmechanismus von DSIP gilt trotz jahrzehntelanger Forschung als nicht abschließend geklärt. Diskutiert werden unter anderem eine Beteiligung an der Regulation der Hypothalamus-Hypophysen-Nebennierenrinden-Achse sowie Wechselwirkungen mit GABAergen und opioiden Signalwegen. Ein spezifischer, eindeutig identifizierter Rezeptor für DSIP wurde bislang nicht beschrieben, was die Einordnung seiner Effekte erschwert.",
+    mechanismus_en: "The precise mechanism of action of DSIP remains unresolved despite decades of research. Proposed involvement includes a role in regulating the hypothalamic-pituitary-adrenal axis and interactions with GABAergic and opioid signaling pathways. No specific, clearly identified receptor for DSIP has been described to date, which complicates interpretation of its effects.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "Die Erstisolierung aus dem Hirnblut schlafender Kaninchen identifizierte die Nonapeptid-Sequenz und zeigte im Tiermodell eine Zunahme von Delta-Wellen im EEG nach intraventrikulärer Gabe.",
+        kurz_en: "The original isolation from the brain blood of sleeping rabbits identified the nonapeptide sequence and showed increased delta-wave EEG activity in the animal model following intraventricular administration.",
+        quelle: "Schoenenberger GA, Monnier M 1977, Proceedings of the National Academy of Sciences, Bd. 74(3), S. 1282-1286, PMID 265572"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer doppelblinden Crossover-Studie an chronischen Insomnie-Patienten mit polysomnographischer Kontrolle über vier Nächte fiel die Schlafverbesserung unter DSIP im Vergleich zu Placebo gering aus.",
+        kurz_en: "In a double-blind crossover study in chronic insomnia patients with polysomnographic monitoring over four nights, sleep improvement under DSIP was minor compared to placebo.",
+        quelle: "Monti JM et al. 1987, International Journal of Clinical Pharmacology Research, Bd. 7(2), S. 105-110, PMID 3583493"
+      },
+      {
+        art: "klinisch",
+        kurz: "Eine Übersichtsarbeit, die drei Jahrzehnte an Human- und Tierstudien zusammenfasst, kommt zu dem Schluss, dass sich die ursprünglich postulierte schlafinduzierende Wirkung von DSIP in unabhängigen Studien nicht konsistent bestätigen ließ.",
+        kurz_en: "A review summarizing three decades of human and animal research concludes that the originally postulated sleep-inducing effect of DSIP could not be consistently confirmed in independent studies.",
+        quelle: "Kovalzon VM, Strekalova TV 2006, Journal of Neurochemistry, Bd. 97(2), S. 303-309, PMID 16539679"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Eine 2024 veröffentlichte präklinische Arbeit untersuchte ein DSIP-Fusionspeptid im Mausmodell einer medikamentös ausgelösten Schlaflosigkeit und beschrieb Effekte auf Neurotransmitter-Spiegel wie Serotonin und Dopamin.",
+        kurz_en: "A 2024 preclinical study examined a DSIP fusion peptide in a mouse model of pharmacologically induced insomnia and described effects on neurotransmitter levels such as serotonin and dopamine.",
+        quelle: "Mu X et al. 2024, Frontiers in Pharmacology, Bd. 15, Artikel 1439536, PMID 39444618"
+      }
+    ],
+    sicherheit: [
+      "Die in älteren Humanstudien beschriebene schlaffördernde Wirkung von DSIP gilt laut aktueller Übersichtsliteratur als nicht zuverlässig reproduzierbar.",
+      "Viele der vorliegenden Humanstudien stammen aus den 1980er Jahren und weisen methodische Schwächen wie kleine Stichproben und kurze Beobachtungszeiträume auf.",
+      "In einer Studie an gesunden Probanden veränderte eine DSIP-Infusion die CRH-stimulierte ACTH- und Cortisol-Ausschüttung nicht messbar.",
+      "Unabhängig reproduzierte, moderne Sicherheitsdaten zu einer Langzeitanwendung beim Menschen liegen nicht vor."
+    ],
+    sicherheit_en: [
+      "The sleep-promoting effect described in older human studies is, according to current review literature, not considered reliably reproducible.",
+      "Many of the available human studies date from the 1980s and show methodological weaknesses such as small sample sizes and short observation periods.",
+      "In a study on healthy volunteers, DSIP infusion did not measurably alter CRH-stimulated ACTH and cortisol secretion.",
+      "Independently reproduced, modern long-term human safety data are not available."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Die ursprünglich postulierte schlafinduzierende Wirkung gilt in aktuellen Übersichtsarbeiten als nicht gesichert",
+      "Kein Ersatz für ärztlich verordnete Präparate",
+      "Wechselwirkungen mit anderen Wirkstoffen sind nicht abschließend untersucht"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "The originally postulated sleep-inducing effect is not considered established in current review literature",
+      "Not a substitute for prescribed medication",
+      "Interactions with other substances have not been conclusively studied"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser rekonstituiert. Nach dem Lösen ist die Stammlösung nur für einen begrenzten Zeitraum kühl gelagert stabil.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically reconstituted with bacteriostatic water. Once dissolved, the stock solution remains stable only for a limited period when stored cold.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und zeitnah verbrauchen.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C and use promptly.",
+    rechtsstatus: "DSIP ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und wird dort ausschließlich als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "DSIP is not approved as a medication in Germany, the EU, or the United States, where it is sold exclusively as a research chemical.",
+    typischeMg: [
+      5,
+      10
+    ],
+    faq: [
+      {
+        q: "Wurde die schlaffördernde Wirkung von DSIP in Studien bestätigt",
+        a: "Die Studienlage ist uneinheitlich. Frühe Untersuchungen berichteten schlaffördernde Effekte, eine Übersichtsarbeit aus 2006 kommt jedoch zu dem Schluss, dass sich diese Wirkung in unabhängigen Studien nicht konsistent reproduzieren ließ.",
+        q_en: "Has the sleep-promoting effect of DSIP been confirmed in studies",
+        a_en: "The evidence is inconsistent. Early studies reported sleep-promoting effects, but a 2006 review concluded that this effect could not be consistently reproduced in independent studies."
+      },
+      {
+        q: "Woher stammt der Name DSIP",
+        a: "DSIP steht für Delta Sleep Inducing Peptide. Der Name geht auf die Erstbeschreibung 1977 zurück, als das Peptid aus dem Hirnblut schlafender Kaninchen isoliert wurde und im Tiermodell Delta-Wellen im EEG auslöste.",
+        q_en: "Where does the name DSIP come from",
+        a_en: "DSIP stands for delta sleep-inducing peptide. The name traces back to its first description in 1977, when it was isolated from the brain blood of sleeping rabbits and triggered delta-wave EEG activity in that animal model."
+      },
+      {
+        q: "Ist DSIP in Deutschland legal erhältlich",
+        a: "DSIP ist in Deutschland und der EU nicht als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie für Laborzwecke angeboten, nicht für die Anwendung am Menschen.",
+        q_en: "Is DSIP legally available in Germany",
+        a_en: "DSIP is not approved as a medication in Germany or the EU. It is offered exclusively as a research chemical for laboratory purposes, not for human use."
+      }
+    ],
+    seo: {
+      title: "DSIP: Forschungspeptid mit uneinheitlicher Studienlage",
+      title_en: "DSIP: Research Peptide With Inconsistent Evidence",
+      description: "DSIP im Überblick: Herkunft, Wirkmechanismus, Studienlage und Sicherheitsprofil eines der am längsten erforschten Schlafpeptide.",
+      description_en: "DSIP at a glance: origin, mechanism, study status, and safety profile of one of the longest-studied sleep peptides."
+    },
+    demo: false
+  },
+  {
     slug: "selank",
     name: "Selank",
     synonyme: [],
@@ -1294,6 +2257,191 @@ window.PK.peptides = [
       "selank",
       "epitalon"
     ]
+  },
+  {
+    slug: "kpv",
+    name: "KPV",
+    synonyme: [
+      "Lys-Pro-Val",
+      "alpha-MSH(11-13)"
+    ],
+    kategorie: "Immunsystem",
+    studienlage: "präklinisch",
+    kurz: "Ein aus drei Aminosäuren bestehendes Fragment von alpha-MSH, das in Tiermodellen auf entzündungshemmende Eigenschaften im Darm und auf der Haut untersucht wird.",
+    kurz_en: "A three-amino-acid fragment of alpha-MSH, studied in animal models for anti-inflammatory properties in the gut and on the skin.",
+    beschreibung: "KPV ist ein Tripeptid aus den Aminosäuren Lysin, Prolin und Valin, abgeleitet vom C-terminalen Ende des Hormons alpha-MSH. Es zählt zu den kleinsten untersuchten Peptiden in der Entzündungsforschung, mit einem Schwerpunkt auf Tiermodellen zu chronisch entzündlichen Darmerkrankungen und Hautentzündungen. Humanstudien liegen bislang nicht vor.",
+    beschreibung_en: "KPV is a tripeptide made of the amino acids lysine, proline, and valine, derived from the C-terminal end of the hormone alpha-MSH. It is among the smallest peptides studied in inflammation research, with a focus on animal models of chronic inflammatory bowel disease and skin inflammation. Human studies are not yet available.",
+    mechanismus: "In präklinischen Modellen wird eine entzündungshemmende Wirkung beschrieben, die unabhängig vom Melanocortin-Rezeptor verläuft und stattdessen über den Peptidtransporter PepT1 in die Darmzellen aufgenommen wird. Dort wird eine Hemmung der NF-κB-Aktivierung beschrieben, eines zentralen Schalters der Entzündungsreaktion. Die genauen Mechanismen beim Menschen sind nicht untersucht.",
+    mechanismus_en: "In preclinical models, an anti-inflammatory effect is described that operates independently of the melanocortin receptor and instead relies on uptake into intestinal cells via the peptide transporter PepT1. There, inhibition of NF-κB activation is described, a central switch in the inflammatory response. The exact mechanisms in humans have not been studied.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "Eine Studie an zwei Mausmodellen für Colitis beschrieb unter KPV eine schnellere Erholung des Körpergewichts und deutlich reduzierte Entzündungsinfiltrate im Darmgewebe gegenüber unbehandelten Tieren.",
+        kurz_en: "A study in two mouse models of colitis described faster body-weight recovery and markedly reduced inflammatory infiltrates in the intestinal tissue under KPV compared with untreated animals.",
+        quelle: "Kannengiesser et al. 2008, Inflammatory Bowel Diseases, PMID 18092346"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Eine Studie zeigte, dass die entzündungshemmende Wirkung von KPV im Mausmodell über die Aufnahme durch den Peptidtransporter PepT1 vermittelt wird und nicht über den Melanocortin-Rezeptor.",
+        kurz_en: "A study showed that the anti-inflammatory effect of KPV in the mouse model is mediated through uptake via the peptide transporter PepT1 rather than the melanocortin receptor.",
+        quelle: "Dalmasso et al. 2008, Gastroenterology, PMID 18061177"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Eine Studie mit Hyaluronsäure-funktionalisierten Nanopartikeln zur gezielten oralen Freisetzung von KPV im Dickdarm beschrieb bei Mäusen mit Colitis eine deutliche Linderung der Entzündung gegenüber unbehandeltem KPV.",
+        kurz_en: "A study using hyaluronic-acid-functionalized nanoparticles for targeted oral colon release of KPV described significant reduction of inflammation in mice with colitis compared with untreated KPV.",
+        quelle: "Xiao et al. 2017, Molecular Therapy, PMID 28143741"
+      }
+    ],
+    sicherheit: [
+      "Humanstudien zur Sicherheit von KPV liegen bislang nicht vor, die gesamte Evidenz stammt aus Zell- und Tiermodellen.",
+      "In den vorliegenden Tierstudien wurden keine schwerwiegenden Nebenwirkungen berichtet.",
+      "Wechselwirkungen mit anderen Wirkstoffen sind beim Menschen nicht untersucht.",
+      "Präparate aus nicht kontrollierter Herstellung bergen ein Verunreinigungsrisiko, das unabhängig vom Molekül selbst besteht."
+    ],
+    sicherheit_en: [
+      "Human safety studies on KPV are not yet available, all evidence comes from cell and animal models.",
+      "No serious adverse effects were reported in the available animal studies.",
+      "Interactions with other substances have not been studied in humans.",
+      "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Humane Sicherheitsdaten liegen nicht vor",
+      "Bisherige Evidenz stammt ausschließlich aus Zell- und Tiermodellen"
+    ],
+    hinweise_en: [
+      "For research use only, not for human use",
+      "Human safety data are not available",
+      "Existing evidence comes exclusively from cell and animal models"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
+    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
+    lagerung: "Ungelöst lichtgeschützt und gekühlt bis tiefgekühlt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
+    lagerung_en: "Store unreconstituted, protected from light, refrigerated to frozen; after reconstitution, keep refrigerated and use promptly.",
+    rechtsstatus: "KPV ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "KPV is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical.",
+    typischeMg: [],
+    faq: [
+      {
+        q: "Woher stammt KPV?",
+        a: "KPV ist ein Fragment des Hormons alpha-MSH und besteht aus den drei Aminosäuren Lysin, Prolin und Valin.",
+        q_en: "Where does KPV come from?",
+        a_en: "KPV is a fragment of the hormone alpha-MSH, made of the three amino acids lysine, proline, and valine."
+      },
+      {
+        q: "Wirkt KPV über den Melanocortin-Rezeptor?",
+        a: "Nein. In Tiermodellen wird die entzündungshemmende Wirkung unabhängig vom Melanocortin-Rezeptor beschrieben, stattdessen über den Transporter PepT1.",
+        q_en: "Does KPV act through the melanocortin receptor?",
+        a_en: "No. In animal models, the anti-inflammatory effect is described independently of the melanocortin receptor, instead relying on the transporter PepT1."
+      },
+      {
+        q: "Gibt es Humanstudien zu KPV?",
+        a: "Nein, bislang liegen ausschließlich Zell- und Tierstudien vor, vorwiegend zu entzündlichen Darmerkrankungen.",
+        q_en: "Are there human studies on KPV?",
+        a_en: "No, to date only cell and animal studies exist, mostly on inflammatory bowel disease."
+      }
+    ],
+    seo: {
+      title: "KPV: Wirkstoff-Profil & Studienlage",
+      title_en: "KPV: Research Profile & Evidence",
+      description: "KPV im Überblick: Herkunft aus alpha-MSH, Wirkmechanismus, präklinische Studienlage und Sicherheitsprofil, sachlich aufbereitet für den Forschungskontext.",
+      description_en: "KPV overview: origin from alpha-MSH, mechanism, preclinical evidence, and safety profile, presented factually for the research context."
+    },
+    demo: false
+  },
+  {
+    slug: "ll-37",
+    name: "LL-37",
+    synonyme: [
+      "Cathelicidin",
+      "hCAP18(134-170)",
+      "Human Cathelicidin"
+    ],
+    kategorie: "Immunsystem",
+    studienlage: "klinisch untersucht",
+    kurz: "Ein körpereigenes antimikrobielles Peptid aus 37 Aminosäuren, das Haut und Schleimhäute schützt und in klinischen Studien zur Wundheilung untersucht wird.",
+    kurz_en: "A naturally occurring antimicrobial peptide made of 37 amino acids that protects skin and mucous membranes, studied in clinical trials for wound healing.",
+    beschreibung: "LL-37 ist das einzige beim Menschen bekannte Peptid der Cathelicidin-Familie und wird von Immunzellen sowie Haut- und Schleimhautzellen als Reaktion auf Verletzung oder Infektion gebildet. Es entsteht durch Abspaltung aus dem Vorläuferprotein hCAP18. In der klinischen Forschung wird vor allem die topische Anwendung bei schwer heilenden Wunden untersucht, etwa bei venösen Beingeschwüren und diabetischem Fußsyndrom.",
+    beschreibung_en: "LL-37 is the only known member of the cathelicidin peptide family in humans and is produced by immune cells as well as skin and mucosal cells in response to injury or infection. It is generated by cleavage from the precursor protein hCAP18. Clinical research has focused mainly on topical application for hard-to-heal wounds, such as venous leg ulcers and diabetic foot ulcers.",
+    mechanismus: "LL-37 lagert sich in die Zellmembranen von Bakterien ein und stört deren Integrität, was zu einer direkten antimikrobiellen Wirkung gegen ein breites Spektrum an Keimen führt. Zusätzlich werden immunmodulatorische Effekte beschrieben, darunter eine Anlockung von Immunzellen an die Wunde und eine Förderung der Angiogenese. Die körpereigene Produktion lässt sich durch bestimmte Reize wie Vitamin-D-Analoga verstärken.",
+    mechanismus_en: "LL-37 inserts into bacterial cell membranes and disrupts their integrity, producing a direct antimicrobial effect against a broad range of pathogens. Additional immunomodulatory effects are described, including recruitment of immune cells to the wound site and promotion of angiogenesis. Endogenous production can be enhanced by certain stimuli such as vitamin D analogues.",
+    evidenz: [
+      {
+        art: "klinisch",
+        kurz: "Eine randomisierte, placebokontrollierte Erstanwendungsstudie an 34 Patienten mit schwer heilenden venösen Beingeschwüren beschrieb bei den beiden niedrigeren LL-37-Konzentrationen eine etwa 3- bis 6-fach schnellere Heilungsrate gegenüber Placebo.",
+        kurz_en: "A randomized, placebo-controlled first-in-human trial in 34 patients with hard-to-heal venous leg ulcers described an approximately 3- to 6-fold faster healing rate under the two lower LL-37 concentrations compared with placebo.",
+        quelle: "Grönberg et al. 2014, Wound Repair and Regeneration, PMID 25041740"
+      },
+      {
+        art: "klinisch",
+        kurz: "Eine randomisierte doppelblinde Studie an Patienten mit diabetischem Fußgeschwür untersuchte eine LL-37-haltige Creme und beschrieb Effekte auf Bakterienbesiedlung, Entzündungsmarker und Heilungsrate im Vergleich zu Placebo.",
+        kurz_en: "A randomized double-blind trial in patients with diabetic foot ulcers examined an LL-37-containing cream and described effects on bacterial colonization, inflammatory markers, and healing rate compared with placebo.",
+        quelle: "Miranda et al. 2023, Archives of Dermatological Research, PMID 37480520"
+      },
+      {
+        art: "klinisch",
+        kurz: "Eine Studie an menschlicher Haut beschrieb, dass die körpereigene Produktion von hCAP18/LL-37 nach einer Verletzung ansteigt und sich durch die topische Anwendung des Vitamin-D-Analogons Calcipotriol zusätzlich verstärken lässt.",
+        kurz_en: "A study in human skin described that endogenous production of hCAP18/LL-37 increases after injury and can be further enhanced by topical application of the vitamin D analogue calcipotriol.",
+        quelle: "Heilborn et al. 2010, Experimental Dermatology, PMID 19878298"
+      }
+    ],
+    sicherheit: [
+      "In den vorliegenden randomisierten Studien wurde die topische Anwendung von LL-37 als sicher und gut verträglich beschrieben, ohne schwerwiegende Nebenwirkungen.",
+      "Die Studienpopulationen waren jeweils klein, größere placebokontrollierte Studien mit mehr Teilnehmenden stehen noch aus.",
+      "Systemische Anwendungsformen und Langzeitsicherheit beim Menschen sind bislang nicht in vergleichbarem Umfang untersucht wie die topische Anwendung.",
+      "Präparate aus nicht kontrollierter Herstellung bergen ein Verunreinigungsrisiko, das unabhängig vom Molekül selbst besteht."
+    ],
+    sicherheit_en: [
+      "In the available randomized trials, topical application of LL-37 was described as safe and well tolerated, without serious adverse events.",
+      "Study populations were each small, larger placebo-controlled trials with more participants are still pending.",
+      "Systemic forms of application and long-term human safety have not been studied to a comparable extent as topical use.",
+      "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen ohne ärztliche Begleitung",
+      "Bisherige Humanstudien beschränken sich überwiegend auf die topische Anwendung bei Wunden",
+      "Langzeitsicherheitsdaten liegen nicht vor"
+    ],
+    hinweise_en: [
+      "For research use only, not for human use without medical supervision",
+      "Existing human studies are largely limited to topical application on wounds",
+      "Long-term safety data are not available"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird mit sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
+    rekonstitution_en: "The lyophilized powder is dissolved with sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
+    lagerung: "Ungelöst gekühlt und lichtgeschützt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
+    lagerung_en: "Store unreconstituted, refrigerated and protected from light; after reconstitution, keep refrigerated and use promptly.",
+    rechtsstatus: "LL-37 ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt, klinische Prüfpräparate mit LL-37 sind an einzelne Studienprogramme gebunden.",
+    rechtsstatus_en: "LL-37 is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical, clinical investigational formulations of LL-37 are tied to individual study programs.",
+    typischeMg: [],
+    faq: [
+      {
+        q: "Ist LL-37 ein körpereigenes Peptid?",
+        a: "Ja. Es ist das einzige beim Menschen bekannte Cathelicidin-Peptid und wird von Immun- sowie Haut- und Schleimhautzellen gebildet, besonders bei Verletzung oder Infektion.",
+        q_en: "Is LL-37 a naturally occurring human peptide?",
+        a_en: "Yes. It is the only known human cathelicidin peptide and is produced by immune, skin, and mucosal cells, especially during injury or infection."
+      },
+      {
+        q: "Gibt es klinische Studien zu LL-37?",
+        a: "Ja, mehrere randomisierte Studien untersuchten die topische Anwendung bei schwer heilenden Wunden wie venösen Beingeschwüren und diabetischem Fußsyndrom, mit überwiegend positiven Sicherheitsergebnissen.",
+        q_en: "Are there clinical studies on LL-37?",
+        a_en: "Yes, several randomized trials examined topical application on hard-to-heal wounds such as venous leg ulcers and diabetic foot ulcers, with mostly positive safety results."
+      },
+      {
+        q: "Wirkt LL-37 nur antimikrobiell?",
+        a: "Nein, neben der direkten Wirkung auf Bakterienmembranen werden auch immunmodulatorische Effekte wie die Anlockung von Immunzellen und die Förderung der Gefäßneubildung beschrieben.",
+        q_en: "Does LL-37 act only as an antimicrobial?",
+        a_en: "No, besides its direct effect on bacterial membranes, immunomodulatory effects such as immune cell recruitment and promotion of blood vessel formation are also described."
+      }
+    ],
+    seo: {
+      title: "LL-37: Wirkstoff-Profil & Studienlage",
+      title_en: "LL-37: Research Profile & Evidence",
+      description: "LL-37 im Überblick: körpereigenes Cathelicidin, Wirkmechanismus, klinische Studienlage zur Wundheilung und Sicherheitsprofil im Forschungskontext.",
+      description_en: "LL-37 overview: naturally occurring cathelicidin, mechanism, clinical evidence on wound healing, and safety profile in the research context."
+    },
+    demo: false
   },
   {
     slug: "thymosin-alpha-1",
@@ -1504,6 +2652,103 @@ window.PK.peptides = [
     ]
   },
   {
+    slug: "kisspeptin",
+    name: "Kisspeptin-10",
+    synonyme: [
+      "Metastin (45-54)",
+      "KP-10"
+    ],
+    kategorie: "Sonstige",
+    studienlage: "klinisch untersucht",
+    kurz: "Kürzestes bioaktives Fragment des körpereigenen Kisspeptin-Systems, in der endokrinologischen Forschung zur Steuerung der Hypothalamus-Hypophysen-Gonaden-Achse untersucht.",
+    kurz_en: "The shortest bioactive fragment of the body's own kisspeptin system, studied in endocrine research on control of the hypothalamic-pituitary-gonadal axis.",
+    beschreibung: "Kisspeptin-10 ist das kürzeste Fragment des körpereigenen Peptids Kisspeptin (Metastin) mit voller Aktivität am KISS1R-Rezeptor. In der Forschung dient es zur gezielten Stimulation der GnRH-Ausschüttung und wird zur Untersuchung der Hypothalamus-Hypophysen-Gonaden-Achse bei Fragen zu Pubertätsentwicklung, Hypogonadismus und Fruchtbarkeit eingesetzt. Größere klinische Studien zu Endpunkten wie Eizellreifung oder sexueller Erregung arbeiteten meist mit dem längeren natürlichen Isoform Kisspeptin-54, das am selben Rezeptor wirkt.",
+    beschreibung_en: "Kisspeptin-10 is the shortest fragment of the body's own peptide kisspeptin (metastin) that retains full activity at the KISS1R receptor. In research it is used to trigger GnRH release directly and to study the hypothalamic-pituitary-gonadal axis in questions of pubertal development, hypogonadism, and fertility. Larger clinical trials on endpoints such as oocyte maturation or sexual arousal mostly used the longer natural isoform kisspeptin-54, which acts on the same receptor.",
+    mechanismus: "Kisspeptin-10 bindet an den G-Protein-gekoppelten Rezeptor KISS1R (GPR54) auf GnRH-Neuronen im Hypothalamus. Über eine Gq/11-vermittelte Signalkaskade mit Kalziumeinstrom depolarisiert es diese Neuronen und löst eine gepulste Freisetzung von GnRH aus, was nachgeschaltet die Ausschüttung von LH und FSH aus der Hypophyse steuert. Bei Männern erhöhte eine Kisspeptin-10-Bolusgabe den LH-Spiegel und die Pulsfrequenz, mit stärkerer Wirkung bei höherer verabreichter Menge. Anhaltende oder hochfrequente Rezeptorstimulation kann dagegen zu einer Desensibilisierung von KISS1R und einer abgeschwächten LH-Antwort führen.",
+    mechanismus_en: "Kisspeptin-10 binds to the G protein-coupled receptor KISS1R (GPR54) on GnRH neurons in the hypothalamus. Through a Gq/11-mediated signaling cascade involving calcium influx, it depolarizes these neurons and triggers pulsatile GnRH release, which downstream governs LH and FSH secretion from the pituitary gland. In men, a kisspeptin-10 bolus raised LH levels and pulse frequency, with a stronger effect at higher administered amounts. Sustained or high-frequency receptor stimulation, by contrast, can desensitize KISS1R and blunt the LH response.",
+    evidenz: [
+      {
+        art: "klinisch",
+        kurz: "In einer Studie an gesunden Männern erhöhte eine intravenöse Kisspeptin-10-Bolusgabe den LH-Spiegel mit zunehmender Wirkstärke bei höherer Menge, eine niedrig konzentrierte Dauerinfusion steigerte zusätzlich die LH-Pulsfrequenz.",
+        kurz_en: "In a study in healthy men, an intravenous kisspeptin-10 bolus raised LH levels with increasing effect at higher amounts, and a low-concentration continuous infusion additionally increased LH pulse frequency.",
+        quelle: "George JT et al. 2011, The Journal of Clinical Endocrinology & Metabolism, PMID 21632807"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten Studie an 60 Frauen mit hohem OHSS-Risiko löste eine einzelne Injektion des verwandten Isoforms Kisspeptin-54 bei 95 Prozent die Eizellreifung im Rahmen einer IVF aus, ohne dass moderates bis schweres OHSS auftrat.",
+        kurz_en: "In a randomized trial in 60 women at high risk of OHSS, a single injection of the related isoform kisspeptin-54 triggered oocyte maturation in 95 percent of cases during an IVF cycle, with no moderate to severe OHSS observed.",
+        quelle: "Jayasena CN et al. 2015, The Journal of Clinical Endocrinology & Metabolism, PMID 26192876"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten, placebokontrollierten Studie an 32 Männern mit Hypoactive Sexual Desire Disorder verstärkte eine einmalige Infusion des Isoforms Kisspeptin-54 die sexuelle Hirnaktivität sowie die penile Tumeszenz beim Betrachten erotischer Videos gegenüber Placebo.",
+        kurz_en: "In a randomized, placebo-controlled trial in 32 men with hypoactive sexual desire disorder, a single infusion of the isoform kisspeptin-54 increased sexual brain activity and penile tumescence during erotic video viewing compared with placebo.",
+        quelle: "Mills EG et al. 2023, JAMA Network Open, PMID 36735255"
+      }
+    ],
+    sicherheit: [
+      "In publizierten Studien mit über 1.000 Teilnehmern insgesamt wurden bislang keine der Substanz zugeschriebenen schwerwiegenden unerwünschten Ereignisse berichtet, das Nebenwirkungsprofil war placebo-ähnlich.",
+      "Am häufigsten beschrieben wurden milde, vorübergehende Effekte wie Reaktionen an der Injektionsstelle, Hautrötung (Flush) und leichter Kopfschmerz.",
+      "Anhaltende oder hochfrequente Stimulation des KISS1R-Rezeptors kann zu einer Desensibilisierung und einer abgeschwächten LH-Antwort führen (Tachyphylaxie).",
+      "Belastbare Langzeit-Sicherheitsdaten liegen bislang nicht vor, die verfügbaren Studien umfassen überwiegend kurzzeitige, kontrollierte Anwendungen."
+    ],
+    sicherheit_en: [
+      "Across published studies with more than 1,000 participants combined, no serious adverse events attributable to the substance have been reported to date, with an adverse event profile comparable to placebo.",
+      "The most commonly described effects were mild, transient reactions such as injection site reactions, flushing, and mild headache.",
+      "Sustained or high-frequency stimulation of the KISS1R receptor can lead to receptor desensitization and a blunted LH response (tachyphylaxis).",
+      "Robust long-term safety data are not yet available, as available studies mostly cover short-term, controlled administration."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Kein Ersatz für ärztlich verordnete Präparate",
+      "Die meisten klinischen Daten stammen vom verwandten Isoform Kisspeptin-54, nicht von Kisspeptin-10 selbst",
+      "Wechselwirkungen mit anderen Hormonachsen sind nicht abschließend untersucht"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "Not a substitute for prescribed medication",
+      "Most clinical data come from the related isoform kisspeptin-54, not from kisspeptin-10 itself",
+      "Interactions with other hormone axes have not been conclusively studied"
+    ],
+    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser oder einem anderen geeigneten wässrigen Puffer gelöst und ist danach für einen begrenzten Zeitraum kühl gelagert stabil.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water or another suitable aqueous buffer and remains stable for a limited period when kept refrigerated afterward.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 4°C aufbewahren und innerhalb von 7 Tagen verbrauchen.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 4°C and use within 7 days.",
+    rechtsstatus: "Kisspeptin-10 ist weder in Deutschland noch in der EU oder den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie für Laborzwecke gehandelt, klinische Anwendungen wie ein IVF-Trigger oder der Einsatz bei Hypoactive Sexual Desire Disorder befinden sich weiterhin in der experimentellen Prüfung.",
+    rechtsstatus_en: "Kisspeptin-10 is not approved as a medication in Germany, the EU, or the United States. It is sold exclusively as a research chemical for laboratory purposes; clinical applications such as an IVF trigger or use in hypoactive sexual desire disorder remain under experimental investigation.",
+    typischeMg: [
+      5,
+      10
+    ],
+    faq: [
+      {
+        q: "Ist Kisspeptin-10 dasselbe wie das in klinischen Studien getestete Kisspeptin",
+        a: "Nicht ganz. Die meisten großen klinischen Studien zu Fruchtbarkeit oder sexueller Erregung nutzten das längere natürliche Isoform Kisspeptin-54. Kisspeptin-10 ist das kürzeste Fragment mit voller Rezeptoraktivität und wurde vor allem in mechanistischen Studien zur LH-Ausschüttung bei Männern untersucht.",
+        q_en: "Is kisspeptin-10 the same as the kisspeptin tested in clinical trials",
+        a_en: "Not quite. Most major clinical trials on fertility or sexual arousal used the longer natural isoform kisspeptin-54. Kisspeptin-10 is the shortest fragment with full receptor activity and has mainly been studied in mechanistic research on LH release in men."
+      },
+      {
+        q: "Wie wirkt Kisspeptin-10 auf den Körper",
+        a: "Es bindet an den Rezeptor KISS1R auf GnRH-Neuronen im Hypothalamus und löst eine gepulste Freisetzung von GnRH aus. Das steuert nachgeschaltet die Ausschüttung von LH und FSH aus der Hypophyse und damit zentrale Funktionen der Fortpflanzungsachse.",
+        q_en: "How does kisspeptin-10 act on the body",
+        a_en: "It binds to the KISS1R receptor on GnRH neurons in the hypothalamus and triggers pulsatile GnRH release. This downstream governs LH and FSH secretion from the pituitary gland and, with it, central functions of the reproductive axis."
+      },
+      {
+        q: "Ist Kisspeptin-10 in Deutschland legal erhältlich",
+        a: "Kisspeptin-10 ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie für Laborzwecke angeboten, nicht für die Anwendung am Menschen.",
+        q_en: "Is kisspeptin-10 legally available in Germany",
+        a_en: "Kisspeptin-10 is not approved as a medication in Germany, the EU, or the United States. It is offered exclusively as a research chemical for laboratory purposes, not for human use."
+      }
+    ],
+    seo: {
+      title: "Kisspeptin-10: Forschungspeptid zur Hormonachse",
+      title_en: "Kisspeptin-10: Research Peptide for the Hormone Axis",
+      description: "Kisspeptin-10 sachlich erklärt: Wirkmechanismus am KISS1R-Rezeptor, Studienlage zu GnRH und der Hormonachse sowie Sicherheitsprofil.",
+      description_en: "Kisspeptin-10 explained factually: mechanism at the KISS1R receptor, study data on GnRH and the hormone axis, and the safety profile of a research peptide."
+    },
+    demo: false
+  },
+  {
     slug: "melanotan-2",
     name: "Melanotan II",
     synonyme: [
@@ -1607,5 +2852,295 @@ window.PK.peptides = [
       "ghk-cu",
       "epitalon"
     ]
+  },
+  {
+    slug: "oxytocin",
+    name: "Oxytocin",
+    synonyme: [
+      "OXT",
+      "Pitocin"
+    ],
+    kategorie: "Sonstige",
+    studienlage: "zugelassenes Arzneimittel",
+    kurz: "Körpereigenes Nonapeptid-Hormon, als Arzneimittel zur Geburtseinleitung zugelassen und zugleich Gegenstand der Forschung zu sozialem Verhalten und Bindung.",
+    kurz_en: "An endogenous nonapeptide hormone, approved as a medication to induce labor and also studied in research on social behavior and bonding.",
+    beschreibung: "Oxytocin ist ein aus neun Aminosäuren bestehendes Hormon, das im Hypothalamus gebildet und über die Hypophyse ausgeschüttet wird. Als Arzneimittel, etwa Syntocinon oder Pitocin, ist es zur Geburtseinleitung und zur Kontrolle postpartaler Blutungen zugelassen. Getrennt davon wird intranasal verabreichtes Oxytocin in der Grundlagenforschung zu sozialem Verhalten, Vertrauen und Bindung untersucht.",
+    beschreibung_en: "Oxytocin is a nine-amino-acid hormone produced in the hypothalamus and released via the pituitary gland. As a medication, such as Syntocinon or Pitocin, it is approved to induce labor and control postpartum bleeding. Separately, intranasally administered oxytocin is studied in basic research on social behavior, trust, and bonding.",
+    mechanismus: "Oxytocin bindet an den Oxytocin-Rezeptor (OXTR), einen an Gq/11-Protein gekoppelten Rezeptor auf der glatten Uterusmuskulatur sowie in verschiedenen Hirnregionen. Die Rezeptorbindung aktiviert die Phospholipase C und darüber die Freisetzung von intrazellulärem Calcium, was in der Gebärmutter zur Kontraktion der glatten Muskulatur führt. In höheren Konzentrationen wirkt Oxytocin zusätzlich über den strukturell verwandten Vasopressin-V2-Rezeptor antidiuretisch.",
+    mechanismus_en: "Oxytocin binds to the oxytocin receptor (OXTR), a Gq/11-protein-coupled receptor on uterine smooth muscle and in various brain regions. Receptor binding activates phospholipase C and, through it, the release of intracellular calcium, which drives contraction of uterine smooth muscle. At higher concentrations, oxytocin also acts on the structurally related vasopressin V2 receptor, producing an antidiuretic effect.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "Im Tiermodell der Präriewühlmaus zeigte die zentrale Gabe von Oxytocin bei Weibchen eine Partnerpräferenz, während ein selektiver Oxytocin-Antagonist deren Ausbildung nach der Paarung blockierte.",
+        kurz_en: "In a prairie vole animal model, central administration of oxytocin induced partner preference in females, while a selective oxytocin antagonist blocked its formation after mating.",
+        quelle: "Insel TR & Hulihan TJ 1995, Behavioral Neuroscience, 109:782-789"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer placebokontrollierten Verhaltensstudie an gesunden männlichen Probanden erhöhte intranasal verabreichtes Oxytocin die Bereitschaft, einem Fremden in einem Investitionsspiel Geld anzuvertrauen, ohne die allgemeine Risikobereitschaft zu verändern.",
+        kurz_en: "In a placebo-controlled behavioral study in healthy male participants, intranasally administered oxytocin increased willingness to entrust money to a stranger in a trust game, without altering general risk-taking.",
+        quelle: "Kosfeld M, Heinrichs M, Zak PJ, Fischbacher U, Fehr E 2005, Nature, PMID 15931222"
+      },
+      {
+        art: "klinisch",
+        kurz: "In einer randomisierten, placebokontrollierten Studie an 106 Erwachsenen mit Autismus-Spektrum-Störung zeigte sechswöchiges intranasales Oxytocin keine statistisch signifikante Verbesserung der Kern-Sozialsymptome gegenüber Placebo.",
+        kurz_en: "In a randomized, placebo-controlled trial in 106 adults with autism spectrum disorder, six weeks of intranasal oxytocin showed no statistically significant improvement in core social symptoms compared to placebo.",
+        quelle: "Yamasue H et al. 2020, Molecular Psychiatry, PMID 29955161"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Ein Übersichtsartikel zur Rezeptorpharmakologie beschreibt die Kopplung des Oxytocin-Rezeptors an Gq/11-Protein-vermittelte Signalwege wie Phospholipase C und Proteinkinase C in zellulären und tierexperimentellen Modellen.",
+        kurz_en: "A receptor-pharmacology review describes the coupling of the oxytocin receptor to Gq/11-protein-mediated signaling pathways such as phospholipase C and protein kinase C in cellular and animal models.",
+        quelle: "Jurek B & Neumann ID 2018, Physiological Reviews, PMID 29897293"
+      }
+    ],
+    sicherheit: [
+      "Bei intravenöser Gabe zusammen mit großen Mengen elektrolytfreier Flüssigkeit ist durch die dem Vasopressin strukturell ähnliche antidiuretische Wirkung von Oxytocin eine Wasserintoxikation mit Hyponatriämie dokumentiert.",
+      "Eine vielzitierte Studie zu vertrauensbildenden Effekten intranasalen Oxytocins ließ sich in einer späteren Replikationsstudie unter identischen Versuchsbedingungen nicht bestätigen.",
+      "In der bislang größten randomisierten Studie zu intranasalem Oxytocin bei Autismus-Spektrum-Störung zeigte sich kein signifikanter Effekt auf die Kernsymptome.",
+      "Für Anwendungen außerhalb der zugelassenen geburtshilflichen Indikation liegen keine belastbaren Langzeit-Sicherheitsdaten vor."
+    ],
+    sicherheit_en: [
+      "With intravenous administration combined with large volumes of electrolyte-free fluid, water intoxication with hyponatremia is documented, driven by oxytocin's antidiuretic effect linked to its structural similarity to vasopressin.",
+      "A widely cited study on the trust-enhancing effects of intranasal oxytocin could not be confirmed in a later replication study under identical experimental conditions.",
+      "In the largest randomized trial of intranasal oxytocin in autism spectrum disorder to date, no significant effect on core symptoms was observed.",
+      "For uses outside the approved obstetric indication, robust long-term safety data are not available."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen außerhalb der zugelassenen ärztlichen Indikation",
+      "Kein Ersatz für die ärztlich verordnete, zugelassene Anwendung zur Geburtseinleitung oder bei postpartaler Blutung",
+      "Wechselwirkungen mit anderen Hormonachsen sind nicht abschließend untersucht",
+      "Rechtsstatus und Verfügbarkeit unterscheiden sich je nach Anwendungszweck, vorab informieren"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use outside the approved medical indication",
+      "Not a substitute for the physician-prescribed, approved use for labor induction or postpartum hemorrhage",
+      "Interactions with other hormone axes have not been conclusively studied",
+      "Legal status and availability differ by intended use, check beforehand"
+    ],
+    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt gelagert stabil.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
+    lagerung: "Lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
+    lagerung_en: "Store lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rechtsstatus: "Oxytocin ist als Arzneimittel, etwa Syntocinon oder Pitocin, in Deutschland, der EU und den USA zur Geburtseinleitung und zur Behandlung postpartaler Blutungen zugelassen und dabei ausschließlich verschreibungspflichtig. Für andere, nicht zugelassene Fragestellungen wie soziales Verhalten oder Bindung wird es getrennt davon als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "Oxytocin is approved as a medication, such as Syntocinon or Pitocin, in Germany, the EU, and the United States for labor induction and the treatment of postpartum hemorrhage, and is prescription-only for that use. For other, non-approved research questions such as social behavior or bonding, it is separately sold as a research chemical.",
+    typischeMg: [],
+    faq: [
+      {
+        q: "Ist Oxytocin ein zugelassenes Medikament oder eine Forschungschemikalie",
+        a: "Beides, je nach Anwendung. Zur Geburtseinleitung und bei postpartaler Blutung ist Oxytocin ein verschreibungspflichtiges Arzneimittel. Für andere Fragestellungen wie soziales Verhalten wird es getrennt davon als Forschungschemikalie gehandelt, ohne Zulassung für diesen Zweck.",
+        q_en: "Is oxytocin an approved medication or a research chemical",
+        a_en: "Both, depending on the use. For labor induction and postpartum hemorrhage, oxytocin is a prescription medication. For other research questions such as social behavior, it is separately sold as a research chemical, without approval for that purpose."
+      },
+      {
+        q: "Wofür wird Oxytocin in der Forschung zu sozialem Verhalten untersucht",
+        a: "Studien untersuchen intranasal verabreichtes Oxytocin im Zusammenhang mit Vertrauen, Bindung und sozialer Wahrnehmung. Die Ergebnisse sind uneinheitlich, eine vielzitierte frühe Studie zu Vertrauen ließ sich in einer Replikation nicht bestätigen.",
+        q_en: "What is oxytocin studied for in social-behavior research",
+        a_en: "Studies examine intranasally administered oxytocin in relation to trust, bonding, and social perception. Results are mixed, and a widely cited early trust study could not be confirmed in a replication."
+      },
+      {
+        q: "Wirkt Oxytocin bei Autismus-Spektrum-Störung",
+        a: "Die bislang größte randomisierte Studie an Erwachsenen mit Autismus-Spektrum-Störung fand keinen signifikanten Effekt von intranasalem Oxytocin auf die Kern-Sozialsymptome gegenüber Placebo.",
+        q_en: "Does oxytocin work for autism spectrum disorder",
+        a_en: "The largest randomized trial in adults with autism spectrum disorder to date found no significant effect of intranasal oxytocin on core social symptoms compared to placebo."
+      }
+    ],
+    seo: {
+      title: "Oxytocin im Überblick: Wirkung, Studien, Rechtsstatus",
+      title_en: "Oxytocin: Hormone, Medication, and Research Peptide",
+      description: "Oxytocin sachlich erklärt: zugelassene Indikation, Wirkmechanismus, Studienlage zu sozialem Verhalten und Rechtsstatus als Forschungschemikalie.",
+      description_en: "Oxytocin explained factually: approved indication, mechanism of action, research on social behavior, and legal status as a research chemical."
+    },
+    demo: false
+  },
+  {
+    slug: "pt-141",
+    name: "PT-141 (Bremelanotide)",
+    synonyme: [
+      "Bremelanotide",
+      "Vyleesi"
+    ],
+    kategorie: "Sonstige",
+    studienlage: "zugelassenes Arzneimittel",
+    kurz: "Synthetisches Heptapeptid und Melanocortin-Rezeptor-Agonist, in den USA unter dem Namen Vyleesi für eine bestimmte Form der Libidostörung bei Frauen zugelassen.",
+    kurz_en: "A synthetic heptapeptide and melanocortin receptor agonist, approved in the US under the name Vyleesi for a specific form of low sexual desire in women.",
+    beschreibung: "PT-141 (Bremelanotide) ist ein aus sieben Aminosäuren bestehendes Peptid, das bei Palatin Technologies als Weiterentwicklung von Melanotan II entstand. Anders als Melanotan II, das vor allem zur Hautpigmentierung untersucht wurde, richtete sich die Forschung bei Bremelanotide auf die zentrale Steuerung von sexuellem Verlangen. Seit 2019 ist der Wirkstoff unter dem Namen Vyleesi in den USA für die Indikation hypoactive sexual desire disorder (HSDD) bei prämenopausalen Frauen zugelassen.",
+    beschreibung_en: "PT-141 (bremelanotide) is a seven-amino-acid peptide developed at Palatin Technologies as a follow-on compound to melanotan II. Unlike melanotan II, which was studied mainly for skin pigmentation, research on bremelanotide focused on the central regulation of sexual desire. Since 2019, the compound has been approved in the US under the name Vyleesi for the indication hypoactive sexual desire disorder (HSDD) in premenopausal women.",
+    mechanismus: "Bremelanotide wirkt als Agonist an Melanocortin-Rezeptoren, vor allem am Subtyp MC4R, der in der medialen präoptischen Area des Hypothalamus konzentriert vorkommt. Präklinische Untersuchungen beschreiben eine über diesen Rezeptor ausgelöste Dopaminfreisetzung in Hirnregionen, die an sexueller Erregung beteiligt sind. Der Ansatzpunkt liegt damit zentral im Gehirn, nicht an den Blutgefäßen wie bei PDE5-Hemmern. Laut FDA-Fachinformation ist der genaue Wirkmechanismus bei der Verbesserung von HSDD-Symptomen bislang nicht abschließend geklärt.",
+    mechanismus_en: "Bremelanotide acts as an agonist at melanocortin receptors, primarily the MC4R subtype concentrated in the medial preoptic area of the hypothalamus. Preclinical research describes dopamine release triggered through this receptor in brain regions involved in sexual arousal. The site of action is therefore central, in the brain, rather than vascular as with PDE5 inhibitors. According to the FDA label, the precise mechanism behind the improvement of HSDD symptoms has not been fully established.",
+    evidenz: [
+      {
+        art: "präklinisch",
+        kurz: "Tierstudien an weiblichen Ratten zeigten nach Gabe von Bremelanotide eine gesteigerte sexuelle Anbahnung, vermittelt über eine Dopaminfreisetzung nach Aktivierung von MC4-Rezeptoren in der medialen präoptischen Area des Hypothalamus.",
+        kurz_en: "Studies in female rats showed increased sexual solicitation behavior after bremelanotide administration, mediated by dopamine release following activation of MC4 receptors in the medial preoptic area of the hypothalamus.",
+        quelle: "Pfaus JG et al. 2007, The Journal of Sexual Medicine, PMID 17958619"
+      },
+      {
+        art: "klinisch",
+        kurz: "In zwei randomisierten, placebokontrollierten Phase-3-Studien (RECONNECT) mit prämenopausalen Frauen mit HSDD verbesserte Bremelanotide sexuelles Verlangen und den damit verbundenen Leidensdruck stärker als Placebo.",
+        kurz_en: "In two randomized, placebo-controlled phase 3 trials (RECONNECT) in premenopausal women with HSDD, bremelanotide improved sexual desire and related distress more than placebo.",
+        quelle: "Kingsberg SA, Clayton AH, Portman D et al. 2019, Obstetrics & Gynecology, PMID 31599840"
+      },
+      {
+        art: "klinisch",
+        kurz: "Eine gepoolte Auswertung von 43 klinischen Studien mit rund 3500 Teilnehmenden dokumentierte Übelkeit, Hautrötung, Kopfschmerz und vorübergehende Blutdruckanstiege als häufigste unerwünschte Wirkungen von Bremelanotide.",
+        kurz_en: "A pooled analysis of 43 clinical studies with roughly 3,500 participants documented nausea, flushing, headache, and transient blood pressure increases as the most common adverse effects of bremelanotide.",
+        quelle: "Clayton AH et al. 2022, Journal of Women's Health, PMID 35147466"
+      }
+    ],
+    sicherheit: [
+      "In klinischen Studien trat unter Bremelanotide bei rund 40 Prozent der Teilnehmerinnen Übelkeit auf, gegenüber rund 1 Prozent unter Placebo.",
+      "Nach jeder Anwendung wurde ein vorübergehender Anstieg von Blutdruck und ein Abfall der Herzfrequenz beobachtet, der laut FDA-Fachinformation meist innerhalb von 12 Stunden abklingt.",
+      "Laut FDA-Fachinformation gilt Vyleesi bei unkontrolliertem Bluthochdruck oder bekannter Herz-Kreislauf-Erkrankung als kontraindiziert.",
+      "In den RECONNECT-Studien wurde bei rund 1 Prozent der Teilnehmerinnen eine fokale Hyperpigmentierung der Haut beobachtet."
+    ],
+    sicherheit_en: [
+      "In clinical trials, nausea occurred in roughly 40 percent of participants on bremelanotide, compared with about 1 percent on placebo.",
+      "A transient rise in blood pressure and drop in heart rate were observed after each administration, resolving within about 12 hours according to the FDA label.",
+      "According to the FDA label, Vyleesi is contraindicated in uncontrolled hypertension or known cardiovascular disease.",
+      "In the RECONNECT trials, focal skin hyperpigmentation was observed in about 1 percent of participants."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen",
+      "Die FDA-Zulassung als Vyleesi bezieht sich auf verschreibungspflichtige Fertigware, nicht auf als Forschungschemikalie gehandeltes Bremelanotide",
+      "Kein Ersatz für ärztlich verordnete Präparate",
+      "Wechselwirkungen mit anderen Wirkstoffen sind nicht abschließend untersucht"
+    ],
+    hinweise_en: [
+      "For research purposes only, not for human use",
+      "The Vyleesi approval applies to prescription-grade finished product, not to bremelanotide sold as a research chemical",
+      "Not a substitute for prescribed medication",
+      "Interactions with other substances have not been conclusively studied"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
+    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved with bacteriostatic water. After reconstitution, the solution should be stored cold and used within a few weeks.",
+    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
+    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rechtsstatus: "Bremelanotide ist als Vyleesi seit 2019 von der FDA für die Indikation HSDD bei prämenopausalen Frauen zugelassen. In Deutschland und der EU liegt keine Arzneimittelzulassung vor, dort wird der Wirkstoff ausschließlich als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "Bremelanotide has been approved by the FDA as Vyleesi since 2019 for the indication of HSDD in premenopausal women. In Germany and the EU, no drug approval exists, and the substance is sold there exclusively as a research chemical.",
+    typischeMg: [
+      10,
+      20
+    ],
+    faq: [
+      {
+        q: "Ist PT-141 das Gleiche wie Melanotan II",
+        a: "Nein. Beide gehen auf verwandte Melanocortin-Grundstrukturen zurück, PT-141 (Bremelanotide) wurde jedoch gezielt zu sexuellem Verlangen untersucht, während Melanotan II primär zur Hautpigmentierung erforscht wurde. Nur Bremelanotide erreichte als Vyleesi eine Marktzulassung in den USA.",
+        q_en: "Is PT-141 the same as melanotan II",
+        a_en: "No. Both trace back to related melanocortin structures, but PT-141 (bremelanotide) was specifically studied for sexual desire, while melanotan II was researched mainly for skin pigmentation. Only bremelanotide reached market approval in the US, as Vyleesi."
+      },
+      {
+        q: "Ist Bremelanotide als Arzneimittel zugelassen",
+        a: "In den USA ja: Seit 2019 ist Bremelanotide unter dem Namen Vyleesi für die Indikation HSDD bei prämenopausalen Frauen zugelassen. In Deutschland und der EU besteht keine Arzneimittelzulassung, dort gilt der Stoff als Forschungschemikalie.",
+        q_en: "Is bremelanotide an approved medication",
+        a_en: "In the US, yes: since 2019 bremelanotide has been approved under the name Vyleesi for the indication of HSDD in premenopausal women. In Germany and the EU, no drug approval exists, and the substance is classed as a research chemical there."
+      },
+      {
+        q: "Welche Nebenwirkungen wurden in Studien beobachtet",
+        a: "Am häufigsten dokumentiert wurden Übelkeit, Hautrötung, Kopfschmerz und vorübergehende Blutdruckanstiege nach der Anwendung. Laut FDA-Fachinformation gilt der Stoff bei unkontrolliertem Bluthochdruck oder bekannter Herz-Kreislauf-Erkrankung als kontraindiziert.",
+        q_en: "What side effects were observed in studies",
+        a_en: "The most frequently documented effects were nausea, flushing, headache, and transient blood pressure increases after administration. According to the FDA label, the substance is contraindicated in uncontrolled hypertension or known cardiovascular disease."
+      }
+    ],
+    seo: {
+      title: "PT-141 (Bremelanotide) im Forschungsüberblick",
+      title_en: "PT-141 (Bremelanotide) Research Overview",
+      description: "PT-141 (Bremelanotide): Mechanismus, Studienlage, Sicherheitsprofil und Zulassungsstatus des Melanocortin-Rezeptor-Agonisten im Überblick.",
+      description_en: "PT-141 (bremelanotide): mechanism, study data, safety profile, and approval status of this melanocortin receptor agonist at a glance."
+    },
+    demo: false
+  },
+  {
+    slug: "ss-31",
+    name: "SS-31 (Elamipretid)",
+    synonyme: [
+      "Elamipretide",
+      "MTP-131",
+      "Bendavia"
+    ],
+    kategorie: "Sonstige",
+    studienlage: "klinisch untersucht",
+    kurz: "Ein mitochondrial wirksames Tetrapeptid, das in mehreren klinischen Studien bei Herzschwäche und mitochondrialen Erkrankungen untersucht wurde, bislang ohne Zulassung.",
+    kurz_en: "A mitochondria-targeted tetrapeptide studied in several clinical trials for heart failure and mitochondrial disease, not yet approved.",
+    beschreibung: "SS-31, unter dem Freinamen Elamipretid auch als MTP-131 oder Bendavia bekannt, ist ein synthetisches Tetrapeptid, das gezielt an das Mitochondrienmembran-Lipid Cardiolipin bindet. Es wurde in mehreren klinischen Phasen-1- bis Phasen-3-Studien bei Herzinsuffizienz, primärer mitochondrialer Myopathie und dem Barth-Syndrom untersucht. Trotz einer vergleichsweise breiten klinischen Datenbasis ist bislang keine dieser Studien zu einer Zulassung als Arzneimittel gelangt.",
+    beschreibung_en: "SS-31, also known under the generic name elamipretide as MTP-131 or Bendavia, is a synthetic tetrapeptide that binds specifically to cardiolipin, a lipid in the mitochondrial membrane. It has been studied in several phase 1 to phase 3 clinical trials for heart failure, primary mitochondrial myopathy, and Barth syndrome. Despite a comparatively broad clinical data base, none of these studies has yet led to approval as a medication.",
+    mechanismus: "SS-31 bindet mit hoher Affinität an Cardiolipin auf der inneren Mitochondrienmembran, ein Lipid, das für die Struktur der Cristae notwendig ist. Darüber werden eine Reduktion reaktiver Sauerstoffspezies sowie eine Stabilisierung der mitochondrialen Membranstruktur beschrieben. In präklinischen Modellen wurde daraus ein Schutz vor Ischämie-Reperfusions-Schäden abgeleitet, etwa am Herzmuskel.",
+    mechanismus_en: "SS-31 binds with high affinity to cardiolipin on the inner mitochondrial membrane, a lipid required for cristae structure. This is described as reducing reactive oxygen species and stabilizing mitochondrial membrane structure. In preclinical models, this was linked to protection against ischemia-reperfusion injury, for example in heart muscle.",
+    evidenz: [
+      {
+        art: "klinisch",
+        kurz: "Eine randomisierte, placebokontrollierte Phase-3-Studie an Personen mit primärer mitochondrialer Myopathie erreichte weder beim 6-Minuten-Gehtest noch beim Fatigue-Score die vorab definierten primären Endpunkte, der Studienwirkstoff wurde jedoch als gut verträglich beschrieben.",
+        kurz_en: "A randomized, placebo-controlled phase 3 trial in people with primary mitochondrial myopathy did not meet its predefined primary endpoints on either the 6-minute walk test or the fatigue score, though the study drug was described as well tolerated.",
+        quelle: "Karaa et al. 2023, Neurology, PMID 37268435"
+      },
+      {
+        art: "klinisch",
+        kurz: "Eine placebokontrollierte Phase-1-Studie mit stufenweise gesteigerter Infusionsmenge an Personen mit Herzinsuffizienz und reduzierter Auswurffraktion beschrieb eine einzelne Infusion von Elamipretid als sicher und gut verträglich.",
+        kurz_en: "A placebo-controlled phase 1 trial with stepwise increasing infusion amounts in people with heart failure and reduced ejection fraction described a single infusion of elamipretide as safe and well tolerated.",
+        quelle: "Daubert et al. 2017, Circulation: Heart Failure, PMID 29217757"
+      },
+      {
+        art: "präklinisch",
+        kurz: "Eine Studie an Ratten mit Ischämie-Reperfusions-Schädigung des Herzens beschrieb unter vorheriger Gabe von SS-31 eine signifikant kleinere Infarktfläche gegenüber unbehandelten Tieren.",
+        kurz_en: "A study in rats with cardiac ischemia-reperfusion injury described a significantly smaller infarct area when SS-31 was given beforehand compared with control animals.",
+        quelle: "Cho et al. 2007, Coronary Artery Disease, PMID 17429296"
+      }
+    ],
+    sicherheit: [
+      "In den bisherigen klinischen Studien wurde Elamipretid überwiegend als sicher und gut verträglich beschrieben, mit vorwiegend milden bis moderaten Nebenwirkungen.",
+      "Mehrere Studien, unter anderem bei mitochondrialer Myopathie und beim Barth-Syndrom, verfehlten ihre primären Wirksamkeitsendpunkte, weshalb ein Zulassungsantrag in den USA 2021 von der Behörde nicht zur Prüfung angenommen wurde.",
+      "Langzeitdaten außerhalb kontrollierter Studienprogramme liegen nicht vor.",
+      "Präparate aus nicht kontrollierter Herstellung bergen ein Verunreinigungsrisiko, das unabhängig vom Molekül selbst besteht."
+    ],
+    sicherheit_en: [
+      "In clinical trials to date, elamipretide has mostly been described as safe and well tolerated, with predominantly mild to moderate adverse events.",
+      "Several trials, including in mitochondrial myopathy and Barth syndrome, missed their primary efficacy endpoints, which is why a US approval submission was not accepted for review by the agency in 2021.",
+      "Long-term data outside controlled study programs are not available.",
+      "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
+    ],
+    hinweise: [
+      "Nur für Forschungszwecke, keine Anwendung am Menschen ohne ärztliche Begleitung",
+      "In keinem der untersuchten Länder als Arzneimittel zugelassen",
+      "Bisherige klinische Studien haben ihre primären Wirksamkeitsziele wiederholt nicht erreicht"
+    ],
+    hinweise_en: [
+      "For research use only, not for human use without medical supervision",
+      "Not approved as a medication in any of the countries studied",
+      "Clinical trials to date have repeatedly not met their primary efficacy goals"
+    ],
+    rekonstitution: "Das lyophilisierte Pulver wird mit sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
+    rekonstitution_en: "The lyophilized powder is dissolved with sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
+    lagerung: "Ungelöst gekühlt und lichtgeschützt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
+    lagerung_en: "Store unreconstituted, refrigerated and protected from light; after reconstitution, keep refrigerated and use promptly.",
+    rechtsstatus: "SS-31 (Elamipretid) ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen. Ein Zulassungsantrag in den USA wurde 2021 mangels einer einzelnen ausreichenden kontrollierten Wirksamkeitsstudie nicht zur Prüfung angenommen. Es wird ausschließlich als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "SS-31 (elamipretide) is not approved as a medication in Germany, the EU, or the United States. A 2021 US approval submission was not accepted for review due to the lack of a single adequate well-controlled efficacy study. It is sold exclusively as a research chemical.",
+    typischeMg: [],
+    faq: [
+      {
+        q: "Ist Elamipretid als Medikament zugelassen?",
+        a: "Nein. Trotz mehrerer klinischer Studien bei Herzinsuffizienz, mitochondrialer Myopathie und dem Barth-Syndrom ist bisher keine Zulassung erfolgt, ein US-Zulassungsantrag wurde 2021 nicht zur Prüfung angenommen.",
+        q_en: "Is elamipretide an approved medication?",
+        a_en: "No. Despite several clinical trials in heart failure, mitochondrial myopathy, and Barth syndrome, no approval has been granted, a US approval submission was not accepted for review in 2021."
+      },
+      {
+        q: "Woran setzt SS-31 im Körper an?",
+        a: "Es bindet an Cardiolipin in der inneren Mitochondrienmembran und wird mit einer Reduktion reaktiver Sauerstoffspezies sowie einer Stabilisierung der Membranstruktur in Verbindung gebracht.",
+        q_en: "What does SS-31 target in the body?",
+        a_en: "It binds to cardiolipin in the inner mitochondrial membrane and is associated with reduced reactive oxygen species and stabilization of membrane structure."
+      },
+      {
+        q: "Haben die klinischen Studien ihre Ziele erreicht?",
+        a: "Mehrere Studien erreichten ihre primär definierten Wirksamkeitsendpunkte nicht, etwa bei mitochondrialer Myopathie und beim Barth-Syndrom, während die Verträglichkeit durchgehend als gut beschrieben wurde.",
+        q_en: "Did the clinical trials meet their goals?",
+        a_en: "Several trials did not meet their predefined primary efficacy endpoints, for example in mitochondrial myopathy and Barth syndrome, while tolerability was consistently described as good."
+      }
+    ],
+    seo: {
+      title: "SS-31 (Elamipretid): Wirkstoff-Profil & Studienlage",
+      title_en: "SS-31 (Elamipretide): Research Profile & Evidence",
+      description: "SS-31/Elamipretid im Überblick: mitochondrialer Wirkmechanismus, klinische Studienlage bei Herzinsuffizienz, mitochondrialer Myopathie, Sicherheitsprofil.",
+      description_en: "SS-31/elamipretide overview: mitochondrial mechanism, clinical evidence in heart failure and mitochondrial myopathy, and safety profile."
+    },
+    demo: false
   }
 ];
