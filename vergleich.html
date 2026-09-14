@@ -16,6 +16,7 @@
 <meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/system.css">
+<link rel="stylesheet" href="assets/css/tiles.css">
 <link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
@@ -98,7 +99,7 @@
           <tr>
             <th data-sticky="left" data-sortable onclick="PK.sortTable(this.closest('table'),0)" data-i18n="page.vergleich.colAnbieter">Anbieter</th>
             <th data-extra data-sortable onclick="PK.sortTable(this.closest('table'),1)" data-i18n="page.vergleich.colLand">Land</th>
-            <th data-sortable onclick="PK.sortTable(this.closest('table'),2)" aria-sort="descending" data-i18n="page.vergleich.colGesamtscore">Gesamtscore</th>
+            <th class="col-score-hidden" data-sortable onclick="PK.sortTable(this.closest('table'),2)" aria-sort="descending" data-i18n="page.vergleich.colGesamtscore">Gesamtscore</th>
             <th data-extra data-sortable onclick="PK.sortTable(this.closest('table'),3)" data-i18n="page.vergleich.colLabor">Labor</th>
             <th data-extra data-sortable onclick="PK.sortTable(this.closest('table'),4)" data-i18n="page.vergleich.colRecht">Rechtsrahmen</th>
             <th data-extra data-sortable onclick="PK.sortTable(this.closest('table'),5)" data-i18n="page.vergleich.colLieferung">Lieferung</th>
@@ -212,17 +213,30 @@
       var nameCell = document.createElement("div");
       nameCell.className = "table-logo-cell";
       nameCell.appendChild(PK.renderLogo(v, { tone: "text", size: "sm" }));
+      var nameBlock = document.createElement("div");
+      nameBlock.className = "table-name-block";
+      var nameTop = document.createElement("div");
+      nameTop.className = "table-name-top";
       var nameLink = document.createElement("a");
       nameLink.className = "btn-link";
       nameLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
       nameLink.textContent = v.name || "";
-      nameCell.appendChild(nameLink);
+      nameTop.appendChild(nameLink);
       if (v.partner === true) {
         var partnerPill = document.createElement("span");
         partnerPill.className = "pill pill-info";
         partnerPill.textContent = PK.t("global.partner");
-        nameCell.appendChild(partnerPill);
+        nameTop.appendChild(partnerPill);
       }
+      nameBlock.appendChild(nameTop);
+      // Gesamtscore direkt unter dem Namen (Vic 14.09.), Score-Spalte bleibt
+      // als Sortier-Quelle im DOM, wird per CSS ausgeblendet.
+      var gesamtInline = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
+      var scoreRow = document.createElement("div");
+      scoreRow.className = "table-score-row";
+      scoreRow.appendChild(buildScoreBarSmall(gesamtInline));
+      nameBlock.appendChild(scoreRow);
+      nameCell.appendChild(nameBlock);
       tdName.appendChild(nameCell);
       row.appendChild(tdName);
 
@@ -234,6 +248,7 @@
       // Ende der Standard-Sortierung (Gesamtscore absteigend).
       var gesamt = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
       var tdScore = document.createElement("td");
+      tdScore.className = "col-score-hidden";
       tdScore.setAttribute("data-sort", gesamt === null ? "-1" : String(gesamt));
       tdScore.appendChild(buildScoreBarSmall(gesamt));
       row.appendChild(tdScore);
