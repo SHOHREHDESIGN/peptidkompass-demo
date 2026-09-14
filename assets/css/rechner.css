@@ -1,0 +1,170 @@
+/* ============================================================================
+   PEPTIDKOMPASS · assets/css/rechner.css
+   ============================================================================
+   Seiten-Zusatz-CSS ausschließlich für rechner.html (Peptid-Rechner: Auflösen
+   + Menge umrechnen). Erweitert system.css, dupliziert nichts daraus. Tokens
+   ausschließlich aus system.css Abschnitt 1 (Farbe/Type/Spacing/Radius/Motion).
+   Elevation NUR über Flächenwechsel (var(--surface) <-> var(--surface-2)),
+   nie über Schatten (DESIGN.md "Elevation & Depth"). Siehe Report (Auftrag
+   Vic 15.09.) für die fachliche Begründung der zwei Bereiche.
+
+   INHALT
+   ------
+   1. .calc-switch     : Segmented Control (Apple-Stil, Tastatur-tauglich)
+   2. .calc-panel       : Tabpanel-Feinschliff (Ergebnis-Mindesthöhe)
+   3. .calc-field-label : Eingabe-Label (aus altem Inline-<style> übernommen)
+   4. .stat-grid--4      : 2x2-Ergebnisraster (Bereich "Auflösen", 4 Werte)
+   5. .calc-note         : sichtbarer Hinweis-Kasten (U-100 vs. IE/IU)
+   6. .calc-mode         : Konzentrationsquelle (Fieldset-Radiogroup als Pillen)
+   7. .calc-source       : schreibgeschützte Übernahme-Werte aus "Auflösen"
+   ============================================================================ */
+
+/* -----------------------------------------------------------------------
+   1. .calc-switch : Segmented Control
+   ----------------------------------------------------------------------- */
+.calc-switch{
+  display:inline-flex; align-items:center; gap:2px;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-pill); padding:4px;
+  margin:var(--sp-3) 0 0;
+}
+.calc-switch button{
+  appearance:none; border:0; background:none; cursor:pointer;
+  font:inherit; font-size:var(--fs-small); font-weight:600;
+  color:var(--text-secondary); padding:10px 20px; border-radius:var(--radius-pill);
+  min-height:44px;
+  transition:background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.calc-switch button:hover{ color:var(--text); }
+.calc-switch button[aria-selected="true"]{
+  background:var(--surface-2); color:var(--text);
+}
+@media (max-width:480px){
+  .calc-switch{ display:flex; }
+  .calc-switch button{ flex:1 1 0; padding:10px 12px; }
+}
+
+/* -----------------------------------------------------------------------
+   1b. [hidden]-Fix für .grid-2 (system.css-Lücke, gleiche Ursache wie
+       .pill[hidden] dort): .grid-2{display:grid} ist eine Autor-Regel und
+       schlägt die UA-Regel [hidden]{display:none} (Autor schlägt UA immer,
+       unabhängig von Spezifität). #calc-manual-wrap nutzt .grid-2 UND wird
+       per JS .hidden umgeschaltet (Konzentrationsquelle-Modus) : ohne
+       diesen Fix bliebe es trotz hidden=true sichtbar (per Browser-Check
+       verifiziert, 15.09.). Scoped auf dieses eine Element statt
+       system.css global zu patchen.
+   ----------------------------------------------------------------------- */
+#calc-manual-wrap[hidden]{ display:none; }
+
+/* -----------------------------------------------------------------------
+   2. .calc-panel : Tabpanel-Feinschliff
+   ----------------------------------------------------------------------- */
+/* Ergebnis-Kacheln brauchen eine feste Mindesthöhe, damit "–" und ein
+   berechneter Wert nicht springen (galt vorher nur für die 2 Ergebnis-IDs
+   des Auflösen-Rechners per Inline-<style>, jetzt generisch für jede
+   .stat-value innerhalb eines Rechner-Panels, gilt automatisch auch für
+   "Menge umrechnen"). */
+.calc-panel .stat-value{ min-height:1.2em; }
+
+/* -----------------------------------------------------------------------
+   3. .calc-field-label (aus altem Inline-<style> übernommen)
+   ----------------------------------------------------------------------- */
+.calc-field-label{ display:block; margin-bottom:6px; }
+
+/* -----------------------------------------------------------------------
+   4. .stat-grid--4 : 2x2-Ergebnisraster
+   ----------------------------------------------------------------------- */
+/* system.css .stat-grid ist fest auf 3 Spalten gebaut (Abschnitt 17). Der
+   Auflösen-Rechner braucht 4 Werte (mg/ml, µg je 0,1 ml, µg je Einheit,
+   Einheiten je 0,1 ml) : 2x2 statt 3+1 (unausgewogene letzte Zeile). Eigene
+   Modifier-Klasse statt system.css anzufassen, feste 2 Spalten über alle
+   Breakpoints (die Werte sind kurz genug, kein Umbruch-Stress), nur ganz
+   schmal auf 1 Spalte. */
+.stat-grid.stat-grid--4{ grid-template-columns:repeat(2,1fr); }
+@media (max-width:480px){
+  .stat-grid.stat-grid--4{ grid-template-columns:1fr; }
+}
+
+/* -----------------------------------------------------------------------
+   5. .calc-note : sichtbarer Hinweis-Kasten (U-100 vs. IE/IU)
+   ----------------------------------------------------------------------- */
+/* Kein Schatten (DESIGN.md), Elevation über Flächenwechsel + linke Akzent-
+   kante statt Card-Shadow. --info statt --warn: das ist kein Fehler-/
+   Risiko-Hinweis, sondern eine Begriffsklärung (Einheiten = U-100-Skala,
+   keine IE/IU). */
+.calc-note{
+  background:var(--surface); border-left:3px solid var(--info);
+  border-radius:var(--radius-sm); padding:var(--sp-2) var(--sp-3);
+  margin-top:var(--sp-3);
+}
+.calc-note p{ margin:0; }
+
+/* -----------------------------------------------------------------------
+   6. .calc-mode : Konzentrationsquelle als Fieldset-Radiogroup
+   ----------------------------------------------------------------------- */
+/* Natives <fieldset>/<input type=radio> statt Custom-JS-Tastatursteuerung
+   (Pfeiltasten/Space funktionieren dadurch automatisch, kein eigener
+   Tastatur-Code nötig). Optik: zwei Pillen wie .calc-switch, aber als
+   Radiogroup statt Tabs (Bedeutung ist "welche Quelle", nicht "welcher
+   Bildschirm"). */
+.calc-mode{ border:0; margin:0; padding:0; }
+.calc-mode legend{ padding:0; margin:0 0 var(--sp-1); font-size:var(--fs-small); color:var(--text-secondary); }
+.calc-mode-options{
+  display:inline-flex; flex-wrap:wrap; gap:2px;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-pill); padding:4px;
+}
+.calc-mode-option{
+  position:relative; display:inline-flex; align-items:center;
+  font-size:var(--fs-small); font-weight:600; color:var(--text-secondary);
+  padding:8px 16px; border-radius:var(--radius-pill); cursor:pointer;
+  min-height:44px;
+  transition:background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.calc-mode-option:hover{ color:var(--text); }
+/* Unter 480px bricht "Aus „Auflösen“ übernehmen" auf 2 Zeilen : eine
+   9999px-Pille um zwei gestapelte Optionen sieht dann wie ein überdehntes
+   Oval aus (per Browser-Check gefunden, 15.09.). Gestapelt bekommt die
+   Gruppe die --radius-input-Ausnahme (11px, DESIGN.md "seltene rounded.md-
+   Ausnahme", schon für .code-box genutzt) statt der Pillen-Grammatik. */
+@media (max-width:480px){
+  .calc-mode-options{ flex-direction:column; align-items:stretch; border-radius:var(--radius-input); }
+  .calc-mode-option{ border-radius:var(--radius-sm); justify-content:flex-start; }
+}
+/* Radio bleibt im DOM (Tastatur/Screenreader), visuell versteckt statt
+   display:none (bliebe sonst aus der Tab-Reihenfolge). */
+.calc-mode-option input{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+.calc-mode-option:has(input:checked){ background:var(--surface-2); color:var(--text); }
+.calc-mode-option:has(input:focus-visible){ outline:2px solid var(--focus-ring); outline-offset:2px; }
+
+/* -----------------------------------------------------------------------
+   7. .calc-source : schreibgeschützte Übernahme-Werte aus "Auflösen"
+   ----------------------------------------------------------------------- */
+.calc-source{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp-2);
+  margin-top:var(--sp-2);
+}
+.calc-source-value{ font-size:1.25rem; font-weight:600; letter-spacing:-.01em; min-height:1.2em; }
+@media (max-width:480px){
+  .calc-source{ grid-template-columns:1fr; }
+}
+
+/* -----------------------------------------------------------------------
+   8. Einheiten-Select in .search-bar (Zielmenge µg/mg)
+   ----------------------------------------------------------------------- */
+/* system.css .search-bar kennt nur ein <input> (Abschnitt "hero"-Suche).
+   Zielmenge braucht einen kleinen Einheiten-Umschalter direkt daneben,
+   innerhalb derselben Pille statt eines zweiten Elements : eigenes Reset
+   + Pfeil-Icon (inline SVG statt Font-Icon), keine system.css-Regel für
+   select existiert bisher, hier ergänzt statt dort verändert. */
+.search-bar select{
+  flex:0 0 auto; -webkit-appearance:none; appearance:none;
+  border:0; border-left:1px solid var(--line); background:none;
+  font:inherit; font-size:var(--fs-small); font-weight:600; color:var(--text);
+  outline:none; cursor:pointer; padding:6px 22px 6px 10px; margin-left:2px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235c5c61' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 2px center; background-size:14px;
+}

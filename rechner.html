@@ -3,30 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="page.rechner.title">Anmisch-Rechner · Peptide Compass</title>
-<meta name="description" data-i18n="page.rechner.metaDescription" content="Anmisch-Rechner für Peptide: mg Wirkstoff und ml bakteriostatisches Wasser eingeben, Konzentration in mg/ml und je 0,1 ml berechnen. Keine Dosierungsempfehlung.">
+<title data-i18n="page.rechner.title">Peptid-Rechner · Peptide Compass</title>
+<meta name="description" data-i18n="page.rechner.metaDescription" content="Peptid-Rechner: mg Wirkstoff und ml bakteriostatisches Wasser auflösen, Konzentration in mg/ml und µg berechnen, oder eine Zielmenge in Volumen und Einheiten (U-100) umrechnen. Keine Dosierungsempfehlung.">
 <link rel="canonical" href="https://peptidkompass.com/rechner.html">
 <link rel="alternate" hreflang="de" href="https://peptidkompass.com/rechner.html?lang=de">
 <link rel="alternate" hreflang="en" href="https://peptidkompass.com/rechner.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/rechner.html?lang=de">
 <meta property="og:type" content="website">
-<meta property="og:title" data-i18n="page.rechner.ogTitle" content="Anmisch-Rechner · Peptide Compass">
-<meta property="og:description" data-i18n="page.rechner.ogDescription" content="mg Wirkstoff und ml bakteriostatisches Wasser eingeben, Konzentration in mg/ml und je 0,1 ml berechnen.">
+<meta property="og:title" data-i18n="page.rechner.ogTitle" content="Peptid-Rechner · Peptide Compass">
+<meta property="og:description" data-i18n="page.rechner.ogDescription" content="mg Wirkstoff auflösen oder eine Zielmenge in Volumen und Einheiten (U-100) umrechnen, rein rechnerisch.">
 <meta property="og:url" content="https://peptidkompass.com/rechner.html">
 <meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/system.css">
+<link rel="stylesheet" href="assets/css/rechner.css">
 <link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
 <link rel="manifest" href="assets/brand/favicon/site.webmanifest">
-<style>
-  /* rechner.html: Zusatz-CSS (max 10 Zeilen, siehe Report): Ergebnis-Kacheln
-     brauchen sichtbaren Rahmen und eine feste Mindesthöhe, damit "–" und ein
-     berechneter Wert nicht springen; keine Klasse dafür in system.css. */
-  #calc-result-mgml, #calc-result-01{ min-height:1.2em; }
-  .calc-field-label{ display:block; margin-bottom:6px; }
-</style>
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
@@ -79,16 +73,21 @@
 
 <main id="main">
 
-  <!-- SEITENTITEL + KURZINTRO -->
+  <!-- SEITENTITEL + KURZINTRO + SEGMENTED CONTROL -->
   <section class="section container reveal">
     <p class="eyebrow" data-i18n="page.rechner.eyebrow">Rechner</p>
-    <h1 class="h1" data-i18n="page.rechner.h1">Anmisch-Rechner</h1>
-    <p class="section-lead" data-i18n="page.rechner.lead">Rechnet mg und ml sauber um, mehr nicht.</p>
+    <h1 class="h1" data-i18n="page.rechner.h1">Peptid-Rechner</h1>
+    <p class="section-lead" data-i18n="page.rechner.lead">Rechnet mg, ml und Einheiten sauber um, mehr nicht.</p>
     <p data-i18n="page.rechner.intro">Dieser Rechner berechnet ausschließlich eine rechnerische Konzentration aus deiner eigenen Eingabe. Er ist keine Dosierungsempfehlung und ersetzt keine fachliche Beratung.</p>
+
+    <div class="calc-switch" role="tablist" data-i18n-attr="aria-label:page.rechner.switchAriaLabel" aria-label="Rechner-Bereich wählen">
+      <button type="button" role="tab" id="calc-tab-aufloesen" aria-controls="calc-panel-aufloesen" aria-selected="true" data-i18n="page.rechner.tabAufloesen">Auflösen</button>
+      <button type="button" role="tab" id="calc-tab-umrechnen" aria-controls="calc-panel-umrechnen" aria-selected="false" tabindex="-1" data-i18n="page.rechner.tabUmrechnen">Menge umrechnen</button>
+    </div>
   </section>
 
-  <!-- ANMISCH-RECHNER (AKTIV) -->
-  <section class="section section-tinted container reveal">
+  <!-- BEREICH 1: AUFLÖSEN (bisheriger Anmisch-Rechner + U-100-Umrechnung) -->
+  <section class="section section-tinted container reveal calc-panel" id="calc-panel-aufloesen" role="tabpanel" aria-labelledby="calc-tab-aufloesen" tabindex="0">
     <div class="grid-2">
       <div>
         <label class="text-small muted calc-field-label" for="calc-mg" data-i18n="page.rechner.mgLabel">Menge Wirkstoff (mg)</label>
@@ -111,33 +110,117 @@
 
     <p class="text-small muted" id="calc-hint" role="status" aria-live="polite" hidden></p>
 
-    <div class="stat-grid" style="margin-top:var(--sp-3);" aria-live="polite">
+    <div class="stat-grid stat-grid--4" style="margin-top:var(--sp-3);" aria-live="polite">
       <div class="stat">
         <div class="stat-value" id="calc-result-mgml">–</div>
         <div class="stat-label" data-i18n="page.rechner.resultMgMlLabel">Konzentration (mg/ml)</div>
       </div>
       <div class="stat">
         <div class="stat-value" id="calc-result-01">–</div>
-        <div class="stat-label" data-i18n="page.rechner.result01Label">mg je 0,1 ml</div>
+        <div class="stat-label" data-i18n="page.rechner.result01Label">µg je 0,1 ml</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="calc-result-ugunit">–</div>
+        <div class="stat-label" data-i18n="page.rechner.resultUgUnitLabel">µg je Einheit</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="calc-result-unitsper01">–</div>
+        <div class="stat-label" data-i18n="page.rechner.resultUnitsPer01Label">Einheiten je 0,1 ml (U-100)</div>
       </div>
     </div>
 
-    <p class="text-small muted" style="margin-top:var(--sp-3);" data-i18n="page.rechner.explainText">Der Anmisch-Rechner teilt die eingegebene Wirkstoffmenge in Milligramm durch das zugegebene Volumen an bakteriostatischem Wasser in Millilitern. Das Ergebnis zeigt, wie viel Wirkstoff rein rechnerisch in 0,1 ml der fertigen Lösung steckt, allein aus deinen beiden Eingaben. Beispiel: 5 mg Wirkstoff in 2 ml Wasser ergeben 0,25 mg je 0,1 ml.</p>
+    <div class="calc-note">
+      <p class="text-small" data-i18n="page.rechner.unitsNote">„Einheiten“ meint hier ausschließlich die Skala einer U-100-Insulinspritze (100 Einheiten = 1 ml). Das ist nicht dasselbe wie internationale Einheiten (IE/IU): IE/IU beschreiben biologische Aktivität und lassen sich rechnerisch nicht aus einer Masse in mg herleiten.</p>
+    </div>
+
+    <p class="text-small muted" style="margin-top:var(--sp-3);" data-i18n="page.rechner.explainText">Der Rechner teilt die eingegebene Wirkstoffmenge in Milligramm durch das zugegebene Volumen an bakteriostatischem Wasser in Millilitern. So entsteht die Konzentration in mg/ml, daraus rein rechnerisch die Menge je 0,1 ml sowie die Menge je Einheit auf der Skala einer U-100-Insulinspritze (100 Einheiten = 1 ml). Beispiel: 5 mg Wirkstoff in 2 ml Wasser ergeben 250 µg je 0,1 ml und 25 µg je Einheit.</p>
   </section>
 
-  <!-- DOSIERUNGSRECHNER (PLATZHALTER, INAKTIV, Plan v2 Annahme 9 / Änderung G1) -->
-  <section class="section container reveal">
-    <div class="card">
-      <div class="row-between">
-        <p class="card-title" style="margin:0;" data-i18n="page.rechner.dosingTitle">Dosierungsrechner</p>
-        <span class="pill" data-i18n="page.rechner.dosingPill">In Vorbereitung</span>
+  <!-- BEREICH 2: MENGE UMRECHNEN -->
+  <section class="section section-tinted container reveal calc-panel" id="calc-panel-umrechnen" role="tabpanel" aria-labelledby="calc-tab-umrechnen" tabindex="0" hidden>
+    <div class="grid-2">
+      <div>
+        <label class="text-small muted calc-field-label" for="calc-target" data-i18n="page.rechner.targetLabel">Zielmenge</label>
+        <div class="search-bar">
+          <input type="number" inputmode="decimal" step="any" id="calc-target" placeholder="z. B. 250" aria-describedby="calc-hint2" data-i18n-attr="placeholder:page.rechner.targetPlaceholder">
+          <select id="calc-target-unit" data-i18n-attr="aria-label:page.rechner.targetUnitAriaLabel" aria-label="Einheit der Zielmenge">
+            <option value="ug" data-i18n="page.rechner.targetUnitUg">µg</option>
+            <option value="mg" data-i18n="page.rechner.targetUnitMg">mg</option>
+          </select>
+        </div>
       </div>
-      <p class="card-body" style="margin-top:var(--sp-2);" data-i18n="page.rechner.dosingBody">Dieser Bereich ist noch nicht aktiv. Keine Dosierungsempfehlung, auch nach dem Start zeigt er nur Information, keine Anleitung.</p>
+      <div>
+        <fieldset class="calc-mode">
+          <legend data-i18n="page.rechner.modeLegend">Konzentration und Vialmenge</legend>
+          <div class="calc-mode-options">
+            <label class="calc-mode-option">
+              <input type="radio" name="calc-mode" id="calc-mode-taken" value="taken" checked>
+              <span data-i18n="page.rechner.modeTaken">Aus „Auflösen“ übernehmen</span>
+            </label>
+            <label class="calc-mode-option">
+              <input type="radio" name="calc-mode" id="calc-mode-manual" value="manual">
+              <span data-i18n="page.rechner.modeManual">Manuell eingeben</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
     </div>
+
+    <div id="calc-source-wrap">
+      <div class="calc-source">
+        <div>
+          <p class="text-small muted" data-i18n="page.rechner.sourceConcLabel">Konzentration</p>
+          <p class="calc-source-value" id="calc-source-conc">–</p>
+        </div>
+        <div>
+          <p class="text-small muted" data-i18n="page.rechner.sourceVialLabel">Vialmenge</p>
+          <p class="calc-source-value" id="calc-source-vial">–</p>
+        </div>
+      </div>
+      <p class="text-small muted" id="calc-source-hint" data-i18n="page.rechner.sourceEmptyHint" hidden>Bitte zuerst den Bereich „Auflösen“ ausfüllen.</p>
+    </div>
+
+    <div class="grid-2" id="calc-manual-wrap" hidden style="margin-top:var(--sp-3);">
+      <div>
+        <label class="text-small muted calc-field-label" for="calc-conc-manual" data-i18n="page.rechner.concLabel">Konzentration (mg/ml)</label>
+        <div class="search-bar">
+          <input type="number" inputmode="decimal" step="any" id="calc-conc-manual" placeholder="z. B. 2,5" data-i18n-attr="placeholder:page.rechner.concPlaceholder">
+        </div>
+      </div>
+      <div>
+        <label class="text-small muted calc-field-label" for="calc-vial-manual" data-i18n="page.rechner.vialLabel">Vialmenge (mg), optional für Entnahmen</label>
+        <div class="search-bar">
+          <input type="number" inputmode="decimal" step="any" id="calc-vial-manual" placeholder="z. B. 5" data-i18n-attr="placeholder:page.rechner.vialPlaceholder">
+        </div>
+      </div>
+    </div>
+
+    <div class="row-between" style="margin-top:var(--sp-3);">
+      <button class="btn btn-primary" type="button" id="calc-btn2" data-i18n="page.rechner.calcButton">Berechnen</button>
+    </div>
+
+    <p class="text-small muted" id="calc-hint2" role="status" aria-live="polite" hidden></p>
+
+    <div class="stat-grid" style="margin-top:var(--sp-3);" aria-live="polite">
+      <div class="stat">
+        <div class="stat-value" id="calc-result-volume">–</div>
+        <div class="stat-label" data-i18n="page.rechner.resultVolumeLabel">Volumen</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="calc-result-units">–</div>
+        <div class="stat-label" data-i18n="page.rechner.resultUnitsLabel">Einheiten (U-100)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="calc-result-withdrawals">–</div>
+        <div class="stat-label" data-i18n="page.rechner.resultWithdrawalsLabel">Entnahmen aus diesem Vial</div>
+      </div>
+    </div>
+
+    <p class="text-small muted" style="margin-top:var(--sp-3);" data-i18n="page.rechner.explainText2">„Menge umrechnen“ rechnet eine Zielmenge in Volumen und Einheiten auf der U-100-Skala um, ausschließlich auf Basis der eingegebenen Konzentration. Die Entnahmen aus dem Vial ergeben sich aus Vialmenge geteilt durch Zielmenge, abgerundet auf ganze Entnahmen, rein rechnerisch aus deinen Eingaben.</p>
   </section>
 
   <!-- SICHERHEITSHINWEIS -->
-  <section class="section section-tinted container reveal">
+  <section class="section container reveal">
     <h2 class="section-title" data-i18n="page.rechner.safetyTitle">Wichtiger Hinweis</h2>
     <p data-i18n="page.rechner.safetyBody">Alle Berechnungen auf dieser Seite sind rein rechnerisch. Sie sind keine medizinische Beratung und keine Empfehlung zur Anwendung am Menschen.</p>
   </section>
@@ -161,12 +244,15 @@
 <!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
 <script src="data/site.js"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
+<script src="data/nav.js"></script>
 <script src="data/i18n/global.js"></script>
 <script src="data/i18n/rechner.js"></script>
 <script src="assets/js/site.js"></script>
 <script>
-  // Seiten-Logik Rechner: PK.mixCalc lebt hier (nicht in site.js), damit
-  // tests/selftest.html sie unabhängig prüfen kann (Auftrag Wave-2 W4).
+  // Seiten-Logik Rechner: PK.mixCalc/PK.convertAmount leben hier (nicht in
+  // site.js), damit tests/selftest.html sie unabhängig prüfen kann (Auftrag
+  // Wave-2 W4, erweitert Auftrag Vic 15.09. um U-100-Umrechnung + "Menge
+  // umrechnen").
   (function () {
     if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
 
@@ -176,40 +262,117 @@
     PK.initLangToggle();
 
     PK.initNav();
+    PK.initNavDropdowns();
     PK.initReveal();
     PK.initDemoBanner();
     PK.footerDisclaimer();
 
     /**
      * PK.mixCalc(mg, ml)
-     * Reine Rechenlogik: mg/ml = mg ÷ ml; je 0,1 ml = mg/ml × 0,1.
+     * Reine Rechenlogik "Auflösen": mg/ml = mg ÷ ml. Daraus rein rechnerisch
+     * die U-100-Skala (100 Einheiten = 1 ml, 1 Einheit = 0,01 ml):
+     *   µg je 0,1 ml  = mg/ml × 100
+     *   µg je Einheit = mg/ml × 10
+     *   Einheiten je 0,1 ml = 10 (konstant, reine Skalen-Angabe der Spritze)
      * Liefert bei ungültiger Eingabe (nicht endliche Zahl, <= 0) null.
      */
     PK.mixCalc = function (mg, ml) {
       var m = Number(mg), v = Number(ml);
       if (!isFinite(m) || !isFinite(v) || m <= 0 || v <= 0) return null;
       var mgPerMl = m / v;
-      return { mgPerMl: mgPerMl, mgPer01Ml: mgPerMl * 0.1 };
+      return {
+        mgPerMl: mgPerMl,
+        ugPer01Ml: mgPerMl * 100,
+        ugPerUnit: mgPerMl * 10,
+        unitsPer01Ml: 10,
+        vialMg: m
+      };
     };
 
+    /**
+     * PK.convertAmount(targetAmount, targetUnit, mgPerMl, vialMg)
+     * Reine Rechenlogik "Menge umrechnen": targetAmount (in targetUnit "ug"
+     * oder "mg") wird über die Konzentration (mg/ml) in Volumen (ml) und
+     * Einheiten (U-100, ×100) umgerechnet. Entnahmen aus dem Vial (optional,
+     * nur wenn vialMg > 0) = abgerundet(vialMg ÷ targetAmount-in-mg).
+     * Liefert bei ungültiger Ziel-/Konzentrationseingabe null.
+     */
+    PK.convertAmount = function (targetAmount, targetUnit, mgPerMl, vialMg) {
+      var t = Number(targetAmount), c = Number(mgPerMl);
+      if (!isFinite(t) || t <= 0 || !isFinite(c) || c <= 0) return null;
+      var targetMg = targetUnit === "ug" ? t / 1000 : t;
+      var volumeMl = targetMg / c;
+      var units = volumeMl * 100;
+      var withdrawals = null;
+      var vm = Number(vialMg);
+      if (isFinite(vm) && vm > 0) {
+        withdrawals = Math.floor(vm / targetMg + 1e-9);
+      }
+      return { volumeMl: volumeMl, units: units, withdrawals: withdrawals };
+    };
+
+    /* ---------------------------------------------------------------------
+       Segmented Control: ARIA-Tabs-Muster (roving tabindex, Pfeiltasten),
+       zeigt/versteckt die zwei .calc-panel-Sektionen.
+       --------------------------------------------------------------------- */
+    var tabs = [document.getElementById("calc-tab-aufloesen"), document.getElementById("calc-tab-umrechnen")];
+    var panels = [document.getElementById("calc-panel-aufloesen"), document.getElementById("calc-panel-umrechnen")];
+
+    function selectTab(index) {
+      tabs.forEach(function (tab, i) {
+        var active = i === index;
+        tab.setAttribute("aria-selected", active ? "true" : "false");
+        tab.tabIndex = active ? 0 : -1;
+        panels[i].hidden = !active;
+      });
+      if (index === 1) renderUmrechnen();
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { selectTab(i); tab.focus(); });
+      tab.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight" && e.key !== "Home" && e.key !== "End") return;
+        e.preventDefault();
+        var next = i;
+        if (e.key === "ArrowLeft") next = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === "ArrowRight") next = (i + 1) % tabs.length;
+        if (e.key === "Home") next = 0;
+        if (e.key === "End") next = tabs.length - 1;
+        selectTab(next);
+        tabs[next].focus();
+      });
+    });
+
+    /* ---------------------------------------------------------------------
+       BEREICH 1: AUFLÖSEN
+       --------------------------------------------------------------------- */
     var mgInput = document.getElementById("calc-mg");
     var mlInput = document.getElementById("calc-ml");
     var hintEl = document.getElementById("calc-hint");
     var outMgMl = document.getElementById("calc-result-mgml");
     var out01 = document.getElementById("calc-result-01");
+    var outUgUnit = document.getElementById("calc-result-ugunit");
+    var outUnitsPer01 = document.getElementById("calc-result-unitsper01");
 
     function parseLocal(str) {
       if (str === "" || str == null) return NaN;
       return parseFloat(String(str).replace(",", "."));
     }
 
-    function render() {
+    // Letztes gültiges Ergebnis aus Bereich 1 (für die Übernahme in Bereich 2).
+    var lastMix = null;
+
+    function renderAufloesen() {
       var mgRaw = mgInput.value, mlRaw = mlInput.value;
 
       if (mgRaw === "" && mlRaw === "") {
         hintEl.hidden = true;
         outMgMl.textContent = "–";
         out01.textContent = "–";
+        outUgUnit.textContent = "–";
+        outUnitsPer01.textContent = "–";
+        lastMix = null;
+        syncSourceValues();
         return;
       }
 
@@ -219,27 +382,127 @@
         hintEl.textContent = PK.t("page.rechner.hintInvalid");
         outMgMl.textContent = "–";
         out01.textContent = "–";
+        outUgUnit.textContent = "–";
+        outUnitsPer01.textContent = "–";
+        lastMix = null;
+        syncSourceValues();
         return;
       }
 
       hintEl.hidden = true;
       outMgMl.textContent = PK.byNum(result.mgPerMl) + " " + PK.t("page.rechner.unitMgMl");
-      out01.textContent = PK.byNum(result.mgPer01Ml) + " " + PK.t("page.rechner.unitMg");
+      out01.textContent = PK.byNum(result.ugPer01Ml) + " " + PK.t("page.rechner.unitUg");
+      outUgUnit.textContent = PK.byNum(result.ugPerUnit) + " " + PK.t("page.rechner.unitUg");
+      outUnitsPer01.textContent = PK.byNum(result.unitsPer01Ml) + " " + PK.t("page.rechner.unitUnits");
+      lastMix = result;
+      syncSourceValues();
     }
 
-    mgInput.addEventListener("input", render);
-    mlInput.addEventListener("input", render);
-    document.getElementById("calc-btn").addEventListener("click", render);
+    mgInput.addEventListener("input", renderAufloesen);
+    mlInput.addEventListener("input", renderAufloesen);
+    document.getElementById("calc-btn").addEventListener("click", renderAufloesen);
     document.getElementById("calc-example").addEventListener("click", function () {
       mgInput.value = "5";
       mlInput.value = "2";
-      render();
+      renderAufloesen();
     });
 
-    render();
-    // Sprachwechsel: Ergebnis-Anzeige neu rendern (Zahlenformat + Einheiten),
+    /* ---------------------------------------------------------------------
+       BEREICH 2: MENGE UMRECHNEN
+       --------------------------------------------------------------------- */
+    var targetInput = document.getElementById("calc-target");
+    var targetUnitSelect = document.getElementById("calc-target-unit");
+    var modeTaken = document.getElementById("calc-mode-taken");
+    var modeManual = document.getElementById("calc-mode-manual");
+    var sourceWrap = document.getElementById("calc-source-wrap");
+    var sourceConcEl = document.getElementById("calc-source-conc");
+    var sourceVialEl = document.getElementById("calc-source-vial");
+    var sourceHintEl = document.getElementById("calc-source-hint");
+    var manualWrap = document.getElementById("calc-manual-wrap");
+    var concManualInput = document.getElementById("calc-conc-manual");
+    var vialManualInput = document.getElementById("calc-vial-manual");
+    var hint2El = document.getElementById("calc-hint2");
+    var outVolume = document.getElementById("calc-result-volume");
+    var outUnits = document.getElementById("calc-result-units");
+    var outWithdrawals = document.getElementById("calc-result-withdrawals");
+
+    // Zeigt die aus Bereich 1 übernommenen Werte (Konzentration + Vialmenge)
+    // im "übernommen"-Modus an; live bei jeder Bereich-1-Eingabe (siehe
+    // renderAufloesen -> syncSourceValues) und beim Tab-Wechsel.
+    function syncSourceValues() {
+      if (modeTaken.checked) {
+        if (lastMix) {
+          sourceConcEl.textContent = PK.byNum(lastMix.mgPerMl) + " " + PK.t("page.rechner.unitMgMl");
+          sourceVialEl.textContent = PK.byNum(lastMix.vialMg) + " " + PK.t("page.rechner.targetUnitMg");
+          sourceHintEl.hidden = true;
+        } else {
+          sourceConcEl.textContent = "–";
+          sourceVialEl.textContent = "–";
+          sourceHintEl.hidden = false;
+        }
+      }
+    }
+
+    function currentConcAndVial() {
+      if (modeTaken.checked) {
+        return { mgPerMl: lastMix ? lastMix.mgPerMl : NaN, vialMg: lastMix ? lastMix.vialMg : NaN };
+      }
+      return { mgPerMl: parseLocal(concManualInput.value), vialMg: parseLocal(vialManualInput.value) };
+    }
+
+    function renderUmrechnen() {
+      syncSourceValues();
+      var targetRaw = targetInput.value;
+
+      if (targetRaw === "") {
+        hint2El.hidden = true;
+        outVolume.textContent = "–";
+        outUnits.textContent = "–";
+        outWithdrawals.textContent = "–";
+        return;
+      }
+
+      var source = currentConcAndVial();
+      var result = PK.convertAmount(parseLocal(targetRaw), targetUnitSelect.value, source.mgPerMl, source.vialMg);
+      if (!result) {
+        hint2El.hidden = false;
+        hint2El.textContent = PK.t("page.rechner.hintInvalid2");
+        outVolume.textContent = "–";
+        outUnits.textContent = "–";
+        outWithdrawals.textContent = "–";
+        return;
+      }
+
+      hint2El.hidden = true;
+      outVolume.textContent = PK.byNum(result.volumeMl) + " " + PK.t("page.rechner.unitMl");
+      outUnits.textContent = PK.byNum(result.units) + " " + PK.t("page.rechner.unitUnits");
+      outWithdrawals.textContent = result.withdrawals == null ? "–" : PK.byNum(result.withdrawals, { maximumFractionDigits: 0 });
+    }
+
+    function applyMode() {
+      var taken = modeTaken.checked;
+      sourceWrap.hidden = !taken;
+      manualWrap.hidden = taken;
+      renderUmrechnen();
+    }
+
+    modeTaken.addEventListener("change", applyMode);
+    modeManual.addEventListener("change", applyMode);
+    targetInput.addEventListener("input", renderUmrechnen);
+    targetUnitSelect.addEventListener("change", renderUmrechnen);
+    concManualInput.addEventListener("input", renderUmrechnen);
+    vialManualInput.addEventListener("input", renderUmrechnen);
+    document.getElementById("calc-btn2").addEventListener("click", renderUmrechnen);
+
+    renderAufloesen();
+    applyMode();
+
+    // Sprachwechsel: beide Bereiche neu rendern (Zahlenformat + Einheiten),
     // Eingabewerte bleiben erhalten (Pflicht-Muster, siehe README).
-    document.addEventListener("pk:langchange", render);
+    document.addEventListener("pk:langchange", function () {
+      renderAufloesen();
+      renderUmrechnen();
+    });
   })();
 </script>
 </body>
