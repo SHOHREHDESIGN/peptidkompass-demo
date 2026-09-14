@@ -16,6 +16,7 @@
 <meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/system.css">
+<link rel="stylesheet" href="assets/css/tiles.css">
 <link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
@@ -142,8 +143,8 @@
 
     <div class="hero-media">
       <video class="hero-media-video" data-hero-video autoplay muted loop playsinline
-             preload="metadata" poster="assets/video/hero_poster.jpg" data-fallback="assets/img/hero.jpg">
-        <source src="assets/video/hero_loop.mp4" type="video/mp4">
+             preload="metadata" poster="assets/video/hero_poster_v2.jpg" data-fallback="assets/img/life_hero.jpg">
+        <source src="assets/video/hero_loop_v2.mp4" type="video/mp4">
       </video>
     </div>
   </section>
@@ -165,6 +166,23 @@
     <div class="podium" id="podium" aria-live="polite"></div>
   </section>
 
+  <!-- DUNKLE VOLL-TILE "REINHEIT, BELEGT" (Bildwelt v2, Apple-Rhythmus):
+       Text links, sci_hero_dark.jpg rechts, 60/40 über .split-tile
+       (assets/css/tiles.css). CTA fuehrt zur Methodik. -->
+  <section class="section section-dark container reveal">
+    <div class="split split-tile">
+      <div class="split-text">
+        <p class="eyebrow" data-i18n="page.index.tileTrustEyebrow">Qualität</p>
+        <h2 class="section-title" data-i18n="page.index.tileTrustTitle">Reinheit, belegt</h2>
+        <p class="section-lead" data-i18n="page.index.tileTrustLead">Wir zeigen nur, was ein Laborbericht bestätigt.</p>
+        <a class="btn btn-primary" href="methodik.html" data-i18n="page.index.tileTrustCta">Mehr zur Methodik</a>
+      </div>
+      <div class="split-visual visual visual-parallax">
+        <img src="assets/img/sci_hero_dark.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.tileTrustImgAlt">
+      </div>
+    </div>
+  </section>
+
   <!-- LOGO-LEISTE -->
   <section class="section-tight container reveal">
     <p class="eyebrow" data-i18n="page.index.logosEyebrow">Anbieter</p>
@@ -184,10 +202,9 @@
         <p class="section-lead" data-i18n="page.index.scoreLead">Fünf Kriterien, transparent gewichtet.</p>
       </div>
       <div class="split-visual visual visual-kenburns">
-        <!-- sec_batch.jpg (Pipette) statt sec_score.jpg (5 Vials): Fix-Runde
-             3, Befund 3 (Vial-Wiederholung, REVIEW_design_r3.md). sec_score.jpg
-             zieht stattdessen in die Charge-prüfen-Sektion unten. -->
-        <img src="assets/img/sec_batch.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+        <!-- life_score.jpg (Bildwelt v2, 14.09.): Vial gegen Licht, ersetzt
+             sec_batch.jpg im Zuge des Life/Sci-Umbaus. -->
+        <img src="assets/img/life_score.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.scoreImgAlt">
       </div>
     </div>
     <div class="grid-3" style="margin-top:var(--sp-4);">
@@ -200,17 +217,23 @@
     <p class="text-small muted" style="margin-top:var(--sp-2);"><a class="btn-link" href="methodik.html" data-i18n="page.index.methodikLink">Ganze Methodik lesen</a></p>
   </section>
 
-  <!-- FRESH: Frische-Leiste (Signale aus data/batches.js). Fix-Runde 3,
-       Befund 9 (REVIEW_design_r3.md): stand vorher direkt zwischen Podium
-       und Logo-Leiste, drei Trust-Sektionen ohne inhaltlichen Wechsel
-       hintereinander. Jetzt hinter "Wie wir bewerten" gezogen, das bricht
-       den Trust-Trust-Trust-Rhythmus mit einem Inhalts-Block und die
-       Aktualität folgt direkt auf die Methodik-Erklärung (passt inhaltlich:
-       "so bewerten wir" -> "und das ist aktuell"). -->
-  <section class="section-tight container reveal">
-    <p class="eyebrow" data-i18n="page.index.freshEyebrow">Aktualität</p>
-    <h2 class="section-title" data-i18n="page.index.freshTitle">Immer frisch geprüft</h2>
-    <div class="fresh" id="fresh" aria-live="polite"></div>
+  <!-- DUNKLE VOLL-TILE "JEDE CHARGE NACHPRÜFBAR" (Bildwelt v2, Apple-
+       Rhythmus): fasst den frueheren separaten Charge-Pruefen-Block (weiter
+       unten) hier zusammen, direkt nach "Wie wir bewerten" (Trust-Passage,
+       zwei dunkle Tiles hintereinander, Vic-Vorgabe). split-reverse: Bild
+       links (sci_lab.jpg), Text rechts, wechselt zur Tile oben. -->
+  <section class="section section-dark container reveal">
+    <div class="split split-tile split-reverse">
+      <div class="split-visual visual visual-parallax">
+        <img src="assets/img/sci_lab.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.tileBatchImgAlt">
+      </div>
+      <div class="split-text">
+        <p class="eyebrow" data-i18n="page.index.chargeEyebrow">Vertrauen prüfen</p>
+        <h2 class="section-title" data-i18n="page.index.tileBatchTitle">Jede Charge nachprüfbar</h2>
+        <p class="section-lead" data-i18n="page.index.tileBatchLead">Chargennummer eingeben, Laborbericht sehen.</p>
+        <a class="btn btn-primary" href="charge-pruefen.html" data-i18n="page.index.chargeCta">Charge prüfen</a>
+      </div>
+    </div>
   </section>
 
   <!-- REGLER-MODUL "WAS IST DIR WICHTIG" -->
@@ -271,7 +294,7 @@
   <section class="section container reveal">
     <div class="split split-reverse">
       <div class="split-visual visual visual-parallax">
-        <img src="assets/img/sec_vendors.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+        <img src="assets/img/life_vendors.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.topImgAlt">
       </div>
       <div class="split-text row-between">
         <div>
@@ -284,15 +307,17 @@
     <div class="grid-4" id="vendor-grid" aria-live="polite" style="margin-top:var(--sp-4);"></div>
   </section>
 
-  <!-- WIRKSTOFF-VORSCHAU -->
-  <section class="section section-tinted container reveal">
+  <!-- WIRKSTOFF-VORSCHAU: section-tinted -> section-dark (Bildwelt v2,
+       Apple-Rhythmus, dritte dunkle Tile der Seite), sci_chain.jpg statt
+       sec_peptides.jpg. -->
+  <section class="section section-dark container reveal">
     <div class="split">
       <div class="split-text">
         <p class="eyebrow" data-i18n="page.index.peptideEyebrow">Wirkstoff-Wissen</p>
         <h2 class="section-title" data-i18n="page.index.peptideTitle">Wirkstoffe verstehen</h2>
       </div>
       <div class="split-visual visual visual-parallax">
-        <img src="assets/img/sec_peptides.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+        <img src="assets/img/sci_chain.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.peptideImgAlt">
       </div>
     </div>
     <div class="grid-3" id="peptide-grid" style="margin-top:var(--sp-4);"></div>
@@ -303,7 +328,7 @@
   <section class="section container reveal">
     <div class="split split-reverse">
       <div class="split-visual visual visual-kenburns">
-        <img src="assets/img/sec_calc.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
+        <img src="assets/img/life_calc.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.calcImgAlt">
       </div>
       <div class="split-text row-between">
         <div>
@@ -316,24 +341,14 @@
     </div>
   </section>
 
-  <!-- CHARGE-PRÜFEN-BLOCK -->
-  <section class="section container reveal">
-    <div class="split">
-      <div class="split-text row-between">
-        <div>
-          <p class="eyebrow" data-i18n="page.index.chargeEyebrow">Vertrauen prüfen</p>
-          <h2 class="section-title" data-i18n="page.index.chargeTitle">Ist deine Charge geprüft</h2>
-        </div>
-        <a class="btn btn-primary" href="charge-pruefen.html" data-i18n="page.index.chargeCta">Charge prüfen</a>
-      </div>
-      <div class="split-visual visual visual-parallax">
-        <!-- sec_score.jpg (5 Vials) statt sec_batch.jpg: Fix-Runde 3, Befund 3
-             (Motiv-Tausch mit "Wie wir bewerten" oben). Nachbarn hier sind
-             sec_calc.jpg (Tropfen) und die vial-freie Proof-Sektion, also
-             kein Vial-neben-Vial. -->
-        <img src="assets/img/sec_score.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
-      </div>
-    </div>
+  <!-- FRESH: Frische-Leiste (Signale aus data/batches.js). Bildwelt-v2-Umbau:
+       hierher verschoben (vorher zwischen "Wie wir bewerten" und Regler-
+       Modul) - der Charge-Pruefen-Block, der hier vorher stand, ist jetzt
+       Tile 7 (dunkle Voll-Tile "Jede Charge nachprüfbar") weiter oben. -->
+  <section class="section-tight container reveal">
+    <p class="eyebrow" data-i18n="page.index.freshEyebrow">Aktualität</p>
+    <h2 class="section-title" data-i18n="page.index.freshTitle">Immer frisch geprüft</h2>
+    <div class="fresh" id="fresh" aria-live="polite"></div>
   </section>
 
   <!-- PROOF: Zitat-Karten (Social Proof, versteckt sich selbst ohne data/reviews.js) -->
@@ -381,6 +396,7 @@
     </ul>
     <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
     <p class="footer-meta" data-i18n="global.footer.metaDemo">© Peptide Compass · Vorabversion</p>
+    <p class="footer-meta" data-i18n="global.footer.aiNote">Bilder und Videos auf dieser Seite sind KI-generiert.</p>
   </div>
 </footer>
 

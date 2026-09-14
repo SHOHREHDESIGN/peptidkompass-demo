@@ -102,6 +102,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     /* Footer */
     "global.footer.metaDemo": "© Peptide Compass · Vorabversion",
+    "global.footer.aiNote": "Bilder und Videos auf dieser Seite sind KI-generiert.",
 
     /* Enum: vendor.land (data/SCHEMA.md) */
     "global.enum.land.DE": "DE",
@@ -207,6 +208,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.codeBox.error": "Error",
 
     "global.footer.metaDemo": "© Peptide Compass · Preview",
+    "global.footer.aiNote": "Images and videos on this site are AI-generated.",
 
     "global.enum.land.DE": "DE",
     "global.enum.land.AT": "AT",

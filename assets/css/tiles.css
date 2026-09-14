@@ -1,0 +1,30 @@
+/* ============================================================================
+   PEPTIDKOMPASS · assets/css/tiles.css
+   ============================================================================
+   Ergänzung zu system.css für den Bildwelt-v2-Umbau der Startseite (Auftrag
+   "Apple-Rhythmus hell/dunkel"). NICHT system.css anfassen (parallele Runde
+   editiert dort gerade system.css + wirkstoffe/*) : alle neuen Regeln hier,
+   NACH system.css eingebunden, nutzt ausschließlich vorhandene Tokens/
+   Klassen aus system.css (keine neuen Custom Properties).
+
+   Enthält:
+   1. Hero-Back-Sprites auf Deckkraft .35 (ruhigerer Hero, Vic-Vorgabe)
+   2. .split-tile : 60/40-Bild/Text-Verhältnis für die beiden neuen dunklen
+      Voll-Tiles (Bild ist der Star), nur ≥901px – darunter bleibt die
+      bestehende Mobile-Stapel-Logik aus system.css (.split{1fr} ≤900px)
+      unangetastet.
+   ============================================================================ */
+
+/* 1. Hero-3D Back-Sprites ruhiger (system.css §"HERO-3D" setzt opacity:.5
+      auf [data-depth="back"]; tiles.css lädt danach, gleiche Spezifität
+      gewinnt durch Ladereihenfolge). */
+.hero-3d-sprite[data-depth="back"]{ opacity:.35; }
+
+/* 2. .split-tile: Modifier auf .split für die neuen Voll-Tiles ("Reinheit,
+      belegt" / "Jede Charge nachprüfbar") – Bild 60%, Text 40%, Bild bleibt
+      der Star der Tile. Kombiniert mit .split-reverse für Bild links/rechts
+      im Wechsel (Apple-Rhythmus). Mobil (≤900px) übernimmt system.css'
+      .split{grid-template-columns:1fr} unverändert (Text immer vor Bild). */
+@media (min-width:901px){
+  .split-tile{ grid-template-columns:3fr 2fr; }
+}

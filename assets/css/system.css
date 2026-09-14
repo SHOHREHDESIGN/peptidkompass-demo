@@ -750,6 +750,25 @@ body.nav-open{ overflow:hidden; }
 .stat-label{ font-size:var(--fs-small); color:var(--text-secondary); margin-top:var(--sp-1); }
 @media (max-width:640px){ .stat-grid{ grid-template-columns:1fr; gap:var(--sp-2); } }
 
+/* Steckbrief / Quick Facts (Wirkstoff-Detail, Runde "Wirkstoff-Ausbau 1"
+   14.09.): Apple-Spec-Table-Look, kein Schatten (DESIGN.md: Elevation nur
+   ueber Flaechenwechsel + Hairline). 1px-Gap auf --line simuliert Trennlinien
+   zwischen den Zellen, border-radius + overflow:hidden rundet die Aussenkante. */
+.facts{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+  background:var(--line); border:1px solid var(--card-border);
+  border-radius:var(--radius-card); overflow:hidden;
+}
+.facts-item{ background:var(--surface-2); padding:var(--sp-3) var(--sp-2); }
+.facts-label{ font-size:var(--fs-caption); color:var(--text-secondary); margin:0; }
+.facts-value{ font-size:var(--fs-h3); font-weight:600; letter-spacing:var(--ls-h3); margin:2px 0 0; }
+.facts-value[data-empty]{ color:var(--text-secondary); font-weight:400; font-size:var(--fs-small); }
+@media (max-width:640px){ .facts{ grid-template-columns:repeat(2,1fr); } }
+
+/* Verwandte Wirkstoffe (Wirkstoff-Detail, v2.1): Karten-Zeile, nutzt die
+   bestehende .card-Komponente je Eintrag, nur das Grid ist neu. */
+.related-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:var(--sp-2); }
+
 /* -----------------------------------------------------------------------
    7. .card / .vendor-card
    ----------------------------------------------------------------------- */

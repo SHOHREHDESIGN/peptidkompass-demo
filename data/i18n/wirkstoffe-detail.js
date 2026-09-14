@@ -38,6 +38,16 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.rekonstitutionTitle": "Rekonstitution und Lagerung",
     "page.wirkstoffe-detail.faqTitle": "Häufige Fragen",
 
+    "page.wirkstoffe-detail.steckbriefTitle": "Steckbrief",
+    "page.wirkstoffe-detail.factsCas": "CAS-Nummer",
+    "page.wirkstoffe-detail.factsMw": "Molekulargewicht",
+    "page.wirkstoffe-detail.factsAs": "Aminosäuren",
+    "page.wirkstoffe-detail.factsHwz": "Halbwertszeit",
+    "page.wirkstoffe-detail.factsReinheit": "Reinheitsstandard",
+    "page.wirkstoffe-detail.factsLoeslichkeit": "Löslichkeit",
+    "page.wirkstoffe-detail.factsNichtErmittelbar": "nicht ermittelbar",
+    "page.wirkstoffe-detail.verwandtTitle": "Verwandte Wirkstoffe",
+
     "page.wirkstoffe-detail.hinweiseTitle": "Hinweise",
     "page.wirkstoffe-detail.lagerungText": "Lagerung: {lagerung}. Diese Angaben sind keine Dosierungsempfehlung.",
 
@@ -81,6 +91,16 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.rechtsstatusTitle": "Legal status",
     "page.wirkstoffe-detail.rekonstitutionTitle": "Reconstitution and storage",
     "page.wirkstoffe-detail.faqTitle": "Frequently asked questions",
+
+    "page.wirkstoffe-detail.steckbriefTitle": "Quick facts",
+    "page.wirkstoffe-detail.factsCas": "CAS number",
+    "page.wirkstoffe-detail.factsMw": "Molecular weight",
+    "page.wirkstoffe-detail.factsAs": "Amino acids",
+    "page.wirkstoffe-detail.factsHwz": "Half-life",
+    "page.wirkstoffe-detail.factsReinheit": "Purity standard",
+    "page.wirkstoffe-detail.factsLoeslichkeit": "Solubility",
+    "page.wirkstoffe-detail.factsNichtErmittelbar": "not available",
+    "page.wirkstoffe-detail.verwandtTitle": "Related peptides",
 
     "page.wirkstoffe-detail.hinweiseTitle": "Notes",
     "page.wirkstoffe-detail.lagerungText": "Storage: {lagerung}. This information is not a dosing recommendation.",

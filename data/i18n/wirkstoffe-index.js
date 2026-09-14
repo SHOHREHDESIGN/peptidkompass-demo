@@ -29,7 +29,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.wirkstoffe-index.vendorCount": "{n} Anbieter im Sortiment",
     "page.wirkstoffe-index.moreLink": "Mehr erfahren",
-    "page.wirkstoffe-index.emptyCategory": "Keine Wirkstoffe in dieser Kategorie."
+    "page.wirkstoffe-index.emptyCategory": "Keine Wirkstoffe in dieser Kategorie.",
+
+    "page.wirkstoffe-index.factsAminoAcidsShort": "{n} Aminosäuren",
+    "page.wirkstoffe-index.factsHalfLifeShort": "HWZ {hwz}"
   });
 
   i18n.merge("en", {
@@ -49,7 +52,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.wirkstoffe-index.vendorCount": "{n} vendors carry this peptide",
     "page.wirkstoffe-index.moreLink": "Learn more",
-    "page.wirkstoffe-index.emptyCategory": "No peptides in this category."
+    "page.wirkstoffe-index.emptyCategory": "No peptides in this category.",
+
+    "page.wirkstoffe-index.factsAminoAcidsShort": "{n} amino acids",
+    "page.wirkstoffe-index.factsHalfLifeShort": "Half-life {hwz}"
   });
 
 })(window.PK.i18n);

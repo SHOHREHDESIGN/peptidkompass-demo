@@ -212,6 +212,28 @@
       a.appendChild(pillWrap);
       a.appendChild(title);
       a.appendChild(body);
+
+      // Mini-Steckbrief-Zeile (v2.1, 14.09.): nur wenn peptide.steckbrief
+      // existiert und mindestens ein Fakt belegt ist, sonst keine Zeile
+      // (kein "nicht ermittelbar" auf der Übersicht, das bleibt der
+      // Detailseite vorbehalten).
+      var sb = p.steckbrief;
+      if (sb && typeof sb === "object") {
+        var factParts = [];
+        if (typeof sb.aminosaeuren === "number") {
+          factParts.push(PK.t("page.wirkstoffe-index.factsAminoAcidsShort", { n: sb.aminosaeuren }));
+        }
+        if (sb.halbwertszeit) {
+          factParts.push(PK.t("page.wirkstoffe-index.factsHalfLifeShort", { hwz: sb.halbwertszeit }));
+        }
+        if (factParts.length) {
+          var factsLine = document.createElement("p");
+          factsLine.className = "text-small muted";
+          factsLine.textContent = factParts.join(" · ");
+          a.appendChild(factsLine);
+        }
+      }
+
       a.appendChild(countLine);
       a.appendChild(cta);
       return a;

@@ -94,7 +94,25 @@ window.PK.peptides = [
       description: "BPC-157 im Überblick: Herkunft, Wirkmechanismus, Studienlage und Sicherheitsprofil, sachlich aufbereitet für den Forschungskontext.",
       description_en: "BPC-157 overview: origin, mechanism, evidence, and safety profile, presented factually for the research context."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "137525-51-0",
+      molekulargewicht: "1419.5 g/mol",
+      aminosaeuren: 15,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 99 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 15,
+      quellen: [
+        "PubChem CID 9941957",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "tb-500",
+      "ghk-cu",
+      "thymosin-alpha-1"
+    ]
   },
   {
     slug: "tb-500",
@@ -180,7 +198,25 @@ window.PK.peptides = [
       description: "TB-500 im Überblick: Herkunft aus Thymosin Beta-4, Wirkmechanismus, Studienlage und Sicherheitsprofil, sachlich für den Forschungskontext.",
       description_en: "TB-500 overview: origin from thymosin beta-4, mechanism, evidence, and safety profile, presented factually for the research context."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: null,
+      molekulargewicht: "4963 g/mol",
+      aminosaeuren: 43,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 99 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 43,
+      quellen: [
+        "PubChem CID 45382195",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "bpc-157",
+      "ghk-cu",
+      "thymosin-alpha-1"
+    ]
   },
   {
     slug: "mots-c",
@@ -277,7 +313,24 @@ window.PK.peptides = [
       description: "MOTS-c sachlich erklärt: mitochondrialer Wirkmechanismus, präklinische und klinische Studienlage sowie Rechtsstatus des Peptids.",
       description_en: "MOTS-c explained factually: mitochondrial mechanism of action, preclinical and clinical study data, and legal status of the peptide."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "1627580-64-6",
+      molekulargewicht: "2174.6 g/mol",
+      aminosaeuren: 16,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 16,
+      quellen: [
+        "PubChem CID 146675088",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "semaglutid",
+      "retatrutid"
+    ]
   },
   {
     slug: "retatrutid",
@@ -372,7 +425,23 @@ window.PK.peptides = [
       description: "Retatrutid im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des GLP-1/GIP/Glucagon-Triple-Agonisten in fortgeschrittener klinischer Prüfung.",
       description_en: "Retatrutide at a glance: mechanism, study status and safety profile of the GLP-1/GIP/glucagon triple agonist in advanced clinical trials."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "2381989-03-1",
+      molekulargewicht: "~4600 g/mol",
+      aminosaeuren: 39,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: "löslich in sterilem Wasser oder bakteriostatischem Wasser",
+      sequenzLaenge: 39,
+      quellen: [
+        "chemverify Katalog 14.09.2026 (PubChem: kein Eintrag)"
+      ]
+    },
+    verwandt: [
+      "semaglutid",
+      "mots-c"
+    ]
   },
   {
     slug: "semaglutid",
@@ -456,7 +525,25 @@ window.PK.peptides = [
       description: "Semaglutid im Überblick: Mechanismus, Studienlage, Sicherheitsprofil und Rechtsstatus des zugelassenen GLP-1-Rezeptor-Agonisten.",
       description_en: "Semaglutide at a glance: mechanism, study status, safety profile and legal status of the approved GLP-1 receptor agonist."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "910463-68-2",
+      molekulargewicht: "4114 g/mol",
+      aminosaeuren: 31,
+      halbwertszeit: "≈ 1 Woche (Elimination, Fachinformation Ozempic)",
+      reinheitsstandard: "≥ 99 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 31,
+      quellen: [
+        "PubChem CID 56843331",
+        "DailyMed SPL OZEMPIC (Semaglutid), Novo Nordisk",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "retatrutid",
+      "mots-c"
+    ]
   },
   {
     slug: "cjc-1295",
@@ -549,7 +636,24 @@ window.PK.peptides = [
       description: "CJC-1295 sachlich erklärt: Wirkmechanismus, Unterschied mit und ohne DAC, Studienlage und Rechtsstatus des GHRH-Analogons.",
       description_en: "CJC-1295 explained factually: mechanism of action, the difference with and without DAC, study data, and legal status of this GHRH analog."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: null,
+      molekulargewicht: null,
+      aminosaeuren: null,
+      halbwertszeit: null,
+      reinheitsstandard: null,
+      loeslichkeit: null,
+      sequenzLaenge: null,
+      quellen: [
+        "chemverify Katalog 14.09.2026 (Eintrag deckt CJC-1295 mit und ohne DAC generisch ab, CAS/Molekulargewicht nicht eindeutig einer Variante zuordenbar)"
+      ]
+    },
+    verwandt: [
+      "ipamorelin",
+      "sermorelin",
+      "tesamorelin"
+    ]
   },
   {
     slug: "ipamorelin",
@@ -645,7 +749,25 @@ window.PK.peptides = [
       description: "Ipamorelin sachlich erklärt: selektiver Wirkmechanismus, Studienlage, Sicherheitsprofil und Rechtsstatus des Ghrelin-Mimetikums.",
       description_en: "Ipamorelin explained factually: selective mechanism of action, study data, safety profile, and legal status of this ghrelin mimetic."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "170851-70-4",
+      molekulargewicht: "711.9 g/mol",
+      aminosaeuren: 5,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 99 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 5,
+      quellen: [
+        "PubChem CID 9831659",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "cjc-1295",
+      "sermorelin",
+      "tesamorelin"
+    ]
   },
   {
     slug: "sermorelin",
@@ -737,7 +859,25 @@ window.PK.peptides = [
       description: "Sermorelin sachlich erklärt: Wirkmechanismus, historische Zulassung, Studienlage und aktueller Rechtsstatus des GHRH-Fragments.",
       description_en: "Sermorelin explained factually: mechanism of action, historical approval, study data, and current legal status of this GHRH fragment."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "86168-78-7",
+      molekulargewicht: "3357.9 g/mol",
+      aminosaeuren: 29,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: "löslich in Wasser und verdünnter Essigsäure",
+      sequenzLaenge: 29,
+      quellen: [
+        "PubChem CID 16132413",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "cjc-1295",
+      "ipamorelin",
+      "tesamorelin"
+    ]
   },
   {
     slug: "tesamorelin",
@@ -829,7 +969,26 @@ window.PK.peptides = [
       description: "Tesamorelin (Egrifta) sachlich erklärt: Zulassungsstatus, Wirkmechanismus, klinische Studienlage und Rechtsstatus außerhalb der USA.",
       description_en: "Tesamorelin (Egrifta) explained factually: approval status, mechanism of action, clinical study data, and legal status outside the US."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "218949-48-5",
+      molekulargewicht: "5136 g/mol",
+      aminosaeuren: 44,
+      halbwertszeit: "≈ 8 Minuten (Elimination, Fachinformation Egrifta SV)",
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 44,
+      quellen: [
+        "PubChem CID 16137828",
+        "DailyMed SPL EGRIFTA SV (Tesamorelin), Theratechnologies",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "cjc-1295",
+      "ipamorelin",
+      "sermorelin"
+    ]
   },
   {
     slug: "ghk-cu",
@@ -915,7 +1074,24 @@ window.PK.peptides = [
       description: "GHK-Cu im Überblick: Kupfertripeptid, Wirkmechanismus, Hautforschung und Sicherheitsprofil, sachlich für den Forschungskontext.",
       description_en: "GHK-Cu overview: copper tripeptide, mechanism, skin research, and safety profile, presented factually for the research context."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "89030-95-5",
+      molekulargewicht: "402.92 g/mol",
+      aminosaeuren: 3,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich, Blue Powder)",
+      loeslichkeit: null,
+      sequenzLaenge: 3,
+      quellen: [
+        "PubChem CID 71587328",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "bpc-157",
+      "tb-500"
+    ]
   },
   {
     slug: "selank",
@@ -999,7 +1175,24 @@ window.PK.peptides = [
       description: "Selank im Überblick: Herkunft, Mechanismus, Studienlage und Sicherheitsprofil eines Forschungspeptids zu Angstregulation und Kognition.",
       description_en: "Selank at a glance: origin, mechanism, study status and safety profile of a research peptide studied for anxiety regulation and cognition."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "129954-34-3",
+      molekulargewicht: "751.9 g/mol",
+      aminosaeuren: 7,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 7,
+      quellen: [
+        "PubChem CID 11765600",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "semax",
+      "epitalon"
+    ]
   },
   {
     slug: "semax",
@@ -1083,7 +1276,24 @@ window.PK.peptides = [
       description: "Semax im Überblick: Herkunft, Mechanismus, Studienlage und Sicherheitsprofil eines Forschungspeptids zu Neuroprotektion und Kognition.",
       description_en: "Semax at a glance: origin, mechanism, study status and safety profile of a research peptide studied for neuroprotection and cognition."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "80714-61-0",
+      molekulargewicht: "813.9 g/mol",
+      aminosaeuren: 7,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 7,
+      quellen: [
+        "PubChem CID 9811102",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "selank",
+      "epitalon"
+    ]
   },
   {
     slug: "thymosin-alpha-1",
@@ -1169,7 +1379,24 @@ window.PK.peptides = [
       description: "Thymosin Alpha 1 im Überblick: Immunmodulation, internationale Zulassungslage, Studienlage und Sicherheitsprofil.",
       description_en: "Thymosin alpha 1 overview: immune modulation, international approval status, clinical evidence, and safety profile."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "62304-98-7",
+      molekulargewicht: "3108.3 g/mol",
+      aminosaeuren: 28,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 28,
+      quellen: [
+        "PubChem CID 16130571",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "bpc-157",
+      "tb-500"
+    ]
   },
   {
     slug: "epitalon",
@@ -1256,7 +1483,25 @@ window.PK.peptides = [
       description: "Epitalon im Überblick: Mechanismus, präklinische Studienlage und Sicherheitsprofil des Telomerase-Forschungspeptids von Khavinson.",
       description_en: "Epitalon at a glance: mechanism, preclinical study status and safety profile of Khavinson's telomerase research peptide."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "307297-39-8",
+      molekulargewicht: "390.35 g/mol",
+      aminosaeuren: 4,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 98 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 4,
+      quellen: [
+        "PubChem CID 219042",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "melanotan-2",
+      "selank",
+      "semax"
+    ]
   },
   {
     slug: "melanotan-2",
@@ -1344,6 +1589,23 @@ window.PK.peptides = [
       description: "Melanotan II im Überblick: Wirkmechanismus, klinische Studienlage zu Pigmentierung und sexueller Funktion, Sicherheitsprofil.",
       description_en: "Melanotan II overview: mechanism, clinical evidence on pigmentation and sexual function, and safety profile."
     },
-    demo: false
+    demo: false,
+    steckbrief: {
+      cas: "121062-08-6",
+      molekulargewicht: "1024.2 g/mol",
+      aminosaeuren: 7,
+      halbwertszeit: null,
+      reinheitsstandard: "≥ 99 % (HPLC, handelsüblich)",
+      loeslichkeit: null,
+      sequenzLaenge: 7,
+      quellen: [
+        "PubChem CID 92432",
+        "chemverify Katalog 14.09.2026"
+      ]
+    },
+    verwandt: [
+      "ghk-cu",
+      "epitalon"
+    ]
   }
 ];

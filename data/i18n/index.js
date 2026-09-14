@@ -34,9 +34,20 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.featuredEyebrow": "Empfehlung",
     "page.index.featuredTitle": "Anbieter des Monats",
 
+    /* Bildwelt v2 (14.09.): 2 neue dunkle Voll-Tiles im Apple-Rhythmus. */
+    "page.index.tileTrustEyebrow": "Qualität",
+    "page.index.tileTrustTitle": "Reinheit, belegt",
+    "page.index.tileTrustLead": "Wir zeigen nur, was ein Laborbericht bestätigt.",
+    "page.index.tileTrustCta": "Mehr zur Methodik",
+    "page.index.tileTrustImgAlt": "Peptid-Ampulle im Spotlight auf dunkler Bühne",
+    "page.index.tileBatchTitle": "Jede Charge nachprüfbar",
+    "page.index.tileBatchLead": "Chargennummer eingeben, Laborbericht sehen.",
+    "page.index.tileBatchImgAlt": "Laborgerät zur Chargenprüfung, dunkle Bühne",
+
     "page.index.scoreEyebrow": "Methodik",
     "page.index.scoreTitle": "Wie wir bewerten",
     "page.index.scoreLead": "Fünf Kriterien, transparent gewichtet.",
+    "page.index.scoreImgAlt": "Peptid-Ampulle im Gegenlicht",
     "page.index.criteriaLaborTitle": "Labor",
     "page.index.criteriaLaborBody": "Unabhängige Prüfung, CoA-Qualität",
     "page.index.criteriaRechtTitle": "Rechtsrahmen",
@@ -52,18 +63,20 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.topEyebrow": "Top bewertet",
     "page.index.topTitle": "Top-Anbieter im Vergleich",
     "page.index.allVendorsLink": "Alle Anbieter ansehen",
+    "page.index.topImgAlt": "Laufschuhe binden vor dem Training",
 
     "page.index.peptideEyebrow": "Wirkstoff-Wissen",
     "page.index.peptideTitle": "Wirkstoffe verstehen",
     "page.index.allPeptidesLink": "Alle 15 Wirkstoffe",
+    "page.index.peptideImgAlt": "Peptidkette aus Glas auf dunkler Bühne",
 
     "page.index.calcEyebrow": "Anmisch-Rechner",
     "page.index.calcTitle": "Rechnet mg und ml sauber um, ganz ohne Dosierungsempfehlung.",
     "page.index.calcBody": "Reine Rechenhilfe, keine Dosierungsempfehlung.",
     "page.index.calcCta": "Zum Rechner",
+    "page.index.calcImgAlt": "Notizbuch und Rechner am Schreibtisch",
 
     "page.index.chargeEyebrow": "Vertrauen prüfen",
-    "page.index.chargeTitle": "Ist deine Charge geprüft",
     "page.index.chargeCta": "Charge prüfen",
 
     /* Runde "Leben und Conversion" (06.09.), Ergänzungen zu data/i18n/conversion.js:
@@ -105,9 +118,19 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.featuredEyebrow": "Featured",
     "page.index.featuredTitle": "Vendor of the month",
 
+    "page.index.tileTrustEyebrow": "Quality",
+    "page.index.tileTrustTitle": "Purity, proven",
+    "page.index.tileTrustLead": "We only show what a lab report confirms.",
+    "page.index.tileTrustCta": "More on our methodology",
+    "page.index.tileTrustImgAlt": "Peptide vial under a spotlight on a dark stage",
+    "page.index.tileBatchTitle": "Every batch verifiable",
+    "page.index.tileBatchLead": "Enter the batch number, see the lab report.",
+    "page.index.tileBatchImgAlt": "Lab equipment for batch verification, dark stage",
+
     "page.index.scoreEyebrow": "Methodology",
     "page.index.scoreTitle": "How we score",
     "page.index.scoreLead": "Five criteria, weighted transparently.",
+    "page.index.scoreImgAlt": "Peptide vial backlit",
     "page.index.criteriaLaborTitle": "Lab quality",
     "page.index.criteriaLaborBody": "Independent testing, CoA quality",
     "page.index.criteriaRechtTitle": "Legal framework",
@@ -123,18 +146,20 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.topEyebrow": "Top rated",
     "page.index.topTitle": "Top vendors compared",
     "page.index.allVendorsLink": "View all vendors",
+    "page.index.topImgAlt": "Tying running shoes before training",
 
     "page.index.peptideEyebrow": "Peptide knowledge",
     "page.index.peptideTitle": "Understand peptides",
     "page.index.allPeptidesLink": "All 15 peptides",
+    "page.index.peptideImgAlt": "Glass peptide chain on a dark stage",
 
     "page.index.calcEyebrow": "Mixing calculator",
     "page.index.calcTitle": "Converts mg and ml cleanly, with no dosing recommendation.",
     "page.index.calcBody": "A pure calculation aid, not a dosing recommendation.",
     "page.index.calcCta": "Open calculator",
+    "page.index.calcImgAlt": "Notebook and calculator on a desk",
 
     "page.index.chargeEyebrow": "Check trust",
-    "page.index.chargeTitle": "Is your batch verified",
     "page.index.chargeCta": "Check batch",
 
     "page.index.podiumCopyButton": "Copy code",

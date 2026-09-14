@@ -102,6 +102,14 @@
       </div>
     </section>
 
+    <!-- STECKBRIEF (Quick Facts, Runde "Wirkstoff-Ausbau 1" 14.09.): direkt
+         unter der Kurz-Beschreibung, nur wenn peptide.steckbrief existiert
+         (nicht alle Drafts fuehren das Feld schon, siehe render()). -->
+    <section class="section-tight container reveal" id="peptide-facts-section" hidden>
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.steckbriefTitle">Steckbrief</h2>
+      <div class="facts" id="peptide-facts"></div>
+    </section>
+
     <!-- WIE ES WIRKT (mechanismus) -->
     <section class="section section-tinted container-narrow reveal">
       <h2 class="section-title" data-i18n="page.wirkstoffe-detail.mechanismusTitle">Wie es wirkt</h2>
@@ -145,6 +153,14 @@
     <section class="section container-narrow reveal">
       <h2 class="section-title" data-i18n="page.wirkstoffe-detail.faqTitle">Häufige Fragen</h2>
       <div class="faq" id="peptide-faq"></div>
+    </section>
+
+    <!-- VERWANDTE WIRKSTOFFE (Runde "Wirkstoff-Ausbau 1" 14.09.): nur wenn
+         peptide.verwandt existiert und mindestens ein Slug tatsaechlich
+         aufgeloest werden kann (kein leerer Titel ohne Karten). -->
+    <section class="section container-narrow reveal" id="peptide-verwandt-section" hidden>
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.verwandtTitle">Verwandte Wirkstoffe</h2>
+      <div class="related-grid" id="peptide-verwandt-grid"></div>
     </section>
 
     <!-- ANBIETER MIT DIESEM WIRKSTOFF (wie bisher) -->
@@ -325,6 +341,48 @@
       document.getElementById("peptide-studienlage-pill").textContent = PK.tEnum("studienlage", peptide.studienlage);
       document.getElementById("peptide-kurz").textContent = PK.tx(peptide, "kurz");
       document.getElementById("peptide-beschreibung").textContent = PK.tx(peptide, "beschreibung");
+
+      // Steckbrief (Quick Facts, v2.1): nur rendern, wenn der Draft das Feld
+      // schon fuehrt (Runde "Wirkstoff-Ausbau 1" deckt aktuell 15 von N
+      // Wirkstoffen ab, siehe tools/build_peptides.py). null-Werte je Fakt
+      // zeigen "nicht ermittelbar" statt eine leere Zelle.
+      var factsSection = document.getElementById("peptide-facts-section");
+      var factsGrid = document.getElementById("peptide-facts");
+      var sb = peptide.steckbrief;
+      if (factsGrid) factsGrid.textContent = "";
+      if (sb && typeof sb === "object") {
+        if (factsSection) factsSection.hidden = false;
+        var naText = PK.t("page.wirkstoffe-detail.factsNichtErmittelbar");
+        var factRows = [
+          ["factsCas", sb.cas],
+          ["factsMw", sb.molekulargewicht],
+          ["factsAs", (typeof sb.aminosaeuren === "number") ? String(sb.aminosaeuren) : null],
+          ["factsHwz", sb.halbwertszeit],
+          ["factsReinheit", sb.reinheitsstandard],
+          ["factsLoeslichkeit", sb.loeslichkeit]
+        ];
+        factRows.forEach(function (row) {
+          var item = document.createElement("div");
+          item.className = "facts-item";
+          var label = document.createElement("p");
+          label.className = "facts-label";
+          label.textContent = PK.t("page.wirkstoffe-detail." + row[0]);
+          var value = document.createElement("p");
+          value.className = "facts-value";
+          if (row[1] === null || row[1] === undefined || row[1] === "") {
+            value.textContent = naText;
+            value.setAttribute("data-empty", "true");
+          } else {
+            value.textContent = row[1];
+          }
+          item.appendChild(label);
+          item.appendChild(value);
+          factsGrid.appendChild(item);
+        });
+      } else if (factsSection) {
+        factsSection.hidden = true;
+      }
+
       document.getElementById("peptide-mechanismus").textContent = PK.tx(peptide, "mechanismus");
       document.getElementById("peptide-rechtsstatus").textContent = PK.tx(peptide, "rechtsstatus");
       document.getElementById("peptide-rekonstitution").textContent = PK.tx(peptide, "rekonstitution");
@@ -347,7 +405,24 @@
         pText.textContent = PK.tx(e, "kurz");
         var pQuelle = document.createElement("p");
         pQuelle.className = "text-small muted";
-        pQuelle.textContent = e.quelle || "";
+        // PubMed-Link (Runde "Wirkstoff-Ausbau 1" 14.09.): "quelle" ist ein
+        // freier Zitat-String, PMID falls vorhanden per Regex "PMID 12345678"
+        // herausgezogen. Kein PMID: reiner Text wie bisher, nichts erfunden.
+        var quelleText = e.quelle || "";
+        var pmidMatch = quelleText.match(/PMID\s+(\d+)/i);
+        if (pmidMatch) {
+          pQuelle.appendChild(document.createTextNode(quelleText.slice(0, pmidMatch.index)));
+          var pmidLink = document.createElement("a");
+          pmidLink.className = "btn-link";
+          pmidLink.href = "https://pubmed.ncbi.nlm.nih.gov/" + pmidMatch[1] + "/";
+          pmidLink.target = "_blank";
+          pmidLink.rel = "noopener";
+          pmidLink.textContent = pmidMatch[0];
+          pQuelle.appendChild(pmidLink);
+          pQuelle.appendChild(document.createTextNode(quelleText.slice(pmidMatch.index + pmidMatch[0].length)));
+        } else {
+          pQuelle.textContent = quelleText;
+        }
         li.appendChild(pPill);
         li.appendChild(pText);
         li.appendChild(pQuelle);
@@ -524,6 +599,37 @@
         batchTbody.appendChild(tr);
       });
       if (batchEmpty) batchEmpty.hidden = matchingBatches.length > 0;
+
+      // Verwandte Wirkstoffe (v2.1): Karten-Zeile, nur Slugs die sich
+      // tatsaechlich auf ein PK.peptides-Element aufloesen lassen (kein toter
+      // Link, falls ein verwandt-Slug mal aus dem Datensatz faellt).
+      var verwandtSection = document.getElementById("peptide-verwandt-section");
+      var verwandtGrid = document.getElementById("peptide-verwandt-grid");
+      if (verwandtGrid) verwandtGrid.textContent = "";
+      var verwandtSlugs = Array.isArray(peptide.verwandt) ? peptide.verwandt : [];
+      var verwandtPeptides = verwandtSlugs
+        .map(function (s) { return PK.peptideBySlug(s); })
+        .filter(function (p) { return !!p; });
+      if (verwandtPeptides.length) {
+        if (verwandtSection) verwandtSection.hidden = false;
+        verwandtPeptides.forEach(function (vp) {
+          var card = document.createElement("a");
+          card.className = "card tilt";
+          card.href = "detail.html?slug=" + encodeURIComponent(vp.slug || "");
+          var pill = document.createElement("span");
+          pill.className = "pill";
+          pill.textContent = PK.tEnum("kategorie", vp.kategorie);
+          var title = document.createElement("p");
+          title.className = "card-title";
+          title.textContent = vp.name || "";
+          card.appendChild(pill);
+          card.appendChild(title);
+          verwandtGrid.appendChild(card);
+        });
+        PK.initTilt();
+      } else if (verwandtSection) {
+        verwandtSection.hidden = true;
+      }
 
       // CTA: intern zur Anbieter-Liste, vorgefiltert nach Wirkstoff
       if (ctaEl) ctaEl.href = "../anbieter/index.html?wirkstoff=" + encodeURIComponent(peptide.slug || "");

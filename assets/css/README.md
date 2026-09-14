@@ -197,6 +197,41 @@ Für Anbieter-Karten **nicht** manuell bauen : `PK.renderVendorCard(vendor, base
 (baut `.vendor-card` inkl. Score, Pills, internem Detail-Link und optionalem externem
 Shop-Link mit `.badge-ad` + `rel="sponsored nofollow"` + `target="_blank"`).
 
+## .facts : Steckbrief / Quick Facts (Wirkstoff-Detail, v2.1, 14.09.)
+
+```html
+<div class="facts">
+  <div class="facts-item">
+    <p class="facts-label">CAS-Nummer</p>
+    <p class="facts-value">137525-51-0</p>
+  </div>
+  <div class="facts-item">
+    <p class="facts-value" data-empty="true">nicht ermittelbar</p>
+  </div>
+</div>
+```
+3-Spalten-Grid (mobil 2 Spalten), 1px-Hairline zwischen den Zellen statt Schatten
+(DESIGN.md: Elevation über Flächenwechsel, nie Card-Shadow). `data-empty="true"`
+auf `.facts-value` für „nicht ermittelbar“ (null-Wert im Draft) : kleinerer,
+nicht fett gesetzter Text statt einer leeren Zelle. Wird von
+`wirkstoffe/detail.html` aus `peptide.steckbrief` gerendert, Sektion bleibt
+`hidden`, solange ein Draft noch kein `steckbrief`-Feld führt (Schema v2.1,
+`data/peptides_draft/SCHEMA_peptide_v2.md`).
+
+## .related-grid : Verwandte Wirkstoffe (Wirkstoff-Detail, v2.1)
+
+```html
+<div class="related-grid">
+  <a class="card tilt" href="detail.html?slug=tb-500">
+    <span class="pill">Regeneration</span>
+    <p class="card-title">TB-500</p>
+  </a>
+</div>
+```
+Kein neues Karten-Markup : jede Kachel ist eine normale `.card`, das Grid bricht
+automatisch auf schmale Viewports (`auto-fit, minmax(180px,1fr)`). Quelle ist
+`peptide.verwandt` (2 bis 4 Slugs aus unseren eigenen Wirkstoff-Seiten).
+
 ## .pill (+ Varianten)
 
 `.pill` (neutral) · `.pill-ok` (grün, z. B. RUO vorhanden) · `.pill-warn` (orange, z. B. Rabatt%)
