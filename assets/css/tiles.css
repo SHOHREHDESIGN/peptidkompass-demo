@@ -35,8 +35,11 @@
 .table .table-name-block{ display:flex; flex-direction:column; gap:6px; min-width:0; }
 .table .table-name-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 .table .table-score-row .score-bar-track{ width:110px; }
-.table td:nth-child(13), .table th:nth-child(13){ min-width:270px; }
-.table .code-box-compact{ margin:0; padding:6px 8px; gap:6px; }
+.table .col-rabatt-hidden{ display:none; }
+/* Aktionszelle: Button oben, Partner-Code direkt darunter (Vic 14.09.) */
+.table .table-action-stack{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; min-width:220px; }
+.table .table-action-stack .btn{ white-space:nowrap; }
+.table .code-box-compact{ margin:0; padding:6px 8px; gap:6px; width:100%; box-sizing:border-box; }
 .table .code-box-compact code{ font-size:13px; }
 .table .code-box-compact .btn{ padding:4px 10px; font-size:12px; min-height:26px; }
 .table .code-box-hint{ font-size:11px; }

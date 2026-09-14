@@ -109,7 +109,7 @@
             <th data-extra data-sortable onclick="PK.sortTable(this.closest('table'),9)" data-i18n="page.vergleich.colZahlung">Zahlung</th>
             <th data-sortable onclick="PK.sortTable(this.closest('table'),10)" data-i18n="page.vergleich.colCoas">CoAs</th>
             <th data-sortable onclick="PK.sortTable(this.closest('table'),11)" data-i18n="page.vergleich.colVersand">Versand</th>
-            <th data-sortable onclick="PK.sortTable(this.closest('table'),12)" data-i18n="page.vergleich.colRabatt">Rabatt</th>
+            <th class="col-rabatt-hidden" data-sortable onclick="PK.sortTable(this.closest('table'),12)" data-i18n="page.vergleich.colRabatt">Rabatt</th>
             <th data-sticky="right" data-i18n="page.vergleich.colAktion">Aktion</th>
           </tr>
         </thead>
@@ -308,21 +308,20 @@
         ? PK.t("page.vergleich.versandRange", { min: versand.tageMin, max: versand.tageMax }) : PK.t("global.na");
       row.appendChild(tdVersand);
 
-      // Rabatt: Prozent, sonst Code-Hinweis (v2.1, Partner ohne belegten
-      // %-Satz), sonst „–" (Screenreader: „keiner"/"none")
+      // Rabatt: Spalte ist ausgeblendet (Vic 14.09.), bleibt aber als
+      // Sortierquelle erhalten. Der Code selbst steht in der Aktionszelle
+      // direkt unter „Zum Anbieter".
       var tdRabatt = document.createElement("td");
+      tdRabatt.className = "col-rabatt-hidden";
       if (v.rabatt && typeof v.rabatt.prozent === "number") {
         tdRabatt.setAttribute("data-sort", String(v.rabatt.prozent));
         tdRabatt.textContent = "-" + PK.byNum(v.rabatt.prozent) + "%";
       } else if (v.rabatt && v.rabatt.code) {
         tdRabatt.setAttribute("data-sort", "0");
-        tdRabatt.appendChild(PK.renderCodeBox(v));
+        tdRabatt.textContent = v.rabatt.code;
       } else {
         tdRabatt.setAttribute("data-sort", "-1");
-        var none = document.createElement("span");
-        none.setAttribute("aria-label", PK.t("page.vergleich.rabattNone"));
-        none.textContent = "–";
-        tdRabatt.appendChild(none);
+        tdRabatt.textContent = "";
       }
       row.appendChild(tdRabatt);
 
@@ -341,7 +340,12 @@
       badgeAd.className = "badge-ad";
       badgeAd.textContent = PK.tx(window.PK.site, "affiliateNote") || PK.t("global.badge.ad");
       shopLink.appendChild(badgeAd);
-      tdAction.appendChild(shopLink);
+      var actionStack = document.createElement("div");
+      actionStack.className = "table-action-stack";
+      actionStack.appendChild(shopLink);
+      var actionCode = PK.renderCodeBox(v);
+      if (actionCode) actionStack.appendChild(actionCode);
+      tdAction.appendChild(actionStack);
       row.appendChild(tdAction);
 
       return row;
