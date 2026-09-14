@@ -58,6 +58,22 @@
 .visual-band img{ width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:640px){ .visual-band{ aspect-ratio:16/10; } }
 
+/* Step-Icons: 5-Schritte-Anleitung charge-pruefen.html (Vic 15.09.) – 44px
+   rundes, leicht blau getöntes Plättchen vor Schritt-Nummer/Text. Nur
+   bestehende Tokens: Fläche --info-bg (dieselbe Blau-Tönung wie .pill-info,
+   kippt automatisch in Dark Mode), Strich/Icon-Farbe --accent (Action
+   Blue). Kein neues Custom Property, kein Schatten (DESIGN.md-Grammatik:
+   Elevation über Flächenwechsel). Icons selbst sind Inline-SVG im
+   charge-pruefen.html-Bootstrap-Script (STEP_ICONS), aria-hidden. */
+#steps-list .step-icon-plate{
+  display:flex; align-items:center; justify-content:center;
+  width:44px; height:44px; flex:0 0 auto;
+  border-radius:var(--radius-pill);
+  background:var(--info-bg); color:var(--accent);
+  margin-bottom:var(--sp-2);
+}
+#steps-list .step-icon-plate svg{ width:24px; height:24px; display:block; }
+
 /* Deals: Logo über dem Namen, gleiche Höhe wie auf den Anbieter-Karten */
 .deal-card .vlogo{ margin-bottom:var(--sp-2); }
 .deal-card .brand-logo-fallback{ display:block; margin-bottom:var(--sp-2); }

@@ -38,6 +38,49 @@ Format je Komponente: Klasse(n) → Zweck → Markup-Snippet.
 : siehe Type-Scale in system.css. Überschriften (`h1`-`h4`) haben Basis-Styles,
 Utility-Klassen für abweichende Größen an anderen Elementen (z. B. `<p class="h2">`).
 
+## Nav-Dropdowns : Wirkstoffe-Mega-Menü, Anbieter, Prüfen
+
+Drei Gruppen in `.nav-links`/`.nav-menu-links` sind keine einzelnen Links mehr,
+sondern Dropdown-Gruppen. **Kein Worker baut dieses Markup per Hand** :
+`PK.initNavDropdowns()` (assets/js/site.js) wandelt die drei betroffenen
+`<li><a>…</a></li>` zur Laufzeit in `<button aria-haspopup>` + Panel um :
+- **Wirkstoffe** : Mega-Menü, alle 31 Wirkstoffe in Spalten je Kategorie
+  (`window.PK.nav.peptides`), Fuß-Link "Alle Wirkstoffe".
+- **Anbieter** : Top-5 nach Gesamtscore (`window.PK.nav.vendors`) mit
+  Partner-Pill, Fuß-Links "Alle Anbieter" / "Vergleich" / "Deals".
+- **Prüfen** : bündelt die bisherigen Einzel-Links "Charge prüfen" und
+  "Rechner" an der Position von "Rechner" (Charge-prüfen-Listenpunkt
+  entfällt), je Eintrag Titel + 1 Zeile Beschreibung.
+
+**Datenquelle**: `data/nav.js` (generiert, siehe Kopfkommentar dort), muss
+auf **jeder** der 14 Seiten **nach den übrigen Datendateien, vor
+`data/i18n/global.js`** eingebunden werden (Unterseiten mit `../`-Präfix wie
+alle anderen Daten-Skripte). Fehlt der Script-Tag, bleibt die Nav flach
+(`console.warn`, kein Crash). Ändert sich Wirkstoff-/Anbieterbestand oder die
+Score-Gewichtung: `python3 tools/build_nav.py` neu laufen lassen, nie von
+Hand editieren.
+
+**Init**: `PK.initNavDropdowns()` direkt nach `PK.initNav()` im
+Seiten-Bootstrap aufrufen (Pflicht-Init-Reihenfolge unten).
+
+**Öffnen/Schließen**: Desktop (≥1024px) per Hover (`:hover`/`:focus-within`,
+CSS) UND per Klick/Enter (`.is-open`, JS pflegt zusätzlich `aria-expanded`
+für Screenreader). Escape schließt + Fokus zurück auf den Trigger, Klick
+außerhalb schließt ebenso (beides JS). Mobile (<1024px, innerhalb der
+`.nav-menu`-Vollbildfläche): dieselbe Gruppe klappt als Akkordeon auf statt
+als Overlay-Panel. Aktiver Zustand: `aria-current="page"` vom ursprünglichen
+Link wandert auf den neuen Trigger (`aria-current="true"`).
+
+**i18n**: Trigger-Label + Panel-Texte laufen über die üblichen
+`data/i18n/global.js`-Keys (`global.nav.pruefen`,
+`global.nav.alleWirkstoffe`, `global.nav.alleAnbieter`,
+`global.nav.chargePruefenDesc`, `global.nav.rechnerDesc`,
+`global.enum.kategorie.*` für die Mega-Menü-Spaltentitel) : DE UND EN
+gepflegt, kein neuer Mechanismus.
+
+CSS ausschließlich in `system.css` Abschnitt "5b. NAV-DROPDOWNS" : nichts
+davon lokal in einer Seite duplizieren.
+
 ## .nav : Glas-Header + Mobile-Menü
 
 ```html
@@ -459,12 +502,15 @@ keine Abweichungen, keine neuen Mechaniken erfinden.
 <script src="data/vendors.js"></script>
 <script src="data/peptides.js"></script>
 <script src="data/batches.js"></script>
+<script src="data/nav.js"></script>
 <script src="data/i18n/global.js"></script>
 <script src="data/i18n/<seitenname>.js"></script>
 <script src="assets/js/site.js"></script>
 ```
 `global.js` IMMER zuerst, dein Seiten-Wörterbuch danach, `site.js` zuletzt.
-Unterseiten (`anbieter/`, `wirkstoffe/`) präfixen alle Pfade mit `../`.
+`data/nav.js` (Nav-Dropdown-Daten, siehe Abschnitt "Nav-Dropdowns" oben) steht
+nach den übrigen Datendateien, vor den i18n-Wörterbüchern, auf **jeder** der
+14 Seiten. Unterseiten (`anbieter/`, `wirkstoffe/`) präfixen alle Pfade mit `../`.
 
 ### 2. Statischen Text taggen
 
@@ -497,6 +543,7 @@ keine Ausrufezeichen, "Research use only" statt Heilversprechen.
   PK.initLangToggle();
 
   PK.initNav();
+  PK.initNavDropdowns(); // Wirkstoffe/Anbieter/Prüfen : siehe Abschnitt "Nav-Dropdowns" oben
   PK.initReveal();
   PK.initDemoBanner();
   PK.footerDisclaimer();

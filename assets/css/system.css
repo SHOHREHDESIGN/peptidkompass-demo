@@ -13,6 +13,7 @@
    3.  Layout-Helfer (.section, .grid-2/3/4, .container/.container-narrow)
    4.  Typografie-Klassen (.eyebrow, .lead, .muted, Headline-Utilities)
    5.  .nav          : Glas-Sticky-Header + Mobile-Vollbild-Menü (.nav-menu)
+   5b. Nav-Dropdowns : Wirkstoffe-Mega-Menü, Anbieter, Prüfen (Gruppen-Punkt)
    6.  .hero         : Startseiten-/Seiten-Hero
    7.  .card / .vendor-card : Karten-System
    8.  .pill (+ Varianten)
@@ -461,6 +462,140 @@ body.nav-open{ overflow:hidden; }
 .lang-toggle--menu{ margin:0 0 var(--sp-3); align-self:flex-start; }
 @media (max-width:1023px){
   .nav-inner > .lang-toggle{ display:none; }
+}
+
+/* -----------------------------------------------------------------------
+   5b. NAV-DROPDOWNS : Wirkstoffe-Mega-Menü, Anbieter, Prüfen (Gruppen-Punkt)
+   ----------------------------------------------------------------------- */
+/* PK.initNavDropdowns() (assets/js/site.js) baut diese Gruppen zur Laufzeit
+   aus den bestehenden <li><a>…</a></li> in .nav-links (Desktop) und
+   .nav-menu-links (Mobile-Vollbild) : kein Worker tippt dieses Markup per
+   Hand in eine der 14 Seiten, siehe assets/css/README.md "Nav-Dropdowns".
+   Öffnen: Desktop (>=1024px) per Hover (:hover/:focus-within, rein CSS -
+   funktioniert auch für die absolut positionierte Panel-Fläche, weil sie
+   ein DOM-Nachfahre des <li> bleibt) UND per Klick/Enter (.is-open, JS
+   pflegt zusätzlich aria-expanded für Screenreader, da :hover das nicht
+   tut). Schließen: Escape und Klick außerhalb (beides JS, CSS kann das
+   nicht). Mobile (<1024px, innerhalb der .nav-menu-Vollbildfläche): dieselbe
+   Gruppe klappt als Akkordeon auf (grid-template-rows 0fr→1fr), kein Hover
+   nötig/möglich auf Touch. Optik: Glas-Fläche wie .nav selbst
+   (backdrop-filter), Hairline-Rand, EIN bereits vorhandener Elevation-Token
+   (--shadow-2) statt eines neuen Schattenwerts (DESIGN.md "kein
+   Schatten-Overkill") - kein Karten-/Button-Schatten sonst im System, aber
+   ein schwebendes Overlay-Panel ist wie .nav-menu/.sub-nav-frosted eine
+   dokumentierte Elevation-Ausnahme. Timing: 200ms/var(--ease) exakt wie
+   beauftragt (weder --dur-fast/150ms noch --dur-base/300ms treffen das). */
+.nav-item-dropdown{ position:relative; }
+.nav-trigger{
+  display:inline-flex; align-items:center; gap:4px;
+  font:inherit; font-size:13px; color:var(--text-secondary);
+  background:none; border:0; padding:6px 2px; margin:0; cursor:pointer;
+  border-bottom:2px solid transparent;
+  transition:color var(--dur-fast) var(--ease);
+}
+.nav-trigger:hover,
+.nav-trigger[aria-expanded="true"],
+.nav-trigger[aria-current]{ color:var(--text); }
+.nav-trigger[aria-current]{ border-bottom-color:var(--accent); }
+.nav-trigger-caret{
+  flex:0 0 auto; width:10px; height:10px;
+  transition:transform var(--dur-fast) var(--ease);
+}
+.nav-trigger[aria-expanded="true"] .nav-trigger-caret{ transform:rotate(180deg); }
+
+.nav-dropdown-foot{
+  display:flex; gap:var(--sp-3); flex-wrap:wrap;
+  margin-top:var(--sp-2); padding-top:var(--sp-2); border-top:1px solid var(--line);
+}
+
+/* Wirkstoffe-Mega-Menü : Spalten je Kategorie (data/nav.js) */
+.nav-mega-grid{ display:grid; grid-template-columns:repeat(4,minmax(130px,1fr)); gap:var(--sp-3); }
+.nav-mega-col-title{
+  font-size:var(--fs-caption); font-weight:600; letter-spacing:.02em;
+  color:var(--text-secondary); margin:0 0 var(--sp-1);
+}
+.nav-mega-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; }
+.nav-mega-col a{
+  display:block; font-size:13px; color:var(--text); text-decoration:none;
+  padding:4px 6px; margin-inline:-6px; border-radius:var(--radius-sm);
+}
+.nav-mega-col a:hover{ background:var(--surface); }
+.nav-mega-col a[aria-current="page"]{ color:var(--accent); font-weight:600; }
+
+/* Anbieter-Dropdown : Top-5 nach Gesamtscore (data/nav.js) */
+.nav-dropdown-vendors{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; min-width:260px; }
+.nav-dropdown-vendors a{
+  display:flex; align-items:center; justify-content:space-between; gap:var(--sp-2);
+  padding:8px 6px; border-radius:var(--radius-sm); text-decoration:none; color:var(--text);
+}
+.nav-dropdown-vendors a:hover{ background:var(--surface); }
+.nav-dropdown-vendor-name{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; }
+.nav-dropdown-vendor-score{
+  flex:0 0 auto; font-size:12px; font-weight:700; padding:2px 8px;
+  border-radius:var(--radius-pill); background:var(--surface); color:var(--text-secondary);
+}
+.nav-dropdown-vendor-score.score-band-good{ background:var(--ok-bg); color:var(--pill-ok-text); }
+.nav-dropdown-vendor-score.score-band-mid{ background:var(--info-bg); color:var(--pill-info-text); }
+.nav-dropdown-vendor-score.score-band-low{ background:var(--warn-bg); color:var(--warn); }
+
+/* Prüfen-Dropdown : Charge prüfen + Rechner, je 1 Zeile Beschreibung */
+.nav-dropdown-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; min-width:240px; }
+.nav-dropdown-list a{
+  display:block; padding:8px 6px; border-radius:var(--radius-sm); text-decoration:none; color:var(--text);
+}
+.nav-dropdown-list a:hover{ background:var(--surface); }
+.nav-dropdown-list a[aria-current="page"] .nav-dropdown-item-title{ color:var(--accent); }
+.nav-dropdown-item-title{ display:block; font-size:13px; font-weight:600; }
+.nav-dropdown-item-desc{ display:block; font-size:12px; color:var(--text-secondary); margin-top:2px; }
+
+@media (min-width:1024px){
+  .nav-dropdown{
+    position:absolute; top:calc(100% + 12px); left:0;
+    background:color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    backdrop-filter:saturate(180%) blur(20px);
+    border:1px solid var(--line); border-radius:var(--radius-card);
+    box-shadow:var(--shadow-2);
+    padding:var(--sp-3);
+    opacity:0; visibility:hidden; pointer-events:none;
+    transform:translateY(-6px);
+    transition:opacity .2s var(--ease), transform .2s var(--ease), visibility 0s linear .2s;
+    z-index:120;
+  }
+  /* JS misst nach dem Öffnen, ob das Panel rechts aus dem Viewport laufen
+     würde (Trigger-Position variiert : Anbieter/Wirkstoffe/Prüfen stehen an
+     unterschiedlichen Stellen der Nav) und schaltet bei Bedarf auf rechts-
+     bündig um, statt eines festen Werts je Trigger. */
+  .nav-dropdown--right{ left:auto; right:0; }
+  .nav-dropdown--mega{ min-width:600px; }
+  .nav-dropdown--anbieter{ min-width:300px; }
+  .nav-dropdown--pruefen{ min-width:260px; }
+  .nav-item-dropdown:hover .nav-dropdown,
+  .nav-item-dropdown:focus-within .nav-dropdown,
+  .nav-item-dropdown.is-open .nav-dropdown{
+    opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0);
+    transition:opacity .2s var(--ease), transform .2s var(--ease), visibility 0s linear 0s;
+  }
+}
+
+@media (max-width:1023px){
+  .nav-trigger--menu{
+    display:flex; width:100%; justify-content:space-between; align-items:center;
+    text-align:left; font-size:1.5rem; font-weight:600; letter-spacing:-.01em;
+    color:var(--text); padding:var(--sp-2) 0; border-bottom:1px solid var(--line);
+  }
+  .nav-trigger--menu .nav-trigger-caret{ width:16px; height:16px; }
+  /* Akkordeon : grid-template-rows 0fr→1fr animiert auf die intrinsische
+     Höhe, ohne dass JS die Pixelhöhe messen muss (mehrere Panel-Längen:
+     Mega-Grid vs. 2-Zeilen-Liste). .nav-dropdown-inner clippt den Übergang. */
+  .nav-dropdown{
+    display:grid; grid-template-rows:0fr; opacity:0;
+    transition:grid-template-rows .2s var(--ease), opacity .2s var(--ease);
+  }
+  .nav-dropdown-inner{ overflow:hidden; padding:0 0 var(--sp-2) var(--sp-2); }
+  .nav-item-dropdown.is-open .nav-dropdown{ grid-template-rows:1fr; opacity:1; }
+  .nav-mega-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--sp-2) var(--sp-3); }
+  .nav-dropdown-vendors, .nav-dropdown-list{ min-width:0; }
 }
 
 /* -----------------------------------------------------------------------

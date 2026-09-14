@@ -48,6 +48,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.nav.anbieterFinden": "Anbieter finden",
     "global.nav.menuOeffnen": "Menü öffnen",
 
+    /* Nav-Dropdowns (PK.initNavDropdowns(), assets/js/site.js) */
+    "global.nav.pruefen": "Prüfen",
+    "global.nav.alleWirkstoffe": "Alle Wirkstoffe",
+    "global.nav.alleAnbieter": "Alle Anbieter",
+    "global.nav.chargePruefenDesc": "Chargennummer gegen unsere CoA-Datenbank prüfen",
+    "global.nav.rechnerDesc": "mg und ml berechnen, keine Dosierempfehlung",
+
     /* Trust-Gruppe (Nav-Menü unten + Footer) */
     "global.nav.methodik": "Methodik",
     "global.nav.affiliateHinweis": "Affiliate-Hinweis",
@@ -172,6 +179,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.nav.deals": "Deals",
     "global.nav.anbieterFinden": "Find a vendor",
     "global.nav.menuOeffnen": "Open menu",
+
+    /* Nav dropdowns (PK.initNavDropdowns(), assets/js/site.js) */
+    "global.nav.pruefen": "Verify",
+    "global.nav.alleWirkstoffe": "All peptides",
+    "global.nav.alleAnbieter": "All vendors",
+    "global.nav.chargePruefenDesc": "Check a batch number against our CoA database",
+    "global.nav.rechnerDesc": "Calculate mg and ml, no dosing recommendation",
 
     "global.nav.methodik": "Methodology",
     "global.nav.affiliateHinweis": "Affiliate disclosure",

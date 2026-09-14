@@ -687,6 +687,359 @@
   };
 
   /**
+   * PK.initNavDropdowns()
+   * Baut aus den bestehenden flachen Links in JEDEM .nav-links (Desktop)
+   * und .nav-menu-links (Mobile-Vollbild) drei Gruppen-Dropdowns:
+   *   - "Wirkstoffe" : Mega-Menü, Spalten je Kategorie (window.PK.nav.peptides)
+   *   - "Anbieter"   : Top-5 nach Gesamtscore + "Alle Anbieter"/"Vergleich"/"Deals"
+   *   - "Prüfen"     : fasst die bisherigen Einzel-Links "Rechner" und
+   *                    "Charge prüfen" an der Position von "Rechner" zusammen,
+   *                    der "Charge prüfen"-Listenpunkt wird entfernt.
+   * Erwartet window.PK.nav aus data/nav.js (VOR site.js geladen, siehe
+   * assets/css/README.md) : No-Op mit console.warn, falls das fehlt, damit
+   * eine Seite ohne den Script-Tag nicht crasht, sondern nur die flache Nav
+   * behält.
+   *
+   * Barrierefreiheit/Öffnen-Logik (Auftrag: "Hover UND Klick/Focus, schließt
+   * bei Escape und Klick außerhalb"): jede Gruppe bekommt einen <button
+   * aria-haspopup="true" aria-expanded="…"> statt des bisherigen <a> (die
+   * Navigation zur Übersichtsseite läuft stattdessen über den "Alle …"-Link
+   * im Panel, genau wie im chemverify-Vorbild, _research/
+   * chemverify_navigation_2026-09-14.md). Hover öffnet rein über CSS
+   * (:hover/:focus-within auf .nav-item-dropdown, system.css Abschnitt 5b) -
+   * das funktioniert auch für die absolut positionierte Panel-Fläche, weil
+   * sie ein DOM-Nachfahre des <li> bleibt (CSS :hover folgt dem DOM-Baum,
+   * nicht dem visuellen Layout). JS ergänzt: Klick-Toggle (Touch/Mobile hat
+   * kein Hover), aria-expanded-Pflege bei Hover UND Klick (damit
+   * Screenreader den Zustand bekommen, den :hover allein nicht liefert),
+   * Escape (schließt + Fokus zurück auf den Trigger) und Klick außerhalb.
+   * Aktiver Zustand: übernimmt aria-current="page" vom ursprünglichen Link
+   * auf den neuen Trigger (aria-current="true", gültiger ARIA-Token) : bleibt
+   * so auf Wirkstoffe/Anbieter-Index UND -Detailseiten korrekt (die
+   * bestehenden Nav-Markups setzen aria-current bereits auf beiden), ebenso
+   * auf den einzelnen Prüfen-Unterpunkten.
+   */
+  PK.initNavDropdowns = function () {
+    var nav = global.PK && global.PK.nav;
+    if (!nav || !Array.isArray(nav.peptides) || !Array.isArray(nav.vendors)) {
+      console.warn("PK.initNavDropdowns: window.PK.nav fehlt. data/nav.js vor assets/js/site.js einbinden (siehe assets/css/README.md).");
+      return;
+    }
+
+    var CAT_ORDER = ["Regeneration", "Stoffwechsel", "Wachstumshormon-Achse", "Haut & Kosmetik", "Kognition", "Immunsystem", "Sonstige"];
+    var groups = []; // { li, trigger, panel } : für Escape/Klick-außerhalb/Resize
+
+    document.querySelectorAll(".nav-links, .nav-menu-links").forEach(function (list) {
+      var basePath = basePathFor();
+      buildLinkGroup(list, "wirkstoffe/index.html", "global.nav.wirkstoffe", "nav-dropdown--mega", function (inner) {
+        buildWirkstoffePanel(inner, basePath);
+      });
+      buildLinkGroup(list, "anbieter/index.html", "global.nav.anbieter", "nav-dropdown--anbieter", function (inner) {
+        buildAnbieterPanel(inner, basePath);
+      });
+      buildPruefenGroup(list, basePath);
+    });
+
+    if (!groups.length) return;
+    bindGlobalClose();
+
+    /* .nav-logo zeigt zuverlässig das Pfad-Präfix: "index.html" im Root,
+       "../index.html" unter anbieter/wirkstoffe (siehe assets/css/README.md
+       "Unterseiten präfixen alle Hrefs mit ../"). Robuster als der erste
+       gefundene Nav-Link, weil "Anbieter"/"Wirkstoffe" auf ihrer jeweils
+       EIGENEN Indexseite selbst unpräfixiert sind (aria-current-Link). */
+    function basePathFor() {
+      var logo = document.querySelector(".nav-logo");
+      var href = (logo && logo.getAttribute("href")) || "";
+      return href.indexOf("../") === 0 ? "../" : "";
+    }
+
+    /* Auf anbieter/index.html, anbieter/detail.html, wirkstoffe/index.html und
+       wirkstoffe/detail.html ist der jeweils EIGENE Gruppen-Link (aria-current)
+       unpräfixiert ("index.html", siehe Kommentar zu basePathFor oben) statt
+       "anbieter/index.html"/"wirkstoffe/index.html" wie auf allen anderen
+       Seiten. Ohne diesen Ausgleich findet findLinkLi() den Link auf genau
+       diesen 4 Seiten nicht : Wirkstoffe/Anbieter bleiben dort ein flacher
+       Link statt Dropdown. currentSection() liest dafür den echten Ordner aus
+       location.pathname (robust gegen den Seiteninhalt, anders als
+       basePathFor(), das nur Root vs. Unterseite unterscheidet, nicht welche). */
+    function currentSection() {
+      var path = global.location.pathname;
+      if (/\/wirkstoffe\/[^/]*$/.test(path)) return "wirkstoffe/";
+      if (/\/anbieter\/[^/]*$/.test(path)) return "anbieter/";
+      return "";
+    }
+
+    function normalizedHref(a) {
+      var raw = a.getAttribute("href") || "";
+      var hadDotDot = raw.indexOf("../") === 0;
+      var href = raw.replace(/^(\.\.\/)+/, "");
+      if (!hadDotDot && href === "index.html") {
+        var section = currentSection();
+        if (section) href = section + href;
+      }
+      return href;
+    }
+
+    function findLinkLi(list, suffix) {
+      var links = list.querySelectorAll(":scope > li > a");
+      for (var i = 0; i < links.length; i++) {
+        if (normalizedHref(links[i]) === suffix) return links[i];
+      }
+      return null;
+    }
+
+    function caretIcon() {
+      var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 12 12");
+      svg.setAttribute("class", "nav-trigger-caret");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "1.6");
+      svg.setAttribute("stroke-linecap", "round");
+      svg.setAttribute("stroke-linejoin", "round");
+      svg.setAttribute("aria-hidden", "true");
+      var poly = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+      poly.setAttribute("points", "2.5 4.5 6 8 9.5 4.5");
+      svg.appendChild(poly);
+      return svg;
+    }
+
+    function makeTrigger(list, labelKey, isCurrent) {
+      var trigger = document.createElement("button");
+      trigger.type = "button";
+      trigger.className = list.classList.contains("nav-menu-links") ? "nav-trigger nav-trigger--menu" : "nav-trigger";
+      trigger.setAttribute("aria-haspopup", "true");
+      trigger.setAttribute("aria-expanded", "false");
+      if (isCurrent) trigger.setAttribute("aria-current", "true");
+      var label = document.createElement("span");
+      label.setAttribute("data-i18n", labelKey);
+      label.textContent = PK.t(labelKey);
+      trigger.appendChild(label);
+      trigger.appendChild(caretIcon());
+      return trigger;
+    }
+
+    function makePanel(extraClass) {
+      var panel = document.createElement("div");
+      panel.className = "nav-dropdown " + extraClass;
+      var inner = document.createElement("div");
+      inner.className = "nav-dropdown-inner";
+      panel.appendChild(inner);
+      return { panel: panel, inner: inner };
+    }
+
+    function buildLinkGroup(list, suffix, labelKey, extraClass, fillFn) {
+      var origLink = findLinkLi(list, suffix);
+      if (!origLink) return;
+      var li = origLink.closest("li");
+      var isCurrent = origLink.getAttribute("aria-current") === "page";
+
+      var trigger = makeTrigger(list, labelKey, isCurrent);
+      var built = makePanel(extraClass);
+      fillFn(built.inner);
+
+      li.textContent = ""; // ersetzt nur das statische <a>-Markup, keine Daten
+      li.classList.add("nav-item-dropdown");
+      li.appendChild(trigger);
+      li.appendChild(built.panel);
+
+      bindGroup(li, trigger, built.panel);
+    }
+
+    function buildWirkstoffePanel(inner, basePath) {
+      var byCategory = {};
+      nav.peptides.forEach(function (p) {
+        (byCategory[p.kategorie] = byCategory[p.kategorie] || []).push(p);
+      });
+
+      var grid = document.createElement("div");
+      grid.className = "nav-mega-grid";
+      CAT_ORDER.forEach(function (cat) {
+        var items = byCategory[cat];
+        if (!items || !items.length) return;
+        var col = document.createElement("div");
+        col.className = "nav-mega-col";
+        var title = document.createElement("p");
+        title.className = "nav-mega-col-title";
+        title.setAttribute("data-i18n", "global.enum.kategorie." + cat);
+        title.textContent = PK.t("global.enum.kategorie." + cat);
+        col.appendChild(title);
+        var ul = document.createElement("ul");
+        items.forEach(function (p) {
+          var li2 = document.createElement("li");
+          var a = document.createElement("a");
+          a.href = basePath + "wirkstoffe/detail.html?slug=" + encodeURIComponent(p.slug);
+          a.textContent = p.name;
+          li2.appendChild(a);
+          ul.appendChild(li2);
+        });
+        col.appendChild(ul);
+        grid.appendChild(col);
+      });
+      inner.appendChild(grid);
+      inner.appendChild(makeFoot([["global.nav.alleWirkstoffe", basePath + "wirkstoffe/index.html"]]));
+    }
+
+    function buildAnbieterPanel(inner, basePath) {
+      var ul = document.createElement("ul");
+      ul.className = "nav-dropdown-vendors";
+      nav.vendors.forEach(function (v) {
+        var li2 = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = basePath + "anbieter/detail.html?slug=" + encodeURIComponent(v.slug);
+
+        var nameWrap = document.createElement("span");
+        nameWrap.className = "nav-dropdown-vendor-name";
+        nameWrap.appendChild(document.createTextNode(v.name));
+        if (v.partner) {
+          var pill = document.createElement("span");
+          pill.className = "pill pill-info";
+          pill.setAttribute("data-i18n", "global.partner");
+          pill.textContent = PK.t("global.partner");
+          nameWrap.appendChild(pill);
+        }
+
+        var score = document.createElement("span");
+        var hasScore = typeof v.gesamt === "number";
+        score.className = "nav-dropdown-vendor-score" + (hasScore ? " score-band-" + PK.scoreBand(v.gesamt) : "");
+        score.textContent = hasScore ? PK.byNum(v.gesamt) : PK.t("global.na");
+
+        a.appendChild(nameWrap);
+        a.appendChild(score);
+        li2.appendChild(a);
+        ul.appendChild(li2);
+      });
+      inner.appendChild(ul);
+      inner.appendChild(makeFoot([
+        ["global.nav.alleAnbieter", basePath + "anbieter/index.html"],
+        ["global.nav.vergleich", basePath + "vergleich.html"],
+        ["global.nav.deals", basePath + "deals.html"]
+      ]));
+    }
+
+    function makeFoot(pairs) {
+      var foot = document.createElement("div");
+      foot.className = "nav-dropdown-foot";
+      pairs.forEach(function (pair) {
+        var a = document.createElement("a");
+        a.className = "btn-link";
+        a.href = pair[1];
+        a.setAttribute("data-i18n", pair[0]);
+        a.textContent = PK.t(pair[0]);
+        foot.appendChild(a);
+      });
+      return foot;
+    }
+
+    function buildPruefenGroup(list, basePath) {
+      var rechnerLink = findLinkLi(list, "rechner.html");
+      var chargeLink = findLinkLi(list, "charge-pruefen.html");
+      if (!rechnerLink || !chargeLink) return;
+      var rechnerLi = rechnerLink.closest("li");
+      var chargeLi = chargeLink.closest("li");
+      var isCurrent = rechnerLink.getAttribute("aria-current") === "page" || chargeLink.getAttribute("aria-current") === "page";
+
+      var trigger = makeTrigger(list, "global.nav.pruefen", isCurrent);
+      var built = makePanel("nav-dropdown--pruefen");
+
+      var ul = document.createElement("ul");
+      ul.className = "nav-dropdown-list";
+      [
+        { href: "charge-pruefen.html", titleKey: "global.nav.chargePruefen", descKey: "global.nav.chargePruefenDesc", current: chargeLink.getAttribute("aria-current") === "page" },
+        { href: "rechner.html", titleKey: "global.nav.rechner", descKey: "global.nav.rechnerDesc", current: rechnerLink.getAttribute("aria-current") === "page" }
+      ].forEach(function (item) {
+        var li2 = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = basePath + item.href;
+        if (item.current) a.setAttribute("aria-current", "page");
+        var t = document.createElement("span");
+        t.className = "nav-dropdown-item-title";
+        t.setAttribute("data-i18n", item.titleKey);
+        t.textContent = PK.t(item.titleKey);
+        var d = document.createElement("span");
+        d.className = "nav-dropdown-item-desc";
+        d.setAttribute("data-i18n", item.descKey);
+        d.textContent = PK.t(item.descKey);
+        a.appendChild(t);
+        a.appendChild(d);
+        li2.appendChild(a);
+        ul.appendChild(li2);
+      });
+      built.inner.appendChild(ul);
+
+      rechnerLi.textContent = "";
+      rechnerLi.classList.add("nav-item-dropdown");
+      rechnerLi.appendChild(trigger);
+      rechnerLi.appendChild(built.panel);
+
+      chargeLi.parentNode.removeChild(chargeLi);
+
+      bindGroup(rechnerLi, trigger, built.panel);
+    }
+
+    function matchesDesktop() {
+      return global.matchMedia && global.matchMedia("(min-width:1024px)").matches;
+    }
+
+    function setOpen(g, open) {
+      g.li.classList.toggle("is-open", open);
+      g.trigger.setAttribute("aria-expanded", String(open));
+      if (!open) { g.panel.classList.remove("nav-dropdown--right"); return; }
+      if (!matchesDesktop()) return;
+      // Overflow-Check erst NACH dem Öffnen (Layout muss stehen) : klappt
+      // das Panel rechts aus dem Viewport, auf rechtsbündig umschalten.
+      g.panel.classList.remove("nav-dropdown--right");
+      var rect = g.panel.getBoundingClientRect();
+      var vw = global.innerWidth || document.documentElement.clientWidth;
+      if (rect.right > vw - 12) g.panel.classList.add("nav-dropdown--right");
+    }
+
+    function closeAll() {
+      groups.forEach(function (g) { setOpen(g, false); });
+    }
+
+    function bindGroup(li, trigger, panel) {
+      var g = { li: li, trigger: trigger, panel: panel };
+      groups.push(g);
+
+      trigger.addEventListener("click", function () {
+        var willOpen = !li.classList.contains("is-open");
+        closeAll();
+        setOpen(g, willOpen);
+      });
+      // Hover-Zustand zusätzlich für aria-expanded pflegen (die eigentliche
+      // Sichtbarkeit übernimmt CSS :hover, siehe system.css 5b) : ein reiner
+      // Maus-Hover soll für Screenreader denselben Zustand melden wie Klick.
+      li.addEventListener("mouseenter", function () {
+        if (matchesDesktop()) setOpen(g, true);
+      });
+      li.addEventListener("mouseleave", function () {
+        if (matchesDesktop()) setOpen(g, false);
+      });
+    }
+
+    function bindGlobalClose() {
+      document.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape") return;
+        var openGroup = groups.filter(function (g) { return g.li.classList.contains("is-open"); });
+        if (!openGroup.length) return;
+        var focused = document.activeElement;
+        closeAll();
+        openGroup.forEach(function (g) {
+          if (g.panel.contains(focused) || g.trigger === focused) g.trigger.focus();
+        });
+      });
+      document.addEventListener("click", function (e) {
+        groups.forEach(function (g) {
+          if (!g.li.contains(e.target)) setOpen(g, false);
+        });
+      });
+      global.addEventListener("resize", closeAll);
+    }
+  };
+
+  /**
    * PK.initReveal()
    * IntersectionObserver für alle .reveal-Elemente: fügt .is-visible hinzu,
    * sobald das Element in den Viewport kommt (einmalig, dann unobserve).
