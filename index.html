@@ -5,14 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="page.index.title">Peptide Compass · Peptid-Anbieter transparent vergleichen</title>
 <meta name="description" data-i18n="page.index.metaDescription" content="Peptid-Anbieter transparent vergleichen: Peptide Compass prüft Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Demo-Projekt, keine medizinische Beratung.">
-<link rel="canonical" href="https://peptidecompass.example/">
+<link rel="canonical" href="https://peptidkompass.com/">
+<link rel="alternate" hreflang="de" href="https://peptidkompass.com/?lang=de">
+<link rel="alternate" hreflang="en" href="https://peptidkompass.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n="page.index.ogTitle" content="Peptide Compass · Peptid-Anbieter transparent vergleichen">
 <meta property="og:description" data-i18n="page.index.ogDescription" content="Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg: ein Score, fünf Kriterien, volle Transparenz.">
-<meta property="og:url" content="https://peptidecompass.example/">
-<meta property="og:image" content="assets/img/og.jpg">
+<meta property="og:url" content="https://peptidkompass.com/">
+<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/system.css">
+<link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
+<link rel="manifest" href="assets/brand/favicon/site.webmanifest">
 <!-- Fix-Runde 3, Befund 11: erste 4 Logo-Leisten-Bilder vorab laden, damit
      der Streifen beim First Paint nicht mit einem leeren Ausschnitt startet
      (PK.initLogoStrip baut die Leiste erst nach data/vendors.js + site.js,
@@ -28,7 +35,7 @@
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
 
 <div class="demo-banner" data-demo-banner hidden>
-  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+  <span data-demo-banner-text>Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.</span>
 </div>
 
 <header class="nav">
@@ -288,8 +295,8 @@
         <img src="assets/img/sec_peptides.jpg" alt="" loading="lazy" onerror="this.style.display='none'">
       </div>
     </div>
-    <div class="grid-4" id="peptide-grid" style="margin-top:var(--sp-4);"></div>
-    <p style="margin-top:var(--sp-3);"><a class="btn-link" href="wirkstoffe/index.html" data-i18n="page.index.allPeptidesLink">Alle Wirkstoffe ansehen</a></p>
+    <div class="grid-3" id="peptide-grid" style="margin-top:var(--sp-4);"></div>
+    <p style="margin-top:var(--sp-3);"><a class="btn-link" href="wirkstoffe/index.html" data-i18n="page.index.allPeptidesLink">Alle 15 Wirkstoffe</a></p>
   </section>
 
   <!-- RECHNER-TEASER -->
@@ -503,10 +510,17 @@
         });
       }
 
-      // Wirkstoff-Vorschau (erste 4 Einträge)
+      // Wirkstoff-Vorschau: die 6 Peptide mit eigenem mol_-Foto (v2, 14.09.,
+      // 9 der 15 Wirkstoffe haben noch kein Molekül-Foto, siehe Auftrag Teil 4).
+      // Fest verdrahtete Slug-Liste statt Datenfeld, weil "hat ein Bild" eine
+      // Asset-Eigenschaft ist, kein Peptid-Datenfeld.
+      var PEPTIDE_PREVIEW_SLUGS = ["bpc-157", "tb-500", "semaglutid", "cjc-1295", "ghk-cu", "epitalon"];
       if (peptideGrid) {
         peptideGrid.textContent = "";
-        peptides.slice(0, 4).forEach(function (p) {
+        var previewPeptides = PEPTIDE_PREVIEW_SLUGS
+          .map(function (slug) { return peptides.find(function (p) { return p.slug === slug; }); })
+          .filter(Boolean);
+        previewPeptides.forEach(function (p) {
           var a = document.createElement("a");
           a.className = "card tilt";
           a.href = "wirkstoffe/detail.html?slug=" + encodeURIComponent(p.slug || "");

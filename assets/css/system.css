@@ -716,7 +716,9 @@ body.nav-open{ overflow:hidden; }
 
 /* Klon-Ebene: eigenständiger Layer in .hero-3d-stage, per JS erzeugt
    (site.js initHeroGlass), Grundposition deckt exakt .hero-copy ab. */
-.hero-glass-refract{
+.hero-glass-refract{ display:none !important; /* Refraktion deaktiviert, Vic 14.09. */
+}
+.hero-glass-refract-legacy{
   position:absolute; z-index:1; overflow:hidden;
   pointer-events:none; user-select:none;
   -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
@@ -851,6 +853,10 @@ a.card:hover, .card.is-interactive:hover{
 /* -----------------------------------------------------------------------
    10. .code-box : Rabattcode mit Copy-Button
    ----------------------------------------------------------------------- */
+.code-box-compact{ margin:var(--sp-2) 0 0; padding:8px 10px; gap:8px; flex-wrap:wrap; }
+.code-box-compact code{ font-size:14px; }
+.code-box-compact .btn{ padding:5px 12px; font-size:13px; min-height:30px; }
+.code-box-hint{ font-size:12px; color:var(--text-secondary); flex-basis:100%; }
 .code-box{
   display:flex; align-items:center; gap:var(--sp-2);
   background:var(--surface); border:1px dashed var(--line-strong);

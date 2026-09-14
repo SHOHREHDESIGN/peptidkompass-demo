@@ -5,20 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="page.deals.title">Deals · Peptide Compass</title>
 <meta name="description" data-i18n="page.deals.metaDescription" content="Alle Rabattcodes der geprüften Peptid-Anbieter im Überblick. Code kopieren, beim Anbieter einlösen.">
-<link rel="canonical" href="https://peptidecompass.example/deals.html">
+<link rel="canonical" href="https://peptidkompass.com/deals.html">
+<link rel="alternate" hreflang="de" href="https://peptidkompass.com/deals.html?lang=de">
+<link rel="alternate" hreflang="en" href="https://peptidkompass.com/deals.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/deals.html?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n="page.deals.ogTitle" content="Deals · Peptide Compass">
 <meta property="og:description" data-i18n="page.deals.ogDescription" content="Alle Rabattcodes im Überblick. Code kopieren, beim Anbieter einlösen.">
-<meta property="og:url" content="https://peptidecompass.example/deals.html">
-<meta property="og:image" content="assets/img/og.jpg">
+<meta property="og:url" content="https://peptidkompass.com/deals.html">
+<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/system.css">
+<link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
+<link rel="manifest" href="assets/brand/favicon/site.webmanifest">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
 
 <div class="demo-banner" data-demo-banner hidden>
-  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+  <span data-demo-banner-text>Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.</span>
 </div>
 
 <header class="nav">
@@ -82,7 +89,7 @@
   <section class="section-tight container-narrow reveal">
     <div class="card section-tinted">
       <p class="card-title" data-i18n="page.deals.howTitle">So funktionieren die Codes</p>
-      <p class="card-body" data-i18n="page.deals.howBody">Codes können jederzeit vom Anbieter geändert oder beendet werden. Wir aktualisieren die Demo-Daten regelmäßig, eine Garantie für Gültigkeit im Einzelfall geben wir nicht. Beim Anbieter selbst siehst du den aktuellen Stand vor dem Kauf.</p>
+      <p class="card-body" data-i18n="page.deals.howBody">Codes können jederzeit vom Anbieter geändert oder beendet werden. Wir aktualisieren die Angaben regelmäßig, eine Garantie für Gültigkeit im Einzelfall geben wir nicht. Beim Anbieter selbst siehst du den aktuellen Stand vor dem Kauf.</p>
     </div>
     <p class="text-small muted" style="margin-top:var(--sp-2);" data-i18n="page.deals.affiliateHint">Links mit dem Hinweis "Anzeige" sind Affiliate-Links. Kaufst du darüber, erhalten wir unter Umständen eine Provision, für dich bleibt der Preis gleich.</p>
   </section>
@@ -127,7 +134,10 @@
     PK.footerDisclaimer();
 
     var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
-    var deals = vendors.filter(function (v) { return v.rabatt && v.rabatt.prozent; });
+    // Ein Deal braucht nur einen Code (data/SCHEMA.md v2.1, Partner-Vendoren
+    // können prozent:null haben, wenn der Prozentsatz nicht bekannt ist -
+    // trotzdem ein echter Deal, kein Grund ihn auszublenden).
+    var deals = vendors.filter(function (v) { return v.rabatt && v.rabatt.code; });
 
     var grid = document.getElementById("deals-grid");
     var empty = document.getElementById("deals-empty");
@@ -152,10 +162,27 @@
       name.textContent = v.name || "";
       card.appendChild(name);
 
-      var percent = document.createElement("p");
-      percent.className = "h2";
-      percent.textContent = "-" + PK.byNum(v.rabatt.prozent) + "%";
-      card.appendChild(percent);
+      if (v.partner === true) {
+        var partnerPill = document.createElement("span");
+        partnerPill.className = "pill pill-info";
+        partnerPill.textContent = PK.t("global.partner");
+        card.appendChild(partnerPill);
+      }
+
+      // Prozent nur zeigen, wenn belegt. Ist nur ein Code ohne Prozentsatz
+      // hinterlegt (v2.1, Partner ohne belegten %-Satz), NIE "-null%"
+      // rendern, sondern den Hinweistext aus vendor.rabatt.hinweis.
+      if (typeof v.rabatt.prozent === "number") {
+        var percent = document.createElement("p");
+        percent.className = "h2";
+        percent.textContent = "-" + PK.byNum(v.rabatt.prozent) + "%";
+        card.appendChild(percent);
+      } else if (v.rabatt.hinweis) {
+        var hinweis = document.createElement("p");
+        hinweis.className = "text-small muted";
+        hinweis.textContent = PK.tx(v.rabatt, "hinweis");
+        card.appendChild(hinweis);
+      }
 
       var box = document.createElement("div");
       box.className = "code-box";
@@ -188,7 +215,7 @@
 
       var shopLink = document.createElement("a");
       shopLink.className = "btn btn-secondary ext-link";
-      shopLink.href = PK.safeUrl(v.affiliateUrl);
+      shopLink.href = PK.safeUrl(PK.vendorHref(v));
       shopLink.target = "_blank";
       shopLink.rel = "sponsored nofollow";
       shopLink.setAttribute("data-affiliate", "true");

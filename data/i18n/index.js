@@ -55,7 +55,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.index.peptideEyebrow": "Wirkstoff-Wissen",
     "page.index.peptideTitle": "Wirkstoffe verstehen",
-    "page.index.allPeptidesLink": "Alle Wirkstoffe ansehen",
+    "page.index.allPeptidesLink": "Alle 15 Wirkstoffe",
 
     "page.index.calcEyebrow": "Anmisch-Rechner",
     "page.index.calcTitle": "Rechnet mg und ml sauber um, ganz ohne Dosierungsempfehlung.",
@@ -126,7 +126,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.index.peptideEyebrow": "Peptide knowledge",
     "page.index.peptideTitle": "Understand peptides",
-    "page.index.allPeptidesLink": "View all peptides",
+    "page.index.allPeptidesLink": "All 15 peptides",
 
     "page.index.calcEyebrow": "Mixing calculator",
     "page.index.calcTitle": "Converts mg and ml cleanly, with no dosing recommendation.",

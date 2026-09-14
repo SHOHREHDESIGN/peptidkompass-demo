@@ -5,18 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title id="page-title" data-i18n="page.anbieter-detail.title">Anbieter-Detail · Peptide Compass</title>
 <meta name="description" id="page-description" data-i18n="page.anbieter-detail.metaDescription" content="Volle Entscheidungsgrundlage zu einem Peptid-Anbieter: Score-Breakdown, Labor-Nachweise, Rechtsrahmen, Versand und Produkte.">
-<link rel="canonical" id="page-canonical" href="https://peptidecompass.example/anbieter/detail.html">
+<link rel="canonical" id="page-canonical" href="https://peptidkompass.com/anbieter/detail.html">
+<link rel="alternate" hreflang="de" href="https://peptidkompass.com/anbieter/detail.html?lang=de">
+<link rel="alternate" hreflang="en" href="https://peptidkompass.com/anbieter/detail.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/anbieter/detail.html?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" id="og-title" data-i18n="page.anbieter-detail.ogTitle" content="Anbieter-Detail · Peptide Compass">
-<meta property="og:image" content="../assets/img/og.jpg">
+<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/css/system.css">
+<link rel="icon" href="../assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon/favicon-180.png">
+<link rel="manifest" href="../assets/brand/favicon/site.webmanifest">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
 
 <div class="demo-banner" data-demo-banner hidden>
-  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+  <span data-demo-banner-text>Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.</span>
 </div>
 
 <header class="nav">
@@ -84,6 +91,7 @@
           <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:var(--sp-2);">
             <span class="pill" id="vendor-land-pill">DE</span>
             <span class="pill pill-info" id="vendor-demo-pill" data-i18n="page.anbieter-detail.demoPill" hidden>Demo-Daten</span>
+            <span class="pill pill-info" id="vendor-partner-pill" data-i18n="global.partner" hidden>Partner</span>
             <span class="pill pill-info" id="vendor-datenbasis-pill"></span>
           </div>
           <!-- Logo (44px, vlogo--detail, Markenfarbe) trägt jetzt den Markennamen visuell;
@@ -150,8 +158,9 @@
       <div class="code-box">
         <code data-code id="rabatt-code">CODE</code>
         <button class="btn btn-secondary" onclick="PK.copyCode(this)" data-i18n="page.anbieter-detail.copyCodeButton">Code kopieren</button>
-        <span class="code-box-percent" id="rabatt-percent">-0%</span>
+        <span class="code-box-percent" id="rabatt-percent" hidden>-0%</span>
       </div>
+      <p class="text-small muted" id="rabatt-hinweis" style="margin-top:var(--sp-2);" hidden></p>
       <p style="margin-top:var(--sp-3);">
         <a class="btn btn-primary ext-link" id="rabatt-cta" target="_blank" rel="sponsored nofollow" data-affiliate="true" href="#"><span id="rabatt-cta-label">Zum Anbieter</span><span class="badge-ad" id="rabatt-cta-badge">Anzeige</span></a>
       </p>
@@ -303,7 +312,7 @@
 
     var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
     var canEl = document.getElementById("page-canonical");
-    if (canEl) canEl.setAttribute("href", "https://peptidecompass.example/anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug));
+    if (canEl) canEl.setAttribute("href", "https://peptidkompass.com/anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug));
 
     /**
      * render() baut alle sprachabhängigen dynamischen Inhalte des Anbieter-
@@ -378,6 +387,11 @@
       var demoPillEl = document.getElementById("vendor-demo-pill");
       if (demoPillEl) demoPillEl.hidden = vendor.demo !== true;
 
+      // Partner-Pill (data/SCHEMA.md v2.1): nur bei belegter Affiliate-
+      // Partnerschaft (vendor.partner === true).
+      var partnerPillEl = document.getElementById("vendor-partner-pill");
+      if (partnerPillEl) partnerPillEl.hidden = vendor.partner !== true;
+
       // Datenbasis-Pill: "Score aus n von 5 Kriterien"
       var datenbasisPillEl = document.getElementById("vendor-datenbasis-pill");
       if (datenbasisPillEl) {
@@ -396,7 +410,7 @@
       scoreValEl.textContent = typeof gesamt === "number" ? PK.byNum(gesamt) : PK.t("global.na");
 
       var cta = document.getElementById("vendor-cta");
-      cta.href = PK.safeUrl(vendor.affiliateUrl);
+      cta.href = PK.safeUrl(PK.vendorHref(vendor));
       document.getElementById("vendor-cta-label").textContent = PK.t("page.anbieter-detail.ctaZumAnbieter");
       document.getElementById("vendor-cta-badge").textContent = badgeText;
 
@@ -474,12 +488,28 @@
         });
       }
 
-      // Rabatt-Code-Box
-      if (vendor.rabatt) {
+      // Rabatt-Code-Box. Prozent nur zeigen, wenn belegt (Zahl) - sonst NIE
+      // "-null%" rendern, sondern den Hinweistext (data/SCHEMA.md v2.1,
+      // Partner ohne belegten %-Satz).
+      if (vendor.rabatt && vendor.rabatt.code) {
         document.getElementById("rabatt-section").hidden = false;
         document.getElementById("rabatt-code").textContent = vendor.rabatt.code || "";
-        document.getElementById("rabatt-percent").textContent = "-" + PK.byNum(vendor.rabatt.prozent) + "%";
-        document.getElementById("rabatt-cta").href = PK.safeUrl(vendor.affiliateUrl);
+        var percentEl = document.getElementById("rabatt-percent");
+        var hinweisEl = document.getElementById("rabatt-hinweis");
+        if (typeof vendor.rabatt.prozent === "number") {
+          percentEl.hidden = false;
+          percentEl.textContent = "-" + PK.byNum(vendor.rabatt.prozent) + "%";
+          hinweisEl.hidden = true;
+        } else {
+          percentEl.hidden = true;
+          if (vendor.rabatt.hinweis) {
+            hinweisEl.hidden = false;
+            hinweisEl.textContent = PK.tx(vendor.rabatt, "hinweis");
+          } else {
+            hinweisEl.hidden = true;
+          }
+        }
+        document.getElementById("rabatt-cta").href = PK.safeUrl(PK.vendorHref(vendor));
         document.getElementById("rabatt-cta-label").textContent = PK.t("page.anbieter-detail.ctaZumAnbieter");
         document.getElementById("rabatt-cta-badge").textContent = badgeText;
       }
@@ -526,7 +556,7 @@
         var tdAction = document.createElement("td");
         var shopLink = document.createElement("a");
         shopLink.className = "btn btn-secondary ext-link";
-        shopLink.href = PK.safeUrl(vendor.affiliateUrl);
+        shopLink.href = PK.safeUrl(PK.vendorHref(vendor));
         shopLink.target = "_blank";
         shopLink.rel = "sponsored nofollow";
         shopLink.setAttribute("data-affiliate", "true");
@@ -642,7 +672,7 @@
           stickyBar.hidden = false;
           document.getElementById("sticky-code-bar-code").textContent = vendor.rabatt.code;
           var stickyCta = document.getElementById("sticky-code-bar-cta");
-          stickyCta.href = PK.safeUrl(vendor.affiliateUrl);
+          stickyCta.href = PK.safeUrl(PK.vendorHref(vendor));
           document.getElementById("sticky-code-bar-cta-label").textContent = PK.t("page.anbieter-detail.ctaZumAnbieter");
           document.getElementById("sticky-code-bar-cta-badge").textContent = badgeText;
         } else {

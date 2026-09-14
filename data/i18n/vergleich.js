@@ -51,6 +51,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.vergleich.coaNone": "Keine öffentlichen CoAs",
     "page.vergleich.versandRange": "{min}–{max} Tage",
     "page.vergleich.rabattNone": "keiner",
+    "page.vergleich.rabattCode": "Code",
     "page.vergleich.actionVisitVendor": "Zum Anbieter"
   });
 
@@ -93,6 +94,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.vergleich.coaNone": "No public CoAs",
     "page.vergleich.versandRange": "{min}–{max} days",
     "page.vergleich.rabattNone": "none",
+    "page.vergleich.rabattCode": "Code",
     "page.vergleich.actionVisitVendor": "Visit vendor"
   });
 

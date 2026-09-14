@@ -372,6 +372,17 @@
    * erlaubt. Alles andere (http://, javascript:, data:, leer, …) wird
    * verworfen: Rückgabe "#", console.warn mit dem Original-Wert.
    */
+  /**
+   * PK.vendorHref(vendor)
+   * Ziel des "Zum Anbieter"-Buttons: bevorzugt der eigene Affiliate-Link
+   * (vendor.affiliateLink, aus dem Partner-Dashboard, mit Tracking), sonst
+   * die normale Shop-Website (vendor.affiliateUrl). Nie erfinden.
+   */
+  PK.vendorHref = function (vendor) {
+    if (!vendor) return "#";
+    return vendor.affiliateLink || vendor.affiliateUrl || "#";
+  };
+
   PK.safeUrl = function (url) {
     if (url === "#DEMO") return url;
     if (typeof url === "string" && /^https:\/\//.test(url)) return url;
@@ -388,6 +399,39 @@
    * gesetzt ist, wird zusätzlich ein externer "Zum Shop"-Link mit
    * .badge-ad + rel="sponsored nofollow" + target="_blank" ergänzt.
    */
+  /**
+   * PK.renderCodeBox(vendor)
+   * Kompakte Code-Box (Code + Kopieren + Prozent oder Hinweis) fuer Karten,
+   * Vergleichstabelle und Mobile-Karten. Liefert null, wenn kein Code.
+   */
+  PK.renderCodeBox = function (vendor) {
+    if (!vendor || !vendor.rabatt || !vendor.rabatt.code) return null;
+    var cbox = document.createElement("div");
+    cbox.className = "code-box code-box-compact";
+    var codeEl = document.createElement("code");
+    codeEl.setAttribute("data-code", "");
+    codeEl.textContent = vendor.rabatt.code;
+    cbox.appendChild(codeEl);
+    var copyBtn = document.createElement("button");
+    copyBtn.type = "button";
+    copyBtn.className = "btn btn-secondary";
+    copyBtn.textContent = PK.t("global.copyCode");
+    copyBtn.addEventListener("click", function () { PK.copyCode(copyBtn); });
+    cbox.appendChild(copyBtn);
+    if (typeof vendor.rabatt.prozent === "number") {
+      var pct = document.createElement("span");
+      pct.className = "code-box-percent";
+      pct.textContent = "-" + PK.byNum(vendor.rabatt.prozent) + "%";
+      cbox.appendChild(pct);
+    } else if (vendor.rabatt.hinweis) {
+      var hint = document.createElement("span");
+      hint.className = "code-box-hint";
+      hint.textContent = PK.tx(vendor.rabatt, "hinweis");
+      cbox.appendChild(hint);
+    }
+    return cbox;
+  };
+
   PK.renderVendorCard = function (vendor, basePath) {
     var bp = basePath || "";
     var card = document.createElement("div");
@@ -427,8 +471,18 @@
     } else if (vendor.coa && vendor.coa.oeffentlich === true) {
       badges.appendChild(makePill(PK.t("global.vendorCard.coaPublic"), "pill-info"));
     }
-    if (vendor.rabatt && vendor.rabatt.prozent) {
+    // Rabatt-Pill: Prozent nur zeigen, wenn belegt (Zahl). Ist nur ein Code
+    // ohne Prozentsatz hinterlegt (data/SCHEMA.md v2.1, Partner-Vendoren),
+    // NIE "-null%" rendern, sondern eine neutrale "Code"-Pill.
+    if (vendor.rabatt && typeof vendor.rabatt.prozent === "number") {
       badges.appendChild(makePill("-" + PK.byNum(vendor.rabatt.prozent) + "%", "pill-warn"));
+    } else if (vendor.rabatt && vendor.rabatt.code) {
+      badges.appendChild(makePill(PK.t("global.vendorCard.rabattCode"), "pill-warn"));
+    }
+    // Partner-Pill (data/SCHEMA.md v2.1): nur bei belegter Affiliate-
+    // Partnerschaft (vendor.partner === true), nie spekulativ.
+    if (vendor.partner === true) {
+      badges.appendChild(makePill(PK.t("global.partner"), "pill-info"));
     }
     // Datenbasis-Pill (data/SCHEMA.md v2): "Score aus n von 5 Kriterien",
     // zeigt sichtbar, worauf der Gesamt-Score beruht (nie verschweigen,
@@ -436,6 +490,7 @@
     if (typeof vendor.datenbasis === "number") {
       badges.appendChild(makePill(PK.t("global.vendorCard.datenbasis", { n: vendor.datenbasis }), "pill-info"));
     }
+
 
     var actions = document.createElement("div");
     actions.className = "vendor-card-actions";
@@ -449,7 +504,7 @@
     if (vendor.affiliateUrl) {
       var shopLink = document.createElement("a");
       shopLink.className = "btn btn-secondary ext-link";
-      shopLink.href = PK.safeUrl(vendor.affiliateUrl);
+      shopLink.href = PK.safeUrl(PK.vendorHref(vendor));
       shopLink.target = "_blank";
       shopLink.rel = "sponsored nofollow";
       shopLink.setAttribute("data-affiliate", "true");
@@ -463,6 +518,8 @@
 
     card.appendChild(head);
     card.appendChild(badges);
+    var cbox = PK.renderCodeBox(vendor);
+    if (cbox) card.appendChild(cbox);
     card.appendChild(actions);
     return card;
 
@@ -729,10 +786,14 @@
 
   /**
    * PK.initDemoBanner()
-   * Zeigt/befüllt jedes Element mit [data-demo-banner]. Nutzt
-   * window.PK.site.demo/name falls vorhanden, sonst einen generischen
-   * Fallback-Text (+ console.warn, damit ein fehlender Datensatz sichtbar
-   * ist statt still zu verschwinden).
+   * Zeigt/befüllt jedes Element mit [data-demo-banner]. Steuerung über
+   * window.PK.site.launchMode ("preview"|"live", Auftrag Teil B7, 14.09.):
+   * "live" blendet den Banner komplett aus, alles andere (inkl. fehlendem
+   * Feld) zeigt ihn wie bisher. site.demo bleibt für anderes im Einsatz
+   * (z. B. vendor.demo-Semantik), steuert den Banner ab jetzt NICHT mehr.
+   * Fällt window.PK.site komplett, zeigt einen generischen Fallback-Text
+   * (+ console.warn, damit ein fehlender Datensatz sichtbar ist statt
+   * still zu verschwinden).
    */
   PK.initDemoBanner = function () {
     var banners = document.querySelectorAll("[data-demo-banner]");
@@ -741,10 +802,10 @@
 
     function render() {
       var text;
-      if (site && site.demo) {
-        text = PK.t("global.demoBanner.text");
+      if (site && site.launchMode === "live") {
+        text = null; // live → Banner bleibt versteckt
       } else if (site) {
-        text = null; // demo:false → Banner bleibt versteckt
+        text = PK.t("global.demoBanner.text");
       } else {
         console.warn("PK.initDemoBanner: window.PK.site fehlt, zeige Fallback-Text");
         text = PK.t("global.demoBanner.text");
@@ -1047,6 +1108,9 @@
         if (e.refract && e.refract.parentNode) e.refract.parentNode.removeChild(e.refract);
       });
       entries = [];
+      /* Text-Refraktion deaktiviert (Vic 14.09.: Doppelbild wirkte fehlerhaft).
+         Glas-Körper (backdrop-filter) und Rim bleiben. */
+      if (PK.HERO_GLASS_REFRACT !== true) return;
       sprites.forEach(function (sprite) {
         var refract = document.createElement("div");
         refract.className = "hero-glass-refract";
@@ -1511,11 +1575,20 @@
       card.appendChild(ring);
       ringEls.push({ el: ring, pct: gesamt });
 
-      if (vendor.rabatt && vendor.rabatt.prozent) {
-        var save = document.createElement("p");
-        save.className = "podium-save";
-        save.textContent = PK.t("page.index.podiumSaves", { p: PK.byNum(vendor.rabatt.prozent) });
-        card.appendChild(save);
+      if (vendor.rabatt && vendor.rabatt.code) {
+        // Prozent nur zeigen, wenn belegt (Zahl) - sonst NIE "Spart null %"
+        // rendern, sondern den Hinweistext (data/SCHEMA.md v2.1).
+        if (typeof vendor.rabatt.prozent === "number") {
+          var save = document.createElement("p");
+          save.className = "podium-save";
+          save.textContent = PK.t("page.index.podiumSaves", { p: PK.byNum(vendor.rabatt.prozent) });
+          card.appendChild(save);
+        } else if (vendor.rabatt.hinweis) {
+          var hint = document.createElement("p");
+          hint.className = "podium-save";
+          hint.textContent = PK.tx(vendor.rabatt, "hinweis");
+          card.appendChild(hint);
+        }
 
         var codeWrap = document.createElement("div");
         codeWrap.className = "podium-code code-box";
@@ -1534,7 +1607,7 @@
 
       var cta = document.createElement("a");
       cta.className = "btn btn-primary ext-link podium-cta";
-      cta.href = PK.safeUrl(vendor.affiliateUrl);
+      cta.href = PK.safeUrl(PK.vendorHref(vendor));
       cta.target = "_blank";
       cta.rel = "sponsored nofollow";
       cta.setAttribute("data-affiliate", "true");

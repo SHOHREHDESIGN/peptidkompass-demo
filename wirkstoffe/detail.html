@@ -3,22 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="page.wirkstoffe-detail.title">Wirkstoff · Peptide Compass</title>
-<meta name="description" data-i18n="page.wirkstoffe-detail.metaDescription" content="Einzelinfo zu einem Peptid: Kategorie, Studienlage, Hinweise und Anbieter, die dieses Peptid im Sortiment führen. Nur für Forschungszwecke.">
-<link rel="canonical" href="https://peptidecompass.example/wirkstoffe/detail.html">
+<title id="page-title" data-i18n="page.wirkstoffe-detail.title">Wirkstoff · Peptide Compass</title>
+<meta name="description" id="page-description" data-i18n="page.wirkstoffe-detail.metaDescription" content="Einzelinfo zu einem Peptid: Kategorie, Studienlage, Evidenz, Sicherheit und Anbieter, die dieses Peptid im Sortiment führen. Nur für Forschungszwecke.">
+<link rel="canonical" id="page-canonical" href="https://peptidkompass.com/wirkstoffe/detail.html">
+<link rel="alternate" hreflang="de" href="https://peptidkompass.com/wirkstoffe/detail.html?lang=de">
+<link rel="alternate" hreflang="en" href="https://peptidkompass.com/wirkstoffe/detail.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/wirkstoffe/detail.html?lang=de">
 <meta property="og:type" content="website">
-<meta property="og:title" data-i18n="page.wirkstoffe-detail.ogTitle" content="Wirkstoff · Peptide Compass">
-<meta property="og:description" data-i18n="page.wirkstoffe-detail.ogDescription" content="Kategorie, Studienlage, Hinweise und Anbieter im Überblick.">
-<meta property="og:url" content="https://peptidecompass.example/wirkstoffe/detail.html">
-<meta property="og:image" content="../assets/img/og.jpg">
+<meta property="og:title" id="og-title" data-i18n="page.wirkstoffe-detail.ogTitle" content="Wirkstoff · Peptide Compass">
+<meta property="og:description" id="og-description" data-i18n="page.wirkstoffe-detail.ogDescription" content="Kategorie, Studienlage, Evidenz und Sicherheit im Überblick.">
+<meta property="og:url" content="https://peptidkompass.com/wirkstoffe/detail.html">
+<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/css/system.css">
+<link rel="icon" href="../assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon/favicon-180.png">
+<link rel="manifest" href="../assets/brand/favicon/site.webmanifest">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
 
 <div class="demo-banner" data-demo-banner hidden>
-  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+  <span data-demo-banner-text>Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.</span>
 </div>
 
 <header class="nav">
@@ -79,39 +86,68 @@
 
   <div id="pk-content" hidden>
 
-    <!-- KOPFBEREICH + KURZBESCHREIBUNG: eine Einheit (Befund 3,
-         REVIEW_design_typo.md : vorher zwei Sections mit ~144px totem
-         Abstand zwischen Pills und Lead). Abstand steuert der Absatz selbst
-         via margin-top, nicht ein zweiter Section-Wrapper. -->
+    <!-- KOPFBEREICH: Name, Synonyme, Kategorie-/Studienlage-Pill, Kurz + Beschreibung -->
     <section class="section container reveal">
       <div class="split">
         <div>
           <h1 class="display" id="peptide-name"></h1>
+          <p class="text-small muted" id="peptide-synonyme" hidden></p>
           <p><span class="pill" id="peptide-kategorie"></span> <span class="pill" id="peptide-studienlage-pill"></span></p>
           <p class="section-lead" id="peptide-kurz" style="margin-top:var(--sp-3);"></p>
           <p id="peptide-beschreibung"></p>
         </div>
         <div class="split-visual visual visual-kenburns">
-          <img id="peptide-visual-img" src="" alt="" loading="lazy" onerror="this.style.display='none'">
+          <img id="peptide-visual-img" src="" alt="" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- STUDIENLAGE -->
-    <section class="section section-tinted container reveal">
-      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.studienlageTitle">Studienlage</h2>
-      <p id="peptide-studienlage-text"></p>
-      <p class="pill pill-warn" style="margin-top:var(--sp-2);" data-i18n="page.wirkstoffe-detail.studienlagePlaceholder">Platzhalter, Quelle folgt</p>
+    <!-- WIE ES WIRKT (mechanismus) -->
+    <section class="section section-tinted container-narrow reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.mechanismusTitle">Wie es wirkt</h2>
+      <p id="peptide-mechanismus"></p>
     </section>
 
-    <!-- HINWEISE -->
+    <!-- EVIDENZ -->
+    <section class="section container reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.evidenzTitle">Evidenz</h2>
+      <ul id="peptide-evidenz-list" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--sp-3);"></ul>
+    </section>
+
+    <!-- SICHERHEIT -->
+    <section class="section section-tinted container-narrow reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.sicherheitTitle">Sicherheit</h2>
+      <ul id="peptide-sicherheit-list"></ul>
+    </section>
+
+    <!-- RECHTSSTATUS -->
     <section class="section container-narrow reveal">
-      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.hinweiseTitle">Hinweise</h2>
-      <ul id="peptide-hinweise-list"></ul>
-      <p id="peptide-lagerung-text"></p>
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.rechtsstatusTitle">Rechtsstatus</h2>
+      <p id="peptide-rechtsstatus"></p>
     </section>
 
-    <!-- ANBIETER MIT DIESEM WIRKSTOFF -->
+    <!-- REKONSTITUTION UND LAGERUNG -->
+    <section class="section section-tinted container-narrow reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.rekonstitutionTitle">Rekonstitution und Lagerung</h2>
+      <p id="peptide-rekonstitution"></p>
+      <p id="peptide-lagerung"></p>
+    </section>
+
+    <!-- HINWEISE-BOX (RUO) -->
+    <section class="section container-narrow reveal">
+      <div class="card">
+        <p class="card-eyebrow" data-i18n="page.wirkstoffe-detail.hinweiseTitle">Hinweise</p>
+        <ul id="peptide-hinweise-list"></ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section container-narrow reveal">
+      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.faqTitle">Häufige Fragen</h2>
+      <div class="faq" id="peptide-faq"></div>
+    </section>
+
+    <!-- ANBIETER MIT DIESEM WIRKSTOFF (wie bisher) -->
     <section class="section container reveal">
       <h2 class="section-title" data-i18n="page.wirkstoffe-detail.vendorTableTitle">Anbieter mit diesem Wirkstoff</h2>
       <div class="table-wrap">
@@ -211,10 +247,21 @@
     var peptide = PK.peptideBySlug(slug);
 
     // Kopf-Visual: mol_<slug>.jpg, per JS gesetzt (Slug erst zur Laufzeit
-    // bekannt). Fehlt die Datei, blendet das inline onerror das <img> aus,
-    // der .visual-Gradient bleibt sichtbar.
+    // bekannt). Fehlt die Datei (9 von 15 Peptiden ohne eigenes Molekül-
+    // Foto, Stand 14.09.), fängt onerror auf das generische
+    // sec_peptides.jpg-Sektionsbild um statt das <img> auszublenden -
+    // Kopfbereich bleibt so immer bebildert.
     var visualImg = document.getElementById("peptide-visual-img");
-    if (visualImg && slug) visualImg.src = "../assets/img/mol_" + encodeURIComponent(slug) + ".jpg";
+    if (visualImg && slug) {
+      visualImg.onerror = function () {
+        this.onerror = null;
+        this.src = "../assets/img/sec_peptides.jpg";
+      };
+      visualImg.src = "../assets/img/mol_" + encodeURIComponent(slug) + ".jpg";
+    }
+
+    var canEl = document.getElementById("page-canonical");
+    if (canEl && slug) canEl.setAttribute("href", "https://peptidkompass.com/wirkstoffe/detail.html?slug=" + encodeURIComponent(slug));
 
     var errorEl = document.getElementById("pk-error");
     var contentEl = document.getElementById("pk-content");
@@ -239,29 +286,85 @@
     var ctaEl = document.getElementById("cta-anbieter");
 
     /**
-     * render() baut alle sprachabhängigen Inhalte neu: Titel, Kopfbereich
-     * (PK.tEnum für Kategorie/Studienlage, PK.tx für Kurztext/Beschreibung),
-     * Studienlage-Satz, Hinweise-Liste (hinweise_en), Lagerungstext,
-     * Anbieter-/Chargen-Tabelle (PK.byNum, PK.tEnum coaStatus), CTA-Link.
-     * Läuft initial UND bei "pk:langchange" (Pflicht-Muster, siehe README).
+     * render() baut alle sprachabhängigen Inhalte neu: Titel/Meta (aus
+     * peptide.seo, PK.tx), Kopfbereich (Name, Synonyme, PK.tEnum für
+     * Kategorie/Studienlage, PK.tx für Kurztext/Beschreibung), Mechanismus,
+     * Evidenz-Liste, Sicherheit-Liste, Rechtsstatus, Rekonstitution +
+     * Lagerung, Hinweise-Box, FAQ, Anbieter-/Chargen-Tabelle (PK.byNum,
+     * PK.tEnum coaStatus), CTA-Link. Läuft initial UND bei "pk:langchange"
+     * (Pflicht-Muster, siehe README).
      */
     function render() {
-      document.title = (peptide.name || PK.t("page.wirkstoffe-detail.titleFallback")) +
-        PK.t("page.wirkstoffe-detail.titleSuffix");
+      var seo = peptide.seo || {};
+      var seoTitle = (PK.lang === "en" && seo.title_en) ? seo.title_en : (seo.title || peptide.name);
+      var seoDescription = (PK.lang === "en" && seo.description_en) ? seo.description_en : (seo.description || "");
+
+      document.getElementById("page-title").textContent = seoTitle + PK.t("page.wirkstoffe-detail.titleSuffix");
+      var descEl = document.getElementById("page-description");
+      if (descEl) descEl.setAttribute("content", seoDescription);
+      var ogTitleEl = document.getElementById("og-title");
+      if (ogTitleEl) ogTitleEl.setAttribute("content", seoTitle);
+      var ogDescEl = document.getElementById("og-description");
+      if (ogDescEl) ogDescEl.setAttribute("content", seoDescription);
 
       document.getElementById("peptide-name").textContent = peptide.name || "";
+
+      var synonymeEl = document.getElementById("peptide-synonyme");
+      var synonyme = Array.isArray(peptide.synonyme) ? peptide.synonyme : [];
+      if (synonymeEl) {
+        if (synonyme.length) {
+          synonymeEl.textContent = synonyme.join(" · ");
+          synonymeEl.hidden = false;
+        } else {
+          synonymeEl.textContent = "";
+          synonymeEl.hidden = true;
+        }
+      }
+
       document.getElementById("peptide-kategorie").textContent = PK.tEnum("kategorie", peptide.kategorie);
       document.getElementById("peptide-studienlage-pill").textContent = PK.tEnum("studienlage", peptide.studienlage);
       document.getElementById("peptide-kurz").textContent = PK.tx(peptide, "kurz");
       document.getElementById("peptide-beschreibung").textContent = PK.tx(peptide, "beschreibung");
+      document.getElementById("peptide-mechanismus").textContent = PK.tx(peptide, "mechanismus");
+      document.getElementById("peptide-rechtsstatus").textContent = PK.tx(peptide, "rechtsstatus");
+      document.getElementById("peptide-rekonstitution").textContent = PK.tx(peptide, "rekonstitution");
+      document.getElementById("peptide-lagerung").textContent = PK.t("page.wirkstoffe-detail.lagerungText", { lagerung: (PK.tx(peptide, "lagerung") || "").replace(/\.\s*$/, "") });
 
-      var studienlageText = PK.t("page.wirkstoffe-detail.studienlageText", {
-        name: peptide.name || "",
-        kategorie: PK.tEnum("kategorie", peptide.kategorie),
-        studienlage: PK.tEnum("studienlage", peptide.studienlage)
+      // Evidenz: Art-Pill (präklinisch/klinisch) + Satz + Quelle klein.
+      // "quelle" ist unübersetzt (Autor/Journal/PMID bleiben identisch in
+      // jeder Sprache, kein quelle_en im Datenvertrag).
+      var evidenzList = document.getElementById("peptide-evidenz-list");
+      evidenzList.textContent = "";
+      var evidenz = Array.isArray(peptide.evidenz) ? peptide.evidenz : [];
+      evidenz.forEach(function (e) {
+        var li = document.createElement("li");
+        var pPill = document.createElement("p");
+        var pill = document.createElement("span");
+        pill.className = "pill";
+        pill.textContent = PK.tEnum("evidenzArt", e.art);
+        pPill.appendChild(pill);
+        var pText = document.createElement("p");
+        pText.textContent = PK.tx(e, "kurz");
+        var pQuelle = document.createElement("p");
+        pQuelle.className = "text-small muted";
+        pQuelle.textContent = e.quelle || "";
+        li.appendChild(pPill);
+        li.appendChild(pText);
+        li.appendChild(pQuelle);
+        evidenzList.appendChild(li);
       });
-      document.getElementById("peptide-studienlage-text").textContent = studienlageText;
 
+      // Sicherheit
+      var sicherheitList = document.getElementById("peptide-sicherheit-list");
+      sicherheitList.textContent = "";
+      var sicherheit = PK.tx(peptide, "sicherheit");
+      (Array.isArray(sicherheit) ? sicherheit : []).forEach(function (s) {
+        var li = document.createElement("li");
+        li.textContent = s;
+        sicherheitList.appendChild(li);
+      });
+
+      // Hinweise (RUO-Box)
       var hinweiseList = document.getElementById("peptide-hinweise-list");
       hinweiseList.textContent = "";
       var hinweise = PK.tx(peptide, "hinweise");
@@ -271,12 +374,20 @@
         hinweiseList.appendChild(li);
       });
 
-      // Trailing Satzpunkt aus dem Datenfeld entfernen (einzelne _en-Werte
-      // enden bereits mit ".", das Template haengt seinen eigenen Punkt an -
-      // sonst entsteht "..").
-      var lagerungWert = (PK.tx(peptide, "lagerung") || "").replace(/\.\s*$/, "");
-      document.getElementById("peptide-lagerung-text").textContent =
-        PK.t("page.wirkstoffe-detail.lagerungText", { lagerung: lagerungWert });
+      // FAQ (details/summary, reines HTML, kein JS-Toggle nötig)
+      var faqEl = document.getElementById("peptide-faq");
+      faqEl.textContent = "";
+      var faq = Array.isArray(peptide.faq) ? peptide.faq : [];
+      faq.forEach(function (f) {
+        var details = document.createElement("details");
+        var summary = document.createElement("summary");
+        summary.textContent = (PK.lang === "en" && f.q_en) ? f.q_en : (f.q || "");
+        var p = document.createElement("p");
+        p.textContent = (PK.lang === "en" && f.a_en) ? f.a_en : (f.a || "");
+        details.appendChild(summary);
+        details.appendChild(p);
+        faqEl.appendChild(details);
+      });
 
       // Anbieter-Tabelle: vendors.produkte gefiltert nach peptideSlug, sortiert nach Gesamtscore
       var rows = [];

@@ -71,7 +71,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.vendorCard.coaChecked": "{n} CoAs geprüft",
     "global.vendorCard.coaPublic": "CoA öffentlich",
     "global.vendorCard.datenbasis": "Score aus {n} von 5 Kriterien",
+    "global.vendorCard.rabattCode": "Code",
+    "global.copyCode": "Code kopieren",
     "global.badge.ad": "Anzeige",
+
+    /* Partner-Pill (data/SCHEMA.md v2.1, Affiliate-Partner mit Beleg) */
+    "global.partner": "Partner",
 
     /* Nicht ermittelbare Werte (data/SCHEMA.md v2): NIE als 0, NIE als
        schlechter Score, immer dieser neutrale Platzhalter. */
@@ -111,12 +116,18 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.enum.kategorie.Wachstumshormon-Achse": "Wachstumshormon-Achse",
     "global.enum.kategorie.Haut & Kosmetik": "Haut & Kosmetik",
     "global.enum.kategorie.Kognition": "Kognition",
+    "global.enum.kategorie.Immunsystem": "Immunsystem",
     "global.enum.kategorie.Sonstige": "Sonstige",
 
-    /* Enum: peptide.studienlage (data/SCHEMA.md, 3 Werte) */
+    /* Enum: peptide.studienlage (data/SCHEMA.md v2, 4 Werte) */
     "global.enum.studienlage.präklinisch": "präklinisch",
     "global.enum.studienlage.frühe klinische Studien": "frühe klinische Studien",
     "global.enum.studienlage.klinisch untersucht": "klinisch untersucht",
+    "global.enum.studienlage.zugelassenes Arzneimittel": "zugelassenes Arzneimittel",
+
+    /* Enum: peptide.evidenz[].art (data/peptides_draft/SCHEMA_peptide_v2.md, 2 Werte) */
+    "global.enum.evidenzArt.präklinisch": "präklinisch",
+    "global.enum.evidenzArt.klinisch": "klinisch",
 
     /* Enum: batch.coaStatus (data/SCHEMA.md, 3 Werte) */
     "global.enum.coaStatus.verifiziert": "verifiziert",
@@ -177,7 +188,11 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.vendorCard.coaChecked": "{n} CoAs verified",
     "global.vendorCard.coaPublic": "Public CoA",
     "global.vendorCard.datenbasis": "Score from {n} of 5 criteria",
+    "global.vendorCard.rabattCode": "Code",
+    "global.copyCode": "Copy code",
     "global.badge.ad": "Ad",
+
+    "global.partner": "Partner",
 
     "global.na": "not available",
     "global.legal.notChecked": "not checked",
@@ -204,11 +219,16 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.enum.kategorie.Wachstumshormon-Achse": "Growth hormone axis",
     "global.enum.kategorie.Haut & Kosmetik": "Skin & cosmetic",
     "global.enum.kategorie.Kognition": "Cognition",
+    "global.enum.kategorie.Immunsystem": "Immune system",
     "global.enum.kategorie.Sonstige": "Other",
 
     "global.enum.studienlage.präklinisch": "preclinical",
     "global.enum.studienlage.frühe klinische Studien": "early clinical studies",
     "global.enum.studienlage.klinisch untersucht": "clinically studied",
+    "global.enum.studienlage.zugelassenes Arzneimittel": "approved medication",
+
+    "global.enum.evidenzArt.präklinisch": "preclinical",
+    "global.enum.evidenzArt.klinisch": "clinical",
 
     "global.enum.coaStatus.verifiziert": "verified",
     "global.enum.coaStatus.shop-eigen": "vendor-supplied",

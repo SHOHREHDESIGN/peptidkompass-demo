@@ -52,7 +52,14 @@ window.PK.vendors = [
     affiliate: false,
     affiliateProgrammUrl: null,
     provision: null,
-    rabatt: null,
+    partner: true,
+    partnerSeit: "2026-09-10",
+    rabatt: {
+      code: "peptidecompass10",
+      prozent: null,
+      hinweis: "Code beim Checkout eingeben",
+      hinweis_en: "Enter code at checkout"
+    },
     produkte: [],
     preisProMg: null,
     affiliateUrl: "https://www.pepwerk.com/",

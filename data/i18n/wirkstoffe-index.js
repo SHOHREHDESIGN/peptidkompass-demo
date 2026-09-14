@@ -14,13 +14,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("de", {
     "page.wirkstoffe-index.title": "Wirkstoffe · Peptide Compass",
-    "page.wirkstoffe-index.metaDescription": "Sechs Peptide im Überblick: Kategorie, Studienlage und Kurzbeschreibung, neutral erklärt. Nur für Forschungszwecke, keine medizinische Beratung.",
+    "page.wirkstoffe-index.metaDescription": "15 Peptide im Überblick: Kategorie, Studienlage und Kurzbeschreibung, neutral erklärt. Nur für Forschungszwecke, keine medizinische Beratung.",
     "page.wirkstoffe-index.ogTitle": "Wirkstoffe · Peptide Compass",
-    "page.wirkstoffe-index.ogDescription": "Sechs Substanzen, kurz und sachlich erklärt.",
+    "page.wirkstoffe-index.ogDescription": "15 Substanzen, kurz und sachlich erklärt.",
 
     "page.wirkstoffe-index.eyebrow": "Wirkstoff-Wissen",
     "page.wirkstoffe-index.h1": "Wirkstoffe im Überblick",
-    "page.wirkstoffe-index.lead": "Sechs Substanzen, kurz und sachlich erklärt.",
+    "page.wirkstoffe-index.lead": "15 Substanzen, kurz und sachlich erklärt.",
 
     "page.wirkstoffe-index.disclaimerEyebrow": "Hinweis",
     "page.wirkstoffe-index.disclaimerFallback": "Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.",
@@ -34,13 +34,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("en", {
     "page.wirkstoffe-index.title": "Peptides · Peptide Compass",
-    "page.wirkstoffe-index.metaDescription": "Six peptides at a glance: category, research stage, and a short description, explained neutrally. Research use only, not medical advice.",
+    "page.wirkstoffe-index.metaDescription": "15 peptides at a glance: category, research stage, and a short description, explained neutrally. Research use only, not medical advice.",
     "page.wirkstoffe-index.ogTitle": "Peptides · Peptide Compass",
-    "page.wirkstoffe-index.ogDescription": "Six substances, explained briefly and factually.",
+    "page.wirkstoffe-index.ogDescription": "15 substances, explained briefly and factually.",
 
     "page.wirkstoffe-index.eyebrow": "Peptide knowledge",
     "page.wirkstoffe-index.h1": "Peptides at a glance",
-    "page.wirkstoffe-index.lead": "Six substances, explained briefly and factually.",
+    "page.wirkstoffe-index.lead": "15 substances, explained briefly and factually.",
 
     "page.wirkstoffe-index.disclaimerEyebrow": "Note",
     "page.wirkstoffe-index.disclaimerFallback": "All substances listed here are intended for research purposes only. This is not medical advice, and none of these products are recommended for human use. For persons 18 and older only.",

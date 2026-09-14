@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.invalid/sitemap.xml
+Sitemap: https://peptidkompass.com/sitemap.xml

@@ -5,20 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="page.vergleich.title">Vergleich · Peptide Compass</title>
 <meta name="description" data-i18n="page.vergleich.metaDescription" content="Alle 8 Peptid-Anbieter im direkten Vergleich: Score, Preis pro Milligramm, Lieferzeit und Rabattcodes, sortierbar nach jeder Spalte.">
-<link rel="canonical" href="https://peptidecompass.example/vergleich.html">
+<link rel="canonical" href="https://peptidkompass.com/vergleich.html">
+<link rel="alternate" hreflang="de" href="https://peptidkompass.com/vergleich.html?lang=de">
+<link rel="alternate" hreflang="en" href="https://peptidkompass.com/vergleich.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/vergleich.html?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n="page.vergleich.ogTitle" content="Vergleich · Peptide Compass">
 <meta property="og:description" data-i18n="page.vergleich.ogDescription" content="Alle Anbieter im Vergleich: Score, Preis pro mg, Lieferzeit, Rabatt.">
-<meta property="og:url" content="https://peptidecompass.example/vergleich.html">
-<meta property="og:image" content="assets/img/og.jpg">
+<meta property="og:url" content="https://peptidkompass.com/vergleich.html">
+<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/css/system.css">
+<link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
+<link rel="manifest" href="assets/brand/favicon/site.webmanifest">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
 
 <div class="demo-banner" data-demo-banner hidden>
-  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+  <span data-demo-banner-text>Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.</span>
 </div>
 
 <header class="nav">
@@ -210,6 +217,12 @@
       nameLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
       nameLink.textContent = v.name || "";
       nameCell.appendChild(nameLink);
+      if (v.partner === true) {
+        var partnerPill = document.createElement("span");
+        partnerPill.className = "pill pill-info";
+        partnerPill.textContent = PK.t("global.partner");
+        nameCell.appendChild(partnerPill);
+      }
       tdName.appendChild(nameCell);
       row.appendChild(tdName);
 
@@ -280,11 +293,15 @@
         ? PK.t("page.vergleich.versandRange", { min: versand.tageMin, max: versand.tageMax }) : PK.t("global.na");
       row.appendChild(tdVersand);
 
-      // Rabatt: Prozent oder „–" (Screenreader: „keiner"/"none")
+      // Rabatt: Prozent, sonst Code-Hinweis (v2.1, Partner ohne belegten
+      // %-Satz), sonst „–" (Screenreader: „keiner"/"none")
       var tdRabatt = document.createElement("td");
-      if (v.rabatt && v.rabatt.prozent) {
+      if (v.rabatt && typeof v.rabatt.prozent === "number") {
         tdRabatt.setAttribute("data-sort", String(v.rabatt.prozent));
         tdRabatt.textContent = "-" + PK.byNum(v.rabatt.prozent) + "%";
+      } else if (v.rabatt && v.rabatt.code) {
+        tdRabatt.setAttribute("data-sort", "0");
+        tdRabatt.appendChild(PK.renderCodeBox(v));
       } else {
         tdRabatt.setAttribute("data-sort", "-1");
         var none = document.createElement("span");
@@ -300,7 +317,7 @@
       tdAction.setAttribute("data-sticky", "right");
       var shopLink = document.createElement("a");
       shopLink.className = "btn btn-secondary ext-link";
-      shopLink.href = PK.safeUrl(v.affiliateUrl);
+      shopLink.href = PK.safeUrl(PK.vendorHref(v));
       shopLink.target = "_blank";
       shopLink.rel = "sponsored nofollow";
       shopLink.setAttribute("data-affiliate", "true");
@@ -423,6 +440,12 @@
         nameLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
         nameLink.textContent = v.name || "";
         idWrap.appendChild(nameLink);
+        if (v.partner === true) {
+          var partnerPillCard = document.createElement("span");
+          partnerPillCard.className = "pill pill-info";
+          partnerPillCard.textContent = PK.t("global.partner");
+          idWrap.appendChild(partnerPillCard);
+        }
         head.appendChild(idWrap);
         var scoreEl = document.createElement("span");
         scoreEl.className = "compare-card-score score-band-" + PK.scoreBand(gesamt);
@@ -443,22 +466,19 @@
         rowMg.appendChild(mgVal);
         card.appendChild(rowMg);
 
-        if (v.rabatt && v.rabatt.prozent) {
+        if (v.rabatt && v.rabatt.code) {
           var rowRabatt = document.createElement("div");
           rowRabatt.className = "compare-card-row";
           var rabattLabel = document.createElement("span");
           rabattLabel.textContent = PK.t("page.vergleich.colRabatt");
-          var rabattPill = document.createElement("span");
-          rabattPill.className = "pill pill-warn";
-          rabattPill.textContent = "-" + PK.byNum(v.rabatt.prozent) + "%";
           rowRabatt.appendChild(rabattLabel);
-          rowRabatt.appendChild(rabattPill);
+          rowRabatt.appendChild(PK.renderCodeBox(v));
           card.appendChild(rowRabatt);
         }
 
         var cta = document.createElement("a");
         cta.className = "btn btn-primary ext-link compare-card-cta";
-        cta.href = PK.safeUrl(v.affiliateUrl);
+        cta.href = PK.safeUrl(PK.vendorHref(v));
         cta.target = "_blank";
         cta.rel = "sponsored nofollow";
         cta.setAttribute("data-affiliate", "true");

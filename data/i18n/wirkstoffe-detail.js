@@ -4,6 +4,11 @@
    Seiten-Wörterbuch für wirkstoffe/detail.html. Schlüssel-Präfix
    "page.wirkstoffe-detail.<element>". Muss NACH data/i18n/global.js und VOR
    assets/js/site.js eingebunden werden.
+
+   v2 (14.09.2026): Wirkstoff-Seiten-Erweiterung. Neue Keys für Mechanismus,
+   Evidenz, Sicherheit, Rechtsstatus, Rekonstitution/Lagerung, FAQ. Die alte
+   "Studienlage"-Platzhalter-Sektion (studienlageText/-Placeholder) entfällt,
+   Evidenz + Rechtsstatus liefern jetzt echten Inhalt statt Platzhalter.
    ============================================================================ */
 window.PK = window.PK || {};
 window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
@@ -14,9 +19,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("de", {
     "page.wirkstoffe-detail.title": "Wirkstoff · Peptide Compass",
-    "page.wirkstoffe-detail.metaDescription": "Einzelinfo zu einem Peptid: Kategorie, Studienlage, Hinweise und Anbieter, die dieses Peptid im Sortiment führen. Nur für Forschungszwecke.",
+    "page.wirkstoffe-detail.metaDescription": "Einzelinfo zu einem Peptid: Kategorie, Studienlage, Evidenz, Sicherheit und Anbieter, die dieses Peptid im Sortiment führen. Nur für Forschungszwecke.",
     "page.wirkstoffe-detail.ogTitle": "Wirkstoff · Peptide Compass",
-    "page.wirkstoffe-detail.ogDescription": "Kategorie, Studienlage, Hinweise und Anbieter im Überblick.",
+    "page.wirkstoffe-detail.ogDescription": "Kategorie, Studienlage, Evidenz und Sicherheit im Überblick.",
     "page.wirkstoffe-detail.titleFallback": "Wirkstoff",
     "page.wirkstoffe-detail.titleSuffix": " · Peptide Compass",
 
@@ -26,9 +31,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.errorBody": "Für diesen Link liegt kein Wirkstoff in unserer Demo-Datenbank vor.",
     "page.wirkstoffe-detail.errorLink": "Zur Wirkstoffe-Übersicht",
 
-    "page.wirkstoffe-detail.studienlageTitle": "Studienlage",
-    "page.wirkstoffe-detail.studienlageText": "{name} wird im Kontext von {kategorie} untersucht, Studienstand: {studienlage}.",
-    "page.wirkstoffe-detail.studienlagePlaceholder": "Platzhalter, Quelle folgt",
+    "page.wirkstoffe-detail.mechanismusTitle": "Wie es wirkt",
+    "page.wirkstoffe-detail.evidenzTitle": "Evidenz",
+    "page.wirkstoffe-detail.sicherheitTitle": "Sicherheit",
+    "page.wirkstoffe-detail.rechtsstatusTitle": "Rechtsstatus",
+    "page.wirkstoffe-detail.rekonstitutionTitle": "Rekonstitution und Lagerung",
+    "page.wirkstoffe-detail.faqTitle": "Häufige Fragen",
 
     "page.wirkstoffe-detail.hinweiseTitle": "Hinweise",
     "page.wirkstoffe-detail.lagerungText": "Lagerung: {lagerung}. Diese Angaben sind keine Dosierungsempfehlung.",
@@ -55,9 +63,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("en", {
     "page.wirkstoffe-detail.title": "Peptide · Peptide Compass",
-    "page.wirkstoffe-detail.metaDescription": "A single peptide, explained: category, research stage, notes, and the vendors that carry it. Research use only.",
+    "page.wirkstoffe-detail.metaDescription": "A single peptide, explained: category, research stage, evidence, safety, and the vendors that carry it. Research use only.",
     "page.wirkstoffe-detail.ogTitle": "Peptide · Peptide Compass",
-    "page.wirkstoffe-detail.ogDescription": "Category, research stage, notes, and vendors at a glance.",
+    "page.wirkstoffe-detail.ogDescription": "Category, research stage, evidence, and safety at a glance.",
     "page.wirkstoffe-detail.titleFallback": "Peptide",
     "page.wirkstoffe-detail.titleSuffix": " · Peptide Compass",
 
@@ -67,9 +75,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-detail.errorBody": "This link doesn't match a peptide in our demo database.",
     "page.wirkstoffe-detail.errorLink": "View all peptides",
 
-    "page.wirkstoffe-detail.studienlageTitle": "Research stage",
-    "page.wirkstoffe-detail.studienlageText": "{name} is studied in the context of {kategorie}, research stage: {studienlage}.",
-    "page.wirkstoffe-detail.studienlagePlaceholder": "Placeholder, source pending",
+    "page.wirkstoffe-detail.mechanismusTitle": "How it works",
+    "page.wirkstoffe-detail.evidenzTitle": "Evidence",
+    "page.wirkstoffe-detail.sicherheitTitle": "Safety",
+    "page.wirkstoffe-detail.rechtsstatusTitle": "Legal status",
+    "page.wirkstoffe-detail.rekonstitutionTitle": "Reconstitution and storage",
+    "page.wirkstoffe-detail.faqTitle": "Frequently asked questions",
 
     "page.wirkstoffe-detail.hinweiseTitle": "Notes",
     "page.wirkstoffe-detail.lagerungText": "Storage: {lagerung}. This information is not a dosing recommendation.",

@@ -4,21 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="page.wirkstoffe-index.title">Wirkstoffe · Peptide Compass</title>
-<meta name="description" data-i18n="page.wirkstoffe-index.metaDescription" content="Sechs Peptide im Überblick: Kategorie, Studienlage und Kurzbeschreibung, neutral erklärt. Nur für Forschungszwecke, keine medizinische Beratung.">
-<link rel="canonical" href="https://peptidecompass.example/wirkstoffe/">
+<meta name="description" data-i18n="page.wirkstoffe-index.metaDescription" content="15 Peptide im Überblick: Kategorie, Studienlage und Kurzbeschreibung, neutral erklärt. Nur für Forschungszwecke, keine medizinische Beratung.">
+<link rel="canonical" href="https://peptidkompass.com/wirkstoffe/">
+<link rel="alternate" hreflang="de" href="https://peptidkompass.com/wirkstoffe/?lang=de">
+<link rel="alternate" hreflang="en" href="https://peptidkompass.com/wirkstoffe/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/wirkstoffe/?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n="page.wirkstoffe-index.ogTitle" content="Wirkstoffe · Peptide Compass">
-<meta property="og:description" data-i18n="page.wirkstoffe-index.ogDescription" content="Sechs Substanzen, kurz und sachlich erklärt.">
-<meta property="og:url" content="https://peptidecompass.example/wirkstoffe/">
-<meta property="og:image" content="../assets/img/og.jpg">
+<meta property="og:description" data-i18n="page.wirkstoffe-index.ogDescription" content="15 Substanzen, kurz und sachlich erklärt.">
+<meta property="og:url" content="https://peptidkompass.com/wirkstoffe/">
+<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/css/system.css">
+<link rel="icon" href="../assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon/favicon-180.png">
+<link rel="manifest" href="../assets/brand/favicon/site.webmanifest">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
 
 <div class="demo-banner" data-demo-banner hidden>
-  <span data-demo-banner-text>Demo-Daten. Alle Anbieter, Preise und Codes auf dieser Seite sind Platzhalter.</span>
+  <span data-demo-banner-text>Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.</span>
 </div>
 
 <header class="nav">
@@ -69,7 +76,7 @@
   <section class="section container reveal">
     <p class="eyebrow" data-i18n="page.wirkstoffe-index.eyebrow">Wirkstoff-Wissen</p>
     <h1 class="h1" data-i18n="page.wirkstoffe-index.h1">Wirkstoffe im Überblick</h1>
-    <p class="section-lead" data-i18n="page.wirkstoffe-index.lead">Sechs Substanzen, kurz und sachlich erklärt.</p>
+    <p class="section-lead" data-i18n="page.wirkstoffe-index.lead">15 Substanzen, kurz und sachlich erklärt.</p>
   </section>
 
   <!-- HINWEIS: NUR FORSCHUNGSZWECKE -->
@@ -88,6 +95,7 @@
       <button type="button" class="pill" data-category-chip="Wachstumshormon-Achse" aria-pressed="false">Wachstumshormon-Achse</button>
       <button type="button" class="pill" data-category-chip="Haut &amp; Kosmetik" aria-pressed="false">Haut &amp; Kosmetik</button>
       <button type="button" class="pill" data-category-chip="Kognition" aria-pressed="false">Kognition</button>
+      <button type="button" class="pill" data-category-chip="Immunsystem" aria-pressed="false">Immunsystem</button>
       <button type="button" class="pill" data-category-chip="Sonstige" aria-pressed="false">Sonstige</button>
     </div>
   </section>
@@ -161,10 +169,15 @@
       var thumb = document.createElement("div");
       thumb.className = "visual visual-thumb";
       var thumbImg = document.createElement("img");
-      thumbImg.src = "../assets/img/mol_" + encodeURIComponent(p.slug || "") + ".jpg";
       thumbImg.alt = "";
       thumbImg.loading = "lazy";
-      thumbImg.onerror = function () { this.style.display = "none"; };
+      // Fallback statt Ausblenden (9 von 15 Peptiden ohne eigenes mol_-Foto,
+      // Stand 14.09.): generisches sec_peptides.jpg-Thumb, kein Loch im Grid.
+      thumbImg.onerror = function () {
+        this.onerror = null;
+        this.src = "../assets/img/sec_peptides.jpg";
+      };
+      thumbImg.src = "../assets/img/mol_" + encodeURIComponent(p.slug || "") + ".jpg";
       thumb.appendChild(thumbImg);
       a.appendChild(thumb);
 
