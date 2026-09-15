@@ -89,7 +89,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.schwaechenTitle": "Schwächen",
 
     "page.anbieter-detail.flagsEyebrow": "Sorgfaltspflicht",
-    "page.anbieter-detail.flagsEmpty": "Keine Auffälligkeiten in unserer Recherche vom 06.09.2026 festgestellt.",
+    "page.anbieter-detail.flagsEmpty": "Keine Auffälligkeiten in unserer Recherche vom 15.09.2026 festgestellt.",
 
     "page.anbieter-detail.chargenEyebrow": "Prüfhistorie",
     "page.anbieter-detail.chargenTitle": "Zugehörige Chargen",
@@ -185,7 +185,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.schwaechenTitle": "Weaknesses",
 
     "page.anbieter-detail.flagsEyebrow": "Due diligence",
-    "page.anbieter-detail.flagsEmpty": "No notable items found in our review as of Sep 6, 2026.",
+    "page.anbieter-detail.flagsEmpty": "No notable items found in our review as of Sep 15, 2026.",
 
     "page.anbieter-detail.chargenEyebrow": "Test history",
     "page.anbieter-detail.chargenTitle": "Related batches",

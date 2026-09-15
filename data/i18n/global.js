@@ -72,7 +72,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
        ANBIETER real sind (keine Demo-Daten), aber Stand/Vollständigkeit
        vorläufig ist. */
     "global.demoBanner.label": "Vorabversion",
-    "global.demoBanner.text": "Vorabversion: Daten Stand 06.09.2026, Angaben ohne Gewähr.",
+    "global.demoBanner.text": "Vorabversion: Daten Stand 15.09.2026, Angaben ohne Gewähr.",
 
     /* Anbieter-Karte (PK.renderVendorCard) */
     "global.vendorCard.details": "Details",
@@ -93,7 +93,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.na": "nicht ermittelbar",
     "global.legal.notChecked": "nicht geprüft",
     "global.produkte.pending": "Produktdaten folgen",
-    "global.flags.title": "Auffälligkeiten (Stand 06.09.2026)",
+    "global.flags.title": "Auffälligkeiten (Stand 15.09.2026)",
 
     /* vendor.status (data/SCHEMA.md v2.3, Deep-Research 15.09.2026) */
     "global.status.aktiv": "Aktiv",
@@ -214,7 +214,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.langToggle.ariaLabel": "Choose language",
 
     "global.demoBanner.label": "Preview",
-    "global.demoBanner.text": "Preview version: data as of Sep 6, 2026, provided without guarantee.",
+    "global.demoBanner.text": "Preview version: data as of Sep 15, 2026, provided without guarantee.",
 
     "global.vendorCard.details": "Details",
     "global.vendorCard.shopLink": "Visit vendor",
@@ -231,7 +231,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.na": "not available",
     "global.legal.notChecked": "not checked",
     "global.produkte.pending": "Product data coming soon",
-    "global.flags.title": "Notable items (as of Sep 6, 2026)",
+    "global.flags.title": "Notable items (as of Sep 15, 2026)",
 
     /* vendor.status (data/SCHEMA.md v2.3, deep research Sep 15, 2026) */
     "global.status.aktiv": "Active",
