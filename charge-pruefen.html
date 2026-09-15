@@ -265,6 +265,16 @@
         body.appendChild(document.createElement("br"));
       }
 
+      // Anbieter-Logo (Auftrag 15.09.: Treffer zeigt Anbieter MIT Logo),
+      // wiederverwendet über PK.renderLogo() (assets/js/site.js) statt
+      // eigener Logo-Logik - gleiches Muster wie vergleich.html.
+      if (vendor) {
+        var vendorLogoWrap = document.createElement("div");
+        vendorLogoWrap.style.margin = "0 0 6px";
+        vendorLogoWrap.appendChild(PK.renderLogo(vendor, { tone: "text", size: "sm" }));
+        card.appendChild(vendorLogoWrap);
+      }
+
       var vendorNode;
       if (vendor) {
         vendorNode = document.createElement("a");
