@@ -68,7 +68,7 @@ window.PK.vendors = [
       "hinweis_en": "Enter code at checkout"
     },
     "produkte": [],
-    "preisProMg": 3.5,
+    "preisProMg": 3.75,
     "affiliateUrl": "https://www.pepwerk.com/",
     "kurz": "Sitz in Deutschland (laut Shop). Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
     "kurz_en": "Registered in Deutschland (laut Shop). Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
@@ -394,7 +394,7 @@ window.PK.vendors = [
       ]
     },
     "rankbar": false,
-    "preisStand": "2026-09-15"
+    "preisStand": "2026-08-24"
   },
   {
     "slug": "particle-peptides",
@@ -625,7 +625,7 @@ window.PK.vendors = [
     "provision": null,
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 6.78,
+    "preisProMg": 5.98,
     "affiliateUrl": "https://europa-peptide.de/",
     "kurz": "Sitz in London, UK. Versand laut Website nach DACH. CoA-Status nicht ermittelbar.",
     "kurz_en": "Registered in London, UK. Ships to Germany/Austria/Switzerland according to the website. CoA status not ascertainable.",
@@ -1025,7 +1025,7 @@ window.PK.vendors = [
     "provision": null,
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 2.49,
+    "preisProMg": 2.99,
     "affiliateUrl": "https://europeptides.de/",
     "kurz": "Sitz in Wien, Österreich. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
     "kurz_en": "Registered in Wien, Österreich. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
@@ -1257,7 +1257,7 @@ window.PK.vendors = [
     "provision": null,
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 4.99,
+    "preisProMg": 4.74,
     "affiliateUrl": "https://smartpeptides.de/",
     "kurz": "Sitz in Wieliczka, Polen (Lager DE). Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
     "kurz_en": "Registered in Wieliczka, Polen (Lager DE). Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
@@ -1522,7 +1522,7 @@ window.PK.vendors = [
     "provision": null,
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 5.98,
+    "preisProMg": 5.19,
     "affiliateUrl": "https://peakpeptide.com/",
     "kurz": "Sitz nicht ermittelbar. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
     "kurz_en": "Registered address not ascertainable. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
@@ -1750,7 +1750,7 @@ window.PK.vendors = [
     "provision": null,
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 4.1,
+    "preisProMg": 5.04,
     "affiliateUrl": "https://beyond-peptides.com/",
     "kurz": "Sitz in Hongkong. Versand laut Website nach DACH. CoAs öffentlich einsehbar, externe Prüfung nicht bestätigt.",
     "kurz_en": "Registered in Hongkong. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
@@ -2774,7 +2774,7 @@ window.PK.vendors = [
       ]
     },
     "rankbar": false,
-    "preisStand": "2026-09-15"
+    "preisStand": "2026-04-10"
   },
   {
     "slug": "protide-health",
@@ -3222,7 +3222,7 @@ window.PK.vendors = [
     "provision": null,
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 10.67,
+    "preisProMg": 10.17,
     "affiliateUrl": "https://dnlabresearch.com/",
     "kurz": "Sitz in Farnborough, UK (Footer); Dubai laut peptidcheck24. Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
     "kurz_en": "Registered in Farnborough, UK (Footer); Dubai laut peptidcheck24. Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
@@ -3840,7 +3840,7 @@ window.PK.vendors = [
     "provision": "10 % (Code-System)",
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 8.15,
+    "preisProMg": 5.9,
     "affiliateUrl": "https://driadashop.to/",
     "kurz": "Sitz nicht ermittelbar. Versand nach DACH nicht ermittelbar. Keine öffentlich einsehbaren CoAs gefunden.",
     "kurz_en": "Registered address not ascertainable. Shipping to Germany/Austria/Switzerland not ascertainable. No publicly available CoAs found.",
@@ -4622,7 +4622,7 @@ window.PK.vendors = [
     "provision": null,
     "rabatt": null,
     "produkte": [],
-    "preisProMg": 7.4,
+    "preisProMg": 5.9,
     "affiliateUrl": "https://peptideshopdeutschland.com/",
     "kurz": "Sitz nicht ermittelbar. Versand nach DACH nicht ermittelbar. Keine öffentlich einsehbaren CoAs gefunden.",
     "kurz_en": "Registered address not ascertainable. Shipping to Germany/Austria/Switzerland not ascertainable. No publicly available CoAs found.",
