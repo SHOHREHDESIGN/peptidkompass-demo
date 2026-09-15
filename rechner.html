@@ -82,7 +82,7 @@
 
     <div class="calc-switch" role="tablist" data-i18n-attr="aria-label:page.rechner.switchAriaLabel" aria-label="Rechner-Bereich wählen">
       <button type="button" role="tab" id="calc-tab-aufloesen" aria-controls="calc-panel-aufloesen" aria-selected="true" data-i18n="page.rechner.tabAufloesen">Auflösen</button>
-      <button type="button" role="tab" id="calc-tab-umrechnen" aria-controls="calc-panel-umrechnen" aria-selected="false" tabindex="-1" data-i18n="page.rechner.tabUmrechnen">Menge umrechnen</button>
+      <button type="button" role="tab" id="calc-tab-umrechnen" aria-controls="calc-panel-umrechnen" aria-selected="false" data-i18n="page.rechner.tabUmrechnen">Menge umrechnen</button>
     </div>
   </section>
 
@@ -322,7 +322,9 @@
       tabs.forEach(function (tab, i) {
         var active = i === index;
         tab.setAttribute("aria-selected", active ? "true" : "false");
-        tab.tabIndex = active ? 0 : -1;
+        // Beide Tabs bleiben per Tab-Taste erreichbar (QA r11 MAJOR 2), Pfeiltasten
+        // wechseln zusaetzlich; bewusste Abweichung vom strengen Roving-Tabindex.
+        tab.tabIndex = 0;
         panels[i].hidden = !active;
       });
       if (index === 1) renderUmrechnen();

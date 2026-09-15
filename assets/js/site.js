@@ -1003,16 +1003,35 @@
       var g = { li: li, trigger: trigger, panel: panel };
       groups.push(g);
 
-      trigger.addEventListener("click", function () {
-        var willOpen = !li.classList.contains("is-open");
+      // Klick: mit der Maus ist das Panel per CSS-Hover ohnehin sichtbar,
+      // deshalb hält ein Mausklick es offen (kein Toggle gegen den Hover-
+      // Zustand, QA r11 MAJOR 1). Tastatur/Touch (kein Hover) toggeln.
+      var lastPointer = "mouse";
+      trigger.addEventListener("pointerdown", function (e) { lastPointer = e.pointerType || "mouse"; });
+      trigger.addEventListener("click", function (e) {
+        var viaKeyboard = e.detail === 0;
+        var hoverCapable = !viaKeyboard && lastPointer === "mouse" && matchesDesktop();
+        var willOpen = hoverCapable ? true : !li.classList.contains("is-open");
+        li.classList.remove("is-suppressed");
         closeAll();
         setOpen(g, willOpen);
+        if (!willOpen) li.classList.add("is-suppressed");
       });
+      // Nach Escape/Schließen per Tastatur bleibt der Fokus auf dem Trigger;
+      // :focus-within würde das Panel sonst sofort wieder zeigen (QA r11
+      // BLOCKER). is-suppressed unterdrückt Hover/Focus-Anzeige, bis die
+      // Maus das Element verlässt oder der Fokus es verlässt.
+      li.addEventListener("mouseleave", function () { li.classList.remove("is-suppressed"); });
+      li.addEventListener("focusout", function (e) {
+        if (!li.contains(e.relatedTarget)) li.classList.remove("is-suppressed");
+      });
+      if (panel && !panel.id) panel.id = "nav-dropdown-" + groups.length;
+      if (panel && panel.id) trigger.setAttribute("aria-controls", panel.id);
       // Hover-Zustand zusätzlich für aria-expanded pflegen (die eigentliche
       // Sichtbarkeit übernimmt CSS :hover, siehe system.css 5b) : ein reiner
       // Maus-Hover soll für Screenreader denselben Zustand melden wie Klick.
       li.addEventListener("mouseenter", function () {
-        if (matchesDesktop()) setOpen(g, true);
+        if (matchesDesktop() && !li.classList.contains("is-suppressed")) setOpen(g, true);
       });
       li.addEventListener("mouseleave", function () {
         if (matchesDesktop()) setOpen(g, false);
@@ -1027,6 +1046,7 @@
         var focused = document.activeElement;
         closeAll();
         openGroup.forEach(function (g) {
+          g.li.classList.add("is-suppressed");
           if (g.panel.contains(focused) || g.trigger === focused) g.trigger.focus();
         });
       });

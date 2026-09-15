@@ -131,3 +131,6 @@
 /* Sortiment-Tabelle (wirkstoffe/detail.html): Logo-Spalte schmal, CoA-Pill-
    Spalte nicht umbrechen. */
 #vendor-table td:first-child{ width:1%; white-space:nowrap; }
+
+/* Vergleich: Status-Pill neben dem Namen nie umbrechen (QA r11 MINOR) */
+.table .table-name-top .pill{ white-space:nowrap; }

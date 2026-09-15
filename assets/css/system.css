@@ -576,6 +576,12 @@ body.nav-open{ overflow:hidden; }
     opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0);
     transition:opacity .2s var(--ease), transform .2s var(--ease), visibility 0s linear 0s;
   }
+  /* Nach Escape/Tastatur-Schließen: Hover und Focus-within zeigen das Panel
+     nicht, bis Maus oder Fokus das Element verlassen (JS setzt/entfernt). */
+  .nav-item-dropdown.is-suppressed:hover .nav-dropdown,
+  .nav-item-dropdown.is-suppressed:focus-within .nav-dropdown{
+    opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-6px);
+  }
 }
 
 @media (max-width:1023px){
