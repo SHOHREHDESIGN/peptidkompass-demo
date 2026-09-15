@@ -141,14 +141,9 @@
       </div>
     </div>
 
-    <div class="hero-media">
-      <video class="hero-media-video" data-hero-video autoplay muted loop playsinline
-             preload="metadata" poster="assets/video/hero_poster_v3.jpg" data-fallback="assets/img/life_hero.jpg">
-        <source src="assets/video/hero_loop_v3.webm" type="video/webm">
-        <source src="assets/video/hero_loop_v3.mp4" type="video/mp4">
-      </video>
-    </div>
-  </section>
+    <!-- Hero-Video entfernt (Vic 15.09.): zu viel Bewegung zusammen mit den
+         Glas-Objekten. Die Clips laufen als ruhige Loops in den Lifestyle-Kacheln. -->
+</section>
 
   <!-- 3 KENNZAHLEN (Count-up via PK.initCountUp) -->
   <section class="section-tight container reveal" aria-label="Kennzahlen">
@@ -295,7 +290,8 @@
   <section class="section container reveal">
     <div class="split split-reverse">
       <div class="split-visual visual visual-parallax">
-        <img src="assets/img/life_vendors.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.topImgAlt">
+        <video class="tile-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/tile_run_poster.jpg" aria-hidden="true"><source src="assets/video/tile_run.mp4" type="video/mp4"></video>
+        <img class="tile-video-fallback" src="assets/img/life_vendors.jpg" alt="" loading="lazy" data-i18n-attr="alt:page.index.topImgAlt">
       </div>
       <div class="split-text row-between">
         <div>
@@ -344,7 +340,8 @@
   <section class="section container reveal">
     <div class="split split-reverse">
       <div class="split-visual visual visual-kenburns">
-        <img src="assets/img/life_calc.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.calcImgAlt">
+        <video class="tile-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/tile_focus_poster.jpg" aria-hidden="true"><source src="assets/video/tile_focus.mp4" type="video/mp4"></video>
+        <img class="tile-video-fallback" src="assets/img/life_calc.jpg" alt="" loading="lazy" data-i18n-attr="alt:page.index.calcImgAlt">
       </div>
       <div class="split-text row-between">
         <div>
