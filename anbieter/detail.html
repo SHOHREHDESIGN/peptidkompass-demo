@@ -11,7 +11,9 @@
 <link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/anbieter/detail.html?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" id="og-title" data-i18n="page.anbieter-detail.ogTitle" content="Anbieter-Detail · Peptide Compass">
-<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
+<meta property="og:description" id="og-description" data-i18n="page.anbieter-detail.ogDescription" content="Score-Breakdown, Labor-Nachweise, Rechtsrahmen und Produkte im Überblick.">
+<meta property="og:url" id="og-url" content="https://peptidkompass.com/anbieter/detail.html">
+<meta property="og:image" id="og-image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/css/system.css">
 <link rel="stylesheet" href="../assets/css/tiles.css">
@@ -329,10 +331,16 @@
     PK.footerDisclaimer();
     PK.initParallax();
 
-    var slug = new URLSearchParams(location.search).get("slug");
+    // Slug: ?slug=X (alte Links, Legacy-detail.html) hat Vorrang, sonst aus
+    // dem Dateinamen (statische Seite anbieter/<slug>.html, siehe
+    // tools/build_static_pages.py + PK.slugFromPath() in assets/js/site.js).
+    var urlParams = new URLSearchParams(location.search);
+    var slug = urlParams.get("slug") || PK.slugFromPath();
     var vendor = slug ? PK.vendorBySlug(slug) : null;
 
     if (!vendor) {
+      // Canonical bleibt auf dem generischen Platzhalter - ein Tippfehler-
+      // Slug darf nie auf eine nicht existente statische Seite zeigen.
       document.getElementById("not-found").hidden = false;
       return;
     }
@@ -340,8 +348,22 @@
     document.getElementById("detail-content").hidden = false;
 
     var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
+    // Canonical + Redirect: vendor ist ab hier garantiert vorhanden.
+    // Canonical zeigt immer auf die statische Seite. Der Redirect feuert NUR
+    // auf der Legacy-Seite (Pfad endet auf "/detail.html") - auf den
+    // generierten anbieter/<slug>.html-Seiten endet der Pfad nie so, keine
+    // Redirect-Schleife möglich. relFile ist bewusst NUR der Dateiname ohne
+    // "anbieter/"-Präfix (siehe wirkstoffe/detail.html: ein relatives
+    // location.replace("anbieter/"+relFile) würde von innerhalb anbieter/
+    // aus zu ".../anbieter/anbieter/<slug>.html" verdoppeln).
+    var relFile = encodeURIComponent(vendor.slug) + ".html";
     var canEl = document.getElementById("page-canonical");
-    if (canEl) canEl.setAttribute("href", "https://peptidkompass.com/anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug));
+    if (canEl) canEl.setAttribute("href", "https://peptidkompass.com/anbieter/" + relFile);
+    if (/\/detail\.html$/.test(location.pathname)) {
+      var langParam = urlParams.get("lang");
+      location.replace(relFile + (langParam ? "?lang=" + langParam : ""));
+      return;
+    }
 
     /**
      * render() baut alle sprachabhängigen dynamischen Inhalte des Anbieter-
@@ -597,7 +619,7 @@
         var tdName = document.createElement("td");
         var a = document.createElement("a");
         a.className = "btn-link";
-        a.href = "../wirkstoffe/detail.html?slug=" + encodeURIComponent(p.peptideSlug || "");
+        a.href = "../wirkstoffe/" + encodeURIComponent(p.peptideSlug || "") + ".html";
         a.textContent = name || "";
         tdName.appendChild(a);
 

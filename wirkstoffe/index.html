@@ -177,7 +177,7 @@
     function renderCard(p) {
       var a = document.createElement("a");
       a.className = "card tilt";
-      a.href = "detail.html?slug=" + encodeURIComponent(p.slug || "");
+      a.href = encodeURIComponent(p.slug || "") + ".html";
 
       var thumb = document.createElement("div");
       thumb.className = "visual visual-thumb";

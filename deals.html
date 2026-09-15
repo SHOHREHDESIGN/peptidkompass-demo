@@ -217,7 +217,7 @@
 
       var profileLink = document.createElement("a");
       profileLink.className = "btn-link";
-      profileLink.href = "anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
+      profileLink.href = "anbieter/" + encodeURIComponent(v.slug || "") + ".html";
       profileLink.textContent = PK.t("page.deals.profileLink");
       actions.appendChild(profileLink);
 

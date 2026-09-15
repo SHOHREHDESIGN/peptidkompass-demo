@@ -195,3 +195,8 @@
   .split-visual .tile-video{ display:none; }
   .split-visual .tile-video + .tile-video-fallback{ display:block; }
 }
+
+/* Anbieter-Detail: Status-Banner respektiert [hidden] (Card setzt display),
+   farbiger Logo-Chip entfällt (Vic: nur eingefärbte Mono-Logos). */
+.status-banner[hidden]{ display:none; }
+.vendor-logo-color{ display:none; }

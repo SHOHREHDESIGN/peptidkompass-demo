@@ -279,7 +279,7 @@
       if (vendor) {
         vendorNode = document.createElement("a");
         vendorNode.className = "btn-link";
-        vendorNode.href = "anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug || "");
+        vendorNode.href = "anbieter/" + encodeURIComponent(vendor.slug || "") + ".html";
         vendorNode.textContent = vendor.name || vendor.slug || "";
       } else {
         vendorNode = document.createTextNode(batch.vendorSlug || PK.t("page.charge-pruefen.unknown"));
@@ -290,7 +290,7 @@
       if (peptide) {
         peptideNode = document.createElement("a");
         peptideNode.className = "btn-link";
-        peptideNode.href = "wirkstoffe/detail.html?slug=" + encodeURIComponent(peptide.slug || "");
+        peptideNode.href = "wirkstoffe/" + encodeURIComponent(peptide.slug || "") + ".html";
         peptideNode.textContent = peptide.name || peptide.slug || "";
       } else {
         peptideNode = document.createTextNode(batch.peptideSlug || PK.t("page.charge-pruefen.unknown"));

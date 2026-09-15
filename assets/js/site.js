@@ -367,6 +367,22 @@
   };
 
   /**
+   * PK.slugFromPath() → Slug aus dem aktuellen Dateinamen (statische
+   * Wirkstoff-/Anbieter-Seiten, tools/build_static_pages.py) oder "".
+   * "detail" und "index" sind KEINE Content-Slugs, sondern die Routing-
+   * Dateien selbst (Legacy-?slug=-Seite bzw. Übersichtsseite) - dort greift
+   * stattdessen der ?slug=-Query-Parameter (siehe wirkstoffe/detail.html,
+   * anbieter/detail.html).
+   */
+  PK.slugFromPath = function () {
+    var path = (global.location && global.location.pathname) || "";
+    var last = path.split("/").pop() || "";
+    var base = last.replace(/\.html$/i, "");
+    if (!base || base === "detail" || base === "index") return "";
+    return base;
+  };
+
+  /**
    * PK.safeUrl(url)
    * Whitelist für Link-Ziele: nur "#DEMO" (exakt) oder "https://…" sind
    * erlaubt. Alles andere (http://, javascript:, data:, leer, …) wird
@@ -497,7 +513,7 @@
 
     var detailLink = document.createElement("a");
     detailLink.className = "btn-link";
-    detailLink.href = bp + "anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug || "");
+    detailLink.href = bp + "anbieter/" + encodeURIComponent(vendor.slug || "") + ".html";
     detailLink.textContent = PK.t("global.vendorCard.details");
     actions.appendChild(detailLink);
 
@@ -870,7 +886,7 @@
         items.forEach(function (p) {
           var li2 = document.createElement("li");
           var a = document.createElement("a");
-          a.href = basePath + "wirkstoffe/detail.html?slug=" + encodeURIComponent(p.slug);
+          a.href = basePath + "wirkstoffe/" + encodeURIComponent(p.slug) + ".html";
           a.textContent = p.name;
           li2.appendChild(a);
           ul.appendChild(li2);
@@ -888,7 +904,7 @@
       nav.vendors.forEach(function (v) {
         var li2 = document.createElement("li");
         var a = document.createElement("a");
-        a.href = basePath + "anbieter/detail.html?slug=" + encodeURIComponent(v.slug);
+        a.href = basePath + "anbieter/" + encodeURIComponent(v.slug) + ".html";
 
         var nameWrap = document.createElement("span");
         nameWrap.className = "nav-dropdown-vendor-name";
@@ -2332,7 +2348,7 @@
       var vendorLink = document.createElement("a");
       vendorLink.className = "proof-vendor btn-link";
       if (vendor) {
-        vendorLink.href = bp + "anbieter/detail.html?slug=" + encodeURIComponent(vendor.slug || "");
+        vendorLink.href = bp + "anbieter/" + encodeURIComponent(vendor.slug || "") + ".html";
         vendorLink.textContent = vendor.name || "";
       } else {
         vendorLink.href = "#";

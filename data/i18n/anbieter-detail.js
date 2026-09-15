@@ -16,6 +16,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.title": "Anbieter-Detail · Peptide Compass",
     "page.anbieter-detail.metaDescription": "Volle Entscheidungsgrundlage zu einem Peptid-Anbieter: Score-Breakdown, Labor-Nachweise, Rechtsrahmen, Versand und Produkte.",
     "page.anbieter-detail.ogTitle": "Anbieter-Detail · Peptide Compass",
+    "page.anbieter-detail.ogDescription": "Score-Breakdown, Labor-Nachweise, Rechtsrahmen und Produkte im Überblick.",
 
     "page.anbieter-detail.notFoundEyebrow": "Anbieter nicht gefunden",
     "page.anbieter-detail.notFoundH1": "Diesen Anbieter kennen wir nicht",
@@ -113,6 +114,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.anbieter-detail.title": "Vendor detail · Peptide Compass",
     "page.anbieter-detail.metaDescription": "Everything you need to evaluate a peptide vendor: score breakdown, lab evidence, legal framework, shipping, and products.",
     "page.anbieter-detail.ogTitle": "Vendor detail · Peptide Compass",
+    "page.anbieter-detail.ogDescription": "Score breakdown, lab evidence, legal framework, and products at a glance.",
 
     "page.anbieter-detail.notFoundEyebrow": "Vendor not found",
     "page.anbieter-detail.notFoundH1": "We don't know this vendor",

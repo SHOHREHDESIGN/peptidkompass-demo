@@ -12,8 +12,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" id="og-title" data-i18n="page.wirkstoffe-detail.ogTitle" content="Wirkstoff · Peptide Compass">
 <meta property="og:description" id="og-description" data-i18n="page.wirkstoffe-detail.ogDescription" content="Kategorie, Studienlage, Evidenz und Sicherheit im Überblick.">
-<meta property="og:url" content="https://peptidkompass.com/wirkstoffe/detail.html">
-<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
+<meta property="og:url" id="og-url" content="https://peptidkompass.com/wirkstoffe/detail.html">
+<meta property="og:image" id="og-image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/css/system.css">
 <link rel="stylesheet" href="../assets/css/tiles.css">
@@ -279,8 +279,11 @@
     PK.initDemoBanner();
     PK.footerDisclaimer();
 
+    // Slug: ?slug=X (alte Links, Legacy-detail.html) hat Vorrang, sonst aus
+    // dem Dateinamen (statische Seite wirkstoffe/<slug>.html, siehe
+    // tools/build_static_pages.py + PK.slugFromPath() in assets/js/site.js).
     var params = new URLSearchParams(window.location.search);
-    var slug = params.get("slug") || "";
+    var slug = params.get("slug") || PK.slugFromPath();
     var peptide = PK.peptideBySlug(slug);
 
     // Kopf-Visual: mol_<slug>.jpg, per JS gesetzt (Slug erst zur Laufzeit
@@ -297,21 +300,40 @@
       visualImg.src = "../assets/img/mol_" + encodeURIComponent(slug) + ".jpg";
     }
 
-    var canEl = document.getElementById("page-canonical");
-    if (canEl && slug) canEl.setAttribute("href", "https://peptidkompass.com/wirkstoffe/detail.html?slug=" + encodeURIComponent(slug));
-
     var errorEl = document.getElementById("pk-error");
     var contentEl = document.getElementById("pk-content");
 
     if (!peptide) {
       // Fehlermeldung selbst ist statisches HTML (data-i18n), PK.applyI18n()
       // hat sie oben bereits übersetzt. Kein dynamischer Content, kein render().
+      // Canonical bleibt auf dem generischen Platzhalter - ein Tippfehler-
+      // Slug darf nie auf eine nicht existente statische Seite zeigen.
       if (errorEl) errorEl.hidden = false;
       if (contentEl) contentEl.hidden = true;
       return;
     }
     if (errorEl) errorEl.hidden = true;
     if (contentEl) contentEl.hidden = false;
+
+    // Canonical + Redirect: erst HIER, peptide ist ab jetzt garantiert
+    // vorhanden. Canonical zeigt immer auf die statische Seite (egal ob wir
+    // gerade darauf oder noch auf der Legacy-?slug=-Seite stehen). Der
+    // Redirect feuert NUR auf der Legacy-Seite (Pfad endet auf
+    // "/detail.html") - auf den generierten wirkstoffe/<slug>.html-Seiten
+    // selbst endet der Pfad nie so, keine Redirect-Schleife möglich.
+    // relFile ist bewusst NUR der Dateiname ohne "wirkstoffe/"-Präfix: wir
+    // stehen (Legacy wie generiert) bereits im Verzeichnis wirkstoffe/, ein
+    // relatives location.replace("wirkstoffe/"+relFile) würde sonst zu
+    // ".../wirkstoffe/wirkstoffe/<slug>.html" verdoppeln (gefunden per
+    // Selbstprüfung: Browser-Test auf detail.html?slug=bpc-157).
+    var relFile = encodeURIComponent(slug) + ".html";
+    var canEl = document.getElementById("page-canonical");
+    if (canEl) canEl.setAttribute("href", "https://peptidkompass.com/wirkstoffe/" + relFile);
+    if (/\/detail\.html$/.test(location.pathname)) {
+      var langParam = params.get("lang");
+      location.replace(relFile + (langParam ? "?lang=" + langParam : ""));
+      return;
+    }
 
     var vendors = Array.isArray(PK.vendors) ? PK.vendors : [];
     var batches = Array.isArray(PK.batches) ? PK.batches : [];
@@ -586,7 +608,7 @@
         var tdName = document.createElement("td");
         var link = document.createElement("a");
         link.className = "btn-link";
-        link.href = "../anbieter/detail.html?slug=" + encodeURIComponent(r.vendor.slug || "");
+        link.href = "../anbieter/" + encodeURIComponent(r.vendor.slug || "") + ".html";
         link.textContent = r.vendor.name || "";
         tdName.appendChild(link);
         tr.appendChild(tdName);
@@ -755,7 +777,7 @@
         if (v) {
           var vLink = document.createElement("a");
           vLink.className = "btn-link";
-          vLink.href = "../anbieter/detail.html?slug=" + encodeURIComponent(v.slug || "");
+          vLink.href = "../anbieter/" + encodeURIComponent(v.slug || "") + ".html";
           vLink.textContent = v.name || "";
           tdVendor.appendChild(vLink);
         } else {
@@ -796,7 +818,7 @@
         verwandtPeptides.forEach(function (vp) {
           var card = document.createElement("a");
           card.className = "card tilt";
-          card.href = "detail.html?slug=" + encodeURIComponent(vp.slug || "");
+          card.href = encodeURIComponent(vp.slug || "") + ".html";
           var pill = document.createElement("span");
           pill.className = "pill";
           pill.textContent = PK.tEnum("kategorie", vp.kategorie);

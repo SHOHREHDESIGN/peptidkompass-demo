@@ -247,7 +247,7 @@
 
       var nameLink = document.createElement("a");
       nameLink.className = "study-card-name";
-      nameLink.href = "wirkstoffe/detail.html?slug=" + encodeURIComponent(p.slug || "");
+      nameLink.href = "wirkstoffe/" + encodeURIComponent(p.slug || "") + ".html";
       nameLink.textContent = p.name || "";
       head.appendChild(nameLink);
 
