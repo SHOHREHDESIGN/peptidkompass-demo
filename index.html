@@ -325,6 +325,21 @@
     <p style="margin-top:var(--sp-3);"><a class="btn-link" href="wirkstoffe/index.html" data-i18n="page.index.allPeptidesLink">Alle 15 Wirkstoffe</a></p>
   </section>
 
+  <!-- AUS DEM RATGEBER: die 3 jüngsten Artikel (Ratgeber-Ausbau 15.09.),
+       versteckt sich selbst ohne window.PK.ratgeber-Einträge (siehe render()
+       unten) - kein leerer Abschnitt, solange noch keine Artikel freigegeben
+       sind. -->
+  <section class="section container reveal" id="ratgeber-preview-section" hidden>
+    <div class="row-between">
+      <div>
+        <p class="eyebrow" data-i18n="page.index.ratgeberEyebrow">Lernen</p>
+        <h2 class="section-title" data-i18n="page.index.ratgeberTitle">Aus dem Ratgeber</h2>
+      </div>
+      <a class="btn-link" href="ratgeber/index.html" data-i18n="page.index.allRatgeberLink">Alle Artikel ansehen</a>
+    </div>
+    <div class="grid-3" id="ratgeber-preview-grid" style="margin-top:var(--sp-4);"></div>
+  </section>
+
   <!-- RECHNER-TEASER -->
   <section class="section container reveal">
     <div class="split split-reverse">
@@ -407,6 +422,7 @@
 <script src="data/peptides.js"></script>
 <script src="data/batches.js"></script>
 <script src="data/reviews.js"></script>
+<script src="data/ratgeber.js"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
 <script src="data/nav.js"></script>
 <script src="data/i18n/global.js"></script>
@@ -462,6 +478,8 @@
     var podiumEl = document.getElementById("podium");
     var gridEl = document.getElementById("vendor-grid");
     var peptideGrid = document.getElementById("peptide-grid");
+    var ratgeberSection = document.getElementById("ratgeber-preview-section");
+    var ratgeberGrid = document.getElementById("ratgeber-preview-grid");
     var freshEl = document.getElementById("fresh");
     var proofSection = document.getElementById("proof-section");
     var weightsEl = document.getElementById("weights");
@@ -559,6 +577,37 @@
           a.appendChild(title);
           a.appendChild(body);
           peptideGrid.appendChild(a);
+        });
+      }
+
+      // Aus dem Ratgeber: die 3 jüngsten Artikel (window.PK.ratgeber ist
+      // bereits datum-absteigend sortiert, siehe tools/build_ratgeber.py).
+      // Sektion bleibt hidden, solange keine Artikel vorhanden sind.
+      var ratgeberArticles = Array.isArray(window.PK.ratgeber) ? window.PK.ratgeber : [];
+      if (ratgeberSection) ratgeberSection.hidden = ratgeberArticles.length === 0;
+      if (ratgeberGrid && ratgeberArticles.length) {
+        ratgeberGrid.textContent = "";
+        ratgeberArticles.slice(0, 3).forEach(function (a) {
+          var link = document.createElement("a");
+          link.className = "card tilt";
+          link.href = "ratgeber/" + a.slug + ".html";
+
+          var pill = document.createElement("span");
+          pill.className = "pill";
+          pill.textContent = PK.tEnum("ratgeberKategorie", a.kategorie);
+
+          var title = document.createElement("p");
+          title.className = "card-title";
+          title.textContent = PK.tx(a, "titel");
+
+          var body = document.createElement("p");
+          body.className = "card-body";
+          body.textContent = PK.tx(a, "teaser");
+
+          link.appendChild(pill);
+          link.appendChild(title);
+          link.appendChild(body);
+          ratgeberGrid.appendChild(link);
         });
       }
 

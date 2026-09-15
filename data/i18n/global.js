@@ -65,6 +65,8 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.nav.peptid1x1": "Peptid 1x1",
     "global.nav.peptid1x1Desc": "Grundlagen für Einsteiger, neutral erklärt",
     "global.nav.methodikDesc": "So entsteht unser Score",
+    "global.nav.ratgeber": "Ratgeber",
+    "global.nav.ratgeberDesc": "Artikel zu Prüfen, Preisen und Recht",
 
     /* Trust-Gruppe (Nav-Menü unten + Footer) */
     "global.nav.methodik": "Methodik",
@@ -161,6 +163,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.enum.evidenzArt.präklinisch": "präklinisch",
     "global.enum.evidenzArt.klinisch": "klinisch",
 
+    /* Enum: ratgeber-Artikel.kategorie (tools/build_ratgeber.py, 5 Werte) */
+    "global.enum.ratgeberKategorie.Prüfen": "Prüfen",
+    "global.enum.ratgeberKategorie.Preis": "Preis",
+    "global.enum.ratgeberKategorie.Recht": "Recht",
+    "global.enum.ratgeberKategorie.Anbieter": "Anbieter",
+    "global.enum.ratgeberKategorie.Wirkstoffe": "Wirkstoffe",
+
     /* Enum: batch.coaStatus (data/SCHEMA.md, 3 Werte) */
     "global.enum.coaStatus.verifiziert": "verifiziert",
     "global.enum.coaStatus.shop-eigen": "shop-eigen",
@@ -221,6 +230,8 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.nav.peptid1x1": "Peptides 101",
     "global.nav.peptid1x1Desc": "Basics for beginners, explained neutrally",
     "global.nav.methodikDesc": "How our score is built",
+    "global.nav.ratgeber": "Guides",
+    "global.nav.ratgeberDesc": "Articles on testing, prices and legal basics",
 
     "global.nav.methodik": "Methodology",
     "global.nav.affiliateHinweis": "Affiliate disclosure",
@@ -293,6 +304,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "global.enum.evidenzArt.präklinisch": "preclinical",
     "global.enum.evidenzArt.klinisch": "clinical",
+
+    "global.enum.ratgeberKategorie.Prüfen": "Testing",
+    "global.enum.ratgeberKategorie.Preis": "Price",
+    "global.enum.ratgeberKategorie.Recht": "Legal",
+    "global.enum.ratgeberKategorie.Anbieter": "Vendors",
+    "global.enum.ratgeberKategorie.Wirkstoffe": "Peptides",
 
     "global.enum.coaStatus.verifiziert": "verified",
     "global.enum.coaStatus.shop-eigen": "vendor-supplied",

@@ -174,3 +174,14 @@
   text-decoration:none;
 }
 .faq-item-source:hover{ text-decoration:underline; }
+
+/* ============================================================================
+   Ratgeber (ratgeber/index.html, ratgeber/<slug>.html, 15.09.2026): reine
+   Komposition aus bestehenden Komponenten - .visual-band (Titelbild), .card
+   .tilt (Kartengrid wie wirkstoffe/index.html), .related-grid (Weitere
+   Artikel, identisch zu wirkstoffe/detail.html), .table-wrap/.table (Preis-
+   tabellen in Artikeln), .faq (Akkordeon wie faq.html). Bewusst KEINE neue
+   Klasse : README-Regel "keine neuen CSS-Regeln erfinden" greift hier
+   vollständig, jede benötigte Fläche/Typografie existiert bereits.
+   ============================================================================ */
+

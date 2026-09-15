@@ -70,6 +70,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.allPeptidesLink": "Alle 15 Wirkstoffe",
     "page.index.peptideImgAlt": "Peptidkette aus Glas auf dunkler Bühne",
 
+    "page.index.ratgeberEyebrow": "Lernen",
+    "page.index.ratgeberTitle": "Aus dem Ratgeber",
+    "page.index.allRatgeberLink": "Alle Artikel ansehen",
+
     "page.index.calcEyebrow": "Anmisch-Rechner",
     "page.index.calcTitle": "Rechnet mg und ml sauber um, ganz ohne Dosierungsempfehlung.",
     "page.index.calcBody": "Reine Rechenhilfe, keine Dosierungsempfehlung.",
@@ -152,6 +156,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.index.peptideTitle": "Understand peptides",
     "page.index.allPeptidesLink": "All 15 peptides",
     "page.index.peptideImgAlt": "Glass peptide chain on a dark stage",
+
+    "page.index.ratgeberEyebrow": "Learn",
+    "page.index.ratgeberTitle": "From the guides",
+    "page.index.allRatgeberLink": "View all articles",
 
     "page.index.calcEyebrow": "Mixing calculator",
     "page.index.calcTitle": "Converts mg and ml cleanly, with no dosing recommendation.",

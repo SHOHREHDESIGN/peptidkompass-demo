@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="page.ratgeber-coa-lesen.title">CoA lesen: Was Chargennummer, Reinheit und Identität wirklich bedeuten · Peptide Compass</title>
+<meta name="description" data-i18n="page.ratgeber-coa-lesen.metaDescription" content="Wie du ein Certificate of Analysis richtig liest: Chargennummer, Labor, HPLC-Reinheit, Identität per LC-MS, Endotoxin und Schwermetalle einfach erklärt.">
+<link rel="canonical" href="https://peptidkompass.com/ratgeber/coa-lesen.html">
+<link rel="alternate" hreflang="de" href="https://peptidkompass.com/ratgeber/coa-lesen.html?lang=de">
+<link rel="alternate" hreflang="en" href="https://peptidkompass.com/ratgeber/coa-lesen.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/ratgeber/coa-lesen.html?lang=de">
+<meta property="og:type" content="article">
+<meta property="og:title" data-i18n="page.ratgeber-coa-lesen.ogTitle" content="CoA lesen: Charge, Reinheit und Identität verstehen">
+<meta property="og:description" data-i18n="page.ratgeber-coa-lesen.ogDescription" content="Wie du ein Certificate of Analysis richtig liest: Chargennummer, Labor, HPLC-Reinheit, Identität per LC-MS, Endotoxin und Schwermetalle einfach erklärt.">
+<meta property="og:url" content="https://peptidkompass.com/ratgeber/coa-lesen.html">
+<meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/css/system.css">
+<link rel="stylesheet" href="../assets/css/tiles.css">
+<link rel="icon" href="../assets/brand/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/brand/favicon/favicon-180.png">
+<link rel="manifest" href="../assets/brand/favicon/site.webmanifest">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="global.a11y.skipToContent">Zum Inhalt springen</a>
+
+<div class="demo-banner" data-demo-banner hidden>
+  <span data-demo-banner-text>Vorabversion: Daten Stand 15.09.2026, Angaben ohne Gewähr.</span>
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html"><span class="nav-logo-strong">Peptide</span> <span class="nav-logo-light">Compass</span></a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="../anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+        <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+        <li><a href="../wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+        <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+        <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+        <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="../anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a>
+    </div>
+    <button class="nav-hamburger" aria-controls="nav-menu" aria-expanded="false" aria-label="Menü öffnen" data-i18n-attr="aria-label:global.nav.menuOeffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-menu" id="nav-menu">
+  <div>
+    <div class="nav-cta"><a class="btn btn-primary" href="../anbieter/index.html" data-i18n="global.nav.anbieterFinden">Anbieter finden</a></div>
+    <ul class="nav-menu-links">
+      <li><a href="../anbieter/index.html" data-i18n="global.nav.anbieter">Anbieter</a></li>
+      <li><a href="../vergleich.html" data-i18n="global.nav.vergleich">Vergleich</a></li>
+      <li><a href="../wirkstoffe/index.html" data-i18n="global.nav.wirkstoffe">Wirkstoffe</a></li>
+      <li><a href="../rechner.html" data-i18n="global.nav.rechner">Rechner</a></li>
+      <li><a href="../charge-pruefen.html" data-i18n="global.nav.chargePruefen">Charge prüfen</a></li>
+      <li><a href="../deals.html" data-i18n="global.nav.deals">Deals</a></li>
+    </ul>
+  </div>
+  <ul class="nav-menu-trust">
+    <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+    <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+    <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+    <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <section class="section-tight container reveal">
+    <p class="text-small muted"><a href="index.html" data-i18n="page.ratgeber-detail.backLink">← Zurück zum Ratgeber</a></p>
+  </section>
+
+  <!-- KOPFBEREICH: Kategorie-Pill, H1, Teaser, Datum + Lesezeit -->
+  <section class="section-tight container reveal">
+    <p><span class="pill" id="ratgeber-kategorie-pill">Prüfen</span></p>
+    <h1 class="h1" id="ratgeber-h1" data-i18n="page.ratgeber-coa-lesen.h1">CoA lesen: Was Chargennummer, Reinheit und Identität wirklich bedeuten</h1>
+    <p class="section-lead" id="ratgeber-teaser" data-i18n="page.ratgeber-coa-lesen.lead">Ein CoA ist mehr als ein PDF mit Prozentzahl. So liest du Chargennummer, Labor, Reinheit und Identität, und erkennst ein Muster-CoA ohne echte Charge.</p>
+    <p class="text-small muted" id="ratgeber-meta">2026-09-15 · 6 Min. Lesezeit</p>
+  </section>
+
+  <!-- TITELBILD -->
+  <section class="container reveal">
+    <figure class="visual-band">
+      <img src="../assets/img/ratgeber/coa-lesen.jpg" alt="Nahaufnahme eines Certificate of Analysis mit Chargennummer, Reinheitswert und Laborangabe" loading="eager" decoding="async" onerror="this.parentNode.style.display='none'" data-i18n-attr="alt:page.ratgeber-coa-lesen.bandImgAlt" id="ratgeber-band-img">
+    </figure>
+  </section>
+
+  <!-- INHALT: von PK.renderRatgeberArticle() aus window.PK.ratgeber gefüllt.
+       Bleibt hidden, bis JS gerendert hat; siehe <noscript> weiter unten
+       für den SEO-/No-JS-Fallback mit demselben DE-Text. -->
+  <section class="section container-narrow reveal" id="ratgeber-content" hidden></section>
+
+  <noscript>
+    <section class="section container-narrow">
+      <h2>Warum ein CoA mehr ist als ein PDF</h2>
+      <p>Ein CoA, Certificate of Analysis, ist der Prüfbericht zu einer einzelnen Charge. Er sagt nicht, ob ein Peptid etwas bewirkt, sondern ob das, was im Vial steckt, dem entspricht, was auf dem Etikett steht. Für Forschungszwecke ist das die einzige Grundlage, auf der sich eine Probe überhaupt einordnen lässt.</p>
+      <p>Die Grundlagen dazu stehen im <a class="btn-link" href="../peptid-1x1.html">Peptid 1x1</a>. Dieser Artikel geht tiefer: wie du die einzelnen Werte liest, und woran du erkennst, ob ein CoA überhaupt etwas wert ist.</p>
+      <p>Bei Forschungschemikalien mit RUO-Kennzeichnung gibt es keine vorgelagerte behördliche Marktprüfung wie bei einem zugelassenen Arzneimittel. Das CoA ist deshalb die einzige unabhängig nachprüfbare Aussage, die zu einer konkreten Charge existiert, nicht die Marketingtexte auf der Shop-Seite.</p>
+      <h2>Die Chargennummer: Ausgangspunkt jeder Prüfung</h2>
+      <p>Jede seriöse Produktion vergibt eine Chargennummer, meist auf dem CoA-Deckblatt und auf dem Vial-Etikett. Format und Länge unterscheiden sich je Anbieter und teils je Labor: manche nutzen eigene Shop-Codes wie &quot;PO-2026347&quot;, andere die Sample-ID des Labors wie &quot;LYO-0739&quot; oder ein Datumsformat wie &quot;EP10/012026&quot;. Wichtig ist nicht das Format, sondern die Zuordnung: Die Nummer auf dem CoA muss zur Nummer auf deinem Produkt passen.</p>
+      <p>Ohne diese Zuordnung ist ein CoA wertlos, egal wie gut die Werte darin aussehen. Es könnte von einer anderen Charge stammen, einem anderen Produkt, oder gar nicht vom selben Hersteller.</p>
+      <p>Ein Beispiel aus unserer Datenbank zeigt, wie genau man hinsehen muss: Bei Europa-Peptide teilen sich laut eigenem Analysenzertifikat zwei Produktpaare dieselbe Chargennummer, TB-500 und Hexarelin laufen beide unter &quot;EP10/012026&quot;, CJC-1295 mit und ohne DAC unter &quot;EP10/112025&quot;. Das ist ein realer Befund des Anbieters, kein Fehler unsererseits, zeigt aber: Eine Chargennummer allein sagt noch nichts über das konkrete Peptid, du musst sie zusammen mit dem Produktnamen auf dem CoA lesen.</p>
+      <h2>Labor und Prüfdatum: wer hat wann getestet</h2>
+      <p>Der Name des Labors entscheidet, ob ein Wert überhaupt Gewicht hat. In den von uns erfassten Chargen tauchen drei Labore auf: Janoshik Analytical (Slowakei), Liquilabs (Tschechien) und Analiza Białek Sp. z o.o. (Polen). Alle drei sind externe Labore ohne Geschäftsbeziehung zum jeweiligen Hersteller, das schließt einen Interessenkonflikt beim Ergebnis aus.</p>
+      <p>Das Prüfdatum zeigt, wie aktuell ein CoA ist. Ein Bericht von vor zwei Jahren sagt nichts über eine aktuelle Produktion, selbst wenn das Peptid gleich heißt. Manche Anbieter weisen kein Prüfdatum aus: In unserer Datenbank ist das bei den Peptidwerk-Chargen der Fall, dort steht auf der Produktseite kein Datum, nur die Charge selbst und die Werte.</p>
+      <p>Bei Particle Peptides steckt das Prüfdatum meist nicht im sichtbaren Text, sondern in den PDF-Metadaten und im Lesezeichen-Titel des CoA-Dokuments (&quot;Results for &lt;Lyo-ID&gt;&quot;), zusätzlich abgleichbar über die eigene COA-Vault-Tabelle des Anbieters. Es lohnt sich also, bei einem CoA-PDF auch die Dokumenteigenschaften zu prüfen, nicht nur den sichtbaren Fließtext.</p>
+      <h2>HPLC-Reinheit in Prozent lesen</h2>
+      <p>Reinheit wird per HPLC (Hochleistungsflüssigchromatographie) ermittelt und meist als Prozentzahl angegeben, zum Beispiel 99,72 %. Der Wert sagt, welcher Anteil der gemessenen Substanz dem erwarteten Peptid entspricht, der Rest sind Verunreinigungen oder Abbauprodukte. Bei den Peptidwerk-Chargen in unserer Datenbank liegen die Werte zwischen 97,63 % (Tesamorelin) und 99,96 % (GHK-Cu), bei Europa-Peptide durchgängig bei 99 %.</p>
+      <p>Ein einzelner Prozentwert bleibt aber eine Momentaufnahme der geprüften Charge, nicht eine Garantie für jedes künftige Vial. Deshalb zählt die Chargennummer am Ende mehr als die reine Zahl.</p>
+      <p>Für Forschungschemikalien gibt es keinen einheitlichen, behördlich festgelegten Mindestwert für Reinheit. In der Szene hat sich ein Wert um 98 % als informelle Orientierung etabliert, das ist aber keine offizielle Norm, sondern ein Erfahrungswert. Ein CoA ohne Chargennummer bleibt unabhängig vom Prozentwert nicht zuordenbar, dazu mehr im Abschnitt zum Muster-CoA weiter unten.</p>
+      <h2>Identität: LC-MS und die Masse</h2>
+      <p>Reinheit und Identität sind zwei unterschiedliche Fragen. Reinheit sagt, wie sauber eine Probe ist. Identität sagt, ob es überhaupt das richtige Molekül ist. Für die Identität kommt meist LC-MS zum Einsatz, eine Kombination aus Flüssigchromatographie und Massenspektrometrie, die das Molekulargewicht der Probe bestätigt.</p>
+      <p>Ein CoA mit hoher Reinheit, aber ohne Identitätsnachweis, beantwortet nur die halbe Frage. Particle Peptides zum Beispiel weist auf mehreren Produktseiten explizit zusätzliches Testing über die reine HPLC-Reinheit hinaus aus, das schließt die Identität mit ein.</p>
+      <p>Wie viel das in der Praxis wert ist, zeigt eine Prüfung des Vergleichsportals ChemVerify zu Particle Peptides: 95,9 % durchschnittliche Übereinstimmung zwischen den Herstellerangaben und unabhängig gemessenen HPLC-Werten, dazu eine vollständige MS-Identitätsbestätigung über die geprüften Produkte. Das ist ein Beispiel dafür, wie sich Herstellerangabe und unabhängige Kontrolle gegeneinander abgleichen lassen, nicht ein Beleg dafür, dass jeder Anbieter mit Identitätsangabe automatisch vertrauenswürdig ist.</p>
+      <h2>Endotoxin, Schwermetalle und Restlösemittel: die Werte, die oft fehlen</h2>
+      <p>Der Endotoxin-Wert, gemessen per LAL-Test (Limulus-Amöbozyten-Lysat), zeigt bakterielle Rückstände aus der Herstellung, angegeben in EU pro Vial (Endotoxin-Einheiten). Ein niedriger Wert spricht für eine saubere Produktion. Bei Peptidwerk steht dieser Wert direkt auf der Produktseite, etwa 1,645 EU pro Vial bei einer BPC-157-Charge.</p>
+      <p>Schwermetalle (Blei, Arsen, Cadmium und weitere) werden per ICP-MS (Massenspektrometrie mit induktiv gekoppeltem Plasma) geprüft, Restlösemittel und TFA-Rückstände (Trifluoressigsäure, aus der Peptidsynthese) über eigene chromatographische Verfahren. Diese drei Werte gehören zum vollständigen Bild eines CoAs, fehlen in der Praxis aber häufig: Bei den Beyond-Peptides-Chargen in unserer Datenbank liegt sogar die Reinheit selbst nicht als Text vor, weil das CoA nur als Bild-PDF ohne Text-Layer veröffentlicht ist. Was ein CoA nicht zeigt, ist am Ende genauso eine Information wie das, was es zeigt.</p>
+      <p>Von den 41 Chargen, die wir bislang erfasst haben, weist bisher nur Peptidwerk den Endotoxin-Wert konsequent als eigene Angabe im Text aus. Schwermetall- und Restlösemittelwerte tauchen in keiner der erfassten Produktseiten als eigener Prozent- oder Grenzwert im sichtbaren Text auf, sie können in den einzelnen CoA-PDFs stehen, das haben wir aber nicht für jede Charge einzeln geöffnet und geprüft. Auch das gehört zu einer ehrlichen Einordnung: Wir zeigen dir, was öffentlich und nachprüfbar erfasst ist, nicht mehr.</p>
+      <h2>Was auf einem CoA steht und was es bedeutet</h2>
+      <p>Die wichtigsten Angaben auf einen Blick, von der Chargennummer bis zu den Rückstandswerten.</p>
+      <div class="table-wrap"><table class="table"><thead><tr><th>Angabe</th><th>Was sie bedeutet</th></tr></thead><tbody><tr><td>Chargennummer</td><td>Verbindet das CoA mit einem bestimmten Herstellungslauf, muss zum Vial-Etikett passen</td></tr><tr><td>Labor</td><td>Name des Prüflabors, ein externes Labor ohne Geschäftsbeziehung zum Hersteller wiegt mehr als ein Eigentest</td></tr><tr><td>Prüfdatum</td><td>Zeigt, wie aktuell der Bericht ist, alte CoAs sagen nichts über die aktuelle Produktion</td></tr><tr><td>HPLC-Reinheit (%)</td><td>Anteil der Probe, der dem erwarteten Peptid entspricht</td></tr><tr><td>Identität (LC-MS)</td><td>Bestätigt über das Molekulargewicht, dass es das richtige Molekül ist</td></tr><tr><td>Endotoxin (LAL, EU/Vial)</td><td>Bakterielle Rückstände aus der Herstellung</td></tr><tr><td>Schwermetalle (ICP-MS)</td><td>Rückstände wie Blei, Arsen, Cadmium aus dem Herstellungsprozess</td></tr><tr><td>Restlösemittel/TFA</td><td>Chemische Rückstände aus der Peptidsynthese</td></tr></tbody></table></div>
+      <h2>Wenn die Charge fehlt: das Muster-CoA</h2>
+      <p>Nicht jedes CoA ist, was es verspricht. Ein Beispiel aus unserer Recherche vom 15.09.2026: Der Anbieter PPX.at wirbt auf Produktseiten mit &quot;Jedes Produkt wird mit einem Certificate of Analysis (COA) geliefert&quot; und einem Button &quot;COA Download&quot;. Bei mehreren geprüften Produkten, darunter BPC-157 und Retatrutid, führt dieser Button auf dieselbe generische Muster-PDF mit dem Platzhalter-Batch &quot;PP-COA-000000&quot;. Auf der eigenen CoA-Bibliotheksseite des Anbieters waren BPC-157 und TB-500 zum Erhebungszeitpunkt explizit als &quot;Coming Soon&quot; markiert, andere Produkte fehlten dort ganz.</p>
+      <p>Ein Muster-CoA ohne echte Charge ist kein Prüfbericht, es ist eine Vorlage. Es zeigt höchstens, wie ein CoA dieses Labors aussieht, nicht, was in deinem Vial ist. Genau diese Lücke, versprochene Prüfung ohne belegte Charge, ist einer der Punkte, die wir bei jedem Anbieter gesondert prüfen.</p>
+      <p>Bemerkenswert dabei: PPX.at wirkt auf den ersten Blick durchaus seriös. Der Shop ist per HTTP erreichbar, Zahlung läuft über Stripe mit Karte und Apple Pay, ein Prüfdienst für Website-Vertrauenswürdigkeit stuft die Domain als &quot;Very Likely Safe&quot; ein, und es gibt eine eigene Seite ohne Heilversprechen im Fließtext. Genau das zeigt, warum ein professioneller Auftritt allein nichts über die Echtheit einzelner CoAs aussagt. Beide Dinge, Seriosität der Website und Belegbarkeit der Charge, müssen getrennt geprüft werden.</p>
+      <h2>CoA-Nummer und Verpackung abgleichen, Verifizierungslinks nutzen</h2>
+      <p>Vor dem Öffnen lohnt der Abgleich: Steht auf dem Vial-Etikett dieselbe Chargennummer wie auf dem CoA, das der Anbieter zu diesem Produkt zeigt? Weicht die Nummer ab, oder fehlt sie auf der Verpackung komplett, ist das CoA nicht zuordenbar, unabhängig davon, wie gut die Werte aussehen.</p>
+      <p>Manche Anbieter gehen einen Schritt weiter und verlinken direkt zur Verifizierungsseite des Labors, zum Beispiel zu Janoshik. Dort lässt sich die Chargennummer oder Report-ID unabhängig vom Shop nachschlagen. &quot;Unabhängig&quot; heißt hier: Das Labor hat keine geschäftliche Beteiligung am Verkauf und kein Interesse an einem bestimmten Ergebnis, im Unterschied zu einem shop-eigenen Test ohne externe Kontrolle.</p>
+      <p>Mit unserem <a class="btn-link" href="../charge-pruefen.html">Chargen-Check</a> kannst du eine Chargennummer gegen die von uns erfassten, öffentlich einsehbaren CoAs abgleichen. Die Grundlagen zu Reinheit, RUO und Anbieterbewertung stehen im <a class="btn-link" href="../peptid-1x1.html">Peptid 1x1</a>, unsere vollständige Bewertungsmethodik erklären wir in der <a class="btn-link" href="../methodik.html">Methodik</a>.</p>
+      <h2>Quellen</h2><ul>
+      <li><a href="https://pepwerk.com/produkt/bpc-157-10mg/" rel="noopener" target="_blank">Peptidwerk, Produktseite BPC-157 mit Charge, Reinheit und Endotoxin-Wert (Labor: Janoshik Analytical)</a></li>
+      <li><a href="https://particlepeptides.com/en/coa-vault" rel="noopener" target="_blank">Particle Peptides, öffentlicher COA-Vault mit Batch-Zertifikaten (Labor: Liquilabs)</a></li>
+      <li><a href="https://www.chemverify.com/learn/particle-peptides-review" rel="noopener" target="_blank">ChemVerify, unabhängige Prüfung der Reinheits- und Identitätsangaben von Particle Peptides</a></li>
+      <li><a href="https://europa-peptide.de/de/prufergebnisse/" rel="noopener" target="_blank">Europa-Peptide, Prüfergebnisse-Seite mit Chargen-CoAs (Labor: Analiza Białek Sp. z o.o.)</a></li>
+      <li><a href="https://www.ppx.at/coa" rel="noopener" target="_blank">PPX.at, CoA-Seite mit generischer Muster-PDF und Platzhalter-Charge &quot;PP-COA-000000&quot;</a></li>
+      </ul>
+      <h2>Häufige Fragen</h2>
+      <p><strong>Ist ein CoA ohne Chargennummer wertlos?</strong><br>Ja. Ohne Chargennummer lässt sich ein CoA nicht einem bestimmten Vial zuordnen. Ein Muster-CoA mit Platzhalter-Batch, wie es bei einzelnen Anbietern vorkommt, ist deshalb kein Nachweis für die Probe, die du tatsächlich erhältst.</p>
+      <p><strong>Reicht eine hohe Reinheitsangabe als Qualitätsnachweis?</strong><br>Nein. Reinheit sagt nur, wie sauber eine Probe ist, nicht ob es das richtige Molekül ist. Dafür braucht es zusätzlich einen Identitätsnachweis per LC-MS, im besten Fall ergänzt um Endotoxin- und Schwermetallwerte.</p>
+      <p><strong>Was bedeutet es, wenn ein Labor als unabhängig gilt?</strong><br>Das Labor hat keine geschäftliche Beziehung zum Hersteller und kein Interesse an einem bestimmten Ergebnis. In den von uns erfassten Chargen sind das externe Labore wie Janoshik Analytical, Liquilabs oder Analiza Białek, im Unterschied zu einem shop-eigenen Test ohne externe Kontrolle.</p>
+    </section>
+  </noscript>
+
+  <!-- QUELLEN -->
+  <section class="section-tight container-narrow reveal" id="ratgeber-quellen-section" hidden>
+    <h2 class="section-title" data-i18n="page.ratgeber-detail.quellenTitle">Quellen</h2>
+    <ul id="ratgeber-quellen-list" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;"></ul>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section container-narrow reveal" id="ratgeber-faq-section" hidden>
+    <h2 class="section-title" data-i18n="page.ratgeber-detail.faqTitle">Häufige Fragen</h2>
+    <div class="faq" id="ratgeber-faq"></div>
+  </section>
+
+  <!-- HINWEIS-CARD RUO -->
+  <section class="section-tight container-narrow reveal">
+    <div class="card">
+      <p class="card-eyebrow" data-i18n="page.ratgeber-detail.hintEyebrow">Hinweis</p>
+      <p class="card-body" data-i18n="page.ratgeber-detail.hintText">Dieser Artikel ersetzt keine Rechts- oder medizinische Beratung. Alle genannten Substanzen sind ausschließlich für Forschungszwecke (RUO) bestimmt.</p>
+    </div>
+  </section>
+
+  <!-- WEITERE ARTIKEL -->
+  <section class="section container-narrow reveal" id="ratgeber-verwandt-section" hidden>
+    <h2 class="section-title" data-i18n="page.ratgeber-detail.verwandtTitle">Weitere Artikel</h2>
+    <div class="related-grid" id="ratgeber-verwandt-grid"></div>
+  </section>
+
+  <section class="section-tight container-narrow reveal">
+    <p class="text-small muted"><a href="index.html" data-i18n="page.ratgeber-detail.backLink">← Zurück zum Ratgeber</a></p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <ul class="footer-links">
+      <li><a href="../methodik.html" data-i18n="global.nav.methodik">Methodik</a></li>
+      <li><a href="../affiliate-hinweis.html" data-i18n="global.nav.affiliateHinweis">Affiliate-Hinweis</a></li>
+      <li><a href="../impressum.html" data-i18n="global.nav.impressum">Impressum</a></li>
+      <li><a href="../datenschutz.html" data-i18n="global.nav.datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-disclaimer" data-footer-disclaimer>Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.</p>
+    <p class="footer-meta" data-i18n="global.footer.metaDemo">© Peptide Compass · Vorabversion</p>
+    <p class="footer-meta" data-i18n="global.footer.aiNote">Bilder und Videos auf dieser Seite sind KI-generiert.</p>
+  </div>
+</footer>
+
+<!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
+<script src="../data/site.js"></script>
+<script src="../data/vendors.js"></script>
+<script src="../data/peptides.js"></script>
+<script src="../data/batches.js"></script>
+<script src="../data/ratgeber.js"></script>
+<!-- i18n-Wörterbücher: global.js zuerst, dann ratgeber-detail.js (gemeinsame
+     UI-Strings), dann das artikelspezifische Wörterbuch, alle VOR site.js -->
+<script src="../data/nav.js"></script>
+<script src="../data/i18n/global.js"></script>
+<script src="../data/i18n/ratgeber-detail.js"></script>
+<script src="../data/i18n/ratgeber-coa-lesen.js"></script>
+<script src="../assets/js/site.js"></script>
+<script>
+  // Seiten-Logik Ratgeber-Artikel "coa-lesen": liest den eigenen Datensatz aus
+  // window.PK.ratgeber (data/ratgeber.js, generiert von tools/build_ratgeber.py)
+  // per fest verdrahtetem Slug (statische Seite, kein Query-Param-Routing wie
+  // wirkstoffe/detail.html) und rendert Inhalt/Quellen/FAQ/verwandte Artikel.
+  // Folgt dem i18n-Pflicht-Muster aus assets/css/README.md.
+  (function () {
+    if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
+
+    var SLUG = "coa-lesen";
+
+    PK.applyI18n();
+    PK.initLangToggle();
+
+    PK.initNav();
+    PK.initNavDropdowns();
+    PK.initReveal();
+    PK.initDemoBanner();
+    PK.footerDisclaimer();
+
+    var all = Array.isArray(window.PK.ratgeber) ? window.PK.ratgeber : [];
+    var article = all.filter(function (a) { return a.slug === SLUG; })[0];
+
+    var contentEl = document.getElementById("ratgeber-content");
+    var kategoriePill = document.getElementById("ratgeber-kategorie-pill");
+    var h1El = document.getElementById("ratgeber-h1");
+    var teaserEl = document.getElementById("ratgeber-teaser");
+    var metaEl = document.getElementById("ratgeber-meta");
+    var bandImg = document.getElementById("ratgeber-band-img");
+    var quellenSection = document.getElementById("ratgeber-quellen-section");
+    var quellenList = document.getElementById("ratgeber-quellen-list");
+    var faqSection = document.getElementById("ratgeber-faq-section");
+    var faqEl = document.getElementById("ratgeber-faq");
+    var verwandtSection = document.getElementById("ratgeber-verwandt-section");
+    var verwandtGrid = document.getElementById("ratgeber-verwandt-grid");
+
+    // Datum ohne Uhrzeit (article.datum ist "YYYY-MM-DD"), Locale je PK.lang -
+    // kein neuer globaler Helfer nötig, nur hier lokal für die Meta-Zeile.
+    function formatDatum(iso) {
+      var parts = (iso || "").split("-");
+      if (parts.length !== 3) return iso || "";
+      var d = new Date(Date.UTC(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])));
+      var locale = PK.lang === "en" ? "en-US" : "de-DE";
+      return d.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+    }
+
+    // Absätze dürfen genau EIN Markdown-Link-Muster enthalten: [Text](ziel.html).
+    // Alles andere wird escaped (textContent), kein innerHTML aus Draft-Daten
+    // (README-Checkliste Punkt 5). Baut ein <p> mit Text-/<a>-Kindknoten.
+    var MD_LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+    function renderParagraph(text) {
+      var p = document.createElement("p");
+      var lastIndex = 0;
+      var m;
+      MD_LINK_RE.lastIndex = 0;
+      while ((m = MD_LINK_RE.exec(text))) {
+        if (m.index > lastIndex) p.appendChild(document.createTextNode(text.slice(lastIndex, m.index)));
+        var a = document.createElement("a");
+        a.className = "btn-link";
+        a.href = m[2];
+        a.textContent = m[1];
+        p.appendChild(a);
+        lastIndex = MD_LINK_RE.lastIndex;
+      }
+      if (lastIndex < text.length) p.appendChild(document.createTextNode(text.slice(lastIndex)));
+      return p;
+    }
+
+    function renderSection(section) {
+      var wrap = document.createElement("div");
+      wrap.style.marginBottom = "var(--sp-5)";
+
+      var h2 = document.createElement("h2");
+      h2.className = "section-title";
+      h2.textContent = PK.tx(section, "h2");
+      wrap.appendChild(h2);
+
+      (PK.tx(section, "absaetze") || []).forEach(function (t) { wrap.appendChild(renderParagraph(t)); });
+
+      var liste = PK.tx(section, "liste");
+      if (Array.isArray(liste) && liste.length) {
+        var ul = document.createElement("ul");
+        liste.forEach(function (t) {
+          var li = document.createElement("li");
+          li.textContent = t;
+          ul.appendChild(li);
+        });
+        wrap.appendChild(ul);
+      }
+
+      if (section.tabelle) {
+        var kopf = PK.tx(section.tabelle, "kopf") || [];
+        var zeilen = PK.tx(section.tabelle, "zeilen") || [];
+        var tableWrap = document.createElement("div");
+        tableWrap.className = "table-wrap";
+        var table = document.createElement("table");
+        table.className = "table";
+        var thead = document.createElement("thead");
+        var trh = document.createElement("tr");
+        kopf.forEach(function (h) {
+          var th = document.createElement("th");
+          th.textContent = h;
+          trh.appendChild(th);
+        });
+        thead.appendChild(trh);
+        table.appendChild(thead);
+        var tbody = document.createElement("tbody");
+        zeilen.forEach(function (row) {
+          var tr = document.createElement("tr");
+          row.forEach(function (cell) {
+            var td = document.createElement("td");
+            td.textContent = cell;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        tableWrap.appendChild(table);
+        wrap.appendChild(tableWrap);
+      }
+
+      return wrap;
+    }
+
+    function renderRelatedCard(a) {
+      var link = document.createElement("a");
+      link.className = "card tilt";
+      link.href = a.slug + ".html";
+      var pill = document.createElement("span");
+      pill.className = "pill";
+      pill.textContent = PK.tEnum("ratgeberKategorie", a.kategorie);
+      var title = document.createElement("p");
+      title.className = "card-title";
+      title.textContent = PK.tx(a, "titel");
+      link.appendChild(pill);
+      link.appendChild(title);
+      return link;
+    }
+
+    function render() {
+      if (!article) return;
+
+      if (kategoriePill) kategoriePill.textContent = PK.tEnum("ratgeberKategorie", article.kategorie);
+      if (h1El) h1El.textContent = PK.tx(article, "titel");
+      if (teaserEl) teaserEl.textContent = PK.tx(article, "teaser");
+      if (metaEl) {
+        metaEl.textContent = PK.t("page.ratgeber-detail.metaLine", {
+          datum: formatDatum(article.datum),
+          min: PK.byNum(article.lesezeit)
+        });
+      }
+      if (bandImg) bandImg.alt = PK.tx(article.bild || {}, "alt");
+
+      if (contentEl) {
+        contentEl.textContent = "";
+        (article.sections || []).forEach(function (s) { contentEl.appendChild(renderSection(s)); });
+        contentEl.hidden = false;
+      }
+
+      if (quellenList) {
+        quellenList.textContent = "";
+        var quellen = article.quellen || [];
+        quellen.forEach(function (q) {
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.className = "btn-link";
+          a.href = q.url;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = q.text;
+          li.appendChild(a);
+          quellenList.appendChild(li);
+        });
+        if (quellenSection) quellenSection.hidden = quellen.length === 0;
+      }
+
+      if (faqEl) {
+        faqEl.textContent = "";
+        var faqs = article.faq || [];
+        faqs.forEach(function (f) {
+          var details = document.createElement("details");
+          var summary = document.createElement("summary");
+          summary.textContent = PK.tx(f, "q");
+          details.appendChild(summary);
+          var p = document.createElement("p");
+          p.textContent = PK.tx(f, "a");
+          details.appendChild(p);
+          faqEl.appendChild(details);
+        });
+        if (faqSection) faqSection.hidden = faqs.length === 0;
+      }
+
+      if (verwandtGrid) {
+        verwandtGrid.textContent = "";
+        var related = (article._related || []).map(function (slug) {
+          return all.filter(function (a) { return a.slug === slug; })[0];
+        }).filter(Boolean);
+        related.forEach(function (a) { verwandtGrid.appendChild(renderRelatedCard(a)); });
+        if (verwandtSection) verwandtSection.hidden = related.length === 0;
+      }
+    }
+
+    render();
+    document.addEventListener("pk:langchange", render);
+  })();
+</script>
+</body>
+</html>

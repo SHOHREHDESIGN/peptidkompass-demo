@@ -981,19 +981,29 @@
     }
 
     /* "Lernen": neue Gruppe (kein bestehender Einzel-Link), eingefügt vor
-       "Deals". Einträge: Studien-Hub, FAQ, Peptid 1x1, Methodik. */
+       "Deals". Einträge: Ratgeber (Blog, 15.09.), Studien-Hub, FAQ, Peptid
+       1x1, Methodik. Ratgeber steht als ERSTER Eintrag (Auftrag "Ratgeber-
+       Ausbau" 15.09.). */
     function buildLernenGroup(list, basePath) {
       var dealsLink = findLinkLi(list, "deals.html");
       if (!dealsLink) return;
       var dealsLi = dealsLink.closest("li");
       var path = global.location.pathname;
       var items = [
+        { href: "ratgeber/index.html", titleKey: "global.nav.ratgeber", descKey: "global.nav.ratgeberDesc" },
         { href: "studien.html", titleKey: "global.nav.studienKurz", descKey: "global.nav.studienDesc" },
         { href: "faq.html", titleKey: "global.nav.faq", descKey: "global.nav.faqDesc" },
         { href: "peptid-1x1.html", titleKey: "global.nav.peptid1x1", descKey: "global.nav.peptid1x1Desc" },
         { href: "methodik.html", titleKey: "global.nav.methodik", descKey: "global.nav.methodikDesc" }
       ];
-      items.forEach(function (item) { item.current = new RegExp("/" + item.href.replace(".", "\\.") + "$").test(path); });
+      items.forEach(function (item) {
+        // Ratgeber hat Unterseiten (ratgeber/<slug>.html) : "aktiv" gilt für
+        // den gesamten Pfad /ratgeber/, nicht nur exakt index.html (anders
+        // als die übrigen, einzelnen Lernen-Seiten ohne eigene Unterseiten).
+        item.current = item.href === "ratgeber/index.html"
+          ? /\/ratgeber\//.test(path)
+          : new RegExp("/" + item.href.replace(".", "\\.") + "$").test(path);
+      });
       var isCurrent = items.some(function (item) { return item.current; });
 
       var li = document.createElement("li");
