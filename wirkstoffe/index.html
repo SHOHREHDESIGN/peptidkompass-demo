@@ -135,6 +135,7 @@
 <!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
 <script src="../data/site.js"></script>
 <script src="../data/vendors.js"></script>
+<script src="../data/products.js"></script>
 <script src="../data/peptides.js"></script>
 <script src="../data/batches.js"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
@@ -164,9 +165,20 @@
     var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
 
     function vendorCountFor(slug) {
-      return vendors.filter(function (v) {
-        return Array.isArray(v.produkte) && v.produkte.some(function (p) { return p.peptideSlug === slug; });
-      }).length;
+      // v2.3: Anbieter mit Produkt aus data/products.js (Preis-Erhebung),
+      // nur Anbieter mit status aktiv oder zu-pruefen; vendor.produkte als Alt-Quelle.
+      var statusOk = {};
+      vendors.forEach(function (v) { statusOk[v.slug] = !v.status || v.status === "aktiv" || v.status === "zu-pruefen"; });
+      var seen = {};
+      (window.PK.products || []).forEach(function (pr) {
+        if (pr.peptid === slug && statusOk[pr.vendor]) seen[pr.vendor] = true;
+      });
+      vendors.forEach(function (v) {
+        if (Array.isArray(v.produkte) && v.produkte.some(function (p) { return p.peptideSlug === slug; })) seen[v.slug] = true;
+      });
+      return Object.keys(seen).length;
+    }
+.length;
     }
 
     var gridEl = document.getElementById("peptide-grid");
