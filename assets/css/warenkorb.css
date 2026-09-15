@@ -1,0 +1,164 @@
+/* ============================================================================
+   PEPTIDKOMPASS · assets/css/warenkorb.css
+   ============================================================================
+   Seiten-Zusatz-CSS ausschließlich für warenkorb.html (Warenkorb-Optimierer).
+   Erweitert system.css, dupliziert nichts daraus. Tokens ausschließlich aus
+   system.css Abschnitt 1 (Farbe/Type/Spacing/Radius/Motion). Elevation NUR
+   über Flächenwechsel (var(--surface) <-> var(--surface-2)) + Hairline, nie
+   über Schatten (DESIGN.md "Elevation & Depth") - dieselbe Regel wie
+   rechner.css/system.css.
+
+   INHALT
+   ------
+   1. .cart-add          : Wirkstoff-hinzufügen-Zeile (Select + Buttons)
+   2. .cart-rows/.cart-row: dynamische Positionszeilen
+   3. .cart-empty          : Leerzustand
+   4. .stat-grid--2        : 2-Spalten-Ergebnisraster (Gesamtsumme/Bestellungen)
+   5. .cart-groups/.cart-group : Ergebnis A, nach Anbieter gruppiert
+   6. .single-vendor-*     : Ergebnis B, Top-3-Anbieter-Karten
+   7. .cart-note           : Hinweis-Kasten (Versand/Rabatte/Stand)
+   ============================================================================ */
+
+/* -----------------------------------------------------------------------
+   1. .cart-add : Wirkstoff-hinzufügen-Zeile
+   ----------------------------------------------------------------------- */
+.cart-add{
+  display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-2);
+  margin-top:var(--sp-3);
+}
+.cart-add-select{
+  flex:1 1 260px; min-width:200px;
+  font:inherit; font-size:var(--fs-body); color:var(--text);
+  background:var(--surface-2); border:1px solid var(--line);
+  border-radius:var(--radius-input); padding:12px 36px 12px 16px;
+  min-height:44px; cursor:pointer;
+  -webkit-appearance:none; appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235c5c61' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center; background-size:16px;
+  transition:border-color var(--dur-fast) var(--ease);
+}
+.cart-add-select:hover{ border-color:var(--line-strong); }
+.cart-add-select:disabled{ opacity:.5; cursor:not-allowed; }
+.cart-limit-hint{ font-size:var(--fs-caption); color:var(--text-secondary); margin-top:var(--sp-1); }
+
+/* -----------------------------------------------------------------------
+   2. .cart-rows / .cart-row : dynamische Positionszeilen
+   ----------------------------------------------------------------------- */
+.cart-rows{ display:flex; flex-direction:column; gap:var(--sp-2); margin-top:var(--sp-3); }
+.cart-row{
+  background:var(--surface-2); border:1px solid var(--card-border);
+  border-radius:var(--radius-card); padding:var(--sp-2) var(--sp-3);
+}
+.cart-row-main{
+  display:flex; flex-wrap:wrap; align-items:flex-end; gap:var(--sp-2) var(--sp-3);
+}
+.cart-row-name{
+  flex:1 1 140px; font-size:1.0625rem; font-weight:600; letter-spacing:-.008em;
+  padding-bottom:11px; /* Grundlinie mit den Eingabefeldern */
+}
+.cart-row-field{ display:flex; flex-direction:column; gap:6px; flex:0 0 auto; }
+.cart-row-field label{ font-size:var(--fs-caption); color:var(--text-secondary); }
+.cart-row-mg-select, .cart-row-qty-input{
+  font:inherit; font-size:var(--fs-small); color:var(--text);
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-input); padding:9px 12px; min-height:40px;
+}
+.cart-row-mg-select{
+  min-width:110px; cursor:pointer;
+  -webkit-appearance:none; appearance:none;
+  padding-right:32px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235c5c61' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 10px center; background-size:14px;
+}
+.cart-row-qty-input{ width:72px; text-align:center; }
+.cart-row-remove{
+  flex:0 0 auto; width:40px; height:40px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--surface); border:1px solid var(--line); color:var(--text-secondary);
+  font-size:18px; line-height:1; cursor:pointer;
+  transition:background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+.cart-row-remove:hover{ background:var(--warn-bg); color:var(--warn); border-color:transparent; }
+.cart-row-hint{
+  margin:var(--sp-1) 0 0; font-size:var(--fs-caption); color:var(--warn);
+}
+
+/* -----------------------------------------------------------------------
+   3. .cart-empty : Leerzustand
+   ----------------------------------------------------------------------- */
+.cart-empty{
+  margin-top:var(--sp-3); padding:var(--sp-4) var(--sp-3); text-align:center;
+  color:var(--text-secondary); border:1px dashed var(--line-strong);
+  border-radius:var(--radius-card);
+}
+
+/* -----------------------------------------------------------------------
+   4. .stat-grid--2 : 2-Spalten-Ergebnisraster (system.css .stat-grid ist
+      fest auf 3 Spalten, gleiches Muster wie rechner.css .stat-grid--4)
+   ----------------------------------------------------------------------- */
+.stat-grid.stat-grid--2{ grid-template-columns:repeat(2,1fr); }
+@media (max-width:480px){ .stat-grid.stat-grid--2{ grid-template-columns:1fr; } }
+
+/* -----------------------------------------------------------------------
+   5. .cart-groups / .cart-group : Ergebnis A, nach Anbieter gruppiert
+   ----------------------------------------------------------------------- */
+.cart-groups{ display:flex; flex-direction:column; gap:var(--sp-2); margin-top:var(--sp-3); }
+.cart-group{
+  background:var(--surface-2); border:1px solid var(--card-border);
+  border-radius:var(--radius-card); padding:var(--sp-3);
+  border-top:3px solid var(--brand, var(--line-strong));
+}
+.cart-group-header{
+  display:flex; align-items:center; gap:var(--sp-2);
+  padding-bottom:var(--sp-2); margin-bottom:var(--sp-2);
+  border-bottom:1px solid var(--line);
+}
+.cart-group-name{ font-size:1.0625rem; font-weight:600; letter-spacing:-.008em; }
+.cart-group-lines{ display:flex; flex-direction:column; gap:8px; }
+.cart-line{
+  display:flex; align-items:baseline; justify-content:space-between; gap:var(--sp-2);
+  font-size:var(--fs-small);
+}
+.cart-line-name{ color:var(--text); }
+.cart-line-meta{ color:var(--text-secondary); }
+.cart-line-price{ flex:0 0 auto; font-weight:600; white-space:nowrap; }
+.cart-group-subtotal{
+  display:flex; justify-content:space-between; gap:var(--sp-2);
+  margin-top:var(--sp-2); padding-top:var(--sp-2); border-top:1px solid var(--line);
+  font-weight:600;
+}
+.cart-skipped-note{
+  margin-top:var(--sp-2); font-size:var(--fs-caption); color:var(--warn);
+}
+
+/* -----------------------------------------------------------------------
+   6. .single-vendor-* : Ergebnis B, Top-3-Anbieter-Karten
+   ----------------------------------------------------------------------- */
+.single-vendor-grid{ margin-top:var(--sp-3); }
+.single-vendor-card{
+  display:flex; flex-direction:column; gap:var(--sp-2);
+  border-top:3px solid var(--brand, var(--line-strong));
+}
+.single-vendor-rank{ font-size:var(--fs-caption); color:var(--text-secondary); font-weight:600; }
+.single-vendor-head{
+  display:flex; align-items:center; justify-content:space-between; gap:var(--sp-2);
+}
+.single-vendor-sum{
+  font-size:var(--fs-h3); font-weight:700; letter-spacing:var(--ls-h3);
+}
+.single-vendor-badges{ display:flex; flex-wrap:wrap; gap:6px; }
+.single-vendor-actions{ margin-top:auto; display:flex; flex-direction:column; gap:var(--sp-2); }
+@media (max-width:900px){
+  .single-vendor-grid.grid-3{ grid-template-columns:1fr; }
+}
+
+/* -----------------------------------------------------------------------
+   7. .cart-note : Hinweis-Kasten (Versand/Rabatte/Stand) - gleiches Muster
+      wie rechner.css .calc-note (linke Akzentkante statt Card-Shadow)
+   ----------------------------------------------------------------------- */
+.cart-note{
+  background:var(--surface); border-left:3px solid var(--info);
+  border-radius:var(--radius-sm); padding:var(--sp-2) var(--sp-3);
+  margin-top:var(--sp-3);
+}
+.cart-note p{ margin:0; }

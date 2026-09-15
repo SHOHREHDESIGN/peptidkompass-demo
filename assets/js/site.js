@@ -878,7 +878,7 @@
         grid.appendChild(col);
       });
       inner.appendChild(grid);
-      inner.appendChild(makeFoot([["global.nav.alleWirkstoffe", basePath + "wirkstoffe/index.html"]]));
+      inner.appendChild(makeFoot([["global.nav.alleWirkstoffe", basePath + "wirkstoffe/index.html"], ["global.nav.studien", basePath + "studien.html"]]));
     }
 
     function buildAnbieterPanel(inner, basePath) {
@@ -938,7 +938,7 @@
       if (!rechnerLink || !chargeLink) return;
       var rechnerLi = rechnerLink.closest("li");
       var chargeLi = chargeLink.closest("li");
-      var isCurrent = rechnerLink.getAttribute("aria-current") === "page" || chargeLink.getAttribute("aria-current") === "page";
+      var isCurrent = rechnerLink.getAttribute("aria-current") === "page" || chargeLink.getAttribute("aria-current") === "page" || /\/warenkorb\.html$/.test(global.location.pathname);
 
       var trigger = makeTrigger(list, "global.nav.pruefen", isCurrent);
       var built = makePanel("nav-dropdown--pruefen");
@@ -947,7 +947,8 @@
       ul.className = "nav-dropdown-list";
       [
         { href: "charge-pruefen.html", titleKey: "global.nav.chargePruefen", descKey: "global.nav.chargePruefenDesc", current: chargeLink.getAttribute("aria-current") === "page" },
-        { href: "rechner.html", titleKey: "global.nav.rechner", descKey: "global.nav.rechnerDesc", current: rechnerLink.getAttribute("aria-current") === "page" }
+        { href: "rechner.html", titleKey: "global.nav.rechner", descKey: "global.nav.rechnerDesc", current: rechnerLink.getAttribute("aria-current") === "page" },
+        { href: "warenkorb.html", titleKey: "global.nav.warenkorb", descKey: "global.nav.warenkorbDesc", current: /\/warenkorb\.html$/.test(global.location.pathname) }
       ].forEach(function (item) {
         var li2 = document.createElement("li");
         var a = document.createElement("a");

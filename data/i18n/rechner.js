@@ -76,7 +76,13 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.rechner.explainText2": "„Menge umrechnen“ rechnet eine Zielmenge in Volumen und Einheiten auf der U-100-Skala um, ausschließlich auf Basis der eingegebenen Konzentration. Die Entnahmen aus dem Vial ergeben sich aus Vialmenge geteilt durch Zielmenge, abgerundet auf ganze Entnahmen, rein rechnerisch aus deinen Eingaben.",
 
     "page.rechner.safetyTitle": "Wichtiger Hinweis",
-    "page.rechner.safetyBody": "Alle Berechnungen auf dieser Seite sind rein rechnerisch. Sie sind keine medizinische Beratung und keine Empfehlung zur Anwendung am Menschen."
+    "page.rechner.safetyBody": "Alle Berechnungen auf dieser Seite sind rein rechnerisch. Sie sind keine medizinische Beratung und keine Empfehlung zur Anwendung am Menschen.",
+
+    // Teaser-Card "Warenkorb-Optimierer" unter dem Rechner (Auftrag 15.09.)
+    "page.rechner.warenkorbTeaserEyebrow": "Neu",
+    "page.rechner.warenkorbTeaserTitle": "Warenkorb-Optimierer",
+    "page.rechner.warenkorbTeaserBody": "Bis zu 6 Wirkstoffe wählen und die günstigste Kombination über alle geprüften Anbieter berechnen, oder das beste Ein-Anbieter-Komplettpaket finden.",
+    "page.rechner.warenkorbTeaserCta": "Warenkorb optimieren"
   });
 
   i18n.merge("en", {
@@ -142,7 +148,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.rechner.explainText2": "\"Convert amount\" converts a target amount into volume and units on the U-100 scale, based only on the entered concentration. Withdrawals from the vial come from vial amount divided by target amount, rounded down to whole withdrawals, purely by calculation from your own input.",
 
     "page.rechner.safetyTitle": "Important note",
-    "page.rechner.safetyBody": "All calculations on this page are purely mathematical. They are not medical advice and not a recommendation for human use."
+    "page.rechner.safetyBody": "All calculations on this page are purely mathematical. They are not medical advice and not a recommendation for human use.",
+
+    "page.rechner.warenkorbTeaserEyebrow": "New",
+    "page.rechner.warenkorbTeaserTitle": "Cart optimizer",
+    "page.rechner.warenkorbTeaserBody": "Pick up to 6 peptides and calculate the cheapest combination across all reviewed vendors, or find the best single-vendor bundle.",
+    "page.rechner.warenkorbTeaserCta": "Optimize your cart"
   });
 
 })(window.PK.i18n);

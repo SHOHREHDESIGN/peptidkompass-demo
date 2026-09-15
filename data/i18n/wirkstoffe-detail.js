@@ -33,6 +33,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.wirkstoffe-detail.mechanismusTitle": "Wie es wirkt",
     "page.wirkstoffe-detail.evidenzTitle": "Evidenz",
+    "page.wirkstoffe-detail.studienHubLink": "Mehr Studien im Studien-Hub",
     "page.wirkstoffe-detail.sicherheitTitle": "Sicherheit",
     "page.wirkstoffe-detail.rechtsstatusTitle": "Rechtsstatus",
     "page.wirkstoffe-detail.rekonstitutionTitle": "Rekonstitution und Lagerung",
@@ -99,6 +100,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "page.wirkstoffe-detail.mechanismusTitle": "How it works",
     "page.wirkstoffe-detail.evidenzTitle": "Evidence",
+    "page.wirkstoffe-detail.studienHubLink": "More studies in the Studies Hub",
     "page.wirkstoffe-detail.sicherheitTitle": "Safety",
     "page.wirkstoffe-detail.rechtsstatusTitle": "Legal status",
     "page.wirkstoffe-detail.rekonstitutionTitle": "Reconstitution and storage",

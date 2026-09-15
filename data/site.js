@@ -18,5 +18,5 @@ window.PK.site = {
   disclaimer_en: "All substances listed here are intended for research purposes only. This is not medical advice, and none of these products are recommended for human use. For persons 18 and older only.",
   affiliateNote: "Anzeige",
   affiliateNote_en: "Ad",
-  updated: "2026-09-06"
+  updated: "2026-09-15"
 };

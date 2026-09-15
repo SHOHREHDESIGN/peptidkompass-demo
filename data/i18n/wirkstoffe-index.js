@@ -22,6 +22,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-index.h1": "Wirkstoffe im Überblick",
     "page.wirkstoffe-index.lead": "31 Substanzen, kurz und sachlich erklärt.",
     "page.wirkstoffe-index.bandImgAlt": "Peptidkette als Glasmodell im Studio",
+    "page.wirkstoffe-index.studienLink": "Alle Studien im Überblick",
 
     "page.wirkstoffe-index.disclaimerEyebrow": "Hinweis",
     "page.wirkstoffe-index.disclaimerFallback": "Alle genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Keine medizinische Beratung, keine Empfehlung zur Anwendung am Menschen. Nur für Personen ab 18 Jahren.",
@@ -46,6 +47,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.wirkstoffe-index.h1": "Peptides at a glance",
     "page.wirkstoffe-index.lead": "31 substances, explained briefly and factually.",
     "page.wirkstoffe-index.bandImgAlt": "Peptide chain as a glass model in the studio",
+    "page.wirkstoffe-index.studienLink": "See all studies",
 
     "page.wirkstoffe-index.disclaimerEyebrow": "Note",
     "page.wirkstoffe-index.disclaimerFallback": "All substances listed here are intended for research purposes only. This is not medical advice, and none of these products are recommended for human use. For persons 18 and older only.",

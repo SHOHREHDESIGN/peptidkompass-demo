@@ -54,6 +54,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.nav.alleAnbieter": "Alle Anbieter",
     "global.nav.chargePruefenDesc": "Chargennummer gegen unsere CoA-Datenbank prüfen",
     "global.nav.rechnerDesc": "mg und ml berechnen, keine Dosierempfehlung",
+    "global.nav.warenkorb": "Warenkorb-Optimierer",
+    "global.nav.warenkorbDesc": "Günstigste Kombination über alle Anbieter",
+    "global.nav.studien": "Studien im Überblick",
 
     /* Trust-Gruppe (Nav-Menü unten + Footer) */
     "global.nav.methodik": "Methodik",
@@ -199,6 +202,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.nav.alleAnbieter": "All vendors",
     "global.nav.chargePruefenDesc": "Check a batch number against our CoA database",
     "global.nav.rechnerDesc": "Calculate mg and ml, no dosing recommendation",
+    "global.nav.warenkorb": "Cart optimizer",
+    "global.nav.warenkorbDesc": "Cheapest combination across all vendors",
+    "global.nav.studien": "Studies overview",
 
     "global.nav.methodik": "Methodology",
     "global.nav.affiliateHinweis": "Affiliate disclosure",

@@ -134,3 +134,20 @@
 
 /* Vergleich: Status-Pill neben dem Namen nie umbrechen (QA r11 MINOR) */
 .table .table-name-top .pill{ white-space:nowrap; }
+
+/* ============================================================================
+   Studien-Hub (studien.html, 15.09.2026): flache Liste aller peptide.evidenz[]
+   -Einträge, ein .study-card je Beleg. Einspaltige Liste statt Grid, weil
+   Fließtext + Quelle variable Länge haben (Kartenraster würde ungleich hohe
+   Lücken erzeugen, siehe .related-grid-Gegenbeispiel mit Kurztiteln).
+   ============================================================================ */
+.study-list{ display:flex; flex-direction:column; gap:var(--sp-3); }
+.study-card{ display:flex; flex-direction:column; gap:6px; }
+.study-card-head{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.study-card-name{
+  font-weight:600; color:var(--text); text-decoration:none;
+  font-size:var(--fs-body);
+}
+.study-card-name:hover{ color:var(--accent); }
+.study-card-source{ margin:0; }
+.study-card-source a{ margin-left:2px; }
