@@ -21,6 +21,28 @@
 <link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
 <link rel="manifest" href="assets/brand/favicon/site.webmanifest">
+<!-- Strukturierte Daten (Auftrag 15.09.2026, SEO-Ausbau): statisch, ändert
+     sich nicht pro Build - kein Platzhalter-Mechanismus nötig. -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Peptide Compass",
+      "url": "https://peptidkompass.com"
+    },
+    {
+      "@type": "WebSite",
+      "name": "Peptide Compass",
+      "url": "https://peptidkompass.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://peptidkompass.com/vergleich.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}</script>
 <!-- Fix-Runde 3, Befund 11: erste 4 Logo-Leisten-Bilder vorab laden, damit
      der Streifen beim First Paint nicht mit einem leeren Ausschnitt startet
      (PK.initLogoStrip baut die Leiste erst nach data/vendors.js + site.js,
@@ -290,8 +312,7 @@
   <section class="section container reveal">
     <div class="split split-reverse">
       <div class="split-visual visual visual-parallax">
-        <video class="tile-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/tile_run_poster.jpg" aria-hidden="true"><source src="assets/video/tile_run.mp4" type="video/mp4"></video>
-        <img class="tile-video-fallback" src="assets/img/life_vendors.jpg" alt="" loading="lazy" data-i18n-attr="alt:page.index.topImgAlt">
+        <img src="assets/img/life_vendors.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.topImgAlt">
       </div>
       <div class="split-text row-between">
         <div>
@@ -340,8 +361,7 @@
   <section class="section container reveal">
     <div class="split split-reverse">
       <div class="split-visual visual visual-kenburns">
-        <video class="tile-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/tile_focus_poster.jpg" aria-hidden="true"><source src="assets/video/tile_focus.mp4" type="video/mp4"></video>
-        <img class="tile-video-fallback" src="assets/img/life_calc.jpg" alt="" loading="lazy" data-i18n-attr="alt:page.index.calcImgAlt">
+        <img src="assets/img/life_calc.jpg" alt="" loading="lazy" onerror="this.style.display='none'" data-i18n-attr="alt:page.index.calcImgAlt">
       </div>
       <div class="split-text row-between">
         <div>
@@ -560,7 +580,7 @@
         previewPeptides.forEach(function (p) {
           var a = document.createElement("a");
           a.className = "card tilt";
-          a.href = "wirkstoffe/detail.html?slug=" + encodeURIComponent(p.slug || "");
+          a.href = "wirkstoffe/" + encodeURIComponent(p.slug || "") + ".html";
           var eyebrow = document.createElement("p");
           eyebrow.className = "card-eyebrow";
           eyebrow.textContent = PK.tEnum("kategorie", p.kategorie);
