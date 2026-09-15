@@ -738,6 +738,7 @@
         buildAnbieterPanel(inner, basePath);
       });
       buildPruefenGroup(list, basePath);
+      buildLernenGroup(list, basePath);
     });
 
     if (!groups.length) return;
@@ -977,6 +978,53 @@
       chargeLi.parentNode.removeChild(chargeLi);
 
       bindGroup(rechnerLi, trigger, built.panel);
+    }
+
+    /* "Lernen": neue Gruppe (kein bestehender Einzel-Link), eingefügt vor
+       "Deals". Einträge: Studien-Hub, FAQ, Peptid 1x1, Methodik. */
+    function buildLernenGroup(list, basePath) {
+      var dealsLink = findLinkLi(list, "deals.html");
+      if (!dealsLink) return;
+      var dealsLi = dealsLink.closest("li");
+      var path = global.location.pathname;
+      var items = [
+        { href: "studien.html", titleKey: "global.nav.studienKurz", descKey: "global.nav.studienDesc" },
+        { href: "faq.html", titleKey: "global.nav.faq", descKey: "global.nav.faqDesc" },
+        { href: "peptid-1x1.html", titleKey: "global.nav.peptid1x1", descKey: "global.nav.peptid1x1Desc" },
+        { href: "methodik.html", titleKey: "global.nav.methodik", descKey: "global.nav.methodikDesc" }
+      ];
+      items.forEach(function (item) { item.current = new RegExp("/" + item.href.replace(".", "\\.") + "$").test(path); });
+      var isCurrent = items.some(function (item) { return item.current; });
+
+      var li = document.createElement("li");
+      var trigger = makeTrigger(list, "global.nav.lernen", isCurrent);
+      var built = makePanel("nav-dropdown--pruefen");
+      var ul = document.createElement("ul");
+      ul.className = "nav-dropdown-list";
+      items.forEach(function (item) {
+        var li2 = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = basePath + item.href;
+        if (item.current) a.setAttribute("aria-current", "page");
+        var t = document.createElement("span");
+        t.className = "nav-dropdown-item-title";
+        t.setAttribute("data-i18n", item.titleKey);
+        t.textContent = PK.t(item.titleKey);
+        var d = document.createElement("span");
+        d.className = "nav-dropdown-item-desc";
+        d.setAttribute("data-i18n", item.descKey);
+        d.textContent = PK.t(item.descKey);
+        a.appendChild(t);
+        a.appendChild(d);
+        li2.appendChild(a);
+        ul.appendChild(li2);
+      });
+      built.inner.appendChild(ul);
+      li.classList.add("nav-item-dropdown");
+      li.appendChild(trigger);
+      li.appendChild(built.panel);
+      dealsLi.parentNode.insertBefore(li, dealsLi);
+      bindGroup(li, trigger, built.panel);
     }
 
     function matchesDesktop() {

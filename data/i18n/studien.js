@@ -43,7 +43,8 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.studien.countFiltered": "{shown} von {total} Studien",
     "page.studien.emptyText": "Keine Studien gefunden. Filter oder Suche anpassen.",
 
-    "page.studien.cardMoreLink": "Zum Wirkstoff"
+    "page.studien.cardMoreLink": "Zum Wirkstoff",
+    "page.studien.faqLink": "Fragen und Antworten"
   });
 
   i18n.merge("en", {
@@ -74,7 +75,8 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.studien.countFiltered": "{shown} of {total} studies",
     "page.studien.emptyText": "No studies found. Adjust filters or search.",
 
-    "page.studien.cardMoreLink": "View peptide"
+    "page.studien.cardMoreLink": "View peptide",
+    "page.studien.faqLink": "FAQ"
   });
 
 })(window.PK.i18n);

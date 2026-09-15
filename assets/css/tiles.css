@@ -151,3 +151,26 @@
 .study-card-name:hover{ color:var(--accent); }
 .study-card-source{ margin:0; }
 .study-card-source a{ margin-left:2px; }
+
+/* ============================================================================
+   FAQ-Hub (faq.html, 15.09.2026): erweitert die bestehende .faq-Akkordeon-
+   Klasse (system.css §14 : details/summary, Chevron per CSS, Hairline,
+   kein Schatten) um eine Meta-Zeile (Wirkstoff-Link + Kategorie-/Allgemein-
+   Pill) pro Eintrag. system.css bleibt unangetastet : .faq-item wrapped
+   Meta + details, sodass der Wirkstoff-Link NIE innerhalb von <summary>
+   liegt (kein Klick-Konflikt mit dem Akkordeon-Toggle - Klick auf den Link
+   navigiert, Klick auf die Frage klappt auf/zu, beides sauber getrennt).
+   Die beiden folgenden Regeln haben höhere Spezifität als system.css'
+   ".faq details" und überschreiben dort gezielt nur das Top-Padding, das
+   jetzt die Meta-Zeile übernimmt (sonst doppelter Abstand). ============ */
+.faq .faq-item{ padding:0; }
+.faq .faq-item details{ padding-top:0; }
+.faq-item-meta{
+  display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+  padding-top:var(--sp-2);
+}
+.faq-item-source{
+  font-size:var(--fs-caption); font-weight:600; color:var(--accent);
+  text-decoration:none;
+}
+.faq-item-source:hover{ text-decoration:underline; }
