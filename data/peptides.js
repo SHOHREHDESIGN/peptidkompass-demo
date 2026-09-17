@@ -13,8 +13,8 @@ window.PK.peptides = [
     ],
     kategorie: "Regeneration",
     studienlage: "frühe klinische Studien",
-    kurz: "Ein gut erforschtes Peptid aus dem Magen-Darm-Trakt, das in der Wissenschaft auf seine Rolle bei der Geweberegeneration untersucht wird.",
-    kurz_en: "A well-studied peptide derived from the gastrointestinal tract, examined in research for its role in tissue regeneration.",
+    kurz: "Ein synthetisches Peptid, das überwiegend in präklinischen Modellen zur Geweberegeneration untersucht wird.",
+    kurz_en: "A synthetic peptide studied mainly in preclinical models of tissue regeneration.",
     beschreibung: "BPC-157 ist ein synthetisches Pentadekapeptid, dessen Sequenz von einem im menschlichen Magensaft vorkommenden Schutzprotein abgeleitet ist. Es zählt zu den am häufigsten untersuchten Peptiden im Bereich der Geweberegeneration, mit einer breiten Basis an Tiermodellen und einer begrenzten Zahl kleiner Humanstudien. Im Fokus der Forschung stehen unter anderem Sehnen, Bänder, die Magen-Darm-Schleimhaut und die Wundheilung.",
     beschreibung_en: "BPC-157 is a synthetic pentadecapeptide whose sequence is derived from a protective protein found in human gastric juice. It is among the most studied peptides in tissue regeneration research, with a broad base of animal studies and a limited number of small human studies. Research focus areas include tendons, ligaments, the gastrointestinal lining, and wound healing.",
     mechanismus: "In präklinischen Modellen wird eine Beteiligung an der Angiogenese über den VEGFR2-AKT-eNOS-Signalweg beschrieben, die die Bildung neuer Blutgefäße im verletzten Gewebe unterstützt. Weitere untersuchte Mechanismen umfassen eine Hochregulation von Wachstumshormonrezeptoren, eine Modulation entzündlicher Zytokine sowie eine Förderung der Zellmigration über den FAK-Paxillin-Signalweg. Die genauen Wirkmechanismen beim Menschen sind bislang nicht abschließend geklärt.",
@@ -52,19 +52,17 @@ window.PK.peptides = [
       "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Keine Anwendung bei bekannter oder vermuteter Tumorerkrankung ohne ärztliche Rücksprache",
-      "Humane Langzeitsicherheitsdaten liegen nicht vor"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Not for use in cases of known or suspected tumor disease without medical consultation",
-      "Long-term human safety data are not available"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst lichtgeschützt und gekühlt bis tiefgekühlt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, protected from light, refrigerated to frozen; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "BPC-157 ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "BPC-157 is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical.",
     typischeMg: [],
@@ -158,19 +156,17 @@ window.PK.peptides = [
       "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Keine Anwendung bei bekannter oder vermuteter Tumorerkrankung ohne ärztliche Rücksprache",
-      "Unabhängige Daten zur Arginin-Salzform fehlen, Aussagen stützen sich auf die BPC-157-Stammsequenz"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Not for use in cases of known or suspected tumor disease without medical consultation",
-      "Independent data on the arginine salt form are lacking, statements rely on the BPC-157 parent sequence"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst lichtgeschützt und gekühlt bis tiefgekühlt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, protected from light, refrigerated to frozen; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Pentadeca Arginat ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Pentadeca Arginate is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical.",
     typischeMg: [],
@@ -261,19 +257,17 @@ window.PK.peptides = [
       "Thymosin beta-4 and related fragments are on the World Anti-Doping Agency prohibited list."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Nicht zu verwechseln mit dem vollständigen Protein Thymosin Beta-4, dessen Humandaten nicht direkt auf TB-500 übertragbar sind",
-      "Humane Langzeitsicherheitsdaten zum isolierten Fragment liegen nicht vor"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Not to be confused with the full protein thymosin beta-4, whose human data does not directly transfer to TB-500",
-      "Long-term human safety data on the isolated fragment are not available"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt. Nach der Rekonstitution ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst gekühlt bis tiefgekühlt und lichtgeschützt lagern, nach dem Lösen im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, refrigerated to frozen and protected from light; after dissolving, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "TB-500 ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie gehandelt. Das verwandte Thymosin Beta-4 ist ebenfalls nicht als eigenständiges Arzneimittel zugelassen.",
     rechtsstatus_en: "TB-500 is not approved as a medication in Germany, the EU, or the United States, and it is sold exclusively as a research chemical. The related protein thymosin beta-4 is likewise not approved as a standalone medication.",
     typischeMg: [],
@@ -380,21 +374,17 @@ window.PK.peptides = [
       "Interactions with other substances or supplements have not been systematically studied for 5-Amino-1MQ."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein zugelassenes Arzneimittel, kein Nahrungsergänzungsmittel",
-      "Kein Peptid, sondern ein kleines Molekül, chemisch nicht mit den übrigen hier gelisteten Wirkstoffen vergleichbar",
-      "Alle bisherigen Daten stammen aus Tiermodellen und lassen sich nicht direkt auf den Menschen übertragen"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not an approved medication, not a dietary supplement",
-      "Not a peptide but a small molecule, chemically distinct from the other compounds listed here",
-      "All data to date come from animal models and do not translate directly to humans"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "5-Amino-1MQ wird überwiegend als fertige Kapsel oder als Rohpulver gehandelt, nicht als injizierbares Lyophilisat wie bei vielen Peptiden. Für Laboranwendungen wird das Pulver in der Literatur meist in Lösungsmitteln wie DMSO gelöst, eine Zubereitung zur Anwendung am Menschen ist nicht Gegenstand dieser Seite.",
-    rekonstitution_en: "5-Amino-1MQ is predominantly sold as finished capsules or as a raw powder, not as an injectable lyophilized product like many peptides. For laboratory use, the powder is typically dissolved in solvents such as DMSO in the literature, and preparation for human use is not covered on this page.",
-    lagerung: "Kapseln und Pulver werden laut Anbieterangaben trocken, lichtgeschützt und je nach Hersteller bei Raumtemperatur oder gekühlt gelagert.",
-    lagerung_en: "According to vendor information, capsules and powder are stored dry, protected from light, and depending on the manufacturer at room temperature or refrigerated.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "5-Amino-1MQ ist in der EU und den USA nicht als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie gehandelt. Zulassungsstudien am Menschen sind nicht bekannt.",
     rechtsstatus_en: "5-Amino-1MQ is not approved as a medication in the EU or the United States and is sold exclusively as a research chemical. No human approval trials are known.",
     typischeMg: [
@@ -505,19 +495,17 @@ window.PK.peptides = [
       "Since AOD-9604 is not approved as a medication anywhere, no official prescribing information on long-term safety exists."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein zugelassenes Arzneimittel, kein Ersatz für ärztlich verordnete Präparate",
-      "Auf der WADA-Verbotsliste für den Sport gelistet (Kategorie Wachstumshormon-Fragmente)"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not an approved medication, not a substitute for prescribed medication",
-      "Listed on the WADA Prohibited List for sport (growth hormone fragment category)"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und innerhalb weniger Wochen verbrauchen.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C. After reconstitution, keep refrigerated at 2-8°C and use within a few weeks.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "AOD-9604 ist weder in der EU noch in den USA als Arzneimittel zugelassen. Die klinische Entwicklung als Adipositas-Wirkstoff wurde 2007 nach einer Phase-2b-Studie eingestellt. Die Substanz wird ausschließlich als Forschungschemikalie gehandelt und steht auf der WADA-Verbotsliste für den Sport.",
     rechtsstatus_en: "AOD-9604 is not approved as a medication in the EU or the United States. Clinical development as an obesity compound was discontinued in 2007 after a phase 2b trial. The substance is sold exclusively as a research chemical and is listed on the WADA Prohibited List for sport.",
     typischeMg: [
@@ -626,19 +614,17 @@ window.PK.peptides = [
       "Since cagrilintide is not approved as a standalone medication anywhere, no official prescribing information on long-term safety exists."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein zugelassenes Arzneimittel, kein Ersatz für ärztlich verordnete Präparate",
-      "Ergebnisse aus laufenden Phase-3-Studien und aus dem CagriSema-Zulassungsverfahren können sich noch ändern"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not an approved medication, not a substitute for prescribed medication",
-      "Results from ongoing phase 3 trials and the CagriSema approval process may still change"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und innerhalb weniger Wochen verbrauchen.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C. After reconstitution, keep refrigerated at 2-8°C and use within a few weeks.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Cagrilintid befindet sich als eigenständige Substanz und in fixer Kombination mit Semaglutid unter dem Namen CagriSema in Phase-3-Studien und ist bisher weder in der EU noch in den USA als Arzneimittel zugelassen. Im Dezember 2025 wurde bei der US-amerikanischen FDA ein Zulassungsantrag für die Kombination CagriSema eingereicht, eine Entscheidung wird für 2026 erwartet. Cagrilintid wird ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Cagrilintide is currently in phase 3 trials both as a standalone substance and in a fixed combination with semaglutide under the name CagriSema, and has not yet been approved as a medication in the EU or the United States. In December 2025, a new drug application for the CagriSema combination was filed with the US FDA, with a decision expected in 2026. Cagrilintide is sold exclusively as a research chemical.",
     typischeMg: [
@@ -741,21 +727,17 @@ window.PK.peptides = [
       "Controlled human intervention trials on efficacy and safety are not yet available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kühlkette bei Lagerung und Versand einhalten",
-      "MOTS-c hemmt den Folatzyklus, ein Einfluss auf den Folsäurestatus ist theoretisch möglich",
-      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Maintain cold chain during storage and shipping",
-      "MOTS-c inhibits the folate cycle, a theoretical effect on folate status is possible",
-      "Legal status varies by country, check local regulations first"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem Wasser oder einem anderen geeigneten Lösungsmittel aufgelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic water or another suitable solvent. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Lyophilisiert bei -20°C lagern, lichtgeschützt. Nach Rekonstitution gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store lyophilized at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "MOTS-c ist weder in der EU noch in den USA als Arzneimittel oder Lebensmittel zugelassen. Es wird ausschließlich als Forschungschemikalie gehandelt und ist nicht für die Anwendung am Menschen bestimmt.",
     rechtsstatus_en: "MOTS-c is not approved as a medication or food product in either the EU or the US. It is sold exclusively as a research chemical and is not intended for human use.",
     typischeMg: [
@@ -857,19 +839,17 @@ window.PK.peptides = [
       "Since retatrutide is not approved as a medication anywhere, no official prescribing information on long-term safety exists."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein zugelassenes Arzneimittel, kein Ersatz für ärztlich verordnete Präparate",
-      "Ergebnisse aus laufenden Phase-3-Studien können sich noch ändern"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not an approved medication, not a substitute for prescribed medication",
-      "Results from ongoing phase 3 trials may still change"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und innerhalb weniger Wochen verbrauchen.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C. After reconstitution, keep refrigerated at 2-8°C and use within a few weeks.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Retatrutid befindet sich in Phase-3-Studien und ist bisher weder in der EU noch in den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Retatrutide is currently in phase 3 trials and has not yet been approved as a medication in the EU or the United States. It is sold exclusively as a research chemical.",
     typischeMg: [
@@ -962,19 +942,17 @@ window.PK.peptides = [
       "According to the prescribing information, use is contraindicated in people with a personal or family history of medullary thyroid carcinoma."
     ],
     hinweise: [
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Nur für dokumentierte Forschungszwecke",
-      "Kühl lagern, Kühlkette beim Versand beachten"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "Not a substitute for prescribed medication",
-      "For documented research purposes only",
-      "Store cool, maintain cold chain during shipping"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Gekühlt bei 2-8°C lagern, vor Licht schützen",
-    lagerung_en: "Store refrigerated at 2-8°C, protect from light",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Semaglutid ist als Arzneimittel unter den Namen Ozempic, Wegovy und Rybelsus in der EU und den USA zur Behandlung von Typ-2-Diabetes sowie zur Gewichtsregulation zugelassen und verschreibungspflichtig. Die hier beschriebenen Forschungschargen sind nicht mit den zugelassenen Fertigarzneimitteln gleichzusetzen.",
     rechtsstatus_en: "Semaglutide is approved as a medication under the names Ozempic, Wegovy, and Rybelsus in the EU and the United States for the treatment of type 2 diabetes and for weight management, and is available by prescription only. The research batches described here are not equivalent to the approved finished pharmaceutical products.",
     typischeMg: [
@@ -1078,19 +1056,17 @@ window.PK.peptides = [
       "Since survodutide is not approved as a medication anywhere, no official prescribing information on long-term safety exists."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein zugelassenes Arzneimittel, kein Ersatz für ärztlich verordnete Präparate",
-      "Ergebnisse aus laufenden Phase-3-Studien können sich noch ändern"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not an approved medication, not a substitute for prescribed medication",
-      "Results from ongoing phase 3 trials may still change"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und innerhalb weniger Wochen verbrauchen.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C. After reconstitution, keep refrigerated at 2-8°C and use within a few weeks.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Survodutid befindet sich in Phase-3-Studien zu Adipositas und MASH und ist bisher weder in der EU noch in den USA als Arzneimittel zugelassen. Eine FDA-Zulassung wird laut Herstellerangaben frühestens 2027 erwartet, gehandelt wird es ausschließlich als Forschungschemikalie.",
     rechtsstatus_en: "Survodutide is currently in phase 3 trials for obesity and MASH and has not yet been approved as a medication in the EU or the United States. FDA approval is expected at the earliest in 2027 according to the manufacturer, and it is sold exclusively as a research chemical.",
     typischeMg: [
@@ -1184,19 +1160,17 @@ window.PK.peptides = [
       "Animal studies in rats showed amount- and exposure-duration-dependent thyroid C-cell tumors, and whether this finding translates to humans has not been established according to the prescribing information."
     ],
     hinweise: [
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Nur für dokumentierte Forschungszwecke",
-      "Kühl lagern, Kühlkette beim Versand beachten"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "Not a substitute for prescribed medication",
-      "For documented research purposes only",
-      "Store cool, maintain cold chain during shipping"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Gekühlt bei 2-8°C lagern, vor Licht schützen",
-    lagerung_en: "Store refrigerated at 2-8°C, protect from light",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Tirzepatid ist als Arzneimittel unter dem Namen Mounjaro in der EU seit September 2022 zur Behandlung von Typ-2-Diabetes zugelassen, seit Ende 2023 auch zur Gewichtsregulation. In den USA ist es unter dem Namen Mounjaro zur Typ-2-Diabetes-Behandlung sowie unter dem Namen Zepbound zur Gewichtsregulation zugelassen und in beiden Regionen verschreibungspflichtig. Die hier beschriebenen Forschungschargen sind nicht mit den zugelassenen Fertigarzneimitteln gleichzusetzen.",
     rechtsstatus_en: "Tirzepatide is approved as a medication under the name Mounjaro in the EU since September 2022 for the treatment of type 2 diabetes, and since late 2023 also for weight management. In the United States, it is approved under the name Mounjaro for the treatment of type 2 diabetes and under the name Zepbound for weight management, and is available by prescription only in both regions. The research batches described here are not equivalent to the approved finished pharmaceutical products.",
     typischeMg: [
@@ -1298,21 +1272,17 @@ window.PK.peptides = [
       "Long-term human safety data are not yet available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kühlkette bei Lagerung und Versand einhalten",
-      "Wechselwirkungen mit dem Hormonsystem sind nicht abschließend erforscht",
-      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Maintain cold chain during storage and shipping",
-      "Interactions with the hormone system are not fully understood",
-      "Legal status varies by country, check local regulations first"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem Wasser oder einem anderen geeigneten Lösungsmittel aufgelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic water or another suitable solvent. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Lyophilisiert bei -20°C lagern, lichtgeschützt. Nach Rekonstitution gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store lyophilized at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "CJC-1295 ist weder in der EU noch in den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie gehandelt und ist nicht für die Anwendung am Menschen bestimmt.",
     rechtsstatus_en: "CJC-1295 is not approved as a medication in either the EU or the US. It is sold exclusively as a research chemical and is not intended for human use.",
     typischeMg: [
@@ -1416,21 +1386,17 @@ window.PK.peptides = [
       "Interactions with other hormone axes, particularly the hypothalamic-pituitary-adrenal axis, have not been conclusively studied."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kühlkette bei Lagerung und Versand einhalten",
-      "Wechselwirkungen mit dem Hormonsystem sind nicht abschließend erforscht",
-      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Maintain cold chain during storage and shipping",
-      "Interactions with the hormone system are not fully understood",
-      "Legal status varies by country, check local regulations first"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved with bacteriostatic water. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Hexarelin ist weder in Deutschland noch in der EU oder den USA als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie für Laborzwecke gehandelt.",
     rechtsstatus_en: "Hexarelin is not approved as a medication in Germany, the EU, or the United States, and is sold exclusively as a research chemical for laboratory purposes.",
     typischeMg: [
@@ -1533,19 +1499,17 @@ window.PK.peptides = [
       "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Auf der WADA-Dopingliste als verbotener Wachstumsfaktor (Kategorie S2) gelistet, ganzjährig verboten",
-      "Humane Sicherheitsdaten liegen nicht vor"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Listed on the WADA Prohibited List as a banned growth factor (category S2), prohibited at all times",
-      "Human safety data are not available"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst lichtgeschützt und gekühlt bis tiefgekühlt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, protected from light, refrigerated to frozen; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "IGF-1 LR3 ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt. Im organisierten Sport ist es als Wachstumsfaktor der Kategorie S2 der WADA-Verbotsliste ganzjährig verboten.",
     rechtsstatus_en: "IGF-1 LR3 is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical. In organized sport, it is prohibited at all times as a category S2 growth factor under the WADA Prohibited List.",
     typischeMg: [],
@@ -1643,21 +1607,17 @@ window.PK.peptides = [
       "Interactions with other hormone axes have not been fully studied."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kühlkette bei Lagerung und Versand einhalten",
-      "Wechselwirkungen mit dem Hormonsystem sind nicht abschließend erforscht",
-      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Maintain cold chain during storage and shipping",
-      "Interactions with the hormone system are not fully understood",
-      "Legal status varies by country, check local regulations first"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem Wasser oder einem anderen geeigneten Lösungsmittel aufgelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic water or another suitable solvent. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Lyophilisiert bei -20°C lagern, lichtgeschützt. Nach Rekonstitution gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store lyophilized at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Ipamorelin ist weder in der EU noch in den USA als Arzneimittel zugelassen. Die FDA stoppte 2023 die weitere klinische Entwicklung. Es wird ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Ipamorelin is not approved as a medication in either the EU or the US. The FDA halted further clinical development in 2023. It is sold exclusively as a research chemical.",
     typischeMg: [
@@ -1755,21 +1715,17 @@ window.PK.peptides = [
       "Long-term safety data in healthy adults are not available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kühlkette bei Lagerung und Versand einhalten",
-      "Wechselwirkungen mit dem Hormonsystem sind nicht abschließend erforscht",
-      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Maintain cold chain during storage and shipping",
-      "Interactions with the hormone system are not fully understood",
-      "Legal status varies by country, check local regulations first"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem Wasser oder einem anderen geeigneten Lösungsmittel aufgelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic water or another suitable solvent. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Lyophilisiert bei -20°C lagern, lichtgeschützt. Nach Rekonstitution gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store lyophilized at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Sermorelin war in den USA von 1990 bis 2008 als Arzneimittel zugelassen, die Zulassung wurde aus produktionstechnischen Gründen zurückgezogen. Aktuell ist es weder in der EU noch in den USA als Arzneimittel im Handel und wird als Forschungschemikalie angeboten.",
     rechtsstatus_en: "Sermorelin was approved as a medication in the US from 1990 to 2008; the approval was withdrawn for manufacturing reasons. It is currently not marketed as a medication in either the EU or the US and is offered as a research chemical.",
     typischeMg: [
@@ -1868,21 +1824,17 @@ window.PK.peptides = [
       "According to the prescribing information, tesamorelin is considered contraindicated in active tumor disease, pituitary tumor, pregnancy, or diabetic retinopathy."
     ],
     hinweise: [
-      "Die hier gelistete Ware ist eine Forschungschemikalie und nicht mit dem zugelassenen Arzneimittel Egrifta gleichzusetzen",
-      "Nur für Forschungszwecke, keine Anwendung am Menschen ohne ärztliche Verordnung",
-      "Kühlkette bei Lagerung und Versand einhalten",
-      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "The product listed here is a research chemical and is not equivalent to the approved medication Egrifta",
-      "For research use only, not for human use without a physician's prescription",
-      "Maintain cold chain during storage and shipping",
-      "Legal status varies by country, check local regulations first"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem Wasser oder einem anderen geeigneten Lösungsmittel aufgelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic water or another suitable solvent. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Lyophilisiert bei -20°C lagern, lichtgeschützt. Nach Rekonstitution gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store lyophilized at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Tesamorelin ist in den USA unter dem Namen Egrifta seit 2010 für eine spezifische Indikation bei HIV-assoziierter Lipodystrophie zugelassen. In der EU und in der Schweiz besteht keine Zulassung, in der DACH-Region ist der Wirkstoff faktisch nicht erhältlich. Außerhalb der zugelassenen Indikation gilt jede Anwendung als Off-Label.",
     rechtsstatus_en: "Tesamorelin has been approved in the US under the brand name Egrifta since 2010 for a specific indication in HIV-associated lipodystrophy. It is not approved in the EU or Switzerland, and in German-speaking Europe it is not practically available. Outside the approved indication, any use is considered off-label.",
     typischeMg: [
@@ -1981,19 +1933,17 @@ window.PK.peptides = [
       "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Topische kosmetische Produkte mit Kupfertripeptid-1 unterliegen anderen rechtlichen Regeln als injizierbare Forschungschemikalien",
-      "Nicht mit stark konzentriertem Vitamin C kombinieren, da Kupfer oxidieren kann"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Topical cosmetic products containing copper tripeptide-1 are subject to different legal rules than injectable research chemicals",
-      "Avoid combining with highly concentrated vitamin C, as copper can oxidize"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Kupfertripeptid-1 wird in kosmetischen Formulierungen fertig gelöst verarbeitet. Für Forschungspulver gilt: mit sterilem Wasser lösen und vorsichtig schwenken, nicht schütteln.",
-    rekonstitution_en: "In cosmetic formulations, copper tripeptide-1 is processed ready-dissolved. For research-grade powder: dissolve with sterile water and swirl gently, do not shake.",
-    lagerung: "Pulverform trocken, lichtgeschützt und bei Raumtemperatur lagern, gelöstes Material gekühlt aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store powder form dry, protected from light, at room temperature; keep dissolved material refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "In kosmetischen Formulierungen ist Kupfertripeptid-1 in den USA als kosmetischer Inhaltsstoff gelistet. In der EU und in Deutschland bewegt sich die injizierbare Forschungsform in einer rechtlichen Grauzone und ist nicht als Arzneimittel zugelassen.",
     rechtsstatus_en: "In cosmetic formulations, copper tripeptide-1 is listed as a cosmetic ingredient in the United States. In the EU and Germany, the injectable research form sits in a legal gray area and is not approved as a medication.",
     typischeMg: [],
@@ -2088,21 +2038,17 @@ window.PK.peptides = [
       "Long-term safety data, including from animal studies, are not yet available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Keine veröffentlichten Sicherheitsdaten für den Einsatz am Menschen vorhanden",
-      "Zentrale mechanistische Fachliteratur zu diesem Wirkstoff wurde 2025 wegen gefälschter Daten zurückgezogen",
-      "Rechtsstatus je nach Land unterschiedlich, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "No published safety data for human use available",
-      "Key mechanistic literature on this substance was retracted in 2025 due to falsified data",
-      "Legal status varies by country, check local regulations first"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser oder einem anderen geeigneten Lösungsmittel aufgelöst. Nach dem Lösen ist die Lösung kühl zu lagern und innerhalb weniger Wochen aufzubrauchen.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved with bacteriostatic water or another suitable solvent. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Dihexa hat nie ein klinisches Zulassungsverfahren am Menschen durchlaufen und ist weder in Deutschland noch in der EU oder den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie für den Laborgebrauch gehandelt.",
     rechtsstatus_en: "Dihexa has never entered a clinical approval process for human use and is not approved as a medication in Germany, the EU, or the United States. It is sold exclusively as a research chemical for laboratory use.",
     typischeMg: [],
@@ -2206,21 +2152,17 @@ window.PK.peptides = [
       "Independently reproduced, modern long-term human safety data are not available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Die ursprünglich postulierte schlafinduzierende Wirkung gilt in aktuellen Übersichtsarbeiten als nicht gesichert",
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Wechselwirkungen mit anderen Wirkstoffen sind nicht abschließend untersucht"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "The originally postulated sleep-inducing effect is not considered established in current review literature",
-      "Not a substitute for prescribed medication",
-      "Interactions with other substances have not been conclusively studied"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser rekonstituiert. Nach dem Lösen ist die Stammlösung nur für einen begrenzten Zeitraum kühl gelagert stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically reconstituted with bacteriostatic water. Once dissolved, the stock solution remains stable only for a limited period when stored cold.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren und zeitnah verbrauchen.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "DSIP ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und wird dort ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "DSIP is not approved as a medication in Germany, the EU, or the United States, where it is sold exclusively as a research chemical.",
     typischeMg: [
@@ -2311,19 +2253,17 @@ window.PK.peptides = [
       "Robust long-term safety data from independent studies conducted outside Russia are not yet available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Wechselwirkungen mit anderen Wirkstoffen sind nicht abschließend untersucht"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not a substitute for prescribed medication",
-      "Interactions with other substances have not been conclusively studied"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum kühl gelagert stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Selank ist in Russland als Anxiolytikum zugelassen, in Deutschland, der EU und den USA jedoch nicht als Arzneimittel zugelassen und wird dort ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Selank is approved as an anxiolytic in Russia, but is not approved as a medication in Germany, the EU, or the United States, where it is sold exclusively as a research chemical.",
     typischeMg: [
@@ -2414,19 +2354,17 @@ window.PK.peptides = [
       "Independent Western long-term human safety data are not yet available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Wechselwirkungen mit anderen Rezeptorsystemen sind nicht abschließend untersucht"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not a substitute for prescribed medication",
-      "Interactions with other receptor systems have not been conclusively studied"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit isotonischer Kochsalzlösung oder bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum kühl gelagert stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in isotonic saline or bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Semax ist in Russland als Arzneimittel zur Neuroprotektion zugelassen, in Deutschland, der EU und den USA jedoch nicht als Arzneimittel zugelassen und wird dort ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Semax is approved as a medication for neuroprotection in Russia, but is not approved as a medication in Germany, the EU, or the United States, where it is sold exclusively as a research chemical.",
     typischeMg: [
@@ -2528,19 +2466,17 @@ window.PK.peptides = [
       "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Humane Sicherheitsdaten liegen nicht vor",
-      "Bisherige Evidenz stammt ausschließlich aus Zell- und Tiermodellen"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Human safety data are not available",
-      "Existing evidence comes exclusively from cell and animal models"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst lichtgeschützt und gekühlt bis tiefgekühlt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, protected from light, refrigerated to frozen; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "KPV ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "KPV is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical.",
     typischeMg: [],
@@ -2639,19 +2575,17 @@ window.PK.peptides = [
       "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen ohne ärztliche Begleitung",
-      "Bisherige Humanstudien beschränken sich überwiegend auf die topische Anwendung bei Wunden",
-      "Langzeitsicherheitsdaten liegen nicht vor"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use without medical supervision",
-      "Existing human studies are largely limited to topical application on wounds",
-      "Long-term safety data are not available"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst gekühlt und lichtgeschützt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, refrigerated and protected from light; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "LL-37 ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und gilt nicht als Lebensmittel. Es wird ausschließlich als Forschungschemikalie gehandelt, klinische Prüfpräparate mit LL-37 sind an einzelne Studienprogramme gebunden.",
     rechtsstatus_en: "LL-37 is not approved as a medication in Germany, the EU, or the United States, and it is not classified as a food product. It is sold exclusively as a research chemical, clinical investigational formulations of LL-37 are tied to individual study programs.",
     typischeMg: [],
@@ -2745,19 +2679,17 @@ window.PK.peptides = [
       "The product information advises caution for active organ transplantation and active autoimmune disease."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen ohne ärztliche Begleitung",
-      "In Deutschland, Österreich und der Schweiz aktuell nicht als Arzneimittel zugelassen",
-      "Kontraindikationen und Wechselwirkungen sind in der Fachinformation des zugelassenen Präparats dokumentiert"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use without medical supervision",
-      "Not currently approved as a medication in Germany, Austria, or Switzerland",
-      "Contraindications and interactions are documented in the approved product's official prescribing information"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst gekühlt und lichtgeschützt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, refrigerated and protected from light; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Thymosin Alpha 1 ist unter dem Handelsnamen Zadaxin in mehr als 35 Ländern als Arzneimittel zur Behandlung bestimmter Immunerkrankungen zugelassen, unter anderem bei Hepatitis B und C. In Deutschland, Österreich und der Schweiz besteht aktuell keine Zulassung, der Bezug bewegt sich dort in einer rechtlichen Grauzone.",
     rechtsstatus_en: "Under the trade name Zadaxin, thymosin alpha 1 is approved as a medication for the treatment of certain immune conditions, including hepatitis B and C, in more than 35 countries. It is not currently approved in Germany, Austria, or Switzerland, where sourcing sits in a legal gray area.",
     typischeMg: [],
@@ -2850,18 +2782,16 @@ window.PK.peptides = [
     ],
     hinweise: [
       "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Keine Aussage zur Langzeitsicherheit am Menschen möglich"
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not a substitute for prescribed medication",
-      "No statement on long-term safety in humans can be made"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und sollte danach kühl gelagert innerhalb weniger Wochen verbraucht werden.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and should be used within a few weeks when kept refrigerated afterward.",
-    lagerung: "Lyophilisiert bei -20°C lagern, nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store lyophilized at -20°C, keep refrigerated at 2-8°C after reconstitution.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Epitalon ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie für Laborzwecke gehandelt.",
     rechtsstatus_en: "Epitalon is not approved as a medication in Germany, the EU, or the United States, and is sold exclusively as a research chemical for laboratory purposes.",
     typischeMg: [
@@ -2964,21 +2894,17 @@ window.PK.peptides = [
       "Robust long-term safety data are not yet available, as available studies mostly cover short-term, controlled administration."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Die meisten klinischen Daten stammen vom verwandten Isoform Kisspeptin-54, nicht von Kisspeptin-10 selbst",
-      "Wechselwirkungen mit anderen Hormonachsen sind nicht abschließend untersucht"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "Not a substitute for prescribed medication",
-      "Most clinical data come from the related isoform kisspeptin-54, not from kisspeptin-10 itself",
-      "Interactions with other hormone axes have not been conclusively studied"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser oder einem anderen geeigneten wässrigen Puffer gelöst und ist danach für einen begrenzten Zeitraum kühl gelagert stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water or another suitable aqueous buffer and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 4°C aufbewahren und innerhalb von 7 Tagen verbrauchen.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 4°C and use within 7 days.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Kisspeptin-10 ist weder in Deutschland noch in der EU oder den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie für Laborzwecke gehandelt, klinische Anwendungen wie ein IVF-Trigger oder der Einsatz bei Hypoactive Sexual Desire Disorder befinden sich weiterhin in der experimentellen Prüfung.",
     rechtsstatus_en: "Kisspeptin-10 is not approved as a medication in Germany, the EU, or the United States. It is sold exclusively as a research chemical for laboratory purposes; clinical applications such as an IVF trigger or use in hypoactive sexual desire disorder remain under experimental investigation.",
     typischeMg: [
@@ -3074,21 +3000,17 @@ window.PK.peptides = [
       "Case reports describe new or darkened moles, mostly in connection with concurrent UV exposure. A causal link to skin cancer has not been established."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Regelmäßige dermatologische Kontrolle von Muttermalen wird in der Literatur als sinnvoll beschrieben",
-      "Eine anhaltende Erektion über mehrere Stunden ist ein medizinischer Notfall",
-      "Humane Langzeitsicherheitsdaten liegen nicht vor"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use",
-      "Regular dermatological monitoring of moles is described in the literature as advisable",
-      "An erection persisting for several hours is a medical emergency",
-      "Long-term human safety data are not available"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit bakteriostatischem oder sterilem Wasser gelöst und vorsichtig geschwenkt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with bacteriostatic or sterile water and swirled gently. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst gekühlt bis tiefgekühlt und lichtgeschützt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, refrigerated to frozen and protected from light; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Melanotan II ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen und wird ausschließlich als Forschungschemikalie gehandelt. Drei strukturell verwandte Melanocortin-Wirkstoffe (Afamelanotid, Bremelanotid, Setmelanotid) sind für jeweils andere, spezifische Indikationen in den USA und teils in der EU zur Behandlung zugelassen, Melanotan II selbst ist davon nicht erfasst.",
     rechtsstatus_en: "Melanotan II is not approved as a medication in Germany, the EU, or the United States, and it is sold exclusively as a research chemical. Three structurally related melanocortin drugs (afamelanotide, bremelanotide, setmelanotide) are approved for separate, specific indications in the United States and in parts of the EU; melanotan II itself is not among them.",
     typischeMg: [],
@@ -3194,21 +3116,17 @@ window.PK.peptides = [
       "For uses outside the approved obstetric indication, robust long-term safety data are not available."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen außerhalb der zugelassenen ärztlichen Indikation",
-      "Kein Ersatz für die ärztlich verordnete, zugelassene Anwendung zur Geburtseinleitung oder bei postpartaler Blutung",
-      "Wechselwirkungen mit anderen Hormonachsen sind nicht abschließend untersucht",
-      "Rechtsstatus und Verfügbarkeit unterscheiden sich je nach Anwendungszweck, vorab informieren"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research purposes only, not for human use outside the approved medical indication",
-      "Not a substitute for the physician-prescribed, approved use for labor induction or postpartum hemorrhage",
-      "Interactions with other hormone axes have not been conclusively studied",
-      "Legal status and availability differ by intended use, check beforehand"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das Lyophilisat wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst und ist danach für einen begrenzten Zeitraum gekühlt gelagert stabil.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved in bacteriostatic water and remains stable for a limited period when kept refrigerated afterward.",
-    lagerung: "Lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Oxytocin ist als Arzneimittel, etwa Syntocinon oder Pitocin, in Deutschland, der EU und den USA zur Geburtseinleitung und zur Behandlung postpartaler Blutungen zugelassen und dabei ausschließlich verschreibungspflichtig. Für andere, nicht zugelassene Fragestellungen wie soziales Verhalten oder Bindung wird es getrennt davon als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Oxytocin is approved as a medication, such as Syntocinon or Pitocin, in Germany, the EU, and the United States for labor induction and the treatment of postpartum hemorrhage, and is prescription-only for that use. For other, non-approved research questions such as social behavior or bonding, it is separately sold as a research chemical.",
     typischeMg: [],
@@ -3309,21 +3227,17 @@ window.PK.peptides = [
       "In the RECONNECT trials, focal skin hyperpigmentation was observed in about 1 percent of participants."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen",
-      "Die FDA-Zulassung als Vyleesi bezieht sich auf verschreibungspflichtige Fertigware, nicht auf als Forschungschemikalie gehandeltes Bremelanotide",
-      "Kein Ersatz für ärztlich verordnete Präparate",
-      "Wechselwirkungen mit anderen Wirkstoffen sind nicht abschließend untersucht"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
       "For research purposes only, not for human use",
-      "The Vyleesi approval applies to prescription-grade finished product, not to bremelanotide sold as a research chemical",
-      "Not a substitute for prescribed medication",
-      "Interactions with other substances have not been conclusively studied"
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird in der Forschungspraxis üblicherweise mit bakteriostatischem Wasser gelöst. Nach der Rekonstitution ist die Lösung kühl zu lagern und innerhalb weniger Wochen zu verbrauchen.",
-    rekonstitution_en: "In research practice, the lyophilized powder is typically dissolved with bacteriostatic water. After reconstitution, the solution should be stored cold and used within a few weeks.",
-    lagerung: "Ungeöffnet lyophilisiert bei -20°C lagern, lichtgeschützt. Nach dem Lösen gekühlt bei 2-8°C aufbewahren.",
-    lagerung_en: "Store unopened lyophilized powder at -20°C, protected from light. After reconstitution, keep refrigerated at 2-8°C.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "Bremelanotide ist als Vyleesi seit 2019 von der FDA für die Indikation HSDD bei prämenopausalen Frauen zugelassen. In Deutschland und der EU liegt keine Arzneimittelzulassung vor, dort wird der Wirkstoff ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "Bremelanotide has been approved by the FDA as Vyleesi since 2019 for the indication of HSDD in premenopausal women. In Germany and the EU, no drug approval exists, and the substance is sold there exclusively as a research chemical.",
     typischeMg: [
@@ -3428,19 +3342,17 @@ window.PK.peptides = [
       "Products from uncontrolled manufacturing carry a contamination risk that is independent of the molecule itself."
     ],
     hinweise: [
-      "Nur für Forschungszwecke, keine Anwendung am Menschen ohne ärztliche Begleitung",
-      "In keinem der untersuchten Länder als Arzneimittel zugelassen",
-      "Bisherige klinische Studien haben ihre primären Wirksamkeitsziele wiederholt nicht erreicht"
+      "Ausschließlich für Forschungszwecke, keine Anwendung am Menschen",
+      "Ein Analysenzertifikat belegt keine medizinische Eignung"
     ],
     hinweise_en: [
-      "For research use only, not for human use without medical supervision",
-      "Not approved as a medication in any of the countries studied",
-      "Clinical trials to date have repeatedly not met their primary efficacy goals"
+      "For research purposes only, not for human use",
+      "A certificate of analysis does not establish medical suitability"
     ],
-    rekonstitution: "Das lyophilisierte Pulver wird mit sterilem Wasser gelöst und vorsichtig geschwenkt, nicht geschüttelt. Nach dem Lösen ist die Stabilität zeitlich begrenzt.",
-    rekonstitution_en: "The lyophilized powder is dissolved with sterile water and swirled gently, not shaken. After reconstitution, stability is limited in time.",
-    lagerung: "Ungelöst gekühlt und lichtgeschützt lagern, nach der Rekonstitution im Kühlschrank aufbewahren und zügig verbrauchen.",
-    lagerung_en: "Store unreconstituted, refrigerated and protected from light; after reconstitution, keep refrigerated and use promptly.",
+    rekonstitution: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
+    lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
+    lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     rechtsstatus: "SS-31 (Elamipretid) ist in Deutschland, der EU und den USA nicht als Arzneimittel zugelassen. Ein Zulassungsantrag in den USA wurde 2021 mangels einer einzelnen ausreichenden kontrollierten Wirksamkeitsstudie nicht zur Prüfung angenommen. Es wird ausschließlich als Forschungschemikalie gehandelt.",
     rechtsstatus_en: "SS-31 (elamipretide) is not approved as a medication in Germany, the EU, or the United States. A 2021 US approval submission was not accepted for review due to the lack of a single adequate well-controlled efficacy study. It is sold exclusively as a research chemical.",
     typischeMg: [],

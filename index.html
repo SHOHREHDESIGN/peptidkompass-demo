@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="VTmyMwoOjfb_sfO40Y1OhSVQIRMuhpPCh9gndjs9xNY">
 <title data-i18n="page.index.title">Peptide Compass · Peptid-Anbieter transparent vergleichen</title>
-<meta name="description" data-i18n="page.index.metaDescription" content="Peptid-Anbieter transparent vergleichen: Peptide Compass prüft Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Vorabversion, keine medizinische Beratung.">
+<meta name="description" data-i18n="page.index.metaDescription" content="Peptid-Anbieter anhand dokumentierter Quellen vergleichen. Preise nach Wirkstoff, CoA-Einträge und Datenlücken. Affiliate-finanziert, für Forschungszwecke.">
 <link rel="canonical" href="https://peptidkompass.com/">
 <link rel="alternate" hreflang="de" href="https://peptidkompass.com/?lang=de">
 <link rel="alternate" hreflang="en" href="https://peptidkompass.com/?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n="page.index.ogTitle" content="Peptide Compass · Peptid-Anbieter transparent vergleichen">
-<meta property="og:description" data-i18n="page.index.ogDescription" content="Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg: ein Score, fünf Kriterien, volle Transparenz.">
+<meta property="og:description" data-i18n="page.index.ogDescription" content="Dokumentierte Anbieterangaben, Preise je Wirkstoff und nachvollziehbare Datenlücken.">
 <meta property="og:url" content="https://peptidkompass.com/">
 <meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/system.css">
-<link rel="stylesheet" href="assets/css/tiles.css">
+<link rel="stylesheet" href="assets/css/system.css?v=a2ff85844684">
+<link rel="stylesheet" href="assets/css/tiles.css?v=030694ae1a45">
 <link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
@@ -38,7 +38,7 @@
       "url": "https://peptidkompass.com",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://peptidkompass.com/vergleich.html?q={search_term_string}",
+        "target": "https://peptidkompass.com/index.html?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -140,11 +140,13 @@
       <div class="hero-copy">
         <div class="hero-eyebrow"><span class="eyebrow" data-i18n="page.index.heroEyebrow">Peptid-Anbieter transparent vergleichen</span></div>
         <h1 class="display hero-h1"><span data-i18n="page.index.heroH1a">Peptid-Anbieter,</span> <span class="hero-h1-line" data-i18n="page.index.heroH1b">klar verglichen</span></h1>
-        <p data-i18n="page.index.heroLead">Peptide Compass prüft Labor, Rechtsrahmen, Lieferung, Sortiment und Preis, damit du in Ruhe entscheidest.</p>
-        <form class="search-bar" role="search" onsubmit="return false;">
-          <input type="search" placeholder="Anbieter oder Wirkstoff suchen" aria-label="Suche" data-i18n-attr="placeholder:page.index.searchPlaceholder,aria-label:page.index.searchAriaLabel">
+        <p data-i18n="page.index.heroLead">Vergleiche dokumentierte Shop-Angaben, Preise und Laborberichte. Quellen und Datenlücken bleiben sichtbar.</p>
+        <form id="site-search" class="search-bar" role="search" action="index.html" method="get">
+          <input name="q" type="search" maxlength="120" placeholder="Anbieter oder Wirkstoff suchen" aria-label="Suche" data-i18n-attr="placeholder:page.index.searchPlaceholder,aria-label:page.index.searchAriaLabel">
           <button class="btn btn-primary" type="submit" data-i18n="page.index.searchButton">Suchen</button>
         </form>
+        <p class="hero-actions"><a class="btn btn-primary" href="vergleich.html" data-i18n="global.audit.compare">Anbieter vergleichen</a></p>
+        <p class="text-small muted" data-i18n="global.audit.partnerNote">Affiliate-finanziert. Peptidwerk ist Partner. Partnerstatus fließt nicht in den Score ein.</p>
       </div>
 
       <!-- .hero-3d-front : Vial + Helix groß, vor dem Text, Faktor 1, leichter H1-Overlap -->
@@ -167,21 +169,26 @@
     <!-- Hero-Video entfernt (Vic 15.09.): zu viel Bewegung zusammen mit den
          Glas-Objekten. Die Clips laufen als ruhige Loops in den Lifestyle-Kacheln. -->
 </section>
+  <section id="search-results" class="section-tight container" hidden aria-labelledby="search-heading">
+    <h2 id="search-heading" class="section-title" tabindex="-1" data-i18n="global.audit.searchHeading">Suchergebnisse</h2>
+    <p role="status" aria-live="polite"></p><ul class="search-result-list"></ul>
+  </section>
+
 
   <!-- 3 KENNZAHLEN (Count-up via PK.initCountUp) -->
   <section class="section-tight container reveal" aria-label="Kennzahlen">
     <div class="stat-grid">
-      <div class="stat"><div class="stat-value" id="stat-vendors" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statVendorsLabel">Anbieter geprüft</div></div>
-      <div class="stat"><div class="stat-value" id="stat-coas" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statCoasLabel">CoAs geprüft</div></div>
-      <div class="stat"><div class="stat-value" id="stat-score" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statScoreLabel">Score-Durchschnitt</div></div>
+      <div class="stat"><div class="stat-value" id="stat-vendors" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statVendorsLabel">Anbieter erfasst</div></div>
+      <div class="stat"><div class="stat-value" id="stat-coas" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statCoasLabel">Anbieter mit öffentlichen CoAs</div></div>
+      <div class="stat"><div class="stat-value" id="stat-score" data-count-up data-count-target="0">–</div><div class="stat-label" data-i18n="page.index.statScoreLabel">Preisdatensätze</div></div>
     </div>
   </section>
 
   <!-- PODIUM: 3 stärkste Anbieter (ersetzt "Anbieter des Monats") -->
   <section class="section container reveal">
-    <p class="eyebrow" data-i18n="page.index.podiumEyebrow">Rangliste</p>
-    <h2 class="section-title" data-i18n="page.index.podiumTitle">Die drei stärksten Anbieter, heute</h2>
-    <p class="section-lead" data-i18n="page.index.podiumLead">Die drei Anbieter mit dem höchsten Gesamtscore aus Labor, Recht, Lieferung, Sortiment und Preis.</p>
+    <p class="eyebrow" data-i18n="page.index.podiumEyebrow">Orientierung</p>
+    <h2 class="section-title" data-i18n="page.index.podiumTitle">Anbieter mit dokumentierten Angaben</h2>
+    <p class="section-lead" data-i18n="page.index.podiumLead">Aktive Anbieter mit mindestens drei erfassten Kriterien, nach vorläufigem Dokumentationsscore. Preis und Sortiment sind darin nicht bewertet.</p>
     <div class="podium" id="podium" aria-live="polite"></div>
   </section>
 
@@ -192,8 +199,8 @@
     <div class="split split-tile">
       <div class="split-text">
         <p class="eyebrow" data-i18n="page.index.tileTrustEyebrow">Qualität</p>
-        <h2 class="section-title" data-i18n="page.index.tileTrustTitle">Reinheit, belegt</h2>
-        <p class="section-lead" data-i18n="page.index.tileTrustLead">Wir zeigen nur, was ein Laborbericht bestätigt.</p>
+        <h2 class="section-title" data-i18n="page.index.tileTrustTitle">Laborberichte einordnen</h2>
+        <p class="section-lead" data-i18n="page.index.tileTrustLead">Was ein CoA belegt und was offenbleibt.</p>
         <a class="btn btn-primary" href="methodik.html" data-i18n="page.index.tileTrustCta">Mehr zur Methodik</a>
       </div>
       <div class="split-visual visual visual-parallax">
@@ -205,7 +212,7 @@
   <!-- LOGO-LEISTE -->
   <section class="section-tight container reveal">
     <p class="eyebrow" data-i18n="page.index.logosEyebrow">Anbieter</p>
-    <h2 class="section-title" data-i18n="page.index.logosTitle">Die Marken, die wir laufend prüfen</h2>
+    <h2 class="section-title" data-i18n="page.index.logosTitle">Anbieter in unserer Recherche</h2>
     <div class="logo-strip" id="logo-strip" data-logo-strip data-i18n-attr="aria-label:page.index.logosAriaLabel" aria-label="Anbieter, die wir laufend prüfen"></div>
   </section>
 
@@ -216,9 +223,9 @@
   <section class="section section-dark container reveal">
     <div class="split">
       <div class="split-text">
-        <p class="eyebrow" data-i18n="page.index.scoreEyebrow">So bewerten wir</p>
+        <p class="eyebrow" data-i18n="page.index.scoreEyebrow">Methodik</p>
         <h2 class="section-title" data-i18n="page.index.scoreTitle">Wie wir bewerten</h2>
-        <p class="section-lead" data-i18n="page.index.scoreLead">Fünf Kriterien, transparent gewichtet.</p>
+        <p class="section-lead" data-i18n="page.index.scoreLead">Drei Kriterien fließen derzeit ein. Preis und Sortiment sind unbewertet.</p>
       </div>
       <div class="split-visual visual visual-kenburns">
         <!-- life_score.jpg (Bildwelt v2, 14.09.): Vial gegen Licht, ersetzt
@@ -227,11 +234,11 @@
       </div>
     </div>
     <div class="grid-3" style="margin-top:var(--sp-4);">
-      <div class="card tilt"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaLaborTitle">Labor</p><p class="card-body" data-i18n="page.index.criteriaLaborBody">Unabhängige Prüfung, CoA-Qualität</p></div>
-      <div class="card tilt"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaRechtTitle">Rechtsrahmen</p><p class="card-body" data-i18n="page.index.criteriaRechtBody">Altersgate, Impressum, RUO-Kennzeichnung</p></div>
-      <div class="card tilt"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaLieferungTitle">Lieferung</p><p class="card-body" data-i18n="page.index.criteriaLieferungBody">Lieferzeit, Länder, Zuverlässigkeit</p></div>
-      <div class="card tilt"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaSortimentTitle">Sortiment</p><p class="card-body" data-i18n="page.index.criteriaSortimentBody">Breite und Tiefe des Angebots</p></div>
-      <div class="card tilt"><p class="card-eyebrow">20 %</p><p class="card-title" data-i18n="page.index.criteriaPreisTitle">Preis/mg</p><p class="card-body" data-i18n="page.index.criteriaPreisBody">Durchschnittspreis über alle Produkte</p></div>
+      <div class="card tilt"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaLaborTitle">Labor-Dokumentation</p><p class="card-body" data-i18n="page.index.criteriaLaborBody">Öffentliche CoAs und benanntes Labor</p></div>
+      <div class="card tilt"><p class="card-eyebrow">25 %</p><p class="card-title" data-i18n="page.index.criteriaRechtTitle">Rechtsrahmen</p><p class="card-body" data-i18n="page.index.criteriaRechtBody">Dokumentierte Shop-Merkmale, keine Rechtsprüfung</p></div>
+      <div class="card tilt"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaLieferungTitle">Lieferung</p><p class="card-body" data-i18n="page.index.criteriaLieferungBody">Lieferangaben des Shops, keine Testbestellung</p></div>
+      <div class="card tilt"><p class="card-eyebrow">15 %</p><p class="card-title" data-i18n="page.index.criteriaSortimentTitle">Sortiment</p><p class="card-body" data-i18n="page.index.criteriaSortimentBody">Erfasste Produkte, derzeit ohne Score</p></div>
+      <div class="card tilt"><p class="card-eyebrow">20 %</p><p class="card-title" data-i18n="page.index.criteriaPreisTitle">Preis/mg</p><p class="card-body" data-i18n="page.index.criteriaPreisBody">Je Wirkstoff und Packungsgröße vergleichen</p></div>
     </div>
     <p class="text-small muted" style="margin-top:var(--sp-2);"><a class="btn-link" href="methodik.html" data-i18n="page.index.methodikLink">Ganze Methodik lesen</a></p>
   </section>
@@ -248,8 +255,8 @@
       </div>
       <div class="split-text">
         <p class="eyebrow" data-i18n="page.index.chargeEyebrow">Vertrauen prüfen</p>
-        <h2 class="section-title" data-i18n="page.index.tileBatchTitle">Jede Charge nachprüfbar</h2>
-        <p class="section-lead" data-i18n="page.index.tileBatchLead">Chargennummer eingeben, Laborbericht sehen.</p>
+        <h2 class="section-title" data-i18n="page.index.tileBatchTitle">Erfasste Charge finden</h2>
+        <p class="section-lead" data-i18n="page.index.tileBatchLead">Suche in den erfassten Chargen. Fehlende Treffer sind kein Qualitätsurteil.</p>
         <a class="btn btn-primary" href="charge-pruefen.html" data-i18n="page.index.chargeCta">Charge prüfen</a>
       </div>
     </div>
@@ -258,8 +265,8 @@
   <!-- REGLER-MODUL "WAS IST DIR WICHTIG" -->
   <section class="section section-tinted container reveal">
     <p class="eyebrow" data-i18n="page.index.weightsEyebrow">Deine Gewichtung</p>
-    <h2 class="section-title" data-i18n="page.index.weightsTitle">Stell dein eigenes Ranking zusammen</h2>
-    <p class="section-lead" data-i18n="page.index.weightsLead">Verschieb die Regler, das Ranking passt sich sofort an deine Prioritäten an.</p>
+    <h2 class="section-title" data-i18n="page.index.weightsTitle">Gewichtung nachvollziehen</h2>
+    <p class="section-lead" data-i18n="page.index.weightsLead">Die Regler ändern nur die Gewichtung erfasster Werte. Ohne Daten zu einem Kriterium lässt sich daraus keine Rangfolge ableiten.</p>
     <div class="weights" id="weights">
       <div class="weights-sliders">
         <div class="weights-row">
@@ -317,8 +324,8 @@
       </div>
       <div class="split-text row-between">
         <div>
-          <p class="eyebrow" data-i18n="page.index.topEyebrow">Top bewertet</p>
-          <h2 class="section-title" data-i18n="page.index.topTitle">Top-Anbieter im Vergleich</h2>
+          <p class="eyebrow" data-i18n="page.index.topEyebrow">Anbieterauswahl</p>
+          <h2 class="section-title" data-i18n="page.index.topTitle">Dokumentierte Anbieter im Vergleich</h2>
         </div>
         <a class="btn-link" href="anbieter/index.html" data-i18n="page.index.allVendorsLink">Alle Anbieter ansehen</a>
       </div>
@@ -340,7 +347,7 @@
       </div>
     </div>
     <div class="grid-3" id="peptide-grid" style="margin-top:var(--sp-4);"></div>
-    <p style="margin-top:var(--sp-3);"><a class="btn-link" href="wirkstoffe/index.html" data-i18n="page.index.allPeptidesLink">Alle 15 Wirkstoffe</a></p>
+    <p style="margin-top:var(--sp-3);"><a class="btn-link" href="wirkstoffe/index.html" data-i18n="page.index.allPeptidesLink">Alle 31 Wirkstoffe</a></p>
   </section>
 
   <!-- AUS DEM RATGEBER: die 3 jüngsten Artikel (Ratgeber-Ausbau 15.09.),
@@ -366,9 +373,9 @@
       </div>
       <div class="split-text row-between">
         <div>
-          <p class="eyebrow" data-i18n="page.index.calcEyebrow">Anmisch-Rechner</p>
-          <h2 class="section-title" data-i18n="page.index.calcTitle">Rechnet mg und ml sauber um, ganz ohne Dosierungsempfehlung.</h2>
-          <p class="text-small muted" data-i18n="page.index.calcBody">Reine Rechenhilfe, keine Dosierungsempfehlung.</p>
+          <p class="eyebrow" data-i18n="page.index.calcEyebrow">Einheitenrechner</p>
+          <h2 class="section-title" data-i18n="page.index.calcTitle">Gramm, Milligramm und Mikrogramm umrechnen</h2>
+          <p class="text-small muted" data-i18n="page.index.calcBody">Reine Mathematik ohne Produktmengen oder Anwendungshinweise.</p>
         </div>
         <a class="btn btn-secondary" href="rechner.html" data-i18n="page.index.calcCta">Zum Rechner</a>
       </div>
@@ -381,7 +388,7 @@
        Tile 7 (dunkle Voll-Tile "Jede Charge nachprüfbar") weiter oben. -->
   <section class="section-tight container reveal">
     <p class="eyebrow" data-i18n="page.index.freshEyebrow">Aktualität</p>
-    <h2 class="section-title" data-i18n="page.index.freshTitle">Immer frisch geprüft</h2>
+    <h2 class="section-title" data-i18n="page.index.freshTitle">Stand der Dokumentation</h2>
     <div class="fresh" id="fresh" aria-live="polite"></div>
   </section>
 
@@ -401,7 +408,7 @@
     <div class="faq">
       <details>
         <summary data-i18n="page.index.faq1Q">Was ist Peptide Compass?</summary>
-        <p data-i18n="page.index.faq1A">Peptide Compass vergleicht Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Du siehst auf einen Blick, welcher Anbieter zu deinen Kriterien passt. Alle Bewertungen sind transparent nach unserer Methodik berechnet.</p>
+        <p data-i18n="page.index.faq1A">Peptide Compass vergleicht öffentlich dokumentierte Angaben von Peptid-Anbietern. Der vorläufige Dokumentationsscore umfasst Labor-Dokumentation, Shop-Merkmale und Lieferangaben. Preise werden getrennt nach Wirkstoff verglichen.</p>
       </details>
       <details>
         <summary data-i18n="page.index.faq2Q">Sind das echte Anbieter?</summary>
@@ -409,11 +416,11 @@
       </details>
       <details>
         <summary data-i18n="page.index.faq3Q">Was bedeutet das Label Anzeige?</summary>
-        <p data-i18n="page.index.faq3A">Jeder Link mit dem Hinweis "Anzeige" ist ein Affiliate-Link. Klickst du drauf und kaufst, erhalten wir unter Umständen eine Provision, ohne Mehrkosten für dich. Details dazu stehen auf der Affiliate-Hinweis-Seite.</p>
+        <p data-i18n="page.index.faq3A">Wir kennzeichnen alle Shoplinks als Anzeige. Peptidwerk ist derzeit unser Affiliate-Partner. Bei einem vermittelten Kauf können wir eine Provision erhalten. Die Kennzeichnung allein bedeutet nicht, dass mit jedem verlinkten Shop eine Partnerschaft besteht.</p>
       </details>
       <details>
         <summary data-i18n="page.index.faq4Q">Sind die Substanzen für Menschen zugelassen?</summary>
-        <p data-i18n="page.index.faq4A">Nein. Alle auf Peptide Compass genannten Substanzen sind ausschließlich für Forschungszwecke bestimmt. Es gibt keine Empfehlung zur Anwendung am Menschen und keine medizinische Beratung auf dieser Seite. Nur für Personen ab 18 Jahren.</p>
+        <p data-i18n="page.index.faq4A">Die hier verglichenen Forschungsprodukte sind nicht zur Anwendung am Menschen bestimmt. Forschungsprodukte und zugelassene Arzneimittel sind getrennt zu betrachten. Maßgeblich ist der Status des konkreten Produkts.</p>
       </details>
     </div>
   </section>
@@ -435,18 +442,19 @@
 </footer>
 
 <!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
-<script src="data/site.js"></script>
-<script src="data/vendors.js"></script>
-<script src="data/peptides.js"></script>
-<script src="data/batches.js"></script>
-<script src="data/reviews.js"></script>
-<script src="data/ratgeber.js"></script>
+<script src="data/site.js?v=38758b950323"></script>
+<script src="data/vendors.js?v=461d33b1389c"></script>
+<script src="data/products.js?v=d96cb6a6b3ef"></script>
+<script src="data/peptides.js?v=b4ec520274d3"></script>
+<script src="data/batches.js?v=ea69a6f87033"></script>
+<script src="data/reviews.js?v=5bf910e35f19"></script>
+<script src="data/ratgeber.js?v=18cf263c8efc"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
-<script src="data/nav.js"></script>
-<script src="data/i18n/global.js"></script>
-<script src="data/i18n/index.js"></script>
-<script src="data/i18n/conversion.js"></script>
-<script src="assets/js/site.js"></script>
+<script src="data/nav.js?v=da40b8abd66e"></script>
+<script src="data/i18n/global.js?v=afb753021f34"></script>
+<script src="data/i18n/index.js?v=e344a3b2c921"></script>
+<script src="data/i18n/conversion.js?v=205aafe2be6e"></script>
+<script src="assets/js/site.js?v=b0f36d7a2916"></script>
 <script>
   // Seiten-Logik Start: nutzt nur PK-Helfer aus assets/js/site.js.
   (function () {
@@ -466,6 +474,7 @@
     PK.initParallax();
     PK.initTilt();
     PK.initHero3D();
+    PK.initSiteSearch();
 
     var vendors = Array.isArray(window.PK.vendors) ? window.PK.vendors : [];
     var peptides = Array.isArray(window.PK.peptides) ? window.PK.peptides : [];
@@ -473,7 +482,7 @@
     // Nach Gesamt-Score sortierte Anbieter (höchster zuerst) : sprachunabhängig,
     // einmal berechnet. gesamt===null (data/SCHEMA.md v2, kein belegtes
     // Kriterium) landet IMMER zuletzt, unabhängig von der Sortierrichtung.
-    var ranked = vendors.slice().sort(function (a, b) {
+    var ranked = vendors.filter(PK.isActiveVendor).sort(function (a, b) {
       var sa = typeof a.gesamt === "number" ? a.gesamt : PK.computeScoreTotal(a.score);
       var sb = typeof b.gesamt === "number" ? b.gesamt : PK.computeScoreTotal(b.score);
       if (sa === null && sb === null) return 0;
@@ -521,17 +530,7 @@
         // belegte Zahl statt einer erfundenen 0.
         var coaPublicCount = vendors.filter(function (v) { return v.coa && v.coa.oeffentlich === true; }).length;
         statCoasEl.setAttribute("data-count-target", String(coaPublicCount));
-        // Score-Durchschnitt NUR über Vendoren mit belegtem Gesamt-Score
-        // (gesamt !== null, data/SCHEMA.md v2).
-        var scoredVendors = vendors.filter(function (v) {
-          var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
-          return typeof g === "number";
-        });
-        var scoreSum = scoredVendors.reduce(function (sum, v) {
-          var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
-          return sum + g;
-        }, 0);
-        statScoreEl.setAttribute("data-count-target", String(scoredVendors.length ? Math.round(scoreSum / scoredVendors.length) : 0));
+        statScoreEl.setAttribute("data-count-target", String((PK.products || []).length));
         PK.initCountUp(document.querySelector(".stat-grid"));
       }
 

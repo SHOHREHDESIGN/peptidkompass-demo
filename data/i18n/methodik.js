@@ -1,125 +1,96 @@
-/* ============================================================================
-   PEPTIDKOMPASS · data/i18n/methodik.js
-   ============================================================================
-   Seiten-Wörterbuch für methodik.html. Schlüssel-Präfix
-   "page.methodik.<element>". Muss NACH data/i18n/global.js und VOR
-   assets/js/site.js eingebunden werden.
-   ============================================================================ */
 window.PK = window.PK || {};
-window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
-
 (function (i18n) {
   "use strict";
-  if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
-
   i18n.merge("de", {
-    "page.methodik.title": "Peptide Compass · Wie wir bewerten",
-    "page.methodik.metaDescription": "Fünf Kriterien, offen gelegt: wie Peptide Compass Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg zu einem Score verrechnet.",
-    "page.methodik.ogTitle": "Peptide Compass · Wie wir bewerten",
-    "page.methodik.ogDescription": "Fünf Kriterien, offen gelegt: wie Peptide Compass Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg zu einem Score verrechnet.",
-
-    "page.methodik.heroEyebrow": "So bewerten wir",
-    "page.methodik.h1": "Wie wir bewerten",
-    "page.methodik.heroLead": "Fünf Kriterien, offen gelegt.",
-
-    "page.methodik.scoreH2": "Ein Score aus fünf Kriterien",
-    "page.methodik.scoreLead": "Der Gesamt-Score verrechnet alle fünf Werte nach der jeweiligen Gewichtung zu einer Zahl zwischen 0 und 100.",
-    "page.methodik.formulaLaborPct": "25 %",
-    "page.methodik.formulaLaborTitle": "Labor",
-    "page.methodik.formulaLaborBody": "Wie oft ein Anbieter seine Produkte extern prüfen lässt, wie aktuell die CoAs sind und wie zugänglich er sie veröffentlicht.",
-    "page.methodik.formulaRechtPct": "25 %",
-    "page.methodik.formulaRechtTitle": "Rechtsrahmen",
-    "page.methodik.formulaRechtBody": "Altersgate vorhanden, RUO-Kennzeichnung sichtbar, vollständiges Impressum, kein Heilversprechen auf der Shop-Seite.",
-    "page.methodik.formulaLieferungPct": "15 %",
-    "page.methodik.formulaLieferungTitle": "Lieferung",
-    "page.methodik.formulaLieferungBody": "Lieferzeit und Anzahl der belieferten Länder.",
-    "page.methodik.formulaSortimentPct": "15 %",
-    "page.methodik.formulaSortimentTitle": "Sortiment",
-    "page.methodik.formulaSortimentBody": "Breite und Tiefe des Produktangebots.",
-    "page.methodik.formulaPreisPct": "20 %",
-    "page.methodik.formulaPreisTitle": "Preis",
-    "page.methodik.formulaPreisBody": "Preis pro Milligramm im Marktvergleich.",
-
-    "page.methodik.coaH2": "So prüfen wir CoAs",
-    "page.methodik.coaLead": "Wir sehen uns an, ob ein CoA von einem unabhängigen Labor stammt, ob die Chargennummer zum Produkt passt und ob das Prüfdatum aktuell ist. Fehlt ein CoA oder stammt es nur vom Shop selbst ohne externe Prüfung, sinkt der Labor-Score entsprechend.",
-
-    "page.methodik.dataH2": "Wie wir Daten erheben",
-    "page.methodik.dataLead": "Wir werten öffentlich zugängliche Angaben aus: Shop-Seite, Impressum, veröffentlichte CoAs und Versandbedingungen. Alle Werte in dieser Demo-Version sind Platzhalter, die Erhebung echter Daten folgt vor dem Go-live.",
-
-    "page.methodik.notH2": "Was wir nicht tun",
-    "page.methodik.notLead": "Wir bewerten keine Wirksamkeit einzelner Substanzen. Wir geben keine Dosierungsempfehlung. Wir sprechen kein Heilversprechen aus. Wir prüfen keine medizinische Eignung für Einzelpersonen.",
-
-    "page.methodik.monetH2": "Monetarisierung",
-    "page.methodik.monetLeadPre": "Links mit dem Hinweis \"Anzeige\" sind Affiliate-Links. Kaufst du darüber, erhalten wir unter Umständen eine Provision, für dich bleibt der Preis gleich. Details dazu im ",
-    "page.methodik.monetLeadLink": "Affiliate-Hinweis",
-    "page.methodik.monetLeadPost": ".",
-
-    "page.methodik.faqTitle": "Häufige Fragen",
-    "page.methodik.faq1Q": "Was ist Peptide Compass?",
-    "page.methodik.faq1A": "Peptide Compass vergleicht Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis. Du siehst auf einen Blick, welcher Anbieter zu deinen Kriterien passt. Alle Bewertungen sind transparent nach unserer Methodik berechnet.",
-    "page.methodik.faq2Q": "Woher kommen die Bewertungen?",
-    "page.methodik.faq2A": "Wir werten öffentlich zugängliche Angaben aus: Impressum, veröffentlichte CoAs, Versandbedingungen und Shop-Seite. Die genaue Gewichtung der fünf Kriterien steht auf dieser Seite. Seit dem 15.09.2026 sind alle 24 Anbieter real recherchiert; ein Kriterium ohne belegte Angabe fließt nicht in den Score ein und wird als \"nicht ermittelbar\" angezeigt statt geschätzt.",
-    "page.methodik.faq3Q": "Sind das echte Anbieter?",
-    "page.methodik.faq3A": "Peptide Compass listet 24 echte Anbieter mit öffentlich belegten Angaben, Stand 15.09.2026. Preise, Chargen und Bewertungen ergänzen wir, sobald sie erhoben sind.",
-
-    "page.methodik.learnMorePre": "Neu bei Peptiden? Die Grundlagen stehen im ",
-    "page.methodik.learnMoreLink": "Peptid 1x1",
-    "page.methodik.learnMorePost": "."
-  });
-
+  "page.methodik.title": "Peptide Compass · Wie wir bewerten",
+  "page.methodik.metaDescription": "So entstehen Dokumentationsscore, Preisvergleich und CoA-Einträge. Quellen, Datenlücken und Partnerfinanzierung offen erklärt.",
+  "page.methodik.ogTitle": "Peptide Compass · Wie wir bewerten",
+  "page.methodik.ogDescription": "So entstehen Dokumentationsscore, Preisvergleich und CoA-Einträge. Quellen, Datenlücken und Partnerfinanzierung offen erklärt.",
+  "page.methodik.heroEyebrow": "So bewerten wir",
+  "page.methodik.h1": "Wie wir bewerten",
+  "page.methodik.heroLead": "Öffentliche Angaben, ihre Grenzen und unsere Finanzierung.",
+  "page.methodik.scoreH2": "Was der Dokumentationsscore aussagt",
+  "page.methodik.scoreLead": "Der Score beschreibt die erfassten Angaben eines Anbieters. Er ist kein Gütesiegel, keine rechtliche Freigabe und kein Nachweis der Produktsicherheit. Aktuell fließen nur Labor-Dokumentation, einzelne Rechtsangaben und Lieferung ein. Preise und Sortiment werden separat verglichen.",
+  "page.methodik.formulaLaborPct": "25 %",
+  "page.methodik.formulaLaborTitle": "Labor",
+  "page.methodik.formulaLaborBody": "Öffentlicher CoA und benanntes externes Labor: 100 Punkte. Öffentlicher CoA ohne bestätigtes externes Labor: 60. Belegt keine öffentlichen CoAs: 0. Unbekannt: nicht ermittelbar. Der Wert bewertet die Dokumentation, nicht alle Produkte oder Testparameter.",
+  "page.methodik.formulaRechtPct": "25 %",
+  "page.methodik.formulaRechtTitle": "Rechtsrahmen",
+  "page.methodik.formulaRechtBody": "Anteil der positiven Angaben unter den erfassten Feldern Altersgate, RUO-Kennzeichnung und Impressum. Unbekannte Felder werden ausgelassen. Deshalb kann bereits ein einziges positives Feld 100 Punkte ergeben. Das ist keine Prüfung der Rechtmäßigkeit; Heilversprechen werden im aktuellen Score nicht bewertet.",
+  "page.methodik.formulaLieferungPct": "15 %",
+  "page.methodik.formulaLieferungTitle": "Lieferung",
+  "page.methodik.formulaLieferungBody": "Belegt kein DACH-Versand: 0 Punkte. Mit angegebenem DACH-Versand und Lieferzeit: 110 minus achtmal die mittlere Zahl der Liefertage, begrenzt auf 10 bis 100 und gerundet. Bei angegebenem DACH-Versand ohne Lieferzeit verwendet die bisherige Regel 65 Punkte. Es handelt sich um Anbieterangaben, nicht um eigene Testbestellungen.",
+  "page.methodik.formulaSortimentPct": "15 %",
+  "page.methodik.formulaSortimentTitle": "Sortiment",
+  "page.methodik.formulaSortimentBody": "Derzeit nicht bewertet. Die Zahl der erfassten Produkte ist keine vollständige Bestandsaufnahme des Shops.",
+  "page.methodik.formulaPreisPct": "20 %",
+  "page.methodik.formulaPreisTitle": "Preis",
+  "page.methodik.formulaPreisBody": "Derzeit nicht im Score. Listenpreise werden für denselben Wirkstoff und dieselbe Währung verglichen. Versand, Verfügbarkeit und Rabattbedingungen sind nur berücksichtigt, soweit ausdrücklich belegt.",
+  "page.methodik.coaH2": "Was ein erfasster CoA belegt",
+  "page.methodik.coaLead": "Wir dokumentieren öffentlich zugängliche Analysenzertifikate und ihre Zuordnung zu Anbieter, Produkt und Charge. Ein benanntes externes Labor bedeutet nicht, dass wir die Probe selbst entnommen oder den Bericht beim Labor unabhängig bestätigt haben. Herkunft, Erfassungsdatum und fehlende Angaben stehen am Datensatz. Ein Zertifikat gilt für die angegebene Probe und die untersuchten Parameter, nicht pauschal für einen Shop.",
+  "page.methodik.dataH2": "Wie wir Daten erheben",
+  "page.methodik.dataLead": "Die Angaben stammen aus öffentlich zugänglichen Shopseiten, CoAs und Versandinformationen. Quelle und Erhebungsdatum stehen bei den Befunden. Fehlende Werte bleiben nicht ermittelbar. Ein technischer Zugriffsfehler ist kein Beweis für einen Mangel des Anbieters. Wir haben keine eigenen Laboranalysen oder anonymen Testbestellungen durchgeführt.",
+  "page.methodik.notH2": "Was wir nicht tun",
+  "page.methodik.notLead": "Wir bewerten keine Wirksamkeit einzelner Substanzen. Wir geben keine Dosierungsempfehlung. Wir sprechen kein Heilversprechen aus. Wir prüfen keine medizinische Eignung für Einzelpersonen.",
+  "page.methodik.monetH2": "Monetarisierung",
+  "page.methodik.monetLeadPre": "Alle externen Shoplinks sind als Anzeige gekennzeichnet. Eine bestätigte Partnerschaft besteht aktuell mit Peptidwerk. Der Partnerstatus und eine Provision gehen nicht in die Scoreformel ein. Weitere Einzelheiten stehen im ",
+  "page.methodik.monetLeadLink": "Affiliate-Hinweis",
+  "page.methodik.monetLeadPost": ".",
+  "page.methodik.faqTitle": "Häufige Fragen",
+  "page.methodik.faq1Q": "Was ist Peptide Compass?",
+  "page.methodik.faq1A": "Peptide Compass ordnet öffentlich zugängliche Anbieterangaben, Produktpreise und Analysenzertifikate ein. Du kannst Belege und Datenlücken nachvollziehen. Eine Empfehlung zur Anwendung am Menschen ist damit nicht verbunden.",
+  "page.methodik.faq2Q": "Woher kommen die Bewertungen?",
+  "page.methodik.faq2A": "Der Dokumentationsscore verwendet nur erfasste Kriterien. Die Gewichte 25, 25, 15, 15 und 20 Prozent werden auf die vorhandenen Werte neu verteilt. Fehlende Kriterien werden weder als null Punkte noch als bestanden gewertet. Scores mit unterschiedlicher Datenbasis sind nur eingeschränkt vergleichbar.",
+  "page.methodik.faq3Q": "Sind das echte Anbieter?",
+  "page.methodik.faq3A": "Es sind reale Anbieter erfasst. Ein Eintrag kann aktiv, inaktiv, zu prüfen oder ohne eigenen Shop sein. Nur aktive Anbieter werden in der Rangliste berücksichtigt. Die Einstufung beschreibt den dokumentierten Stand, keine Garantie für die aktuelle Erreichbarkeit.",
+  "page.methodik.learnMorePre": "Neu bei Peptiden? Die Grundlagen stehen im ",
+  "page.methodik.learnMoreLink": "Peptid 1x1",
+  "page.methodik.learnMorePost": "."
+});
   i18n.merge("en", {
-    "page.methodik.title": "Peptide Compass · How we score",
-    "page.methodik.metaDescription": "Five criteria, fully disclosed: how Peptide Compass combines lab quality, legal framework, shipping, range, and price per mg into one score.",
-    "page.methodik.ogTitle": "Peptide Compass · How we score",
-    "page.methodik.ogDescription": "Five criteria, fully disclosed: how Peptide Compass combines lab quality, legal framework, shipping, range, and price per mg into one score.",
-
-    "page.methodik.heroEyebrow": "How we score",
-    "page.methodik.h1": "How we score",
-    "page.methodik.heroLead": "Five criteria, fully disclosed.",
-
-    "page.methodik.scoreH2": "One score, five criteria",
-    "page.methodik.scoreLead": "The overall score combines all five values by their weighting into a number between 0 and 100.",
-    "page.methodik.formulaLaborPct": "25%",
-    "page.methodik.formulaLaborTitle": "Lab quality",
-    "page.methodik.formulaLaborBody": "How often a vendor has its products tested independently, how current the CoAs are, and how accessible it makes them.",
-    "page.methodik.formulaRechtPct": "25%",
-    "page.methodik.formulaRechtTitle": "Legal framework",
-    "page.methodik.formulaRechtBody": "Age gate in place, RUO labeling visible, a complete legal notice, no health claims on the vendor's site.",
-    "page.methodik.formulaLieferungPct": "15%",
-    "page.methodik.formulaLieferungTitle": "Shipping",
-    "page.methodik.formulaLieferungBody": "Delivery time and number of countries served.",
-    "page.methodik.formulaSortimentPct": "15%",
-    "page.methodik.formulaSortimentTitle": "Range",
-    "page.methodik.formulaSortimentBody": "Breadth and depth of the product range.",
-    "page.methodik.formulaPreisPct": "20%",
-    "page.methodik.formulaPreisTitle": "Price",
-    "page.methodik.formulaPreisBody": "Price per milligram against the market.",
-
-    "page.methodik.coaH2": "How we check CoAs",
-    "page.methodik.coaLead": "We check whether a CoA comes from an independent lab, whether the batch number matches the product, and whether the test date is current. If a CoA is missing, or comes only from the vendor itself with no independent testing, the lab score drops accordingly.",
-
-    "page.methodik.dataH2": "How we collect data",
-    "page.methodik.dataLead": "We evaluate publicly available information: the vendor's site, the legal notice, published CoAs, and shipping terms. Every value in this demo version is a placeholder; real data collection follows before launch.",
-
-    "page.methodik.notH2": "What we don't do",
-    "page.methodik.notLead": "We don't assess the efficacy of individual substances. We don't give dosing recommendations. We make no health claims. We don't assess medical suitability for any individual.",
-
-    "page.methodik.monetH2": "Monetization",
-    "page.methodik.monetLeadPre": "Links marked \"Ad\" are affiliate links. If you buy through one, we may earn a commission, and the price stays the same for you. Details are in the ",
-    "page.methodik.monetLeadLink": "affiliate disclosure",
-    "page.methodik.monetLeadPost": ".",
-
-    "page.methodik.faqTitle": "Frequently asked questions",
-    "page.methodik.faq1Q": "What is Peptide Compass?",
-    "page.methodik.faq1A": "Peptide Compass compares peptide vendors by lab quality, legal framework, shipping, range, and price. You see at a glance which vendor matches your criteria. Every rating is calculated transparently per our methodology.",
-    "page.methodik.faq2Q": "Where do the ratings come from?",
-    "page.methodik.faq2A": "We evaluate publicly available information: the legal notice, published CoAs, shipping terms, and the vendor's site. The exact weighting of the five criteria is on this page. As of Sep 15, 2026 all 24 vendors are researched real vendors; a criterion without a verifiable fact is excluded from the score and shown as \"not available\" instead of being estimated.",
-    "page.methodik.faq3Q": "Are these real vendors?",
-    "page.methodik.faq3A": "Peptide Compass lists 24 real vendors with publicly documented facts as of Sep 15, 2026. Prices, batches and reviews will follow once collected.",
-
-    "page.methodik.learnMorePre": "New to peptides? The basics are in our ",
-    "page.methodik.learnMoreLink": "Peptides 101",
-    "page.methodik.learnMorePost": " guide."
-  });
-
+  "page.methodik.title": "Peptide Compass · How we score",
+  "page.methodik.metaDescription": "How documentation scores, price comparisons and CoA records work. Sources, missing data and partner funding explained.",
+  "page.methodik.ogTitle": "Peptide Compass · How we score",
+  "page.methodik.ogDescription": "How documentation scores, price comparisons and CoA records work. Sources, missing data and partner funding explained.",
+  "page.methodik.heroEyebrow": "How we score",
+  "page.methodik.h1": "How we score",
+  "page.methodik.heroLead": "Public information, its limits and how we are funded.",
+  "page.methodik.scoreH2": "What the documentation score means",
+  "page.methodik.scoreLead": "The score describes recorded vendor information. It is not a quality seal, legal clearance or proof of product safety. At present it uses lab documentation, selected legal disclosures and shipping. Prices and range are compared separately.",
+  "page.methodik.formulaLaborPct": "25%",
+  "page.methodik.formulaLaborTitle": "Lab quality",
+  "page.methodik.formulaLaborBody": "Public CoA and a named external lab: 100 points. Public CoA without a confirmed external lab: 60. Documented absence of public CoAs: 0. Unknown: not available. This measures documentation, not every product or test parameter.",
+  "page.methodik.formulaRechtPct": "25%",
+  "page.methodik.formulaRechtTitle": "Legal framework",
+  "page.methodik.formulaRechtBody": "Share of positive values among recorded age-gate, research-only labeling and legal-notice fields. Unknown fields are omitted, so a single positive field can produce 100 points. This is not a legal assessment. Health claims are not assessed by the current score.",
+  "page.methodik.formulaLieferungPct": "15%",
+  "page.methodik.formulaLieferungTitle": "Shipping",
+  "page.methodik.formulaLieferungBody": "Documented absence of DACH shipping: 0. Stated DACH shipping with delivery times: 110 minus eight times the mean delivery days, clamped to 10 through 100 and rounded. The existing rule assigns 65 points to stated DACH shipping without delivery times. These are vendor statements, not our test orders.",
+  "page.methodik.formulaSortimentPct": "15%",
+  "page.methodik.formulaSortimentTitle": "Range",
+  "page.methodik.formulaSortimentBody": "Not currently scored. Recorded products do not represent a complete inventory of the shop.",
+  "page.methodik.formulaPreisPct": "20%",
+  "page.methodik.formulaPreisTitle": "Price",
+  "page.methodik.formulaPreisBody": "Not currently scored. List prices are compared for the same compound and currency. Shipping, availability and discount conditions are included only when explicitly documented.",
+  "page.methodik.coaH2": "What a recorded CoA establishes",
+  "page.methodik.coaLead": "We document public certificates of analysis and their association with a vendor, product and batch. A named external lab does not mean we collected the sample ourselves or independently confirmed the report with the lab. Each record shows its origin, collection date and missing information. A certificate concerns its stated sample and test parameters, not an entire shop.",
+  "page.methodik.dataH2": "How we collect data",
+  "page.methodik.dataLead": "Information comes from public shop pages, CoAs and shipping information. Findings show sources and collection dates. Missing values remain unavailable. A technical access error is not evidence of a vendor defect. We have not commissioned our own laboratory analyses or placed anonymous test orders.",
+  "page.methodik.notH2": "What we don't do",
+  "page.methodik.notLead": "We don't assess the efficacy of individual substances. We don't give dosing recommendations. We make no health claims. We don't assess medical suitability for any individual.",
+  "page.methodik.monetH2": "Monetization",
+  "page.methodik.monetLeadPre": "All external shop links are marked Ad. Peptidwerk is currently our confirmed partner. Partner status and commission do not enter the score formula. Further details are in the ",
+  "page.methodik.monetLeadLink": "affiliate disclosure",
+  "page.methodik.monetLeadPost": ".",
+  "page.methodik.faqTitle": "Frequently asked questions",
+  "page.methodik.faq1Q": "What is Peptide Compass?",
+  "page.methodik.faq1A": "Peptide Compass organizes public vendor information, product prices and certificates of analysis. You can inspect evidence and gaps in the data. This is not a recommendation for human use.",
+  "page.methodik.faq2Q": "Where do the ratings come from?",
+  "page.methodik.faq2A": "The documentation score uses recorded criteria only. Weights of 25, 25, 15, 15 and 20 percent are redistributed across available values. Missing criteria are neither zero points nor a pass. Scores based on different evidence coverage are only partly comparable.",
+  "page.methodik.faq3Q": "Are these real vendors?",
+  "page.methodik.faq3A": "The directory contains real vendors. A listing can be active, inactive, under review or without its own shop. Only active vendors enter the ranking. Status reflects the documented date, not a guarantee of current availability.",
+  "page.methodik.learnMorePre": "New to peptides? The basics are in our ",
+  "page.methodik.learnMoreLink": "Peptides 101",
+  "page.methodik.learnMorePost": " guide."
+});
 })(window.PK.i18n);

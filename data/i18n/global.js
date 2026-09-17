@@ -337,3 +337,105 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
 })(window.PK.i18n);
+
+// Editorial corrections, 17 September 2026.
+window.PK.i18n.merge("de", {
+  "global.vendorCard.datenbasis": "Vorläufiger Score, {n} von 5 Kriterien",
+  "global.vendorCard.details": "Belege ansehen",
+  "global.enum.coaStatus.verifiziert": "CoA erfasst",
+  "global.audit.scoreNote": "Dokumentationsscore, kein Gütesiegel. Preis und Sortiment sind derzeit unbewertet.",
+  "global.audit.sourceMissing": "Quellenlink nicht ermittelbar",
+  "global.audit.active": "Aktiv laut Datenstand",
+  "global.audit.inactive": "Inaktiv",
+  "global.audit.review": "Zu prüfen",
+  "global.audit.noShop": "Kein eigener Shop",
+  "global.audit.stand": "Datenstand: {date}",
+  "global.audit.coverage": "{n} Chargeneinträge von {v} Anbietern, Stand {date}. Keine vollständige Marktabdeckung und keine eigenen Laboranalysen.",
+  "global.audit.collected": "Dokument erfasst am",
+  "global.audit.host": "Dokument hinterlegt bei",
+  "global.audit.source": "Fundstelle",
+  "global.audit.parameters": "Untersuchte Parameter",
+  "global.audit.parametersValue": "Bitte im Originalbericht prüfen; keine automatische Aussage zu Sterilität oder weiteren Testparametern.",
+  "global.audit.labVerification": "Direkte Bestätigung beim Labor",
+  "global.audit.unconfirmed": "Nicht separat dokumentiert",
+  "global.audit.priceNote": "Listenpreis ohne Versand. Gesamtkosten und aktuelle Verfügbarkeit: nicht ermittelbar. Stand {date}.",
+  "global.audit.archivedPrice": "Archivpreis, vom aktuellen Preisvergleich ausgeschlossen",
+  "global.audit.partnerNote": "Affiliate-finanziert. Peptidwerk ist Partner. Partnerstatus fließt nicht in den Score ein.",
+  "global.audit.searchHeading": "Suchergebnisse",
+  "global.audit.searchEmpty": "Kein Treffer. Suche nach einem Anbieternamen oder einem Wirkstoff, zum Beispiel BPC-157.",
+  "global.audit.searchPrompt": "Gib einen Anbieter oder Wirkstoff ein.",
+  "global.audit.searchCount": "{n} Treffer für „{query}“",
+  "global.audit.vendors": "Anbieter",
+  "global.audit.peptides": "Wirkstoffe",
+  "global.audit.compare": "Anbieter vergleichen",
+  "global.audit.method": "So entstehen die Bewertungen",
+  "global.audit.genericSafety": "Ausschließlich für Forschungszwecke. Keine Anleitung zur Zubereitung oder Anwendung am Menschen."
+});
+window.PK.i18n.merge("en", {
+  "global.vendorCard.datenbasis": "Provisional score, {n} of 5 criteria",
+  "global.vendorCard.details": "View evidence",
+  "global.enum.coaStatus.verifiziert": "CoA recorded",
+  "global.audit.scoreNote": "Documentation score, not a quality seal. Price and range are not currently scored.",
+  "global.audit.sourceMissing": "Source URL not available",
+  "global.audit.active": "Active as recorded",
+  "global.audit.inactive": "Inactive",
+  "global.audit.review": "Under review",
+  "global.audit.noShop": "No own shop",
+  "global.audit.stand": "Data as of {date}",
+  "global.audit.coverage": "{n} batch records from {v} vendors, as of {date}. Not complete market coverage; no analyses commissioned by us.",
+  "global.audit.collected": "Document recorded on",
+  "global.audit.host": "Document hosted at",
+  "global.audit.source": "Source page",
+  "global.audit.parameters": "Test parameters",
+  "global.audit.parametersValue": "Check the original report; no automatic conclusion about sterility or additional test parameters.",
+  "global.audit.labVerification": "Direct confirmation with the lab",
+  "global.audit.unconfirmed": "Not separately documented",
+  "global.audit.priceNote": "List price excluding shipping. Total cost and current availability: not available. As of {date}.",
+  "global.audit.archivedPrice": "Archived price, excluded from current price comparisons",
+  "global.audit.partnerNote": "Affiliate-funded. Peptidwerk is a partner. Partner status does not enter the score.",
+  "global.audit.searchHeading": "Search results",
+  "global.audit.searchEmpty": "No match. Try a vendor or compound name, for example BPC-157.",
+  "global.audit.searchPrompt": "Enter a vendor or compound name.",
+  "global.audit.searchCount": "{n} results for “{query}”",
+  "global.audit.vendors": "Vendors",
+  "global.audit.peptides": "Compounds",
+  "global.audit.compare": "Compare vendors",
+  "global.audit.method": "How ratings are calculated",
+  "global.audit.genericSafety": "For research purposes only. No instructions for preparation or use in humans."
+});
+
+// Editorial corrections, 17 September 2026.
+window.PK.i18n.merge("de", {
+  "global.nav.rechnerDesc": "g, mg und µg mathematisch umrechnen",
+  "global.vendorCard.coaChecked": "{n} CoAs erfasst"
+});
+window.PK.i18n.merge("en", {
+  "global.nav.rechnerDesc": "Mathematical conversion of g, mg and µg",
+  "global.vendorCard.coaChecked": "{n} CoAs recorded"
+});
+
+// Editorial corrections, 17 September 2026.
+window.PK.i18n.merge("de", {
+  "global.audit.batchCount": "Chargeneinträge erfasst",
+  "global.audit.activeCount": "aktive Anbieter laut Erhebung"
+});
+window.PK.i18n.merge("en", {
+  "global.audit.batchCount": "batch records collected",
+  "global.audit.activeCount": "active vendors as recorded"
+});
+
+// Editorial corrections, 17 September 2026.
+window.PK.i18n.merge("de", {
+  "global.audit.noCurrentOffers": "Für diesen Anbieter zeigen wir wegen seines Status keine aktuellen Angebote."
+});
+window.PK.i18n.merge("en", {
+  "global.audit.noCurrentOffers": "Current offers are not displayed because of this vendor’s status."
+});
+
+// Editorial corrections, 17 September 2026.
+window.PK.i18n.merge("de", {
+  "global.audit.comparePrices": "Preise nach Wirkstoff"
+});
+window.PK.i18n.merge("en", {
+  "global.audit.comparePrices": "Prices by compound"
+});

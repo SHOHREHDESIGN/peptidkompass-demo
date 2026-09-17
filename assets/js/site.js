@@ -479,6 +479,7 @@
 
     var badges = document.createElement("div");
     badges.className = "vendor-card-badges";
+    badges.appendChild(makePill(PK.vendorStatusLabel(vendor), "pill-info"));
     if (vendor.rechtsrahmen && vendor.rechtsrahmen.ruo) {
       badges.appendChild(makePill(PK.t("global.vendorCard.ruo"), "pill-ok"));
     }
@@ -517,7 +518,7 @@
     detailLink.textContent = PK.t("global.vendorCard.details");
     actions.appendChild(detailLink);
 
-    if (vendor.affiliateUrl) {
+    if (vendor.affiliateUrl && PK.isActiveVendor(vendor)) {
       var shopLink = document.createElement("a");
       shopLink.className = "btn btn-secondary ext-link";
       shopLink.href = PK.safeUrl(PK.vendorHref(vendor));
@@ -537,6 +538,7 @@
     var cbox = PK.renderCodeBox(vendor);
     if (cbox) card.appendChild(cbox);
     card.appendChild(actions);
+    PK.appendDisclosure(card, PK.t("global.audit.stand", {date:(vendor.recherche || {}).stand || vendor.stand || PK.t("global.na")}));
     return card;
 
     function makePill(text, variant) {
@@ -1097,8 +1099,14 @@
       // BLOCKER). is-suppressed unterdrückt Hover/Focus-Anzeige, bis die
       // Maus das Element verlässt oder der Fokus es verlässt.
       li.addEventListener("mouseleave", function () { li.classList.remove("is-suppressed"); });
+      li.addEventListener("focusin", function () {
+        if (matchesDesktop() && !li.classList.contains("is-suppressed")) setOpen(g, true);
+      });
       li.addEventListener("focusout", function (e) {
-        if (!li.contains(e.relatedTarget)) li.classList.remove("is-suppressed");
+        if (!li.contains(e.relatedTarget)) {
+          li.classList.remove("is-suppressed");
+          if (matchesDesktop() && !li.matches(":hover")) setOpen(g, false);
+        }
       });
       if (panel && !panel.id) panel.id = "nav-dropdown-" + groups.length;
       if (panel && panel.id) trigger.setAttribute("aria-controls", panel.id);
@@ -1116,7 +1124,10 @@
     function bindGlobalClose() {
       document.addEventListener("keydown", function (e) {
         if (e.key !== "Escape") return;
-        var openGroup = groups.filter(function (g) { return g.li.classList.contains("is-open"); });
+        var openGroup = groups.filter(function (g) {
+          return g.li.classList.contains("is-open") || (matchesDesktop() &&
+            (g.li.matches(":hover") || g.li.contains(document.activeElement)));
+        });
         if (!openGroup.length) return;
         var focused = document.activeElement;
         closeAll();
@@ -1991,7 +2002,7 @@
 
     // DOM-Reihenfolge Platz 2, Platz 1, Platz 3 : CSS-order (system.css)
     // stellt Platz 1 optisch in die Mitte, unabhängig von der DOM-Reihenfolge.
-    [1, 0, 2].forEach(function (idx) {
+    [0, 1, 2].forEach(function (idx) {
       var vendor = top3[idx];
       if (!vendor) return;
 
@@ -2013,12 +2024,12 @@
 
       var gesamt = typeof vendor.gesamt === "number" ? vendor.gesamt : PK.computeScoreTotal(vendor.score);
       var ring = document.createElement("div");
-      ring.className = "score-ring";
+      ring.className = "podium-score";
       ring.style.setProperty("--pct", "0");
-      ring.setAttribute("aria-hidden", "true");
+
       var ringVal = document.createElement("span");
-      ringVal.className = "score-ring-value score-band-" + PK.scoreBand(gesamt);
-      ringVal.textContent = PK.byNum(gesamt);
+      ringVal.className = "podium-score-value";
+      ringVal.textContent = PK.byNum(gesamt) + "/100";
       ring.appendChild(ringVal);
       card.appendChild(ring);
       ringEls.push({ el: ring, pct: gesamt });
@@ -2054,7 +2065,7 @@
       }
 
       var cta = document.createElement("a");
-      cta.className = "btn btn-primary ext-link podium-cta";
+      cta.className = "btn btn-secondary ext-link podium-cta";
       cta.href = PK.safeUrl(PK.vendorHref(vendor));
       cta.target = "_blank";
       cta.rel = "sponsored nofollow";
@@ -2065,6 +2076,10 @@
       badge.textContent = badgeText;
       cta.appendChild(badge);
       card.appendChild(cta);
+      var details = document.createElement("a"); details.className="btn-link"; details.href="anbieter/"+encodeURIComponent(vendor.slug)+".html"; details.textContent=PK.t("global.vendorCard.details"); card.appendChild(details);
+      PK.appendDisclosure(card,PK.t("global.vendorCard.datenbasis",{n:vendor.datenbasis}));
+      PK.appendDisclosure(card,PK.t("global.audit.stand",{date:(vendor.recherche||{}).stand||vendor.stand||PK.t("global.na")}));
+      if(vendor.partner) PK.appendDisclosure(card,PK.t("global.partner"));
 
       container.appendChild(card);
     });
@@ -2388,54 +2403,10 @@
 
     container.textContent = "";
 
-    // Signal 1: jüngste verifizierte Charge
-    var verified = batches.filter(function (b) { return b.coaStatus === "verifiziert" && b.pruefdatum; });
-    verified.sort(function (a, b) { return a.pruefdatum < b.pruefdatum ? 1 : -1; });
-    var latest = verified[0];
-    if (latest && updated) {
-      var latestDate = new Date(latest.pruefdatum + "T00:00:00Z");
-      var days = Math.max(0, Math.round((updated - latestDate) / 86400000));
-      var tile1 = buildTile(
-        days === 0 ? PK.t("page.index.freshToday") : PK.t("page.index.freshDaysAgo", { n: PK.byNum(days) }),
-        PK.t("page.index.freshVerified", { nr: latest.chargenNummer || "" }),
-        null
-      );
-      container.appendChild(tile1);
-    }
-
-    // Signal 2: CoAs der letzten 7 Tage vor updated. Nur zeigen, wenn
-    // überhaupt Chargen-Daten vorliegen (data/SCHEMA.md v2: leeres
-    // window.PK.batches -> "0 CoAs geprüft" wäre eine falsche Aussage,
-    // richtig ist: Kachel ganz weglassen statt eine erfundene Null zeigen).
-    if (updated && batches.length) {
-      var weekAgo = new Date(updated.getTime() - 7 * 86400000);
-      var coasWeek = batches.filter(function (b) {
-        if (!b.pruefdatum) return false;
-        var d = new Date(b.pruefdatum + "T00:00:00Z");
-        return d >= weekAgo && d <= updated;
-      }).length;
-      container.appendChild(buildTile(null, PK.t("page.index.freshCoasWeek", { n: "{n}" }), coasWeek));
-    }
-
-    // Signal 3: Anbieter-Anzahl
-    container.appendChild(buildTile(null, PK.t("page.index.freshVendorsChecked", { n: "{n}" }), vendors.length));
-
-    // Signal 4: Score-Durchschnitt NUR über bewertete Vendoren (gesamt
-    // !== null, data/SCHEMA.md v2). Keine bewerteten Vendoren -> Kachel
-    // weglassen statt einer erfundenen 0.
-    var scoredVendors = vendors.filter(function (v) {
-      var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
-      return typeof g === "number";
-    });
-    if (scoredVendors.length) {
-      var scoreSum = scoredVendors.reduce(function (sum, v) {
-        var g = typeof v.gesamt === "number" ? v.gesamt : PK.computeScoreTotal(v.score);
-        return sum + g;
-      }, 0);
-      var avg = Math.round(scoreSum / scoredVendors.length);
-      container.appendChild(buildTile(null, PK.t("page.index.freshAvg", { n: "{n}" }), avg));
-    }
-
+    var dates=batches.map(function(b){return b.erfasst||"";}).filter(Boolean).sort();
+    if(dates.length)container.appendChild(buildTile(dates[dates.length-1],PK.t("global.audit.collected"),null));
+    container.appendChild(buildTile(null,PK.t("global.audit.batchCount"),batches.length));
+    container.appendChild(buildTile(null,PK.t("global.audit.activeCount"),vendors.filter(PK.isActiveVendor).length));
     PK.initCountUp(container);
 
     function buildTile(topText, label, countTarget) {
@@ -2568,5 +2539,78 @@
   } else {
     initTableScrollHints();
   }
+
+  // Shared display rules. Missing facts remain missing; no score inputs are changed.
+  PK.isActiveVendor = function (v) { return !!v && v.status === "aktiv" && v.rankbar !== false; };
+  PK.vendorStatusLabel = function (v) {
+    return PK.t("global.audit." + ({ aktiv: "active", inaktiv: "inactive", "zu-pruefen": "review", "kein-shop": "noShop" }[v.status] || "review"));
+  };
+  PK.validHttpUrl = function (value) {
+    if (typeof value !== "string" || /[\s<>]/.test(value)) return "";
+    try { var u = new URL(value); return /^(https?:)$/.test(u.protocol) && !u.username && !u.password ? u.href : ""; }
+    catch (e) { return ""; }
+  };
+  PK.isComparableProduct = function (p) {
+    if (!p || p.geschaetzt || !(p.mg > 0) || !(p.preis > 0)) return false;
+    // A known combination product cannot represent either individual compound.
+    return !/cjc[^/]*ipamorelin|ipamorelin[^/]*cjc|\/[^/]*(?:blend|combo|stack)[^/]*(?:\/|$)/i.test(p.url || "");
+  };
+  PK.productHref = function (p, v) { return PK.validHttpUrl(p && p.url) || PK.validHttpUrl(PK.vendorHref(v)); };
+  PK.researchPublishable = function (entry) {
+    return !!entry && !!PK.validHttpUrl(entry.quelle) && !!entry.datum &&
+      !/in dieser Session|in this session|WebSearch|Browser-Tool|per Mail|via email|Vorrecherche|previous research session/i.test(entry.text || "");
+  };
+  PK.appendDisclosure = function (element, text) {
+    var p = document.createElement("p"); p.className = "text-small muted"; p.textContent = text; element.appendChild(p); return p;
+  };
+  PK.initSiteSearch = function () {
+    var form = document.getElementById("site-search"), results = document.getElementById("search-results");
+    if (!form || !results) return;
+    var input = form.querySelector("input"), heading = results.querySelector("h2"), count = results.querySelector("[role=status]"), list = results.querySelector(".search-result-list");
+    var normalize = function (s) { return String(s || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, ""); };
+    var submitted = false;
+    function render(moveFocus) {
+      if (!submitted) return;
+      var q = input.value.trim().slice(0,120), needle = normalize(q);
+      list.textContent = ""; results.hidden = false;
+      heading.textContent = PK.t("global.audit.searchHeading");
+      var matches = [];
+      if (needle) {
+        (PK.vendors || []).forEach(function(v) { if (normalize(v.name + " " + v.slug).includes(needle)) matches.push({name:v.name,href:"anbieter/"+encodeURIComponent(v.slug)+".html",kind:PK.t("global.audit.vendors"),detail:PK.vendorStatusLabel(v)}); });
+        (PK.peptides || []).forEach(function(p) { if (normalize(p.name+" "+p.slug+" "+(p.synonyme||[]).join(" ")).includes(needle)) matches.push({name:p.name,href:"wirkstoffe/"+encodeURIComponent(p.slug)+".html",kind:PK.t("global.audit.peptides"),detail:PK.t("global.audit.genericSafety")}); });
+      }
+      count.textContent = !needle ? PK.t("global.audit.searchPrompt") : matches.length ? PK.t("global.audit.searchCount",{n:matches.length,query:q}) : PK.t("global.audit.searchEmpty");
+      matches.forEach(function(m) {
+        var li=document.createElement("li"), a=document.createElement("a"), detail=document.createElement("p");
+        a.className="btn-link";a.href=m.href;a.textContent=m.name;
+        detail.className="text-small muted";detail.textContent=m.kind+" · "+m.detail;
+        li.appendChild(a);li.appendChild(detail);list.appendChild(li);
+      });
+      if (moveFocus) { heading.focus(); results.scrollIntoView({block:"start",behavior:"auto"}); }
+    }
+    form.addEventListener("submit",function(e) { e.preventDefault();submitted=true;var url=new URL(location.href);url.searchParams.set("q",input.value.trim().slice(0,120));history.replaceState(null,"",url);render(true); });
+    document.addEventListener("pk:langchange",function(){render(false);});
+    var initial=new URL(location.href).searchParams.get("q");
+    if(initial){input.value=initial;submitted=true;render(false);}
+  };
+
+  // Shop-source links follow the same disclosure rule as purchase links.
+  PK.discloseShopLinks = function () {
+    var hosts = {};
+    (PK.vendors || []).forEach(function(v) { [v.website,v.affiliateUrl,v.affiliateLink].forEach(function(h){var clean=PK.validHttpUrl(h);if(clean)hosts[new URL(clean).hostname.replace(/^www\./,"")]=true;}); });
+    (PK.products || []).forEach(function(p){var clean=PK.validHttpUrl(p.url);if(clean)hosts[new URL(clean).hostname.replace(/^www\./,"")]=true;});
+    document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+      var clean=PK.validHttpUrl(a.getAttribute("href")); if(!clean)return;
+      if(!hosts[new URL(clean).hostname.replace(/^www\./,"")])return;
+      a.rel="sponsored nofollow noopener";
+      var oldBadge=a.querySelector(".badge-ad");if(oldBadge && oldBadge.textContent!==PK.t("global.badge.ad"))oldBadge.textContent=PK.t("global.badge.ad");
+      if(!a.querySelector(".badge-ad")){var badge=document.createElement("span");badge.className="badge-ad";badge.textContent=PK.t("global.badge.ad");a.appendChild(document.createTextNode(" "));a.appendChild(badge);}
+    });
+  };
+  document.addEventListener("DOMContentLoaded",function(){
+    PK.discloseShopLinks();
+    var queued=false;
+    new MutationObserver(function(){if(queued)return;queued=true;requestAnimationFrame(function(){queued=false;PK.discloseShopLinks();});}).observe(document.body,{childList:true,subtree:true});
+  });
 
 })(window);

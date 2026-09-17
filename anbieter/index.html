@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="VTmyMwoOjfb_sfO40Y1OhSVQIRMuhpPCh9gndjs9xNY">
 <title data-i18n="page.anbieter-index.title">Alle Anbieter im Überblick · Peptide Compass</title>
-<meta name="description" data-i18n="page.anbieter-index.metaDescription" content="Acht geprüfte Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg vergleichen. Nach Land und Prüf-Status filtern, nach Score, Name, Preis/mg oder Versandzeit sortieren.">
+<meta name="description" data-i18n="page.anbieter-index.metaDescription" content="24 geprüfte Peptid-Anbieter nach Labor, Rechtsrahmen, Lieferung, Sortiment und Preis pro mg vergleichen. Nach Land und Prüf-Status filtern, nach Score, Name, Preis/mg oder Versandzeit sortieren.">
 <link rel="canonical" href="https://peptidkompass.com/anbieter/">
 <link rel="alternate" hreflang="de" href="https://peptidkompass.com/anbieter/?lang=de">
 <link rel="alternate" hreflang="en" href="https://peptidkompass.com/anbieter/?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/anbieter/?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n="page.anbieter-index.ogTitle" content="Alle Anbieter im Überblick · Peptide Compass">
-<meta property="og:description" data-i18n="page.anbieter-index.ogDescription" content="Acht geprüfte Anbieter, ein Blick genügt.">
+<meta property="og:description" data-i18n="page.anbieter-index.ogDescription" content="24 geprüfte Anbieter, ein Blick genügt.">
 <meta property="og:url" content="https://peptidkompass.com/anbieter/">
 <meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/css/system.css">
+<link rel="stylesheet" href="../assets/css/system.css?v=a2ff85844684">
 <link rel="icon" href="../assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/brand/favicon/favicon-180.png">
@@ -72,11 +72,12 @@
 </div>
 
 <main id="main">
+<p class="container text-small muted" data-i18n="global.audit.scoreNote">Dokumentationsscore, kein Gütesiegel. Preis und Sortiment sind derzeit unbewertet.</p>
 
   <!-- SEITENTITEL + KURZINTRO -->
   <section class="section-tight container reveal">
     <h1 class="h1" data-i18n="page.anbieter-index.h1">Alle Anbieter im Überblick</h1>
-    <p class="section-lead" style="margin-bottom:0;" data-i18n="page.anbieter-index.lead">Acht geprüfte Anbieter, ein Blick genügt.</p>
+    <p class="section-lead" style="margin-bottom:0;" data-i18n="page.anbieter-index.lead">24 geprüfte Anbieter, ein Blick genügt.</p>
   </section>
 
   <!-- FILTERLEISTE -->
@@ -108,7 +109,7 @@
         <div id="filter-sort" style="display:flex; flex-wrap:wrap; gap:8px;">
           <button type="button" class="btn btn-primary" data-sort="score" data-label="Score" aria-pressed="true" data-i18n-attr="data-label:page.anbieter-index.sortScore">Score ↓</button>
           <button type="button" class="btn btn-secondary" data-sort="name" data-label="Name" aria-pressed="false" data-i18n-attr="data-label:page.anbieter-index.sortName">Name</button>
-          <button type="button" class="btn btn-secondary" data-sort="preisProMg" data-label="Preis/mg" aria-pressed="false" data-i18n-attr="data-label:page.anbieter-index.sortPreisProMg">Preis/mg</button>
+          <a class="btn btn-secondary" href="../vergleich.html" data-i18n="global.audit.comparePrices">Preise nach Wirkstoff</a>
           <button type="button" class="btn btn-secondary" data-sort="versand" data-label="Versandzeit" aria-pressed="false" data-i18n-attr="data-label:page.anbieter-index.sortVersand">Versandzeit</button>
         </div>
       </div>
@@ -148,15 +149,15 @@
 </footer>
 
 <!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
-<script src="../data/site.js"></script>
-<script src="../data/vendors.js"></script>
-<script src="../data/peptides.js"></script>
-<script src="../data/batches.js"></script>
+<script src="../data/site.js?v=38758b950323"></script>
+<script src="../data/vendors.js?v=461d33b1389c"></script>
+<script src="../data/peptides.js?v=b4ec520274d3"></script>
+<script src="../data/batches.js?v=ea69a6f87033"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
-<script src="../data/nav.js"></script>
-<script src="../data/i18n/global.js"></script>
-<script src="../data/i18n/anbieter-index.js"></script>
-<script src="../assets/js/site.js"></script>
+<script src="../data/nav.js?v=da40b8abd66e"></script>
+<script src="../data/i18n/global.js?v=afb753021f34"></script>
+<script src="../data/i18n/anbieter-index.js?v=ef7ceb5e7e29"></script>
+<script src="../assets/js/site.js?v=b0f36d7a2916"></script>
 <script>
   (function () {
     if (!window.PK) { console.warn("PK fehlt. Datendateien nicht geladen?"); return; }
@@ -242,6 +243,8 @@
       });
 
       filtered.sort(function (a, b) {
+        var aa=PK.isActiveVendor(a), bb=PK.isActiveVendor(b);
+        if(aa!==bb) return aa ? -1 : 1;
         var va = sortValue(a, state.sort), vb = sortValue(b, state.sort);
         // null (nicht ermittelbar/nicht belegt, data/SCHEMA.md v2) landet
         // IMMER zuletzt, unabhängig von der Sortierrichtung - eine fehlende

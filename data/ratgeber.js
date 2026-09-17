@@ -313,391 +313,543 @@ window.PK.ratgeber = [
     slug: "preisindex-september-2026",
     titel: "Preisindex September 2026: was die Kern-Peptide bei den Anbietern kosten",
     titel_en: "Price Index September 2026: What the Core Peptides Cost Across Vendors",
-    teaser: "Ein Blick in die Preisdatenbank: was zwölf Kern-Peptide bei aktiven und geprüften Anbietern aktuell pro Milligramm kosten, wo die Spannen am größten sind und warum die Vial-Größe den Preis so stark verschiebt.",
-    teaser_en: "A look inside the price database: what twelve core peptides currently cost per milligram across active and vetted vendors, where the spreads are widest, and why vial size shifts the price so much.",
+    teaser: "Dokumentierte Listenpreise für 10-mg-Packungen in Euro. Gleiche Packungsgröße, sichtbare Stichprobe und Grenzen des Vergleichs.",
+    teaser_en: "Documented euro list prices for 10 mg packages. Matching package sizes, visible sample sizes and comparison limits.",
     kategorie: "Preis",
     datum: "2026-09-15",
-    lesezeit: 7,
+    lesezeit: 5,
     sections: [
       {
-        h2: "Wie dieser Preisindex entsteht",
-        h2_en: "How this price index is built",
+        h2: "Datenbasis und Auswahl",
+        h2_en: "Dataset and selection",
         absaetze: [
-          "Alle Zahlen stammen aus unserer eigenen Preisdatenbank: 198 Einzelpreise von 24 recherchierten Anbietern, Stand 15. September 2026. Eingerechnet sind nur Anbieter mit dem Status aktiv oder zu prüfend. Anbieter ohne eigenen Shop und als inaktiv markierte Shops bleiben außen vor.",
-          "Gezeigt werden reine Listenpreise von den Anbieter-Websites, ohne Versandkosten, ohne befristete Rabattaktionen und ohne Bundle- oder Blend-Produkte, bei denen sich der Preis nicht sauber auf ein einzelnes Peptid herunterrechnen lässt. Preise, die wir nicht direkt von der Produktseite ablesen konnten, sondern nur geschätzt haben, fließen nicht ein: Über alle zwölf Peptide waren das 13 Einträge, sie fehlen in Tabelle, Median und Spanne.",
-          "Der Status zu prüfend betrifft zwei der 24 recherchierten Anbieter, deren Angaben wir noch nicht vollständig verifizieren konnten. Ihre Preise erscheinen trotzdem in dieser Auswertung, so wie sie auf der jeweiligen Anbieter-Seite stehen. Zwei Anbieter mit dem Status inaktiv und ein Anbieter ohne eigenen Shop fehlen dagegen komplett.",
-          "Details zur Score-Methodik und zu den fünf Bewertungskriterien stehen auf der [Methodik-Seite](../methodik.html)."
+          "Der Datensatz enthält 432 Preisdatensätze. Nach Ausschluss inaktiver oder ungeklärter Anbieter, geschätzter Preise und erkennbarer Kombinationen bleiben 395 Angebote von 19 aktiven Anbietern über alle Währungen. Erhebungszeitraum: 2026-09-15 bis 2026-09-15. Dies ist eine Auswertung vorhandener Daten, keine erneute Shopprüfung.",
+          "Die folgende Tabelle zeigt ausschließlich 10-mg-Angebote in Euro. Jeder erfasste Produkteintrag zählt einmal. Der Median beschreibt diese Angebote und ist weder ein repräsentativer Marktpreis noch eine Qualitätsbewertung. Anbieter mit mehreren Varianten können mehrfach vertreten sein."
         ],
         absaetze_en: [
-          "Every figure comes from our own price database: 198 individual prices from 24 researched vendors, as of September 15, 2026. Only vendors with the status active or under review are included. Vendors without their own shop and shops marked inactive are left out.",
-          "What you see are plain list prices from the vendor websites, without shipping costs, without time-limited discount campaigns, and without bundle or blend products where the price cannot be cleanly broken down to a single peptide. Prices we could not read directly from the product page, only estimate, are excluded: across all twelve peptides, that affected 13 entries, and they are missing from the table, the median, and the range.",
-          "The under-review status applies to two of the 24 researched vendors, whose information we have not yet been able to fully verify. Their prices still appear in this analysis, exactly as listed on the vendor's own page. Two vendors marked inactive and one vendor without its own shop are left out entirely.",
-          "Details on the scoring methodology and the five evaluation criteria are on the [methodology page](../methodik.html)."
+          "The dataset contains 432 price records. Excluding inactive or unresolved vendors, estimated prices and recognizable combinations leaves 395 offers from 19 active vendors across all currencies. Collection dates: 2026-09-15 to 2026-09-15. This analyzes existing records; shops were not checked again.",
+          "The table includes only 10 mg offers in euros. Each recorded product entry counts once. The median describes these offers; it is neither a representative market price nor a quality rating. Vendors with several variants may appear more than once."
         ]
       },
       {
-        h2: "Preis pro Milligramm: die Haupttabelle",
-        h2_en: "Price per milligram: the main table",
+        h2: "Listenpreise bei gleicher Packungsgröße",
+        h2_en: "List prices at matching package size",
         absaetze: [
-          "Die folgende Tabelle zeigt für jedes der zwölf Kern-Peptide, wie viele Anbieter überhaupt einen Euro-Preis nennen, wie hoch der günstigste und der mittlere Preis pro Milligramm liegen und wie weit die Preise auseinanderlaufen. Anbieter mit US-Dollar-Preisen sind hier nicht mitgezählt, sie folgen im nächsten Abschnitt.",
-          "Zwei Beispiele zur Einordnung: Bei BPC-157 liegt der günstigste Wert bei Elyvera mit 2,99 Euro pro mg (10-mg-Vial), der teuerste bei DN Lab Research mit 10,67 Euro pro mg (15-mg-Vial). Bei GHK-Cu ist die Spanne relativ am größten: 0,50 Euro pro mg bei Elyvera und Europa-Peptide stehen 3,87 Euro bei DN Lab Research gegenüber, Faktor 7,7.",
-          "Bei CJC-1295 liegt Bio BoostX mit 5,00 Euro pro mg vorn, Driada mit 15,00 Euro pro mg (2-mg-Vial) am anderen Ende. Bei Melanotan II und MOTS-c führt jeweils ein anderer Anbieter: Elyvera bei Melanotan II mit 2,49 Euro pro mg, PPX.at bei MOTS-c mit 2,00 Euro pro mg. Kein Anbieter ist bei allen Peptiden gleichzeitig am günstigsten, ein Blick auf die einzelne Zeile lohnt sich also mehr als ein pauschaler Eindruck vom ganzen Sortiment.",
-          "Insgesamt stehen hinter der Tabelle 118 Euro-Preispunkte, dazu kommen 63 US-Dollar-Preispunkte aus dem nächsten Abschnitt und die 13 ausgeschlossenen Schätzwerte. Bei den meisten Peptiden bietet mindestens ein Anbieter mehr als eine Vial-Größe an, weshalb die Zahl der Preispunkte höher liegt als die Zahl der Anbieter."
+          "Alle Werte ohne Versandkosten und Rabatte. Fehlende Angebote werden nicht geschätzt. Die Daten erfassen nicht durchgehend Salzformen oder DAC-Varianten. Auch bei gleichem Namen und gleicher Masse ist die Produktausführung deshalb gesondert zu prüfen."
         ],
         absaetze_en: [
-          "The table below shows, for each of the twelve core peptides, how many vendors quote a euro price at all, how the lowest and the median price per milligram compare, and how far the prices spread apart. Vendors quoting in US dollars are not counted here; they follow in the next section.",
-          "Two examples for context: for BPC-157, the lowest value is Elyvera at €2.99 per mg (10 mg vial), the highest is DN Lab Research at €10.67 per mg (15 mg vial). For GHK-Cu the relative spread is the widest of all twelve: €0.50 per mg at Elyvera and Europa-Peptide against €3.87 at DN Lab Research, a factor of 7.7.",
-          "For CJC-1295, Bio BoostX leads at €5.00 per mg, with Driada at €15.00 per mg (2 mg vial) at the other end. Melanotan II and MOTS-c each have a different vendor in front: Elyvera at €2.49 per mg for Melanotan II, PPX.at at €2.00 per mg for MOTS-c. No single vendor is cheapest across every peptide at once, so checking the individual row tells you more than a general impression of the whole catalog.",
-          "The table rests on 118 euro price points in total, alongside 63 US-dollar price points covered in the next section and the 13 estimated values excluded above. For most peptides, at least one vendor offers more than one vial size, which is why the number of price points runs higher than the number of vendors."
+          "All figures exclude shipping and discounts. Missing offers are not estimated. Salt forms and DAC variants are not consistently recorded. Product variants must therefore be checked even when names and mass match."
         ],
         tabelle: {
           kopf: [
-            "Peptid",
-            "Anbieter (EUR)",
-            "Günstigster €/mg",
+            "Wirkstoff",
+            "Größe",
+            "Angebote",
+            "Anbieter",
+            "Minimum €/mg",
             "Median €/mg",
-            "Spanne (min–max)"
+            "Maximum €/mg"
           ],
           zeilen: [
             [
+              "5-Amino-1MQ",
+              "10 mg",
+              "3",
+              "3",
+              "4,49",
+              "4,49",
+              "7,00"
+            ],
+            [
+              "AOD-9604",
+              "10 mg",
+              "3",
+              "3",
+              "6,00",
+              "6,49",
+              "7,50"
+            ],
+            [
               "BPC-157",
-              "12",
-              "2,99 €",
-              "5,57 €",
-              "2,99–10,67 €"
+              "10 mg",
+              "8",
+              "8",
+              "2,99",
+              "3,99",
+              "6,00"
             ],
             [
-              "TB-500",
-              "12",
-              "3,50 €",
-              "7,99 €",
-              "3,50–14,50 €"
+              "CJC-1295",
+              "10 mg",
+              "3",
+              "3",
+              "5,00",
+              "8,90",
+              "12,10"
             ],
             [
-              "GHK-Cu",
-              "12",
-              "0,50 €",
-              "0,80 €",
-              "0,50–3,87 €"
-            ],
-            [
-              "Semaglutid",
+              "Cagrilintid",
+              "10 mg",
               "4",
-              "4,99 €",
-              "7,79 €",
-              "4,99–19,50 €"
+              "4",
+              "5,90",
+              "6,95",
+              "9,00"
             ],
             [
-              "Tirzepatid",
-              "4",
-              "5,99 €",
-              "8,24 €",
-              "5,99–8,98 €"
+              "DSIP",
+              "10 mg",
+              "7",
+              "7",
+              "4,99",
+              "5,00",
+              "6,80"
+            ],
+            [
+              "Dihexa",
+              "10 mg",
+              "1",
+              "1",
+              "6,00",
+              "6,00",
+              "6,00"
+            ],
+            [
+              "Epitalon",
+              "10 mg",
+              "6",
+              "6",
+              "3,50",
+              "3,94",
+              "4,60"
+            ],
+            [
+              "Ipamorelin",
+              "10 mg",
+              "6",
+              "6",
+              "4,31",
+              "4,54",
+              "6,80"
+            ],
+            [
+              "KPV",
+              "10 mg",
+              "8",
+              "8",
+              "3,49",
+              "5,09",
+              "7,50"
+            ],
+            [
+              "Kisspeptin-10",
+              "10 mg",
+              "7",
+              "6",
+              "3,50",
+              "5,04",
+              "9,50"
+            ],
+            [
+              "MOTS-c",
+              "10 mg",
+              "10",
+              "10",
+              "2,99",
+              "3,90",
+              "5,49"
+            ],
+            [
+              "Melanotan II",
+              "10 mg",
+              "11",
+              "11",
+              "2,49",
+              "3,50",
+              "5,40"
+            ],
+            [
+              "Oxytocin",
+              "10 mg",
+              "3",
+              "3",
+              "3,50",
+              "3,90",
+              "5,90"
+            ],
+            [
+              "PT-141 (Bremelanotide)",
+              "10 mg",
+              "9",
+              "8",
+              "2,60",
+              "3,90",
+              "5,00"
             ],
             [
               "Retatrutid",
-              "4",
-              "6,98 €",
-              "7,99 €",
-              "6,98–13,98 €"
+              "10 mg",
+              "2",
+              "2",
+              "7,00",
+              "7,50",
+              "7,99"
             ],
             [
-              "CJC-1295",
+              "SS-31 (Elamipretid)",
+              "10 mg",
+              "7",
+              "7",
+              "3,99",
+              "4,90",
+              "5,63"
+            ],
+            [
+              "Selank",
+              "10 mg",
               "10",
-              "5,00 €",
-              "9,99 €",
-              "5,00–15,00 €"
+              "10",
+              "2,00",
+              "3,64",
+              "5,79"
             ],
             [
-              "Ipamorelin",
-              "11",
-              "4,31 €",
-              "5,50 €",
-              "4,31–10,50 €"
+              "Semaglutid",
+              "10 mg",
+              "2",
+              "2",
+              "4,99",
+              "6,49",
+              "8,00"
             ],
             [
-              "Melanotan II",
-              "12",
-              "2,49 €",
-              "3,50 €",
-              "2,49–6,83 €"
+              "Semax",
+              "10 mg",
+              "10",
+              "10",
+              "2,00",
+              "3,74",
+              "5,90"
             ],
             [
-              "Tesamorelin",
-              "9",
-              "4,00 €",
-              "8,15 €",
-              "4,00–13,98 €"
-            ],
-            [
-              "MOTS-c",
-              "13",
-              "2,00 €",
-              "3,90 €",
-              "2,00–10,67 €"
-            ],
-            [
-              "Epitalon",
-              "8",
-              "1,20 €",
-              "3,88 €",
-              "1,20–5,33 €"
-            ]
-          ],
-          kopf_en: [
-            "Peptide",
-            "Vendors (EUR)",
-            "Lowest €/mg",
-            "Median €/mg",
-            "Range (min–max)"
-          ],
-          zeilen_en: [
-            [
-              "BPC-157",
-              "12",
-              "€2.99",
-              "€5.57",
-              "€2.99–10.67"
+              "Sermorelin",
+              "10 mg",
+              "3",
+              "3",
+              "6,50",
+              "7,00",
+              "7,50"
             ],
             [
               "TB-500",
-              "12",
-              "€3.50",
-              "€7.99",
-              "€3.50–14.50"
-            ],
-            [
-              "GHK-Cu",
-              "12",
-              "€0.50",
-              "€0.80",
-              "€0.50–3.87"
-            ],
-            [
-              "Semaglutide",
-              "4",
-              "€4.99",
-              "€7.79",
-              "€4.99–19.50"
-            ],
-            [
-              "Tirzepatide",
-              "4",
-              "€5.99",
-              "€8.24",
-              "€5.99–8.98"
-            ],
-            [
-              "Retatrutide",
-              "4",
-              "€6.98",
-              "€7.99",
-              "€6.98–13.98"
-            ],
-            [
-              "CJC-1295",
-              "10",
-              "€5.00",
-              "€9.99",
-              "€5.00–15.00"
-            ],
-            [
-              "Ipamorelin",
-              "11",
-              "€4.31",
-              "€5.50",
-              "€4.31–10.50"
-            ],
-            [
-              "Melanotan II",
-              "12",
-              "€2.49",
-              "€3.50",
-              "€2.49–6.83"
+              "10 mg",
+              "6",
+              "6",
+              "3,50",
+              "5,73",
+              "8,00"
             ],
             [
               "Tesamorelin",
-              "9",
-              "€4.00",
-              "€8.15",
-              "€4.00–13.98"
+              "10 mg",
+              "3",
+              "3",
+              "4,00",
+              "5,00",
+              "6,00"
             ],
             [
-              "MOTS-c",
-              "13",
-              "€2.00",
-              "€3.90",
-              "€2.00–10.67"
+              "Thymosin Alpha 1",
+              "10 mg",
+              "6",
+              "6",
+              "4,00",
+              "6,99",
+              "10,00"
+            ],
+            [
+              "Tirzepatid",
+              "10 mg",
+              "2",
+              "2",
+              "5,99",
+              "7,24",
+              "8,50"
+            ]
+          ],
+          kopf_en: [
+            "Compound",
+            "Size",
+            "Offers",
+            "Vendors",
+            "Minimum €/mg",
+            "Median €/mg",
+            "Maximum €/mg"
+          ],
+          zeilen_en: [
+            [
+              "5-Amino-1MQ",
+              "10 mg",
+              "3",
+              "3",
+              "4.49",
+              "4.49",
+              "7.00"
+            ],
+            [
+              "AOD-9604",
+              "10 mg",
+              "3",
+              "3",
+              "6.00",
+              "6.49",
+              "7.50"
+            ],
+            [
+              "BPC-157",
+              "10 mg",
+              "8",
+              "8",
+              "2.99",
+              "3.99",
+              "6.00"
+            ],
+            [
+              "CJC-1295",
+              "10 mg",
+              "3",
+              "3",
+              "5.00",
+              "8.90",
+              "12.10"
+            ],
+            [
+              "Cagrilintid",
+              "10 mg",
+              "4",
+              "4",
+              "5.90",
+              "6.95",
+              "9.00"
+            ],
+            [
+              "DSIP",
+              "10 mg",
+              "7",
+              "7",
+              "4.99",
+              "5.00",
+              "6.80"
+            ],
+            [
+              "Dihexa",
+              "10 mg",
+              "1",
+              "1",
+              "6.00",
+              "6.00",
+              "6.00"
             ],
             [
               "Epitalon",
+              "10 mg",
+              "6",
+              "6",
+              "3.50",
+              "3.94",
+              "4.60"
+            ],
+            [
+              "Ipamorelin",
+              "10 mg",
+              "6",
+              "6",
+              "4.31",
+              "4.54",
+              "6.80"
+            ],
+            [
+              "KPV",
+              "10 mg",
               "8",
-              "€1.20",
-              "€3.88",
-              "€1.20–5.33"
+              "8",
+              "3.49",
+              "5.09",
+              "7.50"
+            ],
+            [
+              "Kisspeptin-10",
+              "10 mg",
+              "7",
+              "6",
+              "3.50",
+              "5.04",
+              "9.50"
+            ],
+            [
+              "MOTS-c",
+              "10 mg",
+              "10",
+              "10",
+              "2.99",
+              "3.90",
+              "5.49"
+            ],
+            [
+              "Melanotan II",
+              "10 mg",
+              "11",
+              "11",
+              "2.49",
+              "3.50",
+              "5.40"
+            ],
+            [
+              "Oxytocin",
+              "10 mg",
+              "3",
+              "3",
+              "3.50",
+              "3.90",
+              "5.90"
+            ],
+            [
+              "PT-141 (Bremelanotide)",
+              "10 mg",
+              "9",
+              "8",
+              "2.60",
+              "3.90",
+              "5.00"
+            ],
+            [
+              "Retatrutid",
+              "10 mg",
+              "2",
+              "2",
+              "7.00",
+              "7.50",
+              "7.99"
+            ],
+            [
+              "SS-31 (Elamipretid)",
+              "10 mg",
+              "7",
+              "7",
+              "3.99",
+              "4.90",
+              "5.63"
+            ],
+            [
+              "Selank",
+              "10 mg",
+              "10",
+              "10",
+              "2.00",
+              "3.64",
+              "5.79"
+            ],
+            [
+              "Semaglutid",
+              "10 mg",
+              "2",
+              "2",
+              "4.99",
+              "6.49",
+              "8.00"
+            ],
+            [
+              "Semax",
+              "10 mg",
+              "10",
+              "10",
+              "2.00",
+              "3.74",
+              "5.90"
+            ],
+            [
+              "Sermorelin",
+              "10 mg",
+              "3",
+              "3",
+              "6.50",
+              "7.00",
+              "7.50"
+            ],
+            [
+              "TB-500",
+              "10 mg",
+              "6",
+              "6",
+              "3.50",
+              "5.73",
+              "8.00"
+            ],
+            [
+              "Tesamorelin",
+              "10 mg",
+              "3",
+              "3",
+              "4.00",
+              "5.00",
+              "6.00"
+            ],
+            [
+              "Thymosin Alpha 1",
+              "10 mg",
+              "6",
+              "6",
+              "4.00",
+              "6.99",
+              "10.00"
+            ],
+            [
+              "Tirzepatid",
+              "10 mg",
+              "2",
+              "2",
+              "5.99",
+              "7.24",
+              "8.50"
             ]
           ]
         }
       },
       {
-        h2: "US-Dollar-Anbieter: separat gelistet, nicht umgerechnet",
-        h2_en: "US-dollar vendors: listed separately, not converted",
+        h2: "Einzelangebote nachvollziehen",
+        h2_en: "Trace individual offers",
         absaetze: [
-          "Ein Teil der recherchierten Anbieter berechnet in US-Dollar. Wir rechnen diese Preise nicht in Euro um, weil sich Wechselkurse laufend ändern und ein umgerechneter Wert den Vergleich verfälschen würde. Diese Anbieter erscheinen deshalb hier separat und fließen nicht in Median oder Spanne der Tabelle oben ein.",
-          "Am häufigsten wiederkehrend sind sechs USD-Anbieter, meist vier bis sechs pro Peptid. Bei Semaglutid ist es nur einer (American Peptides), bei den meisten anderen Peptiden sind es fünf bis sechs. Diese Anbieter fehlen deshalb nicht aus Nachlässigkeit in der Haupttabelle, sondern weil ein umgerechneter Wert bei schwankendem Kurs in wenigen Wochen wieder falsch wäre."
+          "Im [Preisvergleich](../vergleich.html) kannst du Wirkstoff, Währung und Packungsgröße wählen. Jeder Eintrag nennt Erhebungsdatum und Produktlink. Aktuelle Verfügbarkeit und Endpreis sind nicht ermittelt. Prüfe beides beim Anbieter.",
+          "Peptidwerk ist Affiliate-Partner. Partnerstatus verändert weder diese Auswahl noch die Berechnung. Der Datenstand wird erst nach einer neuen Erhebung aktualisiert; eine automatische tägliche Aktualisierung findet nicht statt."
         ],
         absaetze_en: [
-          "Some of the researched vendors price in US dollars. We do not convert these prices to euros, since exchange rates shift constantly and a converted figure would distort the comparison. These vendors are therefore listed separately here and are not part of the median or range in the table above.",
-          "Six USD vendors recur most often, typically four to six per peptide. For semaglutide it is only one (American Peptides); for most other peptides it is five to six. They are missing from the main table by design, not by oversight: a converted figure would drift out of date within weeks as the exchange rate moves."
-        ],
-        liste: [
-          "American Peptides",
-          "BioCollex",
-          "Chameleon Peptides",
-          "Hydro Research Peptides",
-          "Licensed Peptides",
-          "Protide Health"
-        ],
-        liste_en: [
-          "American Peptides",
-          "BioCollex",
-          "Chameleon Peptides",
-          "Hydro Research Peptides",
-          "Licensed Peptides",
-          "Protide Health"
-        ]
-      },
-      {
-        h2: "Semaglutid, Tirzepatid, Retatrutid: eine schmalere Vergleichsbasis",
-        h2_en: "Semaglutide, tirzepatide, retatrutide: a narrower comparison base",
-        absaetze: [
-          "Bei den drei Stoffwechsel-Peptiden Semaglutid, Tirzepatid und Retatrutid listen nur vier Anbieter überhaupt einen Euro-Preis. Bei den länger etablierten Peptiden wie BPC-157, GHK-Cu oder MOTS-c sind es acht bis dreizehn. Die Vergleichsbasis ist entsprechend schmaler: Vier statt zwölf Preispunkte bestimmen den Median, ein einzelner sehr teurer oder sehr günstiger Eintrag wiegt stärker.",
-          "Das zeigt sich bei Semaglutid selbst am deutlichsten: Die Spanne reicht von 4,99 Euro pro mg (Smart Peptides, 10-mg-Vial) bis 19,50 Euro pro mg (Driada, 2-mg-Vial), mehr als das Dreifache bei nur vier Anbietern.",
-          "Bei Tirzepatid und Retatrutid ist die Spanne enger, aber auch hier bestimmen vier Preispunkte den Median: 5,99 bis 8,98 Euro pro mg bei Tirzepatid, 6,98 bis 13,98 Euro pro mg bei Retatrutid. Wer eines dieser drei Peptide sucht, vergleicht also eine kleinere Auswahl als bei BPC-157 oder Ipamorelin, wo elf bis dreizehn Preise zur Verfügung stehen.",
-          "Auch bei den US-Dollar-Anbietern bleibt die Auswahl bei diesen drei Peptiden schmal: vier bei Tirzepatid und Retatrutid, nur einer bei Semaglutid. In Euro wie in Dollar gilt also dasselbe Bild, die Gesamtzahl der Angebote liegt bei diesen drei Peptiden niedriger als bei BPC-157, GHK-Cu oder MOTS-c."
-        ],
-        absaetze_en: [
-          "For the three metabolic peptides semaglutide, tirzepatide, and retatrutide, only four vendors quote a euro price at all. For the longer-established peptides like BPC-157, GHK-Cu, or MOTS-c, it is eight to thirteen. The comparison base is narrower accordingly: four price points instead of twelve decide the median, so a single very expensive or very cheap entry carries more weight.",
-          "Semaglutide shows this most clearly: the range runs from €4.99 per mg (Smart Peptides, 10 mg vial) to €19.50 per mg (Driada, 2 mg vial), more than three times over, based on just four vendors.",
-          "Tirzepatide and retatrutide have a tighter range, but four price points still decide the median for each: €5.99 to €8.98 per mg for tirzepatide, €6.98 to €13.98 per mg for retatrutide. Anyone comparing these three peptides is working from a smaller set than for BPC-157 or ipamorelin, where eleven to thirteen prices are available.",
-          "The US-dollar vendors stay just as thin for these three peptides: four for tirzepatide and retatrutide, only one for semaglutide. The picture is the same in dollars as in euros, the total number of listings for these three peptides sits lower than for BPC-157, GHK-Cu, or MOTS-c."
-        ]
-      },
-      {
-        h2: "Warum das größere Vial fast immer günstiger ist",
-        h2_en: "Why the larger vial is almost always cheaper",
-        absaetze: [
-          "Innerhalb eines einzelnen Anbieters zeigt sich ein klares Muster: das größere Vial ist so gut wie immer günstiger pro Milligramm. Bei Peptidwerk kostet Epitalon im 10-mg-Vial 4,00 Euro pro mg, im 50-mg-Vial nur 2,20 Euro. GHK-Cu liegt bei Peptidwerk im 50-mg-Vial bei 0,70 Euro, im 100-mg-Vial bei 0,55 Euro.",
-          "Am deutlichsten fällt der Unterschied bei PPX.at auf: Tesamorelin kostet im 5-mg-Vial 8,00 Euro pro Milligramm, im 10-mg-Vial nur 4,00 Euro, also die Hälfte. Bei Retatrutid wiederholt sich das Muster beim selben Anbieter, wenn auch schwächer: 8,00 Euro im 5-mg-Vial gegenüber 7,00 Euro im 10-mg-Vial. Und bei Peptidwerk fällt MOTS-c von 4,00 Euro im 10-mg-Vial auf 2,50 Euro im 40-mg-Vial.",
-          "Wer mehrere kleine Vials plant statt eines größeren, zahlt in der Regel mehr pro Milligramm. Der [Warenkorb-Optimierer](../warenkorb.html) rechnet das für deine konkrete Kombination durch."
-        ],
-        absaetze_en: [
-          "Within a single vendor, a clear pattern shows up: the larger vial is almost always cheaper per milligram. At Peptidwerk, epitalon costs €4.00 per mg in the 10 mg vial, only €2.20 in the 50 mg vial. GHK-Cu at Peptidwerk runs €0.70 per mg in the 50 mg vial, €0.55 in the 100 mg vial.",
-          "The difference is clearest at PPX.at: tesamorelin costs €8.00 per milligram in the 5 mg vial, only €4.00 in the 10 mg vial, half the price. The same pattern repeats for retatrutide at the same vendor, though more mildly: €8.00 in the 5 mg vial versus €7.00 in the 10 mg vial. And at Peptidwerk, MOTS-c drops from €4.00 in the 10 mg vial to €2.50 in the 40 mg vial.",
-          "Planning several small vials instead of one larger one usually means paying more per milligram. The [cart optimizer](../warenkorb.html) runs the numbers for your specific combination."
-        ]
-      },
-      {
-        h2: "Die Preisspanne: Faktor 1,5 bis 7,7 zwischen den Anbietern",
-        h2_en: "The price spread: a factor of 1.5 to 7.7 between vendors",
-        absaetze: [
-          "Die Spanne zwischen günstigstem und teuerstem Preis pro Milligramm reicht über die zwölf Peptide von Faktor 1,5 bei Tirzepatid bis Faktor 7,7 bei GHK-Cu. Nach GHK-Cu folgen MOTS-c (Faktor 5,3) und Epitalon (Faktor 4,4) als Peptide mit der größten Spreizung, bei den meisten anderen liegt sie zwischen Faktor 2 und 4. Das ist ein guter Grund, vor dem Vergleich mehrerer Anbieter nicht nur den erstbesten Preis anzusehen, sondern die ganze Zeile in der Tabelle.",
-          "Am unteren Ende der Preisskala taucht ein Name überdurchschnittlich oft auf: Peptidwerk liegt bei sieben der neun Peptide, für die der Anbieter Preise führt, unter den drei günstigsten Positionen, bei TB-500 sogar mit dem niedrigsten Wert der gesamten Tabelle (3,50 Euro pro mg). Elyvera taucht bei allen fünf Peptiden, für die der Anbieter Preise führt, ebenfalls unter den drei günstigsten auf, ohne Partner von Peptide Compass zu sein. Zur Einordnung: Peptidwerk ist Partner von Peptide Compass. Die hier gezeigten Preise sind unverändert von der Anbieter-Website übernommen und fließen genauso in Median und Spanne ein wie bei jedem anderen Anbieter, eine Sonderstellung in der Auswertung gibt es nicht."
-        ],
-        absaetze_en: [
-          "The spread between the lowest and highest price per milligram runs, across the twelve peptides, from a factor of 1.5 for tirzepatide to a factor of 7.7 for GHK-Cu. After GHK-Cu, MOTS-c (factor 5.3) and epitalon (factor 4.4) show the next-widest spread; for most others it sits between a factor of 2 and 4. That is a good reason not to stop at the first price you see when comparing vendors, but to read the whole row in the table.",
-          "One name shows up disproportionately often at the low end: Peptidwerk sits among the three cheapest positions for seven of the nine peptides it lists prices for, and holds the single lowest value in the entire table for TB-500 (€3.50 per mg). Elyvera sits among the three cheapest positions for all five peptides it lists prices for, without being a Peptide Compass partner. For context: Peptidwerk is a partner of Peptide Compass. The prices shown here are taken unchanged from the vendor's website and are treated exactly like every other vendor's in the median and range calculations, with no special status in the analysis."
-        ]
-      },
-      {
-        h2: "Einmal im Monat aktualisiert",
-        h2_en: "Updated once a month",
-        absaetze: [
-          "Preise auf Peptid-Shops ändern sich häufig, teils wöchentlich. Diesen Index aktualisieren wir deshalb einmal im Monat neu aus derselben Datenbasis, dem nächsten Update-Termin folgt eine eigene Ausgabe unter [Anbieter-Updates](../faq.html). Zwischen zwei Ausgaben können einzelne Werte auf den Shop-Seiten bereits abweichen, die laufend aktuellen Einzelpreise stehen in der Datenbank hinter dem [Vergleich](../vergleich.html).",
-          "Für einen tagesaktuellen Blick auf einzelne Anbieter und ihre CoAs lohnt sich der [Vergleich](../vergleich.html), für die günstigste Kombination über mehrere Peptide hinweg der [Warenkorb-Optimierer](../warenkorb.html). Wie du eine Preisangabe neben Reinheit und Laborprüfung einordnest, steht im [Peptid 1x1](../peptid-1x1.html)."
-        ],
-        absaetze_en: [
-          "Prices at peptide shops change often, sometimes weekly. We therefore refresh this index once a month from the same data source; the next update follows as its own entry under [vendor updates](../faq.html). Between two editions, individual values on the shop pages may already differ; the continuously updated individual prices live in the database behind the [comparison tool](../vergleich.html).",
-          "For a day-to-day look at individual vendors and their CoAs, the [comparison tool](../vergleich.html) is the better starting point; for the cheapest combination across several peptides, use the [cart optimizer](../warenkorb.html). For how to weigh a price figure alongside purity and lab testing, see [Peptide 1x1](../peptid-1x1.html)."
+          "Use the [price comparison](../vergleich.html) to choose compound, currency and package size. Each entry includes its collection date and product link. Current availability and total cost have not been established. Check both with the vendor.",
+          "Peptidwerk is an affiliate partner. Partnership does not affect selection or calculation. The dataset changes after a new collection; it is not updated automatically each day."
         ]
       }
     ],
     quellen: [
       {
-        text: "Elyvera (Europeptides), BPC-157 10 mg – günstigster Preis pro mg bei BPC-157",
-        url: "https://europeptides.de/product/BPC-15710mg"
+        text: "Öffentlicher Preisdatensatz, mit Quellen und Erhebungsdatum je Eintrag",
+        url: "https://peptidkompass.com/data/products.js"
       },
       {
-        text: "Peptidwerk, TB-500 10 mg – günstigster Preis pro mg bei TB-500",
-        url: "https://pepwerk.com/produkt/tb-500/"
-      },
-      {
-        text: "Elyvera (Europeptides), GHK-Cu 50 mg – Teil der günstigsten Position bei GHK-Cu",
-        url: "https://europeptides.de/product/GHK-Cu50mg"
-      },
-      {
-        text: "Smart Peptides, Semaglutid 10 mg – günstigster Preis pro mg bei Semaglutid",
-        url: "https://smartpeptides.de/product/semaglutide-10mg/"
-      },
-      {
-        text: "Europa-Peptide, Retatrutid 5 mg – günstigster Preis pro mg bei Retatrutid",
-        url: "https://europa-peptide.de/de/shop/retatrutide/"
-      },
-      {
-        text: "PPX.at, Tesamorelin 5 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://www.ppx.at/products/tesamorelin-5mg"
-      },
-      {
-        text: "PPX.at, Tesamorelin 10 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://www.ppx.at/products/tesamorelin-10mg"
-      },
-      {
-        text: "Peptidwerk, GHK-Cu 50 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://pepwerk.com/produkt/gh/"
-      },
-      {
-        text: "Peptidwerk, GHK-Cu 100 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://pepwerk.com/produkt/ghk-cu-100-mg/"
-      },
-      {
-        text: "DN Lab Research, BPC-157 15 mg – teuerster Preis pro mg bei BPC-157",
-        url: "https://dnlabresearch.com/bpc-157-15mg-peptide-pen/"
-      },
-      {
-        text: "PPX.at, Retatrutid 5 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://www.ppx.at/products/retatrutide-5mg"
-      },
-      {
-        text: "PPX.at, Retatrutid 10 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://www.ppx.at/products/retatrutide-10mg"
-      },
-      {
-        text: "Peptidwerk, MOTS-c 10 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://pepwerk.com/produkt/mots-c-10-mg/"
-      },
-      {
-        text: "Peptidwerk, MOTS-c 40 mg – Beispiel für den Preisunterschied zwischen Vial-Größen",
-        url: "https://pepwerk.com/produkt/mots-c-40-mg/"
+        text: "Öffentlicher Anbieterstatus",
+        url: "https://peptidkompass.com/data/vendors.js"
       }
     ],
     faq: [
       {
-        q: "Warum ist der Preis pro Milligramm bei manchen Anbietern so viel höher?",
-        a: "Meist liegt es am Vial: kleinere Packungsgrößen kosten pro Milligramm mehr als große, das Muster zeigt sich bei fast jedem Anbieter, der mehrere Größen führt. Daneben spielen Marge, Lieferkette und Laborprüfung eine Rolle, die sich aus der reinen Preisdatenbank aber nicht einzeln auflösen lässt.",
-        q_en: "Why is the price per milligram so much higher at some vendors?",
-        a_en: "Usually it comes down to the vial: smaller pack sizes cost more per milligram than larger ones, a pattern that shows up at almost every vendor offering multiple sizes. Margin, supply chain, and lab testing also play a role, though the price database alone cannot separate those out."
+        q: "Was wird im Preisindex verglichen?",
+        a: "Dokumentierte Listenpreise von 10-mg-Angeboten in Euro bei aktiven Anbietern. Versandkosten, Rabatte und aktuelle Verfügbarkeit sind nicht eingerechnet.",
+        q_en: "What does the price index compare?",
+        a_en: "Documented euro list prices for 10 mg offers from active vendors. Shipping, discounts and current availability are not included."
       },
       {
-        q: "Sind die USD-Preise in der Tabelle mit den Euro-Preisen vergleichbar?",
-        a: "Nicht direkt. Wir rechnen USD-Preise nicht in Euro um, weil sich Wechselkurse laufend ändern und ein umgerechneter Wert schnell veraltet. USD-Anbieter stehen deshalb separat und fließen nicht in Median oder Spanne der Euro-Tabelle ein.",
-        q_en: "Are the USD prices in the table comparable to the euro prices?",
-        a_en: "Not directly. We do not convert USD prices to euros, since exchange rates shift constantly and a converted figure goes stale quickly. USD vendors are therefore listed separately and are not part of the median or range in the euro table."
-      },
-      {
-        q: "Wie oft wird dieser Preisindex aktualisiert?",
-        a: "Einmal im Monat, aus derselben Datenbasis wie die einzelnen Anbieter-Seiten. Zwischen den Updates können sich einzelne Preise auf den Shop-Websites bereits geändert haben.",
-        q_en: "How often is this price index updated?",
-        a_en: "Once a month, from the same data source as the individual vendor pages. Between updates, individual prices on the shop websites may have already changed."
+        q: "Wie aktuell sind die Preise?",
+        a: "Die Auswertung nennt den Erhebungszeitraum. Sie ist keine erneute Shopprüfung und wird nicht automatisch täglich aktualisiert.",
+        q_en: "How current are these prices?",
+        a_en: "The analysis states the collection period. It is not a new shop check and is not automatically refreshed each day."
       }
     ],
     bild: {
@@ -708,8 +860,8 @@ window.PK.ratgeber = [
     seo: {
       title: "Preisindex September 2026 · Peptide Compass",
       title_en: "Price Index September 2026 · Peptide Compass",
-      description: "Was BPC-157, Semaglutid und Co bei aktiven Anbietern aktuell pro mg kosten: Haupttabelle, Spannen und warum die Vial-Größe den Preis verschiebt.",
-      description_en: "What BPC-157, semaglutide, and others cost per mg at active vendors right now: the main table, price spreads, and why vial size shifts the price."
+      description: "Dokumentierte Listenpreise für 10-mg-Packungen in Euro. Gleiche Packungsgröße, sichtbare Stichprobe und Grenzen des Vergleichs.",
+      description_en: "Documented euro list prices for 10 mg packages. Matching package sizes, visible sample sizes and comparison limits."
     },
     verwandt: [
       "coa-lesen",
@@ -1081,14 +1233,14 @@ window.PK.ratgeber = [
         h2: "Warum ein CoA mehr ist als ein PDF",
         h2_en: "Why a CoA is more than a PDF",
         absaetze: [
-          "Ein CoA, Certificate of Analysis, ist der Prüfbericht zu einer einzelnen Charge. Er sagt nicht, ob ein Peptid etwas bewirkt, sondern ob das, was im Vial steckt, dem entspricht, was auf dem Etikett steht. Für Forschungszwecke ist das die einzige Grundlage, auf der sich eine Probe überhaupt einordnen lässt.",
-          "Die Grundlagen dazu stehen im [Peptid 1x1](../peptid-1x1.html). Dieser Artikel geht tiefer: wie du die einzelnen Werte liest, und woran du erkennst, ob ein CoA überhaupt etwas wert ist.",
-          "Bei Forschungschemikalien mit RUO-Kennzeichnung gibt es keine vorgelagerte behördliche Marktprüfung wie bei einem zugelassenen Arzneimittel. Das CoA ist deshalb die einzige unabhängig nachprüfbare Aussage, die zu einer konkreten Charge existiert, nicht die Marketingtexte auf der Shop-Seite."
+          "Ein CoA, Certificate of Analysis, dokumentiert die Ergebnisse der im Bericht genannten Prüfungen an einer eingereichten Probe. Welche Aussagen sich daraus ableiten lassen, hängt von Probe, Methode und untersuchten Parametern ab.",
+          "Der Bericht allein bestätigt weder die Herkunft der Probe noch, dass jede später ausgelieferte Einheit derselben Charge entspricht. Prüfe deshalb Produktname, Chargennummer, Prüfdatum, Labor und die Zuordnung zur angebotenen Ware.",
+          "Dieser Artikel erklärt die Dokumente. Er ist keine Freigabe zur Anwendung am Menschen. Die Grundlagen stehen im [Peptid 1x1](../peptid-1x1.html)."
         ],
         absaetze_en: [
-          "A CoA, Certificate of Analysis, is the test report for a single batch. It does not say whether a peptide has any effect, only whether what is in the vial matches what the label claims. For research purposes, that is the only basis on which a sample can be assessed at all.",
-          "The basics are covered in the [Peptide 101](../peptid-1x1.html). This article goes deeper: how to read the individual values, and how to tell whether a CoA is worth anything in the first place.",
-          "For RUO-labeled research chemicals, there is no upfront regulatory market check the way there is for an approved medicine. The CoA is therefore the only independently checkable statement that exists for a specific batch, not the marketing copy on the shop page."
+          "A CoA, Certificate of Analysis, documents results of the tests listed in the report on a submitted sample. Conclusions depend on the sample, methods and parameters examined.",
+          "The report alone does not confirm sample provenance or that every unit later shipped corresponds to that batch. Check product name, batch number, test date, laboratory and the link to the offered product.",
+          "This article explains documents. It does not establish suitability for human use. See [Peptide 101](../peptid-1x1.html) for the basics."
         ]
       },
       {
@@ -1109,12 +1261,12 @@ window.PK.ratgeber = [
         h2: "Labor und Prüfdatum: wer hat wann getestet",
         h2_en: "Lab and test date: who tested, and when",
         absaetze: [
-          "Der Name des Labors entscheidet, ob ein Wert überhaupt Gewicht hat. In den von uns erfassten Chargen tauchen drei Labore auf: Janoshik Analytical (Slowakei), Liquilabs (Tschechien) und Analiza Białek Sp. z o.o. (Polen). Alle drei sind externe Labore ohne Geschäftsbeziehung zum jeweiligen Hersteller, das schließt einen Interessenkonflikt beim Ergebnis aus.",
+          "In den erfassten Dokumenten werden unter anderem Janoshik Analytical, Liquilabs und Analiza Białek genannt. Ein genanntes externes Labor ist noch keine von uns bestätigte Unabhängigkeit oder Echtheit des Berichts. Geschäftsbeziehungen und Probenentnahme wurden nicht gesondert verifiziert.",
           "Das Prüfdatum zeigt, wie aktuell ein CoA ist. Ein Bericht von vor zwei Jahren sagt nichts über eine aktuelle Produktion, selbst wenn das Peptid gleich heißt. Manche Anbieter weisen kein Prüfdatum aus: In unserer Datenbank ist das bei den Peptidwerk-Chargen der Fall, dort steht auf der Produktseite kein Datum, nur die Charge selbst und die Werte.",
           "Bei Particle Peptides steckt das Prüfdatum meist nicht im sichtbaren Text, sondern in den PDF-Metadaten und im Lesezeichen-Titel des CoA-Dokuments (\"Results for <Lyo-ID>\"), zusätzlich abgleichbar über die eigene COA-Vault-Tabelle des Anbieters. Es lohnt sich also, bei einem CoA-PDF auch die Dokumenteigenschaften zu prüfen, nicht nur den sichtbaren Fließtext."
         ],
         absaetze_en: [
-          "The name of the lab decides whether a value carries any weight at all. Across the batches we have recorded, three labs show up: Janoshik Analytical (Slovakia), Liquilabs (Czech Republic) and Analiza Białek Sp. z o.o. (Poland). All three are external labs with no business relationship to the respective manufacturer, which rules out a conflict of interest in the result.",
+          "Recorded documents name laboratories including Janoshik Analytical, Liquilabs and Analiza Białek. Naming an external laboratory does not mean we have confirmed its independence or the report’s authenticity. Business relationships and sample collection were not separately verified.",
           "The test date shows how current a CoA is. A report from two years ago says nothing about a current production run, even if the peptide has the same name. Some vendors do not list a test date at all: in our database that is the case for the Peptidwerk batches, where the product page shows no date, only the batch itself and the values.",
           "At Particle Peptides, the test date usually is not in the visible text at all, but in the PDF metadata and the bookmark title of the CoA document (\"Results for <Lyo-ID>\"), and can additionally be cross-checked against the vendor's own COA-Vault table. It is worth checking a CoA PDF's document properties too, not just the visible body text."
         ]

@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="VTmyMwoOjfb_sfO40Y1OhSVQIRMuhpPCh9gndjs9xNY">
 <title data-i18n="page.charge-pruefen.title">Charge prüfen · Peptide Compass</title>
-<meta name="description" data-i18n="page.charge-pruefen.metaDescription" content="Chargennummer eingeben und gegen unsere Chargen-Datenbank prüfen: Anbieter, Prüfdatum, Reinheit, CoA-Status. Plus Anleitung zur echten externen Prüfung.">
+<meta name="description" data-i18n="page.charge-pruefen.metaDescription" content="Chargennummer eingeben und gegen unsere Datenbank prüfen: Anbieter, Prüfdatum, Reinheit, CoA-Status. Plus Anleitung zur echten externen Prüfung.">
 <link rel="canonical" href="https://peptidkompass.com/charge-pruefen.html">
 <link rel="alternate" hreflang="de" href="https://peptidkompass.com/charge-pruefen.html?lang=de">
 <link rel="alternate" hreflang="en" href="https://peptidkompass.com/charge-pruefen.html?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://peptidkompass.com/charge-pruefen.html?lang=de">
 <meta property="og:type" content="website">
 <meta property="og:title" data-i18n="page.charge-pruefen.ogTitle" content="Charge prüfen · Peptide Compass">
-<meta property="og:description" data-i18n="page.charge-pruefen.ogDescription" content="Chargennummer eingeben, Ergebnis in Sekunden sehen, gegen unsere Chargen-Datenbank geprüft.">
+<meta property="og:description" data-i18n="page.charge-pruefen.ogDescription" content="Chargennummer eingeben, Ergebnis in Sekunden sehen, gegen unsere Datenbank geprüft.">
 <meta property="og:url" content="https://peptidkompass.com/charge-pruefen.html">
 <meta property="og:image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="assets/css/system.css">
-<link rel="stylesheet" href="assets/css/tiles.css">
+<link rel="stylesheet" href="assets/css/system.css?v=a2ff85844684">
+<link rel="stylesheet" href="assets/css/tiles.css?v=030694ae1a45">
 <link rel="icon" href="assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/favicon/favicon-180.png">
@@ -75,14 +75,11 @@
 <main id="main">
 
   <!-- SEITENTITEL + KURZINTRO -->
-  <section class="section container reveal">
+  <section class="section container-narrow batch-search reveal">
     <p class="eyebrow" data-i18n="page.charge-pruefen.eyebrow">Vertrauen prüfen</p>
     <h1 class="h1" data-i18n="page.charge-pruefen.h1">Charge prüfen</h1>
     <p class="section-lead" data-i18n="page.charge-pruefen.lead">Chargennummer eingeben, Ergebnis in Sekunden sehen.</p>
-  </section>
-
-  <!-- SUCHFELD + PRÜFEN-BUTTON -->
-  <section class="section-tight container reveal">
+    <!-- Suchfeld und Datenumfang bleiben bei der gemeinsamen Überschrift. -->
     <form class="search-bar" id="batch-form" role="search">
       <input type="search" id="batch-input" placeholder="Chargennummer eingeben" aria-label="Chargennummer" data-i18n-attr="placeholder:page.charge-pruefen.searchPlaceholder,aria-label:page.charge-pruefen.searchAriaLabel">
       <button class="btn btn-primary" type="submit" data-i18n="page.charge-pruefen.searchButton">Prüfen</button>
@@ -90,7 +87,7 @@
   </section>
 
   <!-- ERGEBNISBEREICH (dynamisch) -->
-  <section class="section container-narrow reveal" aria-live="polite">
+  <section class="section container-narrow batch-results reveal" aria-live="polite">
     <div id="batch-result"></div>
   </section>
 
@@ -98,7 +95,7 @@
   <section class="section section-tinted container reveal">
     <p class="eyebrow" data-i18n="page.charge-pruefen.stepsEyebrow">Anleitung</p>
     <h2 class="section-title" data-i18n="page.charge-pruefen.stepsTitle">So prüfst du eine Charge extern</h2>
-    <p class="section-lead" data-i18n="page.charge-pruefen.stepsLead">Unabhängig von unserer Chargen-Datenbank, in fünf Schritten.</p>
+    <p class="section-lead" data-i18n="page.charge-pruefen.stepsLead">Unabhängig von unserer Datenbank, in fünf Schritten.</p>
     <ol class="grid-3 unstyled" id="steps-list"></ol>
   </section>
 
@@ -119,15 +116,15 @@
 </footer>
 
 <!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
-<script src="data/site.js"></script>
-<script src="data/vendors.js"></script>
-<script src="data/peptides.js"></script>
-<script src="data/batches.js"></script>
+<script src="data/site.js?v=38758b950323"></script>
+<script src="data/vendors.js?v=461d33b1389c"></script>
+<script src="data/peptides.js?v=b4ec520274d3"></script>
+<script src="data/batches.js?v=ea69a6f87033"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
-<script src="data/nav.js"></script>
-<script src="data/i18n/global.js"></script>
-<script src="data/i18n/charge-pruefen.js"></script>
-<script src="assets/js/site.js"></script>
+<script src="data/nav.js?v=da40b8abd66e"></script>
+<script src="data/i18n/global.js?v=afb753021f34"></script>
+<script src="data/i18n/charge-pruefen.js?v=f940b02ca557"></script>
+<script src="assets/js/site.js?v=b0f36d7a2916"></script>
 <script>
   // Seiten-Logik Charge prüfen: Batch-Suche gegen window.PK.batches,
   // case-insensitiv, Leerzeichen/Bindestriche ignoriert (Auftrag Wave-2 W4).
@@ -206,14 +203,11 @@
       return String(s || "").toLowerCase().replace(/[\s-]+/g, "");
     }
 
-    function findBatch(query) {
-      var list = Array.isArray(window.PK.batches) ? window.PK.batches : [];
+    var params = new URLSearchParams(location.search);
+    var vendorScope = params.get("vendor") || "";
+    function findBatches(query) {
       var norm = normalize(query);
-      if (!norm) return null;
-      for (var i = 0; i < list.length; i++) {
-        if (normalize(list[i].chargenNummer) === norm) return list[i];
-      }
-      return null;
+      return (PK.batches || []).filter(function(b){return norm && normalize(b.chargenNummer) === norm && (!vendorScope || b.vendorSlug === vendorScope);});
     }
 
     function coaStatusPill(status) {
@@ -298,14 +292,20 @@
       }
       addLine(PK.t("page.charge-pruefen.labelPeptide"), peptideNode);
 
-      addLine(PK.t("page.charge-pruefen.labelCheckedOn"), document.createTextNode(batch.pruefdatum || ""));
-      addLine(PK.t("page.charge-pruefen.labelPurity"), document.createTextNode(typeof batch.reinheit === "number" ? PK.byNum(batch.reinheit) + " %" : ""));
+      addLine(PK.t("page.charge-pruefen.labelCheckedOn"), document.createTextNode(batch.pruefdatum || PK.t("global.na")));
+      addLine(PK.t("page.charge-pruefen.labelPurity"), document.createTextNode(typeof batch.reinheit === "number" ? PK.byNum(batch.reinheit) + " %" : PK.t("global.na")));
 
       var laborLine = document.createElement("span");
-      laborLine.textContent = PK.t("page.charge-pruefen.labelLab") + ": " + (batch.labor || "");
+      laborLine.textContent = PK.t("page.charge-pruefen.labelLab") + ": " + (batch.labor || PK.t("global.na"));
       body.appendChild(laborLine);
 
       card.appendChild(body);
+      PK.appendDisclosure(card, PK.t("global.audit.collected")+": "+(batch.erfasst || PK.t("global.na")));
+      var documentUrl=PK.validHttpUrl(batch.coaUrl);
+      PK.appendDisclosure(card, PK.t("global.audit.host")+": "+(documentUrl ? new URL(documentUrl).hostname : PK.t("global.na")));
+      PK.appendDisclosure(card, PK.t("global.audit.labVerification")+": "+PK.t("global.audit.unconfirmed"));
+      PK.appendDisclosure(card, PK.t("global.audit.parameters")+": "+PK.t("global.audit.parametersValue"));
+      if(PK.validHttpUrl(batch.quelle)){var source=document.createElement("a");source.href=batch.quelle;source.className="btn-link";source.textContent=PK.t("global.audit.source");source.target="_blank";source.rel="noopener nofollow";card.appendChild(source);}
 
       if (batch.coaStatus !== "fehlt" && batch.coaUrl) {
         var coaLink = document.createElement("a");
@@ -394,6 +394,12 @@
     var form = document.getElementById("batch-form");
     var input = document.getElementById("batch-input");
     var resultEl = document.getElementById("batch-result");
+    var allBatches=PK.batches || [];
+    var coverage=document.createElement("p");coverage.className="text-small muted";
+    form.parentNode.insertBefore(coverage,form);
+    function renderCoverage(){coverage.textContent=PK.t("global.audit.coverage",{n:allBatches.length,v:new Set(allBatches.map(function(b){return b.vendorSlug;})).size,date:allBatches.map(function(b){return b.erfasst||"";}).sort().pop()||PK.t("global.na")});}
+    renderCoverage();document.addEventListener("pk:langchange",renderCoverage);
+
 
     /**
      * buildNoBatchesNotice()
@@ -423,10 +429,12 @@
         if (!batches.length) resultEl.appendChild(buildNoBatchesNotice());
         return;
       }
-      var batch = findBatch(query);
-      resultEl.appendChild(batch ? renderHit(batch) : renderMiss());
+      var matches = findBatches(query);
+      if(matches.length) matches.forEach(function(b){resultEl.appendChild(renderHit(b));});
+      else resultEl.appendChild(renderMiss());
     }
 
+    input.addEventListener("input",function(){vendorScope="";});
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       runSearch();
@@ -438,6 +446,7 @@
 
     // Initial: proaktiver Hinweis, falls die Chargen-Datenbank leer ist
     // (data/SCHEMA.md v2), statt erst nach der ersten Suche zu reagieren.
+    input.value=params.get("q") || "";
     runSearch();
   })();
 </script>
