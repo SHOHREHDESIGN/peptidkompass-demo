@@ -1,51 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://peptidkompass.com/index.html</loc></url>
-  <url><loc>https://peptidkompass.com/vergleich.html</loc></url>
-  <url><loc>https://peptidkompass.com/rechner.html</loc></url>
+  <url><loc>https://peptidkompass.com/</loc></url>
+  <url><loc>https://peptidkompass.com/affiliate-hinweis.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/american-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/avellon-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/beyond-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/bio-boostx.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/biocollex.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/chameleon-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/dn-lab-research.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/driada.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/elyvera.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/europa-peptide.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/europeptideshop.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/helus-lab.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/hydro-research.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/licensed-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/particle-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/peak-peptide.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/peptide-culture.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/peptide-labz.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/peptide-shop-deutschland.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/peptidwerk.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/ppx-at.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/protide-health.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/sera-lab.html</loc></url>
+  <url><loc>https://peptidkompass.com/anbieter/smart-peptides.html</loc></url>
   <url><loc>https://peptidkompass.com/charge-pruefen.html</loc></url>
   <url><loc>https://peptidkompass.com/deals.html</loc></url>
-  <url><loc>https://peptidkompass.com/studien.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/</loc></url>
+  <url><loc>https://peptidkompass.com/en/affiliate-hinweis.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/american-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/avellon-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/beyond-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/bio-boostx.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/biocollex.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/chameleon-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/dn-lab-research.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/driada.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/elyvera.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/europa-peptide.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/europeptideshop.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/helus-lab.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/hydro-research.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/licensed-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/particle-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/peak-peptide.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/peptide-culture.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/peptide-labz.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/peptide-shop-deutschland.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/peptidwerk.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/ppx-at.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/protide-health.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/sera-lab.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/anbieter/smart-peptides.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/charge-pruefen.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/deals.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/faq.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/methodik.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/peptid-1x1.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/ratgeber/</loc></url>
+  <url><loc>https://peptidkompass.com/en/ratgeber/anbieter-update-september-2026.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/ratgeber/bpc-157-studienlage-2026.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/ratgeber/coa-lesen.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/ratgeber/preis-pro-mg.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/ratgeber/preisindex-september-2026.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/ratgeber/serioese-anbieter-erkennen.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/rechner.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/studien.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/vergleich.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/warenkorb.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/5-amino-1mq.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/aod-9604.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/bpc-157.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/cagrilintid.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/cjc-1295.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/dihexa.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/dsip.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/epitalon.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/ghk-cu.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/hexarelin.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/igf-1-lr3.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/ipamorelin.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/kisspeptin.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/kpv.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/ll-37.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/melanotan-2.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/mots-c.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/oxytocin.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/pentadeca-arginate.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/pt-141.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/retatrutid.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/selank.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/semaglutid.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/semax.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/sermorelin.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/ss-31.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/survodutid.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/tb-500.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/tesamorelin.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/thymosin-alpha-1.html</loc></url>
+  <url><loc>https://peptidkompass.com/en/wirkstoffe/tirzepatid.html</loc></url>
   <url><loc>https://peptidkompass.com/faq.html</loc></url>
-  <url><loc>https://peptidkompass.com/warenkorb.html</loc></url>
   <url><loc>https://peptidkompass.com/methodik.html</loc></url>
   <url><loc>https://peptidkompass.com/peptid-1x1.html</loc></url>
-  <url><loc>https://peptidkompass.com/affiliate-hinweis.html</loc></url>
-  <url><loc>https://peptidkompass.com/impressum.html</loc></url>
-  <url><loc>https://peptidkompass.com/datenschutz.html</loc></url>
-  <url><loc>https://peptidkompass.com/ratgeber/index.html</loc></url>
+  <url><loc>https://peptidkompass.com/ratgeber/</loc></url>
   <url><loc>https://peptidkompass.com/ratgeber/anbieter-update-september-2026.html</loc></url>
   <url><loc>https://peptidkompass.com/ratgeber/bpc-157-studienlage-2026.html</loc></url>
   <url><loc>https://peptidkompass.com/ratgeber/coa-lesen.html</loc></url>
   <url><loc>https://peptidkompass.com/ratgeber/preis-pro-mg.html</loc></url>
   <url><loc>https://peptidkompass.com/ratgeber/preisindex-september-2026.html</loc></url>
   <url><loc>https://peptidkompass.com/ratgeber/serioese-anbieter-erkennen.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/index.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/peptidwerk.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/avellon-peptides.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/particle-peptides.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/europa-peptide.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/biocollex.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/elyvera.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/smart-peptides.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/peak-peptide.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/beyond-peptides.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/licensed-peptides.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/bio-boostx.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/chameleon-peptides.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/helus-lab.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/protide-health.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/american-peptides.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/dn-lab-research.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/ppx-at.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/peptide-labz.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/driada.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/europeptideshop.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/hydro-research.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/peptide-culture.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/peptide-shop-deutschland.html</loc></url>
-  <url><loc>https://peptidkompass.com/anbieter/sera-lab.html</loc></url>
-  <url><loc>https://peptidkompass.com/wirkstoffe/index.html</loc></url>
+  <url><loc>https://peptidkompass.com/rechner.html</loc></url>
+  <url><loc>https://peptidkompass.com/studien.html</loc></url>
+  <url><loc>https://peptidkompass.com/vergleich.html</loc></url>
+  <url><loc>https://peptidkompass.com/warenkorb.html</loc></url>
+  <url><loc>https://peptidkompass.com/wirkstoffe/</loc></url>
   <url><loc>https://peptidkompass.com/wirkstoffe/5-amino-1mq.html</loc></url>
   <url><loc>https://peptidkompass.com/wirkstoffe/aod-9604.html</loc></url>
   <url><loc>https://peptidkompass.com/wirkstoffe/bpc-157.html</loc></url>

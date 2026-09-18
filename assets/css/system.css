@@ -436,7 +436,7 @@ body.nav-open{ overflow:hidden; }
   background:var(--surface); border:1px solid var(--line);
   border-radius:var(--radius-pill); padding:3px; flex:0 0 auto;
 }
-.lang-toggle button{
+.lang-toggle :is(button,a){
   position:relative; /* Anker für ::after-Hit-Area, siehe unten */
   appearance:none; border:0; background:none; cursor:pointer;
   font:inherit; font-size:12px; font-weight:600; letter-spacing:.02em;
@@ -450,13 +450,13 @@ body.nav-open{ overflow:hidden; }
    sichtbare Boxen hätten sich sichtbar berührt. Die beiden 44px-Zonen
    überlappen sich dadurch minimal (~1px) an der gemeinsamen Kante : über
    pointer-events unkritisch, das spätere DOM-Element (EN) gewinnt dort. */
-.lang-toggle button::after{
+.lang-toggle :is(button,a)::after{
   content:""; position:absolute; top:50%; left:50%;
   width:44px; height:44px; min-width:44px; min-height:44px;
   transform:translate(-50%,-50%);
 }
-.lang-toggle button:hover{ color:var(--text); }
-.lang-toggle button[aria-pressed="true"]{
+.lang-toggle :is(button,a):hover{ color:var(--text); }
+.lang-toggle button[aria-pressed="true"], .lang-toggle a[aria-current="true"]{
   background:var(--surface-2); color:var(--text);
 }
 .lang-toggle--menu{ margin:0 0 var(--sp-3); align-self:flex-start; }
@@ -1847,3 +1847,10 @@ main, main > div, .container, .container-narrow, .vendor-head, .vendor-card, .re
 .batch-search .section-lead { margin-inline:auto; }
 .batch-search .search-bar { margin-top:var(--sp-3); }
 .batch-search + .batch-results { padding-top:0; }
+
+/* Static content and language links remain usable before JavaScript runs. */
+.lang-toggle a { text-decoration:none; display:inline-block; }
+.seo-links ul { display:flex; flex-wrap:wrap; gap:12px 24px; padding:0; list-style:none; }
+[data-seo-fallback] { overflow-wrap:anywhere; }
+[data-seo-fallback] h2 { margin-top:32px; }
+html:not([data-js-ready]) .reveal { opacity:1; transform:none; }

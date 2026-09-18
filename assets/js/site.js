@@ -78,21 +78,8 @@
    * sonst navigator.language beginnt mit "de" → "de", sonst "en". Setzt
    * sofort <html lang> (Element existiert schon, Script lädt am Body-Ende).
    */
-  PK.lang = (function () {
-    /* 1) URL-Parameter ?lang=de|en (teilbare Links), wird persistiert */
-    var m = /[?&]lang=(de|en)\b/i.exec((global.location && location.search) || "");
-    if (m) {
-      var fromUrl = m[1].toLowerCase();
-      try { global.localStorage && global.localStorage.setItem("pk_lang", fromUrl); } catch (e) { /* ignorieren */ }
-      return fromUrl;
-    }
-    /* 2) gespeicherte Wahl, 3) Browsersprache */
-    var stored = null;
-    try { stored = global.localStorage && global.localStorage.getItem("pk_lang"); } catch (e) { /* privater Modus o.ä. */ }
-    if (stored === "de" || stored === "en") return stored;
-    var nav = (global.navigator && (navigator.language || navigator.userLanguage)) || "";
-    return /^de/i.test(nav) ? "de" : "en";
-  })();
+  // A URL has one stable language, independent of browser and saved preferences.
+  PK.lang = /^\/en(?:\/|$)/.test(global.location.pathname) ? "en" : "de";
   if (global.document && document.documentElement) {
     document.documentElement.setAttribute("lang", PK.lang);
   }
@@ -153,12 +140,10 @@
    * Seiten-Renderer, die dynamische Inhalte neu bauen müssen.
    */
   PK.setLang = function (lang) {
-    lang = (lang === "en") ? "en" : "de";
-    PK.lang = lang;
-    try { global.localStorage && global.localStorage.setItem("pk_lang", lang); } catch (e) { /* ignorieren */ }
-    document.documentElement.setAttribute("lang", lang);
-    PK.applyI18n();
-    document.dispatchEvent(new CustomEvent("pk:langchange", { detail: { lang: lang } }));
+    var url = new URL(global.location.href);
+    url.pathname = (lang === "en" ? "/en" : "") + url.pathname.replace(/^\/en(?=\/)/, "");
+    url.searchParams.delete("lang");
+    global.location.assign(url.pathname + url.search + url.hash);
   };
 
   /**
@@ -768,9 +753,7 @@
        gefundene Nav-Link, weil "Anbieter"/"Wirkstoffe" auf ihrer jeweils
        EIGENEN Indexseite selbst unpräfixiert sind (aria-current-Link). */
     function basePathFor() {
-      var logo = document.querySelector(".nav-logo");
-      var href = (logo && logo.getAttribute("href")) || "";
-      return href.indexOf("../") === 0 ? "../" : "";
+      return /\/(anbieter|wirkstoffe|ratgeber)\//.test(global.location.pathname) ? "../" : "";
     }
 
     /* Auf anbieter/index.html, anbieter/detail.html, wirkstoffe/index.html und
@@ -790,14 +773,8 @@
     }
 
     function normalizedHref(a) {
-      var raw = a.getAttribute("href") || "";
-      var hadDotDot = raw.indexOf("../") === 0;
-      var href = raw.replace(/^(\.\.\/)+/, "");
-      if (!hadDotDot && href === "index.html") {
-        var section = currentSection();
-        if (section) href = section + href;
-      }
-      return href;
+      var url = new URL(a.getAttribute("href") || "", document.baseURI);
+      return url.pathname.replace(/^\/en(?=\/)/, "").replace(/^\//, "").replace(/\/$/, "/index.html");
     }
 
     function findLinkLi(list, suffix) {
@@ -2026,7 +2003,7 @@
       var ring = document.createElement("div");
       ring.className = "podium-score";
       ring.style.setProperty("--pct", "0");
-
+      
       var ringVal = document.createElement("span");
       ringVal.className = "podium-score-value";
       ringVal.textContent = PK.byNum(gesamt) + "/100";
