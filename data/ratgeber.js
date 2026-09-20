@@ -214,54 +214,67 @@ window.PK.ratgeber = [
     quellen: [
       {
         text: "Peptide Labz: Impressum-Seite liefert HTTP 404, keine Anschrift auf der Domain auffindbar (Stand 15.09.2026)",
+        text_en: "Peptide Labz: legal notice page returns HTTP 404, no address findable on the domain (as of 15.09.2026)",
         url: "https://peptidelabz.de/impressum"
       },
       {
         text: "Peptide Labz: Kunden-Testimonial mit körperlicher Wirkaussage auf der Startseite, Verfasser als „Patient“ bezeichnet (Stand 15.09.2026)",
+        text_en: "Peptide Labz: customer testimonial describing concrete physical effects on the homepage, author labeled a \"patient\" (as of 15.09.2026)",
         url: "https://peptidelabz.de/"
       },
       {
         text: "Peptide Labz: ScamAdviser Trust Score 0 von 100 (Stand 15.09.2026)",
+        text_en: "Peptide Labz: ScamAdviser trust score 0 out of 100 (as of 15.09.2026)",
         url: "https://www.scamadviser.com/check-website/peptidelabz.de"
       },
       {
         text: "DN Lab Research: kein Impressum, keine Firmenadresse auf Startseite, Kontakt, Über uns oder AGB auffindbar (Stand 15.09.2026)",
+        text_en: "DN Lab Research: no legal notice, no company address findable on homepage, contact, about, or terms pages (as of 15.09.2026)",
         url: "https://dnlabresearch.com/contact/"
       },
       {
         text: "DN Lab Research: CoA laut Produkttext nur „upon request“ erhältlich, trotz „3rd Party Tested“-Badge (Stand 15.09.2026)",
+        text_en: "DN Lab Research: CoA available only \"upon request\" per the product text, despite a \"3rd Party Tested\" badge (as of 15.09.2026)",
         url: "https://dnlabresearch.com/bpc-157-15mg-peptide-pen/"
       },
       {
         text: "DN Lab Research: Domain seit November 2021 registriert, Rechtsträger-Name in der RUO-Richtlinie weicht vom Shop-Namen ab (Stand 15.09.2026)",
+        text_en: "DN Lab Research: domain registered since November 2021, legal entity name in the RUO policy differs from the shop name (as of 15.09.2026)",
         url: "https://www.scamadviser.com/check-website/dnlabresearch.com"
       },
       {
         text: "Hydro Research Peptides: kein Firmenname, keine Anschrift in den Geschäftsbedingungen (Stand 15.09.2026)",
+        text_en: "Hydro Research Peptides: no company name, no address in the terms of service (as of 15.09.2026)",
         url: "https://hydroresearchpeptides.com/terms-conditions/"
       },
       {
         text: "Hydro Research Peptides: Trustpilot-Profil entfernt, Meldung „This profile has been removed“ (Stand 15.09.2026)",
+        text_en: "Hydro Research Peptides: Trustpilot profile removed, notice reads \"This profile has been removed\" (as of 15.09.2026)",
         url: "https://www.trustpilot.com/review/hydroresearchpeptides.com"
       },
       {
         text: "Smart Peptides: nur noch Vorkasse und Kryptowährungen akzeptiert, Bankverbindung lautet auf Privatperson (Stand 15.09.2026)",
+        text_en: "Smart Peptides: now accepts only prepayment and cryptocurrencies, bank account listed in a private individual's name (as of 15.09.2026)",
         url: "https://smartpeptides.de/versand/"
       },
       {
         text: "Smart Peptides: Trustpilot-Profil entfernt (Stand 15.09.2026)",
+        text_en: "Smart Peptides: Trustpilot profile removed (as of 15.09.2026)",
         url: "https://www.trustpilot.com/review/smartpeptides.de"
       },
       {
         text: "PPX: WHOIS-Registrant nennt anderen Firmennamen und Ort als das Impressum (Stand 15.09.2026)",
+        text_en: "PPX: WHOIS registrant lists a different company name and location than the legal notice (as of 15.09.2026)",
         url: "https://www.scamadviser.com/check-website/ppx.at"
       },
       {
         text: "PPX: CoA-Download-Button verlinkt bei allen geprüften Produkten auf dieselbe generische Muster-PDF (Stand 15.09.2026)",
+        text_en: "PPX: CoA download button links to the same generic sample PDF for every product checked (as of 15.09.2026)",
         url: "https://www.ppx.at/coa"
       },
       {
         text: "PPX: Produktseite für Retatrutid mit Seitentitel „Abnehmspritze Alternative“ (Stand 15.09.2026)",
+        text_en: "PPX: product page for retatrutide with page title \"weight-loss injection alternative\" (as of 15.09.2026)",
         url: "https://www.ppx.at/products/retatrutide"
       }
     ],
@@ -1132,46 +1145,57 @@ window.PK.ratgeber = [
     quellen: [
       {
         text: "Particle Peptides, Produktseite BPC-157 5 mg",
+        text_en: "Particle Peptides, product page BPC-157 5 mg",
         url: "https://particlepeptides.com/en/buy-peptides/103-bpc-157-5mg-with-mannitol.html"
       },
       {
         text: "American Peptides, Produktseite BPC-157 5 mg",
+        text_en: "American Peptides, product page BPC-157 5 mg",
         url: "https://americanpeptides.us/products/bpc-157"
       },
       {
         text: "Elyvera, Produktseite BPC-157 10 mg",
+        text_en: "Elyvera, product page BPC-157 10 mg",
         url: "https://europeptides.de/product/BPC-15710mg"
       },
       {
         text: "Peptidwerk, Produktseite BPC-157 10 mg",
+        text_en: "Peptidwerk, product page BPC-157 10 mg",
         url: "https://pepwerk.com/produkt/bpc-157-10mg/"
       },
       {
         text: "Europa-Peptide, Produktseite BPC-157",
+        text_en: "Europa-Peptide, product page BPC-157",
         url: "https://europa-peptide.de/de/shop/bpc-157-5mg/"
       },
       {
         text: "Protide Health, Produktseite BPC-157 (10/20/40 mg)",
+        text_en: "Protide Health, product page BPC-157 (10/20/40 mg)",
         url: "https://protidehealth.com/product/bpc-157/"
       },
       {
         text: "Helus Lab, BPC-157 10 mg, Web-Archiv-Snapshot vom 10.04.2026",
+        text_en: "Helus Lab, BPC-157 10 mg, web archive snapshot from 10.04.2026",
         url: "https://web.archive.org/web/20260410233533/https://heluslab.com/peptides/bpc-157-10mg/"
       },
       {
         text: "Smart Peptides, Versandbedingungen",
+        text_en: "Smart Peptides, shipping terms",
         url: "https://smartpeptides.de/versand/"
       },
       {
         text: "American Peptides, Terms of Service (Versandgebiet)",
+        text_en: "American Peptides, Terms of Service (shipping area)",
         url: "https://americanpeptides.us/pages/terms-of-service"
       },
       {
         text: "Protide Health, Terms of Service (Versandgebiet)",
+        text_en: "Protide Health, Terms of Service (shipping area)",
         url: "https://protidehealth.com/pages/terms-of-service"
       },
       {
         text: "Chameleon Peptides, FAQ (Versandgebiet, kostenloser Versand)",
+        text_en: "Chameleon Peptides, FAQ (shipping area, free shipping)",
         url: "https://chameleonpeptides.com/faq/"
       }
     ],
@@ -1433,22 +1457,27 @@ window.PK.ratgeber = [
     quellen: [
       {
         text: "Peptidwerk, Produktseite BPC-157 mit Charge, Reinheit und Endotoxin-Wert (Labor: Janoshik Analytical)",
+        text_en: "Peptidwerk, product page BPC-157 with batch, purity, and endotoxin value (lab: Janoshik Analytical)",
         url: "https://pepwerk.com/produkt/bpc-157-10mg/"
       },
       {
         text: "Particle Peptides, öffentlicher COA-Vault mit Batch-Zertifikaten (Labor: Liquilabs)",
+        text_en: "Particle Peptides, public CoA vault with batch certificates (lab: Liquilabs)",
         url: "https://particlepeptides.com/en/coa-vault"
       },
       {
         text: "ChemVerify, unabhängige Prüfung der Reinheits- und Identitätsangaben von Particle Peptides",
+        text_en: "ChemVerify, independent check of Particle Peptides purity and identity claims",
         url: "https://www.chemverify.com/learn/particle-peptides-review"
       },
       {
         text: "Europa-Peptide, Prüfergebnisse-Seite mit Chargen-CoAs (Labor: Analiza Białek Sp. z o.o.)",
+        text_en: "Europa-Peptide, test results page with batch CoAs (lab: Analiza Białek Sp. z o.o.)",
         url: "https://europa-peptide.de/de/prufergebnisse/"
       },
       {
         text: "PPX.at, CoA-Seite mit generischer Muster-PDF und Platzhalter-Charge \"PP-COA-000000\"",
+        text_en: "PPX.at, CoA page with a generic sample PDF and placeholder batch \"PP-COA-000000\"",
         url: "https://www.ppx.at/coa"
       }
     ],
@@ -1712,14 +1741,17 @@ window.PK.ratgeber = [
     quellen: [
       {
         text: "Vasireddi et al. 2025, HSS Journal, PMID 40756949",
+        text_en: "Vasireddi et al. 2025, HSS Journal, PMID 40756949",
         url: "https://pubmed.ncbi.nlm.nih.gov/40756949/"
       },
       {
         text: "Lee & Padgett 2021, Alternative Therapies in Health and Medicine, PMID 34324435",
+        text_en: "Lee & Padgett 2021, Alternative Therapies in Health and Medicine, PMID 34324435",
         url: "https://pubmed.ncbi.nlm.nih.gov/34324435/"
       },
       {
         text: "smartpeptides.de, Produktseite BPC-157 (WADA-Hinweis)",
+        text_en: "smartpeptides.de, product page BPC-157 (WADA notice)",
         url: "https://smartpeptides.de/product/bpc157/"
       }
     ],
@@ -2049,62 +2081,77 @@ window.PK.ratgeber = [
     quellen: [
       {
         text: "Avellon Peptides, avellon-peptides.com (live-Navigation, redirect zu smartpeptides.de)",
+        text_en: "Avellon Peptides, avellon-peptides.com (live navigation, redirects to smartpeptides.de)",
         url: "https://avellon-peptides.com/"
       },
       {
         text: "Wayback Machine, Avellon-Peptides-Snapshot vom 24.08.2026",
+        text_en: "Wayback Machine, Avellon Peptides snapshot from 24.08.2026",
         url: "http://web.archive.org/web/20260824081338/https://avellon-peptides.com/"
       },
       {
         text: "Smart Peptides, Produktseite SmartPen Retatrutide 40 mg",
+        text_en: "Smart Peptides, product page SmartPen Retatrutide 40 mg",
         url: "https://smartpeptides.de/product/retatrutide-pen-40mg/"
       },
       {
         text: "Trustpilot, Profilsuche smartpeptides.de",
+        text_en: "Trustpilot, profile search smartpeptides.de",
         url: "https://www.trustpilot.com/review/smartpeptides.de"
       },
       {
         text: "ScamAdviser, Prüfung europeptideshop.com",
+        text_en: "ScamAdviser, check of europeptideshop.com",
         url: "https://www.scamadviser.com/check-website/europeptideshop.com"
       },
       {
         text: "Licensed Peptides, Versandrichtlinie",
+        text_en: "Licensed Peptides, shipping policy",
         url: "https://licensedpeptides.com/shipping-delivery/"
       },
       {
         text: "Hydro Research Peptides, Shop-Login-Pflicht",
+        text_en: "Hydro Research Peptides, mandatory shop login",
         url: "https://hydroresearchpeptides.com/shop/"
       },
       {
         text: "American Peptides, Terms of Service (Rechtsträger)",
+        text_en: "American Peptides, Terms of Service (legal entity)",
         url: "https://americanpeptides.us/pages/terms-of-service"
       },
       {
         text: "Beyond Peptides, Startseite mit Pflicht-Altersgate",
+        text_en: "Beyond Peptides, homepage with mandatory age gate",
         url: "https://beyond-peptides.com/"
       },
       {
         text: "Driada Shop, aktiver Shop",
+        text_en: "Driada Shop, active shop",
         url: "https://driadashop.to/"
       },
       {
         text: "Peptide Shop Deutschland, aktiver Shop",
+        text_en: "Peptide Shop Deutschland, active shop",
         url: "https://peptideshopdeutschland.com/"
       },
       {
         text: "EuroPeptideShop, Startseite",
+        text_en: "EuroPeptideShop, homepage",
         url: "https://europeptideshop.com/"
       },
       {
         text: "Peptidwerk, Impressum",
+        text_en: "Peptidwerk, legal notice",
         url: "https://pepwerk.com/impressum/"
       },
       {
         text: "Particle Peptides, CoA-Vault",
+        text_en: "Particle Peptides, CoA vault",
         url: "https://particlepeptides.com/en/coa-vault"
       },
       {
         text: "ScamAdviser, Prüfung serapeplab.com (SERA Lab)",
+        text_en: "ScamAdviser, check of serapeplab.com (SERA Lab)",
         url: "https://www.scamadviser.com/check-website/serapeplab.com"
       }
     ],

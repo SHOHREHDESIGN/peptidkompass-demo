@@ -352,7 +352,7 @@ window.PK.peptides = [
         art: "präklinisch",
         kurz: "Bei alten Mäusen wurde unter einem NNMT-Hemmstoff eine Reaktivierung seneszenter Muskelstammzellen und eine verbesserte Regenerationsfähigkeit des Skelettmuskels nach Verletzung beobachtet.",
         kurz_en: "In aged mice, an NNMT inhibitor was associated with reactivation of senescent muscle stem cells and improved regenerative capacity of skeletal muscle after injury.",
-        quelle: "Neelakantan H et al. 2019, Biochemical Pharmacology 163:481-492"
+        quelle: "Neelakantan H et al. 2019, Biochemical Pharmacology 163:481-492, PMID 30753815"
       },
       {
         art: "präklinisch",
@@ -2014,7 +2014,7 @@ window.PK.peptides = [
         art: "präklinisch",
         kurz: "Bei Ratten kehrte oral verabreichtes Dihexa (2 mg/kg) durch Scopolamin ausgelöste Gedächtnisdefizite im Morris-Water-Maze-Test um und verbesserte das Lernvermögen bei 24 Monate alten Tieren.",
         kurz_en: "In rats, orally administered dihexa (2 mg/kg) reversed scopolamine-induced memory deficits in the Morris water maze test and improved learning in 24-month-old animals.",
-        quelle: "McCoy AT et al. 2013, Journal of Pharmacology and Experimental Therapeutics, PMID 23055539 (Arbeit trägt seit 2021 eine Expression of Concern der Herausgeber wegen möglicher Bildmanipulation, keine Retraktion)"
+        quelle: "McCoy AT et al. 2013, Journal of Pharmacology and Experimental Therapeutics, PMID 23055539 (This paper has carried an Expression of Concern from the publisher since 2021 over possible image manipulation, no retraction)"
       },
       {
         art: "präklinisch",

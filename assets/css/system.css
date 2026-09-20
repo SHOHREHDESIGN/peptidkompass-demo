@@ -703,10 +703,17 @@ body.nav-open{ overflow:hidden; }
   animation:pk-spin-z var(--spin-dur,55s) var(--spin-delay,0s) ease-in-out infinite alternate;
 }
 .hero-3d-sprite img{
-  display:block; width:100%; height:100%; object-fit:contain;
+  display:block; width:100%; height:100%; aspect-ratio:1/1; object-fit:contain;
   animation:pk-float var(--dur,11s) var(--delay,0s) ease-in-out infinite alternate;
   will-change:transform;
 }
+/* Fix-Paket D (20.09., Technik-Abnahme MINOR 1): die <img> selbst tragen
+   kein width/height-HTML-Attribut (Bilder-Pfade sind Worker-Auftrag, hier
+   nicht anfassbar), der umgebende .hero-3d-sprite reserviert die Fläche
+   zwar bereits über --size (kein sichtbarer Sprung), aber automatisierte
+   CLS-Prüfungen werten das <img> selbst aus : aspect-ratio:1/1 (Sprites
+   sind alle 1024x1024 quadratisch, siehe README) macht die reservierte
+   Fläche auch für das Bild-Element selbst explizit. */
 
 @keyframes pk-float{
   from{ transform:translate3d(0,0,0) rotateX(0deg) rotateY(0deg); }
@@ -735,12 +742,38 @@ body.nav-open{ overflow:hidden; }
      bei unveränderten %-Werten). Eigene, am 900px-Screenshot geeichte
      Positionen, gleiche Überlapp-Logik wie Desktop (Helix knapp am rechten
      H1-Zeile-1-Rand, Vial knapp am linken Subline-Rand). */
-  .hero-3d-front [data-sprite="mol_c"]{ --size:220px !important; --x:83% !important; --y:36% !important; }
+  /* Fix-Paket D (20.09., Abnahme-Befund MAJOR 2): die 83%/220px-Kalibrierung
+     oben reichte für H1 (Zeile 1), deckte aber die LÄNGERE .hero p-Zeile
+     (48ch, bis zu 599px breit, bleibt über den ganzen 641-1023px-Bereich
+     GLEICH breit weil ch-basiert) nicht ab - bei 768px reicht der freie
+     Rand rechts der zentrierten Textspalte rechnerisch nur noch 53px
+     (gemessen: stage 705px, Text bis 92,5% der Bühne), zu wenig für
+     irgendeine lesbare Helix-Größe ohne Überlappung. Statt einer weiteren
+     zu engen Kalibrierung: Helix (mol_c) in diesem ganzen Bereich AUS -
+     Vial/Moleküle/Drop bleiben (Bildsprache bleibt erhalten), die Helix
+     kommt ab 1024px zurück, dort ist wieder genug Rand (siehe unten). */
+  .hero-3d-front [data-sprite="mol_c"]{ display:none !important; }
   .hero-3d-front [data-sprite="vial_b"]{ --size:160px !important; --x:9% !important; }
   .hero-3d-mid [data-sprite="vial_a"]{ --size:150px !important; --x:2% !important; --y:38% !important; }
   .hero-3d-back [data-sprite="mol_a"]{ --size:85px !important; }
   .hero-3d-back [data-sprite="mol_b"]{ --size:105px !important; }
   .hero-3d-back [data-sprite="drop"]{ --size:60px !important; }
+}
+
+/* Fix-Paket D (20.09., Abnahme-Befund MAJOR 2): Helix (mol_c) zurück ab
+   1024px, aber neu kalibriert gegen die TEXT-Kante statt gegen die alte
+   70%/330px-Vorgabe. Die .hero-p-Zeile ist fix ~599px breit (48ch), die
+   Bühne wächst mit dem Viewport - der freie Rand rechts der zentrierten
+   Textspalte ist bei 1024px nur ~157px (Bühne 913px), bei ≥1440px (Content-
+   Lock bei --container-max) ~293px (Bühne ~1184px, wächst darüber nicht
+   weiter). Zwei Stufen, je mit Sicherheitsabstand (≥20px) zur längsten
+   Textzeile UND zum eigenen H1, gemessen per echtem getBoundingClientRect
+   (nicht geschätzt), Belege siehe Abnahme-Fix-Report. */
+@media (min-width:1024px) and (max-width:1439px){
+  .hero-3d-front [data-sprite="mol_c"]{ --size:130px !important; --x:92% !important; --y:32% !important; }
+}
+@media (min-width:1440px){
+  .hero-3d-front [data-sprite="mol_c"]{ --size:220px !important; --x:87% !important; --y:33% !important; }
 }
 
 /* Mobile (≤640px): nur noch 2 Sprites : Helix (mol_c) oben rechts + Vial
@@ -772,8 +805,20 @@ body.nav-open{ overflow:hidden; }
      dem Video (.hero-media beginnt erst deutlich darunter). Beide Werte
      gegen alle drei Elemente per getBoundingClientRect verifiziert (0
      Kollisionen, siehe QA-Beleg Fix-Runde 4). */
-  .hero-3d-front [data-sprite="mol_c"]{ --x:97% !important; --y:-9% !important; --size:90px !important; --z:0px !important; }
-  .hero-3d-front [data-sprite="vial_b"]{ --x:16% !important; --y:107% !important; --size:40px !important; --z:0px !important; }
+  /* Mobile Bildsprache, Stand 20.09.2026 (Vic waehlt Variante B).
+     Vorgeschichte: Ueber mehrere Runden wurden Helix und Vial immer weiter
+     verkleinert und verschoben, um Textkollisionen zu vermeiden. Ergebnis
+     waren zwei Restobjekte, die wie ein Fehler aussahen: die Helix mit 90px
+     ragte 11px aus dem Viewport, das Vial stand mit 40px beziehungslos im
+     Weissraum. Bei 375px gibt es keinen freien Platz NEBEN dem Text, nur
+     ueber ihm. Deshalb jetzt: EIN Objekt, gross und bewusst angeschnitten,
+     statt zweier verlegener Reste. Der starke Anschnitt (rund 40 Prozent
+     ausserhalb) liest sich als Gestaltung, ein knapper als Panne. */
+  .hero-3d-front [data-sprite="mol_c"]{
+    --x:100% !important; --y:-4% !important; --size:210px !important; --z:0px !important;
+    opacity:.28 !important; filter:blur(0) !important;
+  }
+  .hero-3d-front [data-sprite="vial_b"]{ display:none !important; }
 
   /* Glas-Effekt gilt Punkt 3 zufolge auf Mobile NUR für den Helix (mol_c):
      Vial (vial_b) bleibt auf ≤640px ein normales Sprite (Body+Klon aus,
@@ -1200,6 +1245,14 @@ a.card:hover, .card.is-interactive:hover{
   position:absolute; inset:0; width:100%; height:100%;
   object-fit:cover; display:block;
 }
+/* Fix-Paket D (20.09., Technik-Abnahme MINOR 2): #peptide-visual-img
+   (Wirkstoff-Detail-Kopf, per JS befüllt, kein width/height-HTML-Attribut)
+   springt real NICHT, weil der Container (.visual, oben) die Fläche schon
+   über aspect-ratio reserviert, unabhängig vom Bild. aspect-ratio hier
+   zusätzlich direkt am Bild-Element : schließt den Befund auch für
+   Prüfwerkzeuge, die nur das <img> selbst auswerten, ohne den Container-
+   Mechanismus zu berücksichtigen. */
+#peptide-visual-img{ aspect-ratio:3/2; }
 /* Dark Mode: helle Fotos schneiden sonst hart auf Schwarz (Body-BG #000) ohne
    jede weiche Kante : dezenter Innen-Ring analog zur .card-Logik, Radius/
    Layout bleiben unverändert. Fix-Runde 2, Befund 3. Light Mode: unverändert. */

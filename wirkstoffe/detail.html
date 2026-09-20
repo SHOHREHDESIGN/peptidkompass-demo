@@ -16,7 +16,7 @@
 <meta property="og:url" id="og-url" content="https://peptidkompass.com/wirkstoffe/detail.html">
 <meta property="og:image" id="og-image" content="https://peptidkompass.com/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../assets/css/system.css?v=f305d33bfacf">
+<link rel="stylesheet" href="../assets/css/system.css?v=7de912eba4fa">
 <link rel="stylesheet" href="../assets/css/tiles.css?v=030694ae1a45">
 <link rel="icon" href="../assets/brand/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/brand/favicon/favicon-32.png" sizes="32x32" type="image/png">
@@ -138,13 +138,6 @@
       <p id="peptide-rechtsstatus"></p>
     </section>
 
-    <!-- REKONSTITUTION UND LAGERUNG -->
-    <section class="section section-tinted container-narrow reveal">
-      <h2 class="section-title" data-i18n="page.wirkstoffe-detail.rekonstitutionTitle">Produktunterlagen</h2>
-      <p id="peptide-rekonstitution"></p>
-      <p id="peptide-lagerung" hidden></p>
-    </section>
-
     <!-- HINWEISE-BOX (RUO) -->
     <section class="section container-narrow reveal">
       <div class="card">
@@ -256,14 +249,14 @@
 <!-- Daten (data/SCHEMA.md): IMMER vor assets/js/site.js einbinden -->
 <script src="../data/site.js?v=38758b950323"></script>
 <script src="../data/vendors.js?v=461d33b1389c"></script>
-<script src="../data/peptides.js?v=b4ec520274d3"></script>
+<script src="../data/peptides.js?v=cda53f3335e0"></script>
 <script src="../data/batches.js?v=ea69a6f87033"></script>
 <!-- Schema v2.3: Preisdatenbank, siehe data/SCHEMA.md "data/products.js" -->
 <script src="../data/products.js?v=d96cb6a6b3ef"></script>
 <!-- i18n-Wörterbücher: global.js zuerst, dann das Seiten-Wörterbuch, beide VOR assets/js/site.js -->
 <script src="../data/nav.js?v=da40b8abd66e"></script>
 <script src="../data/i18n/global.js?v=afb753021f34"></script>
-<script src="../data/i18n/wirkstoffe-detail.js?v=947353fa2f92"></script>
+<script src="../data/i18n/wirkstoffe-detail.js?v=b720b7d82447"></script>
 <script src="../assets/js/site.js?v=681ebad61d14"></script>
 <script>
   // Seiten-Logik Wirkstoff-Detail: nutzt nur PK-Helfer aus assets/js/site.js.
@@ -354,8 +347,8 @@
      * render() baut alle sprachabhängigen Inhalte neu: Titel/Meta (aus
      * peptide.seo, PK.tx), Kopfbereich (Name, Synonyme, PK.tEnum für
      * Kategorie/Studienlage, PK.tx für Kurztext/Beschreibung), Mechanismus,
-     * Evidenz-Liste, Sicherheit-Liste, Rechtsstatus, Rekonstitution +
-     * Lagerung, Hinweise-Box, FAQ, Anbieter-/Chargen-Tabelle (PK.byNum,
+     * Evidenz-Liste, Sicherheit-Liste, Rechtsstatus,
+     * Hinweise-Box, FAQ, Anbieter-/Chargen-Tabelle (PK.byNum,
      * PK.tEnum coaStatus), CTA-Link. Läuft initial UND bei "pk:langchange"
      * (Pflicht-Muster, siehe README).
      */
@@ -434,8 +427,6 @@
 
       document.getElementById("peptide-mechanismus").textContent = PK.tx(peptide, "mechanismus");
       document.getElementById("peptide-rechtsstatus").textContent = PK.tx(peptide, "rechtsstatus");
-      document.getElementById("peptide-rekonstitution").textContent = PK.tx(peptide, "rekonstitution");
-      document.getElementById("peptide-lagerung").textContent = PK.t("page.wirkstoffe-detail.lagerungText", { lagerung: (PK.tx(peptide, "lagerung") || "").replace(/\.\s*$/, "") });
 
       // Evidenz: Art-Pill (präklinisch/klinisch) + Satz + Quelle klein.
       // "quelle" ist unübersetzt (Autor/Journal/PMID bleiben identisch in
@@ -553,7 +544,14 @@
         var ea = a.ppmEur !== null, eb = b.ppmEur !== null;
         if (ea && eb) return a.ppmEur - b.ppmEur;
         if (ea !== eb) return ea ? -1 : 1;
-        return 0;
+        // Ohne Euro-Wert: nach Waehrung gruppieren und INNERHALB der Gruppe
+        // nach Preis je mg sortieren. Waehrungen werden bewusst nicht
+        // umgerechnet, sonst entsteht Scheingenauigkeit (Abnahme 20.09.).
+        var wa = a.waehrung || "", wb = b.waehrung || "";
+        if (wa !== wb) return wa < wb ? -1 : 1;
+        var oa = typeof a.ppmOrig === "number" ? a.ppmOrig : Infinity;
+        var ob = typeof b.ppmOrig === "number" ? b.ppmOrig : Infinity;
+        return oa - ob;
       });
       var hasEstimated = rows.some(function (r) { return r.geschaetzt; });
 
