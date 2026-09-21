@@ -18,7 +18,8 @@
    -------------------
    PK.lang                  : aktive Sprache ("de"|"en"), ermittelt beim Laden
    PK.t()/PK.tx()/PK.tEnum(): i18n-Lookup (siehe assets/css/README.md)
-   PK.setLang()             : Sprache wechseln + Event "pk:langchange"
+   PK.langHref()            : Adresse auf eine Sprachfassung umrechnen
+   PK.setLang()             : Sprache wechseln (Navigation auf /en/ bzw. /)
    PK.applyI18n()           : [data-i18n]/[data-i18n-attr] anwenden
    PK.initLangToggle()      : injiziert DE·EN-Toggle in jede .nav/.nav-menu
    PK.SCORE_WEIGHTS         : Gewichtung aus SCHEMA.md
@@ -134,16 +135,29 @@
   };
 
   /**
+   * PK.langHref(lang, href)
+   * Rechnet eine beliebige Adresse auf die Sprachfassung um: EN liegt unter
+   * /en/..., DE auf der Wurzel. Reine Funktion ohne Seiteneffekt, damit der
+   * Selbsttest sie prüfen kann, ohne dass die Seite wegnavigiert.
+   * Ein altes ?lang= aus Bestandslinks fällt dabei weg.
+   */
+  PK.langHref = function (lang, href) {
+    var url = new URL(href, "https://peptidkompass.local");
+    var rest = url.pathname.replace(/^\/en(?=\/|$)/, "");
+    url.pathname = (lang === "en" ? "/en" : "") + rest;
+    if (!url.pathname) url.pathname = "/";
+    url.searchParams.delete("lang");
+    return url.pathname + url.search + url.hash;
+  };
+
+  /**
    * PK.setLang(lang)
-   * Wechselt die Sprache: speichert in localStorage, setzt <html lang>,
-   * ruft PK.applyI18n() und feuert "pk:langchange" (detail:{lang}) für
-   * Seiten-Renderer, die dynamische Inhalte neu bauen müssen.
+   * Wechselt die Sprache durch Navigation auf die Sprachfassung derselben
+   * Seite (siehe PK.langHref). Kein localStorage, kein "pk:langchange":
+   * die Zielseite lädt ihre Sprache selbst aus dem Pfad.
    */
   PK.setLang = function (lang) {
-    var url = new URL(global.location.href);
-    url.pathname = (lang === "en" ? "/en" : "") + url.pathname.replace(/^\/en(?=\/)/, "");
-    url.searchParams.delete("lang");
-    global.location.assign(url.pathname + url.search + url.hash);
+    global.location.assign(PK.langHref(lang, global.location.href));
   };
 
   /**
