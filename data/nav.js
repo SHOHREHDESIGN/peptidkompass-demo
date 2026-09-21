@@ -3,7 +3,8 @@
    ============================================================================
    Schlanker Datensatz nur fuer die Nav-Dropdowns (PK.initNavDropdowns(),
    assets/js/site.js): 31 Wirkstoffe (slug/name/kategorie) aus
-   data/peptides_draft/*.json, Top-5-Anbieter (slug/name/gesamt/partner)
+   data/peptides_draft/*.json, Anbieter fuer die Nav (Partner zuerst, dann
+   nach Score; slug/name/gesamt/partner)
    aus data/vendors.js. NICHT von Hand editieren - neu erzeugen mit:
      python3 tools/build_nav.py
    Einbindung: nach data/batches.js, vor data/i18n/global.js (siehe
@@ -173,6 +174,12 @@ window.PK.nav = {
       "slug": "peptidwerk",
       "name": "Peptidwerk",
       "gesamt": 100,
+      "partner": true
+    },
+    {
+      "slug": "bio-boostx",
+      "name": "Bio BoostX",
+      "gesamt": 77,
       "partner": true
     },
     {
