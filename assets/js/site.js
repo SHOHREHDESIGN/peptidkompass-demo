@@ -1252,12 +1252,37 @@
         var rest = el.querySelector("[data-demo-banner-text]");
         if (rest) {
           rest.textContent = text;
+          // Partnercode als eigenes Element hinter dem Hinweis, einmal
+          // angelegt und danach nur noch neu beschriftet (Sprachwechsel).
+          var codeVal = PK.t("global.demoBanner.code");
+          var codeEl = el.querySelector(".topbar-code");
+          if (codeVal && codeVal !== "global.demoBanner.code") {
+            if (!codeEl) {
+              codeEl = document.createElement("span");
+              codeEl.className = "topbar-code";
+              el.appendChild(codeEl);
+            }
+            codeEl.textContent = codeVal;
+          } else if (codeEl) {
+            codeEl.remove();
+          }
         } else {
+          // Dauerhafter Zweck- und Schutzhinweis (21.09.): kein Label-Praefix
+          // mehr. Der Partnercode steht als eigenes, optisch abgesetztes
+          // Element daneben, damit Pflichthinweis und Werbung nicht zu einem
+          // Satz verschmelzen.
           el.textContent = "";
-          var b = document.createElement("strong");
-          b.textContent = PK.t("global.demoBanner.label");
-          el.appendChild(b);
-          el.appendChild(document.createTextNode(": " + text));
+          var note = document.createElement("span");
+          note.className = "topbar-note";
+          note.textContent = text;
+          el.appendChild(note);
+          var codeText = PK.t("global.demoBanner.code");
+          if (codeText && codeText !== "global.demoBanner.code") {
+            var sep = document.createElement("span");
+            sep.className = "topbar-code";
+            sep.textContent = codeText;
+            el.appendChild(sep);
+          }
         }
       });
     }

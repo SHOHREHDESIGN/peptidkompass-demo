@@ -209,3 +209,15 @@
 .partner-card-cta{ width:100%; justify-content:center; }
 .partner-card-profil{ align-self:center; }
 #partner-section[hidden]{ display:none; }
+
+/* Oberer Hinweisbalken (21.09.): dauerhafter Zweck- und Schutzhinweis statt
+   Vorabversion. Der Partnercode steht daneben, nicht im selben Satz, damit
+   der Pflichthinweis nicht wie Werbetext wirkt. */
+.demo-banner{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:0; }
+.topbar-code{ margin-left:var(--sp-2); padding-left:var(--sp-2); border-left:1px solid var(--line); font-weight:600; white-space:nowrap; }
+@media (max-width:640px){
+  /* Mobil unter den Hinweis statt daneben: nebeneinander brach der Satz in
+     sieben Zeilen und der Balken nahm 17 Prozent des ersten Bildschirms. */
+  .demo-banner{ flex-direction:column; gap:2px; }
+  .topbar-code{ margin-left:0; padding-left:0; border-left:0; }
+}

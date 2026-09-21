@@ -246,7 +246,8 @@ window.PK.vendors = [
       ]
     },
     "rankbar": true,
-    "preisStand": "2026-09-15"
+    "preisStand": "2026-09-15",
+    "affiliateLink": "https://pepwerk.com/?ref=93"
   },
   {
     "slug": "avellon-peptides",

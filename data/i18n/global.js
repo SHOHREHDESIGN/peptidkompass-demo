@@ -81,8 +81,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
        site.demo bleibt true bis Vic freigibt, Text macht klar, dass die
        ANBIETER real sind (keine Demo-Daten), aber Stand/Vollständigkeit
        vorläufig ist. */
-    "global.demoBanner.label": "Vorabversion",
-    "global.demoBanner.text": "Vorabversion: Daten Stand 15.09.2026, Angaben ohne Gewähr.",
+    "global.demoBanner.label": "Hinweis",
+    "global.demoBanner.text": "Forschungschemikalien. Keine medizinische Beratung, keine Anwendung am Menschen. Ab 18 Jahren.",
+    "global.demoBanner.code": "Partnercode peptidecompass10",
 
     /* Anbieter-Karte (PK.renderVendorCard) */
     "global.vendorCard.details": "Details",
@@ -240,8 +241,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "global.langToggle.ariaLabel": "Choose language",
 
-    "global.demoBanner.label": "Preview",
-    "global.demoBanner.text": "Preview version: data as of Sep 15, 2026, provided without guarantee.",
+    "global.demoBanner.label": "Note",
+    "global.demoBanner.text": "Research chemicals. Not medical advice, not for human use. 18 and over.",
+    "global.demoBanner.code": "Partner code peptidecompass10",
 
     "global.vendorCard.details": "Details",
     "global.vendorCard.shopLink": "Visit vendor",
