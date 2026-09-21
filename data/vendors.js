@@ -2183,7 +2183,12 @@ window.PK.vendors = [
     "affiliate": true,
     "affiliateProgrammUrl": null,
     "provision": null,
-    "rabatt": null,
+    "rabatt": {
+      "code": "peptidecompass10",
+      "prozent": 10,
+      "hinweis": "Code beim Checkout eingeben",
+      "hinweis_en": "Enter code at checkout"
+    },
     "produkte": [],
     "preisProMg": 4.6,
     "affiliateUrl": "https://bioboostx.com/",
@@ -2352,7 +2357,10 @@ window.PK.vendors = [
       ]
     },
     "rankbar": true,
-    "preisStand": "2026-09-15"
+    "preisStand": "2026-09-15",
+    "partner": true,
+    "partnerSeit": "2026-09-21",
+    "affiliateLink": "https://bioboostx.com/?coupon=peptidecompass10"
   },
   {
     "slug": "chameleon-peptides",

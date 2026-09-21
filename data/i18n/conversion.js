@@ -4,6 +4,11 @@ window.PK = window.PK || {};
   i18n.merge("de", {
   "page.index.logosEyebrow": "Anbieter",
   "page.index.logosTitle": "Anbieter in unserer Recherche",
+  "page.index.partnerEyebrow": "Anzeige",
+  "page.index.partnerTitle": "Unsere Partner",
+  "page.index.partnerLead": "Diese Anbieter arbeiten mit uns zusammen und geben dir einen Rabattcode. Der Partnerstatus bringt diesen Platz hier, er verändert keine Bewertung und keine Platzierung im Vergleich.",
+  "page.index.partnerCta": "Zum Anbieter",
+  "page.index.partnerProfil": "Profil ansehen",
   "page.index.podiumEyebrow": "Orientierung",
   "page.index.podiumTitle": "Anbieter mit dokumentierten Angaben",
   "page.index.podiumLead": "Aktive Anbieter mit mindestens drei erfassten Kriterien, nach vorläufigem Dokumentationsscore. Preis und Sortiment sind darin nicht bewertet.",
@@ -42,6 +47,11 @@ window.PK = window.PK || {};
   i18n.merge("en", {
   "page.index.logosEyebrow": "Vendors",
   "page.index.logosTitle": "Vendors in our research",
+  "page.index.partnerEyebrow": "Ad",
+  "page.index.partnerTitle": "Our partners",
+  "page.index.partnerLead": "These vendors work with us and give you a discount code. Partnership buys this slot, it does not change any score or any position in the comparison.",
+  "page.index.partnerCta": "Visit vendor",
+  "page.index.partnerProfil": "View profile",
   "page.index.podiumEyebrow": "Orientation",
   "page.index.podiumTitle": "Vendors with documented information",
   "page.index.podiumLead": "Active vendors with at least three recorded criteria, ordered by provisional documentation score. Price and range are not scored.",

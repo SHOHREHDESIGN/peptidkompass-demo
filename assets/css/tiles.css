@@ -200,3 +200,12 @@
    farbiger Logo-Chip entfällt (Vic: nur eingefärbte Mono-Logos). */
 .status-banner[hidden]{ display:none; }
 .vendor-logo-color{ display:none; }
+
+/* Partner-Block auf der Startseite (21.09.): bezahlte Sichtbarkeit, sichtbar
+   von der Rangliste getrennt. Ruhige Karte, Markenkante wie bei Vendor-Karten,
+   kein Schatten, keine Auszeichnung die nach Bewertung aussieht. */
+.partner-card{ display:flex; flex-direction:column; align-items:flex-start; gap:var(--sp-2); border-top:3px solid var(--brand, var(--line-strong)); }
+.partner-card .code-box{ width:100%; margin:0; }
+.partner-card-cta{ width:100%; justify-content:center; }
+.partner-card-profil{ align-self:center; }
+#partner-section[hidden]{ display:none; }
