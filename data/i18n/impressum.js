@@ -5,9 +5,15 @@
    "page.impressum.<element>". Muss NACH data/i18n/global.js und VOR
    assets/js/site.js eingebunden werden.
 
-   EN bleibt eine Übersetzung der Platzhalter-Struktur, kein eigenes
-   Rechtsdokument. placeholderBody trägt den Pflicht-Hinweis, dass
-   deutsches Recht ein Impressum verlangt (siehe assets/css/README.md).
+   Stand 22.09.2026: Betreiberangaben von Vic eingetragen (Online Monkeys LLC,
+   Wyoming). "§ 5 DDG" statt "§ 5 TMG": das Telemediengesetz wurde im Mai 2024
+   durch das Digitale-Dienste-Gesetz abgelöst, die Impressumspflicht steht
+   seitdem in § 5 DDG.
+
+   NOCH OFFEN (von Renato/Sofia nachfordern, siehe _gate/): vertretungs-
+   berechtigte Person, Registernummer + Registerbehörde, USt-IdNr. falls
+   vorhanden, Verantwortliche(r) nach § 18 Abs. 2 MStV. Ohne diese Angaben
+   ist das Impressum nach deutschem Recht unvollständig.
    ============================================================================ */
 window.PK = window.PK || {};
 window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
@@ -18,46 +24,46 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("de", {
     "page.impressum.title": "Peptide Compass · Impressum",
-    "page.impressum.metaDescription": "Angaben gemäß § 5 TMG. Struktur-Platzhalter, vor Veröffentlichung juristisch prüfen lassen.",
+    "page.impressum.metaDescription": "Angaben gemäß § 5 DDG: Betreiber, Anschrift und Kontakt von Peptide Compass.",
     "page.impressum.ogTitle": "Peptide Compass · Impressum",
-    "page.impressum.ogDescription": "Angaben gemäß § 5 TMG. Struktur-Platzhalter, vor Veröffentlichung juristisch prüfen lassen.",
+    "page.impressum.ogDescription": "Angaben gemäß § 5 DDG: Betreiber, Anschrift und Kontakt von Peptide Compass.",
 
     "page.impressum.heroEyebrow": "Pflichtangaben",
     "page.impressum.h1": "Impressum",
 
-    "page.impressum.placeholderPill": "Platzhalter",
-    "page.impressum.placeholderBody": "Diese Seite enthält Struktur-Platzhalter, kein fertiges Impressum. Vor Veröffentlichung juristisch prüfen lassen.",
-
-    "page.impressum.tmgH2": "Angaben gemäß § 5 TMG",
-    "page.impressum.field1": "Name/Firma",
-    "page.impressum.field2": "Anschrift",
-    "page.impressum.field3": "Kontakt, E-Mail",
-    "page.impressum.field4": "Telefon, falls angegeben",
-    "page.impressum.field5": "Umsatzsteuer-ID, falls vorhanden",
-    "page.impressum.field6": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
-    "page.impressum.field7": "Dieser Abschnitt ist ein Struktur-Platzhalter, kein Rechtsrat. Vor Go-live von einem Anwalt prüfen lassen."
+    "page.impressum.tmgH2": "Angaben gemäß § 5 DDG",
+    "page.impressum.betreiberLabel": "Betreiber",
+    "page.impressum.betreiberName": "Online Monkeys LLC",
+    "page.impressum.anschriftLabel": "Anschrift",
+    "page.impressum.anschriftZeile1": "1309 Coffeen Avenue STE 1200",
+    "page.impressum.anschriftZeile2": "Sheridan, WY 82801, USA",
+    "page.impressum.kontaktLabel": "Kontakt",
+    "page.impressum.rechtsformLabel": "Rechtsform",
+    "page.impressum.rechtsformWert": "Limited Liability Company (LLC) nach dem Recht des US-Bundesstaates Wyoming",
+    "page.impressum.inhaltH2": "Inhalte dieser Seite",
+    "page.impressum.inhaltBody": "Peptide Compass vergleicht Anbieter anhand dokumentierter Angaben. Die Seite verkauft nichts selbst und gibt keine medizinische Beratung. Externe Shop-Links sind als Anzeige gekennzeichnet und können zu einer Vergütung führen."
   });
 
   i18n.merge("en", {
     "page.impressum.title": "Peptide Compass · Legal notice",
-    "page.impressum.metaDescription": "Information per § 5 TMG (German Telemedia Act). Structural placeholder, have this reviewed by a lawyer before publishing.",
+    "page.impressum.metaDescription": "Information per § 5 DDG (German Digital Services Act): operator, address and contact for Peptide Compass.",
     "page.impressum.ogTitle": "Peptide Compass · Legal notice",
-    "page.impressum.ogDescription": "Information per § 5 TMG (German Telemedia Act). Structural placeholder, have this reviewed by a lawyer before publishing.",
+    "page.impressum.ogDescription": "Information per § 5 DDG (German Digital Services Act): operator, address and contact for Peptide Compass.",
 
     "page.impressum.heroEyebrow": "Mandatory information",
     "page.impressum.h1": "Legal notice",
 
-    "page.impressum.placeholderPill": "Placeholder",
-    "page.impressum.placeholderBody": "This page contains a structural placeholder, not a finished legal notice. German law requires an Impressum (legal notice) for a commercial website. Have this reviewed by a lawyer before publishing.",
-
-    "page.impressum.tmgH2": "Information per § 5 TMG",
-    "page.impressum.field1": "Name/company",
-    "page.impressum.field2": "Address",
-    "page.impressum.field3": "Contact, email",
-    "page.impressum.field4": "Phone, if provided",
-    "page.impressum.field5": "VAT ID, if available",
-    "page.impressum.field6": "Person responsible for content per § 18 (2) MStV (German Interstate Media Treaty)",
-    "page.impressum.field7": "This section is a structural placeholder, not legal advice. Have it reviewed by a lawyer before launch."
+    "page.impressum.tmgH2": "Information per § 5 DDG",
+    "page.impressum.betreiberLabel": "Operator",
+    "page.impressum.betreiberName": "Online Monkeys LLC",
+    "page.impressum.anschriftLabel": "Address",
+    "page.impressum.anschriftZeile1": "1309 Coffeen Avenue STE 1200",
+    "page.impressum.anschriftZeile2": "Sheridan, WY 82801, USA",
+    "page.impressum.kontaktLabel": "Contact",
+    "page.impressum.rechtsformLabel": "Legal form",
+    "page.impressum.rechtsformWert": "Limited Liability Company (LLC) under the laws of the State of Wyoming, USA",
+    "page.impressum.inhaltH2": "About this site",
+    "page.impressum.inhaltBody": "Peptide Compass compares vendors using documented information. The site sells nothing itself and gives no medical advice. External shop links are labelled as ads and may earn a commission."
   });
 
 })(window.PK.i18n);

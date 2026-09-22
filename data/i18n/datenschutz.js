@@ -13,6 +13,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   if (typeof i18n.merge !== "function") return; // global.js fehlt/nicht geladen
 
   i18n.merge("de", {
+    "page.datenschutz.verantwortlicherLabel": "Verantwortlicher gemäß Art. 4 Nr. 7 DSGVO",
+    "page.datenschutz.verantwortlicherName": "Online Monkeys LLC",
+    "page.datenschutz.verantwortlicherZeile1": "1309 Coffeen Avenue STE 1200",
+    "page.datenschutz.verantwortlicherZeile2": "Sheridan, WY 82801, USA",
     "page.datenschutz.title": "Peptide Compass · Datenschutz",
     "page.datenschutz.metaDescription": "Datenschutzerklärung. Struktur-Platzhalter, vor Veröffentlichung juristisch prüfen lassen.",
     "page.datenschutz.ogTitle": "Peptide Compass · Datenschutz",
@@ -34,6 +38,10 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
   });
 
   i18n.merge("en", {
+    "page.datenschutz.verantwortlicherLabel": "Controller per Art. 4 (7) GDPR",
+    "page.datenschutz.verantwortlicherName": "Online Monkeys LLC",
+    "page.datenschutz.verantwortlicherZeile1": "1309 Coffeen Avenue STE 1200",
+    "page.datenschutz.verantwortlicherZeile2": "Sheridan, WY 82801, USA",
     "page.datenschutz.title": "Peptide Compass · Privacy",
     "page.datenschutz.metaDescription": "Privacy policy. Structural placeholder, have this reviewed by a lawyer before publishing.",
     "page.datenschutz.ogTitle": "Peptide Compass · Privacy",
