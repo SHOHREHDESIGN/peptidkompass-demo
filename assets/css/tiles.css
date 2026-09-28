@@ -221,3 +221,53 @@
   .demo-banner{ flex-direction:column; gap:2px; }
   .topbar-code{ margin-left:0; padding-left:0; border-left:0; }
 }
+
+/* ============================================================================
+   Glossar (glossar.html / en/glossar.html, 28.09.2026, tools/build_glossar.py):
+   Begriffe A-Z gruppiert. Der komplette Textinhalt steht bereits statisch im
+   Roh-HTML (Crawler-Fix, siehe Memory "Text im Roh-HTML prüfen" - faq.html
+   rendert seine Liste rein per JS und ist dort leer). Filter-Chips + Suche
+   sind reine Sichtbarkeits-Toggles auf dem schon vorhandenen Markup (siehe
+   Bootstrap-Script in glossar.html), kein DOM-Aufbau wie bei faq.html - nur
+   Klassen unten sind neu, Chips/Suchfeld/Karten nutzen bestehende
+   Komponenten (.pill, .search-bar, .card) aus system.css.
+   ============================================================================ */
+/* .glossar-az trägt zusätzlich .container (Markup) für Breite/Seitenrand -
+   hier nur das Flex-Layout der Buchstaben selbst. */
+.glossar-az{
+  display:flex; flex-wrap:wrap; gap:6px;
+  padding-block:var(--sp-2);
+}
+.glossar-az a, .glossar-az span{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border-radius:var(--radius-sm);
+  font-size:var(--fs-caption); font-weight:600;
+  text-decoration:none; color:var(--text);
+  border:1px solid var(--line);
+}
+.glossar-az a:hover{ border-color:var(--line-strong); background:var(--surface); }
+.glossar-az span{ color:var(--text-secondary); border-color:transparent; opacity:.4; }
+
+.glossar-letter-group{ padding-top:var(--sp-5); scroll-margin-top:calc(var(--nav-h) + var(--sp-4)); }
+.glossar-letter-group:first-of-type{ padding-top:0; }
+.glossar-letter-group[hidden]{ display:none; }
+.glossar-letter-heading{
+  font-size:1.5rem; font-weight:600; letter-spacing:-.01em;
+  padding-bottom:var(--sp-1); margin:0 0 var(--sp-3);
+  border-bottom:1px solid var(--line);
+}
+.glossar-entry-list{ display:flex; flex-direction:column; gap:var(--sp-4); }
+.glossar-entry{ scroll-margin-top:calc(var(--nav-h) + var(--sp-4)); }
+.glossar-entry[hidden]{ display:none; }
+.glossar-entry-head{
+  display:flex; align-items:baseline; flex-wrap:wrap; gap:8px;
+  margin-bottom:4px;
+}
+.glossar-entry-term{ font-size:1.0625rem; font-weight:600; margin:0; }
+.glossar-entry-langform{ color:var(--text-secondary); font-size:var(--fs-small); margin:0 0 4px; }
+.glossar-entry-synonyms{ color:var(--text-secondary); font-size:var(--fs-caption); margin:0 0 var(--sp-1); }
+.glossar-entry-kurz{ margin:0 0 4px; max-width:66ch; }
+.glossar-entry-text{ color:var(--text-secondary); font-size:var(--fs-small); margin:0 0 var(--sp-1); max-width:66ch; }
+.glossar-entry-links{ display:flex; flex-wrap:wrap; gap:6px; margin-top:var(--sp-1); }
+.glossar-entry-links a.pill{ text-decoration:none; }
+.glossar-entry-links a.pill:hover{ border-color:var(--line-strong); }

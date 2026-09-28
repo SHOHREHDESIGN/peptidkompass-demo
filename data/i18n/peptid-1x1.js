@@ -81,7 +81,8 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.peptid-1x1.gAsTerm": "Aminosäurekette",
     "page.peptid-1x1.gAsDef": "Die Grundstruktur eines Peptids, verbunden über Peptidbindungen.",
     "page.peptid-1x1.gPurIdTerm": "Reinheit vs. Identität",
-    "page.peptid-1x1.gPurIdDef": "Reinheit misst, wie sauber eine Probe ist, Identität, ob es überhaupt das richtige Molekül ist."
+    "page.peptid-1x1.gPurIdDef": "Reinheit misst, wie sauber eine Probe ist, Identität, ob es überhaupt das richtige Molekül ist.",
+    "page.peptid-1x1.glossaryLink": "Alle Begriffe im Glossar"
   });
 
   i18n.merge("en", {
@@ -149,7 +150,8 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.peptid-1x1.gAsTerm": "Amino acid chain",
     "page.peptid-1x1.gAsDef": "The basic structure of a peptide, linked together by peptide bonds.",
     "page.peptid-1x1.gPurIdTerm": "Purity vs. identity",
-    "page.peptid-1x1.gPurIdDef": "Purity measures how clean a sample is; identity, whether it's the right molecule at all."
+    "page.peptid-1x1.gPurIdDef": "Purity measures how clean a sample is; identity, whether it's the right molecule at all.",
+    "page.peptid-1x1.glossaryLink": "All terms in the glossary"
   });
 
 })(window.PK.i18n);

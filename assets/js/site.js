@@ -990,9 +990,11 @@
     }
 
     /* "Lernen": neue Gruppe (kein bestehender Einzel-Link), eingefügt vor
-       "Deals". Einträge: Ratgeber (Blog, 15.09.), Studien-Hub, FAQ, Peptid
-       1x1, Methodik. Ratgeber steht als ERSTER Eintrag (Auftrag "Ratgeber-
-       Ausbau" 15.09.). */
+       "Deals". Einträge: Ratgeber (Blog, 15.09.), Studien-Hub, Glossar
+       (28.09.), FAQ, Peptid 1x1, Methodik. Ratgeber steht als ERSTER
+       Eintrag (Auftrag "Ratgeber-Ausbau" 15.09.). Glossar steht zwischen
+       Studien und FAQ (verwandter Nachschlage-Charakter, siehe
+       tools/build_glossar.py). */
     function buildLernenGroup(list, basePath) {
       var dealsLink = findLinkLi(list, "deals.html");
       if (!dealsLink) return;
@@ -1001,6 +1003,7 @@
       var items = [
         { href: "ratgeber/index.html", titleKey: "global.nav.ratgeber", descKey: "global.nav.ratgeberDesc" },
         { href: "studien.html", titleKey: "global.nav.studienKurz", descKey: "global.nav.studienDesc" },
+        { href: "glossar.html", titleKey: "global.nav.glossar", descKey: "global.nav.glossarDesc" },
         { href: "faq.html", titleKey: "global.nav.faq", descKey: "global.nav.faqDesc" },
         { href: "peptid-1x1.html", titleKey: "global.nav.peptid1x1", descKey: "global.nav.peptid1x1Desc" },
         { href: "methodik.html", titleKey: "global.nav.methodik", descKey: "global.nav.methodikDesc" }
