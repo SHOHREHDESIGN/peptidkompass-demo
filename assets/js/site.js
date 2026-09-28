@@ -2629,4 +2629,105 @@
     new MutationObserver(function(){if(queued)return;queued=true;requestAnimationFrame(function(){queued=false;PK.discloseShopLinks();});}).observe(document.body,{childList:true,subtree:true});
   });
 
+  /**
+   * Einwilligung für Google Analytics (Stand 28.09.2026, Tag von Renato).
+   * GA lädt NUR nach "Akzeptieren" (§ 25 Abs. 1 TDDDG). Die Entscheidung liegt
+   * in localStorage "pk_consent" ("granted" | "denied"). Der Footer-Link
+   * "Cookie-Einstellungen" öffnet den Balken erneut; ein Widerruf löscht die
+   * _ga-Cookies und lädt die Seite neu, damit gtag nicht weiterläuft.
+   * Ändert sich hier etwas, MUSS datenschutz.html nachgezogen werden.
+   */
+  PK.GA_ID = "G-XVN604P524";
+  PK.CONSENT_KEY = "pk_consent";
+
+  function readConsent() {
+    try { return global.localStorage.getItem(PK.CONSENT_KEY); } catch (e) { return null; }
+  }
+  function writeConsent(v) {
+    try { global.localStorage.setItem(PK.CONSENT_KEY, v); } catch (e) { /* privater Modus */ }
+  }
+  function loadAnalytics() {
+    if (global.__pkGaLoaded) return;
+    global.__pkGaLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + PK.GA_ID;
+    document.head.appendChild(s);
+    global.dataLayer = global.dataLayer || [];
+    global.gtag = function () { global.dataLayer.push(arguments); };
+    global.gtag("js", new Date());
+    global.gtag("config", PK.GA_ID);
+  }
+  function clearAnalyticsCookies() {
+    var host = global.location.hostname, parts = host.split(".");
+    var domains = ["", host, "." + host];
+    if (parts.length > 2) domains.push("." + parts.slice(-2).join("."));
+    document.cookie.split(";").forEach(function (c) {
+      var name = c.split("=")[0].trim();
+      if (!/^_ga/.test(name)) return;
+      domains.forEach(function (d) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + (d ? "; domain=" + d : "");
+      });
+    });
+  }
+  function decideConsent(value, banner) {
+    var wasLoaded = !!global.__pkGaLoaded;
+    writeConsent(value);
+    if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+    if (value === "granted") { loadAnalytics(); return; }
+    clearAnalyticsCookies();
+    if (wasLoaded) global.location.reload();
+  }
+
+  PK.showConsent = function () {
+    if (document.querySelector(".consent-banner")) return;
+    var banner = document.createElement("div");
+    banner.className = "consent-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", PK.t("global.consent.aria"));
+
+    var p = document.createElement("p");
+    p.appendChild(document.createTextNode(PK.t("global.consent.text") + " "));
+    var link = document.createElement("a");
+    link.href = (PK.lang === "en" ? "/en" : "") + "/datenschutz.html";
+    link.textContent = PK.t("global.consent.privacy");
+    p.appendChild(link);
+    banner.appendChild(p);
+
+    var actions = document.createElement("div");
+    actions.className = "consent-actions";
+    // Beide Knöpfe gleich gewichtet: Ablehnen muss so leicht sein wie Zustimmen.
+    [["denied", "global.consent.decline"], ["granted", "global.consent.accept"]].forEach(function (pair) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "btn btn-secondary";
+      b.setAttribute("data-consent", pair[0]);
+      b.textContent = PK.t(pair[1]);
+      b.addEventListener("click", function () { decideConsent(pair[0], banner); });
+      actions.appendChild(b);
+    });
+    banner.appendChild(actions);
+    document.body.appendChild(banner);
+  };
+
+  PK.initConsent = function () {
+    var c = readConsent();
+    if (c === "granted") loadAnalytics();
+    else if (c !== "denied") PK.showConsent();
+
+    var ul = document.querySelector(".footer-links");
+    if (ul && !ul.querySelector("[data-consent-open]")) {
+      var li = document.createElement("li");
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "footer-consent-link";
+      b.setAttribute("data-consent-open", "");
+      b.textContent = PK.t("global.consent.settings");
+      b.addEventListener("click", PK.showConsent);
+      li.appendChild(b);
+      ul.appendChild(li);
+    }
+  };
+  document.addEventListener("DOMContentLoaded", PK.initConsent);
+
 })(window);

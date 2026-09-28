@@ -81,6 +81,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
        site.demo bleibt true bis Vic freigibt, Text macht klar, dass die
        ANBIETER real sind (keine Demo-Daten), aber Stand/Vollständigkeit
        vorläufig ist. */
+    "global.consent.aria": "Einwilligung zu Analyse-Cookies",
+    "global.consent.text": "Wir möchten mit Google Analytics messen, welche Seiten genutzt werden, um Peptide Compass zu verbessern. Dafür setzt Google Cookies. Das passiert nur mit deiner Zustimmung, und du kannst sie jederzeit unten über „Cookie-Einstellungen“ widerrufen.",
+    "global.consent.privacy": "Mehr in der Datenschutzerklärung",
+    "global.consent.accept": "Akzeptieren",
+    "global.consent.decline": "Ablehnen",
+    "global.consent.settings": "Cookie-Einstellungen",
     "global.demoBanner.label": "Hinweis",
     "global.demoBanner.text": "Forschungschemikalien. Keine medizinische Beratung, keine Anwendung am Menschen. Ab 18 Jahren.",
     "global.demoBanner.code": "Partnercode peptidecompass10",
@@ -241,6 +247,12 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
     "global.langToggle.ariaLabel": "Choose language",
 
+    "global.consent.aria": "Consent to analytics cookies",
+    "global.consent.text": "We would like to use Google Analytics to measure which pages are used, so we can improve Peptide Compass. Google sets cookies for this. That only happens with your consent, and you can withdraw it any time via “Cookie settings” at the bottom.",
+    "global.consent.privacy": "More in the privacy policy",
+    "global.consent.accept": "Accept",
+    "global.consent.decline": "Decline",
+    "global.consent.settings": "Cookie settings",
     "global.demoBanner.label": "Note",
     "global.demoBanner.text": "Research chemicals. Not medical advice, not for human use. 18 and over.",
     "global.demoBanner.code": "Partner code peptidecompass10",

@@ -1907,3 +1907,32 @@ main, main > div, .container, .container-narrow, .vendor-head, .vendor-card, .re
 [data-seo-fallback] { overflow-wrap:anywhere; }
 [data-seo-fallback] h2 { margin-top:32px; }
 html:not([data-js-ready]) .reveal { opacity:1; transform:none; }
+
+/* ---------------------------------------------------------------------------
+   Einwilligungsbalken Google Analytics (28.09.2026), gebaut in site.js
+   (PK.initConsent). Glas-Fläche wie die Nav, beide Knöpfe gleich gewichtet.
+   --------------------------------------------------------------------------- */
+.consent-banner{
+  position:fixed; left:16px; right:16px; bottom:16px; z-index:1000;
+  max-width:720px; margin:0 auto;
+  display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px;
+  padding:16px 20px;
+  background:color-mix(in srgb, var(--surface-2) 90%, transparent);
+  -webkit-backdrop-filter:saturate(180%) blur(20px); backdrop-filter:saturate(180%) blur(20px);
+  border:1px solid var(--line); border-radius:var(--radius-card);
+  box-shadow:var(--shadow-3);
+  color:var(--text); font-size:var(--fs-small); line-height:1.45;
+}
+.consent-banner p{ margin:0; flex:1 1 320px; }
+.consent-banner a{ color:var(--accent); }
+.consent-actions{ display:flex; gap:8px; flex:0 0 auto; }
+.consent-actions .btn{ min-width:120px; }
+@media (max-width:480px){
+  .consent-actions{ width:100%; }
+  .consent-actions .btn{ flex:1; min-width:0; }
+}
+.footer-links .footer-consent-link{
+  background:none; border:0; padding:0; cursor:pointer;
+  font:inherit; font-size:var(--fs-small); color:var(--text-secondary);
+}
+.footer-links .footer-consent-link:hover{ color:var(--text); }
