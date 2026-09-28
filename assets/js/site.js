@@ -2638,6 +2638,15 @@
    * Ändert sich hier etwas, MUSS datenschutz.html nachgezogen werden.
    */
   PK.GA_ID = "G-XVN604P524";
+  // Google Tag Manager (28.09.2026). Lädt wie GA nur nach Einwilligung.
+  // Doppelzählung geprüft 28.09.2026: Der Container enthält bereits einen
+  // Google-Tag mit G-XVN604P524. Google erkennt die doppelte Konfiguration und
+  // sendet nur EINEN page_view (gemessen auf index + methodik, 9 s gewartet).
+  // Der direkte gtag-Teil bleibt als Absicherung, falls der Tag im Container
+  // entfernt wird. Nach Änderungen am Container erneut auf page_view zählen.
+  // Das noscript-iframe von Google ist absichtlich NICHT eingebaut: ohne
+  // JavaScript kann keine Einwilligung eingeholt werden.
+  PK.GTM_ID = "GTM-MWXT6K4Z";
   PK.CONSENT_KEY = "pk_consent";
 
   function readConsent() {
@@ -2657,6 +2666,12 @@
     global.gtag = function () { global.dataLayer.push(arguments); };
     global.gtag("js", new Date());
     global.gtag("config", PK.GA_ID);
+
+    global.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var t = document.createElement("script");
+    t.async = true;
+    t.src = "https://www.googletagmanager.com/gtm.js?id=" + PK.GTM_ID;
+    document.head.appendChild(t);
   }
   function clearAnalyticsCookies() {
     var host = global.location.hostname, parts = host.split(".");
