@@ -452,7 +452,12 @@ window.PK.vendors = [
     "affiliate": true,
     "affiliateProgrammUrl": "https://particlepeptides.com/en/content/41-affiliate-program-terms",
     "provision": "10 %",
-    "rabatt": null,
+    "rabatt": {
+      "code": "PEPTIDECOMPASS10",
+      "prozent": 10,
+      "hinweis": "Code beim Checkout eingeben",
+      "hinweis_en": "Enter code at checkout"
+    },
     "produkte": [],
     "preisProMg": 6.4,
     "affiliateUrl": "https://particlepeptides.com/",
@@ -571,7 +576,10 @@ window.PK.vendors = [
       ]
     },
     "rankbar": true,
-    "preisStand": "2026-09-15"
+    "preisStand": "2026-09-15",
+    "partner": true,
+    "partnerSeit": "2026-09-29",
+    "affiliateLink": "https://particlepeptides.com/en/?refs=34377"
   },
   {
     "slug": "europa-peptide",

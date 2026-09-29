@@ -177,16 +177,16 @@ window.PK.nav = {
       "partner": true
     },
     {
+      "slug": "particle-peptides",
+      "name": "Particle Peptides",
+      "gesamt": 94,
+      "partner": true
+    },
+    {
       "slug": "bio-boostx",
       "name": "Bio BoostX",
       "gesamt": 77,
       "partner": true
-    },
-    {
-      "slug": "particle-peptides",
-      "name": "Particle Peptides",
-      "gesamt": 94,
-      "partner": false
     },
     {
       "slug": "europa-peptide",
