@@ -63,7 +63,7 @@ window.PK.vendors = [
     "partnerSeit": "2026-09-10",
     "rabatt": {
       "code": "peptidecompass10",
-      "prozent": null,
+      "prozent": 10,
       "hinweis": "Code beim Checkout eingeben",
       "hinweis_en": "Enter code at checkout"
     },
