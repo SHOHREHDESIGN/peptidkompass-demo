@@ -36,6 +36,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.glossar.wirkstoffeLabel": "Wirkstoffe",
     "page.glossar.seitenLabel": "Mehr dazu",
     "page.glossar.wirkstoffLinkLabel": "Zur Wirkstoff-Seite",
+    "page.glossar.editorialNote": "Mit KI-Unterstützung erstellt. Eine unabhängige fachliche Prüfung steht aus.",
+    "page.glossar.sourcesLabel": "Quellen und Einordnung",
+    "page.glossar.sourceNote": "Quellen erläutern den Begriff oder die genannte Forschung. Sie bestätigen keine Shopprodukte und keine Eignung zur Anwendung am Menschen.",
     "page.glossar.synonymsPrefix": "Auch:",
     "page.glossar.kat.grundlagen": "Grundlagen",
     "page.glossar.kat.labor": "Labor",
@@ -49,7 +52,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
 
   i18n.merge("en", {
     "page.glossar.title": "Glossary · Peptide Compass",
-    "page.glossar.metaDescription": "Technical terms on lab testing, legal status, handling and study types, plus our 31 peptides, explained briefly and sorted alphabetically.",
+    "page.glossar.metaDescription": "Technical terms on lab testing, legal status, handling and study types, plus our 31 compounds, explained briefly and sorted alphabetically.",
     "page.glossar.ogTitle": "Glossary · Peptide Compass",
     "page.glossar.ogDescription": "Every Peptide Compass term in one place, searchable and filterable by category.",
     "page.glossar.eyebrow": "Learn",
@@ -69,6 +72,9 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "page.glossar.wirkstoffeLabel": "Compounds",
     "page.glossar.seitenLabel": "More on this",
     "page.glossar.wirkstoffLinkLabel": "Compound page",
+    "page.glossar.editorialNote": "Created with AI assistance. Independent expert review is pending.",
+    "page.glossar.sourcesLabel": "Sources and context",
+    "page.glossar.sourceNote": "Sources explain the term or the research described. They do not verify shop products or suitability for human use.",
     "page.glossar.synonymsPrefix": "Also:",
     "page.glossar.kat.grundlagen": "Basics",
     "page.glossar.kat.labor": "Laboratory",

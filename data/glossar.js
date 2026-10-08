@@ -14,14 +14,26 @@ window.PK.glossar = [
   "begriff": "5-Amino-1MQ",
   "begriff_en": "5-Amino-1MQ",
   "kategorie": "wirkstoff",
-  "kurz": "Kleines Molekül und selektiver Hemmstoff des Enzyms Nicotinamid-N-Methyltransferase (NNMT), bislang ausschließlich in präklinischen Tiermodellen zum Fettstoffwechsel untersucht.",
-  "kurz_en": "A small molecule and selective inhibitor of the enzyme nicotinamide N-methyltransferase (NNMT), studied to date exclusively in preclinical animal models related to fat metabolism.",
-  "text": "5-Amino-1MQ ist kein Peptid, sondern ein kleines Molekül (small molecule) und ein selektiver, oral bioverfügbarer Hemmstoff der Nicotinamid-N-Methyltransferase (NNMT). Es hat ein Molekulargewicht von 173,21 Da, im Handel angebotene Forschungschargen weisen üblicherweise eine Reinheit von mindestens 98 Prozent auf. Es wird in der Kategorie Stoffwechsel geführt, weil NNMT im Fettgewebe und im Muskel am Energiestoffwechsel beteiligt ist. Bislang liegen ausschließlich präklinische Daten aus Nagetiermodellen vor, kontrollierte Studien am Menschen sind nicht bekannt.",
-  "text_en": "5-Amino-1MQ is not a peptide but a small molecule, a selective, orally bioavailable inhibitor of nicotinamide N-methyltransferase (NNMT). It has a molecular weight of 173.21 Da, and research batches sold commercially typically carry a purity of at least 98 percent. It is listed under the metabolism category because NNMT is involved in energy metabolism in adipose tissue and muscle. To date, only preclinical data from rodent models are available, and no controlled human studies are known.",
+  "kurz": "Kleines Molekül, in präklinischen Modellen als NNMT-Hemmstoff untersucht. Kein Peptid.",
+  "kurz_en": "Small molecule investigated as an NNMT inhibitor in preclinical models. Not a peptide.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 29155147",
+    "titel_en": "PubMed: Research publication, PMID 29155147",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29155147/"
+   }
+  ],
+  "text": "Die verlinkte Originalarbeit untersucht kleine NNMT-Hemmstoffe in Zelltests und einem ernährungsbedingten Adipositasmodell bei Mäusen. Sie liefert keine klinischen Daten zur Anwendung von Shopprodukten.",
+  "text_en": "The linked original paper investigates small-molecule NNMT inhibitors in cellular assays and a diet-induced obesity model in mice. It does not provide clinical evidence for the use of shop products.",
   "synonyme": [
    "5-Amino 1MQ",
    "5A1MQ",
    "NNMT-Inhibitor"
+  ],
+  "synonyme_en": [
+   "5-Amino 1MQ",
+   "5A1MQ",
+   "NNMT inhibitor"
   ],
   "link": "wirkstoffe/5-amino-1mq.html"
  },
@@ -32,6 +44,13 @@ window.PK.glossar = [
   "kategorie": "vergleich",
   "kurz": "Ein Affiliate-Link führt zu einem externen Shop und kann bei einem Kauf eine Provision auslösen.",
   "kurz_en": "An affiliate link leads to an external shop and may trigger a commission on a purchase.",
+  "quellen": [
+   {
+    "titel": "Peptide Compass: Eigener Affiliate-Hinweis",
+    "titel_en": "Peptide Compass: Our affiliate disclosure",
+    "url": "https://peptidkompass.com/affiliate-hinweis.html"
+   }
+  ],
   "text": "Affiliate-Links sind direkt am Link mit dem Hinweis Anzeige gekennzeichnet und tragen zusätzlich das Attribut sponsored nofollow. Die Kennzeichnung gilt auch für Shoplinks ohne bestätigte Partnerschaft. Partnerstatus und eine mögliche Provision verändern die Bewertung eines Anbieters nicht.",
   "text_en": "Affiliate links carry an Ad label directly at the link and additionally use the sponsored nofollow attribute. The label applies even to shop links without a confirmed partnership. Partner status and a possible commission do not change how a vendor is evaluated.",
   "siehe": [
@@ -48,6 +67,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Ein Molekül, das an einen Rezeptor bindet und dessen Signalkette auslöst. Gegenteil: Antagonist.",
   "kurz_en": "A molecule that binds a receptor and triggers its signalling chain. Opposite: antagonist.",
+  "quellen": [
+   {
+    "titel": "NCI: agonist",
+    "titel_en": "NCI: agonist",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/agonist"
+   }
+  ],
   "text": "Ein Agonist bindet an einen Rezeptor und aktiviert die daran gekoppelte Signalkette in der Zelle, vergleichbar mit einem Schlüssel, der ein Schloss aufschließt. Das Gegenstück ist der Antagonist: Er bindet zwar ebenfalls an den Rezeptor, löst aber keine Signalkette aus und blockiert dadurch den Platz für einen Agonisten. In Studien werden beide Rollen genutzt, um Rezeptor-Signalwege gezielt zu untersuchen.",
   "text_en": "An agonist binds to a receptor and activates the signalling chain linked to it, similar to a key unlocking a lock. The counterpart is an antagonist: it also binds the receptor but does not trigger a signalling chain, instead occupying the site and blocking an agonist from binding. Studies use both roles to probe receptor signalling pathways in a targeted way.",
   "siehe": [
@@ -62,8 +88,15 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Ein Aliquot ist eine kleine, abgemessene Teilmenge aus einer größeren Laborlösung, meist zur getrennten Aufbewahrung.",
   "kurz_en": "An aliquot is a small, measured portion taken from a larger laboratory solution, usually stored separately.",
-  "text": "Statt eine gesamte rekonstituierte Lösung wiederholt aufzutauen und wieder einzufrieren, teilen Labore sie in mehrere Aliquote auf. Jede Teilmenge wird einzeln entnommen und verwendet, während die übrigen Portionen ungeöffnet bleiben. Das reduziert Temperaturwechsel und Kontaminationsrisiko für die restliche Menge.",
-  "text_en": "Rather than repeatedly thawing and refreezing a whole reconstituted solution, laboratories divide it into several aliquots. Each portion is withdrawn and used on its own while the remaining portions stay sealed. This reduces temperature cycling and contamination risk for the rest of the volume.",
+  "quellen": [
+   {
+    "titel": "Hoofnagle et al. (2016): Peptidanalytik und Laborhandhabung",
+    "titel_en": "Hoofnagle et al. (2016): Peptide analysis and laboratory handling",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26719571/"
+   }
+  ],
+  "text": "Ein Aliquot ist eine abgeteilte Probe. Getrennte Portionen können wiederholte Temperaturwechsel des gesamten Vorrats vermeiden.",
+  "text_en": "An aliquot is a separated sample portion. Separate portions can avoid repeated temperature cycling of the whole stock.",
   "siehe": [
    "vial",
    "konzentration",
@@ -77,10 +110,20 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Der Grundbaustein, aus dem Peptide und Proteine über Peptidbindungen aufgebaut sind.",
   "kurz_en": "The basic building block that peptides and proteins are assembled from via peptide bonds.",
-  "text": "Eine Aminosäure ist ein kleines Molekül mit einer Amino- und einer Carboxylgruppe. Reihen sich mehrere davon über Peptidbindungen aneinander, entsteht eine Kette, aus der je nach Länge ein Peptid oder ein Protein wird. In der Natur kommen für den Aufbau von Peptiden und Proteinen 20 verschiedene Aminosäuren vor, ihre Reihenfolge in der Kette wird als Sequenz bezeichnet.",
-  "text_en": "An amino acid is a small molecule with an amino group and a carboxyl group. When several link together via peptide bonds, a chain forms that becomes a peptide or a protein depending on its length. Twenty different amino acids occur naturally in the construction of peptides and proteins, and their order in the chain is called the sequence.",
+  "quellen": [
+   {
+    "titel": "NCI: amino acid",
+    "titel_en": "NCI: amino acid",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/amino-acid"
+   }
+  ],
+  "text": "Aminosäuren enthalten eine Amino- und eine Carboxylgruppe. Für Proteine werden gewöhnlich 20 Standardaminosäuren beschrieben. Über Peptidbindungen entstehen Ketten; ihre Reihenfolge heißt Sequenz.",
+  "text_en": "Amino acids contain an amino group and a carboxyl group. Proteins are commonly described using 20 standard amino acids. Peptide bonds join them into chains; their order is called the sequence.",
   "synonyme": [
    "Aminosäuren"
+  ],
+  "synonyme_en": [
+   "Amino acids"
   ],
   "siehe": [
    "peptid",
@@ -98,10 +141,20 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Eine synthetisch veränderte Variante eines körpereigenen Peptids mit leicht abweichender Struktur.",
   "kurz_en": "A synthetically modified variant of an endogenous peptide with a slightly altered structure.",
+  "quellen": [
+   {
+    "titel": "EMA: Semaglutid als GLP-1-Analogon",
+    "titel_en": "EMA: Semaglutide as a GLP-1 analogue",
+    "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/ozempic"
+   }
+  ],
   "text": "Ein Analogon ist eine im Labor hergestellte Variante eines natürlich vorkommenden Peptids, bei der einzelne Aminosäuren ausgetauscht, ergänzt oder entfernt wurden. Solche strukturellen Anpassungen werden in der Forschung genutzt, um Eigenschaften wie Stabilität oder Bindungsverhalten am Rezeptor gezielt zu untersuchen. Ein Beispiel ist Semaglutid als Analogon des körpereigenen Hormons GLP-1.",
   "text_en": "An analogue is a lab-made variant of a naturally occurring peptide in which individual amino acids have been swapped, added or removed. Researchers use such structural changes to study properties like stability or receptor binding behaviour in a targeted way. One example is semaglutide, an analogue of the endogenous hormone GLP-1.",
   "synonyme": [
    "Analoga"
+  ],
+  "synonyme_en": [
+   "Analogues"
   ],
   "siehe": [
    "peptid",
@@ -116,11 +169,22 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Antimikrobielle Peptide sind Teil der angeborenen Immunabwehr und entstehen auf Haut und Schleimhäuten.",
   "kurz_en": "Antimicrobial peptides are part of innate immune defence, produced in skin and mucous membranes.",
+  "quellen": [
+   {
+    "titel": "NCBI Bookshelf: Angeborene Immunabwehr",
+    "titel_en": "NCBI Bookshelf: Innate immune system",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK459455/"
+   }
+  ],
   "text": "Antimikrobielle Peptide, auch AMPs oder Wirtsabwehrpeptide genannt, sind Teil der angeborenen Immunabwehr. Sie entstehen in Haut- und Schleimhautzellen sowie in Immunzellen und lagern sich in Zellmembranen von Bakterien, Pilzen oder Viren ein. Die bekannteste menschliche Gruppe sind die Cathelicidine, deren einzig aktive Form beim Menschen LL-37 ist. Neben diesem direkten Mechanismus an der Zellmembran werden AMPs auch als Botenstoffe des Immunsystems untersucht.",
   "text_en": "Antimicrobial peptides, also called AMPs or host defence peptides, are part of innate immune defence. They are produced by skin and mucosal cells as well as immune cells and insert into the membranes of bacteria, fungi or viruses. The best-known human group is the cathelicidins, whose only active human form is LL-37. Beyond this direct membrane mechanism, AMPs are also studied as immune system signalling molecules.",
   "synonyme": [
    "AMPs",
    "Wirtsabwehrpeptide"
+  ],
+  "synonyme_en": [
+   "AMPs",
+   "Host defence peptides"
   ],
   "siehe": [
    "protein",
@@ -138,11 +202,22 @@ window.PK.glossar = [
   "begriff": "AOD-9604",
   "begriff_en": "AOD-9604",
   "kategorie": "wirkstoff",
-  "kurz": "Peptidfragment des menschlichen Wachstumshormons (Aminosäuren 177-191), das in Studien auf eine fettabbauende Wirkung ohne die wachstumsfördernden Effekte des vollständigen Hormons untersucht wurde.",
-  "kurz_en": "A peptide fragment of human growth hormone (amino acids 177-191) studied for a fat-reducing effect without the growth-promoting effects of the full hormone.",
-  "text": "AOD-9604 ist ein synthetisches 16-Aminosäuren-Fragment des humanen Wachstumshormons (Sequenz Tyr-hGH177-191), das ursprünglich von Metabolic Pharmaceuticals in Zusammenarbeit mit der Monash University zur Gewichtsregulation entwickelt wurde. Es wurde in sechs randomisierten, plazebokontrollierten Humanstudien mit über 900 Teilnehmenden auf seine Stoffwechselwirkung und Sicherheit untersucht. Die klinische Entwicklung als Adipositas-Wirkstoff wurde 2007 eingestellt, nachdem die größte Studie den primären Wirksamkeitsendpunkt verfehlte.",
-  "text_en": "AOD-9604 is a synthetic 16-amino-acid fragment of human growth hormone (sequence Tyr-hGH177-191), originally developed by Metabolic Pharmaceuticals in collaboration with Monash University for weight regulation. It was studied in six randomized, placebo-controlled human trials with more than 900 participants for its metabolic effects and safety. Clinical development as an obesity compound was discontinued in 2007 after the largest trial did not meet its primary efficacy endpoint.",
+  "kurz": "Modifiziertes Fragment des Wachstumshormons, in Stoffwechselstudien untersucht.",
+  "kurz_en": "Modified growth hormone fragment investigated in metabolic studies.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 11146367",
+    "titel_en": "PubMed: Research publication, PMID 11146367",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11146367/"
+   }
+  ],
+  "text": "Die angeführte Originalarbeit untersucht AOD-9604 an Zucker-Ratten. Aussagen zu diesem Tiermodell lassen sich nicht unmittelbar auf Menschen oder auf Produkte aus dem Forschungshandel übertragen.",
+  "text_en": "The cited original paper investigates AOD-9604 in Zucker rats. Findings from this animal model cannot be directly transferred to humans or products sold by research suppliers.",
   "synonyme": [
+   "Anti-Obesity Drug 9604",
+   "Tyr-hGH Frag 177-191"
+  ],
+  "synonyme_en": [
    "Anti-Obesity Drug 9604",
    "Tyr-hGH Frag 177-191"
   ],
@@ -155,10 +230,20 @@ window.PK.glossar = [
   "kategorie": "recht",
   "kurz": "Arzneimittel sind gesetzlich als Stoffe definiert, die zur Behandlung oder Vorbeugung von Krankheiten am Menschen bestimmt sind.",
   "kurz_en": "A medicinal product is legally defined as a substance intended to treat or prevent disease in humans.",
-  "text": "Die Einstufung als Arzneimittel entscheidet unter anderem darüber, ob eine Zulassung, eine Herstellungserlaubnis und gegebenenfalls eine Rezeptpflicht erforderlich sind. Produkte, die als Forschungschemikalie mit RUO-Kennzeichnung verkauft werden, sind nicht als Arzneimittel zugelassen und dürfen entsprechend nicht so beworben werden.",
-  "text_en": "Classification as a medicinal product determines whether marketing authorisation, a manufacturing licence and, where applicable, a prescription requirement apply. Products sold as research chemicals under an RUO label are not authorised as medicinal products and may not be advertised as such.",
+  "quellen": [
+   {
+    "titel": "AMG § 2: Arzneimittelbegriff",
+    "titel_en": "German Medicines Act, section 2: Definition of medicines",
+    "url": "https://www.gesetze-im-internet.de/amg_1976/__2.html"
+   }
+  ],
+  "text": "§ 2 AMG erfasst unter anderem Stoffe nach ihrer Bestimmung zur Behandlung oder Vorbeugung von Krankheiten sowie nach bestimmten pharmakologischen, immunologischen oder metabolischen Funktionen. Die Einstufung ist von einer erteilten Zulassung zu unterscheiden. Eine RUO-Kennzeichnung schließt die Einstufung nicht automatisch aus.",
+  "text_en": "Section 2 of Germany’s Medicines Act covers substances based on their intended disease-related use and certain pharmacological, immunological or metabolic functions. Classification is distinct from marketing authorisation. An RUO label does not automatically exclude medicinal-product status.",
   "synonyme": [
    "Medikament"
+  ],
+  "synonyme_en": [
+   "Medicine"
   ],
   "siehe": [
    "ruo",
@@ -176,10 +261,20 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Bakteriostatisches Wasser ist steriles Wasser mit einem Konservierungsstoff, meist Benzylalkohol, für mehrfach nutzbare Lösungen.",
   "kurz_en": "Bacteriostatic water is sterile water with a preservative, usually benzyl alcohol, for solutions used more than once.",
-  "text": "Der zugesetzte Konservierungsstoff, in der Regel 0,9 Prozent Benzylalkohol, hemmt das Wachstum von Bakterien in der angebrochenen Lösung. Dadurch lässt sich ein Vial nach dem Öffnen im Labor über mehrere Entnahmen hinweg nutzen, statt es nach einmaligem Gebrauch zu verwerfen. Wo kein Konservierungsstoff toleriert wird, kommt stattdessen steriles Wasser ohne Zusatz zum Einsatz.",
-  "text_en": "The added preservative, typically 0.9 per cent benzyl alcohol, inhibits bacterial growth in an opened solution. This lets a vial be used across several withdrawals in the lab instead of being discarded after a single use. Where no preservative is tolerated, sterile water without additives is used instead.",
+  "quellen": [
+   {
+    "titel": "DailyMed: Bakteriostatisches Wasser, Zusammensetzung",
+    "titel_en": "DailyMed: Bacteriostatic water, composition",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=87d6e9dc-fe3b-4593-ac9a-d7493d1959c7"
+   }
+  ],
+  "text": "Bakteriostatisch bedeutet, dass Bakterienwachstum gehemmt wird. Die Zusammensetzung ist produktabhängig; entsprechende Arzneimittel können Benzylalkohol enthalten. Eine solche Bezeichnung bestätigt weder die Verträglichkeit mit einem bestimmten Peptid noch die Sicherheit eines Shopprodukts.",
+  "text_en": "Bacteriostatic means that bacterial growth is inhibited. Composition is product-specific; medicinal preparations can contain benzyl alcohol. This description verifies neither compatibility with a particular peptide nor the safety of a shop product.",
   "synonyme": [
    "BAC-Wasser"
+  ],
+  "synonyme_en": [
+   "BAC water"
   ],
   "siehe": [
    "steriles-wasser",
@@ -194,11 +289,22 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Bioregulatoren sind sehr kurze synthetische Peptide aus zwei bis vier Aminosäuren, die an Organsystemen erforscht werden.",
   "kurz_en": "Bioregulators are very short synthetic peptides of two to four amino acids studied at organ systems.",
-  "text": "Bioregulatoren sind eine Klasse sehr kurzer, meist aus zwei bis vier Aminosäuren bestehender Peptide, die in den 1970er-Jahren an einem sowjetischen Institut für Gerontologie entwickelt wurden. Die zugrunde liegende Hypothese ist, dass solche kurzen Sequenzen organspezifisch mit der Genregulation interagieren. Ein bekanntes Beispiel ist das Tetrapeptid Epitalon, das in der Alternsforschung untersucht wird. Die Studienlage stammt überwiegend aus russischsprachigen Publikationen.",
-  "text_en": "Bioregulators are a class of very short peptides, usually two to four amino acids long, developed at a Soviet institute for gerontology in the 1970s. The underlying hypothesis is that such short sequences interact with gene regulation in an organ-specific way. A well-known example is the tetrapeptide epitalon, studied in ageing research. The evidence base comes largely from Russian-language publications.",
+  "quellen": [
+   {
+    "titel": "Khavinson et al. (2003): Hypothese zur Genregulation",
+    "titel_en": "Khavinson et al. (2003): Gene regulation hypothesis",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14666197/"
+   }
+  ],
+  "text": "In Teilen der Peptidforschung bezeichnet der Begriff kurze Sequenzen, für die eine Beteiligung an der Genregulation untersucht wird. Das ist keine behördlich definierte Wirksamkeitsklasse. Einzelne Zellbefunde belegen weder organspezifische Vorteile noch eine Verlängerung der menschlichen Lebensspanne.",
+  "text_en": "In parts of peptide research, this term describes short sequences investigated for involvement in gene regulation. It is not a regulatory category establishing efficacy. Individual cellular findings establish neither organ-specific benefits nor extension of human lifespan.",
   "synonyme": [
    "Peptid-Bioregulatoren",
    "Khavinson-Peptide"
+  ],
+  "synonyme_en": [
+   "Peptide bioregulators",
+   "Khavinson peptides"
   ],
   "siehe": [
    "oligopeptid",
@@ -218,6 +324,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Der Anteil eines Stoffs, der unverändert im Blutkreislauf ankommt und dort messbar ist.",
   "kurz_en": "The proportion of a substance that reaches the bloodstream unchanged and can be measured there.",
+  "quellen": [
+   {
+    "titel": "NCBI Bookshelf: Bioverfügbarkeit",
+    "titel_en": "NCBI Bookshelf: Drug bioavailability",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK557852/"
+   }
+  ],
   "text": "Die Bioverfügbarkeit gibt an, welcher Anteil eines verabreichten Stoffs am Ende tatsächlich unverändert im systemischen Kreislauf ankommt, gemessen in Prozent. Sie hängt unter anderem davon ab, wie stark eine Substanz auf ihrem Weg durch den Körper von Enzymen wie bei der Proteolyse abgebaut wird. In pharmakokinetischen Studien wird die Bioverfügbarkeit für verschiedene Verabreichungswege einzeln bestimmt.",
   "text_en": "Bioavailability indicates what proportion of an administered substance ultimately reaches systemic circulation unchanged, measured as a percentage. It depends partly on how much the substance is broken down by enzymes, such as through proteolysis, on its way through the body. Pharmacokinetic studies determine bioavailability separately for different routes of administration.",
   "siehe": [
@@ -230,10 +343,22 @@ window.PK.glossar = [
   "begriff": "Blindtest",
   "begriff_en": "Blind test",
   "kategorie": "labor",
-  "kurz": "Bei einem Blindtest schickt man eine Probe ohne Hinweis auf Hersteller oder Shop an ein Labor, um das Ergebnis unbeeinflusst zu prüfen.",
-  "kurz_en": "In a blind test, a sample is sent to a lab with no indication of the manufacturer or shop, so the result stays unbiased.",
-  "text": "Da das Labor Herkunft und Absender nicht kennt, lässt sich eine mögliche Verzerrung des Ergebnisses ausschließen. Ein Blindtest prüft den tatsächlichen Inhalt einer konkreten Probe, nicht die Herkunft oder Echtheit der Charge selbst.",
-  "text_en": "Because the lab does not know the origin or sender, a possible bias in the result can be ruled out. A blind test checks the actual content of one specific sample, not the origin or authenticity of the batch itself.",
+  "kurz": "Verblindete Prüfung: Beteiligte kennen relevante Angaben zur Probe nicht.",
+  "kurz_en": "Blinded test: people involved do not know relevant details about the sample.",
+  "quellen": [
+   {
+    "titel": "Karanicolas et al. (2010): Verblindung und ihre Grenzen",
+    "titel_en": "Karanicolas et al. (2010): Blinding and its limitations",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20858381/"
+   },
+   {
+    "titel": "Peptide Compass: Methodik und Grenzen der Prüfung",
+    "titel_en": "Peptide Compass: Methodology and verification limits",
+    "url": "https://peptidkompass.com/methodik.html"
+   }
+  ],
+  "text": "Beim verblindeten Labortest werden Angaben zur Herkunft der Probe vor der Auswertung zurückgehalten. Das kann Erwartungseinflüsse verringern, schließt Fehler oder Verzerrung aber nicht aus. Entscheidend bleiben Probenahme, Methode und dokumentierte Zuordnung. Peptide Compass führt keine eigenen Blindtests durch.",
+  "text_en": "In a blinded laboratory test, information about a sample’s origin is withheld before analysis. This can reduce expectation bias but cannot rule out error or bias. Sampling, methods and documented traceability still matter. Peptide Compass does not conduct its own blinded tests.",
   "siehe": [
    "drittlabor",
    "coa"
@@ -247,11 +372,22 @@ window.PK.glossar = [
   "begriff": "BPC-157",
   "begriff_en": "BPC-157",
   "kategorie": "wirkstoff",
-  "kurz": "Ein synthetisches Peptid, das überwiegend in präklinischen Modellen zur Geweberegeneration untersucht wird.",
-  "kurz_en": "A synthetic peptide studied mainly in preclinical models of tissue regeneration.",
-  "text": "BPC-157 ist ein synthetisches Pentadekapeptid, dessen Sequenz von einem im menschlichen Magensaft vorkommenden Schutzprotein abgeleitet ist. Es zählt zu den am häufigsten untersuchten Peptiden im Bereich der Geweberegeneration, mit einer breiten Basis an Tiermodellen und einer begrenzten Zahl kleiner Humanstudien. Im Fokus der Forschung stehen unter anderem Sehnen, Bänder, die Magen-Darm-Schleimhaut und die Wundheilung.",
-  "text_en": "BPC-157 is a synthetic pentadecapeptide whose sequence is derived from a protective protein found in human gastric juice. It is among the most studied peptides in tissue regeneration research, with a broad base of animal studies and a limited number of small human studies. Research focus areas include tendons, ligaments, the gastrointestinal lining, and wound healing.",
+  "kurz": "Synthetisches Peptid, in präklinischen Modellen untersucht.",
+  "kurz_en": "Synthetic peptide investigated in preclinical models.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 27847966",
+    "titel_en": "PubMed: Research publication, PMID 27847966",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27847966/"
+   }
+  ],
+  "text": "Die verlinkte Zell- und Tierarbeit untersucht Gefäßneubildung und den VEGFR2-Signalweg. Solche präklinischen Befunde sind keine Bestätigung einer Wirkung oder sicheren Anwendung beim Menschen.",
+  "text_en": "The linked cellular and animal study investigates blood-vessel formation and VEGFR2 signalling. Such preclinical findings do not establish efficacy or safe use in humans.",
   "synonyme": [
+   "Body Protection Compound 157",
+   "PL 14736"
+  ],
+  "synonyme_en": [
    "Body Protection Compound 157",
    "PL 14736"
   ],
@@ -260,13 +396,24 @@ window.PK.glossar = [
  {
   "slug": "cagrilintid",
   "begriff": "Cagrilintid",
-  "begriff_en": "Cagrilintid",
+  "begriff_en": "Cagrilintide",
   "kategorie": "wirkstoff",
-  "kurz": "Langwirksames Analogon des körpereigenen Hormons Amylin, in klinischen Studien zur Stoffwechsel- und Sättigungsregulation untersucht, solo und in Kombination mit Semaglutid.",
-  "kurz_en": "A long-acting analogue of the body's own hormone amylin, studied in clinical trials for metabolic and satiety regulation, alone and in combination with semaglutide.",
-  "text": "Cagrilintid ist ein langwirksames Amylin-Analogon von Novo Nordisk. Es wird sowohl als eigenständige Substanz als auch in fixer Kombination mit dem GLP-1-Wirkstoff Semaglutid unter dem Namen CagriSema in Phase-3-Studien untersucht. Bisher ist Cagrilintid in keinem Land als eigenständiges Arzneimittel zugelassen.",
-  "text_en": "Cagrilintide is a long-acting amylin analogue developed by Novo Nordisk. It is being studied both as a standalone substance and in a fixed combination with the GLP-1 compound semaglutide, marketed under the name CagriSema, in phase 3 trials. To date, cagrilintide is not approved as a standalone medication in any country.",
+  "kurz": "Synthetisches Amylin-Analogon, in der Stoffwechselforschung untersucht.",
+  "kurz_en": "Synthetic amylin analogue investigated in metabolic research.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 34288673",
+    "titel_en": "PubMed: Research publication, PMID 34288673",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34288673/"
+   }
+  ],
+  "text": "Die angeführte Entwicklungsarbeit beschreibt die Struktur und Auswahl eines lang wirksamen Amylin-Analogons. Ein Studienwirkstoff ist von einer unter gleichem Namen angebotenen Forschungschemikalie zu unterscheiden.",
+  "text_en": "The cited development paper describes the structure and selection of a long-acting amylin analogue. An investigational medicine must be distinguished from a research chemical sold under the same name.",
   "synonyme": [
+   "AM833",
+   "NN9838"
+  ],
+  "synonyme_en": [
    "AM833",
    "NN9838"
   ],
@@ -279,11 +426,22 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Eine Charge ist eine einzelne Produktionsmenge mit eigener Chargennummer, auf die sich ein CoA konkret bezieht.",
   "kurz_en": "A batch is a single production run with its own batch number, the one a CoA actually refers to.",
+  "quellen": [
+   {
+    "titel": "ICH Q7: Herstellung, Chargen und Analysenzertifikate",
+    "titel_en": "ICH Q7: Manufacturing, batches and certificates of analysis",
+    "url": "https://www.fda.gov/media/71518/download"
+   }
+  ],
   "text": "Die Chargennummer verbindet ein bestimmtes Fläschchen mit dem passenden Prüfbericht und macht das Ergebnis nachvollziehbar. Ein CoA ohne erkennbaren Chargenbezug lässt sich keinem konkreten Produkt zuordnen und sagt entsprechend wenig aus.",
   "text_en": "The batch number links one particular vial to the matching report, which is what makes a result traceable. A CoA with no clear batch reference cannot be tied to an actual product and says correspondingly little.",
   "synonyme": [
    "Batch",
    "Los"
+  ],
+  "synonyme_en": [
+   "Batch",
+   "Lot"
   ],
   "siehe": [
    "coa",
@@ -298,10 +456,17 @@ window.PK.glossar = [
   "begriff": "Chromatogramm",
   "begriff_en": "Chromatogram",
   "kategorie": "labor",
-  "kurz": "Ein Chromatogramm ist die grafische Ausgabe einer HPLC-Messung, in der jeder Peak einen Bestandteil der Probe zeigt.",
-  "kurz_en": "A chromatogram is the graphical output of an HPLC run, where each peak represents one component of the sample.",
-  "text": "Die Fläche unter dem Hauptpeak ergibt den angegebenen Reinheitswert, kleinere Peaks stehen für Verunreinigungen oder Abbauprodukte. Ohne zusätzliche Identitätsprüfung zeigt das Chromatogramm allein nicht, um welches Molekül es sich beim Hauptpeak handelt.",
-  "text_en": "The area under the main peak gives the stated purity value, while smaller peaks represent impurities or degradation products. Without an additional identity check, the chromatogram alone does not show which molecule the main peak actually is.",
+  "kurz": "Grafische Darstellung einer chromatographischen Trennung, etwa bei einer HPLC-Messung.",
+  "kurz_en": "A graphical record of chromatographic separation, for example in HPLC.",
+  "quellen": [
+   {
+    "titel": "IUPAC Gold Book: Chromatogramm",
+    "titel_en": "IUPAC Gold Book: Chromatogram",
+    "url": "https://goldbook.iupac.org/terms/view/C01071"
+   }
+  ],
+  "text": "Ein Chromatogramm zeigt das Detektorsignal im Verlauf einer chromatographischen Trennung. Peaks können sich überlagern. Flächenanteile hängen von Methode und Detektor ab und sind nicht automatisch Gewichtsanteile. Ein Chromatogramm allein bestätigt die Identität eines Peptids nicht.",
+  "text_en": "A chromatogram shows the detector signal during chromatographic separation. Peaks can overlap. Area percentages depend on the method and detector and are not automatically mass percentages. A chromatogram alone does not confirm peptide identity.",
   "siehe": [
    "hplc",
    "reinheit"
@@ -315,14 +480,23 @@ window.PK.glossar = [
   "begriff": "CJC-1295",
   "begriff_en": "CJC-1295",
   "kategorie": "wirkstoff",
-  "kurz": "Synthetisches Analogon des Growth-Hormone-Releasing-Hormons, in zwei Varianten mit unterschiedlicher Wirkdauer erforscht.",
-  "kurz_en": "A synthetic analog of growth hormone-releasing hormone, studied in two variants with different durations of action.",
-  "text": "CJC-1295 ist ein stabilisiertes Analogon des körpereigenen GHRH und wird im Kontext der Wachstumshormon-Achse untersucht. Es existiert in zwei Varianten: ohne DAC (Drug Affinity Complex) mit kurzer Wirkdauer und mit DAC, das über eine Bindung an Serum-Albumin eine deutlich verlängerte Wirkdauer erreicht. Die vorliegenden Humandaten stammen überwiegend aus früher klinischer Forschung an gesunden Erwachsenen.",
-  "text_en": "CJC-1295 is a stabilized analog of the body's own GHRH, studied in the context of the growth hormone axis. It exists in two variants: without DAC (Drug Affinity Complex), which has a short duration of action, and with DAC, which achieves a substantially extended duration through binding to serum albumin. Available human data come mainly from early clinical research in healthy adults.",
+  "kurz": "Synthetisches GHRH-Analogon, in der endokrinologischen Forschung untersucht.",
+  "kurz_en": "Synthetic GHRH analogue investigated in endocrine research.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 16352683",
+    "titel_en": "PubMed: Research publication, PMID 16352683",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/"
+   }
+  ],
+  "text": "Die verlinkte Arbeit untersucht ein lang wirksames GHRH-Analogon bei gesunden Erwachsenen. Die untersuchte Verbindung ist von anders modifizierten Formen zu unterscheiden, die unter ähnlichen Handelsnamen angeboten werden.",
+  "text_en": "The linked paper investigates a long-acting GHRH analogue in healthy adults. The studied compound must be distinguished from differently modified forms offered under similar trade names.",
   "synonyme": [
-   "Mod GRF 1-29",
-   "Modified GRF (1-29)",
    "CJC-1295 mit DAC",
+   "DAC:GRF"
+  ],
+  "synonyme_en": [
+   "CJC-1295 with DAC",
    "DAC:GRF"
   ],
   "link": "wirkstoffe/cjc-1295.html"
@@ -334,6 +508,13 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Ein CoA ist ein Prüfbericht zu einer bestimmten Charge, mit Chargennummer, Prüfmethode und Messwerten wie Reinheit oder Identität.",
   "kurz_en": "A CoA is a report tied to a specific batch, listing batch number, test method and values such as purity or identity.",
+  "quellen": [
+   {
+    "titel": "ICH Q7: Herstellung, Chargen und Analysenzertifikate",
+    "titel_en": "ICH Q7: Manufacturing, batches and certificates of analysis",
+    "url": "https://www.fda.gov/media/71518/download"
+   }
+  ],
   "langform": "Certificate of Analysis",
   "langform_en": "Certificate of Analysis",
   "text": "Der Wert eines CoA hängt an der Chargennummer, denn nur so lässt sich ein Prüfbericht einem bestimmten Fläschchen zuordnen. Ein generisches Muster-CoA ohne Bezug zu einer echten Charge sagt wenig über das konkrete Produkt aus. Üblich sind Angaben zu Reinheit, Identität und teilweise zum Endotoxin-Wert.",
@@ -341,6 +522,10 @@ window.PK.glossar = [
   "synonyme": [
    "Analysezertifikat",
    "Prüfbericht"
+  ],
+  "synonyme_en": [
+   "Certificate of analysis",
+   "Test report"
   ],
   "siehe": [
    "charge",
@@ -360,6 +545,13 @@ window.PK.glossar = [
   "kategorie": "vergleich",
   "kurz": "Datenbasis zeigt, wie viele der fünf Scorekriterien für einen Anbieter belegt sind.",
   "kurz_en": "Evidence coverage shows how many of the five score criteria are documented for a vendor.",
+  "quellen": [
+   {
+    "titel": "Peptide Compass: Eigene Vergleichsmethodik",
+    "titel_en": "Peptide Compass: Our comparison methodology",
+    "url": "https://peptidkompass.com/methodik.html"
+   }
+  ],
   "text": "Weil fehlende Kriterien bei der Score-Berechnung ausgelassen und die übrigen Gewichte neu verteilt werden, kann bereits ein einziges belegtes Kriterium einen hohen Wert ergeben. Anbieter mit unterschiedlicher Datenbasis sind deshalb nur eingeschränkt vergleichbar. Die Zahl der belegten Kriterien steht neben dem Score.",
   "text_en": "Because missing criteria are omitted from the score calculation and the remaining weights redistributed, a single documented criterion alone can already produce a high value. Vendors with different evidence coverage are therefore only partly comparable. The number of documented criteria is shown next to the score.",
   "siehe": [
@@ -374,13 +566,29 @@ window.PK.glossar = [
   "begriff": "Dihexa",
   "begriff_en": "Dihexa",
   "kategorie": "wirkstoff",
-  "kurz": "Synthetisches Angiotensin-IV-Analogon, in präklinischen Rattenmodellen zu Gedächtnisleistung untersucht, bislang ohne veröffentlichte Daten am Menschen.",
-  "kurz_en": "A synthetic angiotensin IV analog studied in preclinical rat models of memory function, with no published human data to date.",
-  "text": "Dihexa ist ein synthetisches Peptidomimetikum, abgeleitet vom körpereigenen Angiotensin IV und entwickelt in der Forschungsgruppe um Joseph Harding an der Washington State University. Untersucht wurde es bislang ausschließlich in präklinischen Modellen, vor allem an Ratten, im Zusammenhang mit Lern- und Gedächtnisleistung. Veröffentlichte Studien am Menschen liegen für Dihexa nicht vor, das Sicherheitsprofil beim Menschen ist entsprechend nicht untersucht.",
-  "text_en": "Dihexa is a synthetic peptidomimetic derived from the body's own angiotensin IV, developed in Joseph Harding's research group at Washington State University. To date it has been studied exclusively in preclinical models, mainly rats, in connection with learning and memory performance. No published human studies exist for dihexa, so its safety profile in humans has not been examined.",
+  "kurz": "Synthetisches Angiotensin-IV-Analogon, in präklinischen Modellen untersucht.",
+  "kurz_en": "Synthetic angiotensin IV analogue investigated in preclinical models.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 38489193",
+    "titel_en": "PubMed: Research publication, PMID 38489193",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38489193/"
+   },
+   {
+    "titel": "PubMed: Redaktioneller Warnhinweis zur frühen Arbeit",
+    "titel_en": "PubMed: Editorial expression of concern on the early paper",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34551989/"
+   }
+  ],
+  "text": "Dihexa wird in Tiermodellen untersucht. Zur frühen Veröffentlichung mit PMID 23055539 besteht ein redaktioneller Warnhinweis (Expression of Concern); sie wird hier nicht als gesicherter Beleg verwendet. Die verlinkte weitere Arbeit beschreibt ein Rattenmodell und belegt keine Anwendung beim Menschen.",
+  "text_en": "Dihexa is investigated in animal models. The early paper with PMID 23055539 carries an Expression of Concern and is not treated here as secure evidence. The additional linked paper describes a rat model and does not establish human use.",
   "synonyme": [
    "PNB-0408",
    "N-Hexanoyl-Tyr-Ile-(6)aminohexanamid"
+  ],
+  "synonyme_en": [
+   "PNB-0408",
+   "N-Hexanoyl-Tyr-Ile-(6)aminohexanamide"
   ],
   "link": "wirkstoffe/dihexa.html"
  },
@@ -391,8 +599,15 @@ window.PK.glossar = [
   "kategorie": "vergleich",
   "kurz": "Der Dokumentationsscore zeigt, wie viele geprüfte Angaben zu einem Anbieter tatsächlich belegt sind.",
   "kurz_en": "The documentation score shows how many verified vendor claims are actually documented.",
-  "text": "Der Score setzt sich aus fünf gewichteten Kriterien zusammen: Labor 25 Prozent, Rechtsrahmen 25 Prozent, Lieferung 15 Prozent, Sortiment 15 Prozent und Preis 20 Prozent. Fehlende Kriterien fließen nicht als null Punkte ein, sondern werden ausgelassen und die übrigen Gewichte neu verteilt. Er ist kein Gütesiegel und keine rechtliche Bewertung.",
-  "text_en": "The score combines five weighted criteria: lab 25 percent, legal framework 25 percent, shipping 15 percent, range 15 percent and price 20 percent. Missing criteria are not counted as zero points, they are omitted and the remaining weights are redistributed. It is not a quality seal or a legal assessment.",
+  "quellen": [
+   {
+    "titel": "Peptide Compass: Eigene Vergleichsmethodik",
+    "titel_en": "Peptide Compass: Our comparison methodology",
+    "url": "https://peptidkompass.com/methodik.html"
+   }
+  ],
+  "text": "Die Methodik sieht fünf gewichtete Kriterien vor. Aktuell werden Labor-Dokumentation, Rechtsangaben und Lieferung berücksichtigt; Preis und Sortiment bleiben unbewertet. Fehlende Kriterien werden ausgelassen und die übrigen Gewichte neu verteilt. Der Wert ist kein Gütesiegel und keine Prüfung der Produktsicherheit.",
+  "text_en": "The methodology defines five weighted criteria. Currently, laboratory documentation, legal information and shipping contribute; price and range remain unscored. Missing criteria are omitted and the remaining weights are normalised. The score is not a quality seal or a product safety assessment.",
   "siehe": [
    "datenbasis",
    "coa"
@@ -408,11 +623,22 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Studiendesign, bei dem weder Teilnehmer noch Studienpersonal wissen, wer Wirkstoff oder Placebo erhält. Reduziert unbewusste Verzerrung.",
   "kurz_en": "A study design where neither participants nor staff know who gets the active substance or placebo. Reduces unconscious bias.",
-  "text": "In einer doppelblinden Studie wird die Zuteilung zu Test- oder Kontrollgruppe sowohl vor den Teilnehmern als auch vor dem behandelnden Studienpersonal geheim gehalten. Das verhindert, dass Erwartungen auf beiden Seiten das Ergebnis oder dessen Bewertung beeinflussen. Zusammen mit Randomisierung und Placebokontrolle gilt Doppelverblindung als starkes Qualitätsmerkmal.",
-  "text_en": "In a double-blind trial, the assignment to the treatment or control group is hidden from both participants and the study staff treating them. This prevents expectations on either side from influencing the result or its assessment. Together with randomisation and placebo control, double blinding counts as a strong quality marker.",
+  "quellen": [
+   {
+    "titel": "NCI: double blind study",
+    "titel_en": "NCI: double blind study",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/double-blind-study"
+   }
+  ],
+  "text": "Teilnehmer und die entsprechend verblindeten Mitglieder des Studienpersonals kennen die Gruppenzuteilung nicht. Das kann Erwartungs- und Bewertungsverzerrungen verringern. Verblindung ist ein Qualitätsmerkmal, schließt andere methodische Fehler aber nicht aus.",
+  "text_en": "Participants and the blinded members of the study team do not know group assignments. This can reduce expectation and assessment bias. Blinding is a quality feature but does not rule out other methodological errors.",
   "synonyme": [
    "Doppelverblindung",
    "doppelblind"
+  ],
+  "synonyme_en": [
+   "Double blinding",
+   "Double blind"
   ],
   "siehe": [
    "rct",
@@ -429,10 +655,20 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Ein Drittlabor ist ein externes Labor, das unabhängig vom Hersteller oder Shop eine Probe prüft und dokumentiert.",
   "kurz_en": "A third-party laboratory is an external lab that tests and documents a sample independently of the manufacturer or shop.",
+  "quellen": [
+   {
+    "titel": "ISO/IEC 17025:2017: Kompetenz von Prüflaboren",
+    "titel_en": "ISO/IEC 17025:2017: Competence of testing laboratories",
+    "url": "https://www.iso.org/standard/66912.html"
+   }
+  ],
   "text": "Nennt ein CoA ein externes Labor, lohnt sich ein Blick, ob der Name überhaupt nachprüfbar ist und ob eine Akkreditierung wie ISO 17025 vorliegt. Ein Blindtest ist eine Möglichkeit, ein Ergebnis zusätzlich unabhängig zu prüfen.",
   "text_en": "If a CoA names an external lab, it is worth checking whether the name is verifiable at all and whether it holds accreditation such as ISO 17025. A blind test is one way to check a result independently on top of that.",
   "synonyme": [
    "Externes Labor"
+  ],
+  "synonyme_en": [
+   "External laboratory"
   ],
   "siehe": [
    "coa",
@@ -449,11 +685,22 @@ window.PK.glossar = [
   "begriff": "DSIP",
   "begriff_en": "DSIP",
   "kategorie": "wirkstoff",
-  "kurz": "Eines der am längsten erforschten Neuropeptide, ursprünglich als schlafinduzierender Botenstoff aus dem Gehirn schlafender Kaninchen isoliert, mit bis heute uneinheitlicher Studienlage.",
-  "kurz_en": "One of the longest-studied neuropeptides, originally isolated as a sleep-inducing messenger from the brain of sleeping rabbits, with an inconsistent body of research to this day.",
-  "text": "DSIP (Delta Sleep Inducing Peptide) ist ein Nonapeptid, das 1977 von Schoenenberger und Monnier aus dem venösen Hirnblut schlafender Kaninchen isoliert und nach seiner Fähigkeit benannt wurde, im Tiermodell Delta-Wellen im EEG auszulösen. In den folgenden Jahrzehnten wurde es in zahlreichen Humanstudien zu Schlaf, Stressachse und Hormonregulation untersucht. Die ursprünglich beschriebene schlaffördernde Wirkung ließ sich in unabhängigen, methodisch strengeren Studien nicht zuverlässig reproduzieren.",
-  "text_en": "DSIP (delta sleep-inducing peptide) is a nonapeptide first isolated in 1977 by Schoenenberger and Monnier from the venous brain blood of sleeping rabbits and named for its ability to trigger delta-wave EEG activity in that animal model. Over the following decades it was studied in numerous human trials on sleep, the stress axis, and hormone regulation. The originally described sleep-promoting effect has not been reliably reproduced in independent, more rigorous studies.",
+  "kurz": "Delta Sleep-Inducing Peptide, ursprünglich in tierexperimentellen Untersuchungen beschrieben.",
+  "kurz_en": "Delta sleep-inducing peptide, originally described in animal experiments.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 265572",
+    "titel_en": "PubMed: Research publication, PMID 265572",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/265572/"
+   }
+  ],
+  "text": "DSIP wurde in einer frühen Arbeit an Kaninchen isoliert und experimentell untersucht. Der Name beschreibt die damalige Forschungshypothese. Er ist kein Beleg für eine verlässliche Schlafwirkung beim Menschen.",
+  "text_en": "DSIP was isolated and experimentally investigated in an early rabbit study. Its name reflects the research hypothesis at that time. It does not establish a reliable sleep effect in humans.",
   "synonyme": [
+   "Delta Sleep Inducing Peptide",
+   "Delta Sleep Peptide"
+  ],
+  "synonyme_en": [
    "Delta Sleep Inducing Peptide",
    "Delta Sleep Peptide"
   ],
@@ -466,10 +713,17 @@ window.PK.glossar = [
   "kategorie": "recht",
   "kurz": "Die EMA ist die EU-Behörde, die zentrale Zulassungsverfahren für Arzneimittel koordiniert und bewertet.",
   "kurz_en": "The EMA is the EU agency that coordinates and assesses centralised marketing authorisation procedures.",
+  "quellen": [
+   {
+    "titel": "EMA: Bewertung und Zulassungsentscheidung",
+    "titel_en": "EMA: Evaluation and authorisation decisions",
+    "url": "https://www.ema.europa.eu/en/about-us/what-we-do/authorisation-medicines/how-ema-evaluates-medicines-human-use"
+   }
+  ],
   "langform": "Europäische Arzneimittel-Agentur",
   "langform_en": "European Medicines Agency",
-  "text": "Die Europäische Arzneimittel-Agentur mit Sitz in Amsterdam koordiniert die wissenschaftliche Bewertung von Arzneimitteln, die EU-weit zugelassen werden sollen, und veröffentlicht die zugehörigen Bewertungsberichte. Für Forschungschemikalien ohne Zulassungsantrag ist die EMA nicht zuständig, sie prüft auch keine einzelnen Chargen.",
-  "text_en": "The European Medicines Agency, based in Amsterdam, coordinates the scientific assessment of medicines seeking EU-wide authorisation and publishes the related assessment reports. The EMA has no role for research chemicals without an authorisation application and does not test individual batches.",
+  "text": "Die Europäische Arzneimittel-Agentur koordiniert die wissenschaftliche Bewertung im zentralen EU-Zulassungsverfahren und veröffentlicht Bewertungsberichte. Die Zulassungsentscheidung trifft die Europäische Kommission. Ein EMA-Bericht ist kein Prüfzertifikat für Produkte eines Forschungsshops.",
+  "text_en": "The European Medicines Agency coordinates scientific assessment in the centralised EU authorisation procedure and publishes assessment reports. The European Commission makes the authorisation decision. An EMA report is not a testing certificate for products sold by a research supplier.",
   "siehe": [
    "zulassung",
    "fda"
@@ -482,8 +736,15 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Endotoxine sind Zellwandbestandteile von Bakterien, deren Menge in einer Probe meist in Einheiten pro Milligramm angegeben wird.",
   "kurz_en": "Endotoxins are bacterial cell wall components, with the amount in a sample usually stated in units per milligram.",
-  "text": "Der Wert ist ein eigener Prüfpunkt neben Reinheit und Identität und wird meist separat im CoA ausgewiesen. Geprüft wird üblicherweise mit dem LAL-Test, einem in der Laborpraxis etablierten Nachweisverfahren für Endotoxine.",
-  "text_en": "The value is a separate test point alongside purity and identity, and is usually listed on its own in a CoA. It is typically measured with the LAL test, an established method for detecting endotoxins in laboratory practice.",
+  "quellen": [
+   {
+    "titel": "FDA: Pyrogen- und Endotoxintests",
+    "titel_en": "FDA: Pyrogen and endotoxins testing",
+    "url": "https://www.fda.gov/media/83477/download"
+   }
+  ],
+  "text": "Bakterielle Endotoxine sind Bestandteile gramnegativer Bakterien. Der Messwert wird in Endotoxineinheiten mit Bezugsgröße angegeben. Neben klassischen LAL-Verfahren gibt es Tests mit rekombinanten Reagenzien. Endotoxinprüfung, Sterilitätsprüfung und chemische Reinheit sind unterschiedliche Prüfungen.",
+  "text_en": "Bacterial endotoxins are components of Gram-negative bacteria. Results use endotoxin units with a stated reference quantity. Tests include conventional LAL methods and recombinant reagents. Endotoxin testing, sterility testing and chemical purity testing answer different questions.",
   "siehe": [
    "sterilitaet",
    "coa"
@@ -497,13 +758,24 @@ window.PK.glossar = [
   "begriff": "Epitalon",
   "begriff_en": "Epitalon",
   "kategorie": "wirkstoff",
-  "kurz": "Synthetisches Tetrapeptid, in der Alternsforschung als Forschungssubstanz zur Zellalterung untersucht.",
-  "kurz_en": "A synthetic tetrapeptide, studied in aging research as a research substance related to cellular aging.",
-  "text": "Epitalon ist ein synthetisches Tetrapeptid, das von Vladimir Khavinson am Sankt Petersburger Institut für Bioregulation und Gerontologie entwickelt wurde. Es wird in präklinischen Studien im Zusammenhang mit Zellalterung und der Regulation der Telomerase-Aktivität untersucht. Belastbare klinische Daten am Menschen stehen bislang aus.",
-  "text_en": "Epitalon is a synthetic tetrapeptide developed by Vladimir Khavinson at the Saint Petersburg Institute of Bioregulation and Gerontology. It is studied in preclinical research in connection with cellular aging and the regulation of telomerase activity. Robust clinical data in humans is still pending.",
+  "kurz": "Synthetisches Tetrapeptid, in Zellkulturen zur Telomerase-Aktivität untersucht.",
+  "kurz_en": "Synthetic tetrapeptide investigated in cell cultures for telomerase activity.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 12937682",
+    "titel_en": "PubMed: Research publication, PMID 12937682",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/12937682/"
+   }
+  ],
+  "text": "Die angeführte Arbeit untersucht Epithalon in humanen Fibroblasten-Zellkulturen. Beobachtungen zur Telomerase in isolierten Zellen belegen keine Verlängerung der Lebensspanne beim Menschen.",
+  "text_en": "The cited paper investigates epithalon in human fibroblast cell cultures. Observations of telomerase in isolated cells do not establish extension of human lifespan.",
   "synonyme": [
    "Epithalon",
    "AEDG-Tetrapeptid"
+  ],
+  "synonyme_en": [
+   "Epithalon",
+   "AEDG tetrapeptide"
   ],
   "link": "wirkstoffe/epitalon.html"
  },
@@ -514,9 +786,19 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Ausführliche Beschreibung eines einzelnen, oft ungewöhnlichen Falls. Liefert einen ersten Hinweis, aber keinen statistischen Beleg.",
   "kurz_en": "A detailed account of a single, often unusual case. Provides an early lead but no statistical evidence.",
+  "quellen": [
+   {
+    "titel": "NCI: case report",
+    "titel_en": "NCI: case report",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/case-report"
+   }
+  ],
   "text": "Ein Fallbericht schildert Beobachtungen bei einer einzelnen Person oder einer kleinen Fallgruppe, häufig zu einer ungewöhnlichen Reaktion oder einem seltenen Ereignis. Er kann Anstoß für weitere Forschung sein, enthält aber keine Kontrollgruppe und keine statistische Auswertung. Ein Fallbericht allein belegt keine allgemeine Wirkung.",
   "text_en": "A case report describes observations in a single person or a small group of cases, often an unusual reaction or a rare event. It can prompt further research, but it has no control group and no statistical analysis. A case report alone does not prove a general effect.",
   "synonyme": [
+   "Case Report"
+  ],
+  "synonyme_en": [
    "Case Report"
   ],
   "siehe": [
@@ -532,12 +814,19 @@ window.PK.glossar = [
   "begriff": "FDA",
   "begriff_en": "FDA",
   "kategorie": "recht",
-  "kurz": "Die FDA ist die US-Behörde, die Arzneimittel, Lebensmittel und Medizinprodukte in den USA zulässt.",
-  "kurz_en": "The FDA is the US agency that authorises medicines, food and medical devices in the United States.",
+  "kurz": "US-Behörde mit Aufgaben zur Regulierung unter anderem von Arzneimitteln, Lebensmitteln und Medizinprodukten.",
+  "kurz_en": "US agency responsible for regulating medicines, food and medical devices, among other products.",
+  "quellen": [
+   {
+    "titel": "FDA: Was die Behörde zulässt",
+    "titel_en": "FDA: What the agency does and does not approve",
+    "url": "https://www.fda.gov/consumers/consumer-updates/10-facts-about-what-fda-does-and-does-not-approve"
+   }
+  ],
   "langform": "Food and Drug Administration (US-Behörde)",
   "langform_en": "Food and Drug Administration",
-  "text": "Die Food and Drug Administration prüft Zulassungsanträge, überwacht den US-Markt und veröffentlicht Warnhinweise zu Produkten. Ihre Entscheidungen gelten für die USA und lassen sich nicht auf die EU übertragen. Als Forschungschemikalie gehandelte Peptide fallen nicht unter ein FDA-Zulassungsverfahren.",
-  "text_en": "The Food and Drug Administration reviews marketing applications, oversees the US market and publishes warning notices about products. Its decisions apply to the United States and do not carry over to the EU. Peptides traded as research chemicals are not subject to an FDA authorisation procedure.",
+  "text": "Die Food and Drug Administration reguliert in den USA unter anderem Arzneimittel, Lebensmittel und Medizinprodukte. Nicht jede regulierte Produktart erhält eine vorherige Zulassung. Eine FDA-Zulassung gilt für ein konkretes Produkt und ist keine EU-Zulassung.",
+  "text_en": "The Food and Drug Administration regulates medicines, food and medical devices, among other products, in the United States. Not every regulated product category receives premarket approval. FDA approval concerns a specific product and is not EU authorisation.",
   "siehe": [
    "zulassung",
    "ema"
@@ -550,6 +839,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Ein kurzes Teilstück eines größeren körpereigenen Peptids oder Proteins, synthetisch nachgebaut.",
   "kurz_en": "A short section of a larger endogenous peptide or protein, synthetically reproduced.",
+  "quellen": [
+   {
+    "titel": "Purves et al.: Peptid-Botenstoffe",
+    "titel_en": "Purves et al.: Peptide neurotransmitters",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK10873/"
+   }
+  ],
   "text": "Ein Fragment umfasst nur einen Teilabschnitt der ursprünglichen Aminosäurekette eines Peptids oder Proteins, nicht die vollständige Sequenz. Solche Teilstücke werden synthetisch hergestellt, um zu untersuchen, welcher Bereich einer Kette für bestimmte Eigenschaften wie Rezeptorbindung verantwortlich ist. Ein bekanntes Beispiel ist Thymosin Alpha-1 als Fragment eines größeren Vorläuferproteins.",
   "text_en": "A fragment covers only a section of the original amino acid chain of a peptide or protein, not the full sequence. Such partial sequences are synthesised to study which part of a chain is responsible for particular properties, such as receptor binding. One known example is thymosin alpha-1, a fragment of a larger precursor protein.",
   "siehe": [
@@ -565,8 +861,15 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Ein Gegenion ist der Salzpartner eines Peptids, meist Trifluoracetat (TFA) oder Acetat, aus der Herstellung.",
   "kurz_en": "A counter ion is a peptide's salt partner, usually trifluoroacetate (TFA) or acetate, left over from manufacturing.",
-  "text": "Peptide werden selten als reine Substanz geliefert, sondern meist als Salzform mit einem gebundenen Gegenion. Dieser Anteil zählt zum Gesamtgewicht des Pulvers, senkt dadurch aber den rechnerischen Peptidgehalt. TFA- und Acetatsalze sind die gängigsten Formen.",
-  "text_en": "Peptides are rarely supplied as the pure substance alone, but usually as a salt form with a bound counter ion. This share counts toward the total weight of the powder, which lowers the calculated net peptide content. TFA and acetate salts are the most common forms.",
+  "quellen": [
+   {
+    "titel": "Hoofnagle et al. (2016): Peptidanalytik und Laborhandhabung",
+    "titel_en": "Hoofnagle et al. (2016): Peptide analysis and laboratory handling",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26719571/"
+   }
+  ],
+  "text": "Ein Gegenion gleicht die elektrische Ladung aus. Gegenionen können zum Gewicht einer Peptidprobe beitragen, ohne Bestandteil ihrer Aminosäuresequenz zu sein.",
+  "text_en": "A counterion balances electrical charge. Counterions can contribute to sample weight without being part of the peptide’s amino acid sequence.",
   "siehe": [
    "peptidgehalt",
    "reinheit"
@@ -580,13 +883,24 @@ window.PK.glossar = [
   "begriff": "GHK-Cu",
   "begriff_en": "GHK-Cu",
   "kategorie": "wirkstoff",
-  "kurz": "Ein körpereigenes Kupfer-bindendes Tripeptid, am intensivsten in der Hautforschung untersucht, mit ergänzenden präklinischen Daten zu weiteren Geweben.",
-  "kurz_en": "A naturally occurring copper-binding tripeptide, studied most extensively in skin research, with additional preclinical data on other tissues.",
-  "text": "GHK-Cu ist ein aus drei Aminosäuren bestehendes Tripeptid, das im Körper natürlich vorkommt und stabil ein Kupferion bindet. Es wird vor allem in der kosmetischen und dermatologischen Forschung zu Kollagenbildung und Hauterneuerung untersucht. Weitere, überwiegend präklinische Forschung betrachtet mögliche Effekte auf Entzündungsprozesse und die Genexpression in verschiedenen Gewebemodellen.",
-  "text_en": "GHK-Cu is a three-amino-acid tripeptide that occurs naturally in the body and stably binds a copper ion. It is studied mainly in cosmetic and dermatological research on collagen formation and skin renewal. Further, mostly preclinical research looks at possible effects on inflammatory processes and gene expression across various tissue models.",
+  "kurz": "Komplex aus dem Tripeptid GHK und Kupfer, in verschiedenen präklinischen Modellen untersucht.",
+  "kurz_en": "Complex of the tripeptide GHK and copper investigated in various preclinical models.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 40672369",
+    "titel_en": "PubMed: Research publication, PMID 40672369",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40672369/"
+   }
+  ],
+  "text": "GHK steht für Glycyl-Histidyl-Lysin. Die verlinkte Arbeit untersucht den Kupferkomplex in einem experimentellen Colitis-Modell und ergänzenden Zellversuchen. Sie ist kein klinischer Nachweis für Hautpflege oder andere Anwendungen.",
+  "text_en": "GHK stands for glycyl-histidyl-lysine. The linked study investigates the copper complex in an experimental colitis model and cellular assays. It is not clinical evidence for skin care or other uses.",
   "synonyme": [
    "Glycyl-L-Histidyl-L-Lysin-Kupfer",
    "Kupfertripeptid-1"
+  ],
+  "synonyme_en": [
+   "Glycyl-L-histidyl-L-lysine copper",
+   "Copper tripeptide-1"
   ],
   "link": "wirkstoffe/ghk-cu.html"
  },
@@ -597,11 +911,21 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "GHRH ist ein körpereigenes Hormon aus dem Hypothalamus, das die Hirnanhangdrüse zur Ausschüttung von Wachstumshormon anregt.",
   "kurz_en": "GHRH is a hypothalamic hormone that triggers the pituitary gland to release growth hormone.",
+  "quellen": [
+   {
+    "titel": "Teichman et al. (2006): GHRH-Analogon in der Forschung",
+    "titel_en": "Teichman et al. (2006): Research on a GHRH analogue",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/"
+   }
+  ],
   "langform": "Growth Hormone-Releasing Hormone",
   "langform_en": "Growth hormone-releasing hormone",
   "text": "Growth Hormone-Releasing Hormone ist ein Hypothalamus-Peptid, das über die Hypophysenpfortader zur Hirnanhangdrüse gelangt und dort die Ausschüttung von Wachstumshormon aus somatotropen Zellen auslöst. Es zählt zur Wachstumshormon-Achse und ist der Gegenspieler des körpereigenen Hemmstoffs Somatostatin. Mehrere synthetische GHRH-Analoga binden an denselben Rezeptor und werden in diesem Zusammenhang untersucht oder eingesetzt.",
   "text_en": "Growth hormone-releasing hormone is a hypothalamic peptide that travels via the pituitary portal system to the pituitary gland, where it triggers growth hormone release from somatotroph cells. It is part of the growth hormone axis and is the counterpart to the body's own inhibitor, somatostatin. Several synthetic GHRH analogues bind the same receptor and are studied or used in this context.",
   "synonyme": [
+   "Somatoliberin"
+  ],
+  "synonyme_en": [
    "Somatoliberin"
   ],
   "siehe": [
@@ -625,6 +949,13 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "GHRPs sind eine Klasse synthetischer Peptide, die über den Ghrelin-Rezeptor die Ausschüttung von Wachstumshormon auslösen.",
   "kurz_en": "GHRPs are synthetic peptides that trigger growth hormone release through the ghrelin receptor.",
+  "quellen": [
+   {
+    "titel": "Raun et al. (1998): Rezeptorbezug von GHRPs",
+    "titel_en": "Raun et al. (1998): Receptor involvement in GHRPs",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9849822/"
+   }
+  ],
   "langform": "Growth Hormone-Releasing Peptide",
   "langform_en": "Growth hormone-releasing peptide",
   "text": "Growth Hormone-Releasing Peptides sind eine Klasse künstlich entwickelter Peptide, die an den Ghrelin-Rezeptor (GHS-R) binden und darüber die Ausschüttung von Wachstumshormon aus der Hirnanhangdrüse auslösen. Anders als GHRH-Analoga nutzen sie einen eigenständigen Signalweg und werden in der Forschung häufig mit GHRH-Analoga kombiniert. Der Ghrelin-Rezeptor ist zugleich an der Regulation von Hunger und Appetit beteiligt.",
@@ -632,6 +963,10 @@ window.PK.glossar = [
   "synonyme": [
    "GH-Sekretagoga",
    "Wachstumshormon-Sekretagoga"
+  ],
+  "synonyme_en": [
+   "GH secretagogues",
+   "Growth hormone secretagogues"
   ],
   "siehe": [
    "ghrh",
@@ -653,6 +988,13 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "GIP ist ein körpereigenes Darmhormon, das die Insulinausschüttung nach kohlenhydratreichen Mahlzeiten reguliert.",
   "kurz_en": "GIP is a gut hormone that regulates insulin release after carbohydrate-rich meals.",
+  "quellen": [
+   {
+    "titel": "NIDDK: Grundlagen der Inkretinforschung",
+    "titel_en": "NIDDK: Foundations of incretin research",
+    "url": "https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone"
+   }
+  ],
   "langform": "Glucose-dependent Insulinotropic Polypeptide",
   "langform_en": "Glucose-dependent insulinotropic polypeptide",
   "text": "Glucose-dependent Insulinotropic Polypeptide ist neben GLP-1 das zweite wichtige Inkretinhormon. K-Zellen im oberen Dünndarm schütten es nach der Nahrungsaufnahme aus, es bindet an den GIP-Rezeptor und reguliert dort die Insulinausschüttung. Zusätzlich ist es am Fettstoffwechsel beteiligt. Mehrere neuere Diabetes- und Adipositas-Wirkstoffe kombinieren einen GIP- mit einem GLP-1-Rezeptor-Agonismus.",
@@ -677,12 +1019,22 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "GLP-1 ist ein körpereigenes Darmhormon, das nach dem Essen die Insulinausschüttung reguliert.",
   "kurz_en": "GLP-1 is a gut hormone released after eating that regulates insulin release.",
+  "quellen": [
+   {
+    "titel": "NIDDK: Grundlagen der Inkretinforschung",
+    "titel_en": "NIDDK: Foundations of incretin research",
+    "url": "https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone"
+   }
+  ],
   "langform": "Glucagon-like Peptide 1",
   "langform_en": "Glucagon-like peptide 1",
   "text": "Glucagon-like Peptide 1 ist ein Inkretinhormon, das L-Zellen im Dünndarm nach der Nahrungsaufnahme ausschütten. Es bindet an den GLP-1-Rezeptor, reguliert die Insulinausschüttung, verlangsamt die Magenentleerung und ist an der Sättigungsregulation im Gehirn beteiligt. Mehrere synthetische GLP-1-Rezeptor-Agonisten setzen an diesem System an und sind teils als Arzneimittel zugelassen.",
   "text_en": "Glucagon-like peptide 1 is an incretin hormone released by L cells in the small intestine after eating. It binds the GLP-1 receptor, regulates insulin release, slows gastric emptying and is involved in satiety signalling in the brain. Several synthetic GLP-1 receptor agonists target this system, and some are approved as medicines.",
   "synonyme": [
    "Glucagon-ähnliches Peptid 1"
+  ],
+  "synonyme_en": [
+   "Glucagon-like peptide-1"
   ],
   "siehe": [
    "gip",
@@ -707,6 +1059,13 @@ window.PK.glossar = [
   "kategorie": "recht",
   "kurz": "GMP ist ein anerkannter Qualitätsstandard für die Herstellung von Arzneimitteln und ähnlichen Produkten.",
   "kurz_en": "GMP is a recognised quality standard for manufacturing medicinal products and similar goods.",
+  "quellen": [
+   {
+    "titel": "ICH Q7: Herstellung, Chargen und Analysenzertifikate",
+    "titel_en": "ICH Q7: Manufacturing, batches and certificates of analysis",
+    "url": "https://www.fda.gov/media/71518/download"
+   }
+  ],
   "langform": "Gute Herstellungspraxis",
   "langform_en": "Good Manufacturing Practice",
   "text": "Good Manufacturing Practice umfasst Vorgaben zu Räumen, Prozessen, Dokumentation und Rückverfolgbarkeit in der Herstellung. Verpflichtend ist GMP vor allem für zugelassene Arzneimittel. Eine Herstellerangabe zu GMP ersetzt keinen unabhängigen Nachweis wie ein öffentliches CoA und gilt nur, soweit sie belegt ist.",
@@ -726,6 +1085,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Die Zeitspanne, in der die Konzentration eines Stoffs im Körper auf die Hälfte sinkt.",
   "kurz_en": "The time it takes for a substance's concentration in the body to drop by half.",
+  "quellen": [
+   {
+    "titel": "NCBI Bookshelf: Pharmakokinetik",
+    "titel_en": "NCBI Bookshelf: Pharmacokinetics",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK557744/"
+   }
+  ],
   "text": "Die Halbwertszeit beschreibt, wie lange es dauert, bis die Konzentration eines Peptids im Blut auf die Hälfte des Ausgangswerts abgebaut ist. Sie wird in pharmakokinetischen Studien gemessen und unterscheidet sich stark zwischen einzelnen Peptiden, unter anderem abhängig davon, wie schnell körpereigene Enzyme die Kette per Proteolyse abbauen. Kürzere Halbwertszeiten bedeuten einen schnelleren Abbau im Vergleich zu längeren.",
   "text_en": "Half-life describes how long it takes for a peptide's blood concentration to fall to half its starting value. It is measured in pharmacokinetic studies and varies considerably between individual peptides, partly depending on how quickly endogenous enzymes break down the chain through proteolysis. A shorter half-life means faster breakdown compared with a longer one.",
   "siehe": [
@@ -738,10 +1104,17 @@ window.PK.glossar = [
   "begriff": "Hexarelin",
   "begriff_en": "Hexarelin",
   "kategorie": "wirkstoff",
-  "kurz": "Synthetisches Hexapeptid aus der Klasse der Growth-Hormone-Releasing-Peptide, in früher klinischer Forschung zur Wachstumshormon-Sekretion untersucht.",
-  "kurz_en": "A synthetic hexapeptide from the growth hormone-releasing peptide class, studied in early clinical research on growth hormone secretion.",
-  "text": "Hexarelin ist ein aus sechs Aminosäuren bestehendes synthetisches Peptid aus der GHRP-Klasse (Growth Hormone Releasing Peptides) und wurde erstmals 1994 pharmakologisch beschrieben. Es wurde in klinischen Studien zur Wachstumshormon-Sekretion bei Kindern, Erwachsenen und älteren Personen sowie separat in präklinischer Forschung zu kardialen Effekten untersucht.",
-  "text_en": "Hexarelin is a synthetic hexapeptide from the GHRP (growth hormone releasing peptide) class, first pharmacologically described in 1994. It has been studied in clinical trials on growth hormone secretion in children, adults, and older adults, and separately in preclinical research on cardiac effects.",
+  "kurz": "Synthetisches Peptid, in Studien zur Wachstumshormon-Achse untersucht.",
+  "kurz_en": "Synthetic peptide investigated in studies of the growth hormone axis.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 7910650",
+    "titel_en": "PubMed: Research publication, PMID 7910650",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/7910650/"
+   }
+  ],
+  "text": "Die angeführte Originalarbeit beschreibt Hexarelin als synthetisches Peptid und untersucht die Wachstumshormon-Ausschüttung bei Ratten. Solche Modellbefunde sind kein Beleg für eine sichere Anwendung beim Menschen.",
+  "text_en": "The cited original paper describes hexarelin as a synthetic peptide and investigates growth hormone release in rats. Such model findings do not establish safe human use.",
   "link": "wirkstoffe/hexarelin.html"
  },
  {
@@ -751,12 +1124,22 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "HPLC ist die gängige Analysemethode, um den Reinheitswert einer Peptidprobe als Prozentzahl zu bestimmen.",
   "kurz_en": "HPLC is the standard analytical method used to determine a peptide sample's purity as a percentage.",
+  "quellen": [
+   {
+    "titel": "FDA: Analytik komplexer Gemische und Peptide",
+    "titel_en": "FDA: Analysis of complex mixtures and peptides",
+    "url": "https://www.fda.gov/industry/generic-drug-user-fee-amendments/fys-2013-2017-regulatory-science-report-complex-mixtures-and-peptides"
+   }
+  ],
   "langform": "Hochleistungsflüssigchromatographie",
   "langform_en": "High-performance liquid chromatography",
   "text": "Die Methode trennt die Bestandteile einer Probe auf und misst sie einzeln, das Ergebnis ist ein Chromatogramm mit einem Peak pro Bestandteil. Der Flächenanteil des Hauptpeaks ergibt den angegebenen Reinheitswert. Allein sagt HPLC nichts über die Identität des Moleküls aus, dafür braucht es zusätzlich Massenspektrometrie.",
   "text_en": "The method separates a sample into its components and measures each one, producing a chromatogram with one peak per component. The area of the main peak gives the stated purity value. HPLC alone says nothing about identity, that requires mass spectrometry as well.",
   "synonyme": [
    "Hochleistungsflüssigchromatografie"
+  ],
+  "synonyme_en": [
+   "High-performance liquid chromatography"
   ],
   "siehe": [
    "reinheit",
@@ -775,6 +1158,13 @@ window.PK.glossar = [
   "kategorie": "recht",
   "kurz": "Das HWG regelt in Deutschland die Werbung für Arzneimittel und Heilmethoden gegenüber der Öffentlichkeit.",
   "kurz_en": "The HWG regulates advertising of medicinal products and therapeutic methods to the public in Germany.",
+  "quellen": [
+   {
+    "titel": "Heilmittelwerbegesetz, amtlicher Gesetzestext",
+    "titel_en": "German Act on Advertising in the Healthcare System, official text",
+    "url": "https://www.gesetze-im-internet.de/heilmwerbg/"
+   }
+  ],
   "langform": "Heilmittelwerbegesetz",
   "langform_en": "Therapeutic Products Advertising Act",
   "text": "Das Heilmittelwerbegesetz schränkt ein, wie über Arzneimittel und Behandlungsmethoden gesprochen werden darf, etwa bei Aussagen zu Krankheiten oder zur Anwendung am Menschen. Deshalb beschreibt Peptide Compass Substanzen nur mit dem Stand der Forschung und formuliert keine Aussagen über eine Wirkung im Körper der Leserin oder des Lesers.",
@@ -793,6 +1183,13 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Identität bestätigt per Massenspektrometrie, dass eine Probe tatsächlich das angegebene Peptid enthält.",
   "kurz_en": "Identity, confirmed by mass spectrometry, verifies that a sample actually contains the stated peptide.",
+  "quellen": [
+   {
+    "titel": "FDA: Analytik komplexer Gemische und Peptide",
+    "titel_en": "FDA: Analysis of complex mixtures and peptides",
+    "url": "https://www.fda.gov/industry/generic-drug-user-fee-amendments/fys-2013-2017-regulatory-science-report-complex-mixtures-and-peptides"
+   }
+  ],
   "text": "Der Nachweis erfolgt meist über LC-MS, eine Kombination aus Flüssigchromatographie und Massenspektrometrie, die das Molekulargewicht misst. Reinheit und Identität sind zwei getrennte Angaben, ein vollständiger CoA enthält beide. Ein hoher Reinheitswert allein belegt nicht, welches Molekül tatsächlich vorliegt.",
   "text_en": "It is usually shown via LC-MS, a combination of liquid chromatography and mass spectrometry that measures molecular weight. Purity and identity are two separate figures, and a complete CoA lists both. Purity alone does not prove which molecule is actually present.",
   "siehe": [
@@ -811,11 +1208,21 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "IGF-1 ist ein körpereigenes Hormon, das größtenteils in der Leber als Reaktion auf Wachstumshormon gebildet wird.",
   "kurz_en": "IGF-1 is a hormone produced mostly in the liver in response to growth hormone.",
+  "quellen": [
+   {
+    "titel": "NIDDK: Wachstumshormon und IGF-1",
+    "titel_en": "NIDDK: Growth hormone and IGF-1",
+    "url": "https://www.niddk.nih.gov/health-information/endocrine-diseases/acromegaly"
+   }
+  ],
   "langform": "Insulin-like Growth Factor 1",
   "langform_en": "Insulin-like growth factor 1",
   "text": "Insulin-like Growth Factor 1 entsteht überwiegend in der Leber, ausgelöst durch die Bindung von Wachstumshormon an Leberzellen, und zirkuliert größtenteils an Bindeproteine gekoppelt im Blut. Es bindet an den IGF-1-Rezeptor und vermittelt darüber einen Großteil der wachstumsbezogenen Effekte von Wachstumshormon auf Muskel-, Knochen- und Bindegewebe. Ein IGF-1-Analogon mit verlängerter Halbwertszeit wird in der Forschung als eigenständiges Werkzeug eingesetzt, unabhängig von der körpereigenen Regulation über Wachstumshormon.",
   "text_en": "Insulin-like growth factor 1 is produced mainly in the liver, triggered by growth hormone binding to liver cells, and circulates in the blood largely bound to carrier proteins. It binds the IGF-1 receptor and mediates much of growth hormone's effect on muscle, bone and connective tissue. An IGF-1 analogue with an extended half-life is used in research as a standalone tool, independent of the body's own regulation via growth hormone.",
   "synonyme": [
+   "Somatomedin C"
+  ],
+  "synonyme_en": [
    "Somatomedin C"
   ],
   "siehe": [
@@ -835,11 +1242,23 @@ window.PK.glossar = [
   "begriff": "IGF-1 LR3",
   "begriff_en": "IGF-1 LR3",
   "kategorie": "wirkstoff",
-  "kurz": "Ein gentechnisch verlängertes Analogon von IGF-1 mit 83 Aminosäuren, in Tiermodellen auf Wachstumseffekte untersucht und im Spitzensport als Dopingsubstanz gelistet.",
-  "kurz_en": "A genetically lengthened analogue of IGF-1 with 83 amino acids, studied in animal models for growth effects and listed as a doping substance in competitive sport.",
-  "text": "IGF-1 LR3 ist ein rekombinantes Analogon des körpereigenen Insulin-like Growth Factor 1, das ursprünglich für die Zellkultur-Forschung entwickelt wurde. Es trägt zusätzliche Aminosäuren am N-terminalen Ende sowie eine veränderte Position 3, wodurch es kaum noch von IGF-Bindungsproteinen gebunden wird. Untersucht wird es vor allem in Tiermodellen zu Organ- und Zellwachstum, außerhalb der Forschung wird es jedoch verbreitet und ohne belastbare Humandaten zur Leistungssteigerung eingesetzt.",
-  "text_en": "IGF-1 LR3 is a recombinant analogue of the naturally occurring insulin-like growth factor 1, originally developed for cell-culture research. It carries additional amino acids at the N-terminus and an altered position 3, which makes it largely unable to bind IGF-binding proteins. It is studied mainly in animal models of organ and cell growth, but outside research it is also widely used for purported performance enhancement without solid human data.",
+  "kurz": "Verändertes IGF-1-Analogon, in präklinischen Modellen untersucht.",
+  "kurz_en": "Modified IGF-1 analogue investigated in preclinical models.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 7561636",
+    "titel_en": "PubMed: Research publication, PMID 7561636",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/7561636/"
+   }
+  ],
+  "text": "Die angeführte Arbeit untersucht Long R3 IGF-I im Meerschweinchenmodell und beschreibt eine geringere Bindung an IGF-Bindeproteine. Ergebnisse zu dieser veränderten Form sind nicht mit Befunden zum körpereigenen IGF-1 gleichzusetzen.",
+  "text_en": "The cited paper investigates Long R3 IGF-I in guinea pigs and describes reduced affinity for IGF-binding proteins. Findings for this modified form are not interchangeable with findings for endogenous IGF-1.",
   "synonyme": [
+   "Long R3 IGF-1",
+   "LR3-IGF-1",
+   "IGF-1 Long R3"
+  ],
+  "synonyme_en": [
    "Long R3 IGF-1",
    "LR3-IGF-1",
    "IGF-1 Long R3"
@@ -853,9 +1272,19 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Versuch außerhalb eines lebenden Organismus, meist an Zellkulturen. Sagt nichts über eine Wirkung beim Menschen aus.",
   "kurz_en": "A test outside a living organism, usually on cell cultures. It says nothing about an effect in humans.",
+  "quellen": [
+   {
+    "titel": "NCI: in vitro",
+    "titel_en": "NCI: in vitro",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/in-vitro"
+   }
+  ],
   "text": "In-vitro-Studien untersuchen isolierte Zellen oder Moleküle in einer kontrollierten Umgebung wie einer Petrischale. Sie zeigen erste biochemische Effekte, aber der Zellkontext ersetzt keinen ganzen Organismus. Solche Daten gelten als reine Laborforschung und lassen keine Rückschlüsse auf Menschen zu.",
   "text_en": "In vitro studies examine isolated cells or molecules in a controlled setting such as a petri dish. They can show early biochemical effects, but the cell context does not replace a whole organism. This kind of data counts as lab research only and does not translate to humans.",
   "synonyme": [
+   "in vitro"
+  ],
+  "synonyme_en": [
    "in vitro"
   ],
   "siehe": [
@@ -872,11 +1301,21 @@ window.PK.glossar = [
   "begriff": "In-vivo",
   "begriff_en": "In vivo",
   "kategorie": "studien",
-  "kurz": "Versuch in einem lebenden Organismus, meist im Tiermodell. Näher an der Realität als Zellkultur, aber kein Beleg für Menschen.",
-  "kurz_en": "A test inside a living organism, usually an animal model. Closer to reality than a cell culture, but still no proof for humans.",
-  "text": "In-vivo-Studien beobachten einen vollständigen Organismus mit Stoffwechsel, Immunsystem und Organsystemen, meist im Tiermodell. Das liefert realistischere Hinweise als eine Zellkultur. Wegen Unterschieden in Stoffwechsel und Physiologie lassen sich Ergebnisse aus Tieren nicht direkt auf Menschen übertragen.",
-  "text_en": "In vivo studies observe a whole organism with metabolism, immune system and organs, usually an animal model. This gives more realistic clues than a cell culture. Because metabolism and physiology differ, animal results do not transfer directly to humans.",
+  "kurz": "Untersuchung in einem lebenden Organismus. Der Begriff allein sagt nicht, ob Tier- oder Humandaten vorliegen.",
+  "kurz_en": "An investigation in a living organism. The term alone does not distinguish animal from human data.",
+  "quellen": [
+   {
+    "titel": "NCI: in vivo",
+    "titel_en": "NCI: in vivo",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/in-vivo"
+   }
+  ],
+  "text": "In vivo bedeutet, dass eine Untersuchung in einem lebenden Organismus stattfindet. Das kann ein Tier oder ein Mensch sein. Bei einem Forschungsergebnis muss deshalb immer das untersuchte Modell genannt werden. Ergebnisse aus Tieren lassen sich nicht unmittelbar auf Menschen übertragen.",
+  "text_en": "In vivo means that an investigation takes place in a living organism. This may be an animal or a human. Research findings must therefore identify the model studied. Animal results cannot be directly transferred to humans.",
   "synonyme": [
+   "in vivo"
+  ],
+  "synonyme_en": [
    "in vivo"
   ],
   "siehe": [
@@ -895,10 +1334,20 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Inkretine sind Darmhormone, die nach dem Essen ausgeschüttet werden und an der Regulation der Insulinausschüttung beteiligt sind.",
   "kurz_en": "Incretins are gut hormones released after eating that are involved in regulating insulin release.",
+  "quellen": [
+   {
+    "titel": "NIDDK: Grundlagen der Inkretinforschung",
+    "titel_en": "NIDDK: Foundations of incretin research",
+    "url": "https://www.niddk.nih.gov/news/archive/2021/story-discovery-medications-diabetes-obesity-emerged-research-pancreatic-hormone"
+   }
+  ],
   "text": "Inkretine sind eine Hormonklasse aus dem Darm, zu der GLP-1 und GIP zählen. Sie werden nach der Nahrungsaufnahme aus spezialisierten Darmzellen ausgeschüttet und binden an eigene Rezeptoren auf den Betazellen der Bauchspeicheldrüse. Über diesen Mechanismus ist die Insulinausschüttung nach oralem Zuckerkonsum stärker als nach intravenöser Gabe derselben Menge, ein Effekt, der als Inkretineffekt bezeichnet wird. Mehrere zugelassene und in Entwicklung befindliche Arzneimittel ahmen diesen Signalweg nach.",
   "text_en": "Incretins are a hormone class from the gut that includes GLP-1 and GIP. They are released from specialised gut cells after eating and bind their own receptors on pancreatic beta cells. Through this mechanism, insulin release after oral glucose intake is higher than after an intravenous dose of the same amount, an effect known as the incretin effect. Several approved and investigational medicines mimic this pathway.",
   "synonyme": [
    "Inkretinhormone"
+  ],
+  "synonyme_en": [
+   "Incretin hormones"
   ],
   "siehe": [
    "glp-1",
@@ -921,11 +1370,21 @@ window.PK.glossar = [
   "begriff": "Ipamorelin",
   "begriff_en": "Ipamorelin",
   "kategorie": "wirkstoff",
-  "kurz": "Selektives Pentapeptid aus der Klasse der Growth-Hormone-Releasing-Peptide, in früher klinischer Forschung untersucht.",
-  "kurz_en": "A selective pentapeptide from the growth hormone-releasing peptide class, studied in early clinical research.",
-  "text": "Ipamorelin ist ein aus fünf Aminosäuren bestehendes synthetisches Peptid, das den körpereigenen Botenstoff Ghrelin nachahmt. Es wurde 1998 als erster selektiver Vertreter seiner Wirkstoffklasse beschrieben und in klinischen Studien unter anderem bei Patienten nach Bauchoperationen untersucht. Für Wachstumshormon-bezogene Anwendungen liegen bislang keine kontrollierten Studien an gesunden Erwachsenen vor.",
-  "text_en": "Ipamorelin is a synthetic peptide made up of five amino acids that mimics the body's own messenger ghrelin. It was first described in 1998 as the first selective member of its drug class and has been studied in clinical trials including in patients recovering from abdominal surgery. For growth hormone-related applications, no controlled studies in healthy adults are available to date.",
+  "kurz": "Synthetisches Pentapeptid, in Studien zur Wachstumshormon-Ausschüttung untersucht.",
+  "kurz_en": "Synthetic pentapeptide investigated in studies of growth hormone release.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 9849822",
+    "titel_en": "PubMed: Research publication, PMID 9849822",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9849822/"
+   }
+  ],
+  "text": "Die Entwicklungsarbeit beschreibt ein Pentapeptid und untersucht Rezeptorbezug sowie Hormonausschüttung in Zell- und Tiermodellen. Die dortigen Befunde lassen sich nicht pauschal auf Menschen übertragen.",
+  "text_en": "The development paper describes a pentapeptide and investigates receptor involvement and hormone release in cellular and animal models. Those findings cannot be generally transferred to humans.",
   "synonyme": [
+   "NNC 26-0161"
+  ],
+  "synonyme_en": [
    "NNC 26-0161"
   ],
   "link": "wirkstoffe/ipamorelin.html"
@@ -937,6 +1396,13 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "ISO 17025 ist die internationale Norm für die fachliche Kompetenz von Prüf- und Kalibrierlaboren.",
   "kurz_en": "ISO 17025 is the international standard for the technical competence of testing and calibration laboratories.",
+  "quellen": [
+   {
+    "titel": "ISO/IEC 17025:2017: Kompetenz von Prüflaboren",
+    "titel_en": "ISO/IEC 17025:2017: Competence of testing laboratories",
+    "url": "https://www.iso.org/standard/66912.html"
+   }
+  ],
   "langform": "ISO/IEC 17025",
   "langform_en": "ISO/IEC 17025",
   "text": "Eine Akkreditierung nach dieser Norm bedeutet, dass Verfahren, Geräte und Personal eines Labors unabhängig bewertet wurden. Sie ist ein Qualitätsmerkmal des jeweiligen Labors, aber keine Garantie für ein bestimmtes CoA-Ergebnis.",
@@ -956,12 +1422,22 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Die Internationale Einheit misst die biologische Wirkstärke eines Stoffes gegenüber einem Referenzstandard, nicht sein Gewicht.",
   "kurz_en": "The International Unit measures a substance's biological potency against a reference standard, not its weight.",
+  "quellen": [
+   {
+    "titel": "WHO: Biologische Referenzstandards",
+    "titel_en": "WHO: Biological reference standards",
+    "url": "https://www.who.int/activities/providing-international-biological-reference-standards"
+   }
+  ],
   "langform": "Internationale Einheit",
   "langform_en": "International Unit",
   "text": "Bei Stoffen wie Wachstumshormon lässt sich die Menge nicht allein über das Gewicht sinnvoll angeben, weil unterschiedliche Chargen bei gleichem Gewicht unterschiedlich rein sein können. Die Internationale Einheit setzt die Menge stattdessen in Bezug zu einem festgelegten Referenzpräparat der WHO. Ein Milligramm eines Hormons entspricht deshalb nicht automatisch derselben Zahl an Einheiten wie ein Milligramm eines anderen Präparats.",
   "text_en": "For substances such as growth hormone, weight alone does not describe the amount meaningfully, because different batches can vary in purity at the same weight. The International Unit instead sets the amount in relation to a defined WHO reference preparation. One milligram of one hormone therefore does not automatically equal the same number of units as one milligram of a different preparation.",
   "synonyme": [
    "IE"
+  ],
+  "synonyme_en": [
+   "IU"
   ],
   "siehe": [
    "milligramm-mikrogramm",
@@ -973,11 +1449,22 @@ window.PK.glossar = [
   "begriff": "Kisspeptin-10",
   "begriff_en": "Kisspeptin-10",
   "kategorie": "wirkstoff",
-  "kurz": "Kürzestes bioaktives Fragment des körpereigenen Kisspeptin-Systems, in der endokrinologischen Forschung zur Steuerung der Hypothalamus-Hypophysen-Gonaden-Achse untersucht.",
-  "kurz_en": "The shortest bioactive fragment of the body's own kisspeptin system, studied in endocrine research on control of the hypothalamic-pituitary-gonadal axis.",
-  "text": "Kisspeptin-10 ist das kürzeste Fragment des körpereigenen Peptids Kisspeptin (Metastin) mit voller Aktivität am KISS1R-Rezeptor. In der Forschung dient es zur gezielten Stimulation der GnRH-Ausschüttung und wird zur Untersuchung der Hypothalamus-Hypophysen-Gonaden-Achse bei Fragen zu Pubertätsentwicklung, Hypogonadismus und Fruchtbarkeit eingesetzt. Größere klinische Studien zu Endpunkten wie Eizellreifung oder sexueller Erregung arbeiteten meist mit dem längeren natürlichen Isoform Kisspeptin-54, das am selben Rezeptor wirkt.",
-  "text_en": "Kisspeptin-10 is the shortest fragment of the body's own peptide kisspeptin (metastin) that retains full activity at the KISS1R receptor. In research it is used to trigger GnRH release directly and to study the hypothalamic-pituitary-gonadal axis in questions of pubertal development, hypogonadism, and fertility. Larger clinical trials on endpoints such as oocyte maturation or sexual arousal mostly used the longer natural isoform kisspeptin-54, which acts on the same receptor.",
+  "kurz": "Peptidfamilie in der endokrinologischen Forschung; hier steht Kisspeptin-10 im Mittelpunkt.",
+  "kurz_en": "Peptide family investigated in endocrine research; this catalogue focuses on kisspeptin-10.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 21632807",
+    "titel_en": "PubMed: Research publication, PMID 21632807",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21632807/"
+   }
+  ],
+  "text": "Die angeführte Studie untersucht Kisspeptin-10 bei Männern. Andere Isoformen wie Kisspeptin-54 müssen getrennt betrachtet werden. Der Sammelname Kisspeptin allein beschreibt die untersuchte Form nicht vollständig.",
+  "text_en": "The cited study investigates kisspeptin-10 in men. Other isoforms such as kisspeptin-54 must be considered separately. The umbrella term kisspeptin does not fully specify the form studied.",
   "synonyme": [
+   "Metastin (45-54)",
+   "KP-10"
+  ],
+  "synonyme_en": [
    "Metastin (45-54)",
    "KP-10"
   ],
@@ -990,10 +1477,20 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Studie an menschlichen Teilnehmern, meist in Phasen I bis III gegliedert. Die aussagekräftigste Studienart für den Menschen.",
   "kurz_en": "A study in human participants, usually structured in phases I to III. The most informative study type for humans.",
-  "text": "Eine klinische Studie prüft eine Substanz erstmals oder weiterführend an menschlichen Teilnehmern, üblicherweise nach den Phasen I bis III. Sie folgt einem festen Prüfplan mit Ein- und Ausschlusskriterien sowie einer ethischen Genehmigung. Von den Studienarten liefert sie die belastbarsten Daten, ersetzt aber keine individuelle medizinische Beratung.",
-  "text_en": "A clinical trial tests a substance in human participants for the first time or at a later stage, typically following phases I to III. It follows a fixed protocol with inclusion and exclusion criteria and ethical approval. Of the study types, it provides the most reliable data, but it does not replace individual medical advice.",
+  "quellen": [
+   {
+    "titel": "NCI: clinical trial",
+    "titel_en": "NCI: clinical trial",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/clinical-trial"
+   }
+  ],
+  "text": "Eine klinische Studie untersucht eine medizinische Fragestellung mit Menschen. Studien unterscheiden sich unter anderem durch Größe, Vergleichsgruppe, Verblindung und untersuchte Endpunkte. Diese Merkmale bestimmen mit, wie belastbar ein Ergebnis ist. Eine registrierte oder veröffentlichte Studie allein belegt weder eine Zulassung noch die Qualität eines Shopprodukts.",
+  "text_en": "A clinical study investigates a medical question involving people. Studies differ in size, comparison groups, blinding and outcomes measured. These features help determine how reliable a result is. Registration or publication of a study alone does not establish approval or the quality of a shop product.",
   "synonyme": [
    "klinische Prüfung"
+  ],
+  "synonyme_en": [
+   "Clinical study"
   ],
   "siehe": [
    "studienphasen",
@@ -1012,8 +1509,15 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Konzentration gibt an, wie viel eines Stoffes in einem bestimmten Flüssigkeitsvolumen gelöst ist, meist in mg pro ml.",
   "kurz_en": "Concentration states how much of a substance is dissolved in a given volume of liquid, usually in mg per ml.",
-  "text": "Nach dem Rekonstituieren eines lyophilisierten Peptids ergibt sich die Konzentration aus der eingewogenen Pulvermenge geteilt durch das zugegebene Flüssigkeitsvolumen. Eine Angabe von 5 mg pro ml bedeutet, dass in jedem Milliliter der Lösung 5 Milligramm des gelösten Stoffes enthalten sind. Diese Rechengröße ist rein mathematisch und unabhängig von einer bestimmten Verwendung.",
-  "text_en": "After reconstituting a lyophilised peptide, the concentration follows from the weighed powder amount divided by the liquid volume added. A figure of 5 mg per ml means each millilitre of the solution contains 5 milligrams of dissolved substance. This figure is a plain calculation and independent of any particular use.",
+  "quellen": [
+   {
+    "titel": "IUPAC Gold Book: Massenkonzentration",
+    "titel_en": "IUPAC Gold Book: Mass concentration",
+    "url": "https://goldbook.iupac.org/terms/view/M03713"
+   }
+  ],
+  "text": "Bei der Massenkonzentration wird die Masse eines bestimmten Stoffes auf das Volumen der fertigen Lösung bezogen, etwa in mg/ml. Pulvergewicht und tatsächliche Peptidmasse können sich unterscheiden. Die Angabe beschreibt eine Zusammensetzung, keine Anwendung.",
+  "text_en": "Mass concentration relates the mass of a specified substance to the final solution volume, for example in mg/ml. Powder weight and actual peptide mass can differ. This value describes composition, not an application.",
   "siehe": [
    "rekonstitution",
    "milligramm-mikrogramm",
@@ -1025,11 +1529,22 @@ window.PK.glossar = [
   "begriff": "KPV",
   "begriff_en": "KPV",
   "kategorie": "wirkstoff",
-  "kurz": "Ein aus drei Aminosäuren bestehendes Fragment von alpha-MSH, das in Tiermodellen auf entzündungshemmende Eigenschaften im Darm und auf der Haut untersucht wird.",
-  "kurz_en": "A three-amino-acid fragment of alpha-MSH, studied in animal models for anti-inflammatory properties in the gut and on the skin.",
-  "text": "KPV ist ein Tripeptid aus den Aminosäuren Lysin, Prolin und Valin, abgeleitet vom C-terminalen Ende des Hormons alpha-MSH. Es zählt zu den kleinsten untersuchten Peptiden in der Entzündungsforschung, mit einem Schwerpunkt auf Tiermodellen zu chronisch entzündlichen Darmerkrankungen und Hautentzündungen. Humanstudien liegen bislang nicht vor.",
-  "text_en": "KPV is a tripeptide made of the amino acids lysine, proline, and valine, derived from the C-terminal end of the hormone alpha-MSH. It is among the smallest peptides studied in inflammation research, with a focus on animal models of chronic inflammatory bowel disease and skin inflammation. Human studies are not yet available.",
+  "kurz": "Aus Melanocortin abgeleitetes Tripeptid, in präklinischen Entzündungsmodellen untersucht.",
+  "kurz_en": "Melanocortin-derived tripeptide investigated in preclinical inflammation models.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 18092346",
+    "titel_en": "PubMed: Research publication, PMID 18092346",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18092346/"
+   }
+  ],
+  "text": "KPV steht für Lysin-Prolin-Valin, ein kurzes Fragment aus dem Melanocortin-Kontext. Die angeführte Arbeit untersucht es in Mausmodellen entzündlicher Darmerkrankungen. Das ist kein klinischer Anwendungsnachweis.",
+  "text_en": "KPV stands for lysine-proline-valine, a short fragment in the melanocortin context. The cited paper investigates it in mouse models of inflammatory bowel disease. This is not clinical evidence of use.",
   "synonyme": [
+   "Lys-Pro-Val",
+   "alpha-MSH(11-13)"
+  ],
+  "synonyme_en": [
    "Lys-Pro-Val",
    "alpha-MSH(11-13)"
   ],
@@ -1042,10 +1557,20 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Kupferpeptide sind Komplexe aus einem kleinen Peptid und einem Kupferion, am bekanntesten ist GHK-Cu.",
   "kurz_en": "Copper peptides are complexes of a small peptide and a copper ion, the best known being GHK-Cu.",
+  "quellen": [
+   {
+    "titel": "GHK als Kupfer-bindendes Peptid in der Kristallographie",
+    "titel_en": "GHK as a copper-binding peptide in crystallography",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7709198/"
+   }
+  ],
   "text": "Kupferpeptide sind Verbindungen, bei denen ein kleines Peptid ein Kupferion koordiniert bindet. Das bekannteste Beispiel ist GHK, ein aus drei Aminosäuren bestehendes Peptid, das im menschlichen Blutplasma, Speichel und Urin vorkommt und dort natürlicherweise an Kupfer gebunden ist. In seiner Kupfer-Komplexform wird GHK-Cu vor allem in der Hautforschung untersucht, mit ergänzenden präklinischen Daten zu Bindegewebe und Wundheilung.",
   "text_en": "Copper peptides are compounds in which a small peptide coordinates a copper ion. The best-known example is GHK, a three-amino-acid peptide found in human blood plasma, saliva and urine, where it naturally occurs bound to copper. In its copper-complex form, GHK-Cu is studied mainly in skin research, with additional preclinical data on connective tissue and wound healing.",
   "synonyme": [
    "GHK-Cu-Komplexe"
+  ],
+  "synonyme_en": [
+   "GHK-Cu complexes"
   ],
   "siehe": [
    "aminosaeure",
@@ -1065,8 +1590,15 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Lagerung beschreibt, wie ein Peptid vor Gebrauch aufbewahrt wird, je nach Zustand meist kühl, trocken und dunkel.",
   "kurz_en": "Storage describes how a peptide is kept before use, usually cool, dry and dark depending on its state.",
-  "text": "Lyophilisiertes Pulver bleibt bei kühler, dunkler und trockener Aufbewahrung deutlich stabiler als eine rekonstituierte Lösung. Hersteller geben auf Etikett oder Datenblatt konkrete Temperaturangaben vor, an denen sich die Lagerung orientiert. Wärme, Feuchtigkeit und Licht sind die drei Faktoren, die den Zustand einer Probe über die Zeit am stärksten verändern.",
-  "text_en": "Lyophilised powder stays considerably more stable under cool, dark and dry storage than a reconstituted solution does. Manufacturers state specific temperature ranges on the label or datasheet, and storage follows those figures. Heat, moisture and light are the three factors that change a sample's condition over time the most.",
+  "quellen": [
+   {
+    "titel": "Hoofnagle et al. (2016): Peptidanalytik und Laborhandhabung",
+    "titel_en": "Hoofnagle et al. (2016): Peptide analysis and laboratory handling",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26719571/"
+   }
+  ],
+  "text": "Stabilität hängt unter anderem von Sequenz, Formulierung und Bedingungen ab. Maßgeblich sind die Spezifikation und belastbare Stabilitätsdaten des konkreten Materials.",
+  "text_en": "Stability depends on sequence, formulation and conditions, among other factors. The material’s specification and substantiated stability data are decisive.",
   "siehe": [
    "lyophilisat",
    "lichtschutz",
@@ -1080,8 +1612,15 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Lichtschutz bezeichnet Maßnahmen, die eine Probe vor Lichteinwirkung bewahren, etwa dunkle Fläschchen oder Lagerung im Dunkeln.",
   "kurz_en": "Light protection covers measures that shield a sample from light exposure, such as amber vials or storage in the dark.",
-  "text": "Manche Peptide reagieren empfindlich auf UV- und sichtbares Licht, das den Abbau der Molekülstruktur über die Zeit begünstigen kann. Braunglas-Vials, lichtundurchlässige Umverpackung oder die Aufbewahrung in einer geschlossenen Schublade zählen zu den üblichen Lichtschutz-Maßnahmen im Labor. Kombiniert mit kühler Lagerung ergibt sich daraus die längste Haltbarkeit für lyophilisiertes Material.",
-  "text_en": "Some peptides are sensitive to UV and visible light, which can encourage breakdown of the molecular structure over time. Amber glass vials, light-blocking outer packaging or storage in a closed drawer are common light-protection measures in the lab. Combined with cool storage, these give lyophilised material its longest stability.",
+  "quellen": [
+   {
+    "titel": "ICH Q1B: Photostabilitätsprüfung",
+    "titel_en": "ICH Q1B: Photostability testing",
+    "url": "https://www.ema.europa.eu/en/scientific-guidelines/ich-q1b-photostability-testing-new-active-substances-medicinal-products"
+   }
+  ],
+  "text": "Photostabilitätsprüfungen untersuchen, ob Licht eine Substanz oder Formulierung verändert. Geeignete Verpackung kann die Exposition begrenzen. Die benötigten Bedingungen sind produktspezifisch; Lichtschutz allein belegt keine bestimmte Haltbarkeit.",
+  "text_en": "Photostability tests investigate whether light changes a substance or formulation. Suitable packaging can limit exposure. Required conditions are product-specific; light protection alone does not establish a particular shelf life.",
   "siehe": [
    "lagerung",
    "lyophilisat"
@@ -1092,11 +1631,23 @@ window.PK.glossar = [
   "begriff": "LL-37",
   "begriff_en": "LL-37",
   "kategorie": "wirkstoff",
-  "kurz": "Ein körpereigenes antimikrobielles Peptid aus 37 Aminosäuren, das Haut und Schleimhäute schützt und in klinischen Studien zur Wundheilung untersucht wird.",
-  "kurz_en": "A naturally occurring antimicrobial peptide made of 37 amino acids that protects skin and mucous membranes, studied in clinical trials for wound healing.",
-  "text": "LL-37 ist das einzige beim Menschen bekannte Peptid der Cathelicidin-Familie und wird von Immunzellen sowie Haut- und Schleimhautzellen als Reaktion auf Verletzung oder Infektion gebildet. Es entsteht durch Abspaltung aus dem Vorläuferprotein hCAP18. In der klinischen Forschung wird vor allem die topische Anwendung bei schwer heilenden Wunden untersucht, etwa bei venösen Beingeschwüren und diabetischem Fußsyndrom.",
-  "text_en": "LL-37 is the only known member of the cathelicidin peptide family in humans and is produced by immune cells as well as skin and mucosal cells in response to injury or infection. It is generated by cleavage from the precursor protein hCAP18. Clinical research has focused mainly on topical application for hard-to-heal wounds, such as venous leg ulcers and diabetic foot ulcers.",
+  "kurz": "Körpereigenes antimikrobielles Peptid, auch Gegenstand klinischer Wundforschung.",
+  "kurz_en": "Endogenous antimicrobial peptide also investigated in clinical wound research.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 25041740",
+    "titel_en": "PubMed: Research publication, PMID 25041740",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25041740/"
+   }
+  ],
+  "text": "Die verlinkte randomisierte Studie untersucht LL-37 bei schwer heilenden venösen Beingeschwüren. Ihre Ergebnisse betreffen das konkrete Studienpräparat und Studiendesign, nicht jedes Produkt mit der Bezeichnung LL-37.",
+  "text_en": "The linked randomised trial investigates LL-37 in hard-to-heal venous leg ulcers. Its findings concern the specific study preparation and design, not every product labelled LL-37.",
   "synonyme": [
+   "Cathelicidin",
+   "hCAP18(134-170)",
+   "Human Cathelicidin"
+  ],
+  "synonyme_en": [
    "Cathelicidin",
    "hCAP18(134-170)",
    "Human Cathelicidin"
@@ -1108,10 +1659,17 @@ window.PK.glossar = [
   "begriff": "Lyophilisat",
   "begriff_en": "Lyophilisate",
   "kategorie": "handhabung",
-  "kurz": "Lyophilisat ist die gefriergetrocknete Pulverform eines Peptids, die stabilste Lagerform vor dem Lösen.",
-  "kurz_en": "Lyophilisate is the freeze-dried powder form of a peptide, the most stable storage form before reconstitution.",
-  "text": "Lyophilisat entsteht, wenn eine gelöste Peptidprobe im Labor eingefroren und anschließend unter Vakuum getrocknet wird, sodass das Wasser direkt vom festen in den gasförmigen Zustand übergeht. Das Ergebnis ist ein Pulver oder ein lockerer Kuchen im Vial. In dieser Form bleibt ein Peptid deutlich länger stabil als in gelöster Form und wird erst kurz vor der Verwendung im Labor rekonstituiert.",
-  "text_en": "Lyophilisate is produced when a dissolved peptide sample is frozen and then dried under vacuum in the laboratory, so the water passes directly from a solid to a gas. The result is a powder or a loose cake inside the vial. In this form a peptide stays stable for much longer than in solution and is only reconstituted shortly before use.",
+  "kurz": "Ein durch Gefriertrocknung erhaltenes Material, beispielsweise ein Pulver im Laborfläschchen.",
+  "kurz_en": "Material obtained by freeze-drying, such as a powder in a laboratory vial.",
+  "quellen": [
+   {
+    "titel": "FDA: Lyophilisation",
+    "titel_en": "FDA: Lyophilization",
+    "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-guides/lyophilization-parenteral-793"
+   }
+  ],
+  "text": "Bei der Gefriertrocknung wird Wasser aus einer gefrorenen Probe unter Vakuum entfernt. Zurück bleibt ein trockenes Pulver oder ein poröser Kuchen. Stabilität und Haltbarkeit hängen von Substanz, Formulierung und Verpackung ab; die Form allein garantiert sie nicht.",
+  "text_en": "Freeze-drying removes water from a frozen sample under vacuum. It leaves a dry powder or porous cake. Stability and shelf life depend on the substance, formulation and packaging; the physical form alone does not guarantee them.",
   "siehe": [
    "rekonstitution",
    "lagerung",
@@ -1126,9 +1684,19 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Massenspektrometrie bestimmt das Molekulargewicht einer Probe und bestätigt damit, um welches Molekül es sich handelt.",
   "kurz_en": "Mass spectrometry determines a sample's molecular weight and so confirms which molecule is actually present.",
+  "quellen": [
+   {
+    "titel": "FDA: Analytik komplexer Gemische und Peptide",
+    "titel_en": "FDA: Analysis of complex mixtures and peptides",
+    "url": "https://www.fda.gov/industry/generic-drug-user-fee-amendments/fys-2013-2017-regulatory-science-report-complex-mixtures-and-peptides"
+   }
+  ],
   "text": "In Kombination mit Flüssigchromatographie (LC-MS) lässt sich so die Identität eines Peptids prüfen, unabhängig vom Reinheitswert. Ein hoher Reinheitswert ohne diese Prüfung sagt nichts darüber aus, ob überhaupt das richtige Molekül vorliegt.",
   "text_en": "Combined with liquid chromatography (LC-MS), it verifies a peptide's identity independently of its purity value. A high purity value without this check says nothing about whether the correct molecule is present at all.",
   "synonyme": [
+   "MS"
+  ],
+  "synonyme_en": [
    "MS"
   ],
   "siehe": [
@@ -1147,10 +1715,20 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Melanocortine sind körpereigene Peptidhormone aus POMC, die über fünf Rezeptoren Haut, Appetit und Sexualfunktion regulieren.",
   "kurz_en": "Melanocortins are peptide hormones derived from POMC that bind five receptor types regulating skin, appetite and sexual response.",
+  "quellen": [
+   {
+    "titel": "NCBI Endotext: Melanocortin-Rezeptoren",
+    "titel_en": "NCBI Endotext: Melanocortin receptors",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK279118/"
+   }
+  ],
   "text": "Melanocortine sind eine Familie körpereigener Peptidhormone, die aus dem Vorläuferprotein Proopiomelanocortin (POMC) entstehen, darunter alpha-MSH und ACTH. Sie binden an fünf verschiedene Melanocortin-Rezeptoren (MC1R bis MC5R), die unter anderem Hautpigmentierung, Appetit, Energiehaushalt, Entzündungsprozesse und sexuelle Reaktion regulieren. Synthetische Melanocortin-Rezeptor-Agonisten setzen gezielt an einzelnen dieser Rezeptoren an.",
   "text_en": "Melanocortins are a family of peptide hormones derived from the precursor protein proopiomelanocortin (POMC), including alpha-MSH and ACTH. They bind five distinct melanocortin receptors (MC1R to MC5R) that regulate skin pigmentation, appetite, energy balance, inflammatory processes and sexual response, among other functions. Synthetic melanocortin receptor agonists target individual receptors within this system.",
   "synonyme": [
    "Melanocortin-System"
+  ],
+  "synonyme_en": [
+   "Melanocortin system"
   ],
   "siehe": [
    "rezeptor",
@@ -1170,11 +1748,22 @@ window.PK.glossar = [
   "begriff": "Melanotan II",
   "begriff_en": "Melanotan II",
   "kategorie": "wirkstoff",
-  "kurz": "Ein synthetisches Analogon des körpereigenen Hormons Alpha-MSH, in frühen klinischen Studien zu Pigmentierung und sexueller Funktion untersucht.",
-  "kurz_en": "A synthetic analog of the body's own hormone alpha-MSH, studied in early clinical trials on pigmentation and sexual function.",
-  "text": "Melanotan II ist ein synthetisches, ringförmiges Peptid aus sieben Aminosäuren, das an mehrere Melanocortin-Rezeptoren im Körper bindet. Es wurde in den 1980er-Jahren an der University of Arizona entwickelt und ist deutlich potenter als das natürliche Vorbild Alpha-MSH. Untersucht wird unter anderem eine Rolle bei der Pigmentierung der Haut sowie bei sexuellem Verlangen und Erregung.",
-  "text_en": "Melanotan II is a synthetic, cyclic seven-amino-acid peptide that binds several melanocortin receptors in the body. It was developed in the 1980s at the University of Arizona and is considerably more potent than its natural counterpart, alpha-MSH. Areas of study include a role in skin pigmentation as well as sexual desire and arousal.",
+  "kurz": "Synthetisches Melanocortin-Analogon, in frühen klinischen Studien untersucht.",
+  "kurz_en": "Synthetic melanocortin analogue investigated in early clinical studies.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 8637402",
+    "titel_en": "PubMed: Research publication, PMID 8637402",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/8637402/"
+   }
+  ],
+  "text": "Die angeführte frühe Phase-I-Arbeit untersucht Melanotan-II in einer kleinen Pilotstudie. Daraus lässt sich keine gesicherte Nutzen-Risiko-Bewertung für eine allgemeine Anwendung ableiten.",
+  "text_en": "The cited early phase I paper investigates melanotan II in a small pilot study. It does not establish a reliable benefit-risk assessment for general use.",
   "synonyme": [
+   "MT-2",
+   "MT2"
+  ],
+  "synonyme_en": [
    "MT-2",
    "MT2"
   ],
@@ -1185,10 +1774,17 @@ window.PK.glossar = [
   "begriff": "Metaanalyse",
   "begriff_en": "Meta-analysis",
   "kategorie": "studien",
-  "kurz": "Statistische Zusammenfassung mehrerer Einzelstudien zu einer Fragestellung. Liefert ein verlässlicheres Bild als eine einzelne Studie.",
-  "kurz_en": "A statistical pooling of multiple individual studies on one question. Gives a more reliable picture than a single study.",
-  "text": "Eine Metaanalyse bündelt die Daten mehrerer bereits veröffentlichter Studien zum gleichen Thema und wertet sie gemeinsam mit statistischen Methoden aus. Das erhöht die Teilnehmerzahl und gleicht Zufallsschwankungen einzelner Studien aus. Die Aussagekraft einer Metaanalyse hängt stark von der Qualität und Vergleichbarkeit der eingeschlossenen Einzelstudien ab.",
-  "text_en": "A meta-analysis pools the data of several already published studies on the same topic and evaluates them together using statistical methods. This increases the participant count and evens out random variation between individual studies. The reliability of a meta-analysis depends heavily on the quality and comparability of the included studies.",
+  "kurz": "Statistische Zusammenfassung mehrerer Studien zu einer gemeinsamen Fragestellung.",
+  "kurz_en": "A statistical synthesis of multiple studies addressing a shared question.",
+  "quellen": [
+   {
+    "titel": "NCI: meta analysis",
+    "titel_en": "NCI: meta analysis",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/meta-analysis"
+   }
+  ],
+  "text": "Eine Metaanalyse führt vergleichbare Ergebnisse mehrerer Studien statistisch zusammen. Sie kann präzisere Schätzungen liefern. Ihre Aussagekraft hängt von der Qualität, Vergleichbarkeit und vollständigen Erfassung der eingeschlossenen Studien ab.",
+  "text_en": "A meta-analysis statistically combines comparable results from multiple studies. It can provide more precise estimates. Its strength depends on the quality, comparability and completeness of the included evidence.",
   "siehe": [
    "klinische-studie",
    "peer-review"
@@ -1204,6 +1800,13 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Ein Milligramm entspricht 1000 Mikrogramm, die gängige Masseneinheit für kleine Peptidmengen auf Etiketten und CoAs.",
   "kurz_en": "One milligram equals 1000 micrograms, the standard mass unit for small peptide amounts on labels and CoAs.",
+  "quellen": [
+   {
+    "titel": "BIPM: SI-Präfixe",
+    "titel_en": "BIPM: SI prefixes",
+    "url": "https://www.bipm.org/en/committees/cg/cgpm/11-1960/resolution-12"
+   }
+  ],
   "text": "Milligramm (mg) und Mikrogramm (µg) sind beides Untereinheiten von Gramm und unterscheiden sich um den Faktor 1000. Auf Vial-Etiketten und in CoAs wird die Peptidmenge meist in Milligramm angegeben, während einzelne Bestandteilsangaben teils in Mikrogramm erscheinen. Der Rechner auf dieser Seite rechnet zwischen Gramm, Milligramm und Mikrogramm rein mathematisch um.",
   "text_en": "Milligrams (mg) and micrograms (µg) are both subunits of the gram and differ by a factor of 1000. Vial labels and CoAs usually state the peptide amount in milligrams, while individual component figures sometimes appear in micrograms. The calculator on this page converts between grams, milligrams and micrograms on a purely mathematical basis.",
   "siehe": [
@@ -1221,10 +1824,25 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Mitochondriale Peptide setzen an der Energieproduktion der Zelle an oder stammen aus mitochondrialer DNA.",
   "kurz_en": "Mitochondrial peptides target cellular energy production or originate from mitochondrial DNA.",
+  "quellen": [
+   {
+    "titel": "Lee et al. (2015): MOTS-c, präklinische Forschung",
+    "titel_en": "Lee et al. (2015): MOTS-c, preclinical research",
+    "url": "https://doi.org/10.1016/j.cmet.2015.02.009"
+   },
+   {
+    "titel": "Cho et al. (2007): Mitochondriale Zielstrukturen im Rattenmodell",
+    "titel_en": "Cho et al. (2007): Mitochondrial targets in a rat model",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17429296/"
+   }
+  ],
   "text": "Mitochondriale Peptide sind keine einheitliche Substanzklasse im klassischen Sinn. Der Begriff fasst Peptide zusammen, die entweder an der inneren Mitochondrienmembran binden oder aus mitochondrialer statt aus Zellkern-DNA kodiert werden. Zur zweiten Gruppe zählt ein kurzes, aus dem mitochondrialen 12S-rRNA-Gen abgeleitetes Peptid, das in Stoffwechselstudien untersucht wird. Ein weiteres Beispiel bindet an Cardiolipin in der inneren Membran und wird in der Forschung zu Zellalterung und Energiestoffwechsel eingesetzt.",
   "text_en": "Mitochondrial peptides are not a single substance class in the classical sense. The term groups together peptides that either bind at the inner mitochondrial membrane or are encoded by mitochondrial rather than nuclear DNA. The second group includes a short peptide derived from the mitochondrial 12S rRNA gene, studied in metabolic research. Another example binds cardiolipin in the inner membrane and is used in research on cellular ageing and energy metabolism.",
   "synonyme": [
    "Mitochondrien-Peptide"
+  ],
+  "synonyme_en": [
+   "Mitochondrial peptides"
   ],
   "siehe": [
    "praeklinisch",
@@ -1243,11 +1861,22 @@ window.PK.glossar = [
   "begriff": "MOTS-c",
   "begriff_en": "MOTS-c",
   "kategorie": "wirkstoff",
-  "kurz": "Mitochondrial kodiertes Peptid, das als Bewegungsmimetikum in der Stoffwechselforschung untersucht wird.",
-  "kurz_en": "A mitochondrially encoded peptide studied as an exercise mimetic in metabolic research.",
-  "text": "MOTS-c ist ein aus 16 Aminosäuren bestehendes Peptid, das nicht im Zellkern, sondern direkt im Erbgut der Mitochondrien kodiert ist. Es wurde 2015 entdeckt und wird als körpereigenes Signalmolekül untersucht, das bei körperlicher Belastung vermehrt ausgeschüttet wird. Die Forschung konzentriert sich auf mögliche Effekte auf Insulinsensitivität, Fettstoffwechsel und Zellalterung.",
-  "text_en": "MOTS-c is a 16-amino-acid peptide encoded directly in mitochondrial DNA rather than in the cell nucleus. It was discovered in 2015 and is studied as an endogenous signaling molecule that is released in greater amounts during physical exertion. Research focuses on possible effects on insulin sensitivity, fat metabolism, and cellular aging.",
+  "kurz": "Aus mitochondrialer DNA abgeleitetes Peptid, in präklinischen Stoffwechselmodellen untersucht.",
+  "kurz_en": "Mitochondrial DNA-derived peptide investigated in preclinical metabolic models.",
+  "quellen": [
+   {
+    "titel": "Lee et al. (2015): MOTS-c, präklinische Forschung",
+    "titel_en": "Lee et al. (2015): MOTS-c, preclinical research",
+    "url": "https://doi.org/10.1016/j.cmet.2015.02.009"
+   }
+  ],
+  "text": "Die Entdeckungsarbeit beschreibt eine kurze Sequenz aus der mitochondrialen DNA und untersucht sie in Zell- und Tiermodellen. Die Zuordnung zur mitochondrialen Forschung belegt keinen Nutzen eines angebotenen Produkts.",
+  "text_en": "The discovery paper describes a short sequence encoded in mitochondrial DNA and investigates it in cellular and animal models. Its role in mitochondrial research does not establish a benefit of a marketed product.",
   "synonyme": [
+   "Mitochondrial-Derived Peptide MOTS-c",
+   "Mitochondrial Open Reading Frame of the 12S rRNA Type-c"
+  ],
+  "synonyme_en": [
    "Mitochondrial-Derived Peptide MOTS-c",
    "Mitochondrial Open Reading Frame of the 12S rRNA Type-c"
   ],
@@ -1260,6 +1889,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Ein Peptid, das im Nervensystem als Signalmolekül zwischen Zellen dient.",
   "kurz_en": "A peptide that acts as a signalling molecule between cells in the nervous system.",
+  "quellen": [
+   {
+    "titel": "Purves et al.: Peptid-Botenstoffe",
+    "titel_en": "Purves et al.: Peptide neurotransmitters",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK10873/"
+   }
+  ],
   "text": "Neuropeptide sind Peptide, die von Nervenzellen freigesetzt werden und dort als Botenstoffe wirken. Sie unterscheiden sich von klassischen Neurotransmittern durch ihre größere Molekülstruktur und binden ebenfalls an spezifische Rezeptoren auf Zielzellen. In der Forschung dienen Neuropeptide unter anderem dazu, Signalwege im zentralen Nervensystem zu kartieren.",
   "text_en": "Neuropeptides are peptides released by nerve cells that act as signalling molecules within the nervous system. They differ from classic neurotransmitters in their larger molecular structure and also bind to specific receptors on target cells. In research, neuropeptides are used among other things to map signalling pathways in the central nervous system.",
   "siehe": [
@@ -1275,9 +1911,19 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Nootropika sind eine breite Substanzklasse, die im Zusammenhang mit Gedächtnis, Lernen oder Stressverarbeitung untersucht wird.",
   "kurz_en": "Nootropics are a broad substance class studied in relation to memory, learning or stress processing.",
-  "text": "Nootropika ist ein Sammelbegriff für eine sehr heterogene Substanzklasse, die von Vitaminen über pflanzliche Extrakte bis zu synthetischen Peptiden reicht und im Zusammenhang mit Gedächtnis, Lernfähigkeit, Aufmerksamkeit oder Stressverarbeitung untersucht wird. Innerhalb der Peptidforschung zählen dazu unter anderem ACTH-abgeleitete Fragmente und Tuftsin-Analoga. Der Begriff wurde 1972 von dem rumänischen Chemiker Corneliu Giurgea geprägt. Für die meisten Peptid-Nootropika liegen bislang vor allem präklinische und russischsprachige Daten vor.",
-  "text_en": "Nootropics is an umbrella term for a very heterogeneous substance class ranging from vitamins to plant extracts to synthetic peptides, studied in relation to memory, learning ability, attention or stress processing. Within peptide research, this includes ACTH-derived fragments and tuftsin analogues, among others. The term was coined in 1972 by Romanian chemist Corneliu Giurgea. Most peptide nootropics are supported mainly by preclinical and Russian-language data so far.",
+  "quellen": [
+   {
+    "titel": "Giurgea (1972): Ursprung des Nootropika-Begriffs",
+    "titel_en": "Giurgea (1972): Origin of the nootropic concept",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/4541214/"
+   }
+  ],
+  "text": "Der von Giurgea 1972 geprägte Begriff bezeichnet Substanzen, die im Zusammenhang mit kognitiven Funktionen untersucht werden. Die Bezeichnung allein belegt weder Nutzen noch Sicherheit. Unterschiedliche Stoffe und Studiendesigns müssen einzeln beurteilt werden.",
+  "text_en": "Coined by Giurgea in 1972, the term describes substances investigated in relation to cognitive functions. The label alone establishes neither benefit nor safety. Different substances and study designs require separate assessment.",
   "synonyme": [
+   "Smart Drugs"
+  ],
+  "synonyme_en": [
    "Smart Drugs"
   ],
   "siehe": [
@@ -1300,13 +1946,24 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Eine kurze Aminosäurekette, eingeteilt nach Länge in Di-, Tri- und Oligopeptid.",
   "kurz_en": "A short amino acid chain, classified by length as di-, tri- or oligopeptide.",
+  "quellen": [
+   {
+    "titel": "Alberts et al.: Proteinstruktur",
+    "titel_en": "Alberts et al.: Protein structure",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK26830/"
+   }
+  ],
   "langform": "Di-, Tri- und Oligopeptid",
   "langform_en": "Di-, tri- and oligopeptide",
-  "text": "Die Länge einer Aminosäurekette bestimmt ihre Bezeichnung im unteren Größenbereich. Zwei Aminosäuren ergeben ein Dipeptid, drei ein Tripeptid. Ketten mit bis zu etwa zehn Aminosäuren werden allgemein als Oligopeptide bezeichnet. Ab einer zweistelligen Anzahl bis etwa 50 Aminosäuren spricht man von einem Polypeptid, darüber und mit fester dreidimensionaler Struktur von einem Protein.",
-  "text_en": "Chain length sets the name at the shorter end of the scale. Two amino acids form a dipeptide, three a tripeptide. Chains of up to roughly ten amino acids are generally called oligopeptides. From around ten up to roughly 50 amino acids, the term is polypeptide, and beyond that, once the chain has a fixed three-dimensional shape, it becomes a protein.",
+  "text": "Oligopeptide bestehen aus wenigen Aminosäuren. Zwei ergeben ein Dipeptid, drei ein Tripeptid. Die Grenze zu längeren Polypeptiden ist eine Benennungskonvention, kein eindeutiger Wechsel der Molekülart.",
+  "text_en": "Oligopeptides contain a small number of amino acids. Two form a dipeptide and three a tripeptide. The boundary with longer polypeptides is a naming convention, not a distinct change in molecular type.",
   "synonyme": [
    "Dipeptid",
    "Tripeptid"
+  ],
+  "synonyme_en": [
+   "Dipeptide",
+   "Tripeptide"
   ],
   "siehe": [
    "peptid",
@@ -1322,11 +1979,22 @@ window.PK.glossar = [
   "begriff": "Oxytocin",
   "begriff_en": "Oxytocin",
   "kategorie": "wirkstoff",
-  "kurz": "Körpereigenes Nonapeptid-Hormon, als Arzneimittel zur Geburtseinleitung zugelassen und zugleich Gegenstand der Forschung zu sozialem Verhalten und Bindung.",
-  "kurz_en": "An endogenous nonapeptide hormone, approved as a medication to induce labor and also studied in research on social behavior and bonding.",
-  "text": "Oxytocin ist ein aus neun Aminosäuren bestehendes Hormon, das im Hypothalamus gebildet und über die Hypophyse ausgeschüttet wird. Als Arzneimittel, etwa Syntocinon oder Pitocin, ist es zur Geburtseinleitung und zur Kontrolle postpartaler Blutungen zugelassen. Getrennt davon wird intranasal verabreichtes Oxytocin in der Grundlagenforschung zu sozialem Verhalten, Vertrauen und Bindung untersucht.",
-  "text_en": "Oxytocin is a nine-amino-acid hormone produced in the hypothalamus and released via the pituitary gland. As a medication, such as Syntocinon or Pitocin, it is approved to induce labor and control postpartum bleeding. Separately, intranasally administered oxytocin is studied in basic research on social behavior, trust, and bonding.",
+  "kurz": "Körpereigenes Peptidhormon, auch in Studien zu sozialem Verhalten untersucht.",
+  "kurz_en": "Endogenous peptide hormone also investigated in studies of social behaviour.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 15931222",
+    "titel_en": "PubMed: Research publication, PMID 15931222",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15931222/"
+   }
+  ],
+  "text": "Die verlinkte Verhaltensstudie untersucht Entscheidungen in einem experimentellen Vertrauensspiel. Derartige Ergebnisse belegen weder allgemein bessere soziale Beziehungen noch die Sicherheit frei angebotener Produkte.",
+  "text_en": "The linked behavioural study investigates decisions in an experimental trust game. Such findings establish neither generally improved social relationships nor the safety of freely marketed products.",
   "synonyme": [
+   "OXT",
+   "Pitocin"
+  ],
+  "synonyme_en": [
    "OXT",
    "Pitocin"
   ],
@@ -1337,10 +2005,17 @@ window.PK.glossar = [
   "begriff": "Partnercode",
   "begriff_en": "Partner code",
   "kategorie": "vergleich",
-  "kurz": "Partnercode ist der Rabattcode, den unsere Partner für dich einlösen; aktuell peptidecompass10.",
-  "kurz_en": "A partner code is the discount code our partners honour for you; currently peptidecompass10.",
-  "text": "Der Code wird an der Kasse des jeweiligen Shops eingegeben und kann laut Anbieterangabe einen Rabatt auslösen. Höhe und Bedingungen legt der Anbieter fest und sind hier nicht immer belegt. Bei zugeordneten Käufen über den Code kann Peptide Compass eine Provision erhalten, ohne dass dies den Dokumentationsscore beeinflusst.",
-  "text_en": "The code is entered at the respective shop's checkout and, according to the vendor, may unlock a discount. Its size and terms are set by the vendor and are not always documented here. On purchases attributed through the code, Peptide Compass may receive a commission, without this affecting the documentation score.",
+  "kurz": "Ein einem Partnerprogramm zugeordneter Code, dessen Bedingungen der jeweilige Anbieter festlegt.",
+  "kurz_en": "A code associated with an affiliate programme, subject to the supplier’s terms.",
+  "quellen": [
+   {
+    "titel": "Peptide Compass: Eigener Affiliate-Hinweis",
+    "titel_en": "Peptide Compass: Our affiliate disclosure",
+    "url": "https://peptidkompass.com/affiliate-hinweis.html"
+   }
+  ],
+  "text": "Ein Partnercode wird einem Partnerprogramm zugeordnet. Ob ein Rabatt oder eine Provision entsteht, hängt von den jeweiligen Bedingungen ab. Die aktuell dokumentierten Partnerschaften und Codes stehen im Affiliate-Hinweis; sie verändern den Dokumentationsscore nicht.",
+  "text_en": "A partner code is associated with an affiliate programme. Whether it generates a discount or commission depends on the applicable terms. Currently documented partnerships and codes are listed in our affiliate disclosure; they do not change the documentation score.",
   "siehe": [
    "affiliate-link"
   ],
@@ -1356,6 +2031,13 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Fachliche Begutachtung eines Studienmanuskripts durch unabhängige Experten vor der Veröffentlichung.",
   "kurz_en": "Expert review of a study manuscript by independent specialists before publication.",
+  "quellen": [
+   {
+    "titel": "NIH: Regeln wissenschaftlicher Begutachtung",
+    "titel_en": "NIH: Guidelines for scientific peer review",
+    "url": "https://oir.nih.gov/system/files/media/file/2026-01/guidelines-conduct_research.pdf"
+   }
+  ],
   "text": "Beim Peer-Review prüfen unabhängige Fachleute vor der Veröffentlichung Methodik, Datenauswertung und Schlussfolgerungen eines Manuskripts. Sie können Korrekturen verlangen oder die Arbeit ablehnen. Eine begutachtete Veröffentlichung gilt als vertrauenswürdiger als ein unbegutachteter Text, ist aber kein Garant für Fehlerfreiheit.",
   "text_en": "In peer review, independent experts check the methodology, data analysis and conclusions of a manuscript before publication. They can request corrections or reject the work. A peer-reviewed publication is considered more trustworthy than an unreviewed text, though it is no guarantee against error.",
   "siehe": [
@@ -1369,15 +2051,26 @@ window.PK.glossar = [
  {
   "slug": "pentadeca-arginate",
   "begriff": "Pentadeca Arginat (PDA)",
-  "begriff_en": "Pentadeca Arginat (PDA)",
+  "begriff_en": "Pentadeca Arginate",
   "kategorie": "wirkstoff",
-  "kurz": "Ein Pentadekapeptid mit derselben Aminosäuresequenz wie BPC-157, angeboten als Arginin-Salz für bessere Löslichkeit und Stabilität.",
-  "kurz_en": "A pentadecapeptide sharing the amino-acid sequence of BPC-157, offered as an arginine salt for improved solubility and stability.",
-  "text": "Pentadeca Arginat, oft als PDA abgekürzt, trägt dieselbe 15 Aminosäuren lange Sequenz wie das bekannte Peptid BPC-157. Der Unterschied liegt im Gegenion: Statt als Acetat-Salz wird die Sequenz hier an Arginin gebunden, was laut Anbietern die Löslichkeit und Haltbarkeit verbessert. Unabhängige Studien, die speziell diese Salzform untersuchen, liegen bislang nicht vor.",
-  "text_en": "Pentadeca Arginate, often abbreviated PDA, carries the same 15-amino-acid sequence as the well-known peptide BPC-157. The difference lies in the counter-ion: instead of an acetate salt, the sequence is bound to arginine, which suppliers describe as improving solubility and shelf stability. Independent studies examining this specific salt form are not yet available.",
+  "kurz": "Handelsbezeichnung für eine als Arginin-Salz von BPC-157 angebotene Form.",
+  "kurz_en": "Trade designation for a form marketed as an arginine salt of BPC-157.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 27847966",
+    "titel_en": "PubMed: Research publication, PMID 27847966",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27847966/"
+   }
+  ],
+  "text": "Die angeführte Primärarbeit untersucht BPC-157. Sie bestätigt keine besonderen Eigenschaften einer als Pentadeca Arginat verkauften Salzform. Ein eigener belastbarer Nachweis für bessere Löslichkeit oder Stabilität dieser Handelsform ist hier nicht ermittelt.",
+  "text_en": "The cited original study investigates BPC-157. It does not establish special properties of a salt form sold as pentadeca arginate. A reliable, dedicated source demonstrating superior solubility or stability of this marketed form has not been established here.",
   "synonyme": [
    "PDA",
    "BPC-157 Arginat-Salz"
+  ],
+  "synonyme_en": [
+   "PDA",
+   "BPC-157 arginate salt"
   ],
   "link": "wirkstoffe/pentadeca-arginate.html"
  },
@@ -1388,10 +2081,20 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Eine kurze Kette aus Aminosäuren, verbunden über Peptidbindungen.",
   "kurz_en": "A short chain of amino acids linked by peptide bonds.",
-  "text": "Ein Peptid besteht aus mehreren Aminosäuren, die über Peptidbindungen aneinandergereiht sind. Zwei Aminosäuren ergeben ein Dipeptid, drei ein Tripeptid, bis zu etwa 50 spricht man von einem Polypeptid. Ab mehr als 50 Aminosäuren und einer festen dreidimensionalen Struktur wird aus dem Peptid ein Protein. Peptide sind damit die kleinere, oft noch ungefaltete Vorstufe auf derselben Skala.",
-  "text_en": "A peptide is made up of several amino acids strung together by peptide bonds. Two amino acids form a dipeptide, three a tripeptide, and up to roughly 50 is called a polypeptide. Above 50 amino acids, once the chain settles into a fixed three-dimensional shape, a peptide becomes a protein. Peptides sit on the same scale as proteins, just smaller and often still unfolded.",
+  "quellen": [
+   {
+    "titel": "NCI: peptide",
+    "titel_en": "NCI: peptide",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/peptide"
+   }
+  ],
+  "text": "Zwei verknüpfte Aminosäuren bilden ein Dipeptid, drei ein Tripeptid. Bei längeren Ketten spricht man auch von Polypeptiden. Eine feste Grenze von 50 Aminosäuren trennt Peptide und Proteine nicht in jedem Fachgebiet.",
+  "text_en": "Two linked amino acids form a dipeptide; three form a tripeptide. Longer chains are also called polypeptides. A fixed boundary of 50 amino acids does not distinguish peptides from proteins in every field.",
   "synonyme": [
    "Peptide"
+  ],
+  "synonyme_en": [
+   "Peptides"
   ],
   "siehe": [
    "aminosaeure",
@@ -1410,6 +2113,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Die chemische Verbindung, die zwei Aminosäuren zu einer Kette verknüpft.",
   "kurz_en": "The chemical link that joins two amino acids into a chain.",
+  "quellen": [
+   {
+    "titel": "Alberts et al.: Proteinstruktur",
+    "titel_en": "Alberts et al.: Protein structure",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK26830/"
+   }
+  ],
   "text": "Eine Peptidbindung entsteht, wenn die Carboxylgruppe einer Aminosäure mit der Aminogruppe der nächsten reagiert und dabei ein Wassermolekül abspaltet. Diese Verbindung wiederholt sich entlang der gesamten Kette und bildet das Rückgrat von Peptiden und Proteinen. Die Reihenfolge der so verknüpften Aminosäuren legt die Sequenz fest.",
   "text_en": "A peptide bond forms when the carboxyl group of one amino acid reacts with the amino group of the next, releasing a water molecule in the process. This link repeats along the entire chain and forms the backbone of peptides and proteins. The order of the amino acids joined this way sets the sequence.",
   "siehe": [
@@ -1425,8 +2135,15 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Peptidgehalt (Net Peptide Content) gibt an, welcher Massenanteil eines Pulvers tatsächlich aus dem Peptid selbst besteht.",
   "kurz_en": "Net peptide content states what share of a powder's mass is actually the peptide itself.",
-  "text": "Der Rest der Masse besteht meist aus Feuchtigkeit, Salzen und dem Gegenion. Ein Pulver kann laut HPLC eine hohe Reinheit aufweisen und trotzdem einen niedrigeren Peptidgehalt haben, weil Reinheit nur das Verhältnis im Chromatogramm beschreibt, nicht das Gesamtgewicht der Probe.",
-  "text_en": "The rest of the mass is usually moisture, salts and the counter ion. A powder can show a high HPLC purity value and still have a lower net peptide content, because purity only describes the ratio within the chromatogram, not the total weight of the sample.",
+  "quellen": [
+   {
+    "titel": "Hoofnagle et al. (2016): Peptidanalytik und Laborhandhabung",
+    "titel_en": "Hoofnagle et al. (2016): Peptide analysis and laboratory handling",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26719571/"
+   }
+  ],
+  "text": "Peptidgehalt bezeichnet den tatsächlichen Peptidanteil einer Probe. Wasser und andere Bestandteile können Pulvermasse und Peptidmasse auseinanderfallen lassen.",
+  "text_en": "Peptide content is the actual peptide fraction of a sample. Water and other constituents can make powder mass differ from peptide mass.",
   "siehe": [
    "reinheit",
    "gegenion",
@@ -1443,6 +2160,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Ein körpereigenes Hormon, das chemisch aus einer Aminosäurekette besteht.",
   "kurz_en": "A hormone the body produces that is chemically an amino acid chain.",
+  "quellen": [
+   {
+    "titel": "Purves et al.: Peptid-Botenstoffe",
+    "titel_en": "Purves et al.: Peptide neurotransmitters",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK10873/"
+   }
+  ],
   "text": "Ein Peptidhormon ist ein Botenstoff, der aus einer Kette von Aminosäuren aufgebaut ist, im Unterschied zu Steroidhormonen, die auf Cholesterin basieren. Peptidhormone werden in Drüsen oder spezialisierten Zellen gebildet und binden an Rezeptoren auf Zielzellen. Insulin ist ein bekanntes Beispiel für ein körpereigenes Peptidhormon.",
   "text_en": "A peptide hormone is a signalling molecule built from a chain of amino acids, unlike steroid hormones, which are based on cholesterol. Peptide hormones are produced in glands or specialised cells and bind to receptors on target cells. Insulin is a well-known example of an endogenous peptide hormone.",
   "siehe": [
@@ -1458,10 +2182,20 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Scheinpräparat ohne Wirkstoff, mit dem eine echte Substanz in Studien verglichen wird. Trennt echte von erwarteten Effekten.",
   "kurz_en": "A dummy preparation with no active ingredient, used to compare against a real substance in a trial. Separates real from expected effects.",
+  "quellen": [
+   {
+    "titel": "NCI: placebo",
+    "titel_en": "NCI: placebo",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/placebo"
+   }
+  ],
   "text": "Ein Placebo sieht aus wie das geprüfte Präparat, enthält aber keinen Wirkstoff. Im Studiendesign dient es als Vergleichsgruppe, um zu zeigen, welcher Anteil einer Reaktion auf die Erwartung der Teilnehmer zurückgeht statt auf die Substanz selbst. Placebokontrolle ist ein zentrales Merkmal aussagekräftiger klinischer Studien, oft kombiniert mit Verblindung.",
   "text_en": "A placebo looks like the tested preparation but contains no active ingredient. In a study design it serves as the comparison group, showing how much of a response comes from participant expectation rather than the substance itself. Placebo control is a core feature of informative clinical trials, often combined with blinding.",
   "synonyme": [
    "Scheinpräparat"
+  ],
+  "synonyme_en": [
+   "Inactive preparation"
   ],
   "siehe": [
    "rct",
@@ -1478,10 +2212,20 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Forschungsstufe vor dem Einsatz am Menschen: Zellkultur und Tiermodell. Klinische Studien folgen erst danach.",
   "kurz_en": "The research stage before any human use: cell culture and animal model. Clinical trials follow only after this stage.",
+  "quellen": [
+   {
+    "titel": "NCI: preclinical study",
+    "titel_en": "NCI: preclinical study",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/preclinical-study"
+   }
+  ],
   "text": "Präklinische Forschung umfasst In-vitro- und In-vivo-Versuche, mit denen erste Effekte und die Sicherheit geprüft werden, bevor eine Substanz je an Menschen getestet wird. Sie liefert die Datenbasis für eine mögliche spätere klinische Studie. Ein präklinisches Ergebnis allein begründet keine Aussage über Menschen.",
   "text_en": "Preclinical research covers in vitro and in vivo experiments that check early effects and safety before a substance is ever tested in humans. It provides the data basis for a possible later clinical trial. A preclinical result alone does not support a claim about humans.",
   "synonyme": [
    "Präklinik"
+  ],
+  "synonyme_en": [
+   "Preclinical research"
   ],
   "siehe": [
    "in-vitro",
@@ -1500,6 +2244,13 @@ window.PK.glossar = [
   "kategorie": "vergleich",
   "kurz": "Preis pro Milligramm macht Angebote unterschiedlicher Packungsgrößen direkt vergleichbar.",
   "kurz_en": "Price per milligram makes offers with different pack sizes directly comparable.",
+  "quellen": [
+   {
+    "titel": "Peptide Compass: Eigene Vergleichsmethodik",
+    "titel_en": "Peptide Compass: Our comparison methodology",
+    "url": "https://peptidkompass.com/methodik.html"
+   }
+  ],
   "text": "Der Wert entsteht aus dem Listenpreis geteilt durch den Milligrammgehalt eines Produkts, verglichen für denselben Wirkstoff und dieselbe Währung. Versand, Verfügbarkeit und Rabattbedingungen fließen nur ein, wenn sie ausdrücklich belegt sind. Ein niedrigerer Wert sagt nichts über Reinheit oder Dokumentation aus.",
   "text_en": "The figure is the list price divided by the milligram content of a product, compared for the same active substance and currency. Shipping, availability and discount terms are included only when explicitly documented. A lower figure says nothing about purity or documentation.",
   "siehe": [
@@ -1517,6 +2268,13 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Studienmanuskript, das vor dem Peer-Review veröffentlicht wird. Ergebnisse gelten als vorläufig, noch nicht unabhängig geprüft.",
   "kurz_en": "A study manuscript published before peer review. Results count as preliminary, not yet independently checked.",
+  "quellen": [
+   {
+    "titel": "NLM: Grenzen von PubMed und Preprints",
+    "titel_en": "NLM: Limitations of PubMed and preprints",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/disclaimer/"
+   }
+  ],
   "text": "Ein Preprint wird auf einer offenen Plattform veröffentlicht, bevor eine Fachzeitschrift ihn begutachtet hat. Ergebnisse stehen so früher öffentlich, bedeuten aber, dass Methodik und Schlussfolgerungen noch nicht unabhängig geprüft wurden. Inhalte aus einem Preprint sollten vorsichtiger bewertet werden als eine begutachtete Publikation.",
   "text_en": "A preprint is published on an open platform before a journal has reviewed it. This speeds up the exchange of results but means the methodology and conclusions have not yet been independently checked. Content from a preprint should be judged more cautiously than a peer-reviewed publication.",
   "siehe": [
@@ -1532,12 +2290,22 @@ window.PK.glossar = [
   "begriff": "Protein",
   "begriff_en": "Protein",
   "kategorie": "grundlagen",
-  "kurz": "Eine lange Aminosäurekette mit fester dreidimensionaler Struktur, größer als ein Peptid.",
-  "kurz_en": "A long amino acid chain with a fixed three-dimensional shape, larger than a peptide.",
-  "text": "Ein Protein besteht wie ein Peptid aus Aminosäuren, die über Peptidbindungen verknüpft sind, ist aber deutlich länger, meist über 50 Aminosäuren, und faltet sich zu einer festen dreidimensionalen Struktur. Diese Faltung unterscheidet ein Protein von einem Peptid, das oft noch ungefaltet vorliegt. Beide Begriffe beschreiben also Punkte auf derselben Größenskala, kein grundsätzlich anderes Molekül.",
-  "text_en": "Like a peptide, a protein is made of amino acids linked by peptide bonds, but it is substantially longer, usually above 50 amino acids, and folds into a fixed three-dimensional shape. That folding is what sets a protein apart from a peptide, which is often still unfolded. Both terms describe points on the same size scale rather than a fundamentally different molecule.",
+  "kurz": "Ein aus Aminosäureketten aufgebautes Molekül mit vielfältigen biologischen Aufgaben.",
+  "kurz_en": "A molecule made of amino acid chains with diverse biological roles.",
+  "quellen": [
+   {
+    "titel": "NCI: protein",
+    "titel_en": "NCI: protein",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/protein"
+   }
+  ],
+  "text": "Proteine bestehen aus einer oder mehreren Aminosäureketten. Ihre Sequenz und räumliche Struktur bestimmen ihre Eigenschaften. Die Abgrenzung zum Begriff Peptid ist nicht allein durch eine feste Kettenlänge definiert.",
+  "text_en": "Proteins consist of one or more amino acid chains. Their sequence and spatial structure determine their properties. A fixed chain length alone does not define the distinction from peptides.",
   "synonyme": [
    "Eiweiß"
+  ],
+  "synonyme_en": [
+   "Protein"
   ],
   "siehe": [
    "peptid",
@@ -1555,6 +2323,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Der enzymatische Abbau einer Aminosäurekette in kleinere Bruchstücke.",
   "kurz_en": "The enzymatic breakdown of an amino acid chain into smaller fragments.",
+  "quellen": [
+   {
+    "titel": "Alberts et al.: Proteinsynthese und Proteinabbau",
+    "titel_en": "Alberts et al.: Protein synthesis and degradation",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK26829/"
+   }
+  ],
   "text": "Proteolyse bezeichnet den Prozess, bei dem Enzyme, sogenannte Proteasen, die Peptidbindungen einer Aminosäurekette spalten und sie so in kleinere Bruchstücke zerlegen. Dieser Abbau findet im Körper fortlaufend statt und beeinflusst, wie lange ein Peptid intakt bleibt, also seine Halbwertszeit. In Studien wird die Proteolyse-Stabilität eines Peptids häufig als Kennzahl für seine Beständigkeit angegeben.",
   "text_en": "Proteolysis is the process by which enzymes called proteases cleave the peptide bonds in an amino acid chain, breaking it into smaller fragments. This breakdown happens continuously in the body and affects how long a peptide stays intact, in other words its half-life. Studies often report proteolytic stability as a measure of a peptide's durability.",
   "siehe": [
@@ -1568,11 +2343,22 @@ window.PK.glossar = [
   "begriff": "PT-141 (Bremelanotide)",
   "begriff_en": "PT-141 (Bremelanotide)",
   "kategorie": "wirkstoff",
-  "kurz": "Synthetisches Heptapeptid und Melanocortin-Rezeptor-Agonist, in den USA unter dem Namen Vyleesi für eine bestimmte Form der Libidostörung bei Frauen zugelassen.",
-  "kurz_en": "A synthetic heptapeptide and melanocortin receptor agonist, approved in the US under the name Vyleesi for a specific form of low sexual desire in women.",
-  "text": "PT-141 (Bremelanotide) ist ein aus sieben Aminosäuren bestehendes Peptid, das bei Palatin Technologies als Weiterentwicklung von Melanotan II entstand. Anders als Melanotan II, das vor allem zur Hautpigmentierung untersucht wurde, richtete sich die Forschung bei Bremelanotide auf die zentrale Steuerung von sexuellem Verlangen. Seit 2019 ist der Wirkstoff unter dem Namen Vyleesi in den USA für die Indikation hypoactive sexual desire disorder (HSDD) bei prämenopausalen Frauen zugelassen.",
-  "text_en": "PT-141 (bremelanotide) is a seven-amino-acid peptide developed at Palatin Technologies as a follow-on compound to melanotan II. Unlike melanotan II, which was studied mainly for skin pigmentation, research on bremelanotide focused on the central regulation of sexual desire. Since 2019, the compound has been approved in the US under the name Vyleesi for the indication hypoactive sexual desire disorder (HSDD) in premenopausal women.",
+  "kurz": "Bremelanotid, ein synthetischer Melanocortin-Rezeptoragonist, in klinischen Studien untersucht.",
+  "kurz_en": "Bremelanotide, a synthetic melanocortin receptor agonist investigated in clinical trials.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 31599840",
+    "titel_en": "PubMed: Research publication, PMID 31599840",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31599840/"
+   }
+  ],
+  "text": "PT-141 ist eine weitere Bezeichnung für Bremelanotid. Die verlinkte Publikation beschreibt zwei randomisierte Phase-III-Studien in einer definierten Patientengruppe. Ein Forschungsprodukt aus einem Shop ist nicht mit dem Studienpräparat gleichzusetzen.",
+  "text_en": "PT-141 is another name for bremelanotide. The linked publication describes two randomised phase III trials in a defined patient population. A research product sold by a shop is not equivalent to the study preparation.",
   "synonyme": [
+   "Bremelanotide",
+   "Vyleesi"
+  ],
+  "synonyme_en": [
    "Bremelanotide",
    "Vyleesi"
   ],
@@ -1585,6 +2371,13 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Kostenlose Datenbank der US-amerikanischen National Library of Medicine für biomedizinische Fachliteratur.",
   "kurz_en": "A free database run by the US National Library of Medicine for biomedical literature.",
+  "quellen": [
+   {
+    "titel": "NLM: Grenzen von PubMed und Preprints",
+    "titel_en": "NLM: Limitations of PubMed and preprints",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/disclaimer/"
+   }
+  ],
   "text": "PubMed indexiert Millionen Fachartikel aus Medizin und Lebenswissenschaften und zeigt meist eine kostenlose Zusammenfassung direkt an. Der Volltext liegt oft hinter der Bezahlschranke der jeweiligen Fachzeitschrift. Ein PubMed-Eintrag bestätigt, dass eine Arbeit indexiert ist, sagt aber nichts über die Qualität der einzelnen Studie aus.",
   "text_en": "PubMed indexes millions of articles from medicine and life sciences and usually shows a free abstract directly. The full text often sits behind the respective journal's paywall. A PubMed listing confirms that a paper is indexed, but it says nothing about the quality of that individual study.",
   "siehe": [
@@ -1602,6 +2395,13 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Studiendesign mit Zufallszuteilung zu Test- und Kontrollgruppe. Gilt als Goldstandard für den Nachweis einer Wirkung.",
   "kurz_en": "A study design with random assignment to a treatment and a control group. Considered the gold standard for proving an effect.",
+  "quellen": [
+   {
+    "titel": "NCI: Randomisierte klinische Studien",
+    "titel_en": "NCI: Randomised clinical trials",
+    "url": "https://www.cancer.gov/publications/patient-education/crs.pdf"
+   }
+  ],
   "langform": "Randomisiert-kontrollierte Studie",
   "langform_en": "Randomised controlled trial",
   "text": "Bei einer randomisiert-kontrollierten Studie werden Teilnehmer per Zufall einer Test- oder einer Kontrollgruppe zugeteilt, oft zusätzlich verblindet. Das reduziert Verzerrungen durch Erwartung oder Auswahl. RCTs gelten in der klinischen Forschung als methodischer Goldstandard, besonders in Kombination mit Placebokontrolle.",
@@ -1622,8 +2422,15 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Reinheit gibt an, welcher Anteil einer Probe im Chromatogramm auf das Hauptmolekül entfällt, meist als Prozentwert per HPLC.",
   "kurz_en": "Purity states how much of a sample's chromatogram peak area belongs to the main molecule, usually as a percentage from HPLC.",
-  "text": "Der Wert beschreibt, wie sauber eine Probe im Vergleich zu Nebenprodukten und Verunreinigungen ist, nicht wie viel Peptid tatsächlich enthalten ist. Diese zweite Frage beantwortet der Peptidgehalt. Ein hoher Reinheitswert ohne Identitätsprüfung sagt zudem nichts darüber aus, ob es sich um das richtige Molekül handelt.",
-  "text_en": "The figure shows how clean a sample is relative to by-products and impurities, not how much peptide it actually contains, that question is answered by net peptide content instead. A high purity value without an identity check also says nothing about whether the correct molecule is present.",
+  "quellen": [
+   {
+    "titel": "Hoofnagle et al. (2016): Peptidanalytik und Laborhandhabung",
+    "titel_en": "Hoofnagle et al. (2016): Peptide analysis and laboratory handling",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26719571/"
+   }
+  ],
+  "text": "Reinheit beschreibt den Anteil der Zielsubstanz innerhalb der angegebenen Messmethode. Ein HPLC-Flächenanteil ist kein vollständiger Nachweis der Zusammensetzung.",
+  "text_en": "Purity describes the proportion of the target substance within a stated method. An HPLC area percentage does not fully establish composition.",
   "siehe": [
    "hplc",
    "identitaet",
@@ -1640,8 +2447,15 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Rekonstitution ist das Lösen eines lyophilisierten Peptids in einer Flüssigkeit für Laborzwecke.",
   "kurz_en": "Reconstitution is dissolving a lyophilised peptide in a liquid to prepare a solution for laboratory use.",
-  "text": "Beim Rekonstituieren wird das gefriergetrocknete Pulver im Vial mit einer Flüssigkeit versetzt, meist bakteriostatischem oder sterilem Wasser, bis sich das Peptid vollständig gelöst hat. Aus Pulvermenge und zugegebenem Volumen ergibt sich die Konzentration der fertigen Lösung. Nach dem Lösen sinkt die Haltbarkeit spürbar, weshalb Kühlung und Lichtschutz wichtiger werden. Der Rechner auf dieser Seite bildet die reine Masseneinheiten-Umrechnung ab.",
-  "text_en": "During reconstitution, the freeze-dried powder in the vial is combined with a liquid, usually bacteriostatic or sterile water, until the peptide has fully dissolved. The concentration of the finished solution follows from the powder amount and the liquid volume added. Stability drops noticeably once dissolved, which is why cooling and light protection matter more. The calculator on this page covers plain mass-unit conversion.",
+  "quellen": [
+   {
+    "titel": "FDA: Lyophilisation",
+    "titel_en": "FDA: Lyophilization",
+    "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-guides/lyophilization-parenteral-793"
+   }
+  ],
+  "text": "Der Begriff bezeichnet das Wiederherstellen einer Flüssigform aus einem trockenen Präparat. Welche Flüssigkeit dafür geeignet ist, hängt vom jeweiligen Stoff und Prüfverfahren ab. Aus dem Begriff folgt keine allgemeine Anleitung zur Zubereitung oder Anwendung.",
+  "text_en": "The term means restoring a liquid form from a dry preparation. The suitable liquid depends on the substance and analytical procedure. The term does not imply a general preparation or administration method.",
   "siehe": [
    "lyophilisat",
    "bakteriostatisches-wasser",
@@ -1655,13 +2469,23 @@ window.PK.glossar = [
  {
   "slug": "retatrutid",
   "begriff": "Retatrutid",
-  "begriff_en": "Retatrutid",
+  "begriff_en": "Retatrutide",
   "kategorie": "wirkstoff",
-  "kurz": "Peptid, das gleichzeitig an GLP-1-, GIP- und Glucagon-Rezeptoren wirkt und sich in fortgeschrittener klinischer Prüfung zur Stoffwechselregulation befindet.",
-  "kurz_en": "A peptide that acts on GLP-1, GIP, and glucagon receptors simultaneously, currently in advanced clinical trials related to metabolic regulation.",
-  "text": "Retatrutid ist ein sogenannter Triple-Agonist, der an drei Stoffwechsel-Rezeptoren gleichzeitig ansetzt: GLP-1, GIP und Glucagon. Es befindet sich in Phase-3-Studien und ist bisher in keinem Land als Arzneimittel zugelassen.",
-  "text_en": "Retatrutide is a so-called triple agonist that acts on three metabolic receptors simultaneously: GLP-1, GIP, and glucagon. It is currently in phase 3 trials and is not approved as a medication in any country to date.",
+  "kurz": "Peptidischer Dreifach-Rezeptoragonist, in klinischen Studien untersucht.",
+  "kurz_en": "Peptide triple-receptor agonist investigated in clinical trials.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 37366315",
+    "titel_en": "PubMed: Research publication, PMID 37366315",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/"
+   }
+  ],
+  "text": "Die verlinkte Phase-II-Studie untersucht einen Agonisten an GIP-, GLP-1- und Glucagon-Rezeptoren. Ergebnisse aus dieser klinischen Prüfung bestätigen keine Gleichwertigkeit eines unter gleichem Namen verkauften Shopprodukts.",
+  "text_en": "The linked phase II trial investigates an agonist at GIP, GLP-1 and glucagon receptors. Results from that trial do not establish equivalence of a shop product sold under the same name.",
   "synonyme": [
+   "LY3437943"
+  ],
+  "synonyme_en": [
    "LY3437943"
   ],
   "link": "wirkstoffe/retatrutid.html"
@@ -1673,6 +2497,13 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Ein Protein auf oder in einer Zelle, an das ein Peptid spezifisch bindet.",
   "kurz_en": "A protein on or inside a cell that a peptide binds to specifically.",
+  "quellen": [
+   {
+    "titel": "NCI: receptor",
+    "titel_en": "NCI: receptor",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/receptor"
+   }
+  ],
   "text": "Ein Rezeptor ist ein Protein, das ein passendes Molekül, etwa ein Peptid, spezifisch erkennt und bindet, ähnlich einem Schlüssel-Schloss-Prinzip. Diese Bindung löst in der Zelle eine Signalkette aus. In der Forschung wird die Bindungsstärke eines Peptids an einen bestimmten Rezeptor als Affinität bezeichnet und häufig im Labor an Zellkulturen untersucht.",
   "text_en": "A receptor is a protein that specifically recognises and binds a matching molecule, such as a peptide, similar to a lock and key. This binding triggers a signalling chain inside the cell. In research, how strongly a peptide binds to a given receptor is called affinity and is often studied in the lab using cell cultures.",
   "siehe": [
@@ -1688,8 +2519,15 @@ window.PK.glossar = [
   "kategorie": "recht",
   "kurz": "Rezeptpflicht heißt, dass ein Arzneimittel nur gegen ärztliche Verschreibung abgegeben werden darf.",
   "kurz_en": "A prescription requirement means a medicinal product may only be dispensed against a doctor's prescription.",
-  "text": "Ob ein zugelassenes Arzneimittel rezeptpflichtig ist, legt die zuständige Behörde anhand des Risikoprofils fest, etwa Dosierung, Nebenwirkungen oder Missbrauchspotenzial. Die Einstufung betrifft zugelassene Arzneimittel. Für Substanzen, die als Forschungschemikalie ohne Zulassung verkauft werden, existiert keine entsprechende behördliche Einstufung.",
-  "text_en": "Whether an authorised medicinal product requires a prescription is decided by the responsible authority based on its risk profile, such as dosage, side effects or potential for misuse. This classification applies to authorised medicinal products. Substances sold as unauthorised research chemicals have no corresponding regulatory classification.",
+  "quellen": [
+   {
+    "titel": "AMG § 48: Verschreibungspflicht",
+    "titel_en": "German Medicines Act, section 48: Prescription requirements",
+    "url": "https://www.gesetze-im-internet.de/amg_1976/__48.html"
+   }
+  ],
+  "text": "In Deutschland sind insbesondere § 48 AMG und die Arzneimittelverschreibungsverordnung maßgeblich. Verschreibungspflicht, Arzneimitteleigenschaft und Zulassung sind unterschiedliche Fragen. Aus einem Verkauf als Forschungschemikalie lässt sich keine pauschale Ausnahme ableiten.",
+  "text_en": "In Germany, section 48 of the Medicines Act and the prescription medicines regulation are particularly relevant. Prescription requirements, medicinal-product status and authorisation are separate questions. Sale as a research chemical does not establish a blanket exemption.",
   "siehe": [
    "arzneimittel",
    "zulassung"
@@ -1703,12 +2541,24 @@ window.PK.glossar = [
   "begriff": "RUO",
   "begriff_en": "RUO",
   "kategorie": "recht",
-  "kurz": "RUO kennzeichnet ein Produkt als Forschungschemikalie, nicht zugelassen für den menschlichen Gebrauch.",
-  "kurz_en": "RUO labels a product as a research chemical, not authorised for human use.",
+  "kurz": "Research Use Only bedeutet „nur für Forschungszwecke“. Das Kürzel allein klärt den Rechtsstatus eines Produkts nicht.",
+  "kurz_en": "Research Use Only describes a research purpose. The abbreviation alone does not establish a product’s legal status.",
+  "quellen": [
+   {
+    "titel": "AMG § 2: Arzneimittelbegriff",
+    "titel_en": "German Medicines Act, section 2: Definition of medicines",
+    "url": "https://www.gesetze-im-internet.de/amg_1976/__2.html"
+   },
+   {
+    "titel": "FDA (24.08.2026): RUO-Kennzeichnung und Zweckbestimmung, USA",
+    "titel_en": "FDA (24 August 2026): RUO labelling and intended use, USA",
+    "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/txp-innovations-llc-dba-tex-peptides-735067-08242026"
+   }
+  ],
   "langform": "Nur für Forschungszwecke",
   "langform_en": "Research Use Only",
-  "text": "RUO steht für Research Use Only, eine Kennzeichnung aus dem Laborhandel. Sie zeigt an, dass ein Anbieter das Produkt ausschließlich für Forschungszwecke anbietet und keine Zulassung als Arzneimittel besteht. Die Kennzeichnung ersetzt keine Qualitätsprüfung und ist kein Nachweis für Reinheit oder Identität.",
-  "text_en": "RUO stands for Research Use Only, a labelling convention from laboratory supply. It shows that a vendor offers the product for research purposes only and that no marketing authorisation as a medicinal product exists. The label does not replace quality testing and is not proof of purity or identity.",
+  "text": "Die Kennzeichnung beschreibt die vom Anbieter angegebene Zweckbestimmung. Sie ist weder eine Zulassung noch ein Nachweis für Reinheit oder Sicherheit. Ob ein Produkt rechtlich als Arzneimittel gilt, richtet sich nach den gesetzlichen Kriterien und seiner tatsächlichen Präsentation, nicht allein nach dem Kürzel.",
+  "text_en": "The label describes the supplier’s stated intended purpose. It is neither an authorisation nor evidence of purity or safety. Whether a product legally qualifies as a medicine depends on statutory criteria and its actual presentation, not solely on this abbreviation.",
   "siehe": [
    "arzneimittel",
    "zulassung"
@@ -1722,21 +2572,40 @@ window.PK.glossar = [
   "begriff": "Selank",
   "begriff_en": "Selank",
   "kategorie": "wirkstoff",
-  "kurz": "Synthetisches Heptapeptid, ein Analogon des körpereigenen Tuftsin, in der Forschung zu Angstregulation und kognitiver Funktion untersucht.",
-  "kurz_en": "A synthetic heptapeptide analog of the body's own tuftsin, studied in research on anxiety regulation and cognitive function.",
-  "text": "Selank ist ein Heptapeptid, das aus dem körpereigenen Tetrapeptid Tuftsin abgeleitet und in Russland ursprünglich als Anxiolytikum entwickelt wurde. In der Forschung steht es im Zusammenhang mit angstregulierenden und leicht kognitionsunterstützenden Effekten, ohne die für Benzodiazepine typische Sedierung.",
-  "text_en": "Selank is a heptapeptide derived from the body's own tetrapeptide tuftsin, originally developed in Russia as an anxiolytic. Research links it to anxiety-regulating and mildly cognition-supporting effects, without the sedation typical of benzodiazepines.",
+  "kurz": "Synthetisches Peptid, in Studien zu Angststörungen untersucht.",
+  "kurz_en": "Synthetic peptide investigated in studies of anxiety disorders.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 18454096",
+    "titel_en": "PubMed: Research publication, PMID 18454096",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18454096/"
+   }
+  ],
+  "text": "Die verlinkte klinische Arbeit vergleicht Selank mit Medazepam bei Angststörungen und Neurasthenie. Eine einzelne Veröffentlichung ersetzt weder eine umfassende Evidenzbewertung noch einen Qualitätsnachweis für angebotene Produkte.",
+  "text_en": "The linked clinical paper compares selank with medazepam in anxiety disorders and neurasthenia. A single publication replaces neither a comprehensive evidence assessment nor quality verification of marketed products.",
   "link": "wirkstoffe/selank.html"
  },
  {
   "slug": "semaglutid",
   "begriff": "Semaglutid",
-  "begriff_en": "Semaglutid",
+  "begriff_en": "Semaglutide",
   "kategorie": "wirkstoff",
-  "kurz": "GLP-1-Rezeptor-Agonist, als zugelassenes Arzneimittel bekannt und hier als Forschungssubstanz zur Stoffwechselregulation gelistet.",
-  "kurz_en": "A GLP-1 receptor agonist, known as an approved medication and listed here as a research substance for metabolic regulation.",
-  "text": "Semaglutid ist ein GLP-1-Rezeptor-Agonist und als Arzneimittel unter mehreren Handelsnamen zugelassen. Es ist Gegenstand umfangreicher klinischer Forschung zur Stoffwechsel- und Sättigungsregulation. Die hier gelisteten Forschungschargen sind nicht mit zugelassenen Arzneimitteln gleichzusetzen und ausschließlich für Laborzwecke bestimmt.",
-  "text_en": "Semaglutide is a GLP-1 receptor agonist approved as a medication under several brand names. It is the subject of extensive clinical research on metabolic and satiety regulation. The research batches listed here are not equivalent to approved medications and are intended for laboratory use only.",
+  "kurz": "GLP-1-Analogon, zu dem klinische Studien und zugelassene Arzneimittel vorliegen.",
+  "kurz_en": "GLP-1 analogue with clinical research and authorised medicinal products.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 33567185",
+    "titel_en": "PubMed: Research publication, PMID 33567185",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/"
+   },
+   {
+    "titel": "EMA: Produktbezogene Zulassung von Ozempic",
+    "titel_en": "EMA: Product-specific authorisation of Ozempic",
+    "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/ozempic"
+   }
+  ],
+  "text": "Die verlinkte klinische Arbeit untersucht Semaglutid bei Erwachsenen mit Übergewicht oder Adipositas. Der EMA-Bericht betrifft das konkrete Arzneimittel Ozempic. Weder Studie noch Zulassung bestätigen ein gleichnamiges Produkt eines Forschungsshops.",
+  "text_en": "The linked clinical paper investigates semaglutide in adults with overweight or obesity. The EMA assessment concerns the specific medicinal product Ozempic. Neither the trial nor the authorisation verifies a similarly named research-shop product.",
   "link": "wirkstoffe/semaglutid.html"
  },
  {
@@ -1744,10 +2613,17 @@ window.PK.glossar = [
   "begriff": "Semax",
   "begriff_en": "Semax",
   "kategorie": "wirkstoff",
-  "kurz": "Synthetisches Heptapeptid auf ACTH-Basis, in Russland zur Neuroprotektion zugelassen und in der Forschung zu Kognition und Stressadaptation untersucht.",
-  "kurz_en": "A synthetic ACTH-derived heptapeptide, approved in Russia for neuroprotection and studied in research on cognition and stress adaptation.",
-  "text": "Semax ist ein Heptapeptid, das vom Fragment ACTH(4-10) des Stresshormons ACTH abgeleitet wurde und in Russland als Arzneimittel bei ischämischem Schlaganfall zugelassen ist. In der Forschung wird es zusätzlich im Zusammenhang mit Neuroplastizität und kognitiver Funktion betrachtet, ohne die Cortisol-Achse zu aktivieren.",
-  "text_en": "Semax is a heptapeptide derived from the ACTH(4-10) fragment of the stress hormone ACTH, approved as a medication for ischemic stroke in Russia. Research also examines it in relation to neuroplasticity and cognitive function, without activating the cortisol axis.",
+  "kurz": "Synthetisches Heptapeptid, unter anderem in Rattenmodellen untersucht.",
+  "kurz_en": "Synthetic heptapeptide investigated in rat models, among other research.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 14556513",
+    "titel_en": "PubMed: Research publication, PMID 14556513",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14556513/"
+   }
+  ],
+  "text": "Die angeführte Veröffentlichung untersucht BDNF in verschiedenen Hirnregionen von Ratten. Solche Daten sind präklinisch. Sie erlauben keine Aussage über eine gesicherte Verbesserung der Kognition beim Menschen.",
+  "text_en": "The cited publication investigates BDNF in different brain regions of rats. These are preclinical data. They do not establish cognitive improvement in humans.",
   "link": "wirkstoffe/semax.html"
  },
  {
@@ -1757,10 +2633,20 @@ window.PK.glossar = [
   "kategorie": "grundlagen",
   "kurz": "Die festgelegte Reihenfolge der Aminosäuren in einer Peptid- oder Proteinkette.",
   "kurz_en": "The fixed order of amino acids in a peptide or protein chain.",
+  "quellen": [
+   {
+    "titel": "Alberts et al.: Proteinstruktur",
+    "titel_en": "Alberts et al.: Protein structure",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK26830/"
+   }
+  ],
   "text": "Die Sequenz beschreibt, in welcher Reihenfolge die einzelnen Aminosäuren über Peptidbindungen aneinandergereiht sind. Sie wird meist mit standardisierten Ein- oder Drei-Buchstaben-Codes je Aminosäure notiert. Zwei Peptide mit denselben Aminosäuren, aber unterschiedlicher Reihenfolge, gelten als verschiedene Moleküle, die Sequenz ist damit ein zentrales Identitätsmerkmal.",
   "text_en": "The sequence describes the order in which the individual amino acids are strung together via peptide bonds. It is usually written using standardised one- or three-letter codes per amino acid. Two peptides made of the same amino acids but in a different order count as different molecules, which makes the sequence a key identity marker.",
   "synonyme": [
    "Aminosäuresequenz"
+  ],
+  "synonyme_en": [
+   "Amino acid sequence"
   ],
   "siehe": [
    "aminosaeure",
@@ -1773,27 +2659,56 @@ window.PK.glossar = [
   "begriff": "Sermorelin",
   "begriff_en": "Sermorelin",
   "kategorie": "wirkstoff",
-  "kurz": "Kurzkettiges Fragment des körpereigenen GHRH, historisch als Arzneimittel zugelassen, heute als Forschungssubstanz gehandelt.",
-  "kurz_en": "A short-chain fragment of the body's own GHRH, historically approved as a medication, now sold as a research substance.",
-  "text": "Sermorelin ist das biologisch aktive Fragment GHRH(1-29) des körpereigenen Growth-Hormone-Releasing-Hormons. Es wurde in den USA 1990 zunächst als Diagnostikum und 1997 für wachstumshormonmangelbedingten Kleinwuchs bei Kindern zugelassen, die Zulassung wurde 2008 aus produktionstechnischen Gründen zurückgezogen. Heute wird es außerhalb dieser historischen Zulassung als Forschungssubstanz untersucht.",
-  "text_en": "Sermorelin is the biologically active fragment GHRH(1-29) of the body's own growth hormone-releasing hormone. In the US it was approved in 1990 as a diagnostic agent and in 1997 for growth hormone deficiency-related short stature in children; the approval was withdrawn in 2008 for manufacturing reasons. Today it is studied outside that historical approval as a research substance.",
+  "kurz": "GHRH-abgeleitetes Peptid, in der endokrinologischen Forschung untersucht.",
+  "kurz_en": "GHRH-derived peptide investigated in endocrine research.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 18031173",
+    "titel_en": "PubMed: Research publication, PMID 18031173",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18031173/"
+   }
+  ],
+  "text": "Die verlinkte Übersicht ordnet Sermorelin in die damalige Forschung zu Wachstumshormonmangel bei Kindern ein. Historische medizinische Literatur belegt weder den heutigen Zulassungsstatus noch die Qualität eines Shopprodukts.",
+  "text_en": "The linked review places sermorelin in the historical research on childhood growth hormone deficiency. Historical medical literature establishes neither current authorisation status nor the quality of a shop product.",
   "synonyme": [
    "GRF 1-29",
    "GHRH(1-29)",
    "Geref (historischer Markenname)"
+  ],
+  "synonyme_en": [
+   "GRF 1-29",
+   "GHRH(1-29)",
+   "Geref (historical brand name)"
   ],
   "link": "wirkstoffe/sermorelin.html"
  },
  {
   "slug": "ss-31",
   "begriff": "SS-31 (Elamipretid)",
-  "begriff_en": "SS-31 (Elamipretid)",
+  "begriff_en": "SS-31 (Elamipretide)",
   "kategorie": "wirkstoff",
-  "kurz": "Ein mitochondrial wirksames Tetrapeptid, das in mehreren klinischen Studien bei Herzschwäche und mitochondrialen Erkrankungen untersucht wurde, bislang ohne Zulassung.",
-  "kurz_en": "A mitochondria-targeted tetrapeptide studied in several clinical trials for heart failure and mitochondrial disease, not yet approved.",
-  "text": "SS-31, unter dem Freinamen Elamipretid auch als MTP-131 oder Bendavia bekannt, ist ein synthetisches Tetrapeptid, das gezielt an das Mitochondrienmembran-Lipid Cardiolipin bindet. Es wurde in mehreren klinischen Phasen-1- bis Phasen-3-Studien bei Herzinsuffizienz, primärer mitochondrialer Myopathie und dem Barth-Syndrom untersucht. Trotz einer vergleichsweise breiten klinischen Datenbasis ist bislang keine dieser Studien zu einer Zulassung als Arzneimittel gelangt.",
-  "text_en": "SS-31, also known under the generic name elamipretide as MTP-131 or Bendavia, is a synthetic tetrapeptide that binds specifically to cardiolipin, a lipid in the mitochondrial membrane. It has been studied in several phase 1 to phase 3 clinical trials for heart failure, primary mitochondrial myopathy, and Barth syndrome. Despite a comparatively broad clinical data base, none of these studies has yet led to approval as a medication.",
+  "kurz": "Elamipretid, ein synthetisches Peptid, das in Studien zu mitochondrialen Erkrankungen untersucht wird.",
+  "kurz_en": "Elamipretide, a synthetic peptide investigated in studies of mitochondrial disorders.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 37268435",
+    "titel_en": "PubMed: Research publication, PMID 37268435",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37268435/"
+   },
+   {
+    "titel": "FDA: Forzinity, Zulassung vom 19.09.2025",
+    "titel_en": "FDA: Forzinity, approved 19 September 2025",
+    "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-forzinity"
+   }
+  ],
+  "text": "Die FDA erteilte Forzinity mit dem Wirkstoff Elamipretid am 19.09.2025 eine beschleunigte Zulassung für eine definierte Patientengruppe mit Barth-Syndrom. Diese produktbezogene US-Zulassung gilt nicht für als SS-31 verkaufte Forschungschemikalien.",
+  "text_en": "On 19 September 2025, FDA granted accelerated approval to Forzinity, containing elamipretide, for a defined patient group with Barth syndrome. This US product approval does not apply to research chemicals sold as SS-31.",
   "synonyme": [
+   "Elamipretide",
+   "MTP-131",
+   "Bendavia"
+  ],
+  "synonyme_en": [
    "Elamipretide",
    "MTP-131",
    "Bendavia"
@@ -1805,10 +2720,17 @@ window.PK.glossar = [
   "begriff": "Steriles Wasser",
   "begriff_en": "Sterile Water",
   "kategorie": "handhabung",
-  "kurz": "Steriles Wasser ist keimfreies Wasser ohne Konservierungsstoff, gedacht für den einmaligen Gebrauch je Vial.",
-  "kurz_en": "Sterile water is germ-free water with no preservative, intended for single use per vial.",
-  "text": "Steriles Wasser wird durch Filtration oder Hitzebehandlung von Mikroorganismen befreit und ohne weitere Zusätze abgefüllt. Weil kein Konservierungsstoff enthalten ist, bietet es kein länger anhaltendes Wachstumshemmnis wie bakteriostatisches Wasser. Eine angebrochene Charge wird im Labor deshalb zeitnah verwendet oder verworfen, statt sie über längere Zeit aufzubewahren.",
-  "text_en": "Sterile water is cleared of micro-organisms through filtration or heat treatment and filled without further additives. Because it contains no preservative, it does not offer the extended growth inhibition that bacteriostatic water provides. An opened batch is therefore used promptly in the lab or discarded rather than kept for an extended period.",
+  "kurz": "Wasser, dessen Sterilität eine spezifizierte Produkteigenschaft ist.",
+  "kurz_en": "Water for which sterility is a specified product characteristic.",
+  "quellen": [
+   {
+    "titel": "FDA: Sterilität und Endotoxine",
+    "titel_en": "FDA: Sterility and endotoxins",
+    "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-technical-guides/bacterial-endotoxinspyrogens"
+   }
+  ],
+  "text": "Sterilität und Endotoxinfreiheit sind unterschiedliche Eigenschaften. Ein Produkt muss anhand seiner Spezifikation beurteilt werden; aus dem Wort „steril“ folgen weder eine universelle Eignung als Lösungsmittel noch eine bestimmte Haltbarkeit nach dem Öffnen.",
+  "text_en": "Sterility and freedom from endotoxins are different properties. Products must be assessed against their specifications; the word “sterile” implies neither universal suitability as a solvent nor a particular shelf life after opening.",
   "siehe": [
    "bakteriostatisches-wasser",
    "rekonstitution",
@@ -1822,6 +2744,13 @@ window.PK.glossar = [
   "kategorie": "labor",
   "kurz": "Sterilität beschreibt die Abwesenheit lebensfähiger Mikroorganismen in einer Probe, geprüft über einen eigenen Labortest.",
   "kurz_en": "Sterility describes the absence of viable microorganisms in a sample, checked through its own dedicated lab test.",
+  "quellen": [
+   {
+    "titel": "FDA: Sterilitätsprüfung und Prozesskontrolle",
+    "titel_en": "FDA: Sterility testing and process controls",
+    "url": "https://www.fda.gov/drugs/guidances-drugs/questions-and-answers-current-good-manufacturing-practice-regulations-production-and-process"
+   }
+  ],
   "text": "Der Test steht unabhängig neben Reinheit, Identität und Endotoxin-Wert und wird gesondert dokumentiert. Relevanz hat er vor allem für lyophilisierte Peptide, die im Labor gelöst und weiterverarbeitet werden.",
   "text_en": "The test is independent of purity, identity and endotoxin value, and is documented separately. It matters mainly for lyophilised peptides that are dissolved and handled further in a laboratory setting.",
   "siehe": [
@@ -1836,10 +2765,20 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Die vier Stufen klinischer Prüfung: Phase I bis III vor der Zulassung, Phase IV danach im Praxiseinsatz.",
   "kurz_en": "The four stages of clinical testing: phases I to III before approval, phase IV afterwards in everyday use.",
-  "text": "Phase I prüft an einer kleinen Gruppe Gesunder vor allem Sicherheit und Verträglichkeit. Phase II testet an einer größeren Gruppe erste Wirksamkeitshinweise und Dosisbereiche. Phase III vergleicht an vielen Teilnehmern, oft mit Placebo und Verblindung, vor einer möglichen Zulassung. Phase IV beobachtet ein bereits zugelassenes Mittel im breiten Praxiseinsatz.",
-  "text_en": "Phase I mainly tests safety and tolerability in a small group of healthy volunteers. Phase II checks early signs of efficacy and dose ranges in a larger group. Phase III compares outcomes in many participants, often with placebo and blinding, before a possible approval. Phase IV monitors an already approved product in wide everyday use.",
+  "quellen": [
+   {
+    "titel": "FDA: Phasen klinischer Forschung",
+    "titel_en": "FDA: Phases of clinical research",
+    "url": "https://www.fda.gov/patients/drug-development-process/step-3-clinical-research"
+   }
+  ],
+  "text": "Klinische Entwicklung wird häufig in vier Phasen beschrieben: Phase I untersucht vor allem Sicherheit und Verträglichkeit bei gesunden Freiwilligen oder Patienten. Phase II untersucht erste Hinweise auf Wirksamkeit und weitere Sicherheitsfragen. Phase III prüft dies in größeren Gruppen. Phase IV umfasst Untersuchungen nach der Zulassung. Die Einteilung allein sagt nichts über die Qualität einer einzelnen Studie aus.",
+  "text_en": "Clinical development is often described in four phases: Phase I mainly investigates safety and tolerability in healthy volunteers or patients. Phase II examines initial evidence of efficacy and further safety questions. Phase III investigates these in larger groups. Phase IV covers studies after approval. The phase alone does not establish the quality of an individual study.",
   "synonyme": [
    "Phase I bis IV"
+  ],
+  "synonyme_en": [
+   "Phases I to IV"
   ],
   "siehe": [
    "klinische-studie",
@@ -1852,13 +2791,23 @@ window.PK.glossar = [
  {
   "slug": "survodutid",
   "begriff": "Survodutid",
-  "begriff_en": "Survodutid",
+  "begriff_en": "Survodutide",
   "kategorie": "wirkstoff",
-  "kurz": "Peptid, das gleichzeitig an GLP-1- und Glucagon-Rezeptoren wirkt und sich in fortgeschrittener klinischer Prüfung zur Stoffwechselregulation befindet.",
-  "kurz_en": "A peptide that acts on both GLP-1 and glucagon receptors simultaneously, currently in advanced clinical trials related to metabolic regulation.",
-  "text": "Survodutid ist ein dualer Agonist an GLP-1- und Glucagon-Rezeptoren, entwickelt von Boehringer Ingelheim in Zusammenarbeit mit Zealand Pharma. Es wird in Phase-3-Studien zur Gewichtsregulation bei Adipositas sowie bei der Fettleberhepatitis MASH untersucht und ist bisher in keinem Land als Arzneimittel zugelassen.",
-  "text_en": "Survodutide is a dual agonist at GLP-1 and glucagon receptors, developed by Boehringer Ingelheim in collaboration with Zealand Pharma. It is being studied in phase 3 trials for weight regulation in obesity as well as in metabolic dysfunction-associated steatohepatitis (MASH), and is not approved as a medication in any country to date.",
+  "kurz": "Dualer Glucagon- und GLP-1-Rezeptoragonist, in klinischen Studien untersucht.",
+  "kurz_en": "Dual glucagon and GLP-1 receptor agonist investigated in clinical trials.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 38330987",
+    "titel_en": "PubMed: Research publication, PMID 38330987",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38330987/"
+   }
+  ],
+  "text": "Die verlinkte Phase-II-Studie untersucht Survodutid als dualen Rezeptoragonisten. Studiendaten gelten für die geprüfte Formulierung und Population und sind keine Qualitätsprüfung von Forschungschemikalien.",
+  "text_en": "The linked phase II trial investigates survodutide as a dual receptor agonist. Trial data concern the tested formulation and population and do not verify the quality of research chemicals.",
   "synonyme": [
+   "BI 456906"
+  ],
+  "synonyme_en": [
    "BI 456906"
   ],
   "link": "wirkstoffe/survodutid.html"
@@ -1868,12 +2817,23 @@ window.PK.glossar = [
   "begriff": "TB-500",
   "begriff_en": "TB-500",
   "kategorie": "wirkstoff",
-  "kurz": "Ein synthetisches Fragment des körpereigenen Proteins Thymosin Beta-4, in der präklinischen Forschung zu Zellmigration und Geweberegeneration untersucht.",
-  "kurz_en": "A synthetic fragment of the body's own protein thymosin beta-4, studied in preclinical research on cell migration and tissue regeneration.",
-  "text": "TB-500 ist die synthetisch hergestellte, sieben Aminosäuren umfassende Kernsequenz des körpereigenen Proteins Thymosin Beta-4. Die meisten verfügbaren Wirkdaten, einschließlich der klinischen Studien, beziehen sich auf das vollständige Thymosin Beta-4 mit 43 Aminosäuren, nicht auf das isolierte Fragment TB-500 selbst. Untersucht werden unter anderem Zellmigration, Angiogenese und eine mögliche Rolle bei der Aktivierung von Haarfollikeln.",
-  "text_en": "TB-500 is the synthetically produced, seven-amino-acid core sequence of the body's own protein thymosin beta-4. Most available data, including clinical studies, relate to the full 43-amino-acid thymosin beta-4, not to the isolated TB-500 fragment itself. Areas of study include cell migration, angiogenesis, and a possible role in hair follicle activation.",
+  "kurz": "Bezeichnung, die in einer analytischen Originalarbeit für ein acetyliertes Fragment von Thymosin Beta-4 verwendet wird.",
+  "kurz_en": "A name used in an original analytical paper for an acetylated fragment of thymosin beta-4.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 23084823",
+    "titel_en": "PubMed: Research publication, PMID 23084823",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23084823/"
+   }
+  ],
+  "text": "Die verlinkte analytische Arbeit identifiziert ein acetyliertes Fragment in einem als TB-500 bezeichneten Produkt. Befunde zum vollständigen Thymosin Beta-4 sind damit nicht automatisch auf dieses Fragment oder andere Handelsprodukte übertragbar.",
+  "text_en": "The linked analytical paper identifies an acetylated fragment in a product labelled TB-500. Findings for full-length thymosin beta-4 do not automatically apply to this fragment or other marketed products.",
   "synonyme": [
    "Thymosin-Beta-4-Fragment",
+   "TB4 Frag"
+  ],
+  "synonyme_en": [
+   "Thymosin beta-4 fragment",
    "TB4 Frag"
   ],
   "link": "wirkstoffe/tb-500.html"
@@ -1883,11 +2843,23 @@ window.PK.glossar = [
   "begriff": "Tesamorelin",
   "begriff_en": "Tesamorelin",
   "kategorie": "wirkstoff",
-  "kurz": "Stabilisiertes GHRH-Analogon, in den USA als Arzneimittel Egrifta zur Reduktion von viszeralem Bauchfett bei HIV-assoziierter Lipodystrophie zugelassen.",
-  "kurz_en": "A stabilized GHRH analog, approved in the US as the medication Egrifta for reducing visceral abdominal fat in HIV-associated lipodystrophy.",
-  "text": "Tesamorelin ist ein stabilisiertes Analogon des vollständigen, 44 Aminosäuren langen GHRH. Unter dem Markennamen Egrifta ist es seit 2010 von der US-amerikanischen FDA für die Reduktion von viszeralem Bauchfett bei HIV-assoziierter Lipodystrophie zugelassen. Damit ist es das einzige Peptid seiner Klasse mit einer abgeschlossenen Phase-3-Zulassungsstudie an über 800 Probanden.",
-  "text_en": "Tesamorelin is a stabilized analog of the full 44-amino-acid GHRH. Under the brand name Egrifta, it has been approved by the US FDA since 2010 for reducing visceral abdominal fat in HIV-associated lipodystrophy. This makes it the only peptide in its class with a completed phase 3 approval study in more than 800 participants.",
+  "kurz": "Synthetisches Analogon des Growth Hormone-Releasing Factor, in klinischen Studien untersucht.",
+  "kurz_en": "Synthetic growth hormone-releasing factor analogue investigated in clinical trials.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 18057338",
+    "titel_en": "PubMed: Research publication, PMID 18057338",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18057338/"
+   }
+  ],
+  "text": "Die angeführte klinische Arbeit untersucht einen Wachstumshormon-Releasing-Factor bei Menschen mit HIV. Der untersuchte Krankheitskontext und das Studienpräparat begrenzen die Übertragbarkeit der Ergebnisse.",
+  "text_en": "The cited clinical paper investigates a growth hormone-releasing factor in people with HIV. The clinical context and study preparation limit how findings can be generalised.",
   "synonyme": [
+   "Egrifta",
+   "TH9507",
+   "Egrifta WR"
+  ],
+  "synonyme_en": [
    "Egrifta",
    "TH9507",
    "Egrifta WR"
@@ -1899,13 +2871,24 @@ window.PK.glossar = [
   "begriff": "Thymosin Alpha 1",
   "begriff_en": "Thymosin Alpha 1",
   "kategorie": "wirkstoff",
-  "kurz": "Ein körpereigenes Immun-Peptid aus der Thymusdrüse, in mehr als 35 Ländern als Arzneimittel zugelassen, in Deutschland, Österreich und der Schweiz derzeit nicht.",
-  "kurz_en": "A naturally occurring thymus-derived immune peptide, approved as a medication in more than 35 countries, though not currently in Germany, Austria, or Switzerland.",
-  "text": "Thymosin Alpha 1 ist ein aus 28 Aminosäuren bestehendes Peptid, das ursprünglich aus der Thymusdrüse isoliert wurde, dem zentralen Organ der Reifung von T-Zellen. Es wirkt als Immunmodulator und wird sowohl in der klinischen Forschung als auch, unter dem Handelsnamen Zadaxin, als zugelassenes Präparat bei bestimmten Immunerkrankungen eingesetzt. Untersucht werden unter anderem chronische Virusinfektionen, die Immunantwort auf Impfungen und eine unterstützende Rolle in der Onkologie.",
-  "text_en": "Thymosin alpha 1 is a 28-amino-acid peptide originally isolated from the thymus gland, the central organ where T cells mature. It acts as an immune modulator and is used both in clinical research and, under the trade name Zadaxin, as an approved medication for certain immune conditions. Areas of study include chronic viral infections, the immune response to vaccination, and a supportive role in oncology.",
+  "kurz": "Peptid aus dem Thymosin-System, in klinischen und präklinischen Studien untersucht.",
+  "kurz_en": "Peptide from the thymosin system investigated in clinical and preclinical studies.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 3998766",
+    "titel_en": "PubMed: Research publication, PMID 3998766",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/3998766/"
+   }
+  ],
+  "text": "Die verlinkte randomisierte Studie untersucht synthetisches Thymosin Alpha-1 in einem bestimmten onkologischen Kontext. Ein solcher Befund ist kein pauschaler Nachweis einer Immunstärkung und bestätigt keine frei verkauften Forschungsprodukte.",
+  "text_en": "The linked randomised trial investigates synthetic thymosin alpha-1 in a particular oncology context. Such a finding is not general evidence of immune enhancement and does not verify freely marketed research products.",
   "synonyme": [
    "Tα1",
    "Zadaxin (Handelsname)"
+  ],
+  "synonyme_en": [
+   "Tα1",
+   "Zadaxin (brand name)"
   ],
   "link": "wirkstoffe/thymosin-alpha-1.html"
  },
@@ -1916,10 +2899,20 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Thymosine sind eine Familie körpereigener Peptide, die ursprünglich aus der Thymusdrüse isoliert wurden.",
   "kurz_en": "Thymosins are a family of peptides originally isolated from the thymus gland.",
-  "text": "Thymosine sind eine Familie kleiner Peptide, die ursprünglich aus dem Thymus isoliert wurden und in zwei Hauptgruppen unterteilt werden: Thymosin-alpha-Peptide, die vor allem im Zusammenhang mit dem Immunsystem untersucht werden, und Thymosin-beta-Peptide, die an der Organisation des Zellskeletts über Aktin beteiligt sind. Aus Thymosin-beta-4 leiten sich mehrere untersuchte Peptidfragmente ab. Thymosin Alpha 1 ist unter dem Namen Zadaxin in mehreren Ländern als Arzneimittel zugelassen.",
-  "text_en": "Thymosins are a family of small peptides originally isolated from the thymus and divided into two main groups: alpha thymosins, studied mainly in relation to the immune system, and beta thymosins, involved in organising the actin cytoskeleton. Several studied peptide fragments are derived from thymosin beta-4. Thymosin alpha 1 is approved as a medicine under the name Zadaxin in several countries.",
+  "quellen": [
+   {
+    "titel": "NCI: Thymosine",
+    "titel_en": "NCI: Thymosins",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-drug/def/recombinant-thymosin"
+   }
+  ],
+  "text": "Unter dem Namen werden unterschiedliche Peptide zusammengefasst, die ursprünglich aus Thymusmaterial isoliert wurden. Alpha- und Beta-Thymosine unterscheiden sich in Struktur und Forschungsbezug. Befunde zu einem einzelnen Thymosin sind nicht automatisch auf andere übertragbar.",
+  "text_en": "The name covers different peptides originally isolated from thymus material. Alpha and beta thymosins differ in structure and research context. Findings for one thymosin do not automatically apply to others.",
   "synonyme": [
    "Thymosinpeptide"
+  ],
+  "synonyme_en": [
+   "Thymosin peptides"
   ],
   "siehe": [
    "peptidhormon",
@@ -1940,6 +2933,13 @@ window.PK.glossar = [
   "kategorie": "studien",
   "kurz": "Versuchstier, an dem eine Substanz im In-vivo-Versuch untersucht wird, etwa Maus oder Ratte. Kein direkter Beleg für Menschen.",
   "kurz_en": "A laboratory animal, such as a mouse or rat, used to study a substance in vivo. Not direct proof for humans.",
+  "quellen": [
+   {
+    "titel": "NCI: animal model",
+    "titel_en": "NCI: animal model",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/animal-model"
+   }
+  ],
   "text": "Ein Tiermodell ist ein Versuchstier wie Maus, Ratte oder Zebrafisch, an dem Stoffwechsel, Verhalten oder Gewebe unter kontrollierten Bedingungen untersucht werden. Es dient der präklinischen Forschung vor einer möglichen klinischen Studie. Unterschiede in Genetik und Physiologie bedeuten, dass ein Effekt im Tiermodell kein Beleg für eine Wirkung beim Menschen ist.",
   "text_en": "An animal model is a laboratory animal such as a mouse, rat or zebrafish in which metabolism, behaviour or tissue is studied under controlled conditions. It serves preclinical research before a possible clinical trial. Because genetics and physiology differ, an effect in an animal model is not proof of an effect in humans.",
   "siehe": [
@@ -1953,13 +2953,23 @@ window.PK.glossar = [
  {
   "slug": "tirzepatid",
   "begriff": "Tirzepatid",
-  "begriff_en": "Tirzepatid",
+  "begriff_en": "Tirzepatide",
   "kategorie": "wirkstoff",
-  "kurz": "Dualer GIP/GLP-1-Rezeptor-Agonist, als zugelassenes Arzneimittel bekannt und hier als Forschungssubstanz zur Stoffwechselregulation gelistet.",
-  "kurz_en": "A dual GIP/GLP-1 receptor agonist, known as an approved medication and listed here as a research substance for metabolic regulation.",
-  "text": "Tirzepatid ist ein dualer GIP/GLP-1-Rezeptor-Agonist und als Arzneimittel unter den Namen Mounjaro und Zepbound zugelassen. Es ist Gegenstand umfangreicher klinischer Forschung zur Stoffwechsel- und Gewichtsregulation bei Typ-2-Diabetes und Adipositas. Die hier gelisteten Forschungschargen sind nicht mit zugelassenen Arzneimitteln gleichzusetzen und ausschließlich für Laborzwecke bestimmt.",
-  "text_en": "Tirzepatide is a dual GIP/GLP-1 receptor agonist approved as a medication under the names Mounjaro and Zepbound. It is the subject of extensive clinical research on metabolic and weight regulation in type 2 diabetes and obesity. The research batches listed here are not equivalent to approved medications and are intended for laboratory use only.",
+  "kurz": "Dualer GIP- und GLP-1-Rezeptoragonist, zu dem klinische Studien vorliegen.",
+  "kurz_en": "Dual GIP and GLP-1 receptor agonist studied in clinical trials.",
+  "quellen": [
+   {
+    "titel": "PubMed: Forschungsarbeit, PMID 35658024",
+    "titel_en": "PubMed: Research publication, PMID 35658024",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/"
+   }
+  ],
+  "text": "Die verlinkte randomisierte klinische Studie untersucht Tirzepatid bei Adipositas. Die untersuchte Formulierung und ihre Qualitätskontrolle sind von frei angebotenen Forschungschemikalien zu unterscheiden.",
+  "text_en": "The linked randomised clinical trial investigates tirzepatide in obesity. Its study formulation and quality controls must be distinguished from freely marketed research chemicals.",
   "synonyme": [
+   "LY3298176"
+  ],
+  "synonyme_en": [
    "LY3298176"
   ],
   "link": "wirkstoffe/tirzepatid.html"
@@ -1969,10 +2979,17 @@ window.PK.glossar = [
   "begriff": "U-100",
   "begriff_en": "U-100",
   "kategorie": "handhabung",
-  "kurz": "U-100 bezeichnet eine Skaleneinteilung, bei der ein Volumen in 100 gleiche Einheiten aufgeteilt ist, 100 Einheiten pro Milliliter.",
-  "kurz_en": "U-100 describes a graduation scale that divides a volume into 100 equal units, 100 units per millilitre.",
-  "text": "Die Bezeichnung U-100 stammt von einer Graduierung, bei der jeder Marker auf der Skala ein Hundertstel eines Milliliters darstellt, sodass 100 Einheiten einem Milliliter entsprechen. Diese Skala findet sich auf entsprechend markierten Messhilfen und dient dem präzisen Ablesen kleiner Flüssigkeitsmengen. Sie ist eine reine Maßeinteilung und unabhängig vom gelösten Stoff.",
-  "text_en": "The designation U-100 comes from a graduation where each marker on the scale represents one hundredth of a millilitre, so 100 units correspond to one millilitre. This scale appears on correspondingly marked measuring aids and is used to read off small liquid volumes precisely. It is purely a unit of measurement and independent of the dissolved substance.",
+  "kurz": "Bezeichnung für Insulin mit 100 Einheiten pro Milliliter, keine allgemeine Peptideinheit.",
+  "kurz_en": "A designation for insulin containing 100 units per millilitre, not a general peptide unit.",
+  "quellen": [
+   {
+    "titel": "DailyMed: Bedeutung der Bezeichnung U-100",
+    "titel_en": "DailyMed: Meaning of the U-100 designation",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c8ecbd7a-0e22-4fc7-a503-faa58c1b6f3f"
+   }
+  ],
+  "text": "U-100 ist eine Konzentrationsangabe für Insulinprodukte. Sie ist keine allgemeine Masseneinheit für Peptide. Eine entsprechend beschriftete Skala lässt sich deshalb nicht ohne Kenntnis der Substanz und ihrer Spezifikation als Peptidmenge interpretieren.",
+  "text_en": "U-100 is a concentration designation for insulin products. It is not a general unit of peptide mass. A scale labelled this way cannot be interpreted as a peptide quantity without knowing the substance and its specification.",
   "siehe": [
    "internationale-einheit",
    "konzentration"
@@ -1985,10 +3002,20 @@ window.PK.glossar = [
   "kategorie": "handhabung",
   "kurz": "Ein Vial ist ein kleines, meist mit Gummistopfen verschlossenes Glasfläschchen für Peptide als Pulver oder Lösung.",
   "kurz_en": "A vial is a small glass container, usually sealed with a rubber stopper, holding a peptide as powder or solution.",
+  "quellen": [
+   {
+    "titel": "ICH Q7: Herstellung, Chargen und Analysenzertifikate",
+    "titel_en": "ICH Q7: Manufacturing, batches and certificates of analysis",
+    "url": "https://www.fda.gov/media/71518/download"
+   }
+  ],
   "text": "Vials sind die Standardverpackung für lyophilisierte Peptide im Forschungshandel. Der Gummistopfen erlaubt eine geschlossene Entnahme, das aufgedruckte Etikett trägt in der Regel Chargennummer und Menge. Ein einzelnes Vial lässt sich einem CoA zuordnen, sofern die Chargennummer übereinstimmt.",
   "text_en": "Vials are the standard packaging for lyophilised peptides in the research trade. The rubber stopper allows a closed withdrawal, and the printed label usually carries the batch number and amount. A single vial can be matched to a CoA as long as the batch number lines up.",
   "synonyme": [
    "Fläschchen"
+  ],
+  "synonyme_en": [
+   "Small bottle"
   ],
   "siehe": [
    "charge",
@@ -2003,11 +3030,23 @@ window.PK.glossar = [
   "kategorie": "klassen",
   "kurz": "Wachstumshormon ist ein körpereigenes Hypophysenhormon, das Wachstum, Stoffwechsel und Körperzusammensetzung reguliert.",
   "kurz_en": "Growth hormone is a pituitary hormone that regulates growth, metabolism and body composition.",
+  "quellen": [
+   {
+    "titel": "NIDDK: Wachstumshormon und IGF-1",
+    "titel_en": "NIDDK: Growth hormone and IGF-1",
+    "url": "https://www.niddk.nih.gov/health-information/endocrine-diseases/acromegaly"
+   }
+  ],
   "langform": "Somatotropin",
   "langform_en": "Somatotropin",
   "text": "Wachstumshormon, auch Somatotropin oder GH genannt, wird in den somatotropen Zellen der Hirnanhangdrüse gebildet und pulsatil ins Blut abgegeben, gesteuert durch GHRH, Somatostatin und Ghrelin. Es reguliert direkt und über IGF-1 aus der Leber Längenwachstum, Muskel- und Fettstoffwechsel sowie Knochendichte. Mehrere Peptidklassen setzen an unterschiedlichen Stellen dieser Achse an, etwa an der Ausschüttung im Hypophysenvorderlappen.",
   "text_en": "Growth hormone, also called somatotropin or GH, is produced by somatotroph cells in the pituitary gland and released into the blood in pulses, controlled by GHRH, somatostatin and ghrelin. It regulates longitudinal growth, muscle and fat metabolism and bone density, both directly and via IGF-1 from the liver. Several peptide classes target different points along this axis, including release from the anterior pituitary.",
   "synonyme": [
+   "GH",
+   "HGH",
+   "Somatotropin"
+  ],
+  "synonyme_en": [
    "GH",
    "HGH",
    "Somatotropin"
@@ -2035,6 +3074,13 @@ window.PK.glossar = [
   "kategorie": "recht",
   "kurz": "Die WADA veröffentlicht jährlich eine Verbotsliste für den Sport, auf der auch Peptide stehen.",
   "kurz_en": "WADA publishes an annual prohibited list for sport that also includes peptides.",
+  "quellen": [
+   {
+    "titel": "WADA: Aktuelle Verbotsliste",
+    "titel_en": "WADA: Current prohibited list",
+    "url": "https://www.wada-ama.org/en/prohibited-list"
+   }
+  ],
   "langform": "Welt-Anti-Doping-Agentur",
   "langform_en": "World Anti-Doping Agency",
   "text": "Die Welt-Anti-Doping-Agentur koordiniert die Anti-Doping-Regeln im organisierten Sport und aktualisiert jährlich ihre Verbotsliste. Mehrere Kategorien betreffen Peptidhormone und verwandte Substanzen, unabhängig vom Rechtsstatus außerhalb des Sports. Welche Substanz konkret erfasst ist, steht ausschließlich in der aktuellen WADA-Liste selbst.",
@@ -2050,10 +3096,20 @@ window.PK.glossar = [
   "kategorie": "recht",
   "kurz": "Zulassung bezeichnet die behördliche Genehmigung, ein Arzneimittel in einem Markt zu vertreiben.",
   "kurz_en": "Marketing authorisation is the regulatory approval required to sell a medicinal product in a market.",
-  "text": "Vor der Zulassung prüft die zuständige Behörde eingereichte Unterlagen zu Qualität, Unbedenklichkeit und Wirksamkeit. In der EU laufen zentrale Verfahren über die EMA, nationale über Behörden wie das BfArM. Substanzen, die nur als Forschungschemikalie gehandelt werden, durchlaufen dieses Verfahren für diesen Zweck nicht.",
-  "text_en": "Before authorisation, the responsible authority reviews submitted data on quality, safety and efficacy. In the EU, centralised procedures run through the EMA, national ones through bodies such as national medicines agencies. Substances traded only as research chemicals do not go through this procedure for that purpose.",
+  "quellen": [
+   {
+    "titel": "EMA: Bewertung und Zulassungsentscheidung",
+    "titel_en": "EMA: Evaluation and authorisation decisions",
+    "url": "https://www.ema.europa.eu/en/about-us/what-we-do/authorisation-medicines/how-ema-evaluates-medicines-human-use"
+   }
+  ],
+  "text": "Im zentralen EU-Verfahren bewertet die EMA die wissenschaftlichen Unterlagen. Die Europäische Kommission erteilt die Zulassung. Eine Zulassung bezieht sich auf ein bestimmtes Arzneimittel und seine festgelegten Bedingungen, nicht pauschal auf jedes Produkt mit demselben Stoffnamen.",
+  "text_en": "In the centralised EU procedure, EMA evaluates the scientific dossier. The European Commission grants marketing authorisation. Authorisation applies to a particular medicinal product under specified conditions, not to every product bearing the same substance name.",
   "synonyme": [
    "Marktzulassung"
+  ],
+  "synonyme_en": [
+   "Marketing authorisation"
   ],
   "siehe": [
    "ema",
