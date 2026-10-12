@@ -117,6 +117,20 @@ Auf Unterseiten (`anbieter/`, `wirkstoffe/`) Hrefs mit `../` präfixen, CSS/JS-P
 ```
 `.hero-media` zeigt einen CSS-Gradient-Fallback; das `<img>` blendet sich bei 404 selbst aus (`onerror`).
 
+### .hero-photo : Foto-Hero (Startseite, seit 12.10.2026, Header M2)
+Ersetzt auf der Startseite die 3D-Sprites. Vollbild-`<picture>` hinter dem Text, Text/Suche/CTA mittig. Desktop `m2-desktop-{800,1200,1600,2400}` (2400x1000), bis 899px `m2-mobile-{390,585,780}` (780x2000, Hochformat, oben um ruhige Wand verlängert), je WebP + JPEG-Fallback unter `assets/img/hero/`. Höhe aus `min-height`, nicht aus dem Bild (kein CLS). Text, Suchfeld und Button tragen lokal feste Hell-Werte, das Motiv ist auch im Dark Mode hell. Alt-Text über `data-i18n-attr="alt:page.index.heroImgAlt"`. Das LCP-Bild ist `loading="eager" fetchpriority="high"`.
+```html
+<section class="hero hero-photo">
+  <picture class="hero-photo-media">
+    <source media="(max-width:899px)" type="image/webp" sizes="100vw" srcset="… 390w, … 585w, … 780w" width="780" height="2000">
+    <source media="(max-width:899px)" type="image/jpeg" …>
+    <source type="image/webp" sizes="100vw" srcset="… 800w, … 1200w, … 1600w, … 2400w">
+    <img class="hero-photo-img" src="…1600.jpg" srcset="…" sizes="100vw" width="2400" height="1000" alt="…" fetchpriority="high" loading="eager" decoding="async">
+  </picture>
+  <div class="container hero-photo-inner"><div class="hero-copy">…</div></div>
+</section>
+```
+
 ### .hero-3d : schwebende Molekül-/Vial-Sprites (nur Startseite)
 
 v2 (06.09., Feedback "alles mutiger: Moleküle in den Hintergrund, Vial +

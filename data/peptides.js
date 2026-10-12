@@ -802,8 +802,8 @@ window.PK.peptides = [
     studienlage: "klinisch untersucht",
     kurz: "Peptid, das gleichzeitig an GLP-1-, GIP- und Glucagon-Rezeptoren wirkt und sich in fortgeschrittener klinischer Prüfung zur Stoffwechselregulation befindet.",
     kurz_en: "A peptide that acts on GLP-1, GIP, and glucagon receptors simultaneously, currently in advanced clinical trials related to metabolic regulation.",
-    beschreibung: "Retatrutid ist ein sogenannter Triple-Agonist, der an drei Stoffwechsel-Rezeptoren gleichzeitig ansetzt: GLP-1, GIP und Glucagon. Es befindet sich in Phase-3-Studien und ist bisher in keinem Land als Arzneimittel zugelassen.",
-    beschreibung_en: "Retatrutide is a so-called triple agonist that acts on three metabolic receptors simultaneously: GLP-1, GIP, and glucagon. It is currently in phase 3 trials and is not approved as a medication in any country to date.",
+    beschreibung: "Retatrutid ist ein sogenannter Triple-Agonist, der an drei Stoffwechsel-Rezeptoren gleichzeitig ansetzt: GLP-1, GIP und Glucagon. Der Hersteller Eli Lilly meldete am 23.07.2026 Phase-3-Topline-Ergebnisse und hat eine Einreichung bei der US-Behörde FDA für das erste Quartal 2027 angekündigt. Retatrutid ist ein Prüfpräparat (investigational) und bisher in keinem Land als Arzneimittel zugelassen.",
+    beschreibung_en: "Retatrutide is a so-called triple agonist that acts on three metabolic receptors simultaneously: GLP-1, GIP, and glucagon. The manufacturer, Eli Lilly, reported phase 3 topline results on 23 July 2026 and has announced a submission to the US regulator FDA for Q1 2027. Retatrutide is an investigational molecule and is not approved as a medication in any country to date.",
     mechanismus: "Über den GLP-1-Rezeptor wird eine Sättigungsregulation sowie eine verlangsamte Magenentleerung beschrieben. Der GIP-Rezeptor wird mit einer verstärkten Insulinsekretion und einer möglichen Pufferung gastrointestinaler Effekte in Verbindung gebracht. Die zusätzliche Wirkung am Glucagon-Rezeptor wird mit einem erhöhten Energieverbrauch über die Leber sowie der Aktivierung von braunem Fettgewebe assoziiert.",
     mechanismus_en: "Through the GLP-1 receptor, effects on satiety regulation and slowed gastric emptying have been described. The GIP receptor has been linked to enhanced insulin secretion and a possible buffering of gastrointestinal effects. The additional action at the glucagon receptor has been associated with increased hepatic energy expenditure and activation of brown adipose tissue.",
     evidenz: [
@@ -850,8 +850,8 @@ window.PK.peptides = [
     rekonstitution_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
     lagerung: "Produktspezifische Bedingungen sind den Originalunterlagen des Herstellers zu entnehmen. Dieses Portal gibt keine Anleitung zur Zubereitung oder Anwendung am Menschen.",
     lagerung_en: "Product-specific conditions belong in the manufacturer’s original documentation. This portal provides no instructions for preparation or human use.",
-    rechtsstatus: "Retatrutid befindet sich in Phase-3-Studien und ist bisher weder in der EU noch in den USA als Arzneimittel zugelassen. Es wird ausschließlich als Forschungschemikalie gehandelt.",
-    rechtsstatus_en: "Retatrutide is currently in phase 3 trials and has not yet been approved as a medication in the EU or the United States. It is sold exclusively as a research chemical.",
+    rechtsstatus: "Retatrutid ist ein Prüfpräparat (investigational) und bisher weder in der EU noch in den USA als Arzneimittel zugelassen. Der Hersteller Eli Lilly meldete am 23.07.2026 Phase-3-Topline-Ergebnisse und hat eine Einreichung bei der FDA für das erste Quartal 2027 angekündigt. Eine Einreichung ist keine Zulassung. Es wird ausschließlich als Forschungschemikalie gehandelt.",
+    rechtsstatus_en: "Retatrutide is an investigational molecule and has not been approved as a medication in the EU or the United States. The manufacturer, Eli Lilly, reported phase 3 topline results on 23 July 2026 and has announced a submission to the FDA for Q1 2027. A submission is not an approval. It is sold exclusively as a research chemical.",
     typischeMg: [
       5,
       10,
@@ -860,9 +860,9 @@ window.PK.peptides = [
     faq: [
       {
         q: "Ist Retatrutid bereits als Medikament erhältlich?",
-        a: "Nein. Retatrutid befindet sich in Phase-3-Studien, eine Zulassung wird laut Herstellerangaben frühestens 2027 erwartet. Aktuell ist es kein zugelassenes Arzneimittel.",
+        a: "Nein. Der Hersteller Eli Lilly meldete am 23.07.2026 Phase-3-Topline-Ergebnisse und hat eine Einreichung bei der FDA für das erste Quartal 2027 angekündigt. Retatrutid ist ein Prüfpräparat (investigational) und aktuell kein zugelassenes Arzneimittel.",
         q_en: "Is retatrutide already available as a medication?",
-        a_en: "No. Retatrutide is currently in phase 3 trials, with approval expected at the earliest in 2027 according to the manufacturer. It is currently not an approved medication."
+        a_en: "No. The manufacturer, Eli Lilly, reported phase 3 topline results on 23 July 2026 and has announced a submission to the FDA for Q1 2027. Retatrutide is an investigational molecule and is currently not an approved medication."
       },
       {
         q: "Was unterscheidet Retatrutid von Semaglutid?",
@@ -872,14 +872,14 @@ window.PK.peptides = [
       },
       {
         q: "Woher stammt Retatrutid?",
-        a: "Retatrutid wurde vom Pharmaunternehmen Eli Lilly entwickelt und wird in mehreren Phase-3-Studien unter dem Programmnamen TRIUMPH untersucht.",
+        a: "Retatrutid wurde vom Pharmaunternehmen Eli Lilly entwickelt und wird im Phase-3-Programm TRIUMPH untersucht, für das 2026 Topline-Ergebnisse gemeldet wurden.",
         q_en: "Where does retatrutide come from?",
-        a_en: "Retatrutide was developed by the pharmaceutical company Eli Lilly and is being studied in several phase 3 trials under the TRIUMPH program name."
+        a_en: "Retatrutide was developed by the pharmaceutical company Eli Lilly and is being studied in the phase 3 program TRIUMPH, for which topline results were reported in 2026."
       }
     ],
     seo: {
-      title: "Retatrutid: Triple-Agonist in Phase-3-Studien",
-      title_en: "Retatrutide: Triple Agonist in Phase 3 Trials",
+      title: "Retatrutid: Triple-Agonist, Phase-3-Ergebnisse gemeldet",
+      title_en: "Retatrutide: Triple Agonist, Phase 3 Results Reported",
       description: "Retatrutid im Überblick: Mechanismus, Studienlage und Sicherheitsprofil des GLP-1/GIP/Glucagon-Triple-Agonisten in fortgeschrittener klinischer Prüfung.",
       description_en: "Retatrutide at a glance: mechanism, study status and safety profile of the GLP-1/GIP/glucagon triple agonist in advanced clinical trials."
     },
@@ -968,9 +968,9 @@ window.PK.peptides = [
       },
       {
         q: "Worin unterscheidet sich Semaglutid von Retatrutid?",
-        a: "Semaglutid wirkt allein am GLP-1-Rezeptor, Retatrutid zusätzlich an GIP- und Glucagon-Rezeptoren. Retatrutid befindet sich zudem noch in Phase-3-Studien, Semaglutid ist bereits zugelassen.",
+        a: "Semaglutid wirkt allein am GLP-1-Rezeptor, Retatrutid zusätzlich an GIP- und Glucagon-Rezeptoren. Retatrutid ist ein Prüfpräparat und bisher nicht zugelassen, Semaglutid ist bereits zugelassen.",
         q_en: "How does semaglutide differ from retatrutide?",
-        a_en: "Semaglutide acts only on the GLP-1 receptor, while retatrutide additionally acts on the GIP and glucagon receptors. Retatrutide is also still in phase 3 trials, while semaglutide is already approved."
+        a_en: "Semaglutide acts only on the GLP-1 receptor, while retatrutide additionally acts on the GIP and glucagon receptors. Retatrutide is an investigational molecule and not yet approved, while semaglutide is already approved."
       },
       {
         q: "Wofür wird Semaglutid als Arzneimittel eingesetzt?",

@@ -1261,7 +1261,7 @@
         text = PK.t("global.demoBanner.text");
       }
       banners.forEach(function (el) {
-        if (text === null) { el.hidden = true; return; }
+        if (text === null) { el.hidden = true; el.setAttribute("data-banner-off", ""); return; }
         el.hidden = false;
         var rest = el.querySelector("[data-demo-banner-text]");
         if (rest) {

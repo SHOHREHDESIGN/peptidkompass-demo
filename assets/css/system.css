@@ -846,6 +846,80 @@ body.nav-open{ overflow:hidden; }
 [data-theme="dark"] .hero-3d-sprite[data-depth="front"]{ opacity:.85; }
 
 /* -----------------------------------------------------------------------
+   6c. .hero-photo : Foto-Hero (Header M2, 12.10.2026, Vic-Entscheid)
+   -----------------------------------------------------------------------
+   Ersetzt auf der Startseite die 3D-Sprite-Bühne (6b, bleibt als Bestand
+   im File, wird auf der Startseite nicht mehr ausgeliefert). Das Bild liegt
+   als <picture> absolut hinter dem Text (z-index:-1 in eigenem Stacking-
+   Context), object-fit:cover, an der Unterkante verankert, damit die beiden
+   Figuren beim Beschnitt sichtbar bleiben. Höhe kommt aus min-height
+   (Seitenverhältnis 2,4:1 = 2400x1000 des Desktop-Motivs), nicht aus dem
+   Bild: width/height-Attribute am <img> reservieren nur den Platz im Laden,
+   die Fläche selbst ist von Anfang an feststehend (kein CLS).
+   Art Direction: ≤899px lädt das Hochformat 780x2000 (siehe <source media>).
+   Kontrast: Das Motiv ist fest hell (Beton, Hellgrau). Text, Suchfeld und
+   Button tragen deshalb lokal fixe Hell-Modus-Werte und folgen NICHT dem
+   Dark-Mode-Token-Wechsel, sonst stünde heller Text auf hellem Foto.
+   Gemessen 12.10.2026 (Pixel hinter dem Text, ungünstigster Punkt, 7 Sprachen x
+   Desktop/Tablet/Mobil): H1 ≥ 9,9:1, Fließtext ≥ 5,5:1, Eyebrow ≥ 6,0:1. */
+.hero.hero-photo{
+  --hp-text:#1d1d1f; --hp-text-2:#3d3d41; --hp-placeholder:#55555a;
+  --hp-accent:#0066cc; --hp-accent-strong:#004f9f; --hp-line:#c9c9ce;
+  position:relative; isolation:isolate; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  min-height:clamp(560px, 41.67vw, 760px);
+  padding-block:var(--sp-8);
+  background:#e6e6e8; color:var(--hp-text);
+}
+.hero-photo-media{ position:absolute; inset:0; z-index:-1; display:block; }
+.hero-photo-img{
+  display:block; width:100%; height:100%;
+  object-fit:cover; object-position:50% 100%;
+}
+.hero-photo-inner{ position:relative; width:100%; }
+.hero.hero-photo .hero-copy{ max-width:680px; margin-inline:auto; }
+.hero.hero-photo .eyebrow{ color:var(--hp-text-2); }
+.hero.hero-photo h1{ color:var(--hp-text); }
+.hero.hero-photo p{ color:var(--hp-text-2); }
+.hero.hero-photo .search-bar{
+  background:rgba(250,250,252,.94); border-color:var(--hp-line);
+  box-shadow:0 1px 2px rgba(0,0,0,.06);
+}
+.hero.hero-photo .search-bar input{ color:var(--hp-text); }
+.hero.hero-photo .search-bar input::placeholder{ color:var(--hp-placeholder); }
+.hero.hero-photo .btn-primary{ background:var(--hp-accent); color:#fff; }
+.hero.hero-photo .btn-primary:hover{ background:var(--hp-accent-strong); }
+.hero.hero-photo .hero-actions{ margin-top:var(--sp-2); margin-bottom:0; }
+/* Hochformat-Motiv (≤899px): Das Bild (780x2000, oben um ruhige Wand verlängert,
+   Figuren und Boden unverändert) ist auf Containerbreite skaliert und mit den
+   Füßen 40px über der Unterkante verankert. Die Figurenunterkante liegt
+   46,7vw über der Bildunterkante, daher bottom:calc(40px - 46.7vw). Der Kopf der
+   Figuren steht damit 40px + 24,5vw über der Hero-Unterkante; padding-bottom
+   hält den Text darüber, egal wie viele Zeilen die Sprache braucht (FR/ES/PL
+   haben 2-4 Zeilen mehr als DE). Mit "cover" und fester Höhe lagen die Figuren
+   in langen Sprachen hinter Suchfeld und Button (gemessen 12.10.2026). */
+@media (max-width:899px){
+  .hero.hero-photo{
+    align-items:flex-start;
+    min-height:600px;
+    padding-block:var(--sp-5) calc(24.5vw + 68px);
+  }
+  .hero-photo-img{
+    position:absolute; left:0; width:100%; height:auto;
+    bottom:calc(40px - 46.7vw); object-fit:fill;
+  }
+  /* Heller Schleier oben: hält den Text auch dort lesbar, wo die Fensterpfeiler
+     des Hochformat-Motivs seitlich hinter die Zeilen reichen. */
+  .hero-photo-media::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(to bottom, rgba(242,242,244,.62) 0, rgba(242,242,244,.4) 48%, rgba(242,242,244,0) 64%);
+  }
+}
+@media (min-width:641px) and (max-width:899px){
+  .hero.hero-photo{ padding-top:var(--sp-6); }
+}
+
+/* -----------------------------------------------------------------------
    6b-glass. Glas-Refraktion für die Front-Sprites (vial_b, mol_c)
    -----------------------------------------------------------------------
    Wunsch: "man sieht die Schrift durch den Helix hindurch, wenn er
@@ -1168,6 +1242,13 @@ a.card:hover, .card.is-interactive:hover{
   padding:8px var(--container-pad); text-align:center;
 }
 .demo-banner strong{ color:var(--text); font-weight:600; }
+/* CLS: Die Leiste ist im HTML als [hidden] angelegt und wird erst per JS sichtbar
+   (PK.initDemoBanner). Ohne Reservierung springt der gesamte Seiteninhalt um
+   die Leistenhöhe nach unten (gemessen 12.10.2026: CLS 0,49 mit Vollbild-Hero).
+   Bis das Skript läuft, belegt sie ihren Platz unsichtbar; schaltet das Skript
+   sie ab (launchMode "live"), setzt es data-banner-off und der Platz entfällt. */
+/* !important nötig: weiter unten steht [hidden]{display:none !important}; die höhere Spezifität gewinnt. */
+.demo-banner[hidden]:not([data-banner-off]){ display:flex !important; visibility:hidden; }
 
 /* -----------------------------------------------------------------------
    14. .faq : details/summary

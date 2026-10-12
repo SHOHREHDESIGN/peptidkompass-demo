@@ -200,8 +200,8 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Website zeigt jetzt ein vollständig ausgebautes 'Chargenbezogene Analysedokumentation'-Konzept mit eigener CoA-Bibliothek: jede geprüfte Produktseite trägt Charge-ID, HPLC-Reinheitswert, bei mehreren Produkten zusätzlich Endotoxinwert, plus direktem Verifizierungslink zu Janoshik. Ob dieses System seit der letzten Recherche (06.09.2026) neu eingeführt wurde oder nur jetzt ausführlicher dokumentiert ist, bleibt ungeprüft. Die Tiefe der Darstellung geht aber über die zuvor erfasste knappe Angabe 'coa_labor: Janoshik' hinaus.",
-          "text_en": "The website now shows a fully built-out 'batch-specific analysis documentation' concept with its own CoA library: every checked product page carries a batch ID, HPLC purity value, and for several products also an endotoxin value, plus a direct verification link to Janoshik. Whether this system was newly introduced since the last research round (06.09.2026) or is simply documented in more detail now remains unverified. Either way, the depth of presentation goes beyond the previously recorded brief note 'coa_labor: Janoshik'.",
+          "text": "Die Website zeigt jetzt ein ausgebautes 'Chargenbezogene Analysedokumentation'-Konzept mit eigener CoA-Bibliothek: Jede geprüfte Produktseite trägt Charge-ID und HPLC-Reinheitswert, bei mehreren Produkten zusätzlich einen Endotoxinwert, plus direktem Verifizierungslink zu Janoshik. Ob das System seit der früheren Erhebung (06.09.2026) neu eingeführt wurde oder nur ausführlicher dokumentiert ist, bleibt ungeprüft. Die Tiefe der Darstellung geht über die zuvor erfasste knappe Angabe 'Labor: Janoshik' hinaus.",
+          "text_en": "The website now shows a fully built-out 'batch-specific analysis documentation' concept with its own CoA library: every checked product page carries a batch ID and HPLC purity value, and for several products also an endotoxin value, plus a direct verification link to Janoshik. Whether this system was newly introduced since the earlier survey (2026-09-06) or is simply documented in more detail now remains unverified. Either way, the depth of presentation goes beyond the previously recorded brief note 'lab: Janoshik'.",
           "quelle": "https://pepwerk.com/ueber-uns/",
           "datum": "2026-09-15"
         }
@@ -1744,8 +1744,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Selbst geöffnetes CoA-PDF für BPC-157 (Batch 2512-039) trägt auf Seite 2 ein sichtbares Wasserzeichen 'JANOSHIK', ein bekanntes unabhängiges Peptid-Testlabor. Das widerspricht unserem bisherigen Stand ('Labor nicht genannt') und spricht für eine echte externe Laborprüfung statt reiner Eigenangabe.",
-          "text_en": "A CoA PDF for BPC-157 (batch 2512-039) that I opened myself carries a visible 'JANOSHIK' watermark on page 2, a well-known independent peptide testing lab. This contradicts our previous status ('lab not named') and supports genuine external lab testing rather than a bare self-declaration.",
+          "text": "Ein CoA-PDF für BPC-157 (Charge 2512-039) trägt auf Seite 2 ein sichtbares Wasserzeichen 'JANOSHIK', ein bekanntes unabhängiges Peptid-Testlabor. Das spricht für eine externe Laborprüfung statt einer reinen Eigenangabe.",
+          "text_en": "A CoA PDF for BPC-157 (batch 2512-039) carries a visible 'JANOSHIK' watermark on page 2, a well-known independent peptide testing lab. This supports genuine external lab testing rather than a bare self-declaration.",
           "quelle": "https://beyond-peptides.com/wp-content/uploads/2024/10/Certificate_BPC.pdf",
           "datum": "2026-09-15"
         },
@@ -1841,9 +1841,9 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "NEU seit unserem 06.09.2026-Stand: Pflicht-Altersgate (18+, Checkbox + Research-Field-Dropdown) vor jedem Shop-Zugriff. Unser Stand vom 06.09.2026 (dokumentiert in vendors.js/anbieter_fakten.json) führte 'kein Altersgate' explizit als rote Flagge. Heute (15.09.2026) per Screenshot bestätigt: Das Gate existiert und blockiert den Zugriff auf Katalog/Unterseiten, bis Checkbox bestätigt und ein Forschungsfeld ausgewählt wurde. Einschränkung: Das exakte Einführungsdatum lässt sich mangels Wayback-Snapshot nicht belegen, nur der Zustandswechsel zwischen den beiden Prüfterminen (06.09. vs. 15.09.) ist gesichert, keine Kausalaussage zu einem bestimmten 'Update-Tag' möglich.",
-          "text_en": "NEW compared to our 06.09.2026 status: mandatory age gate (18+, checkbox plus research-field dropdown) before any shop access. Our 06.09.2026 status (documented in vendors.js/anbieter_fakten.json) explicitly flagged 'no age gate' as a red flag. Confirmed today (15.09.2026) via screenshot: the gate exists and blocks access to the catalog/subpages until the checkbox is confirmed and a research field is selected. Caveat: the exact introduction date cannot be substantiated for lack of a Wayback snapshot; only the state change between the two check dates (06.09. vs. 15.09.) is confirmed, with no causal claim possible about a specific 'update day'.",
-          "quelle": "https://beyond-peptides.com/ (Screenshot 2026-09-15) vs. interner Stand vom 06.09.2026 (anbieter_fakten.json)",
+          "text": "Neu gegenüber der früheren Erhebung vom 06.09.2026: Vor jedem Shop-Zugriff steht ein Pflicht-Altersgate (18+, Checkbox und Auswahl eines Forschungsfelds). Am 15.09.2026 per Screenshot bestätigt: Das Gate blockiert Katalog und Unterseiten, bis die Checkbox bestätigt und ein Forschungsfeld gewählt ist. Das genaue Einführungsdatum lässt sich ohne Archiv-Snapshot nicht belegen; gesichert ist nur der Zustandswechsel zwischen den beiden Prüfterminen (06.09. und 15.09.).",
+          "text_en": "New compared with the earlier survey of 2026-09-06: a mandatory age gate (18+, checkbox and choice of a research field) now sits before any shop access. Confirmed on 2026-09-15 by screenshot: the gate blocks the catalog and subpages until the checkbox is confirmed and a research field is selected. The exact introduction date cannot be documented without an archive snapshot; only the change of state between the two check dates (06.09. and 15.09.) is confirmed.",
+          "quelle": "https://beyond-peptides.com/ (Screenshot 2026-09-15)",
           "datum": "2026-09-15"
         },
         {
@@ -1853,8 +1853,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Keine erkennbare Änderung bei Rechtsträger, Sitz oder Versandzeiten: Impressum weiterhin FORGETRADE LIMITED/Hongkong (Gründung 09.05.2026, wie am 06.09. bekannt); Shipping Policy ist auf den 27.04.2026 datiert und damit älter als unser 06.09.-Stand, die dort genannten Zeiten (EU 7-10 Werktage nach Versand zzgl. bis zu 7 Werktage Bearbeitung; International bis 14 Werktage) entsprechen im Kern der bereits bekannten Spanne [7,17] Tage, jetzt nur klarer nach EU/International differenziert.",
-          "text_en": "No discernible change to legal entity, headquarters or shipping times: the imprint still names FORGETRADE LIMITED/Hong Kong (founded 09.05.2026, as already known on 06.09.); the Shipping Policy is dated 27.04.2026 and thus predates our 06.09. status; the times stated there (EU 7-10 business days after dispatch plus up to 7 business days processing; international up to 14 business days) essentially match the already-known [7,17]-day range, now simply differentiated more clearly between EU and international.",
+          "text": "Keine erkennbare Änderung bei Rechtsträger, Sitz oder Versandzeiten: Das Impressum nennt weiterhin FORGETRADE LIMITED/Hongkong (Gründung 09.05.2026). Die Shipping Policy ist auf den 27.04.2026 datiert. Die dort genannten Zeiten (EU 7-10 Werktage nach Versand zuzüglich bis zu 7 Werktage Bearbeitung; International bis 14 Werktage) entsprechen im Kern der bereits erfassten Spanne von 7 bis 17 Tagen, jetzt klarer nach EU und International unterschieden.",
+          "text_en": "No discernible change to legal entity, headquarters or shipping times: the imprint still names FORGETRADE LIMITED/Hong Kong (founded 2026-05-09). The Shipping Policy is dated 2026-04-27. The times stated there (EU 7-10 business days after dispatch plus up to 7 business days processing; international up to 14 business days) essentially match the range of 7 to 17 days already recorded, now differentiated more clearly between EU and international.",
           "quelle": "https://beyond-peptides.com/imprint/ ; https://beyond-peptides.com/shipping-policies/",
           "datum": "2026-09-15"
         }
@@ -2769,8 +2769,8 @@ window.PK.vendors = [
       "stand": "2026-09-15",
       "staerken": [
         {
-          "text": "CoA-Labor jetzt namentlich bekannt: unabhängiges US-Labor 'Freedom Diagnostics' führt die HPLC-MS-Tests durch; Chargen-CoAs sind öffentlich in einer COA-Library/COA-Archive einsehbar (Baseline 06.09.2026 hatte coa_extern:null, 'Labor nicht genannt').",
-          "text_en": "The CoA lab is now named: the independent US lab 'Freedom Diagnostics' performs the HPLC-MS testing, and batch CoAs are publicly viewable in a COA library/archive (the baseline from 06.09.2026 had coa_extern:null, 'lab not disclosed').",
+          "text": "Das CoA-Labor ist namentlich bekannt: Ein unabhängiges US-Labor, 'Freedom Diagnostics', führt die HPLC-MS-Tests durch; Chargen-CoAs sind öffentlich in einer COA-Library einsehbar. In der früheren Erhebung vom 06.09.2026 war das Labor nicht genannt.",
+          "text_en": "The CoA lab is named: the independent US lab 'Freedom Diagnostics' performs the HPLC-MS testing, and batch CoAs are publicly viewable in a COA library. The earlier survey of 2026-09-06 recorded the lab as not disclosed.",
           "quelle": "https://protidehealth.com/pages/faq",
           "datum": "2026-09-15"
         },
@@ -2801,8 +2801,8 @@ window.PK.vendors = [
       ],
       "schwaechen": [
         {
-          "text": "Weiterhin ausschließlich US-Versand, kein internationaler Versand (unverändert ggü. Baseline).",
-          "text_en": "Still US-only shipping, no international shipping (unchanged from the baseline).",
+          "text": "Weiterhin ausschließlich US-Versand, kein internationaler Versand (unverändert gegenüber der früheren Erhebung).",
+          "text_en": "Still US-only shipping, no international shipping (unchanged from the earlier survey).",
           "quelle": "https://protidehealth.com/pages/terms-of-service",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -2845,20 +2845,20 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "CoA-Labor jetzt benannt ('Freedom Diagnostics', US-based, unabhängig): Baseline 06.09.2026 hatte dies noch als 'nicht genannt' erfasst. Unklar, ob dies eine echte Website-Änderung seit 06.09. ist oder in der Erstrecherche lediglich übersehen wurde: das ToS-Dokument selbst ist seit 25.05.2026 unverändert (gleiches Revisionsdatum).",
-          "text_en": "The CoA lab is now named ('Freedom Diagnostics', US-based, independent): the 06.09.2026 baseline still recorded this as 'not disclosed'. It is unclear whether this is a genuine website change since 06.09. or was simply missed in the initial research: the ToS document itself is unchanged since 25.05.2026 (same revision date).",
+          "text": "Das CoA-Labor wird jetzt genannt ('Freedom Diagnostics', US-Labor, unabhängig); in der früheren Erhebung vom 06.09.2026 war es als nicht genannt erfasst. Ob die Angabe neu hinzugekommen ist oder früher übersehen wurde, ist offen: Das Dokument mit den Nutzungsbedingungen ist seit 25.05.2026 unverändert (gleiches Revisionsdatum).",
+          "text_en": "The CoA lab is now named ('Freedom Diagnostics', US-based, independent); the earlier survey of 2026-09-06 recorded it as not disclosed. Whether the information is new or was missed earlier is unresolved: the terms-of-service document itself is unchanged since 2026-05-25 (same revision date).",
           "quelle": "https://protidehealth.com/pages/faq",
           "datum": "2026-09-15"
         },
         {
-          "text": "Re-Export-Verbot aus der Baseline (06.09.2026) weiterhin vorhanden und sogar detaillierter ausformuliert (Abschnitt 6.3 nennt explizit mögliche Meldung an U.S. Bureau of Industry and Security und U.S. Customs and Border Protection bei Verstoß). Keine Lockerung.",
-          "text_en": "The re-export ban from the baseline (06.09.2026) is still in place and is even spelled out in more detail (section 6.3 now explicitly names possible reporting to the U.S. Bureau of Industry and Security and U.S. Customs and Border Protection for violations). No easing.",
+          "text": "Das Re-Export-Verbot aus den Nutzungsbedingungen (Stand der früheren Erhebung vom 06.09.2026) besteht weiterhin und ist ausführlicher formuliert: Abschnitt 6.3 nennt jetzt ausdrücklich eine mögliche Meldung an das U.S. Bureau of Industry and Security und die U.S. Customs and Border Protection bei Verstößen. Keine Lockerung.",
+          "text_en": "The re-export ban in the terms (as recorded in the earlier survey of 2026-09-06) remains in place and is spelled out in more detail: section 6.3 now explicitly names possible reporting to the U.S. Bureau of Industry and Security and U.S. Customs and Border Protection for violations. No easing.",
           "quelle": "https://protidehealth.com/pages/terms-of-service",
           "datum": "2026-09-15"
         },
         {
-          "text": "Produktkatalog: 'Retatrutide' ist aktuell nicht mehr unter eigenem Namen gelistet (Produktseite liefert 410 Gone). Zeitpunkt der Entfernung/Umbenennung nicht ermittelbar: könnte vor oder nach dem 06.09.2026-Stichtag erfolgt sein, war nicht Teil der Baseline-Prüfung.",
-          "text_en": "Product catalog: 'Retatrutide' is no longer listed under its own name (the product page returns 410 Gone). The timing of the removal/renaming cannot be determined: it could have happened before or after the 06.09.2026 cutoff and was not part of the baseline check.",
+          "text": "Produktkatalog: 'Retatrutide' ist aktuell nicht mehr unter eigenem Namen gelistet (die Produktseite liefert 410 Gone). Der Zeitpunkt der Entfernung oder Umbenennung ist nicht ermittelbar; sie kann vor oder nach der früheren Erhebung vom 06.09.2026 erfolgt sein, die diesen Punkt nicht geprüft hat.",
+          "text_en": "Product catalog: 'Retatrutide' is no longer listed under its own name (the product page returns 410 Gone). The timing of the removal or renaming cannot be determined; it may have happened before or after the earlier survey of 2026-09-06, which did not check this point.",
           "quelle": "https://protidehealth.com/product/retatrutide/",
           "datum": "2026-09-15"
         }
@@ -3655,8 +3655,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Alle drei roten Flaggen aus dem Ausgangsstand (kein Impressum, WhatsApp-Checkout, Wirkversprechen in Testimonials) beim erneuten Check unverändert vorhanden: keine Nachbesserung seit 06.09.2026 feststellbar",
-          "text_en": "All three red flags from the baseline (no imprint, WhatsApp checkout, efficacy claims in testimonials) remain unchanged on re-check: no improvement detectable since 2026-09-06.",
+          "text": "Alle drei roten Flaggen (kein Impressum, WhatsApp-Checkout, Wirkversprechen in Testimonials) waren bei der erneuten Prüfung am 15.09.2026 unverändert vorhanden; seit der früheren Erhebung vom 06.09.2026 ist keine Nachbesserung feststellbar.",
+          "text_en": "All three red flags (no imprint, WhatsApp checkout, efficacy claims in testimonials) were still present on re-check on 2026-09-15; no improvement is detectable since the earlier survey of 2026-09-06.",
           "quelle": "https://peptidelabz.de/",
           "datum": "2026-09-15"
         }
@@ -3764,8 +3764,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "RUO-Disclaimer im Footer sitewide vorhanden: Der Text erklärt, dass alle Verbindungen ausschließlich für Forschungszwecke bestimmt sind und ausdrücklich nicht für die Anwendung bei Erkrankungen vorgesehen sind. Widerspricht dem bisherigen Faktenstand ruo:FALSE, siehe Aenderungen.",
-          "text_en": "A sitewide RUO disclaimer is present in the footer. The text states that all compounds are intended exclusively for research purposes and are explicitly not intended for use on any disease or illness. This contradicts the prior fact base of ruo:FALSE, see Changes.",
+          "text": "Ein RUO-Disclaimer ist sitewide im Footer vorhanden: Der Text erklärt, dass alle Verbindungen ausschließlich für Forschungszwecke bestimmt sind und ausdrücklich nicht für die Anwendung bei Erkrankungen vorgesehen sind. Das widerspricht der früheren Erfassung (kein RUO-Hinweis); siehe Änderungen.",
+          "text_en": "A sitewide RUO disclaimer is present in the footer. The text states that all compounds are intended exclusively for research purposes and are explicitly not intended for use on any disease or illness. This contradicts the earlier record (no RUO notice); see Changes.",
           "quelle": "https://driadashop.to/bpc-157-10mg (Footer-Text)",
           "datum": "2026-09-15"
         },
@@ -3869,8 +3869,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Erstmalige Scamadviser-/Gridinsoft-Erhebung fuer diesen Anbieter: Trust Score 0/100 (Scamadviser, 'Very Likely Unsafe') bzw. 42/100 (Gridinsoft): neue, bislang nicht in der Faktenbasis erfasste Risikosignale (IP-Rechtsverletzung, verstecktes WHOIS, moeglicher Rx-Verkauf ohne Rezept).",
-          "text_en": "First-time ScamAdviser/Gridinsoft assessment for this vendor: trust score 0/100 (ScamAdviser, 'Very Likely Unsafe') and 42/100 (Gridinsoft): new risk signals not previously captured in the fact base (IP rights infringement, hidden WHOIS, possible Rx sales without a prescription).",
+          "text": "Erstmalige Scamadviser-/Gridinsoft-Erhebung für diesen Anbieter: Trust Score 0/100 (Scamadviser, 'Very Likely Unsafe') bzw. 42/100 (Gridinsoft). Neue Risikosignale, die zuvor nicht erfasst waren: IP-Rechtsverletzung, verstecktes WHOIS, möglicher Rx-Verkauf ohne Rezept.",
+          "text_en": "First-time ScamAdviser/Gridinsoft assessment for this vendor: trust score 0/100 (ScamAdviser, 'Very Likely Unsafe') and 42/100 (Gridinsoft). New risk signals not previously recorded: IP rights infringement, hidden WHOIS, possible Rx sales without a prescription.",
           "quelle": "https://www.scamadviser.com/check-website/driadashop.to, https://gridinsoft.com/online-virus-scanner/url/driadashop-to",
           "datum": "2026-09-15"
         }
@@ -4257,26 +4257,26 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "NEU seit Baseline (06.09.2026, dort 'coa_oeffentlich: true' vermerkt): Sowohl /shop/ als auch /lab-results/ verlangen jetzt Account-Erstellung oder Login inkl. 21+-Altersbestaetigung, bevor Produktinfos, Preise oder CoA-Dokumente sichtbar werden ('Due to regulatory changes in this industry, we require account login before product information can be accessed'). Ein Wayback-Snapshot vom 13.05.2026 zeigt bereits dasselbe Login-Gate, das Gate besteht also nachweislich seit mind. Mai 2026 - ob die Baseline-Annahme 'oeffentlich' je zutraf oder auf veralteten/anderen Daten beruhte, bleibt ungeprueft.",
-          "text_en": "NEW since baseline (Sep 6, 2026, where 'coa_oeffentlich: true' was noted): both /shop/ and /lab-results/ now require account creation or login, including 21+ age confirmation, before product info, prices, or CoA documents become visible ('Due to regulatory changes in this industry, we require account login before product information can be accessed'). A Wayback snapshot from May 13, 2026 already shows the same login gate, so the gate has demonstrably existed since at least May 2026 - whether the baseline assumption of 'public' was ever accurate, or was based on outdated/different data, remains unverified.",
+          "text": "Neu gegenüber der früheren Erhebung (06.09.2026, dort als öffentlich vermerkt): Sowohl /shop/ als auch /lab-results/ verlangen jetzt Account-Erstellung oder Login inklusive 21+-Altersbestätigung, bevor Produktinfos, Preise oder CoA-Dokumente sichtbar werden ('Due to regulatory changes in this industry, we require account login before product information can be accessed'). Ein Wayback-Snapshot vom 13.05.2026 zeigt bereits dasselbe Login-Gate; es besteht also nachweislich seit mindestens Mai 2026. Ob die frühere Einstufung als öffentlich je zutraf oder auf veralteten Daten beruhte, ist ungeprüft.",
+          "text_en": "New compared with the earlier survey (2026-09-06, where the CoAs were noted as public): both /shop/ and /lab-results/ now require account creation or login, including 21+ age confirmation, before product info, prices, or CoA documents become visible ('Due to regulatory changes in this industry, we require account login before product information can be accessed'). A Wayback snapshot from 2026-05-13 already shows the same login gate, so the gate has demonstrably existed since at least May 2026. Whether the earlier classification as public was ever accurate, or was based on outdated data, is unverified.",
           "quelle": "https://web.archive.org/web/20260513002542/https://hydroresearchpeptides.com/shop/",
           "datum": "2026-09-15"
         },
         {
-          "text": "CoA-Dokumentenzahl in der Lab-Results-Bibliothek zeigt aktuell 'Library totals: 275 documents' statt der 291 aus der Baseline. Ungeprueft, ob dies ein echter Rueckgang, eine andere Zaehlmethode oder ein aktiver Kategoriefilter ist (Seite zeigte gleichzeitig eine Kategorie-Ansicht mit nur 6 Dokumenten).",
-          "text_en": "The CoA document count in the lab results library currently shows 'Library totals: 275 documents' versus 291 in the baseline. It is unverified whether this reflects an actual decrease, a different counting method, or an active category filter (the page simultaneously showed a category view with only 6 documents).",
+          "text": "Die Zahl der CoA-Dokumente in der Lab-Results-Bibliothek zeigt aktuell 'Library totals: 275 documents' statt 291 in der früheren Erhebung. Ungeprüft, ob dies ein echter Rückgang, eine andere Zählweise oder ein aktiver Kategoriefilter ist (die Seite zeigte gleichzeitig eine Kategorie-Ansicht mit nur 6 Dokumenten).",
+          "text_en": "The CoA document count in the lab results library currently shows 'Library totals: 275 documents' versus 291 in the earlier survey. It is unverified whether this reflects an actual decrease, a different counting method, or an active category filter (the page simultaneously showed a category view with only 6 documents).",
           "quelle": "https://hydroresearchpeptides.com/lab-results/",
           "datum": "2026-09-15"
         },
         {
-          "text": "Venmo-Namensdiskrepanz aus der Baseline ('Venmo-Empfaenger heisst anders als Shop') wurde mit Quelle und Datum direkt am Anbieter verifiziert: NAME 'Hydro Consulting', USERNAME '@AstroLLC'.",
-          "text_en": "The Venmo name discrepancy from the baseline ('Venmo recipient name differs from the shop name') was verified directly at the vendor with source and date: NAME 'Hydro Consulting', USERNAME '@AstroLLC'.",
+          "text": "Die Namensabweichung bei Venmo aus der früheren Erhebung (Empfänger heißt anders als der Shop) wurde direkt beim Anbieter mit Quelle und Datum bestätigt: NAME 'Hydro Consulting', USERNAME '@AstroLLC'.",
+          "text_en": "The Venmo name discrepancy from the earlier survey (recipient name differs from the shop name) was confirmed directly at the vendor with source and date: NAME 'Hydro Consulting', USERNAME '@AstroLLC'.",
           "quelle": "https://hydroresearchpeptides.com/shipping-payment/",
           "datum": "2026-09-15"
         },
         {
-          "text": "Neue Information gegenueber Baseline: Trustpilot hat das Profil des Anbieters wegen Richtlinienverstoss entfernt; in der Baseline war kein Trustpilot-Status vermerkt.",
-          "text_en": "New information versus the baseline: Trustpilot has removed the vendor's profile for a policy violation; the baseline recorded no Trustpilot status.",
+          "text": "Neu gegenüber der früheren Erhebung: Trustpilot hat das Profil des Anbieters wegen eines Richtlinienverstoßes entfernt; zuvor war kein Trustpilot-Status erfasst.",
+          "text_en": "New compared with the earlier survey: Trustpilot has removed the vendor's profile for a policy violation; no Trustpilot status had been recorded before.",
           "quelle": "https://www.trustpilot.com/review/hydroresearchpeptides.com",
           "datum": "2026-09-15"
         }
@@ -4424,14 +4424,14 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Wichtigste Änderung seit 06.09.2026: Der bekannte 'Referral-Link auf Particle Peptides' ist keine Einzelverlinkung, sondern das gesamte Geschäftsmodell: Peptide Culture führt strukturell KEIN eigenes Sortiment (0 Produkte, keine Produkte-Sitemap). Die Seite ist ein Content-/Affiliate-Portal, kein Peptid-Vendor. Das war am 06.09. als offene Prüffrage markiert ('prüfe ob Particle Peptides verbundene/gleiche Firma') und ist jetzt geklärt: keine gleiche Firma, sondern kommerzielle Affiliate-Beziehung (Particle Peptides betreibt laut Suche ein 10%-Affiliate-Programm; Peptide Culture nutzt einen eigenen Tracking-Code ?refs=24594, ChemVerify listet Particle Peptides separat mit anderem Tracking-Code ?refs=24445, verschiedene Partner, gleicher Zielshop).",
-          "text_en": "Most important change since Sep 6, 2026: the known 'referral link to Particle Peptides' is not a single link but the entire business model: Peptide Culture structurally carries NO own product range (0 products, no products sitemap). The site is a content/affiliate portal, not a peptide vendor. This was flagged as an open question on Sep 6 ('check whether Particle Peptides is an affiliated/identical company') and is now resolved: not the same company, but a commercial affiliate relationship (Particle Peptides reportedly runs a 10% affiliate program per search results; Peptide Culture uses its own tracking code ?refs=24594, while ChemVerify lists Particle Peptides separately with a different tracking code ?refs=24445, different partners, same destination shop).",
-          "quelle": "https://peptide-culture.com/pages/shop ; https://www.chemverify.com/api/catalog (Eintrag particle-peptides, website https://particlepeptides.com/en/?refs=24445) ; WebSearch particlepeptides.com/en/content/41-affiliate-program-terms",
+          "text": "Peptide Culture führt kein eigenes Sortiment (0 Produkte, keine Produkt-Sitemap). Die Seite ist ein Content- und Affiliate-Portal, kein Peptid-Anbieter. Der Verweis auf Particle Peptides ist eine kommerzielle Affiliate-Beziehung, keine gemeinsame Firma: Particle Peptides betreibt laut Suchergebnissen ein 10-%-Affiliate-Programm. Peptide Culture nutzt einen eigenen Tracking-Code (?refs=24594), ChemVerify listet Particle Peptides separat mit einem anderen Code (?refs=24445); die Partner sind verschieden, der Zielshop ist derselbe.",
+          "text_en": "Peptide Culture carries no product range of its own (0 products, no product sitemap). The site is a content and affiliate portal, not a peptide vendor. Its link to Particle Peptides is a commercial affiliate relationship, not a shared company: according to search results, Particle Peptides runs a 10% affiliate program. Peptide Culture uses its own tracking code (?refs=24594), while ChemVerify lists Particle Peptides separately with a different code (?refs=24445); the partners differ, the destination shop is the same.",
+          "quelle": "https://peptide-culture.com/pages/shop ; https://www.chemverify.com/api/catalog (Eintrag particle-peptides, website https://particlepeptides.com/en/?refs=24445) ; particlepeptides.com/en/content/41-affiliate-program-terms",
           "datum": "2026-09-15"
         },
         {
-          "text": "Impressum unverändert mangelhaft (kein Fortschritt seit 06.09.2026).",
-          "text_en": "Legal notice remains deficient (no progress since Sep 6, 2026).",
+          "text": "Das Impressum war am 15.09.2026 unverändert mangelhaft.",
+          "text_en": "The legal notice was still deficient on 2026-09-15.",
           "quelle": "https://peptide-culture.com/policies/legal-notice",
           "datum": "2026-09-15"
         }
@@ -4752,8 +4752,8 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Wayback-Machine-Verfuegbarkeits-API nennt als letzten bekannten archivierten Snapshot den 16.06.2026 (Status 200) -- die vollstaendige CDX-Zeitleiste war zum Pruefzeitpunkt wegen 'Internet Archive: Temporarily Offline' nicht abrufbar, sodass der genaue Zeitpunkt des Wechsels von (mutmasslich) eigenem Shop -> wechselnde Fremdshops (Stand 06.09.2026 laut Faktenbasis) -> jetzige Hostinger-Parkseite (15.09.2026) nicht lueckenlos rekonstruierbar ist.",
-          "text_en": "The Wayback Machine availability API names Jun 16, 2026 (status 200) as the last known archived snapshot - the full CDX timeline was unavailable at the time of the check due to 'Internet Archive: Temporarily Offline', so the exact timing of the transition from a (presumed) own shop -> rotating third-party shops (per the Sep 6, 2026 fact base) -> the current Hostinger parking page (Sep 15, 2026) cannot be fully reconstructed.",
+          "text": "Die Verfügbarkeits-API der Wayback Machine nennt als letzten bekannten archivierten Snapshot den 16.06.2026 (Status 200). Die vollständige CDX-Zeitleiste war zum Prüfzeitpunkt wegen 'Internet Archive: Temporarily Offline' nicht abrufbar; deshalb lässt sich der Wechsel von einem (mutmaßlich) eigenen Shop über wechselnde Fremdshops (Stand 06.09.2026) zur jetzigen Hostinger-Parkseite (15.09.2026) nicht lückenlos rekonstruieren.",
+          "text_en": "The Wayback Machine availability API names 2026-06-16 (status 200) as the last known archived snapshot. The full CDX timeline was unavailable at the time of the check ('Internet Archive: Temporarily Offline'), so the transition from a (presumed) own shop to rotating third-party shops (as of 2026-09-06) and then to the current Hostinger parking page (2026-09-15) cannot be fully reconstructed.",
           "quelle": "http://archive.org/wayback/available?url=serapeplab.com, http://web.archive.org/cdx/search/cdx?url=serapeplab.com (Internet Archive zeitweise offline)",
           "datum": "2026-09-15",
           "art": "belegt"
