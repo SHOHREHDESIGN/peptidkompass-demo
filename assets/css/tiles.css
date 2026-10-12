@@ -8,7 +8,7 @@
    Klassen aus system.css (keine neuen Custom Properties).
 
    Enthält:
-   1. Hero-Back-Sprites auf Deckkraft .35 (ruhigerer Hero, Vic-Vorgabe)
+   1. Hero-Back-Sprites auf Deckkraft .35 (ruhigerer Hero, Vorgabe)
    2. .split-tile : 60/40-Bild/Text-Verhältnis für die beiden neuen dunklen
       Voll-Tiles (Bild ist der Star), nur ≥901px – darunter bleibt die
       bestehende Mobile-Stapel-Logik aus system.css (.split{1fr} ≤900px)
@@ -29,14 +29,14 @@
   .split-tile{ grid-template-columns:3fr 2fr; }
 }
 
-/* Vergleichstabelle: Score unter dem Namen, Score-Spalte ausgeblendet, Rabatt-Spalte breit (Vic 14.09.) */
+/* Vergleichstabelle: Score unter dem Namen, Score-Spalte ausgeblendet, Rabatt-Spalte breit */
 .table .col-score-hidden{ display:none; }
 .table .table-logo-cell{ align-items:flex-start; }
 .table .table-name-block{ display:flex; flex-direction:column; gap:6px; min-width:0; }
 .table .table-name-top{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 .table .table-score-row .score-bar-track{ width:110px; }
 .table .col-rabatt-hidden{ display:none; }
-/* Aktionszelle: Button oben, Partner-Code direkt darunter (Vic 14.09.) */
+/* Aktionszelle: Button oben, Partner-Code direkt darunter */
 .table .table-action-stack{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; min-width:220px; }
 .table .table-action-stack .btn{ white-space:nowrap; }
 .table .code-box-compact{ margin:0; padding:6px 8px; gap:6px; width:100%; box-sizing:border-box; }
@@ -58,7 +58,7 @@
 .visual-band img{ width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:640px){ .visual-band{ aspect-ratio:16/10; } }
 
-/* Step-Icons: 5-Schritte-Anleitung charge-pruefen.html (Vic 15.09.) – 44px
+/* Step-Icons: 5-Schritte-Anleitung charge-pruefen.html – 44px
    rundes, leicht blau getöntes Plättchen vor Schritt-Nummer/Text. Nur
    bestehende Tokens: Fläche --info-bg (dieselbe Blau-Tönung wie .pill-info,
    kippt automatisch in Dark Mode), Strich/Icon-Farbe --accent (Action
@@ -78,7 +78,7 @@
 .deal-card .vlogo{ margin-bottom:var(--sp-2); }
 .deal-card .brand-logo-fallback{ display:block; margin-bottom:var(--sp-2); }
 
-/* Hero-Video v3 (Vic 15.09.): Montage in voller Container-Breite, gleiche
+/* Hero-Video v3: Montage in voller Container-Breite, gleiche
    Kante wie die drei Kennzahlen-Kacheln darunter (.container 1280 - 2x48). */
 .hero .hero-media{ max-width:calc(1280px - 96px); aspect-ratio:16/9; }
 
@@ -186,7 +186,7 @@
    ============================================================================ */
 
 
-/* Lifestyle-Kacheln mit Clip-Loop (Vic 15.09.: Hero-Video raus, Clips in die
+/* Lifestyle-Kacheln mit Clip-Loop (Hero-Video raus, Clips in die
    Kacheln). Video füllt die Fläche, Fallback-Bild nur ohne Video-Support
    oder bei reduzierter Bewegung. */
 .split-visual .tile-video{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -197,7 +197,7 @@
 }
 
 /* Anbieter-Detail: Status-Banner respektiert [hidden] (Card setzt display),
-   farbiger Logo-Chip entfällt (Vic: nur eingefärbte Mono-Logos). */
+   farbiger Logo-Chip entfällt (Vorgabe: nur eingefärbte Mono-Logos). */
 .status-banner[hidden]{ display:none; }
 .vendor-logo-color{ display:none; }
 

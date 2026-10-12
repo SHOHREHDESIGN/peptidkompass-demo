@@ -41,7 +41,7 @@ window.PK.ratgeber = [
           "Weil RUO-Substanzen nicht für die Anwendung am Menschen freigegeben sind, gehört ein Altersgate ab 18 Jahren vor den Einstieg in den Shop, dazu der RUO-Hinweis, gut sichtbar auf jeder einzelnen Produktseite und nicht nur im Kleingedruckten. Beides ist kein Selbstzweck, es zeigt, dass ein Anbieter den Rechtsrahmen überhaupt zur Kenntnis nimmt. Fehlt das Altersgate komplett, wie wir es bei einem der geprüften Shops nicht finden konnten, ist das ein erstes Warnsignal, auch wenn es allein noch nichts beweist. Mehr zum Unterschied zwischen Peptid, Protein und RUO liest du im [Peptid 1x1](../peptid-1x1.html)."
         ],
         absaetze_en: [
-          "Because RUO substances aren't approved for use in humans, a legitimate shop places an 18+ age gate before you can enter, plus a visible RUO note on every single product page, not just buried in the fine print. Neither is decorative, both show a vendor at least acknowledges the legal framework it operates in. A missing age gate, which we couldn't find at all on one of the checked shops, is an early warning sign on its own, even if it doesn't prove anything by itself. For the difference between a peptide, a protein, and what RUO means, see our [Peptide 1x1](../peptid-1x1.html)."
+          "Because RUO substances aren't approved for use in humans, a legitimate shop places an 18+ age gate before you can enter, plus a visible RUO note on every single product page, not just buried in the fine print. Neither is decorative, both show a vendor at least acknowledges the legal framework it operates in. A missing age gate, which we couldn't find at all on one of the checked shops, is an early warning sign on its own, even if it doesn't prove anything by itself. For the difference between a peptide, a protein, and what RUO means, see our [Peptides 101](../peptid-1x1.html)."
         ]
       },
       {
@@ -283,7 +283,7 @@ window.PK.ratgeber = [
         q: "Ist der Kauf von RUO-Peptiden in Deutschland illegal?",
         a: "RUO-Peptide sind keine zugelassenen Arzneimittel und nicht für die Anwendung am Menschen freigegeben. Das macht den Kauf für Forschungszwecke nicht automatisch illegal, du bewegst dich aber außerhalb des Arzneimittelrechts und ohne behördliche Qualitätsprüfung. Das ist keine Rechtsberatung, im Zweifel lohnt ein Blick in unser [Peptid 1x1](../peptid-1x1.html) oder eine eigene rechtliche Einschätzung.",
         q_en: "Is it illegal to buy RUO peptides in Germany?",
-        a_en: "RUO peptides aren't approved medicines and aren't cleared for use in humans. That doesn't automatically make buying them for research purposes illegal, but you're operating outside pharmaceutical law and without regulatory quality checks. This isn't legal advice, when in doubt, check our [Peptide 1x1](../peptid-1x1.html) or get your own legal assessment."
+        a_en: "RUO peptides aren't approved medicines and aren't cleared for use in humans. That doesn't automatically make buying them for research purposes illegal, but you're operating outside pharmaceutical law and without regulatory quality checks. This isn't legal advice, when in doubt, check our [Peptides 101](../peptid-1x1.html) or get your own legal assessment."
       },
       {
         q: "Reicht ein niedriger ScamAdviser-Score als Beweis für einen unseriösen Anbieter?",
@@ -1264,7 +1264,7 @@ window.PK.ratgeber = [
         absaetze_en: [
           "A CoA, Certificate of Analysis, documents results of the tests listed in the report on a submitted sample. Conclusions depend on the sample, methods and parameters examined.",
           "The report alone does not confirm sample provenance or that every unit later shipped corresponds to that batch. Check product name, batch number, test date, laboratory and the link to the offered product.",
-          "This article explains documents. It does not establish suitability for human use. See [Peptide 101](../peptid-1x1.html) for the basics."
+          "This article explains documents. It does not establish suitability for human use. See [Peptides 101](../peptid-1x1.html) for the basics."
         ]
       },
       {
@@ -1450,7 +1450,7 @@ window.PK.ratgeber = [
         absaetze_en: [
           "Before opening anything, it is worth matching the numbers: does the vial label carry the same batch number as the CoA the vendor shows for that product? If the number differs, or is missing from the packaging entirely, the CoA cannot be matched, no matter how good the values look.",
           "Some vendors go a step further and link directly to the lab's own verification page, for example Janoshik. There you can look up the batch number or report ID independently of the shop. \"Independent\" here means the lab has no financial stake in the sale and no interest in a particular result, unlike an in-house test with no outside check.",
-          "With our [Batch Check](../charge-pruefen.html) you can match a batch number against the publicly available CoAs we have recorded. The basics on purity, RUO and vendor scoring are in the [Peptide 101](../peptid-1x1.html), and our full scoring methodology is explained in the [Methodology](../methodik.html)."
+          "With our [Batch Check](../charge-pruefen.html) you can match a batch number against the publicly available CoAs we have recorded. The basics on purity, RUO and vendor scoring are in the [Peptides 101](../peptid-1x1.html), and our full scoring methodology is explained in the [Methodology](../methodik.html)."
         ]
       }
     ],
@@ -1708,7 +1708,7 @@ window.PK.ratgeber = [
           "BPC-157 is not approved as a medication in Germany, the rest of the EU, or the United States, and it is not classified as a food product either. Commercially, it is sold exclusively as a research chemical labeled RUO (research use only), intended for laboratory and research purposes, not for use in humans. According to the cited review, the US regulatory agency FDA has not granted approval for the substance either.",
           "The legal status barely differs between the three regions, in all three, an approval process for human use is simply absent. Sale as a research chemical to laboratories is independent of that.",
           "For comparison: an approved medication goes through preclinical testing, controlled clinical phases, and a regulatory benefit-risk assessment before reaching the market. That process has not taken place for BPC-157, neither in Germany, the EU, nor the United States.",
-          "What RUO means in detail, we explain in our [Peptide 1x1](../peptid-1x1.html)."
+          "What RUO means in detail, we explain in our [Peptides 101](../peptid-1x1.html)."
         ]
       },
       {

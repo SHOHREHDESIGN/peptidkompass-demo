@@ -5,7 +5,7 @@
    "page.impressum.<element>". Muss NACH data/i18n/global.js und VOR
    assets/js/site.js eingebunden werden.
 
-   Stand 22.09.2026: Betreiberangaben von Vic eingetragen (Online Monkeys LLC,
+   Stand 22.09.2026: Betreiberangaben eingetragen (Online Monkeys LLC,
    Wyoming). "§ 5 DDG" statt "§ 5 TMG": das Telemediengesetz wurde im Mai 2024
    durch das Digitale-Dienste-Gesetz abgelöst, die Impressumspflicht steht
    seitdem in § 5 DDG.

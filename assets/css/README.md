@@ -119,7 +119,7 @@ Auf Unterseiten (`anbieter/`, `wirkstoffe/`) Hrefs mit `../` präfixen, CSS/JS-P
 
 ### .hero-3d : schwebende Molekül-/Vial-Sprites (nur Startseite)
 
-v2 (06.09., Vic-Feedback "alles mutiger: Moleküle in den Hintergrund, Vial +
+v2 (06.09., Feedback "alles mutiger: Moleküle in den Hintergrund, Vial +
 Helix vorne größer, natürlicher verteilt, gleiche Belichtung"): DREI statt
 zwei Ebenen-Layer, damit Vial + Helix vorne einen eigenen, stärkeren
 Parallax-Faktor bekommen. Markup: `.hero-3d-stage` wrapt `.hero-copy`
@@ -165,7 +165,7 @@ deshalb bewusst mehrheitlich ÜBER dem Text (nicht daneben) und ragt nur mit
 der unteren Spitze leicht in die erste Zeile. `.hero{ overflow:hidden; }`
 verhindert horizontales Scrollen durch die randnahen Front-Sprites.
 
-#### Glas-Refraktion (06.09., Vic-Wunsch "man sieht die Schrift durch den
+#### Glas-Refraktion (06.09., Wunsch "man sieht die Schrift durch den
 Helix hindurch, wenn er über dem Text liegt"): vial_b und mol_c bekommen
 zusätzlich `.hero-glass` auf ihrem `.hero-3d-sprite`. Drei Ebenen
 (system.css 6b-glass), unten nach oben:
@@ -629,7 +629,7 @@ neutralen Rand zurück (`var(--brand, var(--line-strong))`).
 
 ### Vendor-Brand: eingefärbte Mono-Maske + 3px-Rand
 
-Runde "eingefärbte Mono-Maske" (07.09.2026, Vic: "Wir färben die Logos
+Runde "eingefärbte Mono-Maske" (07.09.2026, Feedback: "Wir färben die Logos
 selbst ein, sodass es immer passt"): ÜBERALL, wo ein Anbieter erscheint,
 wird die Mono-Silhouette (`vendor.brand.logoMono`, Alphakanal-Silhouette
 aus `tools/build_vendor_logos.py`) per CSS `mask-image` in der jeweils

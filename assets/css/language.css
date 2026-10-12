@@ -1,0 +1,23 @@
+.language-picker{position:relative;display:block;flex:0 0 auto;font-size:14px;line-height:1.4;background:transparent;border:0;padding:0}
+.language-picker summary{display:flex;align-items:center;justify-content:center;gap:9px;min-height:42px;min-width:70px;padding:8px 14px;border:1px solid #d2d2d7;border-radius:999px;background:#fff;color:#1d1d1f;cursor:pointer;list-style:none;font-weight:600}
+.language-picker summary::-webkit-details-marker{display:none}
+.language-picker summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.language-picker[open] summary{border-color:#0071e3}
+.language-picker .language-options{position:absolute;z-index:100;top:calc(100% + 8px);right:0;min-width:180px;margin:0;padding:7px;list-style:none;border:1px solid #d2d2d7;border-radius:16px;background:#fff;box-shadow:0 12px 35px #00000014}
+.language-picker .language-options a{display:flex;align-items:center;min-height:44px;padding:10px 13px;border-radius:9px;color:#1d1d1f;text-decoration:none;white-space:nowrap}
+.language-picker .language-options a:hover,.language-picker .language-options a:focus-visible{background:#f5f5f7;color:#0066cc}
+.language-picker .language-options a[aria-current="true"]{background:#eef6ff;color:#0066cc;font-weight:600}
+.language-picker summary:focus-visible,.language-picker a:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
+.nav-menu .language-picker{align-self:flex-start;margin:12px 0}
+.nav-menu .language-picker .language-options{left:0;right:auto;position:static;margin-top:8px}
+@media(max-width:600px){.language-picker summary{min-width:62px;min-height:44px;padding:8px 10px}.language-picker .language-options{max-width:calc(100vw - 28px)}}
+/* Keep language access visible on phones and let long translated menus scroll. */
+.nav-inner > .language-picker{display:block}
+.nav-menu{overflow-y:auto;overscroll-behavior:contain}
+.nav-menu > *{flex-shrink:0}
+@media(max-width:1199px){
+  .nav-inner > nav,.nav-inner > .nav-cta{display:none}
+  .nav-hamburger{display:inline-flex}
+}
+
+.language-translation-note{max-width:70ch;margin:20px auto 0;padding:0 20px;text-align:center}

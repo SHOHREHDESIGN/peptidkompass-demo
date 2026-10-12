@@ -646,7 +646,7 @@ body.nav-open{ overflow:hidden; }
 /* -----------------------------------------------------------------------
    6b. .hero-3d : schwebende Molekül-/Vial-Sprites vor/hinter der Headline
    -----------------------------------------------------------------------
-   v2 (06.09., Vic-Feedback "alles mutiger"): DREI Ebenen-Layer statt zwei,
+   v2 (06.09., Feedback "alles mutiger"): DREI Ebenen-Layer statt zwei,
    damit Vial + Helix im Vordergrund einen EIGENEN, stärkeren Parallax-Faktor
    bekommen als der Molekül-Rest im Hintergrund.
    Bühne = .hero-3d-stage (position:relative, Größe = .hero-copy, also nur
@@ -805,7 +805,7 @@ body.nav-open{ overflow:hidden; }
      dem Video (.hero-media beginnt erst deutlich darunter). Beide Werte
      gegen alle drei Elemente per getBoundingClientRect verifiziert (0
      Kollisionen, siehe QA-Beleg Fix-Runde 4). */
-  /* Mobile Bildsprache, Stand 20.09.2026 (Vic waehlt Variante B).
+  /* Mobile Bildsprache, Stand 20.09.2026 (Variante B gewählt).
      Vorgeschichte: Ueber mehrere Runden wurden Helix und Vial immer weiter
      verkleinert und verschoben, um Textkollisionen zu vermeiden. Ergebnis
      waren zwei Restobjekte, die wie ein Fehler aussahen: die Helix mit 90px
@@ -848,7 +848,7 @@ body.nav-open{ overflow:hidden; }
 /* -----------------------------------------------------------------------
    6b-glass. Glas-Refraktion für die Front-Sprites (vial_b, mol_c)
    -----------------------------------------------------------------------
-   Vic-Wunsch: "man sieht die Schrift durch den Helix hindurch, wenn er
+   Wunsch: "man sieht die Schrift durch den Helix hindurch, wenn er
    über dem Text liegt." Drei Ebenen pro betroffenem .hero-3d-sprite
    (jetzt zusätzlich .hero-glass), von unten nach oben:
      a) .hero-glass-body  : füllt die Sprite-Form (CSS-Maske aus dem PNG),
@@ -902,7 +902,7 @@ body.nav-open{ overflow:hidden; }
 
 /* Klon-Ebene: eigenständiger Layer in .hero-3d-stage, per JS erzeugt
    (site.js initHeroGlass), Grundposition deckt exakt .hero-copy ab. */
-.hero-glass-refract{ display:none !important; /* Refraktion deaktiviert, Vic 14.09. */
+.hero-glass-refract{ display:none !important; /* Refraktion deaktiviert, 14.09. */
 }
 .hero-glass-refract-legacy{
   position:absolute; z-index:1; overflow:hidden;
@@ -1400,7 +1400,7 @@ a.card:hover, .card.is-interactive:hover{
 
 /* -----------------------------------------------------------------------
    Vendor-Logo: eingefärbte Mono-Maske (Runde "eingefärbte Mono-Maske",
-   07.09.2026 - Vic: "Wir färben die Logos selbst ein, sodass es immer
+   07.09.2026 - Feedback: "Wir färben die Logos selbst ein, sodass es immer
    passt"). Ersetzt das alte farbige <img> + hellen Dark-Mode-Chip
    dahinter (manche Original-Logos waren dunkel/schwarz gezeichnet und
    verschwanden auf dunklem --bg). PK.renderLogo() (site.js) baut

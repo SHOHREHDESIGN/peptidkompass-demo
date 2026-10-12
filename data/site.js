@@ -7,7 +7,7 @@ window.PK.site = {
   demo: true,
   // launchMode ("preview"|"live"): steuert NUR den Vorabversion-Banner
   // (PK.initDemoBanner). Default "preview" (Banner sichtbar), auf "live"
-  // setzen erst nach Vic-Freigabe zum Go-Live -> Banner verschwindet
+  // setzen erst nach Freigabe zum Go-Live -> Banner verschwindet
   // komplett, unabhängig von site.demo (Auftrag Teil B7, 14.09.).
   launchMode: "preview",
   // domain: einzige Quelle für canonical/og:url/sitemap/robots (kein

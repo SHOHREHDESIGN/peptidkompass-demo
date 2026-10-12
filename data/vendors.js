@@ -71,7 +71,7 @@ window.PK.vendors = [
     "preisProMg": 3.75,
     "affiliateUrl": "https://www.pepwerk.com/",
     "kurz": "Sitz in Deutschland (laut Shop). Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
-    "kurz_en": "Registered in Deutschland (laut Shop). Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    "kurz_en": "Registered in Germany (per the shop). Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
     "staerken": [
       "Externe Labortests (Janoshik Analytical)",
       "RUO-Kennzeichnung vorhanden",
@@ -184,13 +184,6 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Semaglutid, Tirzepatid und Retatrutid sind unter diesen Namen im gesamten Shop-Katalog (34 Produkte gesichtet) nicht auffindbar. Es gibt ein Produkt 'Triple G' (Kategorie 'GLP-1-Analoga', Slug 'tri-tir'), das bei mehreren anderen Anbietern (tirzepatyd.eu, tirzepatyd.store, peptide-culture.com laut WebSearch) als Handelsname für Retatrutid verwendet wird. Peptidwerk selbst nennt auf der Produktseite jedoch nirgends den Wirkstoffnamen 'Retatrutid', nur Chargennummer und Reinheitswert. Diese Zuordnung ist daher NICHT bestätigt und wurde nicht in die Preistabelle übernommen.",
-          "text_en": "Semaglutide, Tirzepatide and Retatrutide cannot be found under these names anywhere in the shop catalog (34 products checked). There is a product 'Triple G' (category 'GLP-1 analogs', slug 'tri-tir') that several other vendors (tirzepatyd.eu, tirzepatyd.store, peptide-culture.com per WebSearch) use as a trade name for Retatrutide. Peptidwerk itself, however, never names the active ingredient 'Retatrutide' on the product page, only a batch number and purity value. This mapping is therefore NOT confirmed and was not included in the price table.",
-          "quelle": "https://pepwerk.com/produkt/tri-tir/",
-          "datum": "2026-09-15",
-          "art": "belegt"
-        },
-        {
           "text": "CJC-1295 ist im Sortiment nur als Kombiprodukt 'CJC-1295 no DAC + Ipamorelin 5mg+5mg' erhältlich, kein reines CJC-1295-Einzelprodukt gefunden.",
           "text_en": "CJC-1295 is only available in the range as a combination product 'CJC-1295 no DAC + Ipamorelin 5mg+5mg'; no standalone CJC-1295 single product was found.",
           "quelle": "https://pepwerk.com/produkt/cjc-1295-ohne-dac-5-mg-ipamorelin-5-mg/",
@@ -203,13 +196,6 @@ window.PK.vendors = [
           "quelle": "WebSearch (mehrere Abfragen, u.a. site:reddit.com pepwerk OR \"Peptidwerk\")",
           "datum": "2026-09-15",
           "art": "community"
-        },
-        {
-          "text": "peptidcheck24.de war in dieser Session nicht erreichbar (Navigation vom Browser-Tool verweigert), daher konnte die dortige Anbieter-Bewertung zu Peptidwerk nicht geprüft werden. Offener Prüfpunkt, nicht geraten.",
-          "text_en": "peptidcheck24.de was not reachable in this session (navigation refused by the browser tool), so the vendor rating for Peptidwerk on that site could not be checked. This remains an open item to verify, not a guess.",
-          "quelle": "https://peptidcheck24.de/anbieter/peptidwerk/ (nicht erreichbar)",
-          "datum": "2026-09-15",
-          "art": "belegt"
         }
       ],
       "aenderungen": [
@@ -217,30 +203,6 @@ window.PK.vendors = [
           "text": "Website zeigt jetzt ein vollständig ausgebautes 'Chargenbezogene Analysedokumentation'-Konzept mit eigener CoA-Bibliothek: jede geprüfte Produktseite trägt Charge-ID, HPLC-Reinheitswert, bei mehreren Produkten zusätzlich Endotoxinwert, plus direktem Verifizierungslink zu Janoshik. Ob dieses System seit der letzten Recherche (06.09.2026) neu eingeführt wurde oder nur jetzt ausführlicher dokumentiert ist, bleibt ungeprüft. Die Tiefe der Darstellung geht aber über die zuvor erfasste knappe Angabe 'coa_labor: Janoshik' hinaus.",
           "text_en": "The website now shows a fully built-out 'batch-specific analysis documentation' concept with its own CoA library: every checked product page carries a batch ID, HPLC purity value, and for several products also an endotoxin value, plus a direct verification link to Janoshik. Whether this system was newly introduced since the last research round (06.09.2026) or is simply documented in more detail now remains unverified. Either way, the depth of presentation goes beyond the previously recorded brief note 'coa_labor: Janoshik'.",
           "quelle": "https://pepwerk.com/ueber-uns/",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "Rechtsträger ist jetzt eindeutig im Impressum ausgewiesen (Heinrich Maier, Einzelunternehmen): in der Vorrecherche vom 06.09.2026 war dieses Feld noch 'null'.",
-          "text_en": "The legal entity is now clearly stated in the legal notice (Heinrich Maier, sole proprietorship): in the prior research round of 06.09.2026 this field was still 'null'.",
-          "quelle": "https://pepwerk.com/impressum/",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "FAQ nennt explizit ein gesetzliches Verbraucher-Widerrufsrecht von 14 Tagen für Verbraucher. Das widerspricht der in der Vorrecherche vom 06.09.2026 vermerkten roten Flagge 'nur B2B laut Shop'. Entweder hat sich das Geschäftsmodell zu B2C geöffnet, oder die frühere Einschätzung war ungenau; beides konnte in dieser Session nicht rückwirkend aufgeklärt werden.",
-          "text_en": "The FAQ explicitly states a statutory 14-day consumer right of withdrawal. This contradicts the red flag noted in the prior research round of 06.09.2026, 'B2B only per shop'. Either the business model has opened up to B2C, or the earlier assessment was inaccurate; this session could not retroactively clarify which.",
-          "quelle": "https://pepwerk.com (FAQ 'Kann ich meine Bestellung zurückgeben?')",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "Neuer Rabattmechanismus: 10% Willkommensrabatt-Code gegen Newsletter-Anmeldung mit E-Mail-Bestätigung. Dies ist ein anderer Code als der bereits per Mail von Ferdinand Maier belegte Affiliate-/Rabattcode 'peptidecompass10'. Auf der Website selbst wurde 'peptidecompass10' nicht gefunden; es wurde nicht danach gesucht über eine Vollbestandsprüfung aller Unterseiten, nur Stichproben (Startseite, Shop, Impressum, Über uns, FAQ, CoA-Produktseiten).",
-          "text_en": "New discount mechanism: a 10% welcome discount code in exchange for a newsletter signup with email confirmation. This is a different code than the affiliate/discount code 'peptidecompass10' already documented by email from Ferdinand Maier. 'peptidecompass10' itself was not found on the website; however, it was not searched for via a full inventory check of all subpages, only spot checks (homepage, shop, legal notice, about us, FAQ, CoA product pages).",
-          "quelle": "https://pepwerk.com",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "Produktlinie 'Triple G' (Kategorie GLP-1-Analoga, 10mg für 79,95€ und 30mg für 169,99€) ist neu im Sortiment und war in der Vorrecherche vom 06.09.2026 nicht erfasst.",
-          "text_en": "Product line 'Triple G' (category GLP-1 analogs, 10mg for €79.95 and 30mg for €169.99) is new in the range and was not recorded in the prior research round of 06.09.2026.",
-          "quelle": "https://pepwerk.com/shop/",
           "datum": "2026-09-15"
         }
       ]
@@ -550,12 +512,6 @@ window.PK.vendors = [
           "datum": "2026-08-27"
         },
         {
-          "text": "Produktseiten kommunizieren jetzt zusätzliches Endotoxin- und Schwermetall-Testing pro Batch, nicht mehr nur HPLC-Reinheit. Das ist eine Ausweitung der ausgewiesenen Testtiefe gegenüber dem Stand der Vorrecherche vom 06.09.2026.",
-          "text_en": "Product pages now communicate additional endotoxin and heavy-metal testing per batch, no longer just HPLC purity. This is an expansion of the stated testing depth compared to the prior research round of 06.09.2026.",
-          "quelle": "https://particlepeptides.com/en/buy-peptides/103-bpc-157-5mg-with-mannitol.html",
-          "datum": "2026-09-15"
-        },
-        {
           "text": "Öffentlicher, selbstbedienbarer COA-Vault mit Such-/Filterfunktion nach Produkt, Batch und Datum als eigene Unterseite eingerichtet.",
           "text_en": "A public, self-service COA vault with search/filter by product, batch and date has been set up as its own subpage.",
           "quelle": "https://particlepeptides.com/en/coa-vault",
@@ -744,20 +700,6 @@ window.PK.vendors = [
           "text": "Trustpilot-Bewertungsseite für europa-peptide.de war beim Zugriffsversuch durch eine Cloudflare-Verifizierung blockiert (HTTP 403 'Verifying Connection'): keine eigene Prüfung der Trustpilot-Bewertungen möglich.",
           "text_en": "The Trustpilot review page for europa-peptide.de was blocked by a Cloudflare verification challenge on access attempt (HTTP 403 'Verifying Connection'): an independent check of the Trustpilot reviews was not possible.",
           "quelle": "https://www.trustpilot.com/review/europa-peptide.de",
-          "datum": "2026-09-15",
-          "art": "belegt"
-        },
-        {
-          "text": "Keine Reddit-Diskussionen zu 'europa-peptide.de' auffindbar. Ernsthafte Suche über WebSearch sowie direkte Zugriffsversuche auf reddit.com/search.json und old.reddit.com/search wurden beide mit HTTP 403 bzw. Redirect blockiert: keine Community-Meinungen erhoben, weder positiv noch negativ.",
-          "text_en": "No Reddit discussions about 'europa-peptide.de' found. A thorough search via WebSearch as well as direct access attempts to reddit.com/search.json and old.reddit.com/search were both blocked with HTTP 403 or a redirect: no community opinions were gathered, neither positive nor negative.",
-          "quelle": "reddit.com/search.json?q=europa-peptide, old.reddit.com/search/?q=europa-peptide (Zugriff blockiert), WebSearch 15.09.2026",
-          "datum": "2026-09-15",
-          "art": "community"
-        },
-        {
-          "text": "peptidcheck24.de war am 15.09.2026 technisch nicht erreichbar: TLS-Zertifikat der Domain gehört zu '*.one.com' und passt nicht zum Hostnamen, HTTP-Zugriff liefert nur eine generische 404-Seite (162 Bytes). Der in der Vorrecherche vom 06.09.2026 zitierte peptidcheck24-Befund 'keine CoAs' (08/2026) konnte dadurch HEUTE nicht direkt gegengeprüft werden. Auch der Internet-Archive-Cache war zum Zeitpunkt der Recherche vorübergehend offline (HTTP 503).",
-          "text_en": "peptidcheck24.de was technically unreachable on 2026-09-15: the domain's TLS certificate belongs to '*.one.com' and does not match the hostname, and HTTP access only returns a generic 404 page (162 bytes). The peptidcheck24 finding 'no CoAs' (08/2026) cited in the preliminary research from 2026-09-06 could therefore not be directly cross-checked TODAY. The Internet Archive cache was also temporarily offline at the time of research (HTTP 503).",
-          "quelle": "https://peptidcheck24.de/ (SSL-Fehler + 404, 15.09.2026), web.archive.org/cdx (503, 15.09.2026)",
           "datum": "2026-09-15",
           "art": "belegt"
         }
@@ -1037,7 +979,7 @@ window.PK.vendors = [
     "preisProMg": 2.99,
     "affiliateUrl": "https://europeptides.de/",
     "kurz": "Sitz in Wien, Österreich. Versand laut Website nach DACH. CoAs öffentlich einsehbar, extern geprüft.",
-    "kurz_en": "Registered in Wien, Österreich. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
+    "kurz_en": "Registered in Vienna, Austria. Ships to Germany/Austria/Switzerland according to the website. CoAs are publicly available and third-party tested.",
     "staerken": [
       "Externe Labortests (Janoshik Analytical)",
       "Rechtsträger benannt und belegt",
@@ -1438,13 +1380,6 @@ window.PK.vendors = [
           "quelle": "https://www.reddit.com/r/PeptideDeutschland/comments/1utcyvg/hat_jemand_erfahrungen_mit_smartpeptidesde/",
           "datum": "2026-09-15",
           "art": "community"
-        },
-        {
-          "text": "Community-Meinung (Reddit): Ein Nutzer (u/Western-Elevator-109) berichtet von einer Teillieferung ohne Lieferschein und wenig hilfreichem Support, nach eigener Aussage 139 Euro Verlust. Ein anderer Nutzer (u/Automatic-Row-9701) berichtet von einer Vorkasse-Zahlung, die der Support trotz vorheriger Zahlungsbestätigung per Mail als \"nicht gefunden\" bezeichnete, und wirft dem Shop betrügerisches Verhalten vor. Beides Einzelfallschilderungen, nicht unabhängig verifiziert.",
-          "text_en": "Community opinion (Reddit): one user (u/Western-Elevator-109) reports a partial delivery with no delivery note and unhelpful support, describing a €139 loss. Another user (u/Automatic-Row-9701) reports an advance payment that support labeled \"not found\" despite an earlier email payment confirmation, and accuses the shop of fraudulent conduct. Both are individual accounts, not independently verified.",
-          "quelle": "https://www.reddit.com/r/PeptideDeutschland/comments/1utcyvg/hat_jemand_erfahrungen_mit_smartpeptidesde/ und https://www.reddit.com/r/PeptideDeutschland/comments/1vw4bqh/ich_m%C3%B6chte_die_preise_nicht_kommentieren_ich/",
-          "datum": "2026-09-15",
-          "art": "community"
         }
       ],
       "aenderungen": [
@@ -1841,8 +1776,8 @@ window.PK.vendors = [
       ],
       "schwaechen": [
         {
-          "text": "Das von Vic vermutete 'große Update kürzlich' lässt sich anhand der Dokumenten-Zeitstempel NICHT belegen: Shipping Policy und Terms of Service sind auf den 27.04.2026 datiert, die Privacy Policy auf 30.08.2026 (also vor unserem eigenen 06.09.2026-Stand), kein einziges geprüftes Rechtsdokument trägt ein Datum im September 2026. Die einzige tatsächlich am 15.09.2026 beobachtete, gegenüber dem 06.09.-Stand neue Tatsache ist das Alters-Gate; ob und wann genau sich sonst etwas an der Website geändert hat, bleibt mangels Vergleichsquelle offen.",
-          "text_en": "The 'big recent update' Vic suspected CANNOT be substantiated from the document timestamps: the Shipping Policy and Terms of Service are dated 27.04.2026, the Privacy Policy 30.08.2026 (i.e. before our own 06.09.2026 status), and not a single checked legal document carries a September 2026 date. The only fact actually observed on 15.09.2026 that is new compared to the 06.09.2026 status is the age gate; whether and exactly when anything else on the site changed remains open for lack of a comparison source.",
+          "text": "Das vermutete 'große Update kürzlich' lässt sich anhand der Dokumenten-Zeitstempel NICHT belegen: Shipping Policy und Terms of Service sind auf den 27.04.2026 datiert, die Privacy Policy auf 30.08.2026 (also vor unserem eigenen 06.09.2026-Stand), kein einziges geprüftes Rechtsdokument trägt ein Datum im September 2026. Die einzige tatsächlich am 15.09.2026 beobachtete, gegenüber dem 06.09.-Stand neue Tatsache ist das Alters-Gate; ob und wann genau sich sonst etwas an der Website geändert hat, bleibt mangels Vergleichsquelle offen.",
+          "text_en": "The suspected 'big recent update' CANNOT be substantiated from the document timestamps: the Shipping Policy and Terms of Service are dated 27.04.2026, the Privacy Policy 30.08.2026 (i.e. before our own 06.09.2026 status), and not a single checked legal document carries a September 2026 date. The only fact actually observed on 15.09.2026 that is new compared to the 06.09.2026 status is the age gate; whether and exactly when anything else on the site changed remains open for lack of a comparison source.",
           "quelle": "https://beyond-peptides.com/shipping-policies/ ; https://beyond-peptides.com/terms-of-service/ ; https://beyond-peptides.com/privacy-policy/",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -2105,21 +2040,9 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Versandgebiet gegenüber der Vorrecherche vom 06.09.2026 (dort: dach_versand=true, Regionen US/EU/UK/AU/NZ) jetzt laut aktueller Policy auf ausschließlich USA beschränkt. Die Shipping-Policy selbst trägt das Erstelldatum 11.04.2026, liegt also bereits vor der Vorrecherche: unklar, ob sich seit 06.09. tatsächlich etwas geändert hat oder ob die Vorrecherche an dieser Stelle ungenau war. Sollte gegengeprüft/geklärt werden.",
-          "text_en": "Compared to the prior research from 06.09.2026 (which recorded dach_versand=true, regions US/EU/UK/AU/NZ), the current policy now restricts shipping to the US only. The shipping policy itself carries a creation date of 04/11/2026, meaning it predates the prior research: it is unclear whether something actually changed since 06.09. or whether the prior research was imprecise at this point. This should be cross-checked/clarified.",
-          "quelle": "https://licensedpeptides.com/shipping-delivery/",
-          "datum": "2026-09-15"
-        },
-        {
           "text": "Terms and Conditions zuletzt aktualisiert am 12.09.2026 (3 Tage vor dieser Recherche): sehr aktuelle Überarbeitung laut Zeitstempel der Seite; der konkrete Änderungsinhalt ist ohne Versionsvergleich nicht rekonstruierbar.",
           "text_en": "Terms and Conditions were last updated on 09/12/2026 (3 days before this research): a very recent revision per the page timestamp; the specific content of the change cannot be reconstructed without a version comparison.",
           "quelle": "https://licensedpeptides.com/terms-and-conditions/",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "Zwei benannte Labore (Vanguard Laboratory A2LA 6377.01.01, Ethos Analytics 117798) statt der zuvor nur pauschal genannten 'ISO/IEC-17025-akkreditierten Drittlabore'. chemverify.com nennt zusätzlich 'Janoshik Analytics' als (früher oder parallel genutztes) Testlabor: möglicher Laborwechsel oder erweiterte Laborbasis seit der Vorrecherche vom 06.09.2026, nicht abschließend geklärt.",
-          "text_en": "Two named labs (Vanguard Laboratory A2LA 6377.01.01, Ethos Analytics 117798) instead of the previously only generically named 'ISO/IEC 17025-accredited third-party labs'. chemverify.com additionally names 'Janoshik Analytics' as a (formerly or concurrently used) testing lab: a possible lab change or an expanded lab base since the 06.09.2026 prior research, not conclusively clarified.",
-          "quelle": "https://licensedpeptides.com/affiliates/ ; https://www.chemverify.com/vendor/licensed-peptides",
           "datum": "2026-09-15"
         },
         {
@@ -2225,7 +2148,7 @@ window.PK.vendors = [
     "roteFlaggen_en": [
       "domain about 10 months old, scam-warning sites flag it"
     ],
-    "quelle": "bioboostx.com, Bloomberg LEI, chemverify Katalog, 06.09.2026; von Vic selbst getestet",
+    "quelle": "bioboostx.com, Bloomberg LEI, chemverify Katalog, 06.09.2026; von der Redaktion getestet",
     "stand": "2026-09-06",
     "demo": false,
     "status": "aktiv",
@@ -2335,13 +2258,6 @@ window.PK.vendors = [
           "quelle": "https://gridinsoft.com/online-virus-scanner/url/bioboostx-com (nicht erreichbar, HTTP 403)",
           "datum": "2026-09-15",
           "art": "belegt"
-        },
-        {
-          "text": "Keine Treffer zu 'Bio BoostX' / 'bioboostx.com' auf Reddit (r/Peptides, r/PeptidesEU) über Websuche gefunden. Direkter Zugriff auf old.reddit.com war aus Sicherheitsgründen des Browser-Tools nicht möglich. Ebenfalls keine Treffer auf meso-rx, elitefitness oder peptidcheck24. Es gibt aktuell keine auffindbare Community-Diskussion zu diesem Anbieter.",
-          "text_en": "No hits for 'Bio BoostX' / 'bioboostx.com' on Reddit (r/Peptides, r/PeptidesEU) found via web search. Direct access to old.reddit.com was not possible for security reasons of the browser tool. Likewise no hits on meso-rx, elitefitness, or peptidcheck24. There is currently no findable community discussion about this vendor.",
-          "quelle": "Websuche (mehrere Anfragen, u.a. \"bioboostx site:reddit.com\", \"bio boostx forum erfahrung peptide\", \"bioboostx meso-rx OR elitefitness OR peptidcheck24\")",
-          "datum": "2026-09-15",
-          "art": "community"
         }
       ],
       "aenderungen": [
@@ -2556,12 +2472,6 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Laborprüfung erweitert: von reinem Janoshik-Programm (87 Berichte, Stand Vorrecherche 06.09.2026) zu Multi-Labor-Testing mit Janoshik Analytical, Vanguard Laboratory und MZ Biolabs plus neuem 'BatchTrace' QR-Verifizierungssystem",
-          "text_en": "Lab testing expanded: from a pure Janoshik program (87 reports, as of the 06.09.2026 prior research) to multi-lab testing with Janoshik Analytical, Vanguard Laboratory, and MZ Biolabs, plus a new 'BatchTrace' QR verification system",
-          "quelle": "https://chameleonpeptides.com/about-us/",
-          "datum": "2026-09-15"
-        },
-        {
           "text": "Neues Kundenbindungsprogramm 'Chameleon Club' eingeführt: kostenloses Level-System mit Gratis-Aufbewahrungsboxen als Belohnung ab bestimmten Bestellsummen",
           "text_en": "New loyalty program 'Chameleon Club' introduced: a free tier system with free storage boxes as a reward above certain order totals",
           "quelle": "https://chameleonpeptides.com/",
@@ -2576,12 +2486,6 @@ window.PK.vendors = [
         {
           "text": "Zahlungsmethoden jetzt explizit dokumentiert (vorher unbekannt/null): Kredit-/Debitkarte, Apple Pay sowie ACH/eCheck-Banküberweisung via Plaid",
           "text_en": "Payment methods now explicitly documented (previously unknown/null): credit/debit card, Apple Pay, and ACH/eCheck bank transfer via Plaid",
-          "quelle": "https://chameleonpeptides.com/faq/",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "Internationaler Versand weiterhin NICHT eingeführt: Status zur Vorrecherche vom 06.09.2026 unverändert, heute erneut explizit auf der FAQ-Seite bestätigt",
-          "text_en": "International shipping still NOT introduced: unchanged from the 06.09.2026 prior research, explicitly reconfirmed today on the FAQ page",
           "quelle": "https://chameleonpeptides.com/faq/",
           "datum": "2026-09-15"
         }
@@ -2754,13 +2658,6 @@ window.PK.vendors = [
           "quelle": "chemverify Katalog / GoWork.pl (Vorrecherche 06.09.2026, in dieser Runde nicht neu geprüft)",
           "datum": "2026-09-06",
           "art": "belegt"
-        },
-        {
-          "text": "Gezielte Suche nach \"Helus Lab\" / \"heluslab.com\" auf Reddit (WebSearch, u.a. site:reddit.com) ergab keine einzige thematisch passende Diskussion, keine Community-Präsenz feststellbar, weder positiv noch negativ.",
-          "text_en": "A targeted search for \"Helus Lab\" / \"heluslab.com\" on Reddit (web search, including site:reddit.com) turned up not a single thematically relevant discussion, no community presence detectable, neither positive nor negative.",
-          "quelle": "WebSearch \"heluslab OR Helus Lab site:reddit.com\"",
-          "datum": "2026-09-15",
-          "art": "community"
         }
       ],
       "aenderungen": [
@@ -2774,18 +2671,6 @@ window.PK.vendors = [
           "text": "Trustpilot-Profil wurde seit der letzten Prüfung entfernt (Zeitpunkt der Entfernung nicht feststellbar, nur dass es aktuell, 15.09.2026, nicht mehr existiert und laut Trustpilot gegen deren Richtlinien verstoßen habe).",
           "text_en": "The Trustpilot profile has been removed since the last check (the removal date could not be determined, only that it no longer exists as of Sep 15, 2026 and, per Trustpilot, violated their guidelines).",
           "quelle": "https://www.trustpilot.com/review/heluslab.com",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "chemverify.com nennt jetzt erstmals einen externen Laborname (\"Janoshik Analytical\", Feld coa_lab_name) und einen purity_batch_count von 26; bei der Vorrecherche am 06.09.2026 war coa_extern noch nicht belegt. Dieser Laborname ist aber nur über chemverify belegt, nicht direkt auf heluslab.com selbst nachgewiesen (siehe Schwäche oben).",
-          "text_en": "chemverify.com now names an external lab for the first time (\"Janoshik Analytical\", field coa_lab_name) and a purity_batch_count of 26; at the prior research on Sep 6, 2026, coa_extern was not yet documented. However, this lab name is only documented via chemverify, not directly verified on heluslab.com itself (see weakness above).",
-          "quelle": "https://www.chemverify.com/api/catalog",
-          "datum": "2026-09-15"
-        },
-        {
-          "text": "Sortiment ist laut chemverify-Katalog auf 50 gelistete Produkt-URLs gewachsen, inklusive einer klar erkennbaren GLP-1/GLP-2/GLP-3/GLP-CG-Linie (Semaglutid, Tirzepatid, Retatrutid, Cagrilintid-Kombination je über CAS-Nummer verifiziert); bei der Vorrecherche war dieses Teilsortiment nicht erfasst.",
-          "text_en": "The range has grown to 50 listed product URLs per the chemverify catalog, including a clearly identifiable GLP-1/GLP-2/GLP-3/GLP-CG line (semaglutide, tirzepatide, retatrutide, cagrilintide combination, each verified via CAS number); this sub-range was not captured in the prior research.",
-          "quelle": "https://www.chemverify.com/api/catalog",
           "datum": "2026-09-15"
         }
       ]
@@ -2956,13 +2841,6 @@ window.PK.vendors = [
           "quelle": "https://www.peptideprotocolwiki.com/vendors/protide-health",
           "datum": "2026-09-15",
           "art": "community"
-        },
-        {
-          "text": "Keine echten Reddit-Diskussionen zu 'Protide Health' auffindbar (WebSearch site:reddit.com sowie allgemeine Suche ohne Treffer), Community-Fußabdruck praktisch nicht vorhanden. Mehrere Suchtreffer stammen von SEO-Content-Mill-artigen Domains (z.B. peptides3626.com, peptidesourcereview.info, pspeptides.com) mit unklarer Redaktion, nicht als belastbare Quelle verwendet.",
-          "text_en": "No genuine Reddit discussions about 'Protide Health' could be found (a site:reddit.com search and a general search returned no results), so the community footprint is practically nonexistent. Several search hits come from SEO content-mill-style domains (e.g. peptides3626.com, peptidesourcereview.info, pspeptides.com) with unclear editorial standards, not used as a reliable source.",
-          "quelle": "WebSearch: site:reddit.com \"Protide Health\" (2026-09-15, keine Treffer)",
-          "datum": "2026-09-15",
-          "art": "community"
         }
       ],
       "aenderungen": [
@@ -3043,7 +2921,7 @@ window.PK.vendors = [
     "preisProMg": null,
     "affiliateUrl": "https://americanpeptides.us/",
     "kurz": "Sitz in Shreveport, LA, USA (laut Snippet). Kein Versand nach DACH laut Website. CoAs öffentlich einsehbar, externe Prüfung nicht bestätigt.",
-    "kurz_en": "Registered in Shreveport, LA, USA (laut Snippet). Does not ship to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
+    "kurz_en": "Registered in Shreveport, LA, USA (per the search snippet). Does not ship to Germany/Austria/Switzerland according to the website. CoAs are publicly available, third-party testing not confirmed.",
     "staerken": [
       "Öffentlich einsehbare CoAs",
       "RUO-Kennzeichnung vorhanden"
@@ -3081,12 +2959,6 @@ window.PK.vendors = [
     "recherche": {
       "stand": "2026-09-15",
       "staerken": [
-        {
-          "text": "Website am 15.09.2026 vollständig erreichbar (HTTP 200, curl + WebSearch), kein Zugriffsblock mehr feststellbar, widerspricht der Vorquellen-Flagge 'Seite blockt Zugriff' vom 06.09.",
-          "text_en": "Website fully reachable on 15.09.2026 (HTTP 200, curl plus WebSearch), no access block detectable anymore; this contradicts the prior source flag 'site blocks access' from 06.09.",
-          "quelle": "https://americanpeptides.us/",
-          "datum": "2026-09-15"
-        },
         {
           "text": "Lot-matched CoA-Bibliothek mit 51 Produkten (je Charge eigenes PDF, z.B. 'Lot RETA10-0803'), benanntes Testlabor Bioviridian (HPLC-MS Reinheit, MALDI Identität, Endotoxin-Screening)",
           "text_en": "Lot-matched CoA library covering 51 products (own PDF per batch, e.g. 'Lot RETA10-0803'), named test lab Bioviridian (HPLC-MS purity, MALDI identity, endotoxin screening)",
@@ -3138,13 +3010,6 @@ window.PK.vendors = [
           "text": "Kein Eintrag bei chemverify.com, Katalog listet 11 Anbieter (u.a. Particle Peptides, Avellon, Peptidwerk), American Peptides fehlt komplett",
           "text_en": "No listing on chemverify.com; the catalog lists 11 vendors (including Particle Peptides, Avellon, Peptidwerk), American Peptides is missing entirely",
           "quelle": "https://www.chemverify.com/api/catalog",
-          "datum": "2026-09-15",
-          "art": "belegt"
-        },
-        {
-          "text": "Keine unabhängige Kundenbewertung selbst verifizierbar: Trustpilot-Profilseite existiert laut Google-Index, Inhalt aber für mich nicht abrufbar (HTTP 403 sowohl per curl als auch per Fetch-Tool); zwei gezielte WebSearch-Abfragen (allgemein + site:reddit.com) fanden keine Reddit-Diskussion zu 'American Peptides'",
-          "text_en": "No independent customer review could be verified myself: a Trustpilot profile page exists per the Google index, but its content was not retrievable by me (HTTP 403 via both curl and the fetch tool); two targeted WebSearch queries (general plus site:reddit.com) found no Reddit discussion about 'American Peptides'",
-          "quelle": "https://uk.trustpilot.com/review/americanpeptides.us (403, selbst versucht 15.09.2026)",
           "datum": "2026-09-15",
           "art": "belegt"
         },
@@ -3242,7 +3107,7 @@ window.PK.vendors = [
     "preisProMg": 10.17,
     "affiliateUrl": "https://dnlabresearch.com/",
     "kurz": "Sitz in Farnborough, UK (Footer); Dubai laut peptidcheck24. Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
-    "kurz_en": "Registered in Farnborough, UK (Footer); Dubai laut peptidcheck24. Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    "kurz_en": "Registered in Farnborough, UK (footer); Dubai per peptidcheck24. Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
     "staerken": [
       "Altersgate vorhanden",
       "RUO-Kennzeichnung vorhanden"
@@ -3393,12 +3258,6 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Neu identifizierter Markenname \"Bioniq Lab\" taucht sowohl im Fließtext der Research-Use-Only-Policy als auch als eigene Produktkategorie im Shop auf: war im Vorrecherche-Stand (06.09.2026) nicht bekannt, zusätzliche Rechtsträger-Unklarheit.",
-          "text_en": "The newly identified brand name 'Bioniq Lab' appears both in the running text of the Research-Use-Only policy and as its own product category in the shop: it was not known at the preliminary research baseline (2026-09-06), adding further legal-entity ambiguity.",
-          "quelle": "https://dnlabresearch.com/research-use-only-policy/",
-          "datum": "2026-09-15"
-        },
-        {
           "text": "Preise laufen in EUR, nicht in GBP wie im Ausgangs-Stand vermerkt; Shop-Untertitel wirbt weiterhin mit \"UK & EU Delivery\", Terms of Sale nennen als Versandgebiet ausdrücklich EU und UK.",
           "text_en": "Prices run in EUR, not GBP as noted in the baseline; the shop subtitle still advertises 'UK & EU Delivery', and the Terms of Sale explicitly name EU and UK as the shipping area.",
           "quelle": "https://dnlabresearch.com/terms-of-sale/",
@@ -3465,7 +3324,7 @@ window.PK.vendors = [
     "preisProMg": 7.0,
     "affiliateUrl": "https://www.ppx.at/",
     "kurz": "Sitz in Wien, Österreich (laut Shop). Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
-    "kurz_en": "Registered in Wien, Österreich (laut Shop). Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    "kurz_en": "Registered in Vienna, Austria (per the shop). Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
     "staerken": [
       "RUO-Kennzeichnung vorhanden"
     ],
@@ -3672,7 +3531,7 @@ window.PK.vendors = [
     "preisProMg": 7.0,
     "affiliateUrl": "https://peptidelabz.de/",
     "kurz": "Sitz in Berlin (laut Shop). Versand laut Website nach DACH. Keine öffentlich einsehbaren CoAs gefunden.",
-    "kurz_en": "Registered in Berlin (laut Shop). Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
+    "kurz_en": "Registered in Berlin (per the shop). Ships to Germany/Austria/Switzerland according to the website. No publicly available CoAs found.",
     "staerken": [
       "RUO-Kennzeichnung vorhanden"
     ],
@@ -4115,12 +3974,6 @@ window.PK.vendors = [
     "recherche": {
       "stand": "2026-09-15",
       "staerken": [
-        {
-          "text": "Website ist am 15.09.2026 wieder erreichbar (HTTP 200, LiteSpeed-Cache aktiv); am 06.09.2026 laut Vorrecherche nicht erreichbar. Robots.txt und XML-Sitemap (Yoast SEO) sind sauber konfiguriert und maschinenlesbar.",
-          "text_en": "The website is reachable again as of Sep 15, 2026 (HTTP 200, LiteSpeed cache active); per prior research it was unreachable on Sep 6, 2026. robots.txt and the XML sitemap (Yoast SEO) are cleanly configured and machine-readable.",
-          "quelle": "https://europeptideshop.com/ (Header-Check) + https://europeptideshop.com/robots.txt",
-          "datum": "2026-09-15"
-        },
         {
           "text": "Auf einzelnen Themen-Landingpages (z.B. GLP-1/GIP) ist inzwischen ein expliziter RUO-Hinweis vorhanden: 'This peptide is strictly for in-vitro research and laboratory use only. It is not intended for human consumption, medical treatment, or diagnostic applications. ... For research use only. Not for human or veterinary use.' Das ist eine Verbesserung gegenüber dem Vorbefund vom 06.09. (ruo: FALSE), gilt aber nicht nachweisbar für die gesamte Seite (auf Startseite/Produktseite fehlt der Hinweis).",
           "text_en": "On individual topic landing pages (e.g., GLP-1/GIP), an explicit RUO notice is now present: 'This peptide is strictly for in-vitro research and laboratory use only. It is not intended for human consumption, medical treatment, or diagnostic applications. ... For research use only. Not for human or veterinary use.' This is an improvement over the prior finding from Sep 6 (ruo: FALSE), but it is not demonstrably present across the entire site (the notice is missing on the homepage/product page).",

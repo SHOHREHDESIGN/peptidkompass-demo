@@ -16,12 +16,12 @@
 
    INHALTSVERZEICHNIS
    -------------------
-   PK.lang                  : aktive Sprache ("de"|"en"), ermittelt beim Laden
+   PK.lang                  : aktive Sprache der expliziten Seitenadresse
    PK.t()/PK.tx()/PK.tEnum(): i18n-Lookup (siehe assets/css/README.md)
    PK.langHref()            : Adresse auf eine Sprachfassung umrechnen
-   PK.setLang()             : Sprache wechseln (Navigation auf /en/ bzw. /)
+   PK.setLang()             : Sprache wechseln und manuelle Auswahl merken
    PK.applyI18n()           : [data-i18n]/[data-i18n-attr] anwenden
-   PK.initLangToggle()      : injiziert DE·EN-Toggle in jede .nav/.nav-menu
+   PK.initLangToggle()      : bindet den Sprachschalter (Legacy-Fallback DE/EN)
    PK.SCORE_WEIGHTS         : Gewichtung aus SCHEMA.md
    PK.computeScoreTotal()   : gewichteter Gesamt-Score aus 5 Kriterien
    PK.byNum()               : de-DE/en-US Zahlenformat je nach PK.lang
@@ -63,7 +63,7 @@
   var PK = global.PK = global.PK || {};
 
   /* ---------------------------------------------------------------------
-     i18n CORE (Plan-v2 Zweisprachigkeit DE/EN)
+     i18n CORE (statische Sprachfassungen)
      ---------------------------------------------------------------------
      Wörterbücher kommen aus data/i18n/global.js (+ data/i18n/<seite>.js),
      die VOR dieser Datei eingebunden sein müssen und window.PK.i18n =
@@ -75,12 +75,12 @@
 
   /**
    * PK.lang
-   * Ermittlung beim Laden (einmalig, synchron): localStorage "pk_lang" →
-   * sonst navigator.language beginnt mit "de" → "de", sonst "en". Setzt
-   * sofort <html lang> (Element existiert schon, Script lädt am Body-Ende).
+   * Sprache der Seitenadresse. language.js behandelt ausschließlich am
+   * neutralen Einstieg die gespeicherte Wahl und Browser-Sprachliste.
    */
   // A URL has one stable language, independent of browser and saved preferences.
-  PK.lang = /^\/en(?:\/|$)/.test(global.location.pathname) ? "en" : "de";
+  PK.lang = document.documentElement.getAttribute("data-page-language") || "de";
+  PK.locale = {de:"de-DE",en:"en-GB",fr:"fr-FR",es:"es-ES",it:"it-IT",nl:"nl-NL",pl:"pl-PL"}[PK.lang] || "en-GB";
   if (global.document && document.documentElement) {
     document.documentElement.setAttribute("lang", PK.lang);
   }
@@ -101,8 +101,9 @@
     if (str === undefined) str = key;
     if (vars) {
       Object.keys(vars).forEach(function (k) {
-        str = str.replace(new RegExp("\\{" + k + "\\}", "g"), vars[k]);
+        str = str.replace(new RegExp("\\{" + k + "\\}", "g"), PK.formatVar ? PK.formatVar(k, vars[k]) : vars[k]);
       });
+      if (PK.plural) str = PK.plural(str, vars);
     }
     return str;
   };
@@ -111,13 +112,13 @@
    * PK.tx(obj, field)
    * Datenfeld-Übersetzung (Konvention "<feld>_en" in data/vendors.js,
    * data/peptides.js, data/site.js). Liefert obj[field+"_en"] bei
-   * PK.lang==="en" falls vorhanden, sonst IMMER obj[field] (Fallback DE,
-   * funktioniert auch bevor die _en-Felder befüllt sind).
+   * nichtdeutschen Sprachfassungen, sofern vorhanden. Die zusätzlichen
+   * Sprachfassungen laden bereits lokalisierte Datensätze.
    */
   PK.tx = function (obj, field) {
     if (!obj) return "";
-    if (PK.lang === "en" && obj[field + "_en"]) return obj[field + "_en"];
-    return obj[field] || "";
+    var value = (PK.lang !== "de" && obj[field + "_en"]) ? obj[field + "_en"] : (obj[field] || "");
+    return PK.localizeValue ? PK.localizeValue(value) : value;
   };
 
   /**
@@ -136,27 +137,23 @@
 
   /**
    * PK.langHref(lang, href)
-   * Rechnet eine beliebige Adresse auf die Sprachfassung um: EN liegt unter
-   * /en/..., DE auf der Wurzel. Reine Funktion ohne Seiteneffekt, damit der
+   * Rechnet eine interne Adresse auf die Sprachfassung um. Deutsch liegt
+   * auf der Wurzel, weitere Sprachen unter ihrem Sprachcode. Damit der
    * Selbsttest sie prüfen kann, ohne dass die Seite wegnavigiert.
    * Ein altes ?lang= aus Bestandslinks fällt dabei weg.
    */
   PK.langHref = function (lang, href) {
-    var url = new URL(href, "https://peptidkompass.local");
-    var rest = url.pathname.replace(/^\/en(?=\/|$)/, "");
-    url.pathname = (lang === "en" ? "/en" : "") + rest;
-    if (!url.pathname) url.pathname = "/";
-    url.searchParams.delete("lang");
-    return url.pathname + url.search + url.hash;
+    return global.PKLanguage.route(href, lang, global.location.href);
   };
 
   /**
    * PK.setLang(lang)
    * Wechselt die Sprache durch Navigation auf die Sprachfassung derselben
-   * Seite (siehe PK.langHref). Kein localStorage, kein "pk:langchange":
+   * Seite (siehe PK.langHref). Merkt die ausdrückliche Sprachwahl lokal. Kein "pk:langchange":
    * die Zielseite lädt ihre Sprache selbst aus dem Pfad.
    */
   PK.setLang = function (lang) {
+    global.PKLanguage.save(lang);
     global.location.assign(PK.langHref(lang, global.location.href));
   };
 
@@ -333,7 +330,7 @@
    */
   PK.byNum = function (n, opts) {
     if (typeof n !== "number" || !isFinite(n)) return "";
-    var locale = PK.lang === "en" ? "en-US" : "de-DE";
+    var locale = PK.locale;
     try {
       return new Intl.NumberFormat(locale, opts || { maximumFractionDigits: 2 }).format(n);
     } catch (e) {
@@ -788,7 +785,7 @@
 
     function normalizedHref(a) {
       var url = new URL(a.getAttribute("href") || "", document.baseURI);
-      return url.pathname.replace(/^\/en(?=\/)/, "").replace(/^\//, "").replace(/\/$/, "/index.html");
+      return url.pathname.replace(/^\/(en|fr|es|it|nl|pl)(?=\/|$)/, "").replace(/^\//, "").replace(/\/$/, "/index.html");
     }
 
     function findLinkLi(list, suffix) {
@@ -1586,7 +1583,7 @@
         if (e.refract && e.refract.parentNode) e.refract.parentNode.removeChild(e.refract);
       });
       entries = [];
-      /* Text-Refraktion deaktiviert (Vic 14.09.: Doppelbild wirkte fehlerhaft).
+      /* Text-Refraktion deaktiviert (Doppelbild wirkte fehlerhaft).
          Glas-Körper (backdrop-filter) und Rim bleiben. */
       if (PK.HERO_GLASS_REFRACT !== true) return;
       sprites.forEach(function (sprite) {
@@ -2576,8 +2573,9 @@
   };
   PK.productHref = function (p, v) { return PK.validHttpUrl(p && p.url) || PK.validHttpUrl(PK.vendorHref(v)); };
   PK.researchPublishable = function (entry) {
-    return !!entry && !!PK.validHttpUrl(entry.quelle) && !!entry.datum &&
-      !/in dieser Session|in this session|WebSearch|Browser-Tool|per Mail|via email|Vorrecherche|previous research session/i.test(entry.text || "");
+    // `intern` setzt tools/build_locales.py aus dem Quelltext (DE/EN) - der uebersetzte Text wird nie geprueft.
+    return !!entry && entry.intern !== true && !!PK.validHttpUrl(entry.quelle) && !!entry.datum &&
+      !/in dieser Session|in this session|WebSearch|Browser-Tool|per Mail|via email|Vorrecherche|previous research session|\bVic\b/i.test(entry.text || "");
   };
   PK.appendDisclosure = function (element, text) {
     var p = document.createElement("p"); p.className = "text-small muted"; p.textContent = text; element.appendChild(p); return p;
@@ -2613,6 +2611,13 @@
     if(initial){input.value=initial;submitted=true;render(false);}
   };
 
+  // True, wenn der sichtbare Linktext bereits mit dem Werbe-Label endet (Sprachfassung, EN "Ad" oder DE "Anzeige").
+  PK.endsWithAdLabel = function (a) {
+    var t = (a.textContent || "").replace(/\s+/g, " ").trim();
+    return [PK.t("global.badge.ad"), "Anzeige", "Ad"].some(function (label) {
+      return !!label && t.length > label.length && t.slice(-label.length) === label && !/[A-Za-zÀ-ž0-9]/.test(t.charAt(t.length - label.length - 1));
+    });
+  };
   // Shop-source links follow the same disclosure rule as purchase links.
   PK.discloseShopLinks = function () {
     var hosts = {};
@@ -2623,7 +2628,8 @@
       if(!hosts[new URL(clean).hostname.replace(/^www\./,"")])return;
       a.rel="sponsored nofollow noopener";
       var oldBadge=a.querySelector(".badge-ad");if(oldBadge && oldBadge.textContent!==PK.t("global.badge.ad"))oldBadge.textContent=PK.t("global.badge.ad");
-      if(!a.querySelector(".badge-ad")){var badge=document.createElement("span");badge.className="badge-ad";badge.textContent=PK.t("global.badge.ad");a.appendChild(document.createTextNode(" "));a.appendChild(badge);}
+      // Steht die Kennzeichnung schon im Linktext ("Produktseite · Anzeige", "Product page · Ad", ...), kein zweites Label anhaengen.
+      if(!a.querySelector(".badge-ad") && !PK.endsWithAdLabel(a)){var badge=document.createElement("span");badge.className="badge-ad";badge.textContent=PK.t("global.badge.ad");a.appendChild(document.createTextNode(" "));a.appendChild(badge);}
     });
   };
   document.addEventListener("DOMContentLoaded",function(){
@@ -2707,7 +2713,7 @@
     var p = document.createElement("p");
     p.appendChild(document.createTextNode(PK.t("global.consent.text") + " "));
     var link = document.createElement("a");
-    link.href = (PK.lang === "en" ? "/en" : "") + "/datenschutz.html";
+    link.href = PK.langHref(PK.lang, "/datenschutz.html");
     link.textContent = PK.t("global.consent.privacy");
     p.appendChild(link);
     banner.appendChild(p);

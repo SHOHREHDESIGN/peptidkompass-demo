@@ -79,7 +79,7 @@ window.PK = window.PK || {};
   "page.anbieter-detail.chargenEmpty": "Für diesen Anbieter liegen noch keine Chargen in unserer Datenbank vor.",
   "page.anbieter-detail.proofEyebrow": "Erfahrungen",
   "page.anbieter-detail.proofTitle": "Was Kunden über {name} sagen",
-  "page.anbieter-detail.proofDemoNote": "Diese Zitate sind Platzhalter für die Demo, echte Bewertungen trägt Vic vor dem Live-Gang ein.",
+  "page.anbieter-detail.proofDemoNote": "Diese Zitate sind Platzhalter für die Demo, echte Bewertungen werden vor dem Live-Gang eingetragen.",
   "page.anbieter-detail.stickyClose": "Leiste schließen",
   "page.anbieter-detail.stickyCopyButton": "Kopieren"
 });
@@ -161,7 +161,7 @@ window.PK = window.PK || {};
   "page.anbieter-detail.chargenEmpty": "No batches for this vendor yet in our database.",
   "page.anbieter-detail.proofEyebrow": "Experiences",
   "page.anbieter-detail.proofTitle": "What customers say about {name}",
-  "page.anbieter-detail.proofDemoNote": "These quotes are placeholders for the demo, Vic adds real reviews before launch.",
+  "page.anbieter-detail.proofDemoNote": "These quotes are placeholders for the demo, real reviews are added before launch.",
   "page.anbieter-detail.stickyClose": "Close bar",
   "page.anbieter-detail.stickyCopyButton": "Copy"
 });

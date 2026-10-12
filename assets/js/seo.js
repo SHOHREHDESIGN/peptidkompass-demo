@@ -10,12 +10,7 @@
     if (description) description.content = meta.description;
   }
   function localized(href, targetLang) {
-    var url = new URL(href, document.baseURI);
-    if (url.origin !== location.origin && url.origin !== 'https://peptidkompass.com') return href;
-    if (!/\/$|\.html$/.test(url.pathname)) return href;
-    url.pathname = (targetLang === 'en' ? '/en' : '') + url.pathname.replace(/^\/en(?=\/)/, '');
-    url.searchParams.delete('lang');
-    return url.pathname + url.search + url.hash;
+    return window.PKLanguage.route(href, targetLang, document.baseURI);
   }
   function syncLinks(root) {
     var links = root.querySelectorAll ? root.querySelectorAll('a[href]') : [];
@@ -28,6 +23,7 @@
   }
   function finish() {
     syncLinks(document);
+    if (window.PK && PK.localizeDOM) PK.localizeDOM(document.body);
     var dynamic = document.querySelector('#pk-content, #detail-content, #ratgeber-content');
     if (dynamic && !dynamic.hidden && dynamic.textContent.trim()) {
       document.querySelectorAll('[data-seo-fallback]').forEach(function (s) { s.hidden = true; });
@@ -44,12 +40,8 @@
         if (node.nodeType !== 1) return;
         if (node.matches('a[href]')) syncLinks(node.parentNode);
         else syncLinks(node);
+        if (window.PK && PK.localizeDOM) PK.localizeDOM(node);
       });
     });
   }).observe(document.body, { childList: true, subtree: true });
-  // Historical shared ?lang= links now resolve to stable language URLs.
-  var requested = new URL(location.href).searchParams.get('lang');
-  if (requested === 'de' || requested === 'en') {
-    location.replace(localized(location.href, requested));
-  }
 })();

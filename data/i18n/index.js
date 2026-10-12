@@ -68,7 +68,7 @@ window.PK = window.PK || {};
   "page.index.faq2Q": "Sind das echte Anbieter?",
   "page.index.faq2A": "Peptide Compass listet 24 echte Anbieter mit öffentlich belegten Angaben, Stand 15.09.2026. Preise, Chargen und Bewertungen ergänzen wir, sobald sie erhoben sind.",
   "page.index.faq3Q": "Was bedeutet das Label Anzeige?",
-  "page.index.faq3A": "Wir kennzeichnen alle Shoplinks als Anzeige. Peptidwerk ist derzeit unser Affiliate-Partner. Bei einem vermittelten Kauf können wir eine Provision erhalten. Die Kennzeichnung allein bedeutet nicht, dass mit jedem verlinkten Shop eine Partnerschaft besteht.",
+  "page.index.faq3A": "Wir kennzeichnen alle Shoplinks als Anzeige. Peptidwerk, Particle Peptides und Bio BoostX sind derzeit unsere bestätigten Affiliate-Partner. Bei einem vermittelten Kauf können wir eine Provision erhalten. Die Kennzeichnung allein bedeutet nicht, dass mit jedem verlinkten Shop eine Partnerschaft besteht.",
   "page.index.faq4Q": "Sind die Substanzen für Menschen zugelassen?",
   "page.index.faq4A": "Die hier verglichenen Forschungsprodukte sind nicht zur Anwendung am Menschen bestimmt. Forschungsprodukte und zugelassene Arzneimittel sind getrennt zu betrachten. Maßgeblich ist der Status des konkreten Produkts."
 });
@@ -139,7 +139,7 @@ window.PK = window.PK || {};
   "page.index.faq2Q": "Are these real vendors?",
   "page.index.faq2A": "Peptide Compass lists 24 real vendors with publicly documented facts as of Sep 15, 2026. Prices, batches and reviews will follow once collected.",
   "page.index.faq3Q": "What does the Ad label mean?",
-  "page.index.faq3A": "All shop links are labelled Ad. Peptidwerk is currently our affiliate partner. We may earn commission on a referred purchase. The label does not mean we have a partnership with every linked shop.",
+  "page.index.faq3A": "All shop links are labelled Ad. Peptidwerk, Particle Peptides and Bio BoostX are currently our confirmed affiliate partners. We may earn commission on a referred purchase. The label does not mean we have a partnership with every linked shop.",
   "page.index.faq4Q": "Are these substances approved for human use?",
   "page.index.faq4A": "The research products compared here are not intended for human use. Research products and approved medicines must be considered separately. The status of the specific product matters."
 });

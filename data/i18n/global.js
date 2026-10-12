@@ -80,7 +80,7 @@ window.PK.i18n = window.PK.i18n || { de: {}, en: {} };
     "global.langToggle.ariaLabel": "Sprache wählen",
 
     /* Demo-Banner (PK.initDemoBanner) : v2 "echte Anbieter" (06.09.) -
-       site.demo bleibt true bis Vic freigibt, Text macht klar, dass die
+       site.demo bleibt true bis zur Freigabe, Text macht klar, dass die
        ANBIETER real sind (keine Demo-Daten), aber Stand/Vollständigkeit
        vorläufig ist. */
     "global.consent.aria": "Einwilligung zu Analyse-Cookies",
