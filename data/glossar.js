@@ -255,6 +255,39 @@ window.PK.glossar = [
   ]
  },
  {
+  "slug": "association",
+  "begriff": "Assoziation (vs. Kausalität)",
+  "begriff_en": "Association (vs. causation)",
+  "kategorie": "studien",
+  "kurz": "Zwei Dinge treten gemeinsam auf. Das allein belegt nicht, dass das eine das andere verursacht.",
+  "kurz_en": "Two things occur together. That alone does not show that one causes the other.",
+  "quellen": [
+   {
+    "titel": "NLM MeSH: Causality",
+    "titel_en": "NLM MeSH: Causality",
+    "url": "https://www.ncbi.nlm.nih.gov/mesh/68015984"
+   }
+  ],
+  "text": "Eine Assoziation bedeutet, dass zwei Merkmale statistisch gemeinsam auftreten, etwa eine Gewohnheit und ein Gesundheitsergebnis. Kausalität bedeutet, dass das eine das andere hervorruft. Beobachtungsstudien zeigen meist nur Assoziationen, denn Störfaktoren, eine umgekehrte Wirkrichtung oder Zufall können den Zusammenhang erklären. Für Ursache und Wirkung braucht es zusätzliche Belege, etwa randomisierte Studien.",
+  "text_en": "An association means that two characteristics occur together statistically, such as a habit and a health outcome. Causation means that one produces the other. Observational studies usually show only associations, because confounders, reverse direction or chance can explain the link. Cause and effect needs additional evidence, such as randomised trials.",
+  "synonyme": [
+   "Korrelation",
+   "Kausalität"
+  ],
+  "synonyme_en": [
+   "Correlation",
+   "Causation"
+  ],
+  "siehe": [
+   "confounder",
+   "observational-study",
+   "rct"
+  ],
+  "seiten": [
+   "studien.html"
+  ]
+ },
+ {
   "slug": "bakteriostatisches-wasser",
   "begriff": "Bakteriostatisches Wasser",
   "begriff_en": "Bacteriostatic Water",
@@ -280,6 +313,37 @@ window.PK.glossar = [
    "steriles-wasser",
    "rekonstitution",
    "sterilitaet"
+  ]
+ },
+ {
+  "slug": "observational-study",
+  "begriff": "Beobachtungsstudie",
+  "begriff_en": "Observational study",
+  "kategorie": "studien",
+  "kurz": "Studie, in der Personen nur beobachtet oder Ergebnisse gemessen werden, ohne einzugreifen, etwa ohne Behandlung.",
+  "kurz_en": "A study in which people are only observed or outcomes are measured, with no intervention such as a treatment.",
+  "quellen": [
+   {
+    "titel": "NCI: observational study",
+    "titel_en": "NCI: observational study",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/observational-study"
+   }
+  ],
+  "text": "Bei einer Beobachtungsstudie werden Personen beobachtet oder Ergebnisse gemessen, ohne dass die Forschenden das Ergebnis beeinflussen, zum Beispiel durch eine Behandlung. Kohortenstudien sind ein Beispiel. Weil die Gruppen nicht zufällig eingeteilt werden, können Beobachtungsstudien Zusammenhänge zeigen, aber keine Ursache belegen.",
+  "text_en": "In an observational study, people are observed or outcomes are measured without researchers trying to influence the result, for example through a treatment. Cohort studies are one example. Because groups are not assigned at random, observational studies can show associations but cannot prove a cause.",
+  "synonyme": [
+   "Beobachtungsstudien"
+  ],
+  "synonyme_en": [
+   "Observational studies"
+  ],
+  "siehe": [
+   "cohort-study",
+   "association",
+   "rct"
+  ],
+  "seiten": [
+   "studien.html"
   ]
  },
  {
@@ -1100,6 +1164,37 @@ window.PK.glossar = [
   ]
  },
  {
+  "slug": "hazard-ratio",
+  "begriff": "Hazard Ratio",
+  "begriff_en": "Hazard ratio",
+  "kategorie": "studien",
+  "kurz": "Vergleichsmaß dafür, wie oft ein Ereignis in zwei Gruppen über die Zeit eintritt. Ein Wert von 1 bedeutet: kein Unterschied.",
+  "kurz_en": "A measure comparing how often an event occurs in two groups over time. A value of 1 means no difference.",
+  "quellen": [
+   {
+    "titel": "NCI: hazard ratio",
+    "titel_en": "NCI: hazard ratio",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/hazard-ratio"
+   }
+  ],
+  "text": "Die Hazard Ratio (HR) vergleicht, wie oft ein Ereignis, etwa ein Krankheitsverlauf, in einer Gruppe im Verhältnis zu einer anderen Gruppe über die Zeit eintritt. Ein Wert von 1 bedeutet keinen Unterschied; Werte über oder unter 1 zeigen, in welcher Gruppe das Ereignis häufiger auftrat. Sie sagt nichts über das absolute Risiko aus und wird zusammen mit einem Konfidenzintervall gelesen.",
+  "text_en": "The hazard ratio (HR) compares how often an event, such as disease progression, occurs in one group relative to another group over time. A value of 1 means no difference; values above or below 1 show which group had the event more often. It says nothing about absolute risk and is read together with a confidence interval.",
+  "synonyme": [
+   "HR"
+  ],
+  "synonyme_en": [
+   "HR"
+  ],
+  "siehe": [
+   "confidence-interval",
+   "cohort-study",
+   "rct"
+  ],
+  "seiten": [
+   "studien.html"
+  ]
+ },
+ {
   "slug": "hexarelin",
   "begriff": "Hexarelin",
   "begriff_en": "Hexarelin",
@@ -1497,6 +1592,69 @@ window.PK.glossar = [
    "rct",
    "placebo",
    "doppelblind"
+  ],
+  "seiten": [
+   "studien.html"
+  ]
+ },
+ {
+  "slug": "cohort-study",
+  "begriff": "Kohortenstudie",
+  "begriff_en": "Cohort study",
+  "kategorie": "studien",
+  "kurz": "Beobachtungsstudie, die Gruppen mit einem unterschiedlichen Merkmal über die Zeit begleitet und ein Ergebnis vergleicht.",
+  "kurz_en": "An observational study that follows groups differing in one characteristic over time and compares an outcome.",
+  "quellen": [
+   {
+    "titel": "NCI: cohort study",
+    "titel_en": "NCI: cohort study",
+    "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/cohort-study"
+   }
+  ],
+  "text": "In einer Kohortenstudie werden Gruppen von Personen, die sich in einem Merkmal unterscheiden (zum Beispiel Rauchen oder Nichtrauchen), über einen Zeitraum beobachtet und ein bestimmtes Ergebnis wird verglichen. Die Forschenden greifen nicht ein. Solche Studien zeigen Zusammenhänge, aber keine Ursache und Wirkung, weil die Gruppen sich auch in anderen Punkten unterscheiden können.",
+  "text_en": "In a cohort study, groups of people who differ in one characteristic (for example smoking or not smoking) are followed over a period of time and a particular outcome is compared. Researchers do not intervene. Such studies show associations, not cause and effect, because the groups may also differ in other ways.",
+  "synonyme": [
+   "Kohortenstudien"
+  ],
+  "synonyme_en": [
+   "Cohort studies"
+  ],
+  "siehe": [
+   "observational-study",
+   "association",
+   "confounder"
+  ],
+  "seiten": [
+   "studien.html"
+  ]
+ },
+ {
+  "slug": "confidence-interval",
+  "begriff": "Konfidenzintervall",
+  "begriff_en": "Confidence interval",
+  "kategorie": "studien",
+  "kurz": "Wertebereich, der den wahren Wert mit einer festgelegten Wahrscheinlichkeit enthalten soll, meist 95 %.",
+  "kurz_en": "A range of values built to include the true value with a stated probability, usually 95%.",
+  "quellen": [
+   {
+    "titel": "NLM MeSH: Confidence Intervals",
+    "titel_en": "NLM MeSH: Confidence Intervals",
+    "url": "https://www.ncbi.nlm.nih.gov/mesh/68016001"
+   }
+  ],
+  "text": "Ein Konfidenzintervall (KI) ist ein Wertebereich, der so gebildet wird, dass er den wahren Wert einer Größe, etwa einer Rate oder Hazard Ratio, mit einer festgelegten Wahrscheinlichkeit enthält, meist 95 %. Ein schmales Intervall deutet auf eine genauere Schätzung hin. Enthält das Intervall einer Hazard Ratio den Wert 1, ist ein Unterschied zwischen den Gruppen statistisch nicht gesichert.",
+  "text_en": "A confidence interval (CI) is a range of values built so that it includes the true value of a quantity, such as a rate or hazard ratio, with a stated probability, usually 95%. A narrow interval suggests a more precise estimate. If the interval of a hazard ratio includes 1, a difference between the groups is not statistically established.",
+  "synonyme": [
+   "KI",
+   "Vertrauensbereich"
+  ],
+  "synonyme_en": [
+   "CI",
+   "Confidence range"
+  ],
+  "siehe": [
+   "hazard-ratio",
+   "metaanalyse"
   ],
   "seiten": [
    "studien.html"
@@ -2756,6 +2914,39 @@ window.PK.glossar = [
   "siehe": [
    "endotoxin",
    "coa"
+  ]
+ },
+ {
+  "slug": "confounder",
+  "begriff": "Störfaktor (Confounder)",
+  "begriff_en": "Confounder",
+  "kategorie": "studien",
+  "kurz": "Faktor, der Ergebnis und untersuchtes Merkmal beeinflusst und so einen Zusammenhang verzerren oder vortäuschen kann.",
+  "kurz_en": "A factor linked to both the outcome and the studied characteristic that can distort or fake an association.",
+  "quellen": [
+   {
+    "titel": "NLM MeSH: Confounding Factors, Epidemiologic",
+    "titel_en": "NLM MeSH: Confounding Factors, Epidemiologic",
+    "url": "https://www.ncbi.nlm.nih.gov/mesh/68015986"
+   }
+  ],
+  "text": "Ein Störfaktor (Confounder) kann das untersuchte Ergebnis verursachen oder verhindern, ohne ein Zwischenschritt des untersuchten Merkmals zu sein. Er hängt zugleich mit diesem Merkmal zusammen und kann einen Zusammenhang verzerren oder erst erzeugen. Beispiel: Kaffeetrinker rauchen im Schnitt häufiger; ein Lungenleiden könnte dann fälschlich dem Kaffee zugeschrieben werden. Studien berücksichtigen Störfaktoren durch Zufallszuteilung oder statistische Anpassung.",
+  "text_en": "A confounder can cause or prevent the outcome of interest without being an intermediate step of the characteristic under study. It is also linked to that characteristic and can distort an association or create one. Example: coffee drinkers smoke more often on average, so a lung condition could wrongly be blamed on coffee. Studies account for confounders through random assignment or statistical adjustment.",
+  "synonyme": [
+   "Verzerrender Faktor",
+   "Störvariable"
+  ],
+  "synonyme_en": [
+   "Confounding factor",
+   "Confounding variable"
+  ],
+  "siehe": [
+   "association",
+   "observational-study",
+   "rct"
+  ],
+  "seiten": [
+   "studien.html"
   ]
  },
  {

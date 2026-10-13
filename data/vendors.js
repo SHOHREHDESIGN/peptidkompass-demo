@@ -200,8 +200,8 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Die Website zeigt jetzt ein ausgebautes 'Chargenbezogene Analysedokumentation'-Konzept mit eigener CoA-Bibliothek: Jede geprüfte Produktseite trägt Charge-ID und HPLC-Reinheitswert, bei mehreren Produkten zusätzlich einen Endotoxinwert, plus direktem Verifizierungslink zu Janoshik. Ob das System seit der früheren Erhebung (06.09.2026) neu eingeführt wurde oder nur ausführlicher dokumentiert ist, bleibt ungeprüft. Die Tiefe der Darstellung geht über die zuvor erfasste knappe Angabe 'Labor: Janoshik' hinaus.",
-          "text_en": "The website now shows a fully built-out 'batch-specific analysis documentation' concept with its own CoA library: every checked product page carries a batch ID and HPLC purity value, and for several products also an endotoxin value, plus a direct verification link to Janoshik. Whether this system was newly introduced since the earlier survey (2026-09-06) or is simply documented in more detail now remains unverified. Either way, the depth of presentation goes beyond the previously recorded brief note 'lab: Janoshik'.",
+          "text": "Die Website zeigt jetzt ein ausgebautes 'Chargenbezogene Analysedokumentation'-Konzept mit eigener CoA-Bibliothek: Jede geprüfte Produktseite trägt Charge-ID und HPLC-Reinheitswert, bei mehreren Produkten zusätzlich einen Endotoxinwert, plus direktem Verifizierungslink zu Janoshik. Ob das System seit der Erhebung vom 06.09.2026 neu eingeführt wurde oder nur ausführlicher dokumentiert ist, bleibt ungeprüft. Die Darstellung geht über die damals erfasste knappe Angabe 'Labor: Janoshik' hinaus.",
+          "text_en": "The website now shows a fully built-out 'batch-specific analysis documentation' concept with its own CoA library: every checked product page carries a batch ID and HPLC purity value, and for several products also an endotoxin value, plus a direct verification link to Janoshik. Whether this system was newly introduced since the survey of 2026-09-06 or is simply documented in more detail now remains unverified. Either way, the presentation goes beyond the brief note 'lab: Janoshik' recorded at that time.",
           "quelle": "https://pepwerk.com/ueber-uns/",
           "datum": "2026-09-15"
         }
@@ -307,8 +307,8 @@ window.PK.vendors = [
       ],
       "schwaechen": [
         {
-          "text": "avellon-peptides.com UND avellonpeptides.com (beide Schreibweisen) leiten aktuell vollständig zu einem fremden Shop weiter (smartpeptides.de, Betreiber laut dessen Impressum: Aktru Sp. z o.o., Gdowska 22A, 32-020 Wieliczka, Polen, eine andere Rechtsperson als die bisher dokumentierte 'Avellon Peptides Sp. z o.o., KRS 0001218785'). Live geprüft per Browser-Navigation (URL-Bar bestätigt Redirect, pfadgenau: z.B. /ueber-uns → smartpeptides.de/versand-lieferung/ 404) sowie per curl (403/Cloaking je nach User-Agent). Die ursprüngliche Avellon-Website ist für normale Besucher aktuell nicht erreichbar.",
-          "text_en": "avellon-peptides.com AND avellonpeptides.com (both spellings) currently redirect fully to an unrelated shop (smartpeptides.de, operator per its imprint: Aktru Sp. z o.o., Gdowska 22A, 32-020 Wieliczka, Poland, a different legal entity than the previously documented 'Avellon Peptides Sp. z o.o., KRS 0001218785'). Verified live via browser navigation (URL bar confirms the redirect, path-exact, e.g. /ueber-uns → smartpeptides.de/versand-lieferung/ 404) and via curl (403/cloaking depending on user agent). The original Avellon website is currently unreachable for normal visitors.",
+          "text": "avellon-peptides.com UND avellonpeptides.com (beide Schreibweisen) leiten aktuell vollständig zu einem fremden Shop weiter (smartpeptides.de, Betreiber laut dessen Impressum: Aktru Sp. z o.o., Gdowska 22A, 32-020 Wieliczka, Polen, eine andere Rechtsperson als die zuvor dokumentierte 'Avellon Peptides Sp. z o.o., KRS 0001218785'). Die Weiterleitung wurde im Browser pfadgenau bestätigt (z.B. /ueber-uns → smartpeptides.de/versand-lieferung/ 404) und per curl geprüft (403/Cloaking je nach User-Agent). Die ursprüngliche Avellon-Website ist für normale Besucher aktuell nicht erreichbar.",
+          "text_en": "avellon-peptides.com AND avellonpeptides.com (both spellings) currently redirect fully to an unrelated shop (smartpeptides.de, operator per its imprint: Aktru Sp. z o.o., Gdowska 22A, 32-020 Wieliczka, Poland, a different legal entity than the one documented earlier 'Avellon Peptides Sp. z o.o., KRS 0001218785'). The redirect was confirmed in a browser path by path (e.g. /ueber-uns → smartpeptides.de/versand-lieferung/ 404) and checked via curl (403/cloaking depending on user agent). The original Avellon website is currently unreachable for normal visitors.",
           "quelle": "https://avellon-peptides.com/ (live-Navigation 2026-09-15) und https://smartpeptides.de/impressum/",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -343,14 +343,14 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "chemverify.com (API /api/catalog, zuletzt intern aktualisiert 2026-09-07) führt Avellon Peptides weiterhin als Vendor-Eintrag mit payment_methods ['Credit Card','Bank Transfer']: Das wäre eine Änderung gegenüber der bisher dokumentierten Schwäche 'keine Sofort-Kartenzahlung'. Das Feld 'peptides' ist bei chemverify jedoch leer (keine Produktpreise hinterlegt), is_verified=false, rating=null, last_verified=null, und die Angabe konnte NICHT auf der Live-Seite gegengeprüft werden, da diese nicht mehr erreichbar ist. Als offener, unbestätigter Punkt behandeln, nicht als Fakt übernehmen.",
-          "text_en": "chemverify.com (API /api/catalog, last updated internally on Sep 7, 2026) still lists Avellon Peptides as a vendor entry with payment_methods ['Credit Card','Bank Transfer']: that would be a change versus the previously documented weakness of 'no instant card payment'. However, the 'peptides' field is empty at chemverify (no product prices on file), is_verified=false, rating=null, last_verified=null, and the claim could NOT be cross-checked on the live site since it is no longer reachable. Treat as an open, unconfirmed point, not as an established fact.",
+          "text": "chemverify.com (API /api/catalog, laut API zuletzt aktualisiert am 2026-09-07) führt Avellon Peptides weiterhin als Vendor-Eintrag mit payment_methods ['Credit Card','Bank Transfer']: Das wäre eine Änderung gegenüber der zuvor dokumentierten Schwäche 'keine Sofort-Kartenzahlung'. Das Feld 'peptides' ist bei chemverify jedoch leer (keine Produktpreise hinterlegt), is_verified=false, rating=null, last_verified=null, und die Angabe konnte NICHT auf der Live-Seite gegengeprüft werden, da diese nicht mehr erreichbar ist. Als offener, unbestätigter Punkt zu behandeln, nicht als gesicherte Tatsache.",
+          "text_en": "chemverify.com (API /api/catalog, last updated on Sep 7, 2026 according to the API) still lists Avellon Peptides as a vendor entry with payment_methods ['Credit Card','Bank Transfer']: that would be a change versus the weakness documented earlier of 'no instant card payment'. However, the 'peptides' field is empty at chemverify (no product prices on file), is_verified=false, rating=null, last_verified=null, and the claim could NOT be cross-checked on the live site since it is no longer reachable. To be treated as an open, unconfirmed point, not as an established fact.",
           "quelle": "https://www.chemverify.com/api/catalog",
           "datum": "2026-09-15"
         },
         {
-          "text": "chemverify-Eintrag nennt als Produktionsort 'Synthese und Abfüllung erfolgen in den Niederlanden', abweichend von der bisherigen Sitz-Angabe Polen (Wrocław). Könnte Produktions- vs. Firmensitz sein, wurde nicht weiter verifiziert, da Primärquelle (Avellon-Website) tot ist.",
-          "text_en": "The chemverify entry lists the production location as 'synthesis and filling take place in the Netherlands', differing from the previously documented company seat in Poland (Wrocław). This could be a production-site-versus-company-seat distinction; it was not further verified because the primary source (the Avellon website) is dead.",
+          "text": "chemverify-Eintrag nennt als Produktionsort 'Synthese und Abfüllung erfolgen in den Niederlanden', abweichend von der zuvor dokumentierten Sitz-Angabe Polen (Wrocław). Möglicherweise handelt es sich um Produktions- statt Firmensitz; nicht weiter verifiziert, da die Primärquelle (Avellon-Website) nicht mehr erreichbar ist.",
+          "text_en": "The chemverify entry lists the production location as 'synthesis and filling take place in the Netherlands', differing from the company seat in Poland (Wrocław) documented earlier. This could be a production-site-versus-company-seat distinction; it was not further verified because the primary source (the Avellon website) is no longer reachable.",
           "quelle": "https://www.chemverify.com/api/catalog",
           "datum": "2026-09-15"
         }
@@ -842,8 +842,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Trustpilot-Aggregatwert wird von zwei unabhängig recherchierten Drittseiten mit 5,0/5 (4 Bewertungen, thepeptidelist.com) bzw. 5,0/5 (2 Bewertungen, peptidecritic.com) referenziert. Trustpilot selbst war für mich nicht direkt öffenbar (HTTP 403, Bot-Schutz). Die Zahlenangabe stützt sich auf diese zwei tatsächlich geöffneten Drittquellen, nicht auf Trustpilot direkt. Stichprobe sehr klein (n=2-4).",
-          "text_en": "The Trustpilot aggregate value is referenced by two independently researched third-party sites at 5.0/5 (4 reviews, thepeptidelist.com) and 5.0/5 (2 reviews, peptidecritic.com) respectively. Trustpilot itself was not directly accessible to me (HTTP 403, bot protection). The figure relies on these two third-party sources that were actually opened, not on Trustpilot directly. The sample is very small (n=2-4).",
+          "text": "Trustpilot-Aggregatwert wird von zwei unabhängig recherchierten Drittseiten mit 5,0/5 (4 Bewertungen, thepeptidelist.com) bzw. 5,0/5 (2 Bewertungen, peptidecritic.com) referenziert. Trustpilot selbst war nicht direkt abrufbar (HTTP 403, Bot-Schutz). Die Zahlenangabe stützt sich auf diese zwei tatsächlich geöffneten Drittquellen, nicht auf Trustpilot direkt. Stichprobe sehr klein (n=2-4).",
+          "text_en": "The Trustpilot aggregate value is referenced by two independently researched third-party sites at 5.0/5 (4 reviews, thepeptidelist.com) and 5.0/5 (2 reviews, peptidecritic.com) respectively. Trustpilot itself was not directly accessible (HTTP 403, bot protection). The figure relies on these two third-party sources that were actually opened, not on Trustpilot directly. The sample is very small (n=2-4).",
           "quelle": "https://thepeptidelist.com/providers/biocollex-research",
           "datum": "2026-09-15"
         },
@@ -891,8 +891,8 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Achtung Verwechslungsgefahr: Eine Google-Suche zu \"biocollex scam complaint\" lieferte primär Beschwerden (falsche Testimonials, kaputte Glasverpackung, keine Rückmeldung auf E-Mails, BBB-Meldung). Diese Beschwerden beziehen sich laut den Quellenangaben jedoch auf \"biocollabs.com\" / \"Biocol Labs\", eine andersnamige, andere Firma, NICHT auf biocollexresearch.com / BioCollex Research. Ich habe diese Beschwerden nicht auf BioCollex übertragen, vermerke die Verwechslungsgefahr aber explizit, falls sie in anderen Quellen künftig vermischt werden.",
-          "text_en": "Note, risk of confusion: a Google search for \"biocollex scam complaint\" primarily returned complaints (fake testimonials, broken glass packaging, no response to emails, BBB report). According to the sources, however, these complaints refer to \"biocollabs.com\" / \"Biocol Labs\", a differently named, separate company, NOT to biocollexresearch.com / BioCollex Research. I did not apply these complaints to BioCollex, but explicitly note the risk of confusion in case other sources conflate them in the future.",
+          "text": "Achtung Verwechslungsgefahr: Eine Google-Suche zu \"biocollex scam complaint\" lieferte primär Beschwerden (falsche Testimonials, kaputte Glasverpackung, keine Rückmeldung auf E-Mails, BBB-Meldung). Diese Beschwerden beziehen sich laut den Quellenangaben jedoch auf \"biocollabs.com\" / \"Biocol Labs\", eine andersnamige, andere Firma, NICHT auf biocollexresearch.com / BioCollex Research. Diese Beschwerden wurden nicht auf BioCollex übertragen; die Verwechslungsgefahr wird aber ausdrücklich vermerkt, falls sie in anderen Quellen künftig vermischt werden.",
+          "text_en": "Note, risk of confusion: a Google search for \"biocollex scam complaint\" primarily returned complaints (fake testimonials, broken glass packaging, no response to emails, BBB report). According to the sources, however, these complaints refer to \"biocollabs.com\" / \"Biocol Labs\", a differently named, separate company, NOT to biocollexresearch.com / BioCollex Research. These complaints were not applied to BioCollex, but the risk of confusion is noted explicitly in case other sources conflate them in the future.",
           "quelle": "Web-Suche \"biocollex scam complaint fake\" (Snippet nennt explizit biocollabs.com/Biocol Labs als Ursprung der Beschwerden)",
           "datum": "2026-09-15",
           "art": "community"
@@ -1046,8 +1046,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Trustpilot-Bewertung deutlich verbessert gegenüber früherem Stand: aktuell 4,3 'Excellent' bei 46 Bewertungen (76% 5-Sterne), Profil seit November 2025 verifiziert (Paid Trustpilot Subscription).",
-          "text_en": "Trustpilot rating significantly improved compared to the prior status: currently 4.3 'Excellent' from 46 reviews (76% five-star), profile verified since November 2025 (paid Trustpilot subscription).",
+          "text": "Trustpilot-Bewertung deutlich verbessert gegenüber der früheren Erhebung: aktuell 4,3 'Excellent' bei 46 Bewertungen (76% 5-Sterne), Profil seit November 2025 verifiziert (Paid Trustpilot Subscription).",
+          "text_en": "Trustpilot rating significantly improved compared with the earlier survey: currently 4.3 'Excellent' from 46 reviews (76% five-star), profile verified since November 2025 (paid Trustpilot subscription).",
           "quelle": "https://www.trustpilot.com/review/europeptides.de",
           "datum": "2026-09-15"
         }
@@ -1143,8 +1143,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Analytik-Umfang erweitert (siehe Stärken): Testpanel um Residual-TFA, Endotoxin, Mikrobiologie und pH ergänzt, gegenüber dem früheren Stand (nur HPLC/LCMS/Schwermetalle).",
-          "text_en": "Analytical scope expanded (see strengths): test panel extended to include residual TFA, endotoxin, microbiology and pH, compared to the prior status (HPLC/LCMS/heavy metals only).",
+          "text": "Analytik-Umfang erweitert (siehe Stärken): Testpanel um Residual-TFA, Endotoxin, Mikrobiologie und pH ergänzt, gegenüber der früheren Erhebung (nur HPLC/LCMS/Schwermetalle).",
+          "text_en": "Analytical scope expanded (see strengths): test panel extended to include residual TFA, endotoxin, microbiology and pH, compared with the earlier survey (HPLC/LCMS/heavy metals only).",
           "quelle": "https://europeptides.de/standards",
           "datum": "2026-09-15"
         }
@@ -1368,8 +1368,8 @@ window.PK.vendors = [
           "art": "community"
         },
         {
-          "text": "Community-Meinung (Reddit): Vorwurf lückenhafter Chargenprüfung (\"Testen nur sporadisch/unvollständig. Teilweise ohne Batch-Nummern oder gänzlich ohne COA\"), was der Selbstdarstellung des Shops widerspricht. Nicht durch eigene Stichprobe verifiziert.",
-          "text_en": "Community opinion (Reddit): an allegation of patchy batch testing (\"only tested sporadically/incompletely, sometimes without batch numbers or entirely without a CoA\"), which contradicts the shop's own self-presentation. Not verified through my own sampling.",
+          "text": "Community-Meinung (Reddit): Vorwurf lückenhafter Chargenprüfung (\"Testen nur sporadisch/unvollständig. Teilweise ohne Batch-Nummern oder gänzlich ohne COA\"), was der Selbstdarstellung des Shops widerspricht. Nicht durch eine Stichprobe von Peptide Compass verifiziert.",
+          "text_en": "Community opinion (Reddit): an allegation of patchy batch testing (\"only tested sporadically/incompletely, sometimes without batch numbers or entirely without a CoA\"), which contradicts the shop's own self-presentation. Not verified through a sample taken by Peptide Compass.",
           "quelle": "https://www.reddit.com/r/PeptideDeutschland/comments/1vw4bqh/ich_m%C3%B6chte_die_preise_nicht_kommentieren_ich/",
           "datum": "2026-09-15",
           "art": "community"
@@ -1510,8 +1510,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Das Prüfschema (LAL-Endotoxin + 7-Metall-ICP-MS) geht laut anbieterseitiger Vergleichstabelle über den Community-Standard Janoshik hinaus (Janoshik testet laut dieser Tabelle kein Endotoxin und nur 4 von 7 Metallen). Das ist eine anbieterseitige Eigenangabe, von mir nicht unabhängig bei Janoshik gegengeprüft.",
-          "text_en": "According to the vendor's own comparison table, the testing scheme (LAL endotoxin plus 7-metal ICP-MS) exceeds the community standard Janoshik (per that table, Janoshik does not test for endotoxin and covers only 4 of 7 metals). This is a vendor self-declaration that I did not independently verify against Janoshik.",
+          "text": "Das Prüfschema (LAL-Endotoxin + 7-Metall-ICP-MS) geht laut anbieterseitiger Vergleichstabelle über den Community-Standard Janoshik hinaus (Janoshik testet laut dieser Tabelle kein Endotoxin und nur 4 von 7 Metallen). Das ist eine anbieterseitige Eigenangabe, nicht unabhängig bei Janoshik gegengeprüft.",
+          "text_en": "According to the vendor's own comparison table, the testing scheme (LAL endotoxin plus 7-metal ICP-MS) exceeds the community standard Janoshik (per that table, Janoshik does not test for endotoxin and covers only 4 of 7 metals). This is a vendor self-declaration that was not independently verified with Janoshik.",
           "quelle": "https://peakpeptide.com/standards",
           "datum": "2026-09-15"
         },
@@ -1607,14 +1607,14 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Impressum/Legal Notice ist neu vorhanden (Recherche 06.09.2026 hatte impressum:false ergeben). Es bleibt aber weiterhin ohne Postanschrift, Handelsregisternummer oder Rechtsform, also weiterhin unzureichend.",
-          "text_en": "An imprint/legal notice now exists (the 09/06/2026 research had found impressum:false), but it still lacks a postal address, trade register number or legal form, so it remains insufficient.",
+          "text": "Impressum/Legal Notice ist neu vorhanden (bei der Erhebung am 06.09.2026 war keines vorhanden). Es bleibt aber weiterhin ohne Postanschrift, Handelsregisternummer oder Rechtsform, also weiterhin unzureichend.",
+          "text_en": "An imprint/legal notice now exists (none was present in the Sep 6, 2026 survey), but it still lacks a postal address, trade register number or legal form, so it remains insufficient.",
           "quelle": "https://peakpeptide.com/legal-notice",
           "datum": "2026-09-15"
         },
         {
           "text": "Zahlungsmethoden erweitert: zusätzlich zu SEPA und Krypto (Stand 06.09.2026) jetzt auch reguläre Kartenzahlung (Visa, Mastercard, Amex, Apple Pay, Google Pay).",
-          "text_en": "Payment methods expanded: in addition to SEPA and crypto (as of 09/06/2026), regular card payment (Visa, Mastercard, Amex, Apple Pay, Google Pay) is now also available.",
+          "text_en": "Payment methods expanded: in addition to SEPA and crypto (as of Sep 6, 2026), regular card payment (Visa, Mastercard, Amex, Apple Pay, Google Pay) is now also available.",
           "quelle": "https://peakpeptide.com/",
           "datum": "2026-09-15"
         },
@@ -1626,7 +1626,7 @@ window.PK.vendors = [
         },
         {
           "text": "Sortiment deutlich ausgeweitet: Sitemap zeigt 33 Produkt-URLs (u.a. Tirzepatid/Retatrutid-Analoga als 'DUAL/TRIPLE AGONIST', diverse Nootropika), gegenüber einem schmaleren Katalog zum Stand der Recherche vom 06.09.2026 (dort nicht im Detail dokumentiert). Der Ausbau ist aber über Blog-Daten und Sitemap-lastmod-Zeitstempel, überwiegend 2026-06 bis 2026-08, nachvollziehbar.",
-          "text_en": "Range significantly expanded: the sitemap shows 33 product URLs (including tirzepatide/retatrutide analogs listed as 'DUAL/TRIPLE AGONIST', various nootropics), compared to a narrower catalog at the time of the 09/06/2026 research (not documented in detail there). The expansion is traceable via blog data and sitemap lastmod timestamps, mostly from 2026-06 to 2026-08.",
+          "text_en": "Range significantly expanded: the sitemap shows 33 product URLs (including tirzepatide/retatrutide analogs listed as 'DUAL/TRIPLE AGONIST', various nootropics), compared to a narrower catalog at the time of the Sep 6, 2026 research (not documented in detail there). The expansion is traceable via blog data and sitemap lastmod timestamps, mostly from 2026-06 to 2026-08.",
           "quelle": "https://peakpeptide.com/sitemap.xml",
           "datum": "2026-09-15"
         }
@@ -1756,8 +1756,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Auf der Startseite ist jetzt ein Pflicht-Gate vor Shop-Zugriff implementiert: Modal 'RESEARCH USE ONLY – Before you continue... You must be at least 18 years of age to enter' mit Checkbox 'I confirm that I am at least 18 years of age' plus Pflichtfeld 'Research field' (Dropdown, u.a. Pharmacology, Molecular Biology, Academic Research) vor dem Button 'Enter Catalog'. Per Screenshot selbst verifiziert. Unser Stand vom 06.09.2026 vermerkte explizit 'kein Altersgate' als rote Flagge, dieser Punkt ist damit laut heutiger Beobachtung nicht mehr zutreffend.",
-          "text_en": "The homepage now has a mandatory gate before shop access: a modal 'RESEARCH USE ONLY - Before you continue... You must be at least 18 years of age to enter' with a checkbox 'I confirm that I am at least 18 years of age' plus a required 'Research field' dropdown (e.g. Pharmacology, Molecular Biology, Academic Research) before the 'Enter Catalog' button. Verified myself via screenshot. Our 06.09.2026 status explicitly flagged 'no age gate' as a red flag; per today's observation that point no longer applies.",
+          "text": "Auf der Startseite ist jetzt ein Pflicht-Gate vor Shop-Zugriff implementiert: Modal 'RESEARCH USE ONLY – Before you continue... You must be at least 18 years of age to enter' mit Checkbox 'I confirm that I am at least 18 years of age' plus Pflichtfeld 'Research field' (Dropdown, u.a. Pharmacology, Molecular Biology, Academic Research) vor dem Button 'Enter Catalog'. Per Screenshot belegt. In der Erhebung vom 06.09.2026 war explizit 'kein Altersgate' als Warnsignal vermerkt; dieser Punkt trifft nach heutiger Beobachtung nicht mehr zu.",
+          "text_en": "The homepage now has a mandatory gate before shop access: a modal 'RESEARCH USE ONLY - Before you continue... You must be at least 18 years of age to enter' with a checkbox 'I confirm that I am at least 18 years of age' plus a required 'Research field' dropdown (e.g. Pharmacology, Molecular Biology, Academic Research) before the 'Enter Catalog' button. Documented via screenshot. The 06.09.2026 survey explicitly flagged 'no age gate' as a warning sign; per today's observation that point no longer applies.",
           "quelle": "https://beyond-peptides.com/ (Screenshot 2026-09-15)",
           "datum": "2026-09-15"
         },
@@ -1776,15 +1776,15 @@ window.PK.vendors = [
       ],
       "schwaechen": [
         {
-          "text": "Das vermutete 'große Update kürzlich' lässt sich anhand der Dokumenten-Zeitstempel NICHT belegen: Shipping Policy und Terms of Service sind auf den 27.04.2026 datiert, die Privacy Policy auf 30.08.2026 (also vor unserem eigenen 06.09.2026-Stand), kein einziges geprüftes Rechtsdokument trägt ein Datum im September 2026. Die einzige tatsächlich am 15.09.2026 beobachtete, gegenüber dem 06.09.-Stand neue Tatsache ist das Alters-Gate; ob und wann genau sich sonst etwas an der Website geändert hat, bleibt mangels Vergleichsquelle offen.",
-          "text_en": "The suspected 'big recent update' CANNOT be substantiated from the document timestamps: the Shipping Policy and Terms of Service are dated 27.04.2026, the Privacy Policy 30.08.2026 (i.e. before our own 06.09.2026 status), and not a single checked legal document carries a September 2026 date. The only fact actually observed on 15.09.2026 that is new compared to the 06.09.2026 status is the age gate; whether and exactly when anything else on the site changed remains open for lack of a comparison source.",
+          "text": "Das vermutete 'große Update kürzlich' lässt sich anhand der Dokumenten-Zeitstempel NICHT belegen: Shipping Policy und Terms of Service sind auf den 27.04.2026 datiert, die Privacy Policy auf 30.08.2026 (also vor der Erhebung vom 06.09.2026), kein einziges geprüftes Rechtsdokument trägt ein Datum im September 2026. Die einzige tatsächlich am 15.09.2026 beobachtete, gegenüber der Erhebung vom 06.09. neue Tatsache ist das Alters-Gate; ob und wann genau sich sonst etwas an der Website geändert hat, bleibt mangels Vergleichsquelle offen.",
+          "text_en": "The suspected 'big recent update' CANNOT be substantiated from the document timestamps: the Shipping Policy and Terms of Service are dated 27.04.2026, the Privacy Policy 30.08.2026 (i.e. before the 06.09.2026 survey), and not a single checked legal document carries a September 2026 date. The only fact actually observed on 15.09.2026 that is new compared with the 06.09.2026 survey is the age gate; whether and exactly when anything else on the site changed remains open for lack of a comparison source.",
           "quelle": "https://beyond-peptides.com/shipping-policies/ ; https://beyond-peptides.com/terms-of-service/ ; https://beyond-peptides.com/privacy-policy/",
           "datum": "2026-09-15",
           "art": "belegt"
         },
         {
-          "text": "Kein Wayback-Machine-Snapshot für beyond-peptides.com verfügbar (archive.org/wayback/available liefert 'archived_snapshots: {}' für Stichtag 06.09.2026; die CDX-Volltextsuche war zum Abrufzeitpunkt technisch offline, HTTP 503). Ein echter Vorher/Nachher-Website-Vergleich über ein unabhängiges Archiv war damit nicht möglich, der Vergleich stützt sich ausschließlich auf unsere eigene Notiz vom 06.09.2026 versus meine Beobachtung heute.",
-          "text_en": "No Wayback Machine snapshot is available for beyond-peptides.com (archive.org/wayback/available returns 'archived_snapshots: {}' for the 06.09.2026 cutoff date; the CDX full-text search was technically offline at retrieval time, HTTP 503). A genuine before/after website comparison via an independent archive was therefore not possible; the comparison relies solely on our own 06.09.2026 note versus my observation today.",
+          "text": "Kein Wayback-Machine-Snapshot für beyond-peptides.com verfügbar (archive.org/wayback/available liefert 'archived_snapshots: {}' für den Stichtag 06.09.2026; die CDX-Volltextsuche war zum Abrufzeitpunkt technisch offline, HTTP 503). Ein Vorher/Nachher-Vergleich der Website über ein unabhängiges Archiv war damit nicht möglich; der Vergleich stützt sich ausschließlich auf die Notiz der Erhebung vom 06.09.2026 und die Beobachtung vom 15.09.2026.",
+          "text_en": "No Wayback Machine snapshot is available for beyond-peptides.com (archive.org/wayback/available returns 'archived_snapshots: {}' for the 06.09.2026 cutoff date; the CDX full-text search was technically offline at retrieval time, HTTP 503). A before/after website comparison via an independent archive was therefore not possible; the comparison relies solely on the note from the 06.09.2026 survey and the observation of 15.09.2026.",
           "quelle": "https://archive.org/wayback/available?url=beyond-peptides.com&timestamp=20260906 ; https://web.archive.org/cdx/search/cdx",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -1847,8 +1847,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "CoA-Darstellung heute deutlich umfangreicher/strukturierter als unser 06.09.-Stand beschreibt ('eigene HPLC-PDFs je Charge, Labor nicht genannt'): dedizierte Seite mit 9 durchsuchbaren Produktberichten, klarer Parameterliste (HPLC, LC-MS/MS, Schwermetalle, Endotoxin, TAMC/TYMC) und einem PDF mit sichtbarem Janoshik-Wasserzeichen. WICHTIGE EINSCHRÄNKUNG: Die unabhängige Plattform ChemVerify bestätigte externe Janoshik/MZ-Biolabs-Testung bereits in einem am 21.03.2026 veröffentlichten Artikel ('Last verified: March 2026'), die externe Testung selbst war also mutmaßlich schon vor unserem 06.09.-Stand etabliert. Es ist nicht auszuschließen, dass unser Team am 06.09. lediglich die /lab-reports/-Unterseite nicht separat geprüft hat, statt dass sich hier zwischen 06.09. und 15.09. tatsächlich etwas geändert hätte. Diese Unsicherheit kann ohne Wayback-Snapshot nicht aufgelöst werden.",
-          "text_en": "The CoA presentation today is noticeably more extensive/structured than our 06.09. status describes ('own HPLC PDFs per batch, lab not named'): a dedicated page with 9 searchable product reports, a clear list of parameters (HPLC, LC-MS/MS, heavy metals, endotoxin, TAMC/TYMC) and a PDF with a visible Janoshik watermark. IMPORTANT CAVEAT: the independent platform ChemVerify already confirmed external Janoshik/MZ Biolabs testing in an article published 21.03.2026 ('Last verified: March 2026'), so per this source the external testing itself was presumably already in place before our 06.09. status. It cannot be ruled out that our team simply did not separately check the /lab-reports/ subpage on 06.09., rather than something having actually changed here between 06.09. and 15.09. This uncertainty cannot be resolved without a Wayback snapshot.",
+          "text": "CoA-Darstellung heute deutlich umfangreicher/strukturierter als in der Erhebung vom 06.09. beschrieben ('eigene HPLC-PDFs je Charge, Labor nicht genannt'): dedizierte Seite mit 9 durchsuchbaren Produktberichten, klarer Parameterliste (HPLC, LC-MS/MS, Schwermetalle, Endotoxin, TAMC/TYMC) und einem PDF mit sichtbarem Janoshik-Wasserzeichen. WICHTIGE EINSCHRÄNKUNG: Die unabhängige Plattform ChemVerify bestätigte externe Janoshik/MZ-Biolabs-Testung bereits in einem am 21.03.2026 veröffentlichten Artikel ('Last verified: March 2026'), die externe Testung selbst war also mutmaßlich schon vor der Erhebung vom 06.09. etabliert. Es ist nicht auszuschließen, dass bei der Erhebung am 06.09. lediglich die /lab-reports/-Unterseite nicht separat geprüft wurde, statt dass sich hier zwischen 06.09. und 15.09. tatsächlich etwas geändert hätte. Diese Unsicherheit kann ohne Wayback-Snapshot nicht aufgelöst werden.",
+          "text_en": "The CoA presentation today is noticeably more extensive/structured than the 06.09. survey describes ('own HPLC PDFs per batch, lab not named'): a dedicated page with 9 searchable product reports, a clear list of parameters (HPLC, LC-MS/MS, heavy metals, endotoxin, TAMC/TYMC) and a PDF with a visible Janoshik watermark. IMPORTANT CAVEAT: the independent platform ChemVerify already confirmed external Janoshik/MZ Biolabs testing in an article published 21.03.2026 ('Last verified: March 2026'), so per this source the external testing itself was presumably already in place before the 06.09. survey. It cannot be ruled out that the /lab-reports/ subpage simply was not checked separately on 06.09., rather than something having actually changed here between 06.09. and 15.09. This uncertainty cannot be resolved without a Wayback snapshot.",
           "quelle": "https://beyond-peptides.com/lab-reports/ ; https://www.chemverify.com/learn/is-beyond-peptides-legit (Published 2026-03-21)",
           "datum": "2026-09-15"
         },
@@ -2253,8 +2253,8 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Gridinsoft.com (von Scamadviser als Quelle für 'potentially malicious' zitiert) war für eine eigene Direktprüfung nicht erreichbar (Cloudflare-JS-Challenge, HTTP 403 auch per curl-Fallback). Die in Suchmaschinen-Snippets kursierende Angabe eines '1/100 Trust Score' sowie Behauptungen über 'rüden/beleidigenden Kundenservice' konnten NICHT an der Quelle selbst verifiziert werden und wurden daher bewusst NICHT als Fakt in diesen Report übernommen.",
-          "text_en": "Gridinsoft.com (cited by Scamadviser as the source for 'potentially malicious') was not reachable for an own direct check (Cloudflare JS challenge, HTTP 403 also via curl fallback). The claim of a '1/100 trust score' circulating in search-engine snippets, as well as allegations of 'rude/abusive customer service', could NOT be verified at the source itself and were therefore deliberately NOT included as fact in this report.",
+          "text": "Gridinsoft.com (von Scamadviser als Quelle für 'potentially malicious' zitiert) war für eine direkte Prüfung nicht erreichbar (Cloudflare-JS-Challenge, HTTP 403 auch per curl-Fallback). Die in Suchmaschinen-Snippets kursierende Angabe eines '1/100 Trust Score' sowie Behauptungen über 'rüden/beleidigenden Kundenservice' konnten NICHT an der Quelle selbst verifiziert werden und werden daher bewusst NICHT als Fakt übernommen.",
+          "text_en": "Gridinsoft.com (cited by Scamadviser as the source for 'potentially malicious') was not reachable for a direct check (Cloudflare JS challenge, HTTP 403 also via curl fallback). The claim of a '1/100 trust score' circulating in search-engine snippets, as well as allegations of 'rude/abusive customer service', could NOT be verified at the source itself and were therefore deliberately NOT adopted as fact.",
           "quelle": "https://gridinsoft.com/online-virus-scanner/url/bioboostx-com (nicht erreichbar, HTTP 403)",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -2274,8 +2274,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Trustpilot-Profil ist zum Stand 15.09.2026 entfernt ('removed'). Ob je ein aktives Profil mit Bewertungen bestand und wann die Entfernung erfolgte, lässt sich ohne Kontrollgruppe/Vorher-Snapshot nicht rekonstruieren - hier nur der aktuelle Zustand dokumentiert.",
-          "text_en": "The Trustpilot profile is removed as of 2026-09-15 ('removed'). Whether an active profile with reviews ever existed, and when the removal occurred, cannot be reconstructed without a control group/prior snapshot: only the current state is documented here.",
+          "text": "Trustpilot-Profil ist zum Stand 15.09.2026 entfernt ('removed'). Ob je ein aktives Profil mit Bewertungen bestand und wann die Entfernung erfolgte, lässt sich ohne Vergleichsdaten aus einer früheren Erhebung nicht rekonstruieren; dokumentiert ist nur der aktuelle Zustand.",
+          "text_en": "The Trustpilot profile is removed as of 2026-09-15 ('removed'). Whether an active profile with reviews ever existed, and when the removal occurred, cannot be reconstructed without comparison data from an earlier survey: only the current state is documented.",
           "quelle": "https://www.trustpilot.com/review/bioboostx.com",
           "datum": "2026-09-15"
         }
@@ -2586,8 +2586,8 @@ window.PK.vendors = [
       "stand": "2026-09-15",
       "staerken": [
         {
-          "text": "Breites Sortiment: chemverify.com listet 50 aktive Produkt-URLs für Helus Lab (u.a. GLP-1/Semaglutid, GLP-2/Tirzepatid, GLP-3/Retatrutid, GLP-CG als eigene SKUs), deutlich mehr als bei der letzten Erhebung bekannt war.",
-          "text_en": "Broad range: chemverify.com lists 50 active product URLs for Helus Lab (including GLP-1/semaglutide, GLP-2/tirzepatide, GLP-3/retatrutide, GLP-CG as separate SKUs), noticeably more than was known at the last assessment.",
+          "text": "Breites Sortiment: chemverify.com listet 50 aktive Produkt-URLs für Helus Lab (u.a. GLP-1/Semaglutid, GLP-2/Tirzepatid, GLP-3/Retatrutid, GLP-CG als eigene SKUs), deutlich mehr als bei der früheren Erhebung bekannt war.",
+          "text_en": "Broad range: chemverify.com lists 50 active product URLs for Helus Lab (including GLP-1/semaglutide, GLP-2/tirzepatide, GLP-3/retatrutide, GLP-CG as separate SKUs), noticeably more than was known at the earlier survey.",
           "quelle": "https://www.chemverify.com/api/catalog",
           "datum": "2026-09-15"
         },
@@ -2662,14 +2662,14 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Neu seit letzter Erhebung (06.09.2026): Die öffentliche Website ist irgendwann zwischen dem letzten funktionierenden Wayback-Snapshot (15.05.2026, damals noch normaler Shop unter dem Titel \"Buy Research Peptides In Europe | Helus Lab EU Supplier\") und heute (15.09.2026) komplett hinter einen WordPress-Login gewandert. Shop, Preise und CoAs sind aktuell nicht mehr öffentlich abrufbar.",
-          "text_en": "New since the last assessment (Sep 6, 2026): the public website moved, at some point between the last working Wayback snapshot (May 15, 2026, then still a normal shop titled \"Buy Research Peptides In Europe | Helus Lab EU Supplier\") and today (Sep 15, 2026), completely behind a WordPress login. The shop, prices, and CoAs are currently no longer publicly accessible.",
+          "text": "Änderung gegenüber der früheren Erhebung (06.09.2026): Die öffentliche Website ist irgendwann zwischen dem letzten funktionierenden Wayback-Snapshot (15.05.2026, damals noch normaler Shop unter dem Titel \"Buy Research Peptides In Europe | Helus Lab EU Supplier\") und heute (15.09.2026) komplett hinter einen WordPress-Login gewandert. Shop, Preise und CoAs sind aktuell nicht mehr öffentlich abrufbar.",
+          "text_en": "Change compared with the earlier survey (Sep 6, 2026): the public website moved, at some point between the last working Wayback snapshot (May 15, 2026, then still a normal shop titled \"Buy Research Peptides In Europe | Helus Lab EU Supplier\") and today (Sep 15, 2026), completely behind a WordPress login. The shop, prices, and CoAs are currently no longer publicly accessible.",
           "quelle": "https://web.archive.org/web/20260515171140/https://heluslab.com/",
           "datum": "2026-05-15"
         },
         {
-          "text": "Trustpilot-Profil wurde seit der letzten Prüfung entfernt (Zeitpunkt der Entfernung nicht feststellbar, nur dass es aktuell, 15.09.2026, nicht mehr existiert und laut Trustpilot gegen deren Richtlinien verstoßen habe).",
-          "text_en": "The Trustpilot profile has been removed since the last check (the removal date could not be determined, only that it no longer exists as of Sep 15, 2026 and, per Trustpilot, violated their guidelines).",
+          "text": "Trustpilot-Profil wurde seit der früheren Erhebung entfernt (Zeitpunkt der Entfernung nicht feststellbar; belegt ist nur, dass es am 15.09.2026 nicht mehr existiert und laut Trustpilot gegen deren Richtlinien verstoßen habe).",
+          "text_en": "The Trustpilot profile has been removed since the earlier survey (the removal date could not be determined; the record shows only that it no longer exists as of Sep 15, 2026 and, per Trustpilot, violated their guidelines).",
           "quelle": "https://www.trustpilot.com/review/heluslab.com",
           "datum": "2026-09-15"
         }
@@ -2815,8 +2815,8 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Neue/bislang nicht dokumentierte ToS-Klausel 6.2 'State-Specific Restrictions': Anbieter kann Verkauf/Versand in einzelne US-Bundesstaaten jederzeit ohne Vorankündigung einschränken.",
-          "text_en": "New, previously undocumented ToS clause 6.2 'State-Specific Restrictions': the provider can restrict sales/shipping to individual US states at any time without prior notice.",
+          "text": "Zusätzliche ToS-Klausel 6.2 'State-Specific Restrictions' (in der früheren Erhebung nicht erfasst): Anbieter kann Verkauf/Versand in einzelne US-Bundesstaaten jederzeit ohne Vorankündigung einschränken.",
+          "text_en": "Additional ToS clause 6.2 'State-Specific Restrictions' (not recorded in the earlier survey): the provider can restrict sales/shipping to individual US states at any time without prior notice.",
           "quelle": "https://protidehealth.com/pages/terms-of-service",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -3023,14 +3023,14 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Zugriffsblock aus der Vorquelle (06.09.) nicht mehr bestätigt, Site heute vollständig ladbar, alle geprüften Unterseiten (Kontakt, AGB, Datenschutz, COA, Partnerprogramm) liefern HTTP 200",
-          "text_en": "The access block from the prior source (06.09.) is no longer confirmed; the site loads fully today, and every checked subpage (contact, terms, privacy, CoA, affiliate program) returns HTTP 200",
+          "text": "Der in der früheren Erhebung (06.09.) festgestellte Zugriffsblock ist nicht mehr bestätigt; die Site ist heute vollständig ladbar, alle geprüften Unterseiten (Kontakt, AGB, Datenschutz, COA, Partnerprogramm) liefern HTTP 200",
+          "text_en": "The access block found in the earlier survey (06.09.) is no longer confirmed; the site loads fully today, and every checked subpage (contact, terms, privacy, CoA, affiliate program) returns HTTP 200",
           "quelle": "https://americanpeptides.us/",
           "datum": "2026-09-15"
         },
         {
-          "text": "Rechtsträger geklärt: 'American Peptides LLC' (vorher rechtstraeger:null, impressum:false), Name, Adresse, Telefon, E-Mail jetzt auffindbar, aber weiterhin keine gebündelte Impressum-Seite nach EU-Muster",
-          "text_en": "Legal entity clarified: 'American Peptides LLC' (previously rechtstraeger:null, impressum:false); name, address, phone and email are now findable, but there is still no single bundled EU-style imprint page",
+          "text": "Rechtsträger geklärt: 'American Peptides LLC' (zuvor weder Rechtsträger noch Impressum erfasst), Name, Adresse, Telefon, E-Mail jetzt auffindbar, aber weiterhin keine gebündelte Impressum-Seite nach EU-Muster",
+          "text_en": "Legal entity clarified: 'American Peptides LLC' (previously no legal entity or imprint on record); name, address, phone and email are now findable, but there is still no single bundled EU-style imprint page",
           "quelle": "https://americanpeptides.us/pages/terms-of-service",
           "datum": "2026-09-15"
         },
@@ -3246,8 +3246,8 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Website-Marketing verschärft \"3rd Party Tested\"-Sprache (Seitentitel, Produkt-Badges) ggü. Stand 06.09.2026, aber CoA bleibt weiterhin nur \"upon request\" und nicht extern veröffentlicht: keine tatsächliche Verbesserung der Nachweisbarkeit.",
-          "text_en": "Website marketing intensifies '3rd Party Tested' language (page titles, product badges) compared to the 2026-09-06 baseline, but the CoA remains only available 'upon request' and is not published externally: no actual improvement in verifiability.",
+          "text": "Website-Marketing verschärft \"3rd Party Tested\"-Sprache (Seitentitel, Produkt-Badges) ggü. der Erhebung vom 06.09.2026, aber CoA bleibt weiterhin nur \"upon request\" und nicht extern veröffentlicht: keine tatsächliche Verbesserung der Nachweisbarkeit.",
+          "text_en": "Website marketing intensifies '3rd Party Tested' language (page titles, product badges) compared with the 2026-09-06 survey, but the CoA remains only available 'upon request' and is not published externally: no actual improvement in verifiability.",
           "quelle": "https://dnlabresearch.com/bpc-157-15mg-peptide-pen/",
           "datum": "2026-09-15"
         },
@@ -3258,8 +3258,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Preise laufen in EUR, nicht in GBP wie im Ausgangs-Stand vermerkt; Shop-Untertitel wirbt weiterhin mit \"UK & EU Delivery\", Terms of Sale nennen als Versandgebiet ausdrücklich EU und UK.",
-          "text_en": "Prices run in EUR, not GBP as noted in the baseline; the shop subtitle still advertises 'UK & EU Delivery', and the Terms of Sale explicitly name EU and UK as the shipping area.",
+          "text": "Preise laufen in EUR, nicht in GBP wie in der früheren Erhebung vermerkt; Shop-Untertitel wirbt weiterhin mit \"UK & EU Delivery\", Terms of Sale nennen als Versandgebiet ausdrücklich EU und UK.",
+          "text_en": "Prices run in EUR, not GBP as noted in the earlier survey; the shop subtitle still advertises 'UK & EU Delivery', and the Terms of Sale explicitly name EU and UK as the shipping area.",
           "quelle": "https://dnlabresearch.com/terms-of-sale/",
           "datum": "2026-09-15"
         }
@@ -3425,8 +3425,8 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Widerspruechliche Lieferzeit-Angaben auf der Live-Seite: Produktseiten nennen 'Lieferzeit: 3-7 Werktage', die Versandrichtlinien-Seite nennt dagegen 'Standard EU-Versand: 12 Wochen'. Wörtlich so auf der Seite vorgefunden, nicht eigenmächtig interpretiert - wirkt wie ein Tippfehler, ist aber als Widerspruch zu dokumentieren.",
-          "text_en": "Contradictory delivery-time statements on the live site: product pages state 'delivery time: 3-7 business days', while the shipping policy page instead states 'standard EU shipping: 12 weeks'. Found verbatim on the site, not interpreted on our own initiative, looks like a typo but should be documented as a contradiction regardless.",
+          "text": "Widersprüchliche Lieferzeit-Angaben auf der Live-Seite: Produktseiten nennen 'Lieferzeit: 3-7 Werktage', die Versandrichtlinien-Seite nennt dagegen 'Standard EU-Versand: 12 Wochen'. Wörtlich so auf der Seite vorgefunden, nicht interpretiert; wirkt wie ein Tippfehler, ist aber als Widerspruch zu dokumentieren.",
+          "text_en": "Contradictory delivery-time statements on the live site: product pages state 'delivery time: 3-7 business days', while the shipping policy page instead states 'standard EU shipping: 12 weeks'. Found verbatim on the site, not interpreted; looks like a typo but is documented as a contradiction regardless.",
           "quelle": "https://www.ppx.at/shipping-policy",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -3649,8 +3649,8 @@ window.PK.vendors = [
       ],
       "aenderungen": [
         {
-          "text": "Referenzquelle peptidcheck24.com (im Ausgangsstand als Quelle genannt) ist komplett offline: die Domain liefert durchgängig HTTP 410 Gone (noindex/nofollow gesetzt), auch die Startseite. Abgleich gegen diese Quelle war nicht mehr möglich, Ursprungsbewertung dort kann nicht nachvollzogen werden",
-          "text_en": "The reference source peptidcheck24.com (named as a source in the baseline) is completely offline: the domain consistently returns HTTP 410 Gone (noindex/nofollow set), including the homepage. Comparison against this source was no longer possible; the original rating there cannot be traced.",
+          "text": "Referenzquelle peptidcheck24.com (in der früheren Erhebung als Quelle genannt) ist komplett offline: die Domain liefert durchgängig HTTP 410 Gone (noindex/nofollow gesetzt), auch die Startseite. Abgleich gegen diese Quelle war nicht mehr möglich, Ursprungsbewertung dort kann nicht nachvollzogen werden",
+          "text_en": "The reference source peptidcheck24.com (named as a source in the earlier survey) is completely offline: the domain consistently returns HTTP 410 Gone (noindex/nofollow set), including the homepage. Comparison against this source was no longer possible; the original rating there cannot be traced.",
           "quelle": "https://peptidcheck24.com/",
           "datum": "2026-09-15"
         },
@@ -3863,8 +3863,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "RUO-Hinweis jetzt nachgewiesen (Footer-Disclaimer sitewide): Korrektur des bisherigen Faktenstands 'ruo:FALSE'. Trotzdem bleibt das Gesamtsortiment strukturell Anabolika-lastig, siehe Schwaechen.",
-          "text_en": "RUO notice now confirmed (sitewide footer disclaimer): a correction to the prior fact base of 'ruo:FALSE.' Nonetheless, the overall range remains structurally anabolics-heavy, see Weaknesses.",
+          "text": "RUO-Hinweis jetzt nachgewiesen (Footer-Disclaimer sitewide): Korrektur der zuvor erfassten Einstufung 'ohne RUO-Hinweis'. Trotzdem bleibt das Gesamtsortiment strukturell Anabolika-lastig, siehe Schwächen.",
+          "text_en": "RUO notice now confirmed (sitewide footer disclaimer): a correction to the earlier classification as 'no RUO notice.' Nonetheless, the overall range remains structurally anabolics-heavy, see Weaknesses.",
           "quelle": "direkte Pruefung 15.09.2026 (Footer-Text auf Produktseiten)",
           "datum": "2026-09-15"
         },
@@ -3975,8 +3975,8 @@ window.PK.vendors = [
       "stand": "2026-09-15",
       "staerken": [
         {
-          "text": "Auf einzelnen Themen-Landingpages (z.B. GLP-1/GIP) ist inzwischen ein expliziter RUO-Hinweis vorhanden: 'This peptide is strictly for in-vitro research and laboratory use only. It is not intended for human consumption, medical treatment, or diagnostic applications. ... For research use only. Not for human or veterinary use.' Das ist eine Verbesserung gegenüber dem Vorbefund vom 06.09. (ruo: FALSE), gilt aber nicht nachweisbar für die gesamte Seite (auf Startseite/Produktseite fehlt der Hinweis).",
-          "text_en": "On individual topic landing pages (e.g., GLP-1/GIP), an explicit RUO notice is now present: 'This peptide is strictly for in-vitro research and laboratory use only. It is not intended for human consumption, medical treatment, or diagnostic applications. ... For research use only. Not for human or veterinary use.' This is an improvement over the prior finding from Sep 6 (ruo: FALSE), but it is not demonstrably present across the entire site (the notice is missing on the homepage/product page).",
+          "text": "Auf einzelnen Themen-Landingpages (z.B. GLP-1/GIP) ist inzwischen ein expliziter RUO-Hinweis vorhanden: 'This peptide is strictly for in-vitro research and laboratory use only. It is not intended for human consumption, medical treatment, or diagnostic applications. ... For research use only. Not for human or veterinary use.' Das ist eine Verbesserung gegenüber der Erhebung vom 06.09. (damals kein RUO-Hinweis), gilt aber nicht nachweisbar für die gesamte Seite (auf Startseite/Produktseite fehlt der Hinweis).",
+          "text_en": "On individual topic landing pages (e.g., GLP-1/GIP), an explicit RUO notice is now present: 'This peptide is strictly for in-vitro research and laboratory use only. It is not intended for human consumption, medical treatment, or diagnostic applications. ... For research use only. Not for human or veterinary use.' This is an improvement over the survey of Sep 6 (no RUO notice at that time), but it is not demonstrably present across the entire site (the notice is missing on the homepage/product page).",
           "quelle": "https://europeptideshop.com/buy-glp-1-gip-peptide-eu-research/",
           "datum": "2026-09-15"
         },
@@ -3995,8 +3995,8 @@ window.PK.vendors = [
       ],
       "schwaechen": [
         {
-          "text": "KEIN Impressum vorhanden. Vollständige Sitemap-Prüfung (page-sitemap.xml, Stand 05.09.2026) zeigt nur folgende Seiten: Home, /shop/, /checkout/, /my-account/, /customer-cabinet/, /shipping-and-delivery/, zwei SEO-Landingpages, /bpc-157-peptide/, /cart/, /contact-european-peptide-suppliers/, /buy-glp-1-gip-peptide-eu-research/. Keine Impressum-, AGB-, Datenschutz- oder Widerrufsseite existiert (/impressum/, /terms-of-service/, /privacy-policy/, /shipping-policy/ liefern alle HTTP 404). Bestätigt den Vorbefund vom 06.09. (impressum: FALSE), unverändert.",
-          "text_en": "NO legal notice present. A full sitemap check (page-sitemap.xml, as of Sep 5, 2026) shows only the following pages: Home, /shop/, /checkout/, /my-account/, /customer-cabinet/, /shipping-and-delivery/, two SEO landing pages, /bpc-157-peptide/, /cart/, /contact-european-peptide-suppliers/, /buy-glp-1-gip-peptide-eu-research/. No legal notice, terms, privacy, or right-of-withdrawal page exists (/impressum/, /terms-of-service/, /privacy-policy/, /shipping-policy/ all return HTTP 404). This confirms the prior finding from Sep 6 (impressum: FALSE), unchanged.",
+          "text": "KEIN Impressum vorhanden. Vollständige Sitemap-Prüfung (page-sitemap.xml, Stand 05.09.2026) zeigt nur folgende Seiten: Home, /shop/, /checkout/, /my-account/, /customer-cabinet/, /shipping-and-delivery/, zwei SEO-Landingpages, /bpc-157-peptide/, /cart/, /contact-european-peptide-suppliers/, /buy-glp-1-gip-peptide-eu-research/. Keine Impressum-, AGB-, Datenschutz- oder Widerrufsseite existiert (/impressum/, /terms-of-service/, /privacy-policy/, /shipping-policy/ liefern alle HTTP 404). Bestätigt den Befund der Erhebung vom 06.09. (damals: kein Impressum), unverändert.",
+          "text_en": "NO legal notice present. A full sitemap check (page-sitemap.xml, as of Sep 5, 2026) shows only the following pages: Home, /shop/, /checkout/, /my-account/, /customer-cabinet/, /shipping-and-delivery/, two SEO landing pages, /bpc-157-peptide/, /cart/, /contact-european-peptide-suppliers/, /buy-glp-1-gip-peptide-eu-research/. No legal notice, terms, privacy, or right-of-withdrawal page exists (/impressum/, /terms-of-service/, /privacy-policy/, /shipping-policy/ all return HTTP 404). This confirms the finding of the Sep 6 survey (no legal notice at that time), unchanged.",
           "quelle": "https://europeptideshop.com/page-sitemap.xml + 404-Checks auf /impressum/, /terms-of-service/, /privacy-policy/",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -4016,8 +4016,8 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Nur EINE einzige echte Produktseite auf der gesamten Domain auffindbar (/product/buy-retatrutide-10mg-online/, bestätigt über XML-Sitemap UND eigene Link-Extraktion aus /shop/ sowie beiden Produktkategorie-Seiten). Diese Seite enthält keinen Preis, keinen Add-to-Cart-Button, kein WooCommerce-Markup und keinen CoA-Link: nur werblichen Fließtext ('99%+ purity guaranteed', 'Certificate of Analysis included') ohne Beleg oder Dokument dazu.",
-          "text_en": "Only ONE genuine product page is findable on the entire domain (/product/buy-retatrutide-10mg-online/, confirmed via the XML sitemap AND our own link extraction from /shop/ and both product category pages). This page contains no price, no add-to-cart button, no WooCommerce markup, and no CoA link: only promotional running text ('99%+ purity guaranteed', 'Certificate of Analysis included') with no supporting evidence or document.",
+          "text": "Nur EINE einzige echte Produktseite auf der gesamten Domain auffindbar (/product/buy-retatrutide-10mg-online/, bestätigt über XML-Sitemap UND Link-Extraktion aus /shop/ sowie beiden Produktkategorie-Seiten). Diese Seite enthält keinen Preis, keinen Add-to-Cart-Button, kein WooCommerce-Markup und keinen CoA-Link: nur werblichen Fließtext ('99%+ purity guaranteed', 'Certificate of Analysis included') ohne Beleg oder Dokument dazu.",
+          "text_en": "Only ONE genuine product page is findable on the entire domain (/product/buy-retatrutide-10mg-online/, confirmed via the XML sitemap AND link extraction from /shop/ and both product category pages). This page contains no price, no add-to-cart button, no WooCommerce markup, and no CoA link: only promotional running text ('99%+ purity guaranteed', 'Certificate of Analysis included') with no supporting evidence or document.",
           "quelle": "https://europeptideshop.com/product/buy-retatrutide-10mg-online/",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -4058,8 +4058,8 @@ window.PK.vendors = [
           "art": "community"
         },
         {
-          "text": "Nach wie vor Zahlung nur per Bitcoin/Krypto beworben ('Secure Bitcoin Payments... fast, secure, and anonymous'); im Checkout selbst keine weiteren Zahlungsarten sichtbar, da der Checkout mangels echter Produkte nicht durchlaufen werden konnte. Bestätigt den Vorbefund vom 06.09. (Zahlung: Krypto/Vorkasse), unverändert.",
-          "text_en": "Payment is still advertised as Bitcoin/crypto only ('Secure Bitcoin Payments... fast, secure, and anonymous'); no other payment methods are visible in the checkout itself, since the checkout could not be completed due to the lack of real products. This confirms the prior finding from Sep 6 (payment: crypto/prepayment), unchanged.",
+          "text": "Nach wie vor Zahlung nur per Bitcoin/Krypto beworben ('Secure Bitcoin Payments... fast, secure, and anonymous'); im Checkout selbst keine weiteren Zahlungsarten sichtbar, da der Checkout mangels echter Produkte nicht durchlaufen werden konnte. Bestätigt den Befund der Erhebung vom 06.09. (Zahlung: Krypto/Vorkasse), unverändert.",
+          "text_en": "Payment is still advertised as Bitcoin/crypto only ('Secure Bitcoin Payments... fast, secure, and anonymous'); no other payment methods are visible in the checkout itself, since the checkout could not be completed due to the lack of real products. This confirms the finding of the Sep 6 survey (payment: crypto/prepayment), unchanged.",
           "quelle": "https://europeptideshop.com/ (Abschnitt 'Secure Bitcoin Payments')",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -4073,14 +4073,14 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "RUO-Kennzeichnung: Vorbefund 06.09. war 'ruo: FALSE' (kein RUO-Hinweis). Jetzt zumindest auf einer Themen-Landingpage (GLP-1/GIP) ein expliziter RUO-Disclaimer vorhanden: auf Startseite und der einzigen Produktseite (Retatrutide) fehlt er weiterhin. Teilkorrektur, kein flächendeckender Befund.",
-          "text_en": "RUO labeling: the prior finding from Sep 6 was 'ruo: FALSE' (no RUO notice). Now, at least on one topic landing page (GLP-1/GIP), an explicit RUO disclaimer is present: it is still missing on the homepage and the one product page (Retatrutide). A partial correction, not a sitewide finding.",
+          "text": "RUO-Kennzeichnung: Bei der Erhebung am 06.09. war kein RUO-Hinweis vorhanden. Jetzt ist zumindest auf einer Themen-Landingpage (GLP-1/GIP) ein expliziter RUO-Disclaimer vorhanden; auf Startseite und der einzigen Produktseite (Retatrutide) fehlt er weiterhin. Teilkorrektur, kein flächendeckender Befund.",
+          "text_en": "RUO labeling: the survey of Sep 6 found no RUO notice. Now, at least on one topic landing page (GLP-1/GIP), an explicit RUO disclaimer is present: it is still missing on the homepage and the one product page (Retatrutide). A partial correction, not a sitewide finding.",
           "quelle": "https://europeptideshop.com/buy-glp-1-gip-peptide-eu-research/",
           "datum": "2026-09-15"
         },
         {
-          "text": "Impressum weiterhin nicht vorhanden, unverändert zum Vorbefund vom 06.09.",
-          "text_en": "Legal notice still not present, unchanged from the prior finding of Sep 6.",
+          "text": "Impressum weiterhin nicht vorhanden, unverändert gegenüber der Erhebung vom 06.09.",
+          "text_en": "Legal notice still not present, unchanged from the Sep 6 survey.",
           "quelle": "https://europeptideshop.com/page-sitemap.xml",
           "datum": "2026-09-15"
         },
@@ -4387,8 +4387,8 @@ window.PK.vendors = [
           "art": "belegt"
         },
         {
-          "text": "Impressum weiterhin ohne Adresse, Rechtsform, Handelsregister oder Vertretungsberechtigten: nur der Name 'Peptide Culture', danach folgt direkt der nächste Abschnitt ohne weitere Angaben. Bestätigt den bereits bekannten roten Flag unverändert.",
-          "text_en": "The legal notice still lacks an address, legal form, commercial register entry, or authorized representative: only the name 'Peptide Culture' appears, followed directly by the next section with no further details. This confirms the already known red flag, unchanged.",
+          "text": "Impressum weiterhin ohne Adresse, Rechtsform, Handelsregister oder Vertretungsberechtigten: nur der Name 'Peptide Culture', danach folgt direkt der nächste Abschnitt ohne weitere Angaben. Bestätigt das bereits bekannte Warnsignal unverändert.",
+          "text_en": "The legal notice still lacks an address, legal form, commercial register entry, or authorized representative: only the name 'Peptide Culture' appears, followed directly by the next section with no further details. This confirms the already known warning sign, unchanged.",
           "quelle": "https://peptide-culture.com/policies/legal-notice",
           "datum": "2026-09-15",
           "art": "belegt"
@@ -4624,8 +4624,8 @@ window.PK.vendors = [
           "datum": "2026-09-15"
         },
         {
-          "text": "Impressum/AGB/Datenschutz FALSE aus der Faktenbasis bestätigt sich weiterhin auch nach Reaktivierung des Shops",
-          "text_en": "The fact base's Impressum/AGB/Datenschutz = FALSE (legal notice/terms/privacy) continues to be confirmed even after the shop's reactivation.",
+          "text": "Das Fehlen von Impressum, AGB und Datenschutzerklärung bestätigt sich weiterhin auch nach Reaktivierung des Shops",
+          "text_en": "The absence of a legal notice, terms and privacy policy continues to be confirmed even after the shop's reactivation.",
           "quelle": "direkte Prüfung 15.09.2026",
           "datum": "2026-09-15"
         }

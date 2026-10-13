@@ -635,9 +635,9 @@ body.nav-open{ overflow:hidden; }
 }
 .search-bar input{
   flex:1; border:0; background:none; font:inherit; font-size:var(--fs-body);
-  color:var(--text); outline:none; min-width:0;
+  color:var(--text); outline:none; min-width:0; text-overflow:ellipsis;
 }
-.search-bar input::placeholder{ color:var(--text-secondary); }
+.search-bar input::placeholder{ color:var(--text-secondary); text-overflow:ellipsis; }
 
 @media (max-width:640px){
   .hero{ padding-block:var(--sp-10) var(--sp-6); }
