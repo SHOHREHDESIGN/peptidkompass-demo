@@ -24,8 +24,7 @@
     if (url.origin !== origin && url.origin !== 'https://peptidkompass.com') return href;
     if (!/(?:\/|\.html)$/.test(url.pathname)) return href;
     var path = url.pathname.replace(prefix, '') || '/';
-    // / is the neutral entry; /index.html explicitly requests German.
-    if (code === 'de' && path === '/') path = '/index.html';
+    // / is the German home (canonical since 22.10.2026); /index.html is an alias.
     if (code !== 'de' && path === '/index.html') path = '/';
     url.pathname = (code === 'de' ? '' : '/' + code) + path;
     url.searchParams.delete('lang');
@@ -35,7 +34,15 @@
     if (codes.indexOf(code) < 0) return;
     try { global.localStorage.setItem('pk_lang', code); } catch (e) { /* Private browsing still works. */ }
   }
-  var api = { codes: codes, names: names, supported: supported, preferred: preferred, route: route, save: save };
+  var hints = {
+    en: ['This page is also available in English', 'Close'],
+    fr: ['Cette page existe aussi en français', 'Fermer'],
+    es: ['Esta página también está disponible en español', 'Cerrar'],
+    it: ['Questa pagina è disponibile anche in italiano', 'Chiudi'],
+    nl: ['Deze pagina is ook beschikbaar in het Nederlands', 'Sluiten'],
+    pl: ['Ta strona jest dostępna także po polsku', 'Zamknij']
+  };
+  var api = { codes: codes, names: names, hints: hints, supported: supported, preferred: preferred, route: route, save: save };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   global.PKLanguage = api;
   if (!global.document) return;
@@ -49,12 +56,33 @@
   var current = (url.pathname.match(prefix) || [null, 'de'])[1];
   document.documentElement.lang = current;
   document.documentElement.setAttribute('data-page-language', current);
-  // A shared deep link is never overridden, including by a saved preference.
+  // A shared deep link is never overridden. On the German home only a saved choice
+  // redirects; a browser language merely offers a hint, so crawlers always see German.
   if (url.pathname === '/') {
     var saved = null;
     try { saved = global.localStorage.getItem('pk_lang'); } catch (e) { /* Optional preference. */ }
-    var chosen = preferred(global.navigator.languages || [global.navigator.language], saved);
-    if (chosen !== 'de') global.location.replace(route(url.href, chosen));
+    if (codes.indexOf(saved) >= 0 && saved !== 'de') {
+      global.location.replace(route(url.href, saved));
+      return;
+    }
+    var offer = saved === 'de' ? 'de' : preferred(global.navigator.languages || [global.navigator.language], null);
+    if (offer !== 'de') document.addEventListener('DOMContentLoaded', function () {
+      var bar = document.createElement('div');
+      bar.className = 'language-hint';
+      bar.setAttribute('lang', offer);
+      var link = document.createElement('a');
+      link.setAttribute('data-lang', offer);
+      link.setAttribute('href', route(url.href, offer));
+      link.textContent = hints[offer][0];
+      var close = document.createElement('button');
+      close.type = 'button';
+      close.setAttribute('aria-label', hints[offer][1]);
+      close.textContent = '×';
+      close.addEventListener('click', function () { save('de'); bar.remove(); });
+      bar.appendChild(link);
+      bar.appendChild(close);
+      document.body.insertBefore(bar, document.body.firstChild);
+    });
   }
   document.addEventListener('click', function (event) {
     var link = event.target.closest && event.target.closest('a[data-lang]');
