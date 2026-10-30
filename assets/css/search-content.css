@@ -84,3 +84,13 @@
   .sc-table-wrap .sc-price-table tbody tr { grid-template-columns: 1fr 1fr; }
   .sc-table-wrap .sc-price-table td:nth-child(3) { font-size: 22px; font-weight: 650; }
 }
+.sc-fact-list { margin: 20px 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.sc-fact-list > div { padding: 20px; background: #f5f5f7; border-radius: 14px; }
+.sc-fact-list dt { font-size: 13px; color: #666670; margin-bottom: 8px; }
+.sc-fact-list dd { margin: 0; font-size: 17px; line-height: 1.5; overflow-wrap: anywhere; }
+.sc-section > ul:not(.sc-related):not(.sc-sources), .sc-section > ol { padding-left: 24px; line-height: 1.7; font-size: 17px; }
+.sc-section > ul > li, .sc-section > ol > li { margin-bottom: 14px; }
+.sc-toc { max-height: 190px; overflow-y: auto; scrollbar-width: thin; }
+@media(max-width:760px) { .sc-fact-list { grid-template-columns: 1fr; } .sc-toc { max-height: 170px; } }
+.sc-two-cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+@media(max-width:760px) { .sc-two-cards { grid-template-columns: 1fr; } }
