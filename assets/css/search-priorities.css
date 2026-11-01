@@ -1,0 +1,14 @@
+/* English editorial additions. Existing site typography and colours are retained. */
+.sc-actions { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0; }
+.sc-actions a { padding:12px 18px; border:1px solid #d6d6dc; border-radius:24px; line-height:1.45; text-decoration:none; }
+.sc-actions a:first-child { background:#0066cc; color:#fff; border-color:#0066cc; }
+.sc-directory-controls { display:grid; grid-template-columns:1fr 1fr 1fr auto; align-items:end; gap:14px; margin:24px 0; }
+.sc-directory-controls label { font-size:14px; font-weight:600; }
+.sc-directory-controls input,.sc-directory-controls select { display:block; width:100%; min-height:46px; margin-top:8px; padding:10px; border:1px solid #c9c9d0; border-radius:10px; background:#fff; color:#1d1d1f; font:inherit; }
+.sc-directory-controls input:focus-visible,.sc-directory-controls select:focus-visible { outline:3px solid #0066cc; outline-offset:3px; }
+.sc-chain { margin:28px 0; padding:24px; border-radius:20px; background:#f5f5f7; }
+.sc-chain > div { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:14px; }
+.sc-chain span { padding:20px; border-radius:18px; background:#e4eefb; font-weight:600; }
+.sc-chain figcaption { font-size:13px; line-height:1.6; color:#62626b; margin-top:20px; }
+.sc-main [hidden] { display:none !important; }
+@media(max-width:760px){ .sc-directory-controls { grid-template-columns:1fr; } .sc-actions a { width:100%; text-align:center; } .sc-chain { margin-left:0; margin-right:0; } }
